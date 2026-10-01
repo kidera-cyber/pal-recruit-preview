@@ -37,6 +37,10 @@ a{color:inherit}
 .lead__label::before{content:"";width:26px;height:2px;background:var(--grad)}
 .lead h1{margin:14px 0 0;font-size:clamp(26px,3.4vw,40px);line-height:1.5;letter-spacing:.01em}
 .lead p{margin:18px 0 0;max-width:46em;font-size:15px;color:var(--sub)}
+.lead__hint{margin-top:22px!important;padding:14px 20px;border-radius:var(--radius);background:var(--bg-soft);font-size:13.5px}
+.lead__hint b{color:var(--navy)}
+.lead__hint a{color:var(--red);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.lead__hint span{margin:0 10px;color:var(--line)}
 
 /* ---- cards ---- */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding-bottom:16px}
@@ -105,6 +109,9 @@ a{color:inherit}
     <p class="lead__label en">RECRUIT SITE PREVIEW</p>
     <h1>採用サイトの2案を、<br>ここから見比べられます。</h1>
     <p>2026年10月に作成した原案（案A）と、それをベースに情報設計とデザインを見直したリニューアル候補（案B）を並べています。各カードのサムネイルは実ページを縮小表示しています。「開く」から原寸でご確認ください。</p>
+    <p class="lead__hint">このページは<b>入口（一覧）ページ</b>です。採用サイト本体はこちらから開きます ──
+      <a href="original/index.html">案A：原案</a><span aria-hidden="true">／</span><a href="renewal/index.html">案B：リニューアル候補</a>
+    </p>
   </section>
 
   <section class="wrap">
@@ -164,7 +171,8 @@ a{color:inherit}
     </div>
 
     <div class="wrap foot" style="width:100%">
-      <small>株式会社PAL 採用サイト プレビュー</small>
+      <small>株式会社PAL 採用サイト プレビュー｜最終更新：2026年10月1日</small>
+      <small style="width:100%;color:var(--muted)">※ 表示が切り替わらない場合は、ブラウザの再読み込み（Windows：Ctrl＋Shift＋R／Mac：⌘＋Shift＋R）をお試しください。</small>
       <a href="https://www.pal-style.co.jp/" target="_blank" rel="noopener">コーポレートサイト ↗</a>
     </div>
   </section>
