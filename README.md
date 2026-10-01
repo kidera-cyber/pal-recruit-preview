@@ -1,23 +1,26 @@
-# PAL Recruit Site（社内共有用）
+# pal-recruit-preview
 
-株式会社PAL 採用サイトのデザインプロトタイプ（2026年10月作成分）を、社内共有用にまとめたリポジトリです。
+株式会社PAL 採用サイトの **社内レビュー用プレビュー** です。原案とリニューアル候補の2案を、1つの入口ページから見比べられます。
 
-## 内容
+## 公開URL
 
-- `index.html` … 採用サイト本体（元ファイル名：`PAL Recruit.html`）
-- `assets/` … CSS・JS・画像
-- `reference/` … 参考用HTML
-- `handoff/README.md` … デザインハンドオフ資料
+| ページ | URL |
+|---|---|
+| 入口（2案の比較） | https://kidera-cyber.github.io/pal-recruit-preview/ |
+| 案A：原案（2026年10月作成分） | https://kidera-cyber.github.io/pal-recruit-preview/original/ |
+| 案B：リニューアル候補 | https://kidera-cyber.github.io/pal-recruit-preview/renewal/ |
 
-## 閲覧方法
+## ディレクトリ
 
-このリポジトリは **private** です。ブラウザで見るには、次のいずれかで確認してください。
+| パス | 内容 |
+|---|---|
+| `index.html` | 入口ページ（2案をサムネイル付きで比較） |
+| `original/` | 原案。元データ `pal_recruit_site（10月作成分）/PAL Recruit.html` と本文・デザインは同一（参照パスのみ調整） |
+| `renewal/` | リニューアル候補版 |
+| `assets/` | 2案で共有する画像、およびリニューアル版のCSS・JS |
+| `reference/` `handoff/` | 参考資料 |
 
-1. リポジトリを clone または ZIP ダウンロードし、`index.html` をブラウザで開く
-2. 手元で簡易サーバーを起動して開く（例：`python3 -m http.server 8000` → http://localhost:8000/ ）
+## 注意
 
-※ GitHub Pages による共有URLは、private リポジトリでは GitHub の有料プランが必要なため未発行です。
-
-## 元データ
-
-`~/Desktop/pal_recruit_site（10月作成分）/`（同内容。`design_handoff_pal_recruit/` 配下のHTML・assetsは本体と同一のため、本リポジトリでは重複を省いています）
+- 社内レビュー用です。本番サイト（www.pal-style.co.jp）には反映していません。
+- 入口ページには `noindex` を設定しています。

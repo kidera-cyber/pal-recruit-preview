@@ -172,7 +172,7 @@ header.scrolled .menu-toggle{background:var(--lav-2);border-color:var(--line);co
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-photo{
   position:absolute;inset:0;
-  background:url("hero-bg.jpg") center/cover no-repeat;
+  background:url("../assets/hero-bg.jpg") center/cover no-repeat;
   opacity:.5;filter:saturate(1.1) contrast(1.05);
   transform:scale(1.05);
 }
