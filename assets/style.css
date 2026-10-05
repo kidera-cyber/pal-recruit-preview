@@ -586,16 +586,39 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pick2{grid-template-columns:minmax(0,1fr);gap:36px;margin-top:32px}
 }
 
+/* ---- PICK UP は横長リンク3行（縦を抑えつつ写真で中身を示す） ---- */
+.pickrow{border-top:1px solid var(--line)}
+.pickrow a{display:grid;grid-template-columns:148px minmax(0,1fr) auto;align-items:center;gap:0 30px;padding:22px 4px;border-bottom:1px solid var(--line);transition:background-color .25s,padding .25s var(--ease)}
+.pickrow a:hover{background:#fff;padding-inline:16px 10px}
+.pickrow figure{aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden}
+.pickrow figure img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pickrow a:hover figure img{transform:scale(1.05)}
+.pickrow h3{margin-top:6px;font-size:21px;line-height:1.55}
+.pickrow__d{margin-top:8px;font-size:13.5px;line-height:1.9;color:var(--sub)}
+.pickrow .textlink{margin-top:10px;display:inline-block;font-size:13px}
+@media (max-width:720px){
+  .pickrow a{grid-template-columns:104px minmax(0,1fr);gap:0 16px;padding:20px 2px}
+  .pickrow figure{aspect-ratio:1/1}
+  .pickrow .arrow{display:none}
+  .pickrow h3{font-size:17px}
+}
+@media (max-width:560px){
+  .pickrow a{grid-template-columns:82px minmax(0,1fr);gap:0 14px}
+  .pickrow h3{font-size:16px;line-height:1.5}
+  .pickrow__d{font-size:13px;line-height:1.85}
+}
+
 /* ---- 分量を絞る（HOMEは「選ぶページ」なので縦を短く） ---- */
-#key.sec,#pickup.sec{padding-block:70px}
-.hero{min-height:min(84vh,760px)}
-.key__media{aspect-ratio:16/9}
+#key.sec{padding-block:64px 58px}
+#pickup.sec{padding-block:58px 64px}
+.hero{min-height:min(70vh,640px);padding-block:calc(var(--header-h) + 64px) 60px}
+.key__media{aspect-ratio:2/1}
 .key--sm .key__item{padding:20px 4px}
 .pick--media{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:40px;padding-bottom:34px}
 .pick__media{aspect-ratio:16/10}
 .pick2{margin-top:34px}
 .pick__thumbs img{aspect-ratio:4/3}
-.entry{padding-block:104px}
+.entry{padding-block:92px}
 @media (max-width:900px){
   #key.sec,#pickup.sec{padding-block:56px}
   .hero{min-height:auto}
