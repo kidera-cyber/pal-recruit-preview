@@ -710,3 +710,25 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .stepline li{font-size:13px;padding:10px 14px 10px 36px}
 }
 /* ===== CORP-ALIGN v1 END ===== */
+
+/* ============================================================
+   ===== MESSAGE v1 START =====
+   HOMEのFV直後に置く、PALの仕事を定義するメッセージ。
+   カード・装飾は使わず、大きな文字と余白だけで構成する。
+   ============================================================ */
+.msgsec{background:var(--bg-soft);padding-block:92px}
+.msg{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:24px 64px;align-items:start}
+.msg__ttl{margin-top:18px;font-size:clamp(26px,3.5vw,46px);font-weight:700;line-height:1.52;letter-spacing:.01em}
+.msg__ttl em{font-style:normal;color:var(--red)}
+.msg__body{padding-top:14px}
+.msg__body p{font-size:15px;line-height:2.15;color:var(--sub)}
+.msg__body p+p{margin-top:20px}
+
+@media (max-width:900px){
+  .msgsec{padding-block:64px}
+  .msg{grid-template-columns:minmax(0,1fr);gap:22px}
+  .msg__ttl{font-size:clamp(23px,5.6vw,30px);line-height:1.6}
+  .msg__body{padding-top:0}
+  .msg__body p{font-size:14.5px;line-height:2.05}
+}
+/* ===== MESSAGE v1 END ===== */
