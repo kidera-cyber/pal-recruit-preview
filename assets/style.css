@@ -487,3 +487,58 @@ html{scroll-padding-top:88px}
   .drawer a span,.logo__txt small{font-size:12px}
 }
 /* ===== MOBILE-LEGIBILITY v1 END ===== */
+
+/* ============================================================
+   ===== MULTIPAGE v1 START =====
+   1ページ構成から複数ページ構成へ分割したことに伴う追加分。
+   既存のセクション用スタイルはそのまま流用し、ここでは
+   パンくず／下層ページ見出し／現在地表示／一覧リスト／関連ページのみ定義する。
+   ============================================================ */
+.crumb{padding-top:calc(var(--header-h) + 20px);font-size:12.5px;color:var(--muted)}
+.crumb .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.crumb a,.crumb span{font-family:inherit}
+.crumb a{color:var(--sub)}
+.crumb a:hover{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.crumb a+a::before,.crumb a+span::before{content:"／";margin-right:10px;color:var(--line)}
+.crumb span[aria-current]{color:var(--navy);font-weight:700}
+
+.phead{padding-block:34px 8px}
+.phead .slabel{margin-bottom:4px}
+.ptitle{margin-top:12px;font-size:clamp(30px,4.2vw,52px);font-weight:700;line-height:1.35;letter-spacing:.01em}
+.plead{margin-top:22px;max-width:46em;font-size:15.5px;line-height:2.1;color:var(--sub)}
+
+.gnav a.is-current{color:var(--red)}
+.gnav a.is-current small{color:var(--red)}
+.drawer a.is-current{color:var(--red)}
+
+.hlist{display:grid;border-top:1px solid var(--line)}
+.hlist li{border-bottom:1px solid var(--line)}
+.hlist a{display:grid;grid-template-columns:132px minmax(0,1fr) auto;align-items:center;gap:10px 24px;padding:24px 4px;transition:background-color .25s,padding .25s var(--ease)}
+.hlist a:hover{background:var(--bg-soft);padding-inline:14px 4px}
+.hlist a::after{content:"▶";font-size:10px;color:var(--red)}
+.hlist__cat{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.12em;color:var(--red)}
+.hlist b{font-size:17.5px;line-height:1.6}
+.hlist__meta{grid-column:2;font-size:13px;color:var(--sub)}
+
+.home2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px}
+
+.relnav{background:var(--bg-soft);padding-block:56px 64px;border-top:1px solid var(--line)}
+.relnav__h{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--muted);font-weight:700}
+.relnav__list{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+.relnav__list a{display:block;padding:18px 2px;border-bottom:1px solid var(--line);font-weight:700;font-size:15px;transition:color .2s}
+.relnav__list a:hover{color:var(--red)}
+.relnav__list small{display:block;font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:4px}
+
+@media (max-width:960px){
+  .home2{grid-template-columns:minmax(0,1fr);gap:40px}
+  .relnav__list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+  .hlist a{grid-template-columns:minmax(0,1fr) auto}
+  .hlist__cat{grid-column:1}
+  .hlist b,.hlist__meta{grid-column:1}
+}
+@media (max-width:720px){
+  .crumb{padding-top:calc(var(--header-h) + 14px);font-size:12px}
+  .phead{padding-block:26px 4px}
+  .relnav__list{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== MULTIPAGE v1 END ===== */
