@@ -732,3 +732,36 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .msg__body p{font-size:14.5px;line-height:2.05}
 }
 /* ===== MESSAGE v1 END ===== */
+
+/* ============================================================
+   ===== NOW-HIRING v1 START =====
+   HOMEの募集中の職種一覧（罫線ベース・2列）と、右側の固定CTA。
+   スマホでは画面下部の固定バーに切り替える。
+   ============================================================ */
+.hlist--2col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+
+.sidecta{position:fixed;right:0;top:50%;transform:translate(100%,-50%);z-index:90;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  padding:26px 15px;border-radius:var(--radius) 0 0 var(--radius);
+  background:var(--red);color:#fff;font-size:14px;font-weight:700;letter-spacing:.08em;
+  box-shadow:0 6px 24px rgba(38,41,70,.18);
+  opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .35s}
+.sidecta span{writing-mode:vertical-rl;text-orientation:upright}
+.sidecta i{font-style:normal;display:flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,255,255,.6);font-size:11px}
+.sidecta.is-visible{opacity:1;pointer-events:auto;transform:translate(0,-50%)}
+.sidecta:hover{background:var(--red-dark)}
+
+@media (max-width:1180px){
+  .hlist--2col{grid-template-columns:minmax(0,1fr);gap:0}
+}
+@media (max-width:900px){
+  .sidecta{top:auto;bottom:0;right:0;left:0;flex-direction:row;justify-content:center;gap:12px;
+    padding:14px 18px;border-radius:0;transform:translateY(100%);box-shadow:0 -4px 18px rgba(38,41,70,.18);font-size:14.5px}
+  .sidecta span{writing-mode:horizontal-tb;text-orientation:mixed}
+  .sidecta i{transform:none}
+  .sidecta.is-visible{transform:translateY(0)}
+  body:has(.sidecta){padding-bottom:0}
+  .ftr{padding-bottom:84px}
+}
+@media (prefers-reduced-motion:reduce){.sidecta{transition:opacity .2s}}
+/* ===== NOW-HIRING v1 END ===== */

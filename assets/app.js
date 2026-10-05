@@ -113,6 +113,23 @@
     });
   });
 
+  /* ---- 右側固定CTA（HOMEのみ）：FVを過ぎたら表示し、ENTRY手前で隠す ---- */
+  var sideCta = document.getElementById('sideCta');
+  if (sideCta) {
+    var entrySec = document.querySelector('.entry');
+    var syncCta = function () {
+      var passedHero = window.scrollY > 360;
+      var nearEnd = false;
+      if (entrySec) {
+        nearEnd = entrySec.getBoundingClientRect().top < window.innerHeight * 0.9;
+      }
+      sideCta.classList.toggle('is-visible', passedHero && !nearEnd);
+    };
+    syncCta();
+    window.addEventListener('scroll', syncCta, { passive: true });
+    window.addEventListener('resize', syncCta);
+  }
+
   /* ---- 募集要項：ひとつ開いたら他を閉じる ---- */
   var jobs = Array.prototype.slice.call(document.querySelectorAll('details.job'));
   jobs.forEach(function (d) {
