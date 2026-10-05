@@ -624,3 +624,13 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .hero{min-height:auto}
 }
 /* ===== HOME-NAV v1 END ===== */
+
+/* ============================================================
+   ===== ENTRY-CENTER v1 START =====
+   .wrap--narrow に中央寄せ指定が無く、ENTRY帯の内容が左に寄っていたため補正。
+   ENTRY帯は全ページ共通のため、この1点で全ページが揃う。
+   ============================================================ */
+.wrap--narrow{margin-inline:auto}
+.entry__ctas{justify-content:center}
+.entry p{margin-inline:auto;max-width:44em}
+/* ===== ENTRY-CENTER v1 END ===== */
