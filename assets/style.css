@@ -674,3 +674,39 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .cycle li{padding:18px 16px}
 }
 /* ===== ABOUT-WORK v1 END ===== */
+
+/* ============================================================
+   ===== CORP-ALIGN v1 START =====
+   コーポレート（私たちの役割／PALの強み／FDE）と整合させた追加ブロック用。
+   2カラムの補足、効果リスト、仕事の流れの連番。
+   ============================================================ */
+.twocol{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.twocol__h{font-size:16px;font-weight:700;line-height:1.6}
+.twocol p{font-size:13.5px;line-height:1.95;color:var(--sub)}
+.twocol>div{padding-top:18px;border-top:2px solid var(--navy-d)}
+.twocol>div p+p{margin-top:8px}
+
+.effects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:30px}
+.effects li{padding:24px 22px 26px;border-radius:var(--radius-lg);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
+.effects .en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.16em;color:var(--pink)}
+.effects b{display:block;margin-top:8px;font-size:16.5px;line-height:1.6}
+.effects p{margin-top:10px;font-size:13.5px;line-height:1.95;color:#c9cce0}
+.effects--light{grid-template-columns:repeat(4,minmax(0,1fr))}
+.effects--light li{background:#fff;border-color:var(--line)}
+.effects--light .en{color:var(--red)}
+.effects--light p{color:var(--sub)}
+#reason .effects--light{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+.stepline{display:flex;flex-wrap:wrap;gap:10px;counter-reset:st}
+.stepline li{position:relative;padding:12px 18px 12px 40px;border:1px solid var(--line);border-radius:9999px;background:#fff;font-size:14px;font-weight:700}
+.stepline li::before{counter-increment:st;content:counter(st,decimal-leading-zero);position:absolute;left:16px;top:50%;transform:translateY(-50%);font-family:Lato,sans-serif;font-size:11px;color:var(--red);letter-spacing:.06em}
+
+@media (max-width:1080px){
+  .effects,.effects--light,#reason .effects--light{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .twocol{grid-template-columns:minmax(0,1fr);gap:22px}
+  .effects,.effects--light,#reason .effects--light{grid-template-columns:minmax(0,1fr);gap:14px}
+  .stepline li{font-size:13px;padding:10px 14px 10px 36px}
+}
+/* ===== CORP-ALIGN v1 END ===== */
