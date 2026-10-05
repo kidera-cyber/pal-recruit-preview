@@ -634,3 +634,43 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .entry__ctas{justify-content:center}
 .entry p{margin-inline:auto;max-width:44em}
 /* ===== ENTRY-CENTER v1 END ===== */
+
+/* ============================================================
+   ===== ABOUT-WORK v1 START =====
+   「PALを知る」の4サイクル（Design/Deploy/Operate/Evolve）と、
+   「仕事を知る」の連携図・職種メタ情報のための追加分。
+   既存のカードやグリッドの指定は変更しない。
+   ============================================================ */
+.cycle li{padding:22px 20px}
+.cycle p{margin-top:8px;font-size:13px;line-height:1.85;color:var(--sub)}
+
+.chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:stretch}
+.chain__step{position:relative;padding:26px 24px 28px;border-radius:var(--radius-lg);border:1px solid var(--line);background:#fff}
+.chain__step--mid{background:var(--navy-d);border-color:var(--navy-d);color:#fff}
+.chain__step::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px}
+.chain__step:last-child::after{display:none}
+.chain__step .en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.16em;color:var(--red)}
+.chain__step--mid .en{color:var(--pink)}
+.chain__step b{display:block;margin-top:8px;font-size:16.5px;line-height:1.6}
+.chain__step p{margin-top:10px;font-size:13px;line-height:1.9;color:var(--sub)}
+.chain__step--mid p{color:#c9cce0}
+.chain__tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.chain__tags li{padding:5px 10px;border-radius:9999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);font-size:11.5px}
+
+.field__meta{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;font-size:12.5px;line-height:1.75}
+.field__meta dt{color:var(--muted);font-family:Lato,sans-serif;letter-spacing:.04em}
+.field__meta dd{color:var(--sub)}
+.field--core .field__meta{border-top-color:rgba(255,255,255,.28)}
+.field--core .field__meta dt{color:#9aa0c4}
+.field--core .field__meta dd{color:#dfe2ef}
+
+@media (max-width:1080px){
+  .chain{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .chain__step:nth-child(2n)::after{display:none}
+}
+@media (max-width:720px){
+  .chain{grid-template-columns:minmax(0,1fr)}
+  .chain__step::after{display:none}
+  .cycle li{padding:18px 16px}
+}
+/* ===== ABOUT-WORK v1 END ===== */
