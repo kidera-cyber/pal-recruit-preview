@@ -542,3 +542,62 @@ html{scroll-padding-top:88px}
   .relnav__list{grid-template-columns:minmax(0,1fr)}
 }
 /* ===== MULTIPAGE v1 END ===== */
+
+/* ============================================================
+   ===== HOME-NAV v1 START =====
+   HOMEを「選ぶページ」にするための導線パーツ。
+   KEY CONTENTS（主要3＋副3）と PICK UP（3件）でのみ使用する。
+   ============================================================ */
+.arrow{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;margin-left:12px;border-radius:50%;border:1px solid var(--line);color:var(--red);font-size:10px;vertical-align:2px;transition:transform .25s var(--ease),background-color .25s,border-color .25s,color .25s}
+a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transform:translateX(3px)}
+
+.key--lg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.key--sm{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;border-top:1px solid var(--line)}
+.key__item{display:block}
+.key--sm .key__item{padding:24px 4px;border-bottom:1px solid var(--line);transition:background-color .25s,padding .25s var(--ease)}
+.key--sm .key__item:hover{background:var(--bg-soft);padding-inline:14px 4px}
+.key__media{aspect-ratio:16/10;border-radius:var(--radius-lg);overflow:hidden}
+.key__media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.key__item--lg:hover .key__media img{transform:scale(1.04)}
+.key__body{padding-top:20px}
+.key__no{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.18em;color:var(--muted)}
+.key__ttl{margin-top:6px;font-size:21px;font-weight:700;line-height:1.5;display:flex;align-items:center}
+.key__item--lg .key__ttl{font-size:25px}
+.key__desc{margin-top:8px;font-size:13.5px;line-height:1.9;color:var(--sub)}
+
+.pick{display:block}
+.pick--media{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center;padding-bottom:40px;border-bottom:1px solid var(--line)}
+.pick__media{aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden}
+.pick__media img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pick--media:hover .pick__media img{transform:scale(1.04)}
+.pick__ttl{margin-top:12px;font-size:clamp(20px,2.2vw,27px);line-height:1.55}
+.pick__desc{margin-top:14px;font-size:14.5px;line-height:2;color:var(--sub)}
+.pick .textlink{margin-top:18px;display:inline-block}
+.pick2{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}
+.pick__thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:22px}
+.pick__thumbs img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius)}
+
+@media (max-width:900px){
+  .key--lg{grid-template-columns:minmax(0,1fr);gap:24px}
+  .key--sm{grid-template-columns:minmax(0,1fr);gap:0}
+  .key__item--lg .key__ttl{font-size:22px}
+  .pick--media{grid-template-columns:minmax(0,1fr);gap:22px;padding-bottom:32px}
+  .pick__media{aspect-ratio:16/10}
+  .pick2{grid-template-columns:minmax(0,1fr);gap:36px;margin-top:32px}
+}
+
+/* ---- 分量を絞る（HOMEは「選ぶページ」なので縦を短く） ---- */
+#key.sec,#pickup.sec{padding-block:70px}
+.hero{min-height:min(84vh,760px)}
+.key__media{aspect-ratio:16/9}
+.key--sm .key__item{padding:20px 4px}
+.pick--media{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:40px;padding-bottom:34px}
+.pick__media{aspect-ratio:16/10}
+.pick2{margin-top:34px}
+.pick__thumbs img{aspect-ratio:4/3}
+.entry{padding-block:104px}
+@media (max-width:900px){
+  #key.sec,#pickup.sec{padding-block:56px}
+  .hero{min-height:auto}
+}
+/* ===== HOME-NAV v1 END ===== */
