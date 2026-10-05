@@ -765,3 +765,21 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 }
 @media (prefers-reduced-motion:reduce){.sidecta{transition:opacity .2s}}
 /* ===== NOW-HIRING v1 END ===== */
+
+/* ============================================================
+   ===== FAQ-CAT v1 START =====
+   FAQをカテゴリ見出し＋質問一覧の構成にしたことによる追加分。
+   既存の .faq（アコーディオン）はそのまま使う。
+   ============================================================ */
+.faqcat{margin-top:56px}
+.faqcat:first-of-type{margin-top:0}
+.faqcat__h{margin-top:10px;font-size:clamp(19px,2.1vw,24px);font-weight:700;line-height:1.5}
+.faq{margin-top:18px}
+.faq summary{align-items:start}
+.faq summary i{padding-top:1px}
+@media (max-width:720px){
+  .faqcat{margin-top:40px}
+  .faq summary{font-size:14.5px;padding:18px 20px}
+  .faq p{padding:0 20px 20px 50px}
+}
+/* ===== FAQ-CAT v1 END ===== */
