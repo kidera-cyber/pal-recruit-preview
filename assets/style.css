@@ -783,3 +783,26 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .faq p{padding:0 20px 20px 50px}
 }
 /* ===== FAQ-CAT v1 END ===== */
+
+/* ============================================================
+   ===== PEOPLE-4 v1 START =====
+   「人を知る。」を4職種（FDE／システム部／営業／コーポレート）の
+   2×2グリッドにしたことによる追加分。写真と見出しを大きく見せる。
+   ============================================================ */
+.people--4{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+.people--4 .person__media{aspect-ratio:4/3}
+.people--4 .person__body{padding:26px 26px 30px}
+.people--4 .person__body h3{font-size:20px;line-height:1.6}
+.people--4 .person__body p{margin-top:12px;font-size:14px}
+.people--4 .person__cat{font-size:11.5px}
+.people--4 .person__copy{font-size:14px;padding:30px 22px 20px}
+@media (max-width:860px){
+  .people--4{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .people--4 .person__body{padding:20px 18px 22px}
+  .people--4 .person__body h3{font-size:17px}
+}
+@media (max-width:620px){
+  .people--4{grid-template-columns:minmax(0,1fr)}
+  .people--4 .person__media{aspect-ratio:3/2}
+}
+/* ===== PEOPLE-4 v1 END ===== */
