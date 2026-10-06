@@ -1262,43 +1262,55 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 /* ===== WORK-CENTER v1 END ===== */
 
 /* ============================================================
-   ===== DAY-TIMELINE v1 START =====
-   「働き方を知る」の一日の流れを、午前／午後のタイムライン図解にする。
-   既存の .tabs / .day__panel はそのまま使い、中身を差し替える。
+   ===== DAY-TIMELINE v2 START =====
+   「働き方を知る」の一日の流れ。午前／午後を左右2カラムに置き、
+   各ブロックはアナログ時計＋時刻＋見出し＋短文（＋補助写真）で構成する。
    ============================================================ */
 .tabs--big{gap:12px;flex-wrap:wrap;border-bottom:0;margin-bottom:30px}
 .tabs--big .tab{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border:1px solid var(--line);border-radius:9999px;background:#fff;color:var(--navy);margin-bottom:0}
 .tabs--big .tab svg{width:26px;height:26px;color:var(--navy)}
 .tabs--big .tab[aria-selected="true"]{background:var(--navy-d);border-color:var(--navy-d);color:#fff}
 .tabs--big .tab[aria-selected="true"] svg{color:#fff}
+.day2__lead{max-width:48em;font-size:15px;line-height:1.95;color:var(--sub);margin-bottom:28px}
 
-.day2__lead{max-width:48em;font-size:15px;line-height:1.95;color:var(--sub);margin-bottom:30px}
-.ampm+.ampm{margin-top:26px}
-.ampm__h{display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;background:var(--bg-soft);font-size:16px;font-weight:700}
-.ampm__h svg{width:26px;height:26px;color:var(--navy)}
-.ampm__h .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.18em;color:var(--red)}
-.ampm--pm .ampm__h{background:var(--navy-d);color:#fff}
-.ampm--pm .ampm__h svg{color:#fff}
-.ampm--pm .ampm__h .en{color:#ffb3b8}
+.tlcols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:start}
+.tlcol{border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:#fff}
+.tlcol__h{display:flex;align-items:center;gap:12px;padding:15px 24px;background:var(--bg-soft);font-size:17px;font-weight:700}
+.tlcol__h .en{font-family:Lato,sans-serif;font-size:12.5px;letter-spacing:.2em;color:var(--red)}
+.tlcol--pm .tlcol__h{background:var(--navy-d);color:#fff}
+.tlcol--pm .tlcol__h .en{color:#ffb3b8}
 
-.tl2{display:grid;grid-template-columns:repeat(auto-fit,minmax(214px,1fr));gap:16px;padding:22px;border:1px solid var(--line);border-top:0;border-radius:0 0 var(--radius-lg) var(--radius-lg);list-style:none}
-.tl2 li{position:relative;padding:20px 18px 22px;border-radius:var(--radius-lg);background:#fff;border:1px solid var(--line)}
-.tl2 li::after{content:"";position:absolute;right:-11px;top:50%;width:8px;height:8px;margin-top:-4px;border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:rotate(-45deg)}
-.tl2 li:last-child::after{display:none}
-.tl2__ic{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--bg-soft)}
-.tl2__ic svg{width:26px;height:26px;color:var(--navy)}
-.tl2 time{display:block;margin-top:14px;font-family:Lato,sans-serif;font-size:21px;letter-spacing:.02em;color:var(--red)}
-.tl2 b{display:block;margin-top:4px;font-size:15.5px;line-height:1.55}
-.tl2 p{margin-top:8px;font-size:13px;line-height:1.85;color:var(--sub)}
+.tl3{list-style:none;padding:8px 24px 26px;position:relative}
+.tl3::before{content:"";position:absolute;left:51px;top:28px;bottom:34px;width:2px;background:var(--line)}
+.tl3 li{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr);gap:0 18px;padding:18px 0 2px;align-items:start}
+.tl3 li:has(.tl3__ph){grid-template-columns:56px minmax(0,1fr) 92px}
+.tl3__b{min-width:0}
+.tl3 time{display:block;font-family:Lato,sans-serif;font-size:21px;letter-spacing:.02em;color:var(--red);line-height:1.2}
+.tl3 b{display:block;margin-top:5px;font-size:15.5px;line-height:1.55}
+.tl3 p{margin-top:7px;font-size:13px;line-height:1.85;color:var(--sub)}
+.tl3__ph{margin:4px 0 0}
+.tl3__ph img{width:92px;height:72px;object-fit:cover;border-radius:var(--radius)}
 
-@media (max-width:900px){
-  .tabs--big .tab{padding:12px 18px;font-size:13.5px}
-  .tabs--big .tab svg{width:22px;height:22px}
-  .tl2{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;padding:16px}
+/* アナログ時計 */
+.ck{width:56px;height:56px;flex:none;position:relative;z-index:1}
+.ck__f{fill:#fff;stroke:var(--navy-d);stroke-width:2}
+.ck__t{stroke:var(--line-mid,#c3cade);stroke-width:1.6;stroke-linecap:round}
+.ck__h{stroke:var(--navy-d);stroke-width:3;stroke-linecap:round}
+.ck__m{stroke:var(--red);stroke-width:2.2;stroke-linecap:round}
+.ck__c{fill:var(--navy-d)}
+
+@media (max-width:980px){
+  .tlcols{grid-template-columns:minmax(0,1fr);gap:20px}
 }
 @media (max-width:620px){
-  .tl2{grid-template-columns:minmax(0,1fr)}
-  .tl2 li::after{right:auto;left:50%;top:auto;bottom:-11px;margin:0 0 0 -4px;transform:rotate(45deg)}
-  .ampm__h{padding:12px 16px;font-size:15px}
+  .tabs--big .tab{padding:11px 16px;font-size:13px}
+  .tabs--big .tab svg{width:20px;height:20px}
+  .tl3{padding:6px 16px 22px}
+  .tl3::before{left:42px}
+  .tl3 li,.tl3 li:has(.tl3__ph){grid-template-columns:48px minmax(0,1fr);gap:0 14px}
+  .ck{width:48px;height:48px}
+  .tl3__ph{grid-column:2;margin-top:10px}
+  .tl3__ph img{width:100%;height:120px}
+  .tl3 time{font-size:19px}
 }
-/* ===== DAY-TIMELINE v1 END ===== */
+/* ===== DAY-TIMELINE v2 END ===== */
