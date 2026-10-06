@@ -790,6 +790,13 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    2×2グリッドにしたことによる追加分。写真と見出しを大きく見せる。
    ============================================================ */
 .people--4{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+.people--5{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.people--5 .person__media{aspect-ratio:4/3}
+.people--5 .person__body{padding:22px 22px 26px}
+.people--5 .person__body h3{font-size:18px;line-height:1.6}
+.people--5 .person__body p{margin-top:10px;font-size:13.5px}
+.people--5 .person__cat{font-size:11.5px}
+.people--5 .person__copy{font-size:13.5px;padding:28px 20px 18px}
 .people--4 .person__media{aspect-ratio:4/3}
 .people--4 .person__body{padding:26px 26px 30px}
 .people--4 .person__body h3{font-size:20px;line-height:1.6}
@@ -798,12 +805,13 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .people--4 .person__copy{font-size:14px;padding:30px 22px 20px}
 @media (max-width:860px){
   .people--4{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .people--5{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
   .people--4 .person__body{padding:20px 18px 22px}
   .people--4 .person__body h3{font-size:17px}
 }
 @media (max-width:620px){
-  .people--4{grid-template-columns:minmax(0,1fr)}
-  .people--4 .person__media{aspect-ratio:3/2}
+  .people--4,.people--5{grid-template-columns:minmax(0,1fr)}
+  .people--4 .person__media,.people--5 .person__media{aspect-ratio:3/2}
 }
 /* ===== PEOPLE-4 v1 END ===== */
 
@@ -1022,7 +1030,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .ivday p{font-size:14px;line-height:1.95;color:var(--sub)}
 
 /* 関連社員（写真付き） */
-.relpeople--photo{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;border-top:0}
+.relpeople--photo{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;border-top:0}
 .relpeople--photo a{padding:0;border-bottom:0}
 .relpeople--photo a:hover{background:transparent;padding-inline:0}
 .relpeople--photo figure{aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px}
@@ -1034,7 +1042,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .iv2--rev{grid-template-columns:minmax(0,.84fr) minmax(0,1fr)}
 
 @media (max-width:1000px){
-  .relpeople--photo{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .relpeople--photo{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .relpeople--photo b{font-size:14.5px}
   .relpeople--photo span{font-size:12px}
   .iv2--rev{grid-template-columns:minmax(0,1fr)}
