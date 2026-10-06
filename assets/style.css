@@ -1024,3 +1024,99 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ivmission li{font-size:13px;padding:10px 14px 10px 36px}
 }
 /* ===== INTERVIEW v3 END ===== */
+/* ============================================================
+   ===== INTERVIEW v4 START =====
+   社員インタビュー記事（編集型レイアウト）。
+   章ごとに背景と組み方を変え、写真は本文の隣に置く。
+   v2/v3 の指定を土台に後勝ちで上書きする。
+   ============================================================ */
+.ivwrap{width:min(100% - 56px,1240px);margin-inline:auto}
+.ivtext{max-width:840px}
+
+/* HERO：写真55% / テキスト45% */
+.iv__hero{padding-block:30px 0}
+.iv__head{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(0,1fr);gap:56px;align-items:center}
+.iv__photo{aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden}
+.iv__title{margin-top:16px;font-size:clamp(28px,3.6vw,46px);line-height:1.45}
+.iv__intro{margin-top:20px;font-size:16px;line-height:1.95;color:var(--sub)}
+.iv__prof{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);grid-template-columns:auto minmax(0,1fr);gap:10px 24px;font-size:13.5px}
+
+/* 章の枠組み */
+.ch{padding-block:84px}
+.ch--soft{background:var(--bg-soft)}
+.ch--navy{background:var(--navy-d);color:#fff}
+.ch--step{padding-block:56px 72px}
+.ch--quote{padding-block:72px}
+.ch__h{margin-bottom:34px}
+.ch__no{display:block;font-size:12px;letter-spacing:.2em;color:var(--muted)}
+.ch__en{font-family:Lato,sans-serif;font-size:12.5px;letter-spacing:.2em;color:var(--red);font-weight:700;margin-top:6px;display:block}
+.ch__ja{margin-top:10px;font-size:clamp(26px,3.2vw,40px);font-weight:700;line-height:1.45}
+.ch--navy .ch__ja{color:#fff}
+.ch--navy .ch__no{color:#9aa0c4}
+.ch--navy .ch__en{color:#ffb3b8}
+.ch__body{max-width:840px}
+.ch__sub{margin-top:14px;font-size:15px;color:var(--sub)}
+
+/* 本文 */
+.iv__qa+.iv__qa{margin-top:44px}
+.iv__q{font-size:clamp(17px,1.8vw,20px);line-height:1.6;font-weight:700;color:var(--navy)}
+.ch--navy .iv__q{color:#fff}
+.iv__q::before{content:"Q";font-family:Lato,sans-serif;color:var(--red);margin-right:12px}
+.ch--navy .iv__q::before{color:#ffb3b8}
+.iv__qa p{margin-top:16px;font-size:16.5px;line-height:1.95;color:var(--sub)}
+.ch--navy .iv__qa p{color:#c9cce0}
+.iv__qa p+p{margin-top:14px}
+
+/* 本文＋写真の2カラム（本文55% / 写真45%） */
+.ch__2col{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr);gap:56px;align-items:center}
+.ch__2col--rev{grid-template-columns:minmax(0,.95fr) minmax(0,1.15fr)}
+.ch__2col .ch__body{max-width:none}
+.ch__fig{margin:0}
+.ch__fig img{width:100%;border-radius:var(--radius-lg);display:block}
+.ch__fig--wide img{aspect-ratio:3/2;object-fit:cover}
+.ch__fig--sq img{aspect-ratio:1/1;object-fit:cover}
+.ch__fig figcaption{margin-top:12px;font-size:12.5px;line-height:1.8;color:var(--sub)}
+.ch__fig figcaption em{font-style:normal;margin-left:10px;color:var(--muted)}
+
+/* 仕事の流れ */
+.ch__flowh{margin-top:48px;font-size:clamp(16px,1.9vw,20px);font-weight:700;line-height:1.7}
+.ivmission{margin-top:18px}
+
+/* 大きな引用（カード化しない・左寄せ・赤の短い線） */
+.pullquote{margin:0;max-width:16em;font-size:clamp(28px,4vw,46px);font-weight:700;line-height:1.6;letter-spacing:.01em;color:var(--navy);padding-top:28px;position:relative}
+.pullquote::before{content:"";position:absolute;left:0;top:0;width:54px;height:3px;background:var(--red)}
+.pullquote--navy{color:#fff;max-width:17em;font-size:clamp(24px,3.2vw,38px)}
+
+/* キャリアステップ */
+.ivstep{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 48px;border-top:2px solid var(--navy-d)}
+.ivstep .en{font-size:clamp(20px,2.4vw,28px);letter-spacing:.04em;color:var(--navy);display:block}
+.ivstep b{margin-top:10px;font-size:17px}
+.ivstep p{font-size:13.5px}
+
+/* 1日の流れ */
+.ivday li{grid-template-columns:44px 104px minmax(0,1fr);align-items:start;gap:4px 20px}
+.ivday__ic{grid-row:span 2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--bg-soft);color:var(--navy)}
+.ch--soft .ivday__ic{background:#fff}
+.ivday__ic svg{width:24px;height:24px}
+.ivday time{grid-row:span 2}
+
+.ivcta .btn{font-size:15px}
+
+@media (max-width:1000px){
+  .iv__head{grid-template-columns:minmax(0,1fr);gap:26px}
+  .iv__photo{aspect-ratio:3/2}
+  .ch{padding-block:56px}
+  .ch--step{padding-block:40px 48px}
+  .ch__2col,.ch__2col--rev{grid-template-columns:minmax(0,1fr);gap:26px}
+  .ch__2col--rev .ch__fig{order:-1}
+  .ivstep{grid-template-columns:minmax(0,1fr)}
+  .pullquote{max-width:none}
+}
+@media (max-width:620px){
+  .ivwrap{width:calc(100% - 32px)}
+  .iv__qa p{font-size:15.5px;line-height:1.95}
+  .ivday li{grid-template-columns:40px minmax(0,1fr);gap:4px 14px}
+  .ivday__ic{grid-row:span 3;width:40px;height:40px}
+  .ivday time{grid-row:auto;font-size:20px}
+}
+/* ===== INTERVIEW v4 END ===== */
