@@ -806,3 +806,48 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .people--4 .person__media{aspect-ratio:3/2}
 }
 /* ===== PEOPLE-4 v1 END ===== */
+
+/* ============================================================
+   ===== INTERVIEW v1 START =====
+   社員インタビュー詳細ページ（/people/<職種>/）と、
+   一覧カードの2導線（インタビューを読む／募集要項）用。
+   ============================================================ */
+.personcard{display:flex;flex-direction:column}
+.personcard .person{flex:1}
+.person__sub{margin-top:10px}
+.textlink--sm{font-size:12.5px;color:var(--sub)}
+.textlink--sm:hover{color:var(--red)}
+
+.iv__hero{padding-block:28px 10px}
+.iv__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:48px;align-items:center}
+.iv__title{margin-top:14px;font-size:clamp(26px,3.6vw,44px);font-weight:700;line-height:1.5}
+.iv__intro{margin-top:22px;font-size:15.5px;line-height:2.1;color:var(--sub);max-width:34em}
+.iv__back{margin-top:22px}
+.iv__photo{aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden}
+.iv__photo img{width:100%;height:100%;object-fit:cover}
+.iv__prof{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 26px;font-size:13.5px;max-width:52em}
+.iv__prof dt{color:var(--muted);font-weight:700}
+.iv__prof dd{color:var(--sub)}
+
+.iv__group+.iv__group{margin-top:46px}
+.iv__gh{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--red);font-weight:700;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.iv__qa{margin-top:26px}
+.iv__q{font-size:clamp(17px,1.9vw,21px);line-height:1.65;font-weight:700}
+.iv__q::before{content:"Q";font-family:Lato,sans-serif;color:var(--red);margin-right:12px;font-size:.9em}
+.ph{margin-top:12px;padding:16px 20px;border:1px dashed var(--line-mid,#c3cade);border-radius:var(--radius);background:var(--bg-soft);font-size:13.5px;color:var(--muted)}
+
+.relpeople{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;border-top:1px solid var(--line)}
+.relpeople a{display:block;padding:22px 2px;border-bottom:1px solid var(--line);transition:background-color .25s,padding .25s var(--ease)}
+.relpeople a:hover{background:#fff;padding-inline:14px 4px}
+.relpeople small{display:block;font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--muted)}
+.relpeople b{display:block;margin-top:6px;font-size:16px}
+.relpeople span{display:block;margin-top:4px;font-size:13px;color:var(--sub)}
+
+@media (max-width:900px){
+  .iv__head{grid-template-columns:minmax(0,1fr);gap:24px}
+  .iv__photo{aspect-ratio:3/2}
+  .iv__prof{margin-top:32px;grid-template-columns:minmax(0,1fr);gap:2px}
+  .iv__prof dt{margin-top:10px}
+  .relpeople{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== INTERVIEW v1 END ===== */
