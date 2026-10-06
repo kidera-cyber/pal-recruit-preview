@@ -818,23 +818,42 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .textlink--sm{font-size:12.5px;color:var(--sub)}
 .textlink--sm:hover{color:var(--red)}
 
-.iv__hero{padding-block:28px 10px}
-.iv__head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:48px;align-items:center}
-.iv__title{margin-top:14px;font-size:clamp(26px,3.6vw,44px);font-weight:700;line-height:1.5}
-.iv__intro{margin-top:22px;font-size:15.5px;line-height:2.1;color:var(--sub);max-width:34em}
-.iv__back{margin-top:22px}
+/* 仮原稿の注記（本番公開時にHTML側ごと削除） */
+.ivnote{background:#fff4f4;border-top:1px solid #f3d3d5;border-bottom:1px solid #f3d3d5;padding:12px 0;font-size:12.5px;line-height:1.8;color:#8c3038}
+.ivnote b{color:var(--red)}
+
+/* HERO：写真 約57% / テキスト 約43% */
+.iv__hero{padding-block:26px 0}
+.iv__head{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:48px;align-items:center}
 .iv__photo{aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden}
 .iv__photo img{width:100%;height:100%;object-fit:cover}
-.iv__prof{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 26px;font-size:13.5px;max-width:52em}
+.iv__title{margin-top:14px;font-size:clamp(25px,3.1vw,38px);font-weight:700;line-height:1.5}
+.iv__intro{margin-top:18px;font-size:15px;line-height:2.05;color:var(--sub)}
+.iv__prof{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;font-size:13px}
 .iv__prof dt{color:var(--muted);font-weight:700}
 .iv__prof dd{color:var(--sub)}
+.iv__back{margin-top:20px}
 
-.iv__group+.iv__group{margin-top:46px}
+/* 本文：最大960pxで中央 */
+.ivbody{width:min(100% - 48px,960px);margin-inline:auto}
+.iv__group+.iv__group{margin-top:44px}
 .iv__gh{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--red);font-weight:700;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.iv__qa{margin-top:26px}
-.iv__q{font-size:clamp(17px,1.9vw,21px);line-height:1.65;font-weight:700}
+.iv__qa{margin-top:30px}
+.iv__q{font-size:clamp(17px,1.8vw,20px);line-height:1.65;font-weight:700}
 .iv__q::before{content:"Q";font-family:Lato,sans-serif;color:var(--red);margin-right:12px;font-size:.9em}
-.ph{margin-top:12px;padding:16px 20px;border:1px dashed var(--line-mid,#c3cade);border-radius:var(--radius);background:var(--bg-soft);font-size:13.5px;color:var(--muted)}
+.iv__qa p{margin-top:14px;font-size:15px;line-height:2.15;color:var(--sub)}
+.iv__qa p+p{margin-top:12px}
+
+/* 引用 */
+.iv__quotesec{padding-block:56px 10px}
+.iv__quote{margin:0;padding:34px 0 36px;border-top:2px solid var(--navy-d);border-bottom:2px solid var(--navy-d);font-size:clamp(20px,2.6vw,30px);font-weight:700;line-height:1.75;letter-spacing:.01em}
+.iv__quote::before{content:"\201C";font-family:Lato,sans-serif;color:var(--red);margin-right:6px}
+
+/* 途中の写真（全幅） */
+.iv__fig{margin:56px 0 0}
+.iv__fig img{width:100%;max-height:520px;object-fit:cover}
+.iv__fig figcaption{width:min(100% - 48px,960px);margin:14px auto 0;font-size:12.5px;color:var(--sub)}
+.iv__fig figcaption span{margin-left:12px;color:var(--muted)}
 
 .relpeople{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;border-top:1px solid var(--line)}
 .relpeople a{display:block;padding:22px 2px;border-bottom:1px solid var(--line);transition:background-color .25s,padding .25s var(--ease)}
@@ -846,8 +865,13 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 @media (max-width:900px){
   .iv__head{grid-template-columns:minmax(0,1fr);gap:24px}
   .iv__photo{aspect-ratio:3/2}
-  .iv__prof{margin-top:32px;grid-template-columns:minmax(0,1fr);gap:2px}
-  .iv__prof dt{margin-top:10px}
+  .iv__quotesec{padding-block:40px 6px}
+  .iv__fig{margin-top:40px}
+  .iv__fig img{max-height:300px}
   .relpeople{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .ivbody,.iv__fig figcaption{width:calc(100% - 32px)}
+  .iv__qa p{font-size:14.5px;line-height:2.05}
 }
 /* ===== INTERVIEW v1 END ===== */
