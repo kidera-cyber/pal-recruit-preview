@@ -954,3 +954,60 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jobtile{padding:20px 18px 22px}
 }
 /* ===== HOME-ICONS v1 END ===== */
+
+/* ============================================================
+   ===== INTERVIEW v3 START =====
+   社員インタビュー記事の章追加分（VALUE／MISSION／1 DAY／関連社員の写真付き）。
+   INTERVIEW v2 の指定を土台に、後勝ちで上書きする。
+   ============================================================ */
+.ivstep__h{display:block;margin-top:56px;font-size:11.5px;letter-spacing:.18em;color:var(--muted);font-weight:700}
+.ivstep{margin-top:14px}
+
+/* VALUE：本人の言葉を大きく見せる章 */
+.ivvalue{background:var(--navy-d);color:#fff;padding-block:72px}
+.ivvalue .ivchap__no{color:#9aa0c4}
+.ivvalue .ivchap__en{color:#ffb3b8}
+.ivvalue .ivchap__ja{color:#fff}
+.ivvalue .iv__quote{max-width:1000px;font-size:clamp(23px,3.2vw,40px);line-height:1.7}
+.ivvalue .ph{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);color:#b9bdd6}
+
+/* MISSION：役割のステップ */
+.ivmission__lead{font-size:clamp(17px,2vw,21px);font-weight:700;line-height:1.75}
+.ivmission{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;counter-reset:m;list-style:none}
+.ivmission li{position:relative;padding:12px 18px 12px 40px;border:1px solid var(--line);border-radius:9999px;background:#fff;font-size:14px;font-weight:700}
+.ivmission li::before{counter-increment:m;content:counter(m,decimal-leading-zero);position:absolute;left:16px;top:50%;transform:translateY(-50%);font-family:Lato,sans-serif;font-size:11px;color:var(--red)}
+
+/* 1 DAY SCHEDULE */
+.ivday{list-style:none;margin-top:8px;display:grid;gap:0;border-top:1px solid var(--line-mid,#c3cade)}
+.ivday li{display:grid;grid-template-columns:104px minmax(0,1fr);gap:6px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.ivday time{grid-row:span 2;font-family:Lato,sans-serif;font-size:24px;color:var(--navy);line-height:1.2}
+.ivday b{font-size:16.5px;line-height:1.6}
+.ivday p{font-size:14px;line-height:1.95;color:var(--sub)}
+
+/* 関連社員（写真付き） */
+.relpeople--photo{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;border-top:0}
+.relpeople--photo a{padding:0;border-bottom:0}
+.relpeople--photo a:hover{background:transparent;padding-inline:0}
+.relpeople--photo figure{aspect-ratio:4/3;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:14px}
+.relpeople--photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.relpeople--photo a:hover img{transform:scale(1.04)}
+.relpeople--photo span{margin-top:6px;line-height:1.7}
+
+/* 写真を左に置く2カラム */
+.iv2--rev{grid-template-columns:minmax(0,.84fr) minmax(0,1fr)}
+
+@media (max-width:1000px){
+  .relpeople--photo{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .relpeople--photo b{font-size:14.5px}
+  .relpeople--photo span{font-size:12px}
+  .iv2--rev{grid-template-columns:minmax(0,1fr)}
+  .ivvalue{padding-block:52px}
+  .ivstep__h{margin-top:40px}
+}
+@media (max-width:620px){
+  .relpeople--photo{grid-template-columns:minmax(0,1fr);gap:22px}
+  .ivday li{grid-template-columns:minmax(0,1fr);gap:2px}
+  .ivday time{grid-row:auto;font-size:21px}
+  .ivmission li{font-size:13px;padding:10px 14px 10px 36px}
+}
+/* ===== INTERVIEW v3 END ===== */
