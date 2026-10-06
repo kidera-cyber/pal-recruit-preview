@@ -1152,3 +1152,64 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ivday time{grid-row:auto;font-size:20px}
 }
 /* ===== INTERVIEW v4 END ===== */
+
+/* ============================================================
+   ===== VISUAL v1 START =====
+   about / work を図解中心に再構成したことによる追加分。
+   ハブ図・アイコンカード・比較表・次ページ導線。
+   ============================================================ */
+.hub{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:44px;align-items:center}
+.hub__center{position:relative;padding:36px 32px;border-radius:var(--radius-lg);background:var(--navy-d);color:#fff;text-align:center}
+.hub__center .en{font-size:11.5px;letter-spacing:.2em;color:#ffb3b8}
+.hub__center b{display:block;margin-top:10px;font-size:clamp(18px,2.1vw,24px);line-height:1.6}
+.hub__nodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;list-style:none;border-top:1px solid var(--line)}
+.hub__nodes--5{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hub__nodes li{display:grid;grid-template-columns:42px minmax(0,1fr);gap:2px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.hub__nodes svg{grid-row:span 2;width:42px;height:42px;color:var(--navy)}
+.hub__nodes b{font-size:15px;line-height:1.5}
+.hub__nodes span{font-size:12.5px;line-height:1.8;color:var(--sub)}
+
+.pillar__ic{display:block;width:40px;height:40px;color:var(--navy);margin-bottom:12px}
+
+.iconcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none}
+.iconcards li{padding:26px 24px 28px;border-radius:var(--radius-lg);border:1px solid var(--line);background:#fff;transition:transform .3s var(--ease),box-shadow .3s}
+.iconcards li:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(38,41,70,.09)}
+.iconcards svg{width:40px;height:40px;color:var(--navy)}
+.iconcards b{display:block;margin-top:14px;font-size:16.5px;line-height:1.55}
+.iconcards p{margin-top:10px;font-size:13.5px;line-height:1.9;color:var(--sub)}
+.iconcards--plain li{background:#fff}
+
+.field__fit{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:12.5px;line-height:1.85;color:var(--sub)}
+.field__fit span{display:inline-block;margin-right:8px;padding:2px 8px;border-radius:2px;background:var(--navy-d);color:#fff;font-size:10.5px;letter-spacing:.06em}
+
+.comp{margin-top:56px}
+.comp__h{font-size:clamp(17px,2vw,21px);font-weight:700;margin-bottom:16px}
+.comp table{width:100%;border-collapse:collapse;font-size:14px}
+.comp th,.comp td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+.comp thead th{font-size:12px;letter-spacing:.08em;color:var(--muted);border-bottom:2px solid var(--navy-d);white-space:nowrap}
+.comp tbody th{font-weight:700;white-space:nowrap}
+.comp td:last-child{color:var(--red);font-family:Lato,sans-serif;font-size:12.5px;letter-spacing:.04em;white-space:nowrap}
+.comp .note{margin-top:14px}
+
+.nextlinks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;list-style:none;border-top:1px solid var(--line-mid,#c3cade)}
+.nextlinks a{display:block;padding:22px 2px;border-bottom:1px solid var(--line);transition:background-color .25s,padding .25s var(--ease)}
+.nextlinks a:hover{background:var(--bg-soft);padding-inline:14px 4px}
+.nextlinks small{display:block;font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--red)}
+.nextlinks b{display:block;margin-top:6px;font-size:16px;line-height:1.5}
+.nextlinks span{display:block;margin-top:6px;font-size:12.5px;line-height:1.8;color:var(--sub)}
+
+@media (max-width:1080px){
+  .hub{grid-template-columns:minmax(0,1fr);gap:28px}
+  .iconcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nextlinks{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+}
+@media (max-width:720px){
+  .hub__nodes,.hub__nodes--5{grid-template-columns:minmax(0,1fr);gap:0}
+  .hub__center{padding:28px 22px}
+  .iconcards{grid-template-columns:minmax(0,1fr);gap:14px}
+  .iconcards li{padding:20px 18px 22px}
+  .nextlinks{grid-template-columns:minmax(0,1fr)}
+  .comp{margin-top:40px;overflow-x:auto}
+  .comp table{min-width:560px}
+}
+/* ===== VISUAL v1 END ===== */

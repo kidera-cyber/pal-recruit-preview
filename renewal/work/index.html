@@ -12,9 +12,65 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261006i">
+<link rel="stylesheet" href="../../assets/style.css?v=20261006j">
 </head>
 <body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
+<defs><style>
+  .s{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .a{fill:none;stroke:#cf131b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .af{fill:#cf131b;stroke:none}
+</style></defs>
+
+<symbol id="ic-forklift" viewBox="0 0 32 32"><path class="s" d="M4 23h11M4 23V13h7l3 4v6"/><path class="s" d="M14 17h-3v-4"/><circle class="s" cx="8" cy="25.5" r="2.5"/><circle class="s" cx="17" cy="25.5" r="2.5"/><path class="a" d="M21 23V6M21 23h6"/><path class="s" d="M21 11h4"/></symbol>
+
+<symbol id="ic-agv" viewBox="0 0 32 32"><rect class="s" x="4" y="14" width="24" height="8" rx="2"/><circle class="s" cx="10" cy="25" r="2.5"/><circle class="s" cx="22" cy="25" r="2.5"/><path class="s" d="M10 14V9h12v5"/><path class="a" d="M13 18h6"/></symbol>
+
+<symbol id="ic-truck" viewBox="0 0 32 32"><path class="s" d="M3 8h14v13H3zM17 12h5l4 4v5h-9z"/><circle class="s" cx="9" cy="24" r="2.5"/><circle class="s" cx="22" cy="24" r="2.5"/><path class="a" d="M6 14h7"/></symbol>
+
+<symbol id="ic-rack" viewBox="0 0 32 32"><path class="s" d="M5 5v22M27 5v22M5 12h22M5 20h22M5 27h22"/><rect class="s" x="9" y="6" width="6" height="5"/><rect class="a" x="18" y="14" width="6" height="5"/><rect class="s" x="9" y="22" width="6" height="4"/></symbol>
+
+<symbol id="ic-handy" viewBox="0 0 32 32"><rect class="s" x="9" y="3" width="14" height="22" rx="3"/><path class="s" d="M13 8h6M13 12h6"/><path class="a" d="M12 17h8"/><path class="s" d="M16 25v4"/></symbol>
+
+<symbol id="ic-dashboard" viewBox="0 0 32 32"><rect class="s" x="3" y="6" width="26" height="17" rx="2"/><path class="s" d="M11 27h10M16 23v4"/><path class="s" d="M8 18v-4M13 18v-7"/><path class="a" d="M18 18v-5M23 18v-8"/></symbol>
+
+<symbol id="ic-chart" viewBox="0 0 32 32"><path class="s" d="M5 5v22h22"/><path class="a" d="M9 21l5-6 4 3 7-9"/><circle class="af" cx="25" cy="9" r="2"/></symbol>
+
+<symbol id="ic-worker" viewBox="0 0 32 32"><path class="a" d="M9 11a7 7 0 0114 0"/><path class="s" d="M7 11h18"/><circle class="s" cx="16" cy="17" r="3.5"/><path class="s" d="M8 29c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+
+<symbol id="ic-engineer" viewBox="0 0 32 32"><rect class="s" x="5" y="7" width="22" height="14" rx="2"/><path class="s" d="M3 25h26"/><path class="a" d="M13 12l-3 2 3 2M19 12l3 2-3 2"/></symbol>
+
+<symbol id="ic-office" viewBox="0 0 32 32"><circle class="s" cx="16" cy="10" r="4.5"/><path class="s" d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10"/><path class="a" d="M16 20v8"/></symbol>
+
+<symbol id="ic-conveyor" viewBox="0 0 32 32"><rect class="s" x="3" y="18" width="26" height="5" rx="2.5"/><circle class="s" cx="8" cy="20.5" r="1.2"/><circle class="s" cx="16" cy="20.5" r="1.2"/><circle class="s" cx="24" cy="20.5" r="1.2"/><rect class="a" x="11" y="8" width="10" height="7" rx="1"/><path class="s" d="M16 8V4"/></symbol>
+
+<symbol id="ic-pallet" viewBox="0 0 32 32"><path class="s" d="M3 24h26M3 28h26M7 24v4M16 24v4M25 24v4"/><rect class="s" x="7" y="9" width="8" height="8"/><rect class="a" x="17" y="12" width="8" height="5"/><path class="s" d="M11 9V5"/></symbol>
+
+<symbol id="ic-cloud" viewBox="0 0 32 32"><path class="s" d="M9 21a5 5 0 011-9.9 7 7 0 0113.3 2A4.5 4.5 0 0123 21z"/><path class="a" d="M16 24v5M11 27l5 2 5-2"/></symbol>
+
+<symbol id="ic-manager" viewBox="0 0 32 32"><rect class="s" x="4" y="9" width="24" height="18" rx="2"/><path class="s" d="M11 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/><path class="a" d="M12 18h8M16 14v8"/></symbol>
+
+<symbol id="ic-meeting" viewBox="0 0 32 32"><path class="s" d="M4 6h17a2 2 0 012 2v8a2 2 0 01-2 2H11l-5 4v-4H4a2 2 0 01-2-2V8a2 2 0 012-2z" transform="translate(2 1)"/><path class="a" d="M10 12h10"/><path class="s" d="M10 16h6"/></symbol>
+
+<!-- WHAT WE DO 用：人が関わっていることが分かるアイコン（2026-10 再制作） -->
+<symbol id="ic2-field" viewBox="0 0 32 32"><path class="s" d="M3 6v21M11 6v21M3 13h8M3 20h8"/><rect class="a" x="4.5" y="14.5" width="5" height="4"/><circle class="s" cx="22" cy="12" r="3.5"/><path class="s" d="M15.5 27c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></symbol>
+
+<symbol id="ic2-data" viewBox="0 0 32 32"><rect class="s" x="4" y="4" width="24" height="15" rx="2"/><path class="a" d="M10 15v-4M15 15v-7M20 15v-3"/><circle class="s" cx="16" cy="24" r="2.6"/><path class="s" d="M10.5 30c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></symbol>
+
+<symbol id="ic2-fde" viewBox="0 0 32 32"><path class="s" d="M2 9v14M6.5 9v14M2 16h4.5"/><rect class="s" x="24" y="10" width="7" height="10" rx="1.5"/><circle class="s" cx="16" cy="10" r="3.5"/><path class="s" d="M10.5 22c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><path class="a" d="M8.5 16h3M20.5 16h3"/></symbol>
+
+<symbol id="ic2-system" viewBox="0 0 32 32"><rect class="s" x="9" y="7" width="18" height="13" rx="2"/><path class="s" d="M5 25h26l-2-5H9z"/><path class="a" d="M15 11l-2.5 2.5L15 16M21 11l2.5 2.5L21 16"/></symbol>
+
+<symbol id="ic2-equip" viewBox="0 0 32 32"><rect class="s" x="2" y="16" width="16" height="7" rx="2"/><circle class="s" cx="6.5" cy="26" r="2.2"/><circle class="s" cx="14" cy="26" r="2.2"/><rect class="a" x="6" y="9" width="8" height="6"/><circle class="s" cx="25" cy="12" r="3"/><path class="s" d="M21 23c0-2.2 1.8-4 4-4s4 1.8 4 4"/></symbol>
+
+<symbol id="ic2-transport" viewBox="0 0 32 32"><path class="s" d="M2 8h13v11H2zM15 11h4.5l4 4v4H15z"/><circle class="s" cx="8" cy="22.5" r="2.2"/><circle class="s" cx="21" cy="22.5" r="2.2"/><path class="a" d="M3 28h26"/><path class="s" d="M5 13h6"/></symbol>
+
+<symbol id="ic2-operate" viewBox="0 0 32 32"><circle class="s" cx="22" cy="12" r="5"/><path class="s" d="M22 4v2M22 18v2M14 12h2M28 12h2M16.5 6.5l1.4 1.4M26.1 16.1l1.4 1.4M27.5 6.5l-1.4 1.4M17.9 16.1l-1.4 1.4"/><path class="a" d="M19.8 12l1.6 1.6 3-3.4"/><circle class="s" cx="9" cy="16" r="3"/><path class="s" d="M4 27c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+
+<symbol id="ic2-improve" viewBox="0 0 32 32"><path class="s" d="M4 27h25"/><path class="a" d="M7 22l6-6 4 3 8-9"/><path class="a" d="M21 10h4v4"/><circle class="s" cx="9" cy="8" r="2.6"/><path class="s" d="M4 16c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+</svg>
 
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
@@ -55,7 +111,7 @@
   <div class="wrap">
     <p class="slabel">Our Work</p>
     <h1 class="ptitle">仕事を知る。</h1>
-    <p class="plead">PALの仕事は、分断された物流現場・システム・設備・データを、現場で使える仕組みに変えていくことです。ひとつの職種だけでは完結しません。現場運営・FDE・プロダクト・運行管理・営業・マーケティング・コーポレートが、それぞれの専門性を持ちながら同じ課題に向き合い、課題整理から設計・実装・運用・改善までを進めます。</p>
+    <p class="plead">PALの仕事は、分断された現場・システム・設備・データを、現場で使える仕組みに変えていくこと。ひとつの職種だけでは完結しません。それぞれの専門性を持った人が、同じ課題に向き合います。</p>
   </div>
 </section>
 
@@ -64,32 +120,21 @@
   <div class="wrap">
     <div class="shead rv">
       <p class="slabel">How We Work</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">現場の課題を起点に、<br>仕事がつながっていきます。</h2>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">職種は違っても、<br>向き合っている課題は同じです。</h2>
     </div>
-    <div class="chain rv">
-      <div class="chain__step">
-        <span class="en">01</span>
-        <b>物流現場の課題</b>
-        <p>データ構造、帳票、権限、設備、レイアウト、業務フロー。現場ごとに異なる制約が出発点です。</p>
+    <div class="hub hub--jobs rv">
+      <div class="hub__center">
+        <span class="en">GOAL</span>
+        <b>物流DXを、<br>現場で動く形にする</b>
       </div>
-      <div class="chain__step chain__step--mid">
-        <span class="en">02</span>
-        <b>職種が連携して進める</b>
-        <ul class="chain__tags">
-          <li>現場運営</li><li>FDE</li><li>プロダクト</li><li>運行管理</li><li>営業</li><li>マーケティング</li><li>コーポレート</li>
-        </ul>
-        <p>課題の整理、技術要件への翻訳、設計、実装。立場の違うメンバーが同じ課題を見ながら進めます。</p>
-      </div>
-      <div class="chain__step">
-        <span class="en">03</span>
-        <b>現場で動く仕組み</b>
-        <p>提案書や計画ではなく、現場で使われ、成果につながる仕組みにします。</p>
-      </div>
-      <div class="chain__step">
-        <span class="en">04</span>
-        <b>運用・改善</b>
-        <p>導入して終わりにせず、運用設計・定着・改善まで。現場のデータと知見を次の判断に使える状態にします。</p>
-      </div>
+      <ul class="hub__nodes hub__nodes--5">
+        <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>BPO / 現場運営</b><span>現場を安定して回し、改善を積み重ねる</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>FDE</b><span>課題を技術要件へ翻訳し、実装までつなぐ</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>システム / プロダクト</b><span>現場で使われる仕組みを設計・開発する</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-transport"></use></svg><b>営業 / コンサル・DTS</b><span>顧客の課題を整理し、現場の実行につなぐ</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg><b>コーポレート</b><span>各部署が仕事に集中できる環境を整える</span></li>
+      </ul>
+    </div>
     </div>
 
     <div class="rv" style="margin-top:46px">
@@ -133,24 +178,28 @@
         <h4>センター長／候補</h4>
         <p>物流現場をDXで回す中核。人を巻き込み、現場が効率よく稼働する環境をつくる。事業の起点であり土台、採用は最優先。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Operate / Evolve</dd><dt>主な連携先</dt><dd>現場メンバー・FDE・営業</dd></dl>
+        <p class="field__fit"><span>向いている人</span>現場マネジメントや数値管理の経験がある方、現場とデジタルの両方を楽しめる方。</p>
 </article>
       <article class="field field--core">
         <p class="field__cat">FDE</p>
         <h4>FDE（Forward Deployed Engineer）</h4>
         <p>顧客の業務課題を技術要件へ翻訳し、設計・実装・運用・改善までをつなぐエンジニアの職種。現場理解が起点。技術・物流の知識は入社後に習得できます。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design / Deploy / Operate / Evolve</dd><dt>主な連携先</dt><dd>現場・エンジニア・営業・プロダクト</dd></dl>
+        <p class="field__fit"><span>向いている人</span>技術力より人物面を重視。現場が好きで、課題解決に意欲がある方（未経験・新卒可）。</p>
 </article>
       <article class="field">
         <p class="field__cat">Product Engineer</p>
         <h4>プロダクト企画・開発エンジニア</h4>
         <p>現場起点で、使われ続けるプロダクトを生み出す（DXプロダクト開発本部）。React／TypeScriptを主軸に、活用まで見届ける。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design / Deploy / Evolve</dd><dt>主な連携先</dt><dd>FDE・現場・経営</dd></dl>
+        <p class="field__fit"><span>向いている人</span>React／TypeScriptでのWeb開発経験があり、現場起点でプロダクトを捉えたい方。</p>
 </article>
       <article class="field">
         <p class="field__cat">DTS / 運行管理</p>
         <h4>運行管理・所長</h4>
         <p>ドライバーをまとめ、運送の足回りの信頼を築いた上でDX提案へ。安全を最優先に、データから改善と提案に転換する。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Operate / Evolve</dd><dt>主な連携先</dt><dd>ドライバー・現場・FDE</dd></dl>
+        <p class="field__fit"><span>向いている人</span>配車・運行管理の経験がある方、ドライバーの目線に立ち安全を最優先できる方。</p>
 </article>
       <article class="field">
         <p class="field__cat">Sales / 既存深耕</p>
@@ -176,6 +225,22 @@
         <p>会社の土台を支えながら、AI・システムを積極活用し、現場と経営の双方がより円滑に動ける環境を自らつくる。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Operate / Evolve</dd><dt>主な連携先</dt><dd>全部門</dd></dl>
 </article>
+    </div>
+
+    <div class="comp rv">
+      <p class="comp__h">職種の違いを、ひと目で。</p>
+      <table>
+        <thead><tr><th>職種</th><th>主な役割</th><th>関わる段階</th></tr></thead>
+        <tbody>
+          <tr><th>BPO / 現場運営</th><td>現場を安定して回し、改善を積み重ねる</td><td>Operate / Evolve</td></tr>
+          <tr><th>FDE</th><td>課題を技術要件へ翻訳し、実装までつなぐ</td><td>Design / Deploy / Operate / Evolve</td></tr>
+          <tr><th>プロダクト企画・開発</th><td>現場で使われる仕組みを設計・開発する</td><td>Design / Deploy / Evolve</td></tr>
+          <tr><th>DTS / 運行管理</th><td>安全な運行を土台に、データで改善する</td><td>Operate / Evolve</td></tr>
+          <tr><th>営業・事業開発</th><td>顧客の課題を整理し、提案・実行につなぐ</td><td>Design / Evolve</td></tr>
+          <tr><th>コーポレート</th><td>各部署が仕事に集中できる環境を整える</td><td>Operate / Evolve</td></tr>
+        </tbody>
+      </table>
+      <p class="note">※「関わる段階」は Design / Deploy / Operate / Evolve のどこに主に関わるかの目安です。</p>
     </div>
 
     <p class="rv" style="margin-top:30px"><a class="textlink" href="../jobs/">募集要項で、条件と選考の流れを見る</a></p>
@@ -224,7 +289,12 @@
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">この仕事を、誰がしているのか。</h2>
       <p class="slead">実際に働く人の仕事を見るか、その先のキャリアの広がりを見るか。どちらからでもどうぞ。</p>
     </div>
-    <p class="rv"><a class="btn btn--red" href="../people/">社員を知る<span class="btn__ico" aria-hidden="true">▶</span></a>　<a class="btn btn--ghost" href="../career/">キャリアを知る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <ul class="nextlinks rv">
+      <li><a href="../people/"><small>PEOPLE</small><b>この仕事をしている人を見る</b><span>5職種の社員インタビュー</span></a></li>
+      <li><a href="../culture/"><small>CULTURE</small><b>一日の働き方を見る</b><span>FDE・BPO・エンジニアの一日</span></a></li>
+      <li><a href="../career/"><small>CAREER</small><b>キャリアを知る</b><span>Crossover と Career Path</span></a></li>
+      <li><a href="../jobs/"><small>JOBS</small><b>募集職種を見る</b><span>現在募集中のポジション</span></a></li>
+    </ul>
   </div>
 </section>
 

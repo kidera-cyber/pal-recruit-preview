@@ -12,9 +12,65 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261006i">
+<link rel="stylesheet" href="../../assets/style.css?v=20261006j">
 </head>
 <body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
+<defs><style>
+  .s{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .a{fill:none;stroke:#cf131b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .af{fill:#cf131b;stroke:none}
+</style></defs>
+
+<symbol id="ic-forklift" viewBox="0 0 32 32"><path class="s" d="M4 23h11M4 23V13h7l3 4v6"/><path class="s" d="M14 17h-3v-4"/><circle class="s" cx="8" cy="25.5" r="2.5"/><circle class="s" cx="17" cy="25.5" r="2.5"/><path class="a" d="M21 23V6M21 23h6"/><path class="s" d="M21 11h4"/></symbol>
+
+<symbol id="ic-agv" viewBox="0 0 32 32"><rect class="s" x="4" y="14" width="24" height="8" rx="2"/><circle class="s" cx="10" cy="25" r="2.5"/><circle class="s" cx="22" cy="25" r="2.5"/><path class="s" d="M10 14V9h12v5"/><path class="a" d="M13 18h6"/></symbol>
+
+<symbol id="ic-truck" viewBox="0 0 32 32"><path class="s" d="M3 8h14v13H3zM17 12h5l4 4v5h-9z"/><circle class="s" cx="9" cy="24" r="2.5"/><circle class="s" cx="22" cy="24" r="2.5"/><path class="a" d="M6 14h7"/></symbol>
+
+<symbol id="ic-rack" viewBox="0 0 32 32"><path class="s" d="M5 5v22M27 5v22M5 12h22M5 20h22M5 27h22"/><rect class="s" x="9" y="6" width="6" height="5"/><rect class="a" x="18" y="14" width="6" height="5"/><rect class="s" x="9" y="22" width="6" height="4"/></symbol>
+
+<symbol id="ic-handy" viewBox="0 0 32 32"><rect class="s" x="9" y="3" width="14" height="22" rx="3"/><path class="s" d="M13 8h6M13 12h6"/><path class="a" d="M12 17h8"/><path class="s" d="M16 25v4"/></symbol>
+
+<symbol id="ic-dashboard" viewBox="0 0 32 32"><rect class="s" x="3" y="6" width="26" height="17" rx="2"/><path class="s" d="M11 27h10M16 23v4"/><path class="s" d="M8 18v-4M13 18v-7"/><path class="a" d="M18 18v-5M23 18v-8"/></symbol>
+
+<symbol id="ic-chart" viewBox="0 0 32 32"><path class="s" d="M5 5v22h22"/><path class="a" d="M9 21l5-6 4 3 7-9"/><circle class="af" cx="25" cy="9" r="2"/></symbol>
+
+<symbol id="ic-worker" viewBox="0 0 32 32"><path class="a" d="M9 11a7 7 0 0114 0"/><path class="s" d="M7 11h18"/><circle class="s" cx="16" cy="17" r="3.5"/><path class="s" d="M8 29c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+
+<symbol id="ic-engineer" viewBox="0 0 32 32"><rect class="s" x="5" y="7" width="22" height="14" rx="2"/><path class="s" d="M3 25h26"/><path class="a" d="M13 12l-3 2 3 2M19 12l3 2-3 2"/></symbol>
+
+<symbol id="ic-office" viewBox="0 0 32 32"><circle class="s" cx="16" cy="10" r="4.5"/><path class="s" d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10"/><path class="a" d="M16 20v8"/></symbol>
+
+<symbol id="ic-conveyor" viewBox="0 0 32 32"><rect class="s" x="3" y="18" width="26" height="5" rx="2.5"/><circle class="s" cx="8" cy="20.5" r="1.2"/><circle class="s" cx="16" cy="20.5" r="1.2"/><circle class="s" cx="24" cy="20.5" r="1.2"/><rect class="a" x="11" y="8" width="10" height="7" rx="1"/><path class="s" d="M16 8V4"/></symbol>
+
+<symbol id="ic-pallet" viewBox="0 0 32 32"><path class="s" d="M3 24h26M3 28h26M7 24v4M16 24v4M25 24v4"/><rect class="s" x="7" y="9" width="8" height="8"/><rect class="a" x="17" y="12" width="8" height="5"/><path class="s" d="M11 9V5"/></symbol>
+
+<symbol id="ic-cloud" viewBox="0 0 32 32"><path class="s" d="M9 21a5 5 0 011-9.9 7 7 0 0113.3 2A4.5 4.5 0 0123 21z"/><path class="a" d="M16 24v5M11 27l5 2 5-2"/></symbol>
+
+<symbol id="ic-manager" viewBox="0 0 32 32"><rect class="s" x="4" y="9" width="24" height="18" rx="2"/><path class="s" d="M11 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/><path class="a" d="M12 18h8M16 14v8"/></symbol>
+
+<symbol id="ic-meeting" viewBox="0 0 32 32"><path class="s" d="M4 6h17a2 2 0 012 2v8a2 2 0 01-2 2H11l-5 4v-4H4a2 2 0 01-2-2V8a2 2 0 012-2z" transform="translate(2 1)"/><path class="a" d="M10 12h10"/><path class="s" d="M10 16h6"/></symbol>
+
+<!-- WHAT WE DO 用：人が関わっていることが分かるアイコン（2026-10 再制作） -->
+<symbol id="ic2-field" viewBox="0 0 32 32"><path class="s" d="M3 6v21M11 6v21M3 13h8M3 20h8"/><rect class="a" x="4.5" y="14.5" width="5" height="4"/><circle class="s" cx="22" cy="12" r="3.5"/><path class="s" d="M15.5 27c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></symbol>
+
+<symbol id="ic2-data" viewBox="0 0 32 32"><rect class="s" x="4" y="4" width="24" height="15" rx="2"/><path class="a" d="M10 15v-4M15 15v-7M20 15v-3"/><circle class="s" cx="16" cy="24" r="2.6"/><path class="s" d="M10.5 30c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></symbol>
+
+<symbol id="ic2-fde" viewBox="0 0 32 32"><path class="s" d="M2 9v14M6.5 9v14M2 16h4.5"/><rect class="s" x="24" y="10" width="7" height="10" rx="1.5"/><circle class="s" cx="16" cy="10" r="3.5"/><path class="s" d="M10.5 22c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><path class="a" d="M8.5 16h3M20.5 16h3"/></symbol>
+
+<symbol id="ic2-system" viewBox="0 0 32 32"><rect class="s" x="9" y="7" width="18" height="13" rx="2"/><path class="s" d="M5 25h26l-2-5H9z"/><path class="a" d="M15 11l-2.5 2.5L15 16M21 11l2.5 2.5L21 16"/></symbol>
+
+<symbol id="ic2-equip" viewBox="0 0 32 32"><rect class="s" x="2" y="16" width="16" height="7" rx="2"/><circle class="s" cx="6.5" cy="26" r="2.2"/><circle class="s" cx="14" cy="26" r="2.2"/><rect class="a" x="6" y="9" width="8" height="6"/><circle class="s" cx="25" cy="12" r="3"/><path class="s" d="M21 23c0-2.2 1.8-4 4-4s4 1.8 4 4"/></symbol>
+
+<symbol id="ic2-transport" viewBox="0 0 32 32"><path class="s" d="M2 8h13v11H2zM15 11h4.5l4 4v4H15z"/><circle class="s" cx="8" cy="22.5" r="2.2"/><circle class="s" cx="21" cy="22.5" r="2.2"/><path class="a" d="M3 28h26"/><path class="s" d="M5 13h6"/></symbol>
+
+<symbol id="ic2-operate" viewBox="0 0 32 32"><circle class="s" cx="22" cy="12" r="5"/><path class="s" d="M22 4v2M22 18v2M14 12h2M28 12h2M16.5 6.5l1.4 1.4M26.1 16.1l1.4 1.4M27.5 6.5l-1.4 1.4M17.9 16.1l-1.4 1.4"/><path class="a" d="M19.8 12l1.6 1.6 3-3.4"/><circle class="s" cx="9" cy="16" r="3"/><path class="s" d="M4 27c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+
+<symbol id="ic2-improve" viewBox="0 0 32 32"><path class="s" d="M4 27h25"/><path class="a" d="M7 22l6-6 4 3 8-9"/><path class="a" d="M21 10h4v4"/><circle class="s" cx="9" cy="8" r="2.6"/><path class="s" d="M4 16c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+</svg>
 
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
@@ -59,7 +115,29 @@
   </div>
 </section>
 
-<section class="sec sec--tight" id="about">
+<section class="sec sec--tight" id="oneline">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:34px">
+      <p class="slabel">PAL in one line</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">PALを一言で言うと。</h2>
+    </div>
+    <div class="hub rv">
+      <div class="hub__center">
+        <span class="en">PAL</span>
+        <b>分断をつなぎ、<br>物流DXを現場で動く形にする</b>
+      </div>
+      <ul class="hub__nodes">
+        <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>物流現場</b><span>業務と制約を理解する</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>物流システム</b><span>設計・開発・連携する</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg><b>設備</b><span>現場に合わせて組み合わせる</span></li>
+        <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg><b>物流データ</b><span>判断に使える形にする</span></li>
+      </ul>
+    </div>
+    <p class="note rv">※ この4つが分断されたままでは、個別に改善しても全体の最適化につながりません。</p>
+  </div>
+</section>
+
+<section class="sec sec--soft sec--tight" id="about">
   <div class="wrap">
     <div class="shead rv">
       <p class="slabel">About PAL</p>
@@ -69,19 +147,22 @@
 
     <ul class="pillars rv">
       <li class="pillar">
+        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
         <p class="pillar__no en">01</p>
         <h3><small>STRATEGY</small>戦略を描く</h3>
-        <p>物流戦略の設計から、パートナー連携、案件設計まで。顧客の課題を構造化し、経営に効く打ち手へ落とし込みます。</p>
+        <p>物流戦略の設計から案件設計まで。顧客の課題を構造化し、経営に効く打ち手に落とし込みます。</p>
       </li>
       <li class="pillar">
+        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
         <p class="pillar__no en">02</p>
         <h3><small>TECHNOLOGY</small>技術をつくる</h3>
-        <p>Core First をはじめとする自社DXプロダクト群を開発。データを統合し、経営と現場を同じ画面でつなぎます。</p>
+        <p>Core First をはじめとする自社DXプロダクトを開発。データを統合し、経営と現場をつなぎます。</p>
       </li>
       <li class="pillar">
+        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
         <p class="pillar__no en">03</p>
         <h3><small>OPERATION</small>現場を回す</h3>
-        <p>物流現場の運用そのものを受託。24/365で止めない運用を、自分たちの責任で担う当事者です。</p>
+        <p>物流現場の運用そのものを受託。24/365で止めない運用を、自分たちの責任で担います。</p>
       </li>
     </ul>
 
@@ -98,7 +179,7 @@
     <div class="shead rv">
       <p class="slabel">Why now</p>
       <h2 class="stitle">なぜ今、物流DXが<br>避けられないのか。</h2>
-      <p class="slead">人手不足や物流コストの上昇、CLO対応などにより、物流現場にはこれまで以上に効率化とデータ活用が求められています。一方で、物流現場・物流システム・設備・物流データが分断されたままでは、個別に改善しても全体の最適化にはつながりません。<br>この4つをつなぎ、現場で実行・運用できる状態にすること。そこに、PALの仕事があります。</p>
+      <p class="slead">人手不足、物流コストの上昇、CLO対応。物流現場には、これまで以上に効率化とデータ活用が求められています。<br>ただし、分断されたままでは全体は変わりません。4つをつなぎ、現場で実行・運用できる状態にすること。そこに、PALの仕事があります。</p>
     </div>
     <ol class="flowline rv">
       <li><span class="en">01 FIELD</span><b>物流現場</b></li>
@@ -143,7 +224,7 @@
         </div>
         <div class="phil__body">
           <h3>分断を、<br>ひとつの流れにつなぐ。</h3>
-          <p>PALは、物流コンサル・SIer・3PL・ファイナンスの機能を一社で保有し、戦略策定からシステム導入、現場実行・検証までを一気通貫で担います。既存の3PLやSIerを置き換えるのではなく、<strong style="color:#fff">関係者・役割・情報を一つの実行体制にまとめる</strong>のがPALの立ち位置です。顧客の現場を請け負い、自分たちの責任で回すからこそ、設計が机上で終わりません。</p>
+          <p>物流コンサル・SIer・3PL・ファイナンスの機能を一社で保有し、戦略から現場実行・検証までを担います。既存の3PLやSIerを置き換えるのではなく、<strong style="color:#fff">関係者・役割・情報を一つの実行体制にまとめる</strong>のがPALの立ち位置です。</p>
 
           <div class="posmap">
             <div class="posmap__cus"><span class="en">CUSTOMER</span><b>顧客の経営・事業課題</b></div>
@@ -217,6 +298,38 @@
   </div>
 </section>
 
+<section class="sec sec--tight" id="fun">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:30px">
+      <p class="slabel">Why it's interesting</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">PALの仕事が、面白い理由。</h2>
+    </div>
+    <ul class="iconcards rv">
+      <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>現場に近い</b><p>顧客の現場を自分たちで回すから、課題も成果も机上で終わりません。</p></li>
+      <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>仕組みをつくれる</b><p>提案だけでなく、設計・実装・運用まで一続きで関われます。</p></li>
+      <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>部門を横断できる</b><p>現場・技術・営業・コーポレートが同じ課題を見ながら進めます。</p></li>
+      <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg><b>変化を実感できる</b><p>運用まで担うから、改善の結果が現場の数字と声で返ってきます。</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec--soft sec--tight" id="who">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:30px">
+      <p class="slabel">Who fits</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">活躍している人の、共通点。</h2>
+      <p class="slead">入社時の高いITスキルは必須ではありません。技術力よりも人物面を最優先しています。</p>
+    </div>
+    <ul class="iconcards iconcards--plain rv">
+      <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>現場を理解したい</b><p>机上で判断せず、実際の現場を見に行ける。</p></li>
+      <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>仕組みづくりに興味がある</b><p>課題を整理し、動く形にするまで考えられる。</p></li>
+      <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg><b>チームで進めるのが好き</b><p>立場の違う相手に、伝わる言葉で話せる。</p></li>
+      <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg><b>改善を積み重ねられる</b><p>導入して終わりにせず、良くし続けられる。</p></li>
+    </ul>
+    <p class="note rv">※ 詳しくは「働き方を知る」の“PALが求める人”をご覧ください。</p>
+  </div>
+</section>
+
 <section class="sec" id="numbers">
   <div class="wrap">
     <div class="shead rv">
@@ -243,7 +356,12 @@
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">では、PALでは実際に<br>どんな仕事をするのか。</h2>
       <p class="slead">現場運営、FDE、プロダクト、運行管理、営業、マーケティング、コーポレート。8つのフィールドが、ひとつの物流課題にどう関わるかを紹介します。</p>
     </div>
-    <p class="rv"><a class="btn btn--red" href="../work/">仕事を知る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <ul class="nextlinks rv">
+      <li><a href="../work/"><small>WORK</small><b>仕事を知る</b><span>8つのフィールドと、仕事の進め方</span></a></li>
+      <li><a href="../people/"><small>PEOPLE</small><b>人を知る</b><span>5職種の社員インタビュー</span></a></li>
+      <li><a href="../jobs/"><small>JOBS</small><b>募集職種を見る</b><span>現在募集中のポジション</span></a></li>
+      <li><a href="../faq/"><small>FAQ</small><b>よくあるご質問</b><span>応募前の疑問をまとめました</span></a></li>
+    </ul>
   </div>
 </section>
 
