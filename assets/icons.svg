@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
+<defs><style>
+  .s{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .a{fill:none;stroke:#cf131b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .af{fill:#cf131b;stroke:none}
+</style></defs>
+
+<symbol id="ic-forklift" viewBox="0 0 32 32"><path class="s" d="M4 23h11M4 23V13h7l3 4v6"/><path class="s" d="M14 17h-3v-4"/><circle class="s" cx="8" cy="25.5" r="2.5"/><circle class="s" cx="17" cy="25.5" r="2.5"/><path class="a" d="M21 23V6M21 23h6"/><path class="s" d="M21 11h4"/></symbol>
+
+<symbol id="ic-agv" viewBox="0 0 32 32"><rect class="s" x="4" y="14" width="24" height="8" rx="2"/><circle class="s" cx="10" cy="25" r="2.5"/><circle class="s" cx="22" cy="25" r="2.5"/><path class="s" d="M10 14V9h12v5"/><path class="a" d="M13 18h6"/></symbol>
+
+<symbol id="ic-truck" viewBox="0 0 32 32"><path class="s" d="M3 8h14v13H3zM17 12h5l4 4v5h-9z"/><circle class="s" cx="9" cy="24" r="2.5"/><circle class="s" cx="22" cy="24" r="2.5"/><path class="a" d="M6 14h7"/></symbol>
+
+<symbol id="ic-rack" viewBox="0 0 32 32"><path class="s" d="M5 5v22M27 5v22M5 12h22M5 20h22M5 27h22"/><rect class="s" x="9" y="6" width="6" height="5"/><rect class="a" x="18" y="14" width="6" height="5"/><rect class="s" x="9" y="22" width="6" height="4"/></symbol>
+
+<symbol id="ic-handy" viewBox="0 0 32 32"><rect class="s" x="9" y="3" width="14" height="22" rx="3"/><path class="s" d="M13 8h6M13 12h6"/><path class="a" d="M12 17h8"/><path class="s" d="M16 25v4"/></symbol>
+
+<symbol id="ic-dashboard" viewBox="0 0 32 32"><rect class="s" x="3" y="6" width="26" height="17" rx="2"/><path class="s" d="M11 27h10M16 23v4"/><path class="s" d="M8 18v-4M13 18v-7"/><path class="a" d="M18 18v-5M23 18v-8"/></symbol>
+
+<symbol id="ic-chart" viewBox="0 0 32 32"><path class="s" d="M5 5v22h22"/><path class="a" d="M9 21l5-6 4 3 7-9"/><circle class="af" cx="25" cy="9" r="2"/></symbol>
+
+<symbol id="ic-worker" viewBox="0 0 32 32"><path class="a" d="M9 11a7 7 0 0114 0"/><path class="s" d="M7 11h18"/><circle class="s" cx="16" cy="17" r="3.5"/><path class="s" d="M8 29c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+
+<symbol id="ic-engineer" viewBox="0 0 32 32"><rect class="s" x="5" y="7" width="22" height="14" rx="2"/><path class="s" d="M3 25h26"/><path class="a" d="M13 12l-3 2 3 2M19 12l3 2-3 2"/></symbol>
+
+<symbol id="ic-office" viewBox="0 0 32 32"><circle class="s" cx="16" cy="10" r="4.5"/><path class="s" d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10"/><path class="a" d="M16 20v8"/></symbol>
+
+<symbol id="ic-conveyor" viewBox="0 0 32 32"><rect class="s" x="3" y="18" width="26" height="5" rx="2.5"/><circle class="s" cx="8" cy="20.5" r="1.2"/><circle class="s" cx="16" cy="20.5" r="1.2"/><circle class="s" cx="24" cy="20.5" r="1.2"/><rect class="a" x="11" y="8" width="10" height="7" rx="1"/><path class="s" d="M16 8V4"/></symbol>
+
+<symbol id="ic-pallet" viewBox="0 0 32 32"><path class="s" d="M3 24h26M3 28h26M7 24v4M16 24v4M25 24v4"/><rect class="s" x="7" y="9" width="8" height="8"/><rect class="a" x="17" y="12" width="8" height="5"/><path class="s" d="M11 9V5"/></symbol>
+
+<symbol id="ic-cloud" viewBox="0 0 32 32"><path class="s" d="M9 21a5 5 0 011-9.9 7 7 0 0113.3 2A4.5 4.5 0 0123 21z"/><path class="a" d="M16 24v5M11 27l5 2 5-2"/></symbol>
+
+<symbol id="ic-manager" viewBox="0 0 32 32"><rect class="s" x="4" y="9" width="24" height="18" rx="2"/><path class="s" d="M11 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/><path class="a" d="M12 18h8M16 14v8"/></symbol>
+
+<symbol id="ic-meeting" viewBox="0 0 32 32"><path class="s" d="M4 6h17a2 2 0 012 2v8a2 2 0 01-2 2H11l-5 4v-4H4a2 2 0 01-2-2V8a2 2 0 012-2z" transform="translate(2 1)"/><path class="a" d="M10 12h10"/><path class="s" d="M10 16h6"/></symbol>
+</svg>

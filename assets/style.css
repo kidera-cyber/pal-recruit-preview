@@ -904,3 +904,53 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ivchap{padding-block:44px}
 }
 /* ===== INTERVIEW v2 END ===== */
+
+/* ============================================================
+   ===== HOME-ICONS v1 START =====
+   HOMEを採用サイトの入口にするための追加分。
+   PAL業務アイコン（採用サイト専用・オリジナルSVG）を使う
+   HEROのレール／クイックリンク帯／仕事領域グリッド／募集職種タイル。
+   ============================================================ */
+.herorail{margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);display:flex;flex-wrap:wrap;gap:14px 30px;list-style:none}
+.herorail li{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:#dfe2ef}
+.herorail svg{width:26px;height:26px;color:#fff;flex:none}
+.herorail li:nth-child(n+5) svg{color:#ffb3b8}
+
+.quick{background:var(--navy-d);color:#fff;padding-block:14px}
+.quick .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.quick__h{font-size:11px;letter-spacing:.18em;color:#9aa0c4}
+.quick a{padding:7px 15px;border:1px solid rgba(255,255,255,.26);border-radius:9999px;font-size:12.5px;font-weight:700;transition:background-color .25s,border-color .25s}
+.quick a:hover{background:var(--red);border-color:var(--red)}
+
+.fieldgrid{margin-top:52px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.fieldgrid a{display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 10px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;transition:background-color .25s}
+.fieldgrid a:hover{background:#fff}
+.fieldgrid svg{width:38px;height:38px;color:var(--navy)}
+.fieldgrid span{font-size:12.5px;font-weight:700;line-height:1.6}
+
+.jobtiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.jobtile{display:block;padding:24px 22px 26px;border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.jobtile:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(38,41,70,.1);border-color:transparent}
+.jobtile svg{width:34px;height:34px;color:var(--navy)}
+.jobtile__cat{display:block;margin-top:14px;font-family:Lato,sans-serif;font-size:11px;letter-spacing:.12em;color:var(--red)}
+.jobtile b{display:block;margin-top:6px;font-size:16px;line-height:1.55}
+.jobtile__meta{display:block;margin-top:8px;font-size:12.5px;line-height:1.8;color:var(--sub)}
+
+@media (max-width:1080px){
+  .fieldgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .jobtiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .herorail{gap:12px 18px;margin-top:26px;padding-top:18px}
+  .herorail li{font-size:11.5px;gap:6px}
+  .herorail svg{width:22px;height:22px}
+  .quick .wrap{gap:8px 10px}
+  .quick a{padding:6px 12px;font-size:12px}
+  .fieldgrid{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:36px}
+  .fieldgrid a{padding:20px 6px 18px}
+  .fieldgrid svg{width:32px;height:32px}
+  .fieldgrid span{font-size:11.5px}
+  .jobtiles{grid-template-columns:minmax(0,1fr);gap:12px}
+  .jobtile{padding:20px 18px 22px}
+}
+/* ===== HOME-ICONS v1 END ===== */

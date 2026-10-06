@@ -12,9 +12,49 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261006b">
+<link rel="stylesheet" href="../assets/style.css?v=20261006c">
 </head>
 <body>
+
+<!-- ===== ICONSET v1：PAL業務アイコン（採用サイト専用・オリジナル） ===== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
+<defs><style>
+  .s{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .a{fill:none;stroke:#cf131b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .af{fill:#cf131b;stroke:none}
+</style></defs>
+
+<symbol id="ic-forklift" viewBox="0 0 32 32"><path class="s" d="M4 23h11M4 23V13h7l3 4v6"/><path class="s" d="M14 17h-3v-4"/><circle class="s" cx="8" cy="25.5" r="2.5"/><circle class="s" cx="17" cy="25.5" r="2.5"/><path class="a" d="M21 23V6M21 23h6"/><path class="s" d="M21 11h4"/></symbol>
+
+<symbol id="ic-agv" viewBox="0 0 32 32"><rect class="s" x="4" y="14" width="24" height="8" rx="2"/><circle class="s" cx="10" cy="25" r="2.5"/><circle class="s" cx="22" cy="25" r="2.5"/><path class="s" d="M10 14V9h12v5"/><path class="a" d="M13 18h6"/></symbol>
+
+<symbol id="ic-truck" viewBox="0 0 32 32"><path class="s" d="M3 8h14v13H3zM17 12h5l4 4v5h-9z"/><circle class="s" cx="9" cy="24" r="2.5"/><circle class="s" cx="22" cy="24" r="2.5"/><path class="a" d="M6 14h7"/></symbol>
+
+<symbol id="ic-rack" viewBox="0 0 32 32"><path class="s" d="M5 5v22M27 5v22M5 12h22M5 20h22M5 27h22"/><rect class="s" x="9" y="6" width="6" height="5"/><rect class="a" x="18" y="14" width="6" height="5"/><rect class="s" x="9" y="22" width="6" height="4"/></symbol>
+
+<symbol id="ic-handy" viewBox="0 0 32 32"><rect class="s" x="9" y="3" width="14" height="22" rx="3"/><path class="s" d="M13 8h6M13 12h6"/><path class="a" d="M12 17h8"/><path class="s" d="M16 25v4"/></symbol>
+
+<symbol id="ic-dashboard" viewBox="0 0 32 32"><rect class="s" x="3" y="6" width="26" height="17" rx="2"/><path class="s" d="M11 27h10M16 23v4"/><path class="s" d="M8 18v-4M13 18v-7"/><path class="a" d="M18 18v-5M23 18v-8"/></symbol>
+
+<symbol id="ic-chart" viewBox="0 0 32 32"><path class="s" d="M5 5v22h22"/><path class="a" d="M9 21l5-6 4 3 7-9"/><circle class="af" cx="25" cy="9" r="2"/></symbol>
+
+<symbol id="ic-worker" viewBox="0 0 32 32"><path class="a" d="M9 11a7 7 0 0114 0"/><path class="s" d="M7 11h18"/><circle class="s" cx="16" cy="17" r="3.5"/><path class="s" d="M8 29c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+
+<symbol id="ic-engineer" viewBox="0 0 32 32"><rect class="s" x="5" y="7" width="22" height="14" rx="2"/><path class="s" d="M3 25h26"/><path class="a" d="M13 12l-3 2 3 2M19 12l3 2-3 2"/></symbol>
+
+<symbol id="ic-office" viewBox="0 0 32 32"><circle class="s" cx="16" cy="10" r="4.5"/><path class="s" d="M6 28c0-5.5 4.5-10 10-10s10 4.5 10 10"/><path class="a" d="M16 20v8"/></symbol>
+
+<symbol id="ic-conveyor" viewBox="0 0 32 32"><rect class="s" x="3" y="18" width="26" height="5" rx="2.5"/><circle class="s" cx="8" cy="20.5" r="1.2"/><circle class="s" cx="16" cy="20.5" r="1.2"/><circle class="s" cx="24" cy="20.5" r="1.2"/><rect class="a" x="11" y="8" width="10" height="7" rx="1"/><path class="s" d="M16 8V4"/></symbol>
+
+<symbol id="ic-pallet" viewBox="0 0 32 32"><path class="s" d="M3 24h26M3 28h26M7 24v4M16 24v4M25 24v4"/><rect class="s" x="7" y="9" width="8" height="8"/><rect class="a" x="17" y="12" width="8" height="5"/><path class="s" d="M11 9V5"/></symbol>
+
+<symbol id="ic-cloud" viewBox="0 0 32 32"><path class="s" d="M9 21a5 5 0 011-9.9 7 7 0 0113.3 2A4.5 4.5 0 0123 21z"/><path class="a" d="M16 24v5M11 27l5 2 5-2"/></symbol>
+
+<symbol id="ic-manager" viewBox="0 0 32 32"><rect class="s" x="4" y="9" width="24" height="18" rx="2"/><path class="s" d="M11 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/><path class="a" d="M12 18h8M16 14v8"/></symbol>
+
+<symbol id="ic-meeting" viewBox="0 0 32 32"><path class="s" d="M4 6h17a2 2 0 012 2v8a2 2 0 01-2 2H11l-5 4v-4H4a2 2 0 01-2-2V8a2 2 0 012-2z" transform="translate(2 1)"/><path class="a" d="M10 12h10"/><path class="s" d="M10 16h6"/></symbol>
+</svg>
 
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
@@ -62,18 +102,35 @@
     <div class="hero__ctas">
       <a class="btn btn--red btn--lg" href="jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
       <a class="btn btn--onnavy btn--lg" href="about/">PALを知る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--onnavy btn--lg" href="work/">仕事を知る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
+    <ul class="herorail" aria-label="PALが関わる領域">
+      <li><svg aria-hidden="true"><use href="#ic-rack"></use></svg>倉庫・センター</li>
+      <li><svg aria-hidden="true"><use href="#ic-forklift"></use></svg>マテハン</li>
+      <li><svg aria-hidden="true"><use href="#ic-agv"></use></svg>自動化</li>
+      <li><svg aria-hidden="true"><use href="#ic-truck"></use></svg>輸送</li>
+      <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg>現場の端末</li>
+      <li><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg>データ可視化</li>
+      <li><svg aria-hidden="true"><use href="#ic-engineer"></use></svg>システム開発</li>
+      <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg>現場の人</li>
+    </ul>
 
     </div>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__row">
-    <span>DIGITAL LOGISTICS</span><span>FORWARD DEPLOYED ENGINEER</span><span>DATA INTEGRATION</span><span>LOGITECH INTEGRATION</span><span>物流DX</span><span>現場×システム</span>
-    <span>DIGITAL LOGISTICS</span><span>FORWARD DEPLOYED ENGINEER</span><span>DATA INTEGRATION</span><span>LOGITECH INTEGRATION</span><span>物流DX</span><span>現場×システム</span>
+<nav class="quick" aria-label="仕事の領域から探す">
+  <div class="wrap">
+    <span class="quick__h en">FIND YOUR FIELD</span>
+    <a href="work/">物流現場・運営</a>
+    <a href="work/fde/">FDE</a>
+    <a href="jobs/product-engineer/">プロダクト開発</a>
+    <a href="jobs/dts/">DTS・運行管理</a>
+    <a href="jobs/">営業・事業開発</a>
+    <a href="jobs/">マーケティング</a>
+    <a href="jobs/">コーポレート</a>
   </div>
-</div>
+</nav>
 
 <!-- ===== MESSAGE v1 START：FVとKEY CONTENTSの間に、PALの仕事を定義する ===== -->
 <section class="sec msgsec" id="message">
@@ -89,6 +146,22 @@
         <p>職種は違っても、一人ひとりの仕事が、現場の変化につながっています。</p>
       </div>
     </div>
+
+    <div class="fieldgrid rv">
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-rack"></use></svg><span>倉庫・センター運営</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-worker"></use></svg><span>現場オペレーション</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-forklift"></use></svg><span>マテハン・設備</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-agv"></use></svg><span>自動化・ロボット</span></a>
+        <a href="jobs/dts/"><svg aria-hidden="true"><use href="#ic-truck"></use></svg><span>輸送・運行管理</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-conveyor"></use></svg><span>仕分け・出荷</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-pallet"></use></svg><span>在庫・荷動き</span></a>
+        <a href="work/fde/"><svg aria-hidden="true"><use href="#ic-handy"></use></svg><span>現場の端末・帳票</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg><span>データ統合・可視化</span></a>
+        <a href="jobs/product-engineer/"><svg aria-hidden="true"><use href="#ic-engineer"></use></svg><span>システム開発</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-cloud"></use></svg><span>データ連携基盤</span></a>
+        <a href="work/"><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><span>提案・改善の対話</span></a>
+    </div>
+    <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="work/">仕事を知る（8つのフィールド）<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 <!-- ===== MESSAGE v1 END ===== -->
@@ -191,15 +264,15 @@
       <h2 class="stitle" style="font-size:clamp(24px,2.8vw,34px)">募集中の職種</h2>
       <p class="slead">気になる職種から、詳しい仕事内容・募集要項をご確認ください。新卒・キャリアともに通年で募集しています。</p>
     </div>
-    <ul class="hlist hlist--2col rv">
-      <li><a href="jobs/fde/"><span class="hlist__cat">FDE</span><b>FDE（Forward Deployed Engineer）</b><span class="hlist__meta">大阪本社／東京オフィス・正社員・未経験/新卒可</span></a></li>
-      <li><a href="jobs/center-manager/"><span class="hlist__cat">BPO / 現場運営</span><b>センター長／候補</b><span class="hlist__meta">担当拠点（大阪・東京ほか）・正社員・未経験/新卒可</span></a></li>
-      <li><a href="jobs/product-engineer/"><span class="hlist__cat">ENGINEER</span><b>プロダクト企画・開発エンジニア</b><span class="hlist__meta">大阪本社／東京オフィス・正社員</span></a></li>
-      <li><a href="jobs/dts/"><span class="hlist__cat">DTS / 運行管理</span><b>運行管理・所長</b><span class="hlist__meta">担当事業所・正社員</span></a></li>
-      <li><a href="jobs/"><span class="hlist__cat">SALES / BizDev</span><b>既存顧客深耕・新規営業</b><span class="hlist__meta">通年募集・正社員</span></a></li>
-      <li><a href="jobs/"><span class="hlist__cat">MARKETING</span><b>マーケティング</b><span class="hlist__meta">通年募集・正社員</span></a></li>
-      <li><a href="jobs/"><span class="hlist__cat">CORPORATE</span><b>コーポレート部門</b><span class="hlist__meta">通年募集・正社員</span></a></li>
-    </ul>
+    <div class="jobtiles rv">
+      <a class="jobtile" href="jobs/fde/"><svg aria-hidden="true"><use href="#ic-handy"></use></svg><span class="jobtile__cat">FDE</span><b>FDE（Forward Deployed Engineer）</b><span class="jobtile__meta">大阪／東京・正社員・未経験可</span></a>
+      <a class="jobtile" href="jobs/center-manager/"><svg aria-hidden="true"><use href="#ic-manager"></use></svg><span class="jobtile__cat">BPO / 現場運営</span><b>センター長／候補</b><span class="jobtile__meta">担当拠点・正社員・未経験可</span></a>
+      <a class="jobtile" href="jobs/product-engineer/"><svg aria-hidden="true"><use href="#ic-engineer"></use></svg><span class="jobtile__cat">ENGINEER</span><b>プロダクト企画・開発</b><span class="jobtile__meta">大阪／東京・正社員</span></a>
+      <a class="jobtile" href="jobs/dts/"><svg aria-hidden="true"><use href="#ic-truck"></use></svg><span class="jobtile__cat">DTS / 運行管理</span><b>運行管理・所長</b><span class="jobtile__meta">担当事業所・正社員</span></a>
+      <a class="jobtile" href="jobs/"><svg aria-hidden="true"><use href="#ic-chart"></use></svg><span class="jobtile__cat">SALES / BizDev</span><b>既存顧客深耕・新規営業</b><span class="jobtile__meta">通年募集・正社員</span></a>
+      <a class="jobtile" href="jobs/"><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="jobtile__cat">MARKETING</span><b>マーケティング</b><span class="jobtile__meta">通年募集・正社員</span></a>
+      <a class="jobtile" href="jobs/"><svg aria-hidden="true"><use href="#ic-office"></use></svg><span class="jobtile__cat">CORPORATE</span><b>コーポレート部門</b><span class="jobtile__meta">通年募集・正社員</span></a>
+    </div>
     <p class="rv" style="margin-top:28px"><a class="btn btn--ghost" href="jobs/">募集職種をすべて見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
