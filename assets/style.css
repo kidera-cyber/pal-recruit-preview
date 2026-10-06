@@ -1213,3 +1213,50 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .comp table{min-width:560px}
 }
 /* ===== VISUAL v1 END ===== */
+
+/* ============================================================
+   ===== WORK-CENTER v1 START =====
+   「仕事を知る」を中央揃え基調・図解中心に整える。
+   body.p-work のみに適用し、他ページには影響させない。
+   ============================================================ */
+.p-work .phead,.p-work .shead{text-align:center;max-width:none}
+.p-work .phead .slabel,.p-work .shead .slabel{justify-content:center}
+.p-work .slabel::before{display:none}
+.p-work .phead .slabel::after,.p-work .shead .slabel::after{content:"";display:block;width:28px;height:2px;background:var(--red);margin:10px auto 0}
+.p-work .plead,.p-work .slead{margin-inline:auto;max-width:46em}
+.p-work .shead .note{margin-inline:auto}
+.p-work .ch__body,.p-work .comp,.p-work .hub,.p-work .flow2{margin-inline:auto}
+.p-work .comp__h{text-align:center}
+.p-work #fields .note,.p-work #chain .note{text-align:center;margin-inline:auto}
+.p-work .fields,.p-work .products,.p-work .iconcards,.p-work .comp,.p-work .nextlinks{max-width:1100px;margin-inline:auto}
+.p-work .field__cat,.p-work .product b{letter-spacing:.06em}
+.p-work #tonext .rv,.p-work #fields>.wrap>p.rv{text-align:center}
+
+/* ハブ図：中央にゴール、その下に職種 */
+.p-work .hub{grid-template-columns:minmax(0,1fr);gap:30px;justify-items:center;max-width:1000px}
+.p-work .hub__center{width:min(100%,620px)}
+.p-work .hub__nodes{width:100%}
+.p-work .hub__nodes li{text-align:left}
+
+/* 8ステップを2段のプロセス図に */
+.flow2{margin-top:44px;display:grid;gap:18px;max-width:1000px}
+.flow2__row{display:grid;grid-template-columns:168px minmax(0,1fr);gap:18px 24px;align-items:center;padding:22px 26px;border-radius:var(--radius-lg);background:var(--bg-soft)}
+.flow2__row--b{background:var(--navy-d);color:#fff}
+.flow2__label{font-size:16px;font-weight:700;line-height:1.5;text-align:left}
+.flow2__label .en{display:block;font-family:Lato,sans-serif;font-size:11px;letter-spacing:.16em;color:var(--red);margin-bottom:4px}
+.flow2__row--b .flow2__label .en{color:#ffb3b8}
+.flow2 ol{display:flex;flex-wrap:wrap;gap:10px;list-style:none;counter-reset:f}
+.flow2 li{position:relative;padding:11px 18px 11px 38px;border-radius:9999px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:700}
+.flow2__row--b li{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28);color:#fff}
+.flow2 li::before{counter-increment:f;content:counter(f,decimal-leading-zero);position:absolute;left:15px;top:50%;transform:translateY(-50%);font-family:Lato,sans-serif;font-size:11px;color:var(--red)}
+.flow2__row--b li::before{color:#ffb3b8}
+.flow2__row--b ol{counter-reset:f 4}
+
+@media (max-width:860px){
+  .flow2__row{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px 18px}
+  .flow2__label{text-align:center}
+  .flow2 ol{justify-content:center}
+  .flow2 li{font-size:13px;padding:10px 14px 10px 34px}
+  .p-work .hub__nodes li{text-align:left}
+}
+/* ===== WORK-CENTER v1 END ===== */

@@ -12,9 +12,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261006j">
+<link rel="stylesheet" href="../../assets/style.css?v=20261006k">
 </head>
-<body>
+<body class="p-work">
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
@@ -111,7 +111,7 @@
   <div class="wrap">
     <p class="slabel">Our Work</p>
     <h1 class="ptitle">仕事を知る。</h1>
-    <p class="plead">PALの仕事は、分断された現場・システム・設備・データを、現場で使える仕組みに変えていくこと。ひとつの職種だけでは完結しません。それぞれの専門性を持った人が、同じ課題に向き合います。</p>
+    <p class="plead">PALの仕事は、現場・システム・データ・設備をつなぎ、物流DXを現場で動く形にすること。<br>ひとつの職種だけでは完結しません。</p>
   </div>
 </section>
 
@@ -137,14 +137,17 @@
     </div>
     </div>
 
-    <div class="rv" style="margin-top:46px">
-      <p class="twocol__h" style="margin-bottom:16px">仕事は、この流れで進みます。</p>
-      <ol class="stepline">
-        <li>現場を見る</li><li>課題を理解する</li><li>業務を整理する</li><li>技術要件へ翻訳する</li>
-        <li>設計する</li><li>実装する</li><li>運用する</li><li>改善する</li>
-      </ol>
-      <p class="note">※ この流れ全体を一続きで担うのが FDE（Forward Deployed Engineer）です。現場運営・プロダクト・運行管理・営業・マーケティング・コーポレートは、それぞれの専門領域からこの流れに関わります。すべての社員がFDEというわけではありません。</p>
+    <div class="flow2 rv">
+      <div class="flow2__row">
+        <p class="flow2__label"><span class="en">STEP 01-04</span>理解する</p>
+        <ol><li>現場を見る</li><li>課題を理解する</li><li>業務を整理する</li><li>技術要件へ翻訳する</li></ol>
+      </div>
+      <div class="flow2__row flow2__row--b">
+        <p class="flow2__label"><span class="en">STEP 05-08</span>実装・改善する</p>
+        <ol><li>設計する</li><li>実装する</li><li>運用する</li><li>改善する</li></ol>
+      </div>
     </div>
+    <p class="note rv">※ この流れ全体を一続きで担うのがFDE。他の職種は、それぞれの専門領域から関わります。</p>
   </div>
 </section>
 <!-- ===== WORKCHAIN v1 END ===== -->
@@ -156,10 +159,10 @@
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">PALの仕事の特徴。</h2>
     </div>
     <ul class="effects effects--light rv">
-      <li><span class="en">01</span><b>現場とデジタル、両方を見る</b><p>現場の業務を理解していなければ、データや技術を入れても使われる形になりません。現場で培った運用力と、業界で積み重ねた実績の両方から課題を捉えます。</p></li>
-      <li><span class="en">02</span><b>設計だけで終わらず、実装まで関わる</b><p>提案書を書いて終わりではありません。現場の条件に合わせて設計し、実際に動く仕組みにするところまで担当します。</p></li>
-      <li><span class="en">03</span><b>導入後の運用・改善まで見る</b><p>PALは現場の運用そのものを請け負います。使われ方を見て、手順もシステムも更新し続けます。</p></li>
-      <li><span class="en">04</span><b>複数の専門領域と連携する</b><p>経営・現場・3PL・SIer・システム・設備・データ。立場の違う相手と話しながら、実装の進め方を決めていきます。</p></li>
+      <li><span class="en">01</span><b>現場とデジタル、両方を見る</b><p>現場を理解していなければ、データや技術は使われる形になりません。</p></li>
+      <li><span class="en">02</span><b>設計だけで終わらず、実装まで関わる</b><p>提案書で終わらず、実際に動く仕組みにするところまで担当します。</p></li>
+      <li><span class="en">03</span><b>導入後の運用・改善まで見る</b><p>運用そのものを請け負うから、使われ方を見て更新し続けられます。</p></li>
+      <li><span class="en">04</span><b>複数の専門領域と連携する</b><p>経営・現場・3PL・SIer。立場の違う相手と組んで進めます。</p></li>
     </ul>
   </div>
 </section>
@@ -176,53 +179,53 @@
       <article class="field field--core">
         <p class="field__cat">BPO / 現場運営</p>
         <h4>センター長／候補</h4>
-        <p>物流現場をDXで回す中核。人を巻き込み、現場が効率よく稼働する環境をつくる。事業の起点であり土台、採用は最優先。</p>
+        <p>物流現場をDXで回す中核。現場が効率よく稼働する環境をつくります。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Operate / Evolve</dd><dt>主な連携先</dt><dd>現場メンバー・FDE・営業</dd></dl>
         <p class="field__fit"><span>向いている人</span>現場マネジメントや数値管理の経験がある方、現場とデジタルの両方を楽しめる方。</p>
 </article>
       <article class="field field--core">
         <p class="field__cat">FDE</p>
         <h4>FDE（Forward Deployed Engineer）</h4>
-        <p>顧客の業務課題を技術要件へ翻訳し、設計・実装・運用・改善までをつなぐエンジニアの職種。現場理解が起点。技術・物流の知識は入社後に習得できます。</p>
+        <p>業務課題を技術要件へ翻訳し、設計・実装・運用までをつなぎます。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design / Deploy / Operate / Evolve</dd><dt>主な連携先</dt><dd>現場・エンジニア・営業・プロダクト</dd></dl>
         <p class="field__fit"><span>向いている人</span>技術力より人物面を重視。現場が好きで、課題解決に意欲がある方（未経験・新卒可）。</p>
 </article>
       <article class="field">
         <p class="field__cat">Product Engineer</p>
         <h4>プロダクト企画・開発エンジニア</h4>
-        <p>現場起点で、使われ続けるプロダクトを生み出す（DXプロダクト開発本部）。React／TypeScriptを主軸に、活用まで見届ける。</p>
+        <p>現場起点で、使われ続けるプロダクトを設計・開発します。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design / Deploy / Evolve</dd><dt>主な連携先</dt><dd>FDE・現場・経営</dd></dl>
         <p class="field__fit"><span>向いている人</span>React／TypeScriptでのWeb開発経験があり、現場起点でプロダクトを捉えたい方。</p>
 </article>
       <article class="field">
         <p class="field__cat">DTS / 運行管理</p>
         <h4>運行管理・所長</h4>
-        <p>ドライバーをまとめ、運送の足回りの信頼を築いた上でDX提案へ。安全を最優先に、データから改善と提案に転換する。</p>
+        <p>安全を最優先に配車・運行を管理し、データから改善につなげます。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Operate / Evolve</dd><dt>主な連携先</dt><dd>ドライバー・現場・FDE</dd></dl>
         <p class="field__fit"><span>向いている人</span>配車・運行管理の経験がある方、ドライバーの目線に立ち安全を最優先できる方。</p>
 </article>
       <article class="field">
         <p class="field__cat">Sales / 既存深耕</p>
         <h4>既存顧客深耕</h4>
-        <p>日々の現場運営で築いた信頼と共通言語を土台に、新たな業務やDXプロダクトを提案。対立する交渉も収める、顧客と同じ目線の役割。</p>
+        <p>現場で築いた信頼を土台に、新たな業務やDXプロダクトを提案します。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design / Evolve</dd><dt>主な連携先</dt><dd>顧客・現場・FDE</dd></dl>
 </article>
       <article class="field">
         <p class="field__cat">BizDev / 新規営業</p>
         <h4>新規営業（エンゲージメント）</h4>
-        <p>単なる物売りではなく、顧客の課題を構造化してコンサル的に提案。物流戦略設計・パートナー連携・案件設計まで担う。</p>
+        <p>顧客の課題を構造化し、物流戦略の設計から案件設計まで担います。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design</dd><dt>主な連携先</dt><dd>顧客・現場・プロダクト</dd></dl>
 </article>
       <article class="field">
         <p class="field__cat">Marketing</p>
         <h4>マーケティング（顧客創造）</h4>
-        <p>循環の「つなぐ」を担う。物流DXの価値を届け、新たな顧客との出会いをつくる。</p>
+        <p>物流DXの価値を届け、新たな顧客との出会いをつくります。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Design</dd><dt>主な連携先</dt><dd>営業・プロダクト</dd></dl>
 </article>
       <article class="field">
         <p class="field__cat">Corporate</p>
         <h4>コーポレート部門</h4>
-        <p>会社の土台を支えながら、AI・システムを積極活用し、現場と経営の双方がより円滑に動ける環境を自らつくる。</p>
+        <p>AI・システムを活用し、現場と経営が円滑に動く環境を自らつくります。</p>
               <dl class="field__meta"><dt>関わる段階</dt><dd>Operate / Evolve</dd><dt>主な連携先</dt><dd>全部門</dd></dl>
 </article>
     </div>
@@ -268,9 +271,9 @@
       <div class="fde__body">
         <p class="en" style="color:var(--pink);font-size:12px">FORWARD DEPLOYED ENGINEER</p>
         <h3 style="margin-top:12px">仕様書だけでは、現場は動かない。<br>だから、現場に入り込む。</h3>
-        <p><b>一般的なFDEとは。</b>FDE（Forward Deployed Engineer）は、顧客の業務課題と技術の間をつなぐエンジニアの職種です。課題を整理して提案するだけでなく、技術を実際に使える形へ落とし込むところまで関わる点が特徴です。</p>
-        <p><b>なぜ物流DXで必要なのか。</b>技術やシステムは、導入しただけでは価値になりません。物流現場には、データ構造・帳票・権限・設備・レイアウト・業務フローなど、現場ごとに異なる制約があります。その条件を理解し、技術を「実際に使える仕組み」へ落とし込む役割が必要になります。</p>
-        <p><b>PALでは何をするのか。</b>現場理解から始め、業務課題を技術要件へ翻訳し、Design → Deploy → Operate → Evolve の4サイクルで設計・実装・運用・改善までを分断させずに進めます。お客さまには方針や投資の判断に集中していただき、実装・運用・改善はPALのエンジニアがFDEとして担います。</p>
+        <p><b>一般的なFDEとは。</b>顧客の業務課題と技術の間をつなぐエンジニアの職種。技術を実際に使える形へ落とし込むところまで関わります。</p>
+        <p><b>なぜ物流DXで必要か。</b>現場にはデータ構造・帳票・権限・設備・レイアウトなど、現場ごとの制約があるためです。</p>
+        <p><b>PALでは何をするか。</b>現場理解から始め、Design → Deploy → Operate → Evolve の4サイクルで、設計・実装・運用・改善までを分断させずに進めます。</p>
         <p class="note" style="color:#9aa0c4">※ FDEは物流コンサルティングやSIerを置き換える役割ではありません。それぞれの専門領域と連携しながら、現場で実際に使われる状態まで実装を進めます。</p>
         <p style="margin-top:26px"><a class="btn btn--onnavy" href="fde/">FDEという仕事を詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
       </div>
