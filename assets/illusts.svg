@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- PAL RECRUIT 専用イラスト（2026-10制作）／ネイビー主体・PALレッドをアクセント -->
+<defs><style>
+  .l{fill:none;stroke:#262946;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .lt{fill:none;stroke:#262946;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .r{fill:none;stroke:#cf131b;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .fn{fill:#262946}.fr{fill:#cf131b}.fp{fill:#ffe3e6}.fg{fill:#eef0f6}.fw{fill:#fff}
+</style></defs>
+
+<!-- 01 現場の当事者となる：現場に入り、同じ視点で課題を見る -->
+<symbol id="il-field" viewBox="0 0 400 240">
+  <rect class="fg" x="0" y="196" width="400" height="6" rx="3"/>
+  <g><path class="l" d="M20 60v136M76 60v136M20 96h56M20 132h56M20 168h56"/>
+     <rect class="fg" x="26" y="66" width="20" height="24"/><rect class="fp" x="52" y="102" width="20" height="24"/><rect class="fg" x="26" y="138" width="20" height="24"/>
+     <rect class="lt" x="26" y="66" width="20" height="24"/><rect class="lt" x="52" y="102" width="20" height="24"/><rect class="lt" x="26" y="138" width="20" height="24"/></g>
+  <g><circle class="l fw" cx="168" cy="92" r="16"/><path class="l" d="M140 196v-44a28 28 0 0156 0v44"/>
+     <rect class="fw lt" x="186" y="122" width="34" height="24" rx="3"/><path class="r" d="M194 130h18M194 138h10"/>
+     <path class="l" d="M176 140l14-8"/></g>
+  <g><circle class="l fw" cx="252" cy="104" r="14"/><path class="l" d="M228 196v-40a24 24 0 0148 0v40"/><path class="r" d="M238 128h28"/></g>
+  <g><rect class="l fw" x="300" y="150" width="78" height="34" rx="6"/><circle class="l fw" cx="318" cy="190" r="7"/><circle class="l fw" cx="360" cy="190" r="7"/>
+     <rect class="fp lt" x="314" y="124" width="50" height="26" rx="3"/></g>
+</symbol>
+
+<!-- 02 個を尊重し、平等に接する：職種を越えて同じ高さで話す -->
+<symbol id="il-equal" viewBox="0 0 400 240">
+  <ellipse class="fg" cx="200" cy="150" rx="118" ry="38"/>
+  <ellipse class="lt" cx="200" cy="150" rx="118" ry="38"/>
+  <g><circle class="l fw" cx="200" cy="66" r="15"/><path class="l" d="M178 118v-14a22 22 0 0144 0v14"/></g>
+  <g><circle class="l fw" cx="112" cy="92" r="13"/><path class="l" d="M93 138v-12a19 19 0 0138 0v12"/></g>
+  <g><circle class="l fw" cx="288" cy="92" r="13"/><path class="l" d="M269 138v-12a19 19 0 0138 0v12"/></g>
+  <g><circle class="l fw" cx="138" cy="186" r="13"/><path class="l" d="M119 228v-10a19 19 0 0138 0v10"/></g>
+  <g><circle class="l fw" cx="262" cy="186" r="13"/><path class="l" d="M243 228v-10a19 19 0 0138 0v10"/></g>
+  <path class="r" d="M150 132h100"/><circle class="fr" cx="200" cy="132" r="3"/>
+</symbol>
+
+<!-- 03 自分の「手」で変えていく：考える→つくる→現場で動かす -->
+<symbol id="il-hands" viewBox="0 0 400 240">
+  <g><circle class="l fw" cx="52" cy="92" r="16"/><path class="l" d="M24 180v-50a28 28 0 0156 0v50"/></g>
+  <g><rect class="l fw" x="118" y="86" width="74" height="54" rx="6"/><path class="r" d="M132 126v-14M148 126v-24M164 126v-8M180 126v-20"/><text></text></g>
+  <g><rect class="l fw" x="222" y="86" width="74" height="54" rx="6"/><path class="lt" d="M222 102h74"/><path class="r" d="M244 124l-8-8 8-8M274 108l8 8-8 8"/></g>
+  <g><path class="l" d="M326 180v-58h56v58"/><path class="lt" d="M326 142h56"/><rect class="fp" x="334" y="150" width="18" height="22"/><rect class="lt" x="334" y="150" width="18" height="22"/><rect class="fg" x="358" y="150" width="16" height="22"/><rect class="lt" x="358" y="150" width="16" height="22"/></g>
+  <path class="r" d="M88 112h22M200 112h14M304 112h14"/>
+  <path class="r" d="M106 107l6 5-6 5M210 107l6 5-6 5M314 107l6 5-6 5"/>
+  <rect class="fg" x="0" y="186" width="400" height="5" rx="2.5"/>
+</symbol>
+
+<!-- VALUE 01 大胆に突き進もう -->
+<symbol id="il-bold" viewBox="0 0 320 200">
+  <path class="lt" d="M10 164h300"/>
+  <g><circle class="l fw" cx="86" cy="62" r="15"/><path class="l" d="M58 164v-54a28 28 0 0156 0v54"/><path class="r" d="M114 108l26-14"/></g>
+  <path class="r" stroke-dasharray="6 8" d="M150 120h120"/>
+  <g><path class="l" d="M214 164v-46h58v46"/><path class="lt" d="M214 138h58"/><rect class="fp" x="222" y="144" width="18" height="16"/><rect class="lt" x="222" y="144" width="18" height="16"/></g>
+  <path class="r" d="M268 108l10 12-10 12"/>
+</symbol>
+
+<!-- VALUE 02 チームへの貢献と信頼 -->
+<symbol id="il-team" viewBox="0 0 320 200">
+  <rect class="l fw" x="96" y="38" width="128" height="80" rx="6"/>
+  <path class="lt" d="M96 58h128"/><path class="r" d="M120 94l20-18 16 12 24-26"/>
+  <g><circle class="l fw" cx="56" cy="104" r="13"/><path class="l" d="M36 152v-12a20 20 0 0140 0v12"/></g>
+  <g><circle class="l fw" cx="160" cy="146" r="13"/><path class="l" d="M140 192v-10a20 20 0 0140 0v10"/></g>
+  <g><circle class="l fw" cx="264" cy="104" r="13"/><path class="l" d="M244 152v-12a20 20 0 0140 0v12"/></g>
+  <path class="r" d="M78 118h12M230 118h12M160 126v-6"/>
+</symbol>
+
+<!-- VALUE 03 匠の精神 -->
+<symbol id="il-craft" viewBox="0 0 320 200">
+  <rect class="l fw" x="40" y="44" width="150" height="100" rx="6"/>
+  <path class="lt" d="M40 64h150M58 86h60M58 102h92M58 118h44"/>
+  <circle class="r" cx="152" cy="108" r="22"/><path class="r" d="M168 124l20 20"/>
+  <g><circle class="l fw" cx="248" cy="74" r="15"/><path class="l" d="M220 168v-54a28 28 0 0156 0v54"/><path class="r" d="M220 124l-24 6"/></g>
+  <path class="lt" d="M20 168h280"/>
+</symbol>
+
+<!-- 求める人：中心に置く人物 -->
+<symbol id="il-person" viewBox="0 0 200 240">
+  <circle class="fg" cx="100" cy="112" r="92"/>
+  <circle class="l fw" cx="100" cy="76" r="26"/>
+  <path class="l" d="M52 196v-44a48 48 0 0196 0v44"/>
+  <path class="r" d="M100 128v34"/><circle class="fr" cx="100" cy="168" r="4"/>
+</symbol>
+</svg>

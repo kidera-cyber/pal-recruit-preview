@@ -1314,3 +1314,89 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .tl3 time{font-size:19px}
 }
 /* ===== DAY-TIMELINE v2 END ===== */
+
+/* ============================================================
+   ===== CULTURE-VISUAL v1 START =====
+   CULTUREページを図解・イラスト中心にするための追加分。
+   本文は16〜17px・濃い文字色、濃紺のベタ面は帯とアクセントに限定する。
+   ============================================================ */
+.p-culture .slead{font-size:16.5px;line-height:1.85;color:var(--text)}
+.p-culture .plead{font-size:17px;line-height:1.85;color:var(--text)}
+.p-culture #culture{background:#fff}
+
+/* 大切にする3つのこと：イラスト＋短文の交互配置 */
+.vrows{display:grid;gap:18px}
+.vrow{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:44px;align-items:center;padding:34px 38px;border-radius:var(--radius-lg);background:var(--bg-soft)}
+.vrow--rev{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+.vrow--rev .vrow__ill{order:2}
+.vrow__ill{margin:0}
+.vrow__ill svg{width:100%;height:auto;aspect-ratio:400/240;display:block}
+.vrow__no{font-family:Lato,sans-serif;font-size:13px;letter-spacing:.2em;color:var(--red)}
+.vrow__b h3{margin-top:8px;font-size:clamp(21px,2.4vw,28px);line-height:1.5}
+.vrow__b p{margin-top:14px;font-size:16.5px;line-height:1.85;color:var(--text)}
+.c-01{background:#f3f5fa}
+.c-02{background:#fdf2f4}
+.c-03{background:#f4f2fa}
+
+/* Mission：大きなメッセージ＋写真 */
+.mission{margin-top:76px;position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:0}
+.mission__ph{margin:0;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3}
+.mission__ph img{width:100%;height:100%;object-fit:cover}
+.mission__msg{margin-left:-56px;padding:44px 44px 46px;background:#fff;border-radius:var(--radius-lg);box-shadow:0 18px 50px rgba(38,41,70,.1)}
+.mission__h{margin-top:14px;font-size:clamp(23px,2.9vw,34px);line-height:1.55;font-weight:700}
+.mission__slogan{margin-top:20px;display:inline-block;padding:9px 20px;border-radius:9999px;background:var(--navy-d);color:#fff;font-size:14px;font-weight:700}
+
+/* VALUE：3つのイラスト */
+.vals{margin-top:72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+.val{padding:26px 26px 30px;border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff}
+.val__ill{margin:0 0 14px}
+.val__ill svg{width:100%;height:auto;aspect-ratio:320/200;display:block}
+.val__no{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.18em;color:var(--red)}
+.val h4{margin-top:6px;font-size:20px;line-height:1.5}
+.val p{margin-top:10px;font-size:16px;line-height:1.8;color:var(--text)}
+
+/* 動画CTA */
+.movie{margin-top:56px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:34px;align-items:center;padding:24px;border-radius:var(--radius-lg);background:var(--bg-soft);transition:transform .3s var(--ease),box-shadow .3s}
+.movie:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(38,41,70,.12)}
+.movie__thumb{position:relative;display:block;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9}
+.movie__thumb img{width:100%;height:100%;object-fit:cover;filter:brightness(.72)}
+.movie__play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:62px;height:62px;border-radius:50%;background:var(--red);color:#fff;font-size:18px;padding-left:4px}
+.movie__b b{display:block;margin-top:10px;font-size:clamp(20px,2.3vw,26px);line-height:1.5}
+.movie__d{display:block;margin-top:12px;font-size:16px;line-height:1.8;color:var(--text)}
+.movie .textlink{margin-top:16px;display:inline-block}
+
+/* 求める人：中央に人物、左右にSKILL/CHARACTER */
+.whop{display:grid;grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr);gap:34px;align-items:center}
+.whop__center{margin:0;text-align:center}
+.whop__center svg{width:190px;height:auto;aspect-ratio:200/240}
+.whop__center figcaption{margin-top:6px;font-size:15px;font-weight:700;line-height:1.5}
+.whop__h{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--navy-d);font-size:16px;font-weight:700}
+.whop__h .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.18em;color:var(--red)}
+.whop__side ul{margin-top:18px;display:grid;gap:14px;list-style:none}
+.whop__side--skill li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:2px 14px}
+.whop__side--skill svg{grid-row:span 2;width:40px;height:40px;color:var(--navy)}
+.whop__side--skill b{font-size:16.5px;line-height:1.5}
+.whop__side--skill span{font-size:15px;line-height:1.75;color:var(--text)}
+.whop__chips{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important}
+.whop__chips li{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:9999px;background:#fff;font-size:14.5px;font-weight:700}
+.whop__chips svg{width:26px;height:26px;color:var(--navy);flex:none}
+.whonote{margin-top:40px;padding:24px 28px;border-left:3px solid var(--red);background:#fff;border-radius:0 var(--radius) var(--radius) 0}
+.whonote__h{font-size:15px;font-weight:700}
+.whonote p{margin-top:8px;font-size:15.5px;line-height:1.8;color:var(--text)}
+
+@media (max-width:1000px){
+  .vrow,.vrow--rev{grid-template-columns:minmax(0,1fr);gap:22px;padding:26px 24px}
+  .vrow--rev .vrow__ill{order:0}
+  .mission{grid-template-columns:minmax(0,1fr);gap:0}
+  .mission__msg{margin:-34px 18px 0;padding:28px 26px 30px}
+  .vals{grid-template-columns:minmax(0,1fr);gap:18px;margin-top:52px}
+  .movie{grid-template-columns:minmax(0,1fr);gap:20px}
+  .whop{grid-template-columns:minmax(0,1fr);gap:28px}
+  .whop__center{order:-1}
+  .whop__center svg{width:150px}
+}
+@media (max-width:560px){
+  .whop__chips{grid-template-columns:minmax(0,1fr)!important}
+  .mission__h{font-size:22px}
+}
+/* ===== CULTURE-VISUAL v1 END ===== */
