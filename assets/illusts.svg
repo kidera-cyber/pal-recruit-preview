@@ -79,4 +79,33 @@
   <path class="l" d="M52 196v-44a48 48 0 0196 0v44"/>
   <path class="r" d="M100 128v34"/><circle class="fr" cx="100" cy="168" r="4"/>
 </symbol>
+
+<!-- 求める人（中央人物・ビジネスカジュアル＋タブレット＋現場/データ/対話の要素） -->
+<symbol id="il-person2" viewBox="0 0 260 300">
+  <defs>
+    <radialGradient id="pg" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#f6e9fb"/><stop offset="55%" stop-color="#fdeef1"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="130" cy="140" r="124" fill="url(#pg)"/>
+  <circle cx="130" cy="140" r="104" fill="none" stroke="#e3d7f2" stroke-width="1.2"/>
+  <circle cx="130" cy="140" r="78" fill="none" stroke="#f5d2d8" stroke-width="1.2"/>
+  <!-- 背景の小さな要素：棚／データ／対話 -->
+  <g opacity=".5">
+    <path class="lt" d="M26 196v-54M54 196v-54M26 166h28"/><rect class="lt" x="31" y="146" width="18" height="16"/>
+    <rect class="lt" x="204" y="86" width="40" height="30" rx="3"/><path class="r" d="M212 108v-8M222 108v-14M232 108v-5"/>
+    <path class="lt" d="M206 170h34a4 4 0 014 4v14a4 4 0 01-4 4h-20l-8 7v-7h-6a4 4 0 01-4-4v-14a4 4 0 014-4z"/>
+  </g>
+  <!-- 人物 -->
+  <g>
+    <circle class="l fw" cx="130" cy="92" r="27"/>
+    <path class="l" d="M86 258v-66a44 44 0 0188 0v66"/>
+    <path class="lt" d="M130 148v62"/>
+    <path class="l fw" d="M112 150l18 16 18-16"/>
+    <!-- タブレット -->
+    <rect class="l fw" x="146" y="176" width="54" height="40" rx="4" transform="rotate(-8 173 196)"/>
+    <path class="r" d="M158 200v-10M170 200v-16M182 200v-6" transform="rotate(-8 173 196)"/>
+    <path class="l" d="M168 208l-24 10"/>
+  </g>
+</symbol>
 </svg>

@@ -1365,21 +1365,73 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .movie__d{display:block;margin-top:12px;font-size:16px;line-height:1.8;color:var(--text)}
 .movie .textlink{margin-top:16px;display:inline-block}
 
-/* 求める人：中央に人物、左右にSKILL/CHARACTER */
-.whop{display:grid;grid-template-columns:minmax(0,1fr) 220px minmax(0,1fr);gap:34px;align-items:center}
-.whop__center{margin:0;text-align:center}
-.whop__center svg{width:190px;height:auto;aspect-ratio:200/240}
-.whop__center figcaption{margin-top:6px;font-size:15px;font-weight:700;line-height:1.5}
-.whop__h{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--navy-d);font-size:16px;font-weight:700}
-.whop__h .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.18em;color:var(--red)}
-.whop__side ul{margin-top:18px;display:grid;gap:14px;list-style:none}
-.whop__side--skill li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:2px 14px}
-.whop__side--skill svg{grid-row:span 2;width:40px;height:40px;color:var(--navy)}
-.whop__side--skill b{font-size:16.5px;line-height:1.5}
-.whop__side--skill span{font-size:15px;line-height:1.75;color:var(--text)}
-.whop__chips{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important}
-.whop__chips li{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:9999px;background:#fff;font-size:14.5px;font-weight:700}
-.whop__chips svg{width:26px;height:26px;color:var(--navy);flex:none}
+/* 求める人：人物を中心にした1枚の図解 */
+.look{max-width:980px;margin:0 auto}
+.look__stage{position:relative;width:min(100%,620px);margin:0 auto;aspect-ratio:1/1}
+.look__lines{position:absolute;inset:0;width:100%;height:100%}
+.look__person{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;width:46%}
+.look__person svg{width:100%;height:auto;aspect-ratio:260/300;display:block}
+.bub{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:9px;
+  padding:11px 18px;border-radius:9999px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 6px 18px rgba(38,41,70,.08);font-size:14.5px;font-weight:700;white-space:nowrap}
+.bub svg{width:26px;height:26px;color:var(--red);flex:none}
+.bub--b1{left:50%;top:6%}
+.bub--b2{left:87%;top:28%}
+.bub--b3{left:13%;top:28%}
+.bub--b4{left:13%;top:72%}
+.bub--b5{left:87%;top:72%}
+.bub--b6{left:50%;top:94%}
+
+.look__skill{margin-top:14px;padding-top:26px;border-top:1px solid var(--line)}
+.look__h,.look__char{display:flex;align-items:baseline;justify-content:center;gap:12px;font-size:16px;font-weight:700}
+.look__h .en,.look__char .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.18em;color:var(--red)}
+.look__skill ul{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;list-style:none;text-align:center}
+.look__skill li{display:grid;justify-items:center;gap:6px}
+.look__skill svg{width:40px;height:40px;color:var(--navy)}
+.look__skill b{font-size:16.5px;line-height:1.5}
+.look__skill span{font-size:15px;line-height:1.75;color:var(--text)}
+.look__char{margin-top:26px;color:var(--sub);font-size:13.5px;font-weight:400}
+.look__char .en{font-weight:700}
+
+/* 表示アニメーション（人物→SKILL→CHARACTER の順） */
+.look .look__person,.look .bub,.look__skill li{opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.look.is-in .look__person{opacity:1;transform:translate(-50%,-50%)}
+.look.is-in .bub{opacity:1;transform:translate(-50%,-50%)}
+.look.is-in .look__skill li{opacity:1;transform:none}
+.look.is-in .bub--b1{transition-delay:.25s}.look.is-in .bub--b2{transition-delay:.33s}
+.look.is-in .bub--b3{transition-delay:.41s}.look.is-in .bub--b4{transition-delay:.49s}
+.look.is-in .bub--b5{transition-delay:.57s}.look.is-in .bub--b6{transition-delay:.65s}
+.look.is-in .look__skill li:nth-child(1){transition-delay:.75s}
+.look.is-in .look__skill li:nth-child(2){transition-delay:.83s}
+.look.is-in .look__skill li:nth-child(3){transition-delay:.91s}
+.look__lines{opacity:0;transition:opacity .8s var(--ease) .2s}
+.look.is-in .look__lines{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .look .look__person,.look .bub,.look__skill li,.look__lines{opacity:1;transition:none}
+  .look .look__person,.look .bub{transform:translate(-50%,-50%)}
+}
+
+/* スマホ：タイトル → 人物 → SKILL → CHARACTER（6項目）→ 採用で大切にしていること の縦順 */
+@media (max-width:860px){
+  .look{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+  .look__stage{display:contents}
+  .look__lines{display:none}
+  .look__person{order:1;position:static;transform:none;width:220px;margin:0 auto 4px}
+  .look.is-in .look__person{transform:none}
+  .look__skill{order:2;margin-top:4px}
+  .look__char{order:3;margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+  .bub{order:4;position:static;transform:none;width:100%;justify-content:flex-start;white-space:normal}
+  .look.is-in .bub{transform:none}
+  .look__skill ul{grid-template-columns:minmax(0,1fr);gap:18px;text-align:left}
+  .look__skill li{grid-template-columns:44px minmax(0,1fr);justify-items:start;gap:2px 14px}
+  .look__skill svg{grid-row:span 2}
+}
+@media (max-width:520px){
+  .look__person{width:200px}
+  .bub{font-size:15px;padding:12px 16px}
+  .look__skill b{font-size:16px}
+  .look__skill span{font-size:14.5px}
+}
 .whonote{margin-top:40px;padding:24px 28px;border-left:3px solid var(--red);background:#fff;border-radius:0 var(--radius) var(--radius) 0}
 .whonote__h{font-size:15px;font-weight:700}
 .whonote p{margin-top:8px;font-size:15.5px;line-height:1.8;color:var(--text)}

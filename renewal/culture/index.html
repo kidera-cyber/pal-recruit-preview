@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261007a">
+<link rel="stylesheet" href="../../assets/style.css?v=20261007c">
 </head>
 <body class="p-culture">
 
@@ -96,6 +96,35 @@
   <circle class="l fw" cx="100" cy="76" r="26"/>
   <path class="l" d="M52 196v-44a48 48 0 0196 0v44"/>
   <path class="r" d="M100 128v34"/><circle class="fr" cx="100" cy="168" r="4"/>
+</symbol>
+
+<!-- 求める人（中央人物・ビジネスカジュアル＋タブレット＋現場/データ/対話の要素） -->
+<symbol id="il-person2" viewBox="0 0 260 300">
+  <defs>
+    <radialGradient id="pg" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#f6e9fb"/><stop offset="55%" stop-color="#fdeef1"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="130" cy="140" r="124" fill="url(#pg)"/>
+  <circle cx="130" cy="140" r="104" fill="none" stroke="#e3d7f2" stroke-width="1.2"/>
+  <circle cx="130" cy="140" r="78" fill="none" stroke="#f5d2d8" stroke-width="1.2"/>
+  <!-- 背景の小さな要素：棚／データ／対話 -->
+  <g opacity=".5">
+    <path class="lt" d="M26 196v-54M54 196v-54M26 166h28"/><rect class="lt" x="31" y="146" width="18" height="16"/>
+    <rect class="lt" x="204" y="86" width="40" height="30" rx="3"/><path class="r" d="M212 108v-8M222 108v-14M232 108v-5"/>
+    <path class="lt" d="M206 170h34a4 4 0 014 4v14a4 4 0 01-4 4h-20l-8 7v-7h-6a4 4 0 01-4-4v-14a4 4 0 014-4z"/>
+  </g>
+  <!-- 人物 -->
+  <g>
+    <circle class="l fw" cx="130" cy="92" r="27"/>
+    <path class="l" d="M86 258v-66a44 44 0 0188 0v66"/>
+    <path class="lt" d="M130 148v62"/>
+    <path class="l fw" d="M112 150l18 16 18-16"/>
+    <!-- タブレット -->
+    <rect class="l fw" x="146" y="176" width="54" height="40" rx="4" transform="rotate(-8 173 196)"/>
+    <path class="r" d="M158 200v-10M170 200v-16M182 200v-6" transform="rotate(-8 173 196)"/>
+    <path class="l" d="M168 208l-24 10"/>
+  </g>
 </symbol>
 </svg>
 
@@ -381,39 +410,42 @@
     </a>
     </div>
 
-    <div class="shead rv" style="margin-bottom:34px">
+    <div class="shead shead--center rv" style="margin-bottom:34px">
       <p class="slabel">Who we look for</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">PALが、求める人。</h2>
-      <p class="slead">スキルだけでも、性格だけでもない。その両方を見ています。</p>
+      <p class="slead">スキルだけでも、性格だけでもない。<br>PALは、その両方を見ています。</p>
     </div>
-    <div class="whop rv">
-      <div class="whop__side whop__side--skill">
-        <p class="whop__h"><span class="en">SKILL</span>できること</p>
+    <div class="look rv">
+      <div class="look__stage">
+        <svg class="look__lines" viewBox="0 0 600 600" aria-hidden="true">
+          <g stroke="#c3cade" stroke-width="1.2" stroke-dasharray="3 6">
+            <line x1="300" y1="300" x2="300" y2="40"/><line x1="300" y1="300" x2="520" y2="170"/>
+            <line x1="300" y1="300" x2="80" y2="170"/><line x1="300" y1="300" x2="80" y2="432"/>
+            <line x1="300" y1="300" x2="520" y2="432"/><line x1="300" y1="300" x2="300" y2="560"/>
+          </g>
+        </svg>
+        <figure class="look__person"><svg aria-hidden="true"><use href="#il-person2"></use></svg></figure>
+        <span class="bub bub--b1"><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>挑戦する</span>
+        <span class="bub bub--b2"><svg aria-hidden="true"><use href="#ic2-field"></use></svg>自ら動く</span>
+        <span class="bub bub--b3"><svg aria-hidden="true"><use href="#ic2-data"></use></svg>未来を見る</span>
+        <span class="bub bub--b4"><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>変化を楽しむ</span>
+        <span class="bub bub--b5"><svg aria-hidden="true"><use href="#ic-handy"></use></svg>学び続ける</span>
+        <span class="bub bub--b6"><svg aria-hidden="true"><use href="#ic-meeting"></use></svg>相手を尊重する</span>
+      </div>
+      <div class="look__skill">
+        <p class="look__h"><span class="en">SKILL</span>できること</p>
         <ul>
-          <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>構造で捉える</b><span>複雑な課題を整理し、本質を見る。</span></li>
+          <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>構造で捉える</b><span>複雑な課題を整理し、本質を見つける。</span></li>
           <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>テクノロジーフレンドリー</b><span>新しい技術を、まず使ってみる。</span></li>
           <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><b>コミュニケーション</b><span>立場を越えて、相手と向き合う。</span></li>
         </ul>
       </div>
-      <figure class="whop__center">
-        <svg aria-hidden="true"><use href="#il-person"></use></svg>
-        <figcaption>PALが<br>求める人</figcaption>
-      </figure>
-      <div class="whop__side whop__side--char">
-        <p class="whop__h"><span class="en">CHARACTER</span>どんな人か</p>
-        <ul class="whop__chips">
-          <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>挑戦する</li>
-          <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg>自ら動く</li>
-          <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>未来を見る</li>
-          <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>変化を楽しむ</li>
-          <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg>学び続ける</li>
-          <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>相手を尊重する</li>
-        </ul>
-      </div>
+      <p class="look__char"><span class="en">CHARACTER</span>大切にしている姿勢</p>
     </div>
+
     <div class="whonote rv">
       <p class="whonote__h">PALが採用で大切にしていること</p>
-      <p>技術力よりも、人物面を最優先しています。技術・物流の知識は、入社後に習得していく前提です。</p>
+      <p><b>技術や物流の知識は、入社後に身につけられます。</b><br>経験や専門性だけではなく、現場や人に向き合い、学びながら前へ進もうとする姿勢も大切にしています。</p>
     </div>
   </div>
 </section>
