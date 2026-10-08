@@ -1452,3 +1452,12 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .mission__h{font-size:22px}
 }
 /* ===== CULTURE-VISUAL v1 END ===== */
+
+/* ============================================================
+   ===== CULTURE-ILL v1 START =====
+   3つの価値観 / VALUE 3枚のイラストを SVG からご提供の図版に差し替え。
+   既存の .vrow__ill svg / .val__ill svg は残置し、img 指定を後勝ちで追加。
+   ============================================================ */
+.vrow__ill img,.val__ill img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:var(--radius)}
+.val__ill img{border:1px solid var(--line)}
+/* ===== CULTURE-ILL v1 END ===== */
