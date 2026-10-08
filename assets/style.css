@@ -1461,3 +1461,26 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .vrow__ill img,.val__ill img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:var(--radius)}
 .val__ill img{border:1px solid var(--line)}
 /* ===== CULTURE-ILL v1 END ===== */
+
+/* ============================================================
+   ===== PEOPLE-7 v1 START =====
+   「人を知る。」が7職種になり3列だと最終行に1枚だけ残るため、
+   PCのみ 4＋3（2行目をセンター配置）に変更。カード幅は全枚数で均一。
+   1000px以下は既存の .people--5 の指定（2列／1列）を継承。
+   ============================================================ */
+@media (min-width:1001px){
+  .people--7{grid-template-columns:repeat(8,minmax(0,1fr));gap:26px}
+  .people--7 > *{grid-column:span 2}
+  .people--7 > *:nth-child(5){grid-column:2 / span 2}
+}
+@media (min-width:861px) and (max-width:1000px){
+  /* 3列：最終行の1枚を中央へ */
+  .people--7 > *:last-child{grid-column:2}
+}
+@media (min-width:621px) and (max-width:860px){
+  /* 2列相当：最終行の1枚を中央へ */
+  .people--7{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .people--7 > *{grid-column:span 2}
+  .people--7 > *:last-child{grid-column:2 / span 2}
+}
+/* ===== PEOPLE-7 v1 END ===== */
