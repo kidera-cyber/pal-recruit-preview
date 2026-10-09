@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261009j">
+<link rel="stylesheet" href="../../assets/style.css?v=20261009k">
 </head>
 <body>
 
@@ -72,6 +72,44 @@
 <symbol id="ic2-improve" viewBox="0 0 32 32"><path class="s" d="M4 27h25"/><path class="a" d="M7 22l6-6 4 3 8-9"/><path class="a" d="M21 10h4v4"/><circle class="s" cx="9" cy="8" r="2.6"/><path class="s" d="M4 16c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
 </svg>
 
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<defs><style>
+  .l{fill:none;stroke:#262946;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .lt{fill:none;stroke:#262946;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .r{fill:none;stroke:#cf131b;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .fn{fill:#262946}.fr{fill:#cf131b}.fp{fill:#ffe3e6}.fg{fill:#eef0f6}.fw{fill:#fff}
+</style></defs>
+<radialGradient id="pg" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#f6e9fb"/><stop offset="55%" stop-color="#fdeef1"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+<symbol id="il-person2" viewBox="0 0 260 300">
+  <defs>
+    <radialGradient id="pg" cx="50%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#f6e9fb"/><stop offset="55%" stop-color="#fdeef1"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="130" cy="140" r="124" fill="url(#pg)"/>
+  <circle cx="130" cy="140" r="104" fill="none" stroke="#e3d7f2" stroke-width="1.2"/>
+  <circle cx="130" cy="140" r="78" fill="none" stroke="#f5d2d8" stroke-width="1.2"/>
+  <!-- 背景の小さな要素：棚／データ／対話 -->
+  <g opacity=".5">
+    <path class="lt" d="M26 196v-54M54 196v-54M26 166h28"/><rect class="lt" x="31" y="146" width="18" height="16"/>
+    <rect class="lt" x="204" y="86" width="40" height="30" rx="3"/><path class="r" d="M212 108v-8M222 108v-14M232 108v-5"/>
+    <path class="lt" d="M206 170h34a4 4 0 014 4v14a4 4 0 01-4 4h-20l-8 7v-7h-6a4 4 0 01-4-4v-14a4 4 0 014-4z"/>
+  </g>
+  <!-- 人物 -->
+  <g>
+    <circle class="l fw" cx="130" cy="92" r="27"/>
+    <path class="l" d="M86 258v-66a44 44 0 0188 0v66"/>
+    <path class="lt" d="M130 148v62"/>
+    <path class="l fw" d="M112 150l18 16 18-16"/>
+    <!-- タブレット -->
+    <rect class="l fw" x="146" y="176" width="54" height="40" rx="4" transform="rotate(-8 173 196)"/>
+    <path class="r" d="M158 200v-10M170 200v-16M182 200v-6" transform="rotate(-8 173 196)"/>
+    <path class="l" d="M168 208l-24 10"/>
+  </g>
+</symbol>
+</svg>
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
     <a class="logo" href="../" aria-label="PAL RECRUIT トップへ">
@@ -228,12 +266,52 @@
 
 <section class="sec sec--soft sec--tight" id="bridge">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:26px">
+    <div class="shead rv" style="margin-bottom:34px">
       <p class="slabel">Forward Deployed Engineer</p>
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">業務課題を、技術要件へ翻訳する。</h2>
-      <p class="slead">FDE（Forward Deployed Engineer）は、顧客の業務課題を技術要件へ翻訳し、設計・実装・本番導入・運用までをつなぐ役割です。<br>PAL独自の職種ではありません。顧客の業務課題と技術の間をつなぐというエンジニアの考え方を、PALは物流DXに適用しています。</p>
+      <p class="slead">FDEは、現場の業務課題を理解し、技術要件へ翻訳して、設計・実装・運用までをつなぐ役割です。</p>
+      <p class="note">PALでは、このFDEの考え方を物流DXに適用しています。</p>
     </div>
-    <p class="rv"><a class="btn btn--ghost" href="../work/fde/">FDEについて詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+
+    <div class="trans rv">
+      <div class="trans__side trans__side--field">
+        <p class="trans__h"><span class="en">FIELD</span>現場の言葉</p>
+        <ul class="trans__voice">
+          <li>作業が追いつかない</li>
+          <li>人によってやり方が違う</li>
+          <li>情報が分散している</li>
+          <li>設備と業務が合っていない</li>
+        </ul>
+      </div>
+
+      <div class="trans__core">
+        <figure class="trans__ill"><svg aria-hidden="true"><use href="#il-person2"></use></svg></figure>
+        <p class="trans__fde"><span class="en">FDE</span>翻訳する</p>
+        <ol class="trans__steps">
+          <li><span class="en">01</span>現場を見る</li>
+          <li><span class="en">02</span>課題を整理する</li>
+          <li><span class="en">03</span>技術要件へ変える</li>
+        </ol>
+      </div>
+
+      <div class="trans__side trans__side--tech">
+        <p class="trans__h"><span class="en">TECHNOLOGY</span>技術の言葉</p>
+        <ul class="trans__req">
+          <li>要件整理</li>
+          <li>システム設計</li>
+          <li>データ連携</li>
+          <li>自動化・ロボティクス</li>
+          <li>設備との連動</li>
+          <li>運用設計</li>
+        </ul>
+      </div>
+    </div>
+
+    <ol class="transflow rv">
+      <li>技術要件</li><li>設計</li><li>実装</li><li>運用</li>
+    </ol>
+    <p class="transnote rv">翻訳して終わりではありません。ここから、現場で動く仕組みになるまでつなぎます。</p>
+    <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="../work/fde/">FDEについて詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 

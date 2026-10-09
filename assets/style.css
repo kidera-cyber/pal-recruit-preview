@@ -1609,3 +1609,51 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .cyc{grid-template-columns:minmax(0,1fr)}
 }
 /* ===== PROCESS-CYC v1 END ===== */
+
+/* ============================================================
+   ===== FDE-TRANS v1 START =====
+   PALを知る：FDEの役割を1枚のインフォグラフィックで見せる。
+   現場の言葉 → FDE（翻訳する）→ 技術の言葉 → 設計・実装・運用。
+   ============================================================ */
+.trans{position:relative;display:grid;grid-template-columns:1fr 1.08fr 1fr;gap:0 58px;align-items:center}
+.trans__side{position:relative;padding:26px 26px 28px;border-radius:var(--radius-lg);background:#fff;border:1px solid var(--line)}
+.trans__side::after{content:"→";position:absolute;right:-41px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:13px}
+.trans__side--tech::after{display:none}
+.trans__h{display:flex;align-items:baseline;gap:10px;font-size:15px;font-weight:700}
+.trans__h .en{font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--muted)}
+.trans__voice,.trans__req{margin-top:16px;display:grid;gap:9px;list-style:none}
+.trans__voice li{position:relative;padding:11px 14px;border-radius:12px 12px 12px 3px;background:var(--bg-soft);
+  font-size:14px;line-height:1.6;color:var(--text)}
+.trans__voice li::before{content:"「";color:var(--muted)}
+.trans__voice li::after{content:"」";color:var(--muted)}
+.trans__req li{display:grid;grid-template-columns:14px minmax(0,1fr);gap:10px;align-items:baseline;font-size:14.5px;line-height:1.7}
+.trans__req li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);transform:translateY(-2px)}
+
+.trans__core{position:relative;padding:30px 26px 32px;border-radius:var(--radius-lg);background:var(--navy);color:#fff;text-align:center}
+.trans__core::after{content:"→";position:absolute;right:-41px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:13px}
+.trans__ill{margin:0 auto;width:min(100%,190px);padding:10px 8px;border-radius:var(--radius);background:#fff}
+.trans__ill svg{width:100%;height:auto;aspect-ratio:260/300;display:block}
+.trans__fde{margin-top:6px;font-size:clamp(20px,2.3vw,26px);font-weight:700;line-height:1.4}
+.trans__fde .en{display:block;margin-bottom:8px;font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.18em;color:#f1949a}
+.trans__steps{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);display:grid;gap:9px;list-style:none;text-align:left}
+.trans__steps li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:8px;align-items:baseline;font-size:14px;line-height:1.6;color:#dfe2ef}
+.trans__steps .en{font-family:Lato,sans-serif;font-size:10.5px;font-weight:700;color:#f1949a}
+
+.transflow{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 0;list-style:none}
+.transflow li{position:relative;padding:10px 20px;border-radius:9999px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:700}
+.transflow li+li{margin-left:34px}
+.transflow li+li::before{content:"→";position:absolute;left:-26px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px}
+.transnote{margin-top:22px;font-size:15px;line-height:1.85;font-weight:700;color:var(--navy)}
+
+@media (max-width:900px){
+  .trans{grid-template-columns:minmax(0,1fr);gap:46px 0}
+  .trans__side::after,.trans__core::after{right:auto;left:50%;top:auto;bottom:-36px;transform:translateX(-50%) rotate(90deg)}
+  .trans__ill{width:150px}
+}
+@media (max-width:520px){
+  .transflow li+li{margin-left:28px}
+  .transflow li+li::before{left:-22px}
+}
+/* ===== FDE-TRANS v1 END ===== */
