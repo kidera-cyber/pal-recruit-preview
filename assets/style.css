@@ -1848,3 +1848,49 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jsupport{grid-template-columns:minmax(0,1fr)}
 }
 /* ===== JOBMAP v1 END ===== */
+
+/* ============================================================
+   ===== JOBFLOW v1 START =====
+   仕事を知る：職種の連携を3階層のフロー図で示す。
+   中心集約（CORE）表現は廃止。全カードを同じ扱いにし、
+   赤は矢印と連携記号のみに使う。旧 .jmap / .jnode は未使用。
+   ============================================================ */
+.jflow{display:grid;gap:0}
+.jtier{padding:0}
+.jtier--side{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
+.jtier__h{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;font-size:15px;font-weight:700;color:var(--navy)}
+.jtier__h .en{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;
+  background:var(--navy);color:#fff;font-family:Lato,sans-serif;font-size:10.5px;font-weight:700}
+.jtier__note{margin-top:12px;font-size:12.5px;line-height:1.8;color:var(--muted)}
+.jtier__link{margin-top:14px;padding:12px 18px;border-radius:var(--radius);background:var(--bg-soft);
+  font-size:13.5px;line-height:1.8;color:var(--sub)}
+
+.jrow{display:grid;gap:16px;list-style:none;align-items:stretch}
+.jrow--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.jrow--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.jrow--3bi{grid-template-columns:1fr 44px 1fr 44px 1fr;gap:0}
+
+.jcard{display:flex;flex-direction:column;padding:20px 22px 22px;border-radius:var(--radius);
+  background:#fff;border:1px solid var(--line)}
+.jcard b{font-size:15.5px;line-height:1.5}
+.jcard p{margin-top:8px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+
+.jbi{display:grid;place-items:center}
+.jbi span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;
+  background:#fff;border:1px solid rgba(207,19,27,.45);color:var(--red);font-size:13px;line-height:1}
+
+.jdown{display:grid;place-items:center;padding:14px 0}
+.jdown span{position:relative;display:block;width:2px;height:34px;background:var(--red)}
+.jdown span::after{content:"";position:absolute;left:50%;bottom:-1px;width:9px;height:9px;
+  border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:translateX(-50%) rotate(45deg)}
+
+@media (max-width:900px){
+  .jrow--3{grid-template-columns:minmax(0,1fr)}
+  .jrow--3bi{grid-template-columns:minmax(0,1fr)}
+  .jbi{padding:4px 0}
+  .jbi span{transform:rotate(90deg)}
+}
+@media (max-width:560px){
+  .jrow--2{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== JOBFLOW v1 END ===== */
