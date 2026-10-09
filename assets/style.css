@@ -2187,3 +2187,26 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .dayto{text-align:left}
 }
 /* ===== CULTURE-DAY7 v1 END ===== */
+
+/* ============================================================
+   ===== WHO-LOOK-MOVE v1 START =====
+   「PALが、求める人。」を CULTURE から PEOPLE へ移動したことに伴う調整。
+   ・.whonote が .look（最大980px・中央）より広く、左にずれて見えていたのを揃える
+   ・社員インタビューへの接続文（.lookto）を追加
+   既存の .look / .bub / .whonote の指定はそのまま流用する。
+   ============================================================ */
+.whonote{max-width:980px;margin-inline:auto}
+
+.lookto{max-width:980px;margin:34px auto 0;padding-top:30px;
+  border-top:1px solid var(--line-mid,#c3cade);
+  text-align:center;font-size:16px;font-weight:700;line-height:2}
+
+@media (max-width:620px){
+  .lookto{font-size:15px;line-height:1.95;text-align:left}
+}
+/* 社員カードのラベルが 11.5px のままだった（.people--5 .person__cat の詳細度が
+   MOBILE-LEGIBILITY v1 の .person__cat に勝っていたため）。同じ方針で12pxへ底上げ。 */
+@media (max-width:720px){
+  .people--5 .person__cat,.people--4 .person__cat{font-size:12px}
+}
+/* ===== WHO-LOOK-MOVE v1 END ===== */
