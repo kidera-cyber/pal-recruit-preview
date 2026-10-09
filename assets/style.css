@@ -1598,6 +1598,8 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   font-size:14.5px;line-height:1.6}
 .cyc__steps .en{font-family:Lato,sans-serif;font-size:11px;font-weight:700;color:var(--sub)}
 .cyc__d{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;line-height:1.8;color:var(--sub)}
+.cyc__lead{margin-top:12px;font-size:13.5px;line-height:1.85;color:var(--sub)}
+.cyc__lead + .cyc__steps{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
 
 @media (max-width:1000px){
   .cyc{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
