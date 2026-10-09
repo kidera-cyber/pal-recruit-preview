@@ -1580,3 +1580,30 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .prob{padding:24px 22px 26px}
 }
 /* ===== WHYNOW-GAP v1 END ===== */
+
+/* ============================================================
+   ===== PROCESS-CYC v1 START =====
+   PALを知る：Design→Deploy→Operate→Evolve の4段階の中に、
+   実務の7ステップを収めて示す（4サイクル図と7ステップの二重掲載をやめる）。
+   ============================================================ */
+.cyc{margin-top:8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;list-style:none}
+.cyc__ph{position:relative;display:flex;flex-direction:column;padding:26px 24px 28px;
+  border-radius:var(--radius-lg);background:#fff;border:1px solid var(--line)}
+.cyc__ph::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px}
+.cyc__ph:last-child::after{content:"↻";right:-15px;color:var(--red)}
+.cyc__h{font-size:18px;line-height:1.5;font-weight:700}
+.cyc__h .en{display:block;margin-bottom:8px;font-family:Lato,sans-serif;font-size:11px;letter-spacing:.12em;color:var(--red)}
+.cyc__steps{margin-top:16px;display:grid;gap:8px;list-style:none}
+.cyc__steps li{display:grid;grid-template-columns:26px minmax(0,1fr);align-items:baseline;gap:8px;
+  font-size:14.5px;line-height:1.6}
+.cyc__steps .en{font-family:Lato,sans-serif;font-size:11px;font-weight:700;color:var(--sub)}
+.cyc__d{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;line-height:1.8;color:var(--sub)}
+
+@media (max-width:1000px){
+  .cyc{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+  .cyc__ph::after{display:none}
+}
+@media (max-width:620px){
+  .cyc{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== PROCESS-CYC v1 END ===== */
