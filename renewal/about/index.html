@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261009m">
+<link rel="stylesheet" href="../../assets/style.css?v=20261009n">
 </head>
 <body>
 
@@ -82,6 +82,18 @@
 <radialGradient id="pg" cx="50%" cy="46%" r="52%">
       <stop offset="0%" stop-color="#f6e9fb"/><stop offset="55%" stop-color="#fdeef1"/><stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
+<symbol id="il-field" viewBox="0 0 400 240">
+  <rect class="fg" x="0" y="196" width="400" height="6" rx="3"/>
+  <g><path class="l" d="M20 60v136M76 60v136M20 96h56M20 132h56M20 168h56"/>
+     <rect class="fg" x="26" y="66" width="20" height="24"/><rect class="fp" x="52" y="102" width="20" height="24"/><rect class="fg" x="26" y="138" width="20" height="24"/>
+     <rect class="lt" x="26" y="66" width="20" height="24"/><rect class="lt" x="52" y="102" width="20" height="24"/><rect class="lt" x="26" y="138" width="20" height="24"/></g>
+  <g><circle class="l fw" cx="168" cy="92" r="16"/><path class="l" d="M140 196v-44a28 28 0 0156 0v44"/>
+     <rect class="fw lt" x="186" y="122" width="34" height="24" rx="3"/><path class="r" d="M194 130h18M194 138h10"/>
+     <path class="l" d="M176 140l14-8"/></g>
+  <g><circle class="l fw" cx="252" cy="104" r="14"/><path class="l" d="M228 196v-40a24 24 0 0148 0v40"/><path class="r" d="M238 128h28"/></g>
+  <g><rect class="l fw" x="300" y="150" width="78" height="34" rx="6"/><circle class="l fw" cx="318" cy="190" r="7"/><circle class="l fw" cx="360" cy="190" r="7"/>
+     <rect class="fp lt" x="314" y="124" width="50" height="26" rx="3"/></g>
+</symbol>
 <symbol id="il-person2" viewBox="0 0 260 300">
   <defs>
     <radialGradient id="pg" cx="50%" cy="46%" r="52%">
@@ -205,82 +217,64 @@
       <p class="note">PALでは、このFDEの考え方を物流DXに適用しています。</p>
     </div>
 
-<div class="trans rv">
-      <div class="trans__side trans__side--field">
-        <p class="trans__h"><span class="en">FIELD</span>現場の言葉</p>
-        <ul class="trans__voice">
-          <li>作業が追いつかない</li>
-          <li>人によってやり方が違う</li>
-          <li>情報が分散している</li>
-          <li>設備と業務が合っていない</li>
-        </ul>
+<div class="pflow rv">
+      <div class="pflow__row">
+        <div class="pf pf--field">
+          <p class="pf__h"><span class="en">FIELD</span>現場の言葉</p>
+          <figure class="pf__ill"><svg aria-hidden="true"><use href="#il-field"></use></svg></figure>
+          <ul class="pf__bub">
+            <li>作業が追いつかない</li>
+            <li>人によってやり方が違う</li>
+            <li>情報が分散している</li>
+            <li>設備と業務が合っていない</li>
+          </ul>
+        </div>
+
+        <div class="pf pf--fde">
+          <figure class="pf__ill pf__ill--sm"><svg aria-hidden="true"><use href="#il-person2"></use></svg></figure>
+          <p class="pf__fde"><span class="en">FDE</span>翻訳する</p>
+          <p class="pf__sub">Forward Deployed Engineer</p>
+          <ol class="pf__t">
+            <li>現場を見る</li>
+            <li>課題を整理する</li>
+            <li>技術要件へ変える</li>
+          </ol>
+        </div>
+
+        <div class="pf pf--tech">
+          <p class="pf__h"><span class="en">TECHNOLOGY</span>技術要件</p>
+          <ul class="pf__ic">
+            <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>システム</li>
+            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>データ</li>
+            <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>設備</li>
+            <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>自動化</li>
+            <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>運用設計</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="trans__core">
-        <figure class="trans__ill"><svg aria-hidden="true"><use href="#il-person2"></use></svg></figure>
-        <p class="trans__fde"><span class="en">FDE</span>翻訳する</p>
-        <ol class="trans__steps">
-          <li><span class="en">01</span>現場を見る</li>
-          <li><span class="en">02</span>課題を整理する</li>
-          <li><span class="en">03</span>技術要件へ変える</li>
-        </ol>
-      </div>
+      <p class="pfline"><span class="en">FDE</span><i aria-hidden="true"></i><b>現場理解から改善まで横断する</b></p>
 
-      <div class="trans__side trans__side--tech">
-        <p class="trans__h"><span class="en">TECHNOLOGY</span>技術の言葉</p>
-        <ul class="trans__req">
-          <li>要件整理</li>
-          <li>システム設計</li>
-          <li>データ連携</li>
-          <li>自動化・ロボティクス</li>
-          <li>設備との連動</li>
-          <li>運用設計</li>
-        </ul>
-      </div>
+      <ol class="pfsteps">
+        <li><span class="en">01 DESIGN</span><b>設計</b><span>現場全体を捉え、最適な仕組みを設計する。</span></li>
+        <li><span class="en">02 DEPLOY</span><b>実装・導入</b><span>技術を組み合わせ、現場へ実装する。</span></li>
+        <li><span class="en">03 OPERATE</span><b>運用</b><span>現場で安定して価値を生み出す。</span></li>
+        <li><span class="en">04 EVOLVE</span><b>進化</b><span>データをもとに改善を重ねる。</span></li>
+      </ol>
+
+      <ol class="pftl">
+        <li class="pftl--d"><span class="en">01</span>現場を見る</li>
+        <li class="pftl--d"><span class="en">02</span>課題を整理する</li>
+        <li class="pftl--d"><span class="en">03</span>技術要件へ変える</li>
+        <li class="pftl--d"><span class="en">04</span>設計する</li>
+        <li class="pftl--p"><span class="en">05</span>実装する</li>
+        <li class="pftl--o"><span class="en">06</span>運用する</li>
+        <li class="pftl--e"><span class="en">07</span>改善する</li>
+      </ol>
+      <p class="pftl__legend"><span>01–04 DESIGN</span><span>05 DEPLOY</span><span>06 OPERATE</span><span>07 EVOLVE</span><em>07 のあと、01 に戻ります。</em></p>
     </div>
 
-    <div class="cycband rv">
-      <span class="en">FDE</span>
-      <b>現場と技術をつなぎながら、この4段階を横断します。</b>
-    </div>
-
-<ol class="cyc rv">
-      <li class="cyc__ph">
-        <p class="cyc__h"><span class="en">01 DESIGN</span>設計</p>
-        <p class="cyc__lead">現場全体を捉え、人・設備・システム・AI・ロボティクスが最適に協調する仕組みを設計する。</p>
-        <ol class="cyc__steps">
-          <li><span class="en">01</span>現場を見る</li>
-          <li><span class="en">02</span>課題を整理する</li>
-          <li><span class="en">03</span>技術要件へ変える</li>
-          <li><span class="en">04</span>設計する</li>
-        </ol>
-      </li>
-      <li class="cyc__ph">
-        <p class="cyc__h"><span class="en">02 DEPLOY</span>実装・導入</p>
-        <p class="cyc__lead">さまざまなAI、ソフトウェア、ロボティクスなどの技術を組み合わせ、現場に実装する。</p>
-        <ol class="cyc__steps">
-          <li><span class="en">05</span>実装する</li>
-        </ol>
-      </li>
-      <li class="cyc__ph">
-        <p class="cyc__h"><span class="en">03 OPERATE</span>運用</p>
-        <p class="cyc__lead">実際の現場で安定して価値を生み出し続ける。</p>
-        <ol class="cyc__steps">
-          <li><span class="en">06</span>運用する</li>
-        </ol>
-      </li>
-      <li class="cyc__ph">
-        <p class="cyc__h"><span class="en">04 EVOLVE</span>進化</p>
-        <p class="cyc__lead">現場から得られるデータや知見をもとに継続的に改善し、現場そのものを進化させていく。</p>
-        <ol class="cyc__steps">
-          <li><span class="en">07</span>改善する</li>
-        </ol>
-      </li>
-    </ol>
-
-    <p class="note rv">※ 01〜07 は、4段階のどこで手を動かすかを示したものです。07 まで進んだら 01 に戻り、案件ごとにこの一周を繰り返します。</p>
-
-    <p class="transnote rv" style="margin-top:34px">この一連の流れを、現場・データ・システム・設備にまたがってつなぐことが、PALの仕事です。</p>
+    <p class="transnote rv" style="margin-top:34px">現場・技術・運用・改善を、ひとつの流れとしてつないでいく。それがPALの仕事です。</p>
     <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="../work/fde/">FDEについて詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>

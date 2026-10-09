@@ -1672,3 +1672,89 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .cycband + .cyc{margin-top:0}
 @media (max-width:620px){ .cycband{border-radius:var(--radius);padding:16px 18px} .cycband::after{display:none} }
 /* ===== FDE-BAND v1 END ===== */
+
+/* ============================================================
+   ===== PFLOW v1 START =====
+   PALを知る／OUR PROCESS：現場の課題 → FDEが翻訳 → 技術要件 →
+   Design→Deploy→Operate→Evolve を、カードを使わず一本の流れで見せる。
+   旧 .trans / .cycband / .cyc は未使用になったが、CSSは残置（復元用）。
+   ============================================================ */
+.pflow{margin-top:10px}
+.pflow__row{display:grid;grid-template-columns:1.05fr .92fr 1.05fr;align-items:center;gap:0 34px}
+.pf{min-width:0}
+.pf__h{display:flex;align-items:baseline;gap:10px;font-size:15px;font-weight:700}
+.pf__h .en{font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--muted)}
+.pf__ill{margin:14px 0 0}
+.pf__ill svg{width:100%;height:auto;display:block}
+.pf--field .pf__ill svg{aspect-ratio:400/240}
+.pf__ill--sm{width:86px;margin:0 auto 10px}
+.pf__ill--sm svg{aspect-ratio:260/300}
+
+.pf__bub{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.pf__bub li{padding:8px 14px;border-radius:14px 14px 14px 4px;background:var(--bg-soft);font-size:13.5px;line-height:1.6;color:var(--sub)}
+
+/* 中央：翻訳ポイント（カードではなく、ラインの上の点） */
+.pf--fde{position:relative;text-align:center;padding:24px 16px 26px;border-radius:var(--radius-lg);background:var(--bg-soft)}
+.pf--fde::before,.pf--fde::after{content:"→";position:absolute;top:50%;transform:translateY(-50%);color:var(--red);font-size:17px;font-weight:700}
+.pf--fde::before{left:-26px}
+.pf--fde::after{right:-26px}
+.pf__fde{font-size:clamp(19px,2.2vw,24px);font-weight:700;line-height:1.4;color:var(--navy);white-space:nowrap}
+.pf__fde .en{display:block;margin-bottom:6px;font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.18em;color:var(--red)}
+.pf__sub{margin-top:6px;font-family:Lato,sans-serif;font-size:10px;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+.pf__t{margin-top:14px;display:grid;gap:4px;list-style:none;font-size:13.5px;line-height:1.7;color:var(--sub)}
+.pf__t li+li::before{content:"↓";display:block;color:var(--red);font-size:11px;line-height:1.2}
+
+.pf__ic{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:14px 12px;list-style:none}
+.pf__ic li{display:grid;justify-items:center;gap:7px;font-size:13px;line-height:1.5;text-align:center;color:var(--navy);font-weight:700}
+.pf__ic svg{width:30px;height:30px;color:var(--navy)}
+
+/* 区切りの矢印（grid の auto 列に入れる） */
+.pflow__row > .pf + .pf::after{content:none}
+.pflow__row::marker{content:none}
+
+/* FDE 横断ライン */
+.pfline{margin:40px 0 20px;display:flex;align-items:center;gap:12px}
+.pfline .en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.18em;font-weight:700;color:var(--red)}
+.pfline i{flex:1;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--red),rgba(207,19,27,.15))}
+.pfline b{font-size:13.5px;font-weight:700;color:var(--sub);white-space:nowrap}
+
+/* 4プロセス：カードではなく横長ステップ */
+.pfsteps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;list-style:none;border-top:2px solid var(--navy)}
+.pfsteps li{position:relative;padding:20px 22px 22px 0}
+.pfsteps li+li{padding-left:24px}
+.pfsteps li+li::before{content:"";position:absolute;left:0;top:20px;bottom:20px;width:1px;background:var(--line)}
+.pfsteps .en{display:block;font-family:Lato,sans-serif;font-size:11px;letter-spacing:.1em;color:var(--red)}
+.pfsteps b{display:block;margin-top:7px;font-size:17px}
+.pfsteps span:last-child{display:block;margin-top:8px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+
+/* 01〜07 の細いタイムライン */
+.pftl{margin-top:30px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;list-style:none;
+  border-radius:var(--radius);overflow:hidden}
+.pftl li{position:relative;padding:14px 10px 16px;text-align:center;font-size:12.5px;line-height:1.5;color:var(--navy)}
+.pftl li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--line-mid)}
+.pftl .en{display:block;margin-bottom:6px;font-family:Lato,sans-serif;font-size:10.5px;font-weight:700;color:var(--sub)}
+.pftl--d{background:rgba(38,41,70,.045)} .pftl--d::after{background:var(--navy)!important}
+.pftl--p{background:rgba(207,19,27,.05)} .pftl--p::after{background:var(--red)!important}
+.pftl--o{background:rgba(115,56,234,.05)} .pftl--o::after{background:#7338ea!important}
+.pftl--e{background:rgba(247,42,72,.05)} .pftl--e::after{background:var(--pink)!important}
+.pftl__legend{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--sub)}
+.pftl__legend em{font-style:normal;color:var(--muted)}
+
+@media (max-width:980px){
+  .pflow__row{grid-template-columns:minmax(0,1fr);gap:44px}
+  .pf--fde::before{left:50%;top:-30px;transform:translateX(-50%) rotate(90deg)}
+  .pf--fde::after{right:auto;left:50%;top:auto;bottom:-30px;transform:translateX(-50%) rotate(90deg)}
+  .pf--field .pf__ill svg{max-height:200px}
+  .pfsteps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pfsteps li:nth-child(odd)+li::before{left:0}
+  .pftl{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .pfsteps{grid-template-columns:minmax(0,1fr)}
+  .pfsteps li{padding:18px 0}
+  .pfsteps li+li{padding-left:0;border-top:1px solid var(--line)}
+  .pfsteps li+li::before{display:none}
+  .pftl{grid-template-columns:minmax(0,1fr)}
+  .pfline b{white-space:normal}
+}
+/* ===== PFLOW v1 END ===== */
