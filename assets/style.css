@@ -1528,3 +1528,14 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .iv__q:has(.iv__qno)::before{content:none}
 @media (max-width:620px){ .iv__qno{display:block;margin:0 0 8px;width:fit-content} }
 /* ===== INTERVIEW-SURVEY v1 END ===== */
+
+/* ============================================================
+   ===== CAREER-STORY v1 START =====
+   CAREERページ：職種ごとの入口を、カードではなく一覧で見せる。
+   ============================================================ */
+.entrylist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;list-style:none;border-top:1px solid var(--line)}
+.entrylist li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding:17px 2px;border-bottom:1px solid var(--line)}
+.entrylist b{font-size:16px;line-height:1.6;min-width:190px}
+.entrylist span{font-size:14.5px;line-height:1.7;color:var(--sub)}
+@media (max-width:860px){ .entrylist{grid-template-columns:minmax(0,1fr);gap:0} .entrylist b{min-width:0} }
+/* ===== CAREER-STORY v1 END ===== */
