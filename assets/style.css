@@ -2156,3 +2156,34 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .flowsel{grid-template-columns:minmax(0,1fr)}
 }
 /* ===== JOBS-ROLE v1 END ===== */
+
+/* ============================================================
+   ===== CULTURE-DAY7 v1 START =====
+   「部署ごとに異なる、PALの1日。」を4職種から7職種へ拡張。
+   PCは 4＋3 の2段・中央揃え、スマホは横スクロールのタブ。
+   選択中は濃紺背景＋PALレッドのアウトライン＋白文字。
+   既存の .tabs--big / .tlcols / .tl3 の指定はそのまま流用する。
+   ============================================================ */
+.tabs--7{justify-content:center}
+.tabs--7 .tabs__br{flex-basis:100%;height:0;margin:0}
+.tabs--7 .tab[aria-selected="true"]{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+
+/* 仮スケジュールであることの注記 */
+.daydraft{margin:-14px 0 26px;padding:11px 16px;border-radius:var(--radius);
+  background:#fff4f4;border:1px solid #f3d3d5;font-size:12.5px;line-height:1.8;color:#8c3038}
+.daydraft b{color:var(--red)}
+
+/* 各職種から PEOPLE への導線 */
+.dayto{margin-top:24px;text-align:right}
+
+@media (max-width:860px){
+  /* 7タブを詰め込まず、横スクロールで切り替える */
+  /* 負のマージンは横スクロールの原因になるため使わず、wrap の内側でスクロールさせる */
+  .tabs--7{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;
+    scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    margin-inline:0;padding:2px 0 10px}
+  .tabs--7 .tab{flex:0 0 auto;scroll-snap-align:start}
+  .tabs--7 .tabs__br{display:none}
+  .dayto{text-align:left}
+}
+/* ===== CULTURE-DAY7 v1 END ===== */
