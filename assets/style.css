@@ -1758,3 +1758,43 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pfline b{white-space:normal}
 }
 /* ===== PFLOW v1 END ===== */
+
+/* ============================================================
+   ===== WORK-REALITY v1 START =====
+   仕事を知る：職種ごとの「難しさ・考えること・やりがい」を横長カードで、
+   改善の進み方を縦のステップで見せる。
+   ============================================================ */
+.reals{display:grid;gap:16px;list-style:none}
+.real{display:grid;grid-template-columns:262px minmax(0,1fr);gap:0 40px;align-items:start;
+  padding:28px 32px 30px;border-radius:var(--radius-lg);background:#fff;border:1px solid var(--line)}
+.real__cat{display:inline-block;padding:5px 13px;border-radius:9999px;background:var(--bg-soft);
+  font-family:Lato,sans-serif;font-size:11px;letter-spacing:.08em;font-weight:700;color:var(--sub)}
+.real__head h3{margin-top:12px;font-size:19px;line-height:1.55}
+.real__body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+.real__item{position:relative;padding-left:20px}
+.real__item::before{content:"";position:absolute;left:0;top:6px;width:3px;height:14px;border-radius:2px;background:var(--line-mid)}
+.real__item--joy::before{background:var(--red)}
+.real__item b{display:block;font-size:12.5px;letter-spacing:.02em;color:var(--sub)}
+.real__item--joy b{color:var(--red)}
+.real__item p{margin-top:8px;font-size:14px;line-height:1.9}
+
+.csteps{display:grid;gap:0;list-style:none}
+.cstep{position:relative;display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 28px;padding:26px 0 28px}
+.cstep+.cstep{border-top:1px solid var(--line)}
+.cstep__no{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.12em;font-weight:700;color:var(--red)}
+.cstep__b h3{font-size:19px;line-height:1.55}
+.cstep__b p{margin-top:10px;font-size:14.5px;line-height:1.95;color:var(--text)}
+.cstep__who{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-top:12px !important;
+  font-size:13.5px !important;color:var(--sub) !important}
+.cstep__who span{padding:4px 11px;border-radius:9999px;background:#fff;border:1px solid var(--line);
+  font-size:11.5px;font-weight:700;color:var(--navy)}
+
+@media (max-width:1000px){
+  .real{grid-template-columns:minmax(0,1fr);gap:20px}
+  .real__body{grid-template-columns:minmax(0,1fr);gap:18px}
+}
+@media (max-width:620px){
+  .real{padding:24px 22px 26px}
+  .cstep{grid-template-columns:minmax(0,1fr);gap:10px}
+}
+/* ===== WORK-REALITY v1 END ===== */
