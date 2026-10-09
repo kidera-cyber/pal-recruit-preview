@@ -1510,3 +1510,21 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ajcta p{font-size:14.5px}
 }
 /* ===== AFTER-JOIN v1 END ===== */
+
+/* ============================================================
+   ===== INTERVIEW-SURVEY v1 START =====
+   配布済みアンケートの設問番号（Q01 等）と、未確認プロフィールの明示。
+   既存の .iv__q / .iv__prof はそのまま、追加要素の指定のみ。
+   ============================================================ */
+.iv__qno{display:inline-block;margin-right:12px;padding:3px 10px;border-radius:9999px;
+  background:var(--bg-soft);border:1px solid var(--line);
+  font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.06em;font-weight:700;color:var(--sub);
+  vertical-align:.12em}
+.ch--navy .iv__qno{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);color:#dfe2ef}
+.iv__proflabel{margin-top:30px;font-size:12.5px;font-weight:700;color:var(--red)}
+.iv__proflabel small{display:block;margin-top:4px;font-size:12px;font-weight:400;color:var(--sub);line-height:1.7}
+.iv__proflabel + .iv__prof{margin-top:12px}
+/* 設問番号を出す場合は、既存の "Q" 接頭辞を重ねない */
+.iv__q:has(.iv__qno)::before{content:none}
+@media (max-width:620px){ .iv__qno{display:block;margin:0 0 8px;width:fit-content} }
+/* ===== INTERVIEW-SURVEY v1 END ===== */
