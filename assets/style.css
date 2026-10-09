@@ -1484,3 +1484,29 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .people--7 > *:last-child{grid-column:2 / span 2}
 }
 /* ===== PEOPLE-7 v1 END ===== */
+
+/* ============================================================
+   ===== AFTER-JOIN v1 START =====
+   新規ページ「入社後を知る」(/renewal/after-joining/) 用。
+   既存クラス（steps-flow / iconcards / hub / comp / tracks / branch / nextlinks）を
+   流用し、不足する「働く場所の写真一覧」と、HOMEの横長CTAだけを追加。
+   ============================================================ */
+.places{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:24px;list-style:none}
+.places figure{margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--bg-soft)}
+.places img{width:100%;height:100%;object-fit:cover;display:block}
+.places b{display:block;margin-top:13px;font-size:16px;line-height:1.5}
+.places p{margin-top:7px;font-size:13.5px;line-height:1.85;color:var(--sub)}
+
+.hub__nodes--7 li:last-child{grid-column:1 / -1}
+
+/* HOME：KEY CONTENTS 下の横長CTA */
+.ajcta{margin-top:44px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;
+  padding:32px 36px;border-radius:var(--radius-lg);background:var(--navy);color:#fff}
+.ajcta__en{display:block;font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.18em;color:#f1949a}
+.ajcta h3{margin-top:10px;font-size:clamp(20px,2.2vw,26px);line-height:1.5}
+.ajcta p{margin-top:12px;font-size:15px;line-height:1.85;color:#dfe2ef}
+@media (max-width:760px){
+  .ajcta{grid-template-columns:minmax(0,1fr);gap:20px;padding:28px 24px}
+  .ajcta p{font-size:14.5px}
+}
+/* ===== AFTER-JOIN v1 END ===== */
