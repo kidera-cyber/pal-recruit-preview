@@ -514,6 +514,8 @@ html{scroll-padding-top:88px}
 .gnav a.is-current small{color:var(--red)}
 .drawer a.is-current{color:var(--red)}
 
+/* ===== HLIST v1：削除済み（募集要項ページを職種ブロック型にしたため未使用）
+   救済情報：下記のコメントを外せば復元できます。
 .hlist{display:grid;border-top:1px solid var(--line)}
 .hlist li{border-bottom:1px solid var(--line)}
 .hlist a{display:grid;grid-template-columns:132px minmax(0,1fr) auto;align-items:center;gap:10px 24px;padding:24px 4px;transition:background-color .25s,padding .25s var(--ease)}
@@ -522,6 +524,7 @@ html{scroll-padding-top:88px}
 .hlist__cat{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.12em;color:var(--red)}
 .hlist b{font-size:17.5px;line-height:1.6}
 .hlist__meta{grid-column:2;font-size:13px;color:var(--sub)}
+   ===== */
 
 .home2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px}
 
@@ -535,9 +538,7 @@ html{scroll-padding-top:88px}
 @media (max-width:960px){
   .home2{grid-template-columns:minmax(0,1fr);gap:40px}
   .relnav__list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
-  .hlist a{grid-template-columns:minmax(0,1fr) auto}
-  .hlist__cat{grid-column:1}
-  .hlist b,.hlist__meta{grid-column:1}
+  /* .hlist のレスポンシブ指定 ← HLIST v1 削除済み */
 }
 @media (max-width:720px){
   .crumb{padding-top:calc(var(--header-h) + 14px);font-size:12px}
@@ -741,7 +742,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    HOMEの募集中の職種一覧（罫線ベース・2列）と、右側の固定CTA。
    スマホでは画面下部の固定バーに切り替える。
    ============================================================ */
-.hlist--2col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+/* .hlist--2col{...} ← HLIST v1 削除済み */
 
 .sidecta{position:fixed;right:0;top:50%;transform:translate(100%,-50%);z-index:90;
   display:flex;flex-direction:column;align-items:center;gap:14px;
@@ -755,7 +756,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .sidecta:hover{background:var(--red-dark)}
 
 @media (max-width:1180px){
-  .hlist--2col{grid-template-columns:minmax(0,1fr);gap:0}
+  /* .hlist--2col のレスポンシブ指定 ← HLIST v1 削除済み */
 }
 @media (max-width:900px){
   .sidecta{top:auto;bottom:0;right:0;left:0;flex-direction:row;justify-content:center;gap:12px;
@@ -2044,3 +2045,114 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .p-career .sec--tight{padding-block:68px}
 
 /* ===== CAREER-REBUILD v1 END ===== */
+
+/* ============================================================
+   ===== JOBS-ROLE v1 START =====
+   募集要項ページ：職種ナビ／職種ブロック（01 仕事について・02 募集要項）／
+   そのほかの募集職種／選考フロー図。情報の一覧性を最優先し、
+   条件本文は赤を使わずネイビー〜濃いグレーで表示する。
+   .p-jobs スコープなので他ページには影響しない。
+   ============================================================ */
+.p-jobs .wrap{width:min(100% - 48px,1200px)}
+.p-jobs .sec--tight{padding-block:72px}
+
+/* ---- 職種ナビ ---- */
+.rolenav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none}
+.rolenav a{display:grid;grid-template-columns:38px minmax(0,1fr);gap:2px 16px;align-items:center;
+  height:100%;padding:18px 20px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);
+  transition:border-color .25s,transform .25s var(--ease)}
+.rolenav a:hover{border-color:var(--red);transform:translateY(-2px)}
+.rolenav svg{grid-row:span 2;width:38px;height:38px;color:var(--navy)}
+.rolenav__cat{font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--red)}
+.rolenav b{font-size:15px;line-height:1.6}
+
+/* ---- 職種ブロックの見出し ---- */
+.role__head{max-width:46em}
+.role__no{display:flex;align-items:center;gap:14px;font-family:Lato,sans-serif;font-size:12px;
+  font-weight:700;letter-spacing:.16em;color:var(--muted)}
+.role__hiring{padding:4px 11px;border-radius:9999px;border:1px solid rgba(207,19,27,.4);
+  font-size:10.5px;letter-spacing:.1em;color:var(--red)}
+.role__title{margin-top:14px;font-size:clamp(28px,3.3vw,38px);font-weight:700;line-height:1.4;letter-spacing:.01em}
+.role__lead{margin-top:16px;font-size:17px;line-height:1.95;color:var(--navy)}
+.role__note{margin-top:10px;font-size:12.5px;color:var(--sub)}
+
+.role__h{display:flex;align-items:baseline;gap:11px;padding-bottom:12px;margin-bottom:20px;
+  font-size:14px;font-weight:700;color:var(--navy);border-bottom:2px solid var(--navy-d)}
+.role__h .en{font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--red)}
+
+/* ---- 職種ブロックの上部：見出し＋写真 ---- */
+.role__top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:44px;align-items:center}
+
+/* ---- 01 この仕事について ---- */
+.rolestep{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;list-style:none}
+.rolestep li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:center;
+  padding:14px 18px;border-radius:var(--radius);background:#fff;border:1px solid var(--line)}
+.rolestep svg{width:34px;height:34px;color:var(--navy)}
+.rolestep b{font-size:14px;line-height:1.6}
+.role__ph{margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/11;background:var(--bg-soft)}
+.role__ph img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---- 02 募集要項（表） ---- */
+.spec{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.spec dl{display:grid;grid-template-columns:200px minmax(0,1fr)}
+.spec dt{padding:17px 26px;background:var(--bg-soft);font-size:15px;font-weight:700;
+  line-height:1.7;color:var(--navy);border-bottom:1px solid var(--line)}
+.spec dd{margin:0;padding:17px 30px;background:#fff;font-size:16px;line-height:1.7;
+  color:var(--navy);border-bottom:1px solid var(--line)}
+.spec dt:last-of-type,.spec dd:last-of-type{border-bottom:0}
+
+/* ---- CTA（強弱をつける） ---- */
+.role__cta{margin-top:34px;padding:24px 28px;border-radius:var(--radius-lg);
+  background:#fff;border:1px solid var(--line-mid,#c3cade)}
+.role__ctah{font-size:16px;font-weight:700;line-height:1.6}
+.role__ctarow{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+
+/* ---- そのほかの募集職種 ---- */
+.others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;list-style:none;
+  border-top:1px solid var(--line-mid,#c3cade)}
+.others li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;
+  padding:19px 2px;border-bottom:1px solid var(--line)}
+.others b{font-size:16px;line-height:1.6}
+.others__none{font-size:12.5px;color:var(--muted)}
+
+/* ---- 選考フロー ---- */
+.flowsel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;list-style:none}
+.flowsel li{position:relative;padding:20px 18px 22px;border-radius:var(--radius);
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16)}
+.flowsel li::after{content:"";position:absolute;right:-9px;top:50%;width:7px;height:7px;
+  border-right:1.5px solid rgba(255,255,255,.4);border-top:1.5px solid rgba(255,255,255,.4);
+  transform:translateY(-50%) rotate(45deg)}
+.flowsel li:last-child::after{display:none}
+.flowsel li:last-child{background:var(--grad);border-color:transparent}
+.flowsel .en{font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;color:#ffb3b8}
+.flowsel li:last-child .en{color:rgba(255,255,255,.8)}
+.flowsel b{display:block;margin-top:9px;font-size:15px;line-height:1.6;color:#fff}
+.flowsel p{margin-top:8px;font-size:13px;line-height:1.8;color:#c9cce0}
+.flowsel li:last-child p{color:rgba(255,255,255,.85)}
+
+@media (max-width:1040px){
+  .rolenav{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .role__top{grid-template-columns:minmax(0,1fr);gap:26px}
+  .role__ph{aspect-ratio:16/9}
+  .flowsel{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flowsel li::after{display:none}
+}
+@media (max-width:860px){
+  .others{grid-template-columns:minmax(0,1fr);gap:0}
+}
+/* 日本語の極小ラベルは 12px 未満にしない（MOBILE-LEGIBILITY v1 と同じ方針） */
+@media (max-width:720px){
+  .rolenav__cat{font-size:12px}
+}
+@media (max-width:720px){
+  .rolenav{grid-template-columns:minmax(0,1fr)}
+  /* 表は横スクロールさせず、項目名↓内容 の縦型へ */
+  .spec dl{grid-template-columns:minmax(0,1fr)}
+  .spec dt{padding:14px 20px 0;background:#fff;border-bottom:0;font-size:13px;color:var(--muted)}
+  .spec dd{padding:6px 20px 18px;font-size:16px;border-bottom:1px solid var(--line)}
+  .spec dd:last-of-type{border-bottom:0}
+  .role__cta{padding:22px 20px}
+  .role__ctarow .btn{width:100%;justify-content:center}
+  .flowsel{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== JOBS-ROLE v1 END ===== */
