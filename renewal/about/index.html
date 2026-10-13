@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261013w">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013x">
 </head>
 <body>
 
@@ -176,6 +176,33 @@
       <p class="slead">人手不足、物流コストの上昇、CLO対応。効率化とデータ活用が、これまで以上に求められています。<br>ただし、現場・システム・設備・データが<b class="hl">分断</b>されたままでは、個別に改善しても全体は変わりません。</p>
     </div>
 
+
+    <!-- ===== PROBLEM v3：文字のベタ置きをやめ、PROBLEM 01 / 02 を
+         「英字ラベル（赤）→ 見出し（濃紺）→ 3点の箇条書き → 結論の強調文」
+         で構成した白いカードに再構成した。 ===== -->
+    <div class="probs rv">
+      <div class="prob">
+        <span class="prob__no en">PROBLEM 01</span>
+        <h3>3PLだけでは届かない領域がある</h3>
+        <ul class="prob__list">
+          <li>3PLは倉庫・輸配送など現場オペレーションに強い</li>
+          <li>ただし、全社横断のデータ整理や業務設計までは担いにくい</li>
+          <li>そのため、業務単位では改善できても、物流全体はつながりにくい</li>
+        </ul>
+        <p class="prob__sum">業務単体では改善しても、物流全体ではつながらない。</p>
+      </div>
+      <div class="prob">
+        <span class="prob__no en">PROBLEM 02</span>
+        <h3>分離発注で「<b class="hl">つなぎ目</b>」が生まれる</h3>
+        <ul class="prob__list">
+          <li>コンサルティング会社、SIer、マテハンメーカー、3PLなどへ分かれて発注される</li>
+          <li>それぞれに専門性がある一方、間に橋渡しコストや調整負担が生まれる</li>
+          <li>結果として「誰が全体をつなぐのか」が曖昧になる</li>
+        </ul>
+        <p class="prob__sum">では、誰が<b class="hl">全体をつなぐ</b>のか。</p>
+      </div>
+    </div>
+
     <!-- ===== WHYNOW v2：4要素を横並びのカードにし、間を「切れた線＋✕」で分断として見せる。
      アイコン・番号（赤）・左揃え・1行説明に整理した。 ===== -->
     <ol class="gap4 rv" aria-label="つながるべき4要素が分断されている状態">
@@ -209,27 +236,14 @@
     </ol>
     <p class="note rv">※ 本来つながるべき4つが、連携しないまま個別に最適化されている状態です。</p>
 
-    <div class="probs rv">
-      <div class="prob">
-        <span class="prob__no en">PROBLEM 01</span>
-        <h3>3PLだけでは届かない領域がある</h3>
-        <p>3PLは倉庫・輸送領域の現場オペレーションに特化しており、戦略設計や全社横断のデータ整理は範囲外になる場合があります。</p>
-        <p class="prob__sum">業務単体では改善しても、<br>物流全体ではつながらない。</p>
-      </div>
-      <div class="prob">
-        <span class="prob__no en">PROBLEM 02</span>
-        <h3>分離発注で「<b class="hl">つなぎ目</b>」が生まれる</h3>
-        <p>コンサルティング会社、SIer、マテハンメーカー、3PLなどへ分かれて発注されることで、複数ベンダー間の橋渡しコストや調整負担が生まれます。</p>
-        <p class="prob__sum">では、誰が<br>全体をつなぐのか。</p>
-      </div>
-    </div>
-
     <!-- ===== ASK v3：濃紺の大判カードを廃止し、問題提起と次セクションをつなぐ
          ブリッジコピーへ。PCは1〜2行、改行は入れない。 ===== -->
     <div class="ask rv">
       <span class="en">THE QUESTION</span>
       <b>では、誰が現場・システム・設備・データを<b class="hl">つなぐ</b>のか。</b>
     </div>
+    <!-- ===== ASKTO v1：THE QUESTION の直後に、次のFDE（OUR PROCESS）への接続文を置く。 ===== -->
+    <p class="askto rv">PALでは、この「つなぎ目」を埋める役割として、<b>FDE（Forward Deployed Engineer）</b>の考え方を物流DXに適用しています。<a class="textlink textlink--sm" href="#process">現場から改善までの進め方を見る</a></p>
   </div>
 </section>
 

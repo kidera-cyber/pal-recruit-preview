@@ -2916,3 +2916,47 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .vlist__cta .btn{width:100%;justify-content:center}
 }
 /* ===== VOICES-LIST v3 END ===== */
+
+/* ============================================================
+   ===== PROBLEM v3 START =====
+   PALを知る「なぜ今」セクションの PROBLEM 01 / 02。
+   e324a21 で WHYNOW-GAP v1 ブロックを削除した際、未使用の .gapline と一緒に
+   使用中の .probs / .prob / .prob__no の基本指定まで消えてしまい、
+   カードが枠なしの文字ベタ置きになっていた。ここで復旧し、同時に
+   「ラベル → 見出し → 3点の箇条書き → 結論の強調文」の構成へ作り直す。
+   WHYNOW v2 の .probs / .prob / .prob h3 / .prob__sum を後勝ちで上書きする。
+   ============================================================ */
+.probs{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.prob{display:flex;flex-direction:column;padding:30px 32px 32px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(38,41,70,.04)}
+.prob__no{display:block;font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.14em;
+  font-weight:700;color:var(--red)}
+.prob h3{margin-top:12px;font-size:20px;line-height:1.55;color:var(--navy)}
+.prob__list{margin-top:16px;display:grid;gap:9px;list-style:none}
+.prob__list li{position:relative;padding-left:19px;font-size:15px;line-height:1.8;color:var(--sub)}
+.prob__list li::before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--red)}
+/* 結論文は両カードの下端で揃える */
+.prob__sum{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);
+  font-size:16.5px;line-height:1.7;font-weight:700;color:var(--navy)}
+.prob__sum .hl{color:var(--red)}
+/* 図解は PROBLEM の下へ移したので、間の余白を少し詰める */
+.probs + .gap4{margin-top:38px}
+/* 接続文を入れたので、ASK v3 の赤い縦線（.ask::after）は役目を終えたため消す */
+.ask::after{content:none}
+/* THE QUESTION から FDE（OUR PROCESS）への接続文 */
+.askto{margin-top:22px;max-width:var(--measure,820px);
+  font-size:15.5px;line-height:1.9;color:var(--sub)}
+.askto b{color:var(--navy);font-weight:700}
+.askto .textlink{margin-left:10px;white-space:nowrap}
+@media (max-width:900px){
+  .probs{grid-template-columns:minmax(0,1fr);gap:18px}
+}
+@media (max-width:620px){
+  .prob{padding:26px 24px 28px}
+  .prob h3{font-size:18.5px}
+  .prob__list li{font-size:14.5px}
+  .prob__sum{font-size:16px}
+  .askto .textlink{margin-left:0;display:block;margin-top:8px;white-space:normal}
+}
+/* ===== PROBLEM v3 END ===== */
