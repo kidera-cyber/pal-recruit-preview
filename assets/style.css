@@ -2869,3 +2869,91 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .btn--lg{min-height:52px}
 }
 /* ===== BRAND v2 END ===== */
+
+/* ============================================================
+   ===== WHYNOW v2 START =====
+   「なぜ今、物流DXが避けられないのか。」の図解。
+   4要素を横並びのカードにし、間を「切れた線＋✕」で分断として見せる。
+   番号はPALレッド、本文は左揃え、説明は1行。旧 .gapline は使用しない。
+   ============================================================ */
+.gap4{margin-top:46px;display:grid;
+  grid-template-columns:1fr 70px 1fr 70px 1fr 70px 1fr;align-items:stretch;list-style:none}
+.gap4__item{display:flex;flex-direction:column;padding:24px 22px 26px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+.gap4__no{display:flex;align-items:baseline;gap:8px;font-family:Lato,sans-serif;
+  font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--red)}
+.gap4__no .en{font-size:14px}
+.gap4__ico{width:38px;height:38px;margin-top:16px;color:var(--navy)}
+.gap4__item b{margin-top:14px;font-size:18px;line-height:1.5;color:var(--navy)}
+.gap4__item small{margin-top:9px;font-size:14.5px;line-height:1.7;color:var(--sub)}
+
+/* 分断：線が途中で切れている表現 */
+.gap4__cut{position:relative;display:grid;place-content:center;justify-items:center;gap:8px}
+.gap4__cut::before,.gap4__cut::after{content:"";position:absolute;top:50%;width:16px;height:1px;
+  background:var(--line-mid,#c3cade)}
+.gap4__cut::before{left:0}
+.gap4__cut::after{right:0}
+.gap4__x{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:#fff;border:1px solid rgba(207,19,27,.45);color:var(--red);font-size:13px;line-height:1}
+.gap4__cut .en{font-family:Lato,sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.14em;color:var(--red)}
+
+/* 問題カードを少し大きく */
+.probs{margin-top:48px;gap:26px}
+.prob{padding:34px 36px 36px}
+.prob h3{margin-top:14px;font-size:21px;line-height:1.55}
+.prob__sum{font-size:17px;line-height:1.7;color:var(--navy);font-weight:700}
+
+/* 結論：次セクションへの問い */
+.ask{margin-top:56px;padding:62px 36px;background:var(--navy-d)}
+.ask .en{font-size:12px;letter-spacing:.2em;color:var(--red-light,#ffb3b8)}
+.ask b{margin-top:20px;font-size:clamp(23px,3.1vw,36px);line-height:1.55}
+
+@media (max-width:1040px){
+  .gap4{grid-template-columns:1fr 46px 1fr;gap:18px 0}
+  .gap4__cut:nth-of-type(4){display:none}   /* 2×2 のとき真ん中の切れ目は出さない */
+}
+@media (max-width:720px){
+  .gap4{grid-template-columns:minmax(0,1fr);gap:0}
+  .gap4__cut{padding:12px 0;grid-auto-flow:column;gap:12px}
+  .gap4__cut::before,.gap4__cut::after{display:none}
+  .prob{padding:26px 24px 28px}
+  .ask{padding:46px 24px}
+}
+/* ===== WHYNOW v2 END ===== */
+
+/* ============================================================
+   ===== ACCENT v2 START =====
+   無彩色に寄りすぎて「どこを見ればよいか」が弱くなっていたため、
+   PALレッドを視線誘導のアクセントとして戻す。本文は赤にしない。
+   ============================================================ */
+/* 英字ラベルをしっかり効かせる */
+.slabel{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--red)}
+.slabel::before{width:32px;height:2px;background:var(--red)}
+
+/* 図解のなかの最重要ワード（各図解1〜3か所だけ） */
+.hl{color:var(--red);font-weight:700}
+.hl-on{color:var(--red-light,#ffb3b8);font-weight:700}
+
+/* 番号は赤でそろえる */
+.prob__no,.val__no,.phil__no,.pillar__no,.ch__no,.ivchap__no,
+.pfsteps .en,.pftl .en,.cyc__steps .en,.key__no,.vrow__no,
+.posmap__core .en,.trans__steps .en{color:var(--red);font-weight:700}
+
+/* 接続点・矢印の先端に赤を効かせる */
+.posmap__arrow::after,.transflow li+li::before,.pf__t li+li::before{border-color:var(--red)}
+.cyc__ph::after,.chain__step::after{color:var(--red)}
+
+/* 数字カード：数字→説明の階層をはっきりさせ、見出しに赤の細いラインを置く */
+.num{position:relative;padding-top:30px}
+.num::before{content:"";position:absolute;left:24px;top:0;width:34px;height:3px;background:var(--red)}
+.num b{font-weight:700;color:var(--navy-d)}
+.num span{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);
+  font-size:14.5px;color:var(--sub)}
+.num:hover::before{width:56px;transition:width .3s var(--ease)}
+
+/* 濃紺の図解：赤で骨格を浮かび上がらせる */
+.sec--navy .slabel{color:var(--red-light,#ffb3b8)}
+.sec--navy .slabel::before{background:var(--red-light,#ffb3b8)}
+.posmap__base .en,.posmap__core .en{color:var(--red-light,#ffb3b8)}
+/* ===== ACCENT v2 END ===== */

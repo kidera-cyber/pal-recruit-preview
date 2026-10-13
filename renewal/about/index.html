@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261013q">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013r">
 </head>
 <body>
 
@@ -173,17 +173,39 @@
     <div class="shead rv" style="margin-bottom:10px">
       <p class="slabel">Why now</p>
       <h2 class="stitle">なぜ今、物流DXが<br>避けられないのか。</h2>
-      <p class="slead">人手不足、物流コストの上昇、CLO対応。効率化とデータ活用が、これまで以上に求められています。<br>ただし、現場・システム・設備・データが分断されたままでは、個別に改善しても全体は変わりません。</p>
+      <p class="slead">人手不足、物流コストの上昇、CLO対応。効率化とデータ活用が、これまで以上に求められています。<br>ただし、現場・システム・設備・データが<b class="hl">分断</b>されたままでは、個別に改善しても全体は変わりません。</p>
     </div>
 
-    <ol class="gapline rv" aria-label="つながるべき4要素が分断されている状態">
-      <li class="gapline__item"><span class="en">01 FIELD</span><b>物流現場</b><small>業務と制約がある</small></li>
-      <li class="gapline__gap"><em aria-hidden="true">✕</em><span class="en">GAP</span></li>
-      <li class="gapline__item"><span class="en">02 SYSTEM</span><b>物流システム</b><small>個別に導入されている</small></li>
-      <li class="gapline__gap"><em aria-hidden="true">✕</em><span class="en">GAP</span></li>
-      <li class="gapline__item"><span class="en">03 FACILITY</span><b>設備</b><small>メーカーごとに閉じている</small></li>
-      <li class="gapline__gap"><em aria-hidden="true">✕</em><span class="en">GAP</span></li>
-      <li class="gapline__item"><span class="en">04 DATA</span><b>物流データ</b><small>拠点・業務単位で分かれている</small></li>
+    <!-- ===== WHYNOW v2：4要素を横並びのカードにし、間を「切れた線＋✕」で分断として見せる。
+     アイコン・番号（赤）・左揃え・1行説明に整理した。 ===== -->
+    <ol class="gap4 rv" aria-label="つながるべき4要素が分断されている状態">
+      <li class="gap4__item">
+        <p class="gap4__no"><span class="en">01</span>FIELD</p>
+        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
+        <b>物流現場</b>
+        <small>現場ごとに制約や運用の違いがある</small>
+      </li>
+      <li class="gap4__cut" aria-hidden="true"><span class="gap4__x">✕</span><span class="en">GAP</span></li>
+      <li class="gap4__item">
+        <p class="gap4__no"><span class="en">02</span>SYSTEM</p>
+        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-system"></use></svg>
+        <b>物流システム</b>
+        <small>情報は入っていても、現場とつながらない</small>
+      </li>
+      <li class="gap4__cut" aria-hidden="true"><span class="gap4__x">✕</span><span class="en">GAP</span></li>
+      <li class="gap4__item">
+        <p class="gap4__no"><span class="en">03</span>FACILITY</p>
+        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-equip"></use></svg>
+        <b>設備</b>
+        <small>メーカーごとに独立し、全体最適になりにくい</small>
+      </li>
+      <li class="gap4__cut" aria-hidden="true"><span class="gap4__x">✕</span><span class="en">GAP</span></li>
+      <li class="gap4__item">
+        <p class="gap4__no"><span class="en">04</span>DATA</p>
+        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
+        <b>物流データ</b>
+        <small>見えていても、活用しきれていない</small>
+      </li>
     </ol>
     <p class="note rv">※ 本来つながるべき4つが、連携しないまま個別に最適化されている状態です。</p>
 
@@ -196,7 +218,7 @@
       </div>
       <div class="prob">
         <span class="prob__no en">PROBLEM 02</span>
-        <h3>分離発注で「つなぎ目」が生まれる</h3>
+        <h3>分離発注で「<b class="hl">つなぎ目</b>」が生まれる</h3>
         <p>コンサルティング会社、SIer、マテハンメーカー、3PLなどへ分かれて発注されることで、複数ベンダー間の橋渡しコストや調整負担が生まれます。</p>
         <p class="prob__sum">では、誰が<br>全体をつなぐのか。</p>
       </div>
@@ -204,7 +226,7 @@
 
     <div class="ask rv">
       <span class="en">THE QUESTION</span>
-      <b>では、誰が<br>現場・システム・設備・データを<br>つなぐのか。</b>
+      <b>では、誰が<br>現場・システム・設備・データを<br><b class="hl-on">つなぐ</b>のか。</b>
     </div>
   </div>
 </section>
