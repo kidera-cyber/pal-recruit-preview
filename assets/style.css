@@ -2883,3 +2883,26 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #how .effects--light li > b{font-size:17px}
 }
 /* ===== EFFECT3 v1 END ===== */
+
+/* ============================================================
+   ===== CP-ENG v1 START =====
+   CAREERページ：
+   ・CAREER PATH にエンゲージメント（5職種目）を追加したことによる調整
+   ・短い見出しが固定改行なしでPCでも1行に収まるよう、見出し領域の幅を広げる
+   既存の .shead{max-width:44em} は本文の可読幅のために残し、
+   .p-career でのみ見出し側の制限を外す（リード文は従来どおり制限）。
+   ============================================================ */
+.p-career .shead{max-width:none}
+.p-career .shead .slead,.p-career .shead .plead{max-width:var(--measure,820px)}
+/* 5職種になったタブ：1行に収まらない幅では自然に折り返す */
+.p-career .tabs--big{row-gap:10px}
+/* 選択中は「濃紺背景＋PALレッドのアウトライン＋白文字」（CULTUREの .tabs--7 と同じ） */
+.p-career .tabs--big .tab[aria-selected="true"]{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+/* 仮案ラベル（ピル型は使わず、赤の縦罫で「未確定」を示す） */
+.cpanel__h span{padding-left:12px;border-left:2px solid var(--red);
+  font-size:12.5px;font-weight:700;color:var(--red)}
+/* 780px 以下は見出しも折り返しが自然になるため、本来の可読幅へ戻す */
+@media (max-width:780px){
+  .p-career .shead{max-width:44em}
+}
+/* ===== CP-ENG v1 END ===== */
