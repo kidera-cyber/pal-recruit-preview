@@ -2416,18 +2416,20 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 }
 /* ===== TEAMMAP v1 END ===== */
 
-/* ============================================================
+/* ===== REAL-COMPARE v1：削除済み（JOBCOMPARE v1 で1職種1行の比較表へ）
+   救済情報：下記のコメントを外せば復元できます。
+(* ============================================================
    ===== REAL-COMPARE v1 START =====
    「正解がないから、考える仕事になる。」
    長文の読み比べではなく、3つの視点（直面する課題／考えること／仕事のやりがい）を
    並べて比較できるカードへ。視点ごとにアイコンと色を固定し、強弱をつける。
    旧 REAL v1 の指定は復元用にコメントで残置。
-   ============================================================ */
+   ============================================================ *)
 .reals{display:grid;gap:16px;list-style:none}
 .real{padding:26px 30px 28px;border-radius:var(--radius-lg);
   background:#fff;border:1px solid var(--line)}
 
-/* 上段：小ラベル＋職種コピー（最も大きく）＋職種ピクト */
+(* 上段：小ラベル＋職種コピー（最も大きく）＋職種ピクト *)
 .real__head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;
   padding-bottom:18px;margin-bottom:20px;border-bottom:1px solid var(--line)}
 .real__cat{display:inline-block;padding:5px 13px;border-radius:9999px;
@@ -2435,7 +2437,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .real__head h3{margin-top:11px;font-size:clamp(19px,2.05vw,23px);line-height:1.5;color:var(--navy)}
 .real__pict{width:48px;height:48px;color:#9aa3c0;flex:none}
 
-/* 下段：3つの視点を横並びで比較 */
+(* 下段：3つの視点を横並びで比較 *)
 .real__body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 30px}
 .real__item{padding-left:18px;border-left:2px solid var(--line-mid,#c3cade)}
 .real__item+.real__item{padding-left:18px}
@@ -2443,7 +2445,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .real__h svg{width:19px;height:19px;flex:none}
 .real__item p+p{margin-top:10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
 
-/* 視点ごとの色（毎回同じルール） */
+(* 視点ごとの色（毎回同じルール） *)
 .real__item--issue{border-left-color:var(--navy-d)}
 .real__item--issue .real__h,.real__item--issue .real__h svg{color:var(--navy-d)}
 .real__item--think{border-left-color:#8f96b8}
@@ -2454,7 +2456,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 @media (max-width:980px){
   .real__body{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 26px}
 }
-/* 日本語の極小ラベルは12px未満にしない（MOBILE-LEGIBILITY v1 と同じ方針） */
+(* 日本語の極小ラベルは12px未満にしない（MOBILE-LEGIBILITY v1 と同じ方針） *)
 @media (max-width:720px){
   .real__cat{font-size:12px}
 }
@@ -2465,7 +2467,8 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .real__body{grid-template-columns:minmax(0,1fr);gap:20px}
   .real__item p+p{font-size:15px}
 }
-/* ===== REAL-COMPARE v1 END ===== */
+(* ===== REAL-COMPARE v1 END ===== *)
+   ===== */
 
 /* ============================================================
    ===== LOOKFOR v2 START =====
@@ -2536,3 +2539,82 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .look2__ch::after{margin-inline:0}
 }
 /* ===== LOOKFOR v2 END ===== */
+
+/* ============================================================
+   ===== JOBCOMPARE v1 START =====
+   職種ごとの3視点を、1職種＝1行の4カラム比較表へ。
+   ヘッダー行を1つ置くことで各行の見出し反復をなくし、縦幅を圧縮する。
+   同じ列を目で追えば職種間で比較できる。旧 REAL-COMPARE v1 はコメントで残置。
+   ============================================================ */
+.jcmp table{width:100%;border-collapse:collapse;table-layout:fixed}
+.jcmp th,.jcmp td{text-align:left;vertical-align:top}
+.jcmp__c1{width:31%}
+.jcmp colgroup col:not(.jcmp__c1){width:23%}
+
+/* ヘッダー行 */
+.jcmp thead th{padding:0 0 12px;font-size:11.5px;font-weight:700;letter-spacing:.04em;
+  color:var(--muted);border-bottom:1px solid var(--line-mid,#c3cade)}
+.jcmp thead th:not(:first-child){padding-left:26px}
+.jcmp thead th.jcmp__joy{color:var(--red)}
+
+/* 1職種＝1行 */
+.jcmp tbody tr{border-bottom:1px solid var(--line)}
+.jcmp tbody th,.jcmp tbody td{padding:22px 0 24px}
+.jcmp tbody th{padding-right:26px}
+.jcmp tbody td{padding-left:26px;border-left:1px solid var(--line);
+  font-size:14.5px;line-height:1.85;color:var(--sub)}
+.jcmp tbody td.jcmp__joy{color:var(--navy)}
+
+/* 職種セル：アイコン＋ラベル＋コピー */
+.jcmp tbody th{display:flex;gap:12px;align-items:flex-start}
+.jcmp__ico{flex:none;width:30px;height:30px;margin-top:2px;color:#9aa3c0}
+.jcmp__txt{min-width:0}
+.jcmp__cat{display:block;font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--sub)}
+.jcmp tbody th b{display:block;margin-top:6px;font-size:clamp(18px,1.7vw,21px);
+  line-height:1.5;color:var(--navy);font-weight:700}
+
+@media (max-width:900px){
+  /* 4カラムは無理なので、職種コピー → 3視点を縦に。1職種あたり250px以内に抑える */
+  .jcmp thead{display:none}
+  .jcmp table,.jcmp tbody,.jcmp tbody tr,.jcmp tbody td{display:block;width:auto}
+  .jcmp tbody tr{padding:14px 0 16px}
+  .jcmp tbody th{padding:0 0 10px}
+  .jcmp tbody th b{font-size:17.5px}
+  .jcmp tbody td{padding:6px 0 0;border-left:0;font-size:14px;line-height:1.7}
+  .jcmp tbody td::before{content:attr(data-l);display:block;margin-bottom:1px;
+    font-size:12px;font-weight:700;color:var(--muted)}
+  .jcmp tbody td.jcmp__joy::before{color:var(--red)}
+}
+@media (max-width:720px){
+  .jcmp__cat{font-size:12px}
+  .jcmp tbody td::before{font-size:12px}
+  .cflow__rh{font-size:12px}
+}
+/* ===== JOBCOMPARE v1 END ===== */
+
+/* ============================================================
+   ===== CSTEP-ROLES v2 START =====
+   STEPカード下部の「関わる役割」が、説明文の長さでカードごとにずれていた。
+   説明文エリアに最小高を与え、役割ブロックを固定高にして下端を揃える。
+   そのSTEPでの役割（濃紺）と、関わる部署（白＋細枠）を見た目で分ける。
+   ============================================================ */
+.cflow__t{min-height:7.6em}                     /* 説明文の高さを揃える */
+.cflow__roles{margin-top:auto;padding-top:18px;min-height:104px}
+.cflow__role{margin-bottom:12px}
+.cflow__role span{display:inline-block;padding:5px 12px;border-radius:9999px;
+  background:var(--navy-d);color:#fff;font-size:12px;font-weight:700;line-height:1.5}
+.cflow__rh{font-size:11.5px;font-weight:700;color:#6b7280;margin-bottom:8px}
+.cflow__roles ul{display:flex;flex-wrap:wrap;align-content:flex-start;gap:6px;
+  margin-top:0;min-height:66px;list-style:none}   /* チップ2行ぶん（30px×2＋gap6）を常に確保 */
+.cflow__roles li{padding:5px 10px;border-radius:9999px;border:1px solid var(--line-mid,#c3cade);
+  background:#fff;font-size:12px;line-height:1.5;color:var(--navy)}
+
+@media (max-width:1040px){
+  .cflow__t{min-height:6.6em}
+}
+@media (max-width:720px){
+  /* 縦並びでは固定高にしない。順番と余白はPCと同じ */
+  .cflow__t{min-height:0}
+  .cflow__roles{min-height:0}
+}
+/* ===== CSTEP-ROLES v2 END ===== */
