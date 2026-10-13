@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261013e">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013f">
 </head>
 <body class="p-work">
 
@@ -122,18 +122,51 @@
       <p class="slabel">How We Work</p>
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">職種は違っても、<br>向き合っている課題は同じです。</h2>
     </div>
-    <div class="hub hub--jobs rv">
-      <div class="hub__center">
+    <p class="slead rv" style="margin-top:18px">それぞれの専門性を持ち寄り、ひとつの現場課題をチームで解いていきます。</p>
+    <!-- ===== TEAMMAP v1：職種の一覧ではなく、ひとつのGOALに向かうチームの関係図として見せる。
+         Career Crossover の .hub とは別クラスにして、そちらには影響させない。 ===== -->
+    <div class="tmap rv">
+      <ul class="tmap__side tmap__side--l">
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic-meeting"></use></svg>
+          <b>営業 / 事業開発</b>
+          <span>顧客課題を整理し、提案と実行へつなぐ</span>
+        </li>
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic2-field"></use></svg>
+          <b>BPO / 現場運営</b>
+          <span>現場を動かし、改善を積み重ねる</span>
+        </li>
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic2-transport"></use></svg>
+          <b>DTS / 運行管理</b>
+          <span>輸送・運行を支え、改善する</span>
+        </li>
+      </ul>
+      <div class="tmap__rail tmap__rail--l" aria-hidden="true"></div>
+      <div class="tmap__goal">
         <span class="en">GOAL</span>
         <b>物流DXを、<br>現場で動く形にする</b>
       </div>
-      <ul class="hub__nodes hub__nodes--5">
-        <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>BPO / 現場運営</b><span>現場を安定して回し、改善を積み重ねる</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>FDE</b><span>課題を技術要件へ翻訳し、実装までつなぐ</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>システム / プロダクト</b><span>現場で使われる仕組みを設計・開発する</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-transport"></use></svg><b>営業 / コンサル・DTS</b><span>顧客の課題を整理し、現場の実行につなぐ</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg><b>コーポレート</b><span>各部署が仕事に集中できる環境を整える</span></li>
+      <div class="tmap__rail tmap__rail--r" aria-hidden="true"></div>
+      <ul class="tmap__side tmap__side--r">
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic2-fde"></use></svg>
+          <b>FDE</b>
+          <span>課題を技術要件へ翻訳し、実装へつなぐ</span>
+        </li>
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic2-system"></use></svg>
+          <b>システム / プロダクト</b>
+          <span>現場で使われる仕組みを設計・開発する</span>
+        </li>
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic2-operate"></use></svg>
+          <b>コーポレート</b>
+          <span>各部署が仕事に集中できる環境を整える</span>
+        </li>
       </ul>
+      <p class="tmap__note">6つの職種が、同じGOALに向かっています。</p>
     </div>
     <p class="rv" style="margin-top:34px;text-align:center"><a class="btn btn--ghost" href="../about/#process">PALの仕事の進め方を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
     <p class="note rv" style="text-align:center">※ 現場から改善までの進め方は「PALを知る」で紹介しています。</p>

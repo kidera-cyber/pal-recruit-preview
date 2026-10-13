@@ -1173,7 +1173,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .hub__center .en{font-size:11.5px;letter-spacing:.2em;color:#ffb3b8}
 .hub__center b{display:block;margin-top:10px;font-size:clamp(18px,2.1vw,24px);line-height:1.6}
 .hub__nodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;list-style:none;border-top:1px solid var(--line)}
-.hub__nodes--5{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* .hub__nodes--5{...} ← TEAMMAP v1 で未使用に（仕事を知るの職種図を .tmap へ） */
 .hub__nodes li{display:grid;grid-template-columns:42px minmax(0,1fr);gap:2px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
 .hub__nodes svg{grid-row:span 2;width:42px;height:42px;color:var(--navy)}
 .hub__nodes b{font-size:15px;line-height:1.5}
@@ -1216,7 +1216,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .nextlinks,.nextlinks--3{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
 }
 @media (max-width:720px){
-  .hub__nodes,.hub__nodes--5{grid-template-columns:minmax(0,1fr);gap:0}
+  .hub__nodes{grid-template-columns:minmax(0,1fr);gap:0}
   .hub__center{padding:28px 22px}
   .iconcards{grid-template-columns:minmax(0,1fr);gap:14px}
   .iconcards li{padding:20px 18px 22px}
@@ -1237,7 +1237,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .p-work .phead .slabel::after,.p-work .shead .slabel::after{content:"";display:block;width:28px;height:2px;background:var(--red);margin:10px auto 0}
 .p-work .plead,.p-work .slead{margin-inline:auto;max-width:46em}
 .p-work .shead .note{margin-inline:auto}
-.p-work .ch__body,.p-work .comp,.p-work .hub,.p-work .flow2{margin-inline:auto}
+.p-work .ch__body,.p-work .comp,.p-work .flow2{margin-inline:auto}
 .p-work .comp__h{text-align:center}
 .p-work #fields .note,.p-work #chain .note{text-align:center;margin-inline:auto}
 .p-work .fields,.p-work .products,.p-work .iconcards,.p-work .comp{max-width:1100px;margin-inline:auto}
@@ -1245,10 +1245,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .p-work #tonext .rv,.p-work #fields>.wrap>p.rv{text-align:center}
 
 /* ハブ図：中央にゴール、その下に職種 */
-.p-work .hub{grid-template-columns:minmax(0,1fr);gap:30px;justify-items:center;max-width:1000px}
-.p-work .hub__center{width:min(100%,620px)}
-.p-work .hub__nodes{width:100%}
-.p-work .hub__nodes li{text-align:left}
+/* .p-work .hub 系 ← TEAMMAP v1 で未使用に（復元はgit履歴から） */
 
 /* 8ステップを2段のプロセス図に */
 .flow2{margin-top:44px;display:grid;gap:18px;max-width:1000px}
@@ -1269,7 +1266,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .flow2__label{text-align:center}
   .flow2 ol{justify-content:center}
   .flow2 li{font-size:13px;padding:10px 14px 10px 34px}
-  .p-work .hub__nodes li{text-align:left}
+  /* .p-work .hub__nodes li ← TEAMMAP v1 で未使用に */
 }
 /* ===== WORK-CENTER v1 END ===== */
 
@@ -2346,3 +2343,68 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .cflow__roles li{font-size:12.5px}
 }
 /* ===== CSTEP-FLOW v1 END ===== */
+
+/* ============================================================
+   ===== TEAMMAP v1 START =====
+   「仕事を知る」HOW WE WORK。職種の一覧ではなく、
+   ひとつのGOALに向かうチームの関係図として見せる。
+   中央にGOAL、左右に3職種ずつ。破線のレールで「全員が同じGOALへ」を表す。
+   Career Crossover の .hub とは別クラスなので、そちらには影響しない。
+   ============================================================ */
+.tmap{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(240px,.86fr) 40px minmax(0,1fr);
+  align-items:stretch;max-width:1120px;margin-inline:auto}
+.tmap__side{display:grid;grid-template-rows:repeat(3,1fr);gap:0;list-style:none}
+
+/* 各職種：カードにせず、アイコン＋職種名＋一言だけで見せる */
+.tmap__job{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);
+  gap:2px 16px;align-content:center;padding:20px 4px}
+.tmap__job svg{grid-row:span 2;width:40px;height:40px;color:var(--navy);align-self:center}
+.tmap__job b{font-size:15.5px;line-height:1.5;color:var(--navy)}
+.tmap__job span{font-size:13px;line-height:1.75;color:var(--sub)}
+/* レールへ伸びる細い破線 */
+.tmap__job::after{content:"";position:absolute;top:50%;width:20px;
+  border-top:1px dashed var(--line-mid,#c3cade)}
+.tmap__side--l .tmap__job{text-align:right;grid-template-columns:minmax(0,1fr) 40px}
+.tmap__side--l .tmap__job svg{order:2;grid-column:2}
+.tmap__side--l .tmap__job b,.tmap__side--l .tmap__job span{grid-column:1}
+.tmap__side--l .tmap__job::after{right:-20px}
+.tmap__side--r .tmap__job::after{left:-20px}
+
+/* 中央へ集めるレール（縦の破線＋GOALへの横線） */
+.tmap__rail{position:relative}
+.tmap__rail::before{content:"";position:absolute;left:50%;top:16.667%;bottom:16.667%;
+  border-left:1px dashed var(--line-mid,#c3cade)}
+.tmap__rail::after{content:"";position:absolute;top:50%;width:20px;
+  border-top:1px dashed var(--line-mid,#c3cade)}
+.tmap__rail--l::after{left:50%}
+.tmap__rail--r::after{right:50%}
+
+.tmap__goal{align-self:center;padding:34px 30px;border-radius:var(--radius-lg);
+  background:var(--navy-d);color:#fff;text-align:center}
+.tmap__goal .en{font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.2em;color:#ffb3b8}
+.tmap__goal b{display:block;margin-top:12px;font-size:clamp(17px,1.9vw,21px);line-height:1.6}
+
+.tmap__note{grid-column:1 / -1;margin-top:30px;text-align:center;
+  font-size:12.5px;color:var(--muted)}
+
+@media (max-width:860px){
+  /* 周囲配置をそのまま縮小せず、GOALを上に置いて職種を2列に組み替える */
+  .tmap{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+  .tmap__goal{grid-column:1 / -1;order:1;padding:26px 24px}
+  .tmap__rail{display:none}
+  .tmap__side{display:contents}
+  .tmap__side--l .tmap__job{order:3}
+  .tmap__side--r .tmap__job{order:4}
+  .tmap__job{text-align:left !important;grid-template-columns:36px minmax(0,1fr) !important;
+    padding:18px 0;border-bottom:1px solid var(--line)}
+  .tmap__job svg{order:0 !important;grid-column:1 !important;width:36px;height:36px}
+  .tmap__job b,.tmap__job span{grid-column:2 !important}
+  .tmap__job::after{display:none}
+  .tmap__note{order:2;grid-column:1 / -1;margin:22px 0 10px;
+    font-size:12.5px;color:var(--red);font-weight:700}
+}
+@media (max-width:560px){
+  .tmap{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== TEAMMAP v1 END ===== */
