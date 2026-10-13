@@ -1779,6 +1779,8 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    仕事を知る：職種ごとの「難しさ・考えること・やりがい」を横長カードで、
    改善の進み方を縦のステップで見せる。
    ============================================================ */
+/* ===== REAL v1：削除済み（REAL-COMPARE v1 でカード型に作り直し）
+   救済情報：下記のコメントを外せば復元できます。
 .reals{display:grid;gap:16px;list-style:none}
 .real{display:grid;grid-template-columns:262px minmax(0,1fr);gap:0 40px;align-items:start;
   padding:28px 32px 30px;border-radius:var(--radius-lg);background:#fff;border:1px solid var(--line)}
@@ -1792,6 +1794,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .real__item b{display:block;font-size:12.5px;letter-spacing:.02em;color:var(--sub)}
 .real__item--joy b{color:var(--red)}
 .real__item p{margin-top:8px;font-size:14px;line-height:1.9}
+   ===== */
 
 .csteps{display:grid;gap:0;list-style:none}
 .cstep{position:relative;display:grid;grid-template-columns:118px minmax(0,1fr);gap:0 28px;padding:26px 0 28px}
@@ -1805,11 +1808,10 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   font-size:11.5px;font-weight:700;color:var(--navy)}
 
 @media (max-width:1000px){
-  .real{grid-template-columns:minmax(0,1fr);gap:20px}
-  .real__body{grid-template-columns:minmax(0,1fr);gap:18px}
+  /* .real / .real__body のレスポンシブ ← REAL v1 削除済み */
 }
 @media (max-width:620px){
-  .real{padding:24px 22px 26px}
+  /* .real{padding:24px 22px 26px} ← REAL v1 削除済み */
   .cstep{grid-template-columns:minmax(0,1fr);gap:10px}
 }
 /* ===== WORK-REALITY v1 END ===== */
@@ -2408,3 +2410,54 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .tmap{grid-template-columns:minmax(0,1fr)}
 }
 /* ===== TEAMMAP v1 END ===== */
+
+/* ============================================================
+   ===== REAL-COMPARE v1 START =====
+   「正解がないから、考える仕事になる。」
+   長文の読み比べではなく、3つの視点（直面する課題／考えること／仕事のやりがい）を
+   並べて比較できるカードへ。視点ごとにアイコンと色を固定し、強弱をつける。
+   旧 REAL v1 の指定は復元用にコメントで残置。
+   ============================================================ */
+.reals{display:grid;gap:16px;list-style:none}
+.real{padding:26px 30px 28px;border-radius:var(--radius-lg);
+  background:#fff;border:1px solid var(--line)}
+
+/* 上段：小ラベル＋職種コピー（最も大きく）＋職種ピクト */
+.real__head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;
+  padding-bottom:18px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.real__cat{display:inline-block;padding:5px 13px;border-radius:9999px;
+  background:var(--bg-soft);font-size:11.5px;font-weight:700;letter-spacing:.04em;color:var(--sub)}
+.real__head h3{margin-top:11px;font-size:clamp(19px,2.05vw,23px);line-height:1.5;color:var(--navy)}
+.real__pict{width:48px;height:48px;color:#9aa3c0;flex:none}
+
+/* 下段：3つの視点を横並びで比較 */
+.real__body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 30px}
+.real__item{padding-left:18px;border-left:2px solid var(--line-mid,#c3cade)}
+.real__item+.real__item{padding-left:18px}
+.real__h{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--navy)}
+.real__h svg{width:19px;height:19px;flex:none}
+.real__item p+p{margin-top:10px;font-size:14.5px;line-height:1.9;color:var(--sub)}
+
+/* 視点ごとの色（毎回同じルール） */
+.real__item--issue{border-left-color:var(--navy-d)}
+.real__item--issue .real__h,.real__item--issue .real__h svg{color:var(--navy-d)}
+.real__item--think{border-left-color:#8f96b8}
+.real__item--think .real__h,.real__item--think .real__h svg{color:#6e76a0}
+.real__item--joy{border-left-color:var(--red)}
+.real__item--joy .real__h,.real__item--joy .real__h svg{color:var(--red)}
+
+@media (max-width:980px){
+  .real__body{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 26px}
+}
+/* 日本語の極小ラベルは12px未満にしない（MOBILE-LEGIBILITY v1 と同じ方針） */
+@media (max-width:720px){
+  .real__cat{font-size:12px}
+}
+@media (max-width:680px){
+  .real{padding:24px 22px 26px}
+  .real__head{grid-template-columns:minmax(0,1fr);gap:14px;padding-bottom:18px;margin-bottom:20px}
+  .real__pict{width:40px;height:40px;justify-self:start}
+  .real__body{grid-template-columns:minmax(0,1fr);gap:20px}
+  .real__item p+p{font-size:15px}
+}
+/* ===== REAL-COMPARE v1 END ===== */

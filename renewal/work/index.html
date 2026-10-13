@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261013f">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013g">
 </head>
 <body class="p-work">
 
@@ -70,6 +70,11 @@
 <symbol id="ic2-operate" viewBox="0 0 32 32"><circle class="s" cx="22" cy="12" r="5"/><path class="s" d="M22 4v2M22 18v2M14 12h2M28 12h2M16.5 6.5l1.4 1.4M26.1 16.1l1.4 1.4M27.5 6.5l-1.4 1.4M17.9 16.1l-1.4 1.4"/><path class="a" d="M19.8 12l1.6 1.6 3-3.4"/><circle class="s" cx="9" cy="16" r="3"/><path class="s" d="M4 27c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
 
 <symbol id="ic2-improve" viewBox="0 0 32 32"><path class="s" d="M4 27h25"/><path class="a" d="M7 22l6-6 4 3 8-9"/><path class="a" d="M21 10h4v4"/><circle class="s" cx="9" cy="8" r="2.6"/><path class="s" d="M4 16c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+<!-- ===== REAL-COMPARE v1：3つの視点のアイコン ===== -->
+<symbol id="ic3-issue" viewBox="0 0 32 32"><circle class="s" cx="16" cy="16" r="11"/><path class="s" d="M16 10v8"/><path class="s" d="M16 21.8v.01"/></symbol>
+<symbol id="ic3-think" viewBox="0 0 32 32"><circle class="s" cx="14" cy="14" r="8.5"/><path class="s" d="M20.2 20.2 26.5 26.5"/><path class="s" d="M10.5 14h7M14 10.5v7"/></symbol>
+<symbol id="ic3-joy" viewBox="0 0 32 32"><path class="s" d="M16 4.8l3.5 7.1 7.8 1.1-5.6 5.5 1.3 7.7L16 22.6 9 26.2l1.3-7.7-5.6-5.5 7.8-1.1z"/></symbol>
+
 </svg>
 
 <header class="hdr" id="hdr">
@@ -247,60 +252,122 @@
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">正解がないから、考える仕事になる。</h2>
       <p class="slead">物流現場の課題は、マニュアルどおりに解決できるものばかりではありません。現場の状況、働く人、設備、データ。さまざまな条件を踏まえながら、その現場に合った答えを探していきます。</p>
     </div>
+    <!-- ===== REAL-COMPARE v1：長文の読み比べから、3つの視点を並べて比べられるカードへ。
+     内容は踏襲しつつ各項目を1〜2行に要約し、視点ごとにアイコンと色を固定した。 ===== -->
     <ul class="reals rv">
       <li class="real">
         <div class="real__head">
-          <span class="real__cat">BPO / 現場運営</span>
-          <h3>安定稼働と改善を、同時に進める</h3>
+          <div class="real__lead">
+            <span class="real__cat">BPO / 現場運営</span>
+            <h3>安定稼働と改善を、同時に進める</h3>
+          </div>
+          <svg class="real__pict" aria-hidden="true"><use href="#ic2-field"></use></svg>
         </div>
         <div class="real__body">
-          <div class="real__item"><b>直面する課題</b><p>物量も人員も毎日変わります。今日を止めないことと、来月も回る状態をつくることは、別の仕事です。</p></div>
-          <div class="real__item"><b>考えること</b><p>作業量だけでなく、誰にどの作業が偏っているか。止まっていないことと、良い状態であることを分けて見ます。</p></div>
-          <div class="real__item real__item--joy"><b>仕事のやりがい</b><p>配置や手順を変えた結果が、作業のしやすさや現場の声としてすぐ返ってきます。</p></div>
+          <div class="real__item real__item--issue">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-issue"></use></svg>直面する課題</p>
+            <p>物量も人員も毎日変わる。今日を止めないことと、来月も回る状態をつくることは別の仕事。</p>
+          </div>
+          <div class="real__item real__item--think">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-think"></use></svg>考えること</p>
+            <p>作業量だけでなく、どこに偏りがあるか。止まっていないことと、良い状態であることを分けて見る。</p>
+          </div>
+          <div class="real__item real__item--joy">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-joy"></use></svg>仕事のやりがい</p>
+            <p>配置や手順を変えた結果が、作業のしやすさや現場の声としてすぐ返ってくる。</p>
+          </div>
         </div>
       </li>
       <li class="real">
         <div class="real__head">
-          <span class="real__cat">FDE</span>
-          <h3>現場の課題を、技術で解ける形に変える</h3>
+          <div class="real__lead">
+            <span class="real__cat">FDE</span>
+            <h3>現場の課題を、技術で解ける形に変える</h3>
+          </div>
+          <svg class="real__pict" aria-hidden="true"><use href="#ic2-fde"></use></svg>
         </div>
         <div class="real__body">
-          <div class="real__item"><b>直面する課題</b><p>同じ物流業務でも、人・設備・商品・ルールが違えば必要な仕組みも変わります。正解を持ち込んでも使われません。</p></div>
-          <div class="real__item"><b>考えること</b><p>毎回同じ判断が必要なことは技術で、その場で状況が変わることは運用で。どちらがその現場で続くかを考えます。</p></div>
-          <div class="real__item real__item--joy"><b>仕事のやりがい</b><p>「これなら使える」と言われたときに、はじめて仕組みになったと感じられます。</p></div>
+          <div class="real__item real__item--issue">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-issue"></use></svg>直面する課題</p>
+            <p>人・設備・商品・ルールが違えば、必要な仕組みも変わる。正解を持ち込んでも使われない。</p>
+          </div>
+          <div class="real__item real__item--think">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-think"></use></svg>考えること</p>
+            <p>毎回同じ判断は技術で、その場で変わることは運用で。その現場で続くのはどちらか。</p>
+          </div>
+          <div class="real__item real__item--joy">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-joy"></use></svg>仕事のやりがい</p>
+            <p>「これなら使える」と言われたとき、はじめて仕組みになったと感じる。</p>
+          </div>
         </div>
       </li>
       <li class="real">
         <div class="real__head">
-          <span class="real__cat">営業 / 事業開発</span>
-          <h3>要望の裏にある、本当の課題を探す</h3>
+          <div class="real__lead">
+            <span class="real__cat">営業 / 事業開発</span>
+            <h3>要望の裏にある、本当の課題を探す</h3>
+          </div>
+          <svg class="real__pict" aria-hidden="true"><use href="#ic-meeting"></use></svg>
         </div>
         <div class="real__body">
-          <div class="real__item"><b>直面する課題</b><p>お客様が言葉にしている要望と、実際に困っていることが一致しないことがあります。</p></div>
-          <div class="real__item"><b>考えること</b><p>いま何をどの順番でやっていて、どこで止まっているのか。提案の前に、社内の専門メンバーにも相談します。</p></div>
-          <div class="real__item real__item--joy"><b>仕事のやりがい</b><p>最初は一つの相談だった話が、社内のメンバーと一緒に具体的なプロジェクトになっていきます。</p></div>
+          <div class="real__item real__item--issue">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-issue"></use></svg>直面する課題</p>
+            <p>言葉にされた要望と、実際に困っていることが一致しないことがある。</p>
+          </div>
+          <div class="real__item real__item--think">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-think"></use></svg>考えること</p>
+            <p>何をどの順番でやり、どこで止まっているのか。提案の前に、社内の専門メンバーにも相談する。</p>
+          </div>
+          <div class="real__item real__item--joy">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-joy"></use></svg>仕事のやりがい</p>
+            <p>一つの相談だった話が、社内のメンバーと一緒に具体的なプロジェクトになっていく。</p>
+          </div>
         </div>
       </li>
       <li class="real">
         <div class="real__head">
-          <span class="real__cat">プロダクト企画・開発</span>
-          <h3>現場ごとに違う要求を、使われる形にする</h3>
+          <div class="real__lead">
+            <span class="real__cat">プロダクト企画・開発</span>
+            <h3>現場ごとに違う要求を、使われる形にする</h3>
+          </div>
+          <svg class="real__pict" aria-hidden="true"><use href="#ic2-system"></use></svg>
         </div>
         <div class="real__body">
-          <div class="real__item"><b>直面する課題</b><p>技術的に正しくても、現場では操作しづらいことがあります。片手がふさがる現場と、座って操作できる現場では必要なものが違います。</p></div>
-          <div class="real__item"><b>考えること</b><p>要望をそのまま実装せず、「その機能で、どの場面を楽にしたいのか」まで戻して考えます。</p></div>
-          <div class="real__item real__item--joy"><b>仕事のやりがい</b><p>自分たちがつくったもので、見えていなかったデータが見え、現場の判断が変わる瞬間に立ち会えます。</p></div>
+          <div class="real__item real__item--issue">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-issue"></use></svg>直面する課題</p>
+            <p>技術的に正しくても、現場では操作しづらいことがある。片手がふさがる現場と、座れる現場は違う。</p>
+          </div>
+          <div class="real__item real__item--think">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-think"></use></svg>考えること</p>
+            <p>要望をそのまま実装せず、「どの場面を楽にしたいのか」まで戻して考える。</p>
+          </div>
+          <div class="real__item real__item--joy">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-joy"></use></svg>仕事のやりがい</p>
+            <p>見えていなかったデータが見え、現場の判断が変わる瞬間に立ち会える。</p>
+          </div>
         </div>
       </li>
       <li class="real">
         <div class="real__head">
-          <span class="real__cat">DTS / 運行管理</span>
-          <h3>時間・品質・安全を、同時に守る</h3>
+          <div class="real__lead">
+            <span class="real__cat">DTS / 運行管理</span>
+            <h3>時間・品質・安全を、同時に守る</h3>
+          </div>
+          <svg class="real__pict" aria-hidden="true"><use href="#ic2-transport"></use></svg>
         </div>
         <div class="real__body">
-          <div class="real__item"><b>直面する課題</b><p>道路状況など、自分たちだけではコントロールできないことが起きます。それでも届け先の条件は変わりません。</p></div>
-          <div class="real__item"><b>考えること</b><p>全部を元の計画に戻そうとせず、どこを優先して守るかを決めます。迷ったときは安全を最優先にします。</p></div>
-          <div class="real__item real__item--joy"><b>仕事のやりがい</b><p>組み直した計画がそのとおり回ったとき、先に手を打ってトラブルを避けられたときに手応えがあります。</p></div>
+          <div class="real__item real__item--issue">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-issue"></use></svg>直面する課題</p>
+            <p>道路状況など、自分たちで決められないことが起きる。それでも届け先の条件は変わらない。</p>
+          </div>
+          <div class="real__item real__item--think">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-think"></use></svg>考えること</p>
+            <p>全部を計画に戻そうとせず、どこを優先して守るかを決める。迷ったら安全を最優先。</p>
+          </div>
+          <div class="real__item real__item--joy">
+            <p class="real__h"><svg aria-hidden="true"><use href="#ic3-joy"></use></svg>仕事のやりがい</p>
+            <p>組み直した計画がそのとおり回ったとき、先に手を打てたときに手応えがある。</p>
+          </div>
         </div>
       </li>
     </ul>
