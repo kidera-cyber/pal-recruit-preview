@@ -2828,3 +2828,29 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .sec--navy .slabel::before{background:var(--red-light,#ffb3b8)}
 .posmap__base .en,.posmap__core .en{color:var(--red-light,#ffb3b8)}
 /* ===== ACCENT v2 END ===== */
+
+/* ============================================================
+   ===== ASK v3 START =====
+   THE QUESTION を「濃紺の大判カード」から、問題提起と次セクションを
+   つなぐブリッジコピーへ変更。高さを 291px → 120〜180px に圧縮する。
+   WHYNOW v2 の .ask / .ask .en / .ask b を後勝ちで上書きする。
+   旧指定では本文色が --text のまま濃紺地に沈んでいたため、可読性も同時に解消。
+   ============================================================ */
+.ask{position:relative;margin-top:56px;padding:26px 34px 28px;
+  display:grid;gap:10px;justify-items:start;
+  background:#fff;border:1px solid var(--line);border-left:3px solid var(--red);
+  border-radius:0 var(--radius) var(--radius) 0}
+.ask .en{font-size:11.5px;letter-spacing:.2em;font-weight:700;color:var(--red)}
+.ask b{margin-top:0;font-size:clamp(22px,2.6vw,33px);line-height:1.5;color:var(--navy)}
+.ask b .hl{color:var(--red)}
+/* 問い → 答え に見えるよう、次セクションへ細い赤線を落とす（高さには含めない） */
+.ask::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:34px;
+  background:linear-gradient(180deg,var(--red),rgba(207,19,27,.12))}
+#why{padding-bottom:64px}
+@media (max-width:720px){
+  .ask{margin-top:44px;padding:22px 20px 24px}
+  .ask b{font-size:21px;line-height:1.6}
+  .ask::after{height:26px}
+  #why{padding-bottom:52px}
+}
+/* ===== ASK v3 END ===== */
