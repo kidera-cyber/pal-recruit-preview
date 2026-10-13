@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261009x">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013e">
 </head>
 <body class="p-work">
 
@@ -281,39 +281,50 @@
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">気づいた課題を、改善につなげる。</h2>
       <p class="slead">課題を見つけるだけでも、仕組みを導入するだけでも終わりません。現場で使われ、改善が続く状態をつくるために、異なる専門性を持つメンバーが協力します。</p>
     </div>
-    <ol class="csteps rv">
-      <li class="cstep">
-        <span class="cstep__no en">STEP 01</span>
-        <div class="cstep__b">
+    <!-- ===== CSTEP-FLOW v1：縦積みの説明から、横並びのフロー図へ。
+     文章は短く整理し、関わる役割はカード下のピル型ラベルにまとめた。
+     STEP 03 の「コーポレート」は、現場課題→改善の流れの直接の担い手ではないため外した。 ===== -->
+    <ol class="cflow rv">
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 01</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
           <h3>現場の違和感に気づく</h3>
-          <p>作業の滞り、数字の変化、スタッフからの声。毎日見ているからこそ気づける、改善につながる課題を見つけます。</p>
-          <p class="cstep__who"><span>気づく人</span>現場運営・DTS・衛生清掃</p>
-        </div>
-      </li>
-      <li class="cstep">
-        <span class="cstep__no en">STEP 02</span>
-        <div class="cstep__b">
+          <p class="cflow__t">作業の滞り、数字の変化、スタッフの声。毎日見ているからこそ気づける、改善につながる課題を見つけます。</p>
+          <div class="cflow__roles">
+            <p class="cflow__rh">関わる役割</p>
+            <ul><li class="cflow__lead">気づく人</li><li>現場運営</li><li>DTS</li><li>衛生清掃</li></ul>
+          </div>
+        </li>
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 02</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
           <h3>原因を考える</h3>
-          <p>現場の状況とデータの両方を確認します。数字に出ていない作業があるのか、数えている単位が違うのか。何が問題なのかを整理します。</p>
-          <p class="cstep__who"><span>整理する人</span>現場運営・FDE</p>
-        </div>
-      </li>
-      <li class="cstep">
-        <span class="cstep__no en">STEP 03</span>
-        <div class="cstep__b">
+          <p class="cflow__t">現場の状況とデータの双方を確認し、何が問題なのかを整理します。</p>
+          <div class="cflow__roles">
+            <p class="cflow__rh">関わる役割</p>
+            <ul><li class="cflow__lead">整理する人</li><li>現場運営</li><li>FDE</li></ul>
+          </div>
+        </li>
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 03</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg>
           <h3>専門性を持ち寄る</h3>
-          <p>技術で解くのか、運用で変えるのか。現場運営、FDE、営業、開発がそれぞれの立場から見て、実行できる形に落とします。</p>
-          <p class="cstep__who"><span>持ち寄る人</span>FDE・プロダクト開発・営業・コーポレート</p>
-        </div>
-      </li>
-      <li class="cstep">
-        <span class="cstep__no en">STEP 04</span>
-        <div class="cstep__b">
+          <p class="cflow__t">技術で解くのか、運用で変えるのか。現場運営、FDE、営業、開発がそれぞれの立場から実行できる形に落とします。</p>
+          <div class="cflow__roles">
+            <p class="cflow__rh">関わる役割</p>
+            <ul><li class="cflow__lead">持ち寄る人</li><li>FDE</li><li>プロダクト開発</li><li>営業</li></ul>
+          </div>
+        </li>
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 04</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg>
           <h3>現場で試し、改善する</h3>
-          <p>完成してから確認するのではなく、途中段階から使ってもらいます。実際の使われ方を見て、より良い方法へ更新していきます。</p>
-          <p class="cstep__who"><span>続ける人</span>現場運営・FDE・プロダクト開発</p>
-        </div>
-      </li>
+          <p class="cflow__t">完成してから確認するのではなく、途中段階から使ってもらい、実際の使われ方を見て、より良い方法へ更新していきます。</p>
+          <div class="cflow__roles">
+            <p class="cflow__rh">関わる役割</p>
+            <ul><li class="cflow__lead">続ける人</li><li>現場運営</li><li>FDE</li><li>プロダクト開発</li></ul>
+          </div>
+        </li>
     </ol>
     <p class="note rv">※ 進め方は案件や現場によって変わります。誰か一人で完結する仕事ではない、という点だけは共通しています。</p>
   </div>
@@ -323,12 +334,12 @@
   <div class="wrap">
     <div class="fde rv">
       <div class="fde__body">
-        <p class="en" style="color:var(--pink);font-size:12px">FORWARD DEPLOYED ENGINEER</p>
+        <p class="fde__en en">FORWARD DEPLOYED ENGINEER</p>
         <h3 style="margin-top:12px">仕様書だけでは、現場は動かない。<br>だから、現場に入り込む。</h3>
-        <p><b>実際にやること。</b>現場に入って業務の流れを確認し、課題を技術要件へ翻訳して、設計・実装・運用までをつなぎます。</p>
-          <p><b>関わる相手。</b>現場メンバー、エンジニア、営業、プロダクト。立場の違う相手と同じ課題を見ながら進めます。</p>
-          <p><b>判断する場面。</b>技術で解くのか、運用で解くのか。その現場が続けられる形はどちらかで決めていきます。</p>
-        <p class="note" style="color:#9aa0c4">※ FDEという考え方や、PALの仕事の進め方（Design / Deploy / Operate / Evolve）は「PALを知る」で紹介しています。</p>
+        <p><b>実際にやること。</b>現場に入って業務の流れを確認し、課題を技術要件へ翻訳して、<b>設計・実装・運用までつなぎます</b>。</p>
+          <p><b>関わる相手。</b>現場メンバー、エンジニア、営業、プロダクト。立場の違う相手と<b>同じ課題を見ながら進めます</b>。</p>
+          <p><b>判断する場面。</b>技術で解くのか、運用で解くのか。<b>その現場が続けられる形</b>はどちらかで決めていきます。</p>
+        <p class="note fde__note">※ FDEという考え方や、PALの仕事の進め方（Design / Deploy / Operate / Evolve）は「PALを知る」で紹介しています。</p>
         <p style="margin-top:26px"><a class="btn btn--onnavy" href="fde/">FDEという仕事を詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a>　<a class="btn btn--onnavy" href="../about/#process">PALの仕事の進め方を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
       </div>
       <figure class="fde__media">
