@@ -2530,32 +2530,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 }
 /* ===== CSTORY v1 END ===== */
 
-/* ============================================================
-   ===== PJUMP v1 START =====
-   キャリアページ末尾の「人を知る」への導線。説明的な3カードをやめ、
-   7職種を図解で見せる1本の導線にする。
-   ============================================================ */
-.pjump{max-width:900px;margin-inline:auto;text-align:center}
-.pjump__q{font-size:15px;font-weight:700;color:var(--red)}
-.pjump__h{margin-top:12px;font-size:clamp(23px,2.8vw,32px);line-height:1.5;color:var(--navy)}
-.pjump__t{margin-top:16px;font-size:15.5px;line-height:1.95;color:var(--sub)}
-.pjump__jobs{margin-top:34px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
-  gap:12px;list-style:none}
-.pjump__jobs li{display:grid;justify-items:center;gap:9px;padding:18px 6px;
-  border-radius:var(--radius);background:#fff;border:1px solid var(--line);
-  font-size:12px;line-height:1.5;color:var(--navy)}
-.pjump__jobs svg{width:32px;height:32px;color:var(--navy)}
-.pjump__cta{margin-top:34px}
-
-@media (max-width:980px){
-  .pjump__jobs{grid-template-columns:repeat(4,minmax(0,1fr))}
-}
-@media (max-width:620px){
-  .pjump__jobs{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .pjump__jobs li{font-size:12.5px}
-  .pjump__cta .btn{width:100%;justify-content:center}
-}
-/* ===== PJUMP v1 END ===== */
+/* ===== PJUMP v1：削除（VOICES-LIST v3 で文字主体のリンクリストに置き換え。復元はgit履歴から） ===== */
 
 /* ============================================================
    ===== TYPO v2 START =====
@@ -2906,3 +2881,38 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .p-career .shead{max-width:44em}
 }
 /* ===== CP-ENG v1 END ===== */
+
+/* ============================================================
+   ===== VOICES-LIST v3 START =====
+   CAREERページ末尾「7職種の社員インタビュー」への導線。
+   中央揃え＋アイコンカード（PJUMP v1）をやめ、ページ全体と同じ左揃えの
+   文字主体リンクリストにする。角丸・影・アイコンは使わず、薄い罫線のみ。
+   ============================================================ */
+.slabel--ja{letter-spacing:.04em}
+.vlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;
+  list-style:none;border-top:1px solid var(--line-mid,#c3cade)}
+.vlist li{border-bottom:1px solid var(--line)}
+.vlist li:last-child{grid-column:1 / -1}
+.vlist a{display:flex;align-items:baseline;gap:6px 18px;flex-wrap:wrap;
+  padding:21px 2px 23px;text-decoration:none;color:inherit;
+  transition:padding-left .25s var(--ease),background-color .25s}
+.vlist__cat{flex:0 0 100%;font-family:Lato,sans-serif;font-size:12.5px;font-weight:700;
+  letter-spacing:.08em;color:var(--sub)}
+.vlist b{flex:1 1 auto;font-size:17px;line-height:1.6;color:var(--navy)}
+.vlist__ar{flex:0 0 auto;font-size:15px;line-height:1;color:var(--red);
+  transition:transform .25s var(--ease)}
+.vlist a:hover{padding-left:10px}
+.vlist a:hover .vlist__cat{color:var(--red)}
+.vlist a:hover .vlist__ar{transform:translateX(5px)}
+.vlist__cta{margin-top:38px}
+@media (max-width:860px){
+  .vlist{column-gap:32px}
+  .vlist b{font-size:16.5px}
+}
+@media (max-width:720px){
+  .vlist{grid-template-columns:minmax(0,1fr)}
+  .vlist li:last-child{grid-column:auto}
+  .vlist a{padding:18px 2px 20px}
+  .vlist__cta .btn{width:100%;justify-content:center}
+}
+/* ===== VOICES-LIST v3 END ===== */
