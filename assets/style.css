@@ -1744,51 +1744,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 /* ===== WORK-REALITY v1 END ===== */
 
 
-/* ============================================================
-   ===== JOBFLOW v1 START =====
-   仕事を知る：職種の連携を3階層のフロー図で示す。
-   中心集約（CORE）表現は廃止。全カードを同じ扱いにし、
-   赤は矢印と連携記号のみに使う。旧 .jmap / .jnode は未使用。
-   ============================================================ */
-.jflow{display:grid;gap:0}
-.jtier{padding:0}
-.jtier--side{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
-.jtier__h{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;font-size:15px;font-weight:700;color:var(--navy)}
-.jtier__h .en{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;
-  background:var(--navy);color:#fff;font-family:Lato,sans-serif;font-size:10.5px;font-weight:700}
-.jtier__note{margin-top:12px;font-size:12.5px;line-height:1.8;color:var(--muted)}
-.jtier__link{margin-top:14px;padding:12px 18px;border-radius:var(--radius);background:var(--bg-soft);
-  font-size:13.5px;line-height:1.8;color:var(--sub)}
-
-.jrow{display:grid;gap:16px;list-style:none;align-items:stretch}
-.jrow--2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.jrow--3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.jrow--3bi{grid-template-columns:1fr 44px 1fr 44px 1fr;gap:0}
-
-.jcard{display:flex;flex-direction:column;padding:20px 22px 22px;border-radius:var(--radius);
-  background:#fff;border:1px solid var(--line)}
-.jcard b{font-size:15.5px;line-height:1.5}
-.jcard p{margin-top:8px;font-size:13.5px;line-height:1.8;color:var(--sub)}
-
-.jbi{display:grid;place-items:center}
-.jbi span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;
-  background:#fff;border:1px solid rgba(207,19,27,.45);color:var(--red);font-size:13px;line-height:1}
-
-.jdown{display:grid;place-items:center;padding:14px 0}
-.jdown span{position:relative;display:block;width:2px;height:34px;background:var(--red)}
-.jdown span::after{content:"";position:absolute;left:50%;bottom:-1px;width:9px;height:9px;
-  border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:translateX(-50%) rotate(45deg)}
-
-@media (max-width:900px){
-  .jrow--3{grid-template-columns:minmax(0,1fr)}
-  .jrow--3bi{grid-template-columns:minmax(0,1fr)}
-  .jbi{padding:4px 0}
-  .jbi span{transform:rotate(90deg)}
-}
-@media (max-width:560px){
-  .jrow--2{grid-template-columns:minmax(0,1fr)}
-}
-/* ===== JOBFLOW v1 END ===== */
+/* ===== JOBFLOW v1：削除（JOBFLOW v2 の関係図に置き換え。復元はgit履歴から） ===== */
 
 /* ============================================================
    ===== CAREER-REBUILD v1 START =====
@@ -3044,3 +3000,89 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #numbers .num{padding:28px 22px 26px}
 }
 /* ===== NUMBERS v2 END ===== */
+
+/* ============================================================
+   ===== JOBFLOW v2 START =====
+   仕事を知る「職種がつながり、仕事が動く。」
+   箱と矢印だけのフロー図をやめ、人物アイコンを入れた「実行体制の関係図」へ。
+   構成：共通目的 → LAYER 01 起点 → LAYER 02 中核（相互接続）→ LAYER 03 支援。
+   色は 白（カード）／ライトグレー（補助面）／濃紺（骨格・見出し）／
+   PALレッド（小見出し・矢印・接続点）の4つに限定する。
+   ============================================================ */
+.jmap2{display:grid}
+
+/* 共通目的：全職種が向かう先を図の起点に置く */
+.jpurpose{padding:28px 32px 30px;background:var(--navy-d);border-radius:var(--radius);text-align:center}
+.jpurpose__en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.2em;
+  font-weight:700;color:var(--red-light,#ffb3b8)}
+.jpurpose b{display:block;margin-top:12px;font-size:clamp(19px,2.1vw,25px);line-height:1.5;color:#fff;font-weight:700}
+.jpurpose__steps{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;
+  margin-top:18px;list-style:none}
+.jpurpose__steps li{display:flex;align-items:center;font-size:13.5px;font-weight:700;color:#e7e9f4}
+.jpurpose__steps li+li::before{content:"";width:22px;height:1px;margin:0 12px;
+  background:rgba(255,179,184,.7)}
+
+/* 層をつなぐ矢印（赤） */
+.jarrow{display:grid;place-items:center;padding:16px 0}
+.jarrow span{position:relative;display:block;width:2px;height:36px;
+  background:linear-gradient(180deg,var(--red),rgba(207,19,27,.45))}
+.jarrow span::after{content:"";position:absolute;left:50%;bottom:-1px;width:9px;height:9px;
+  border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:translateX(-50%) rotate(45deg)}
+.jarrow--up span{background:linear-gradient(0deg,var(--red),rgba(207,19,27,.45))}
+.jarrow--up span::after{top:-1px;bottom:auto;border:0;
+  border-left:2px solid var(--red);border-top:2px solid var(--red)}
+.jarrow em{margin-top:9px;font-style:normal;font-size:12.5px;font-weight:700;color:var(--red)}
+
+/* 層の見出し */
+.jlayer__h{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:16px}
+.jlayer__h .en{font-family:Lato,sans-serif;font-size:11px;letter-spacing:.14em;
+  font-weight:700;color:var(--red)}
+.jlayer__h b{font-size:18px;line-height:1.5;color:var(--navy)}
+.jlayer__h em{font-style:normal;padding:3px 10px;border:1px solid var(--line-mid,#c3cade);
+  font-size:11.5px;font-weight:700;color:var(--sub)}
+.jlayer__h em.is-core{border-color:var(--red);color:var(--red)}
+.jlayer__note{margin-top:12px;font-size:12.5px;line-height:1.8;color:var(--muted)}
+.jlayer__bind{margin-top:14px;padding:12px 18px;background:var(--bg-soft);
+  font-size:13.5px;line-height:1.8;color:var(--sub)}
+.jlayer--core{padding:24px;background:#fff;border:1px solid var(--line-mid,#c3cade);border-radius:var(--radius)}
+.jlayer--core .jlayer__bind{background:var(--bg-soft)}
+.jlayer--support{margin-top:0}
+
+/* 職種カード：アイコン → 英字ラベル → 職種名 → 一言の役割 */
+.jrow2{display:grid;gap:16px;list-style:none;align-items:stretch}
+.jrow2--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.jrow2--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.jrow2--core{grid-template-columns:1fr 46px 1fr 46px 1fr;gap:0}
+.jp{display:flex;flex-direction:column;padding:22px 22px 24px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.jp__ico{width:36px;height:36px;color:var(--navy)}
+.jp__en{margin-top:14px;font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;
+  font-weight:700;color:var(--red)}
+.jp b{margin-top:7px;font-size:16.5px;line-height:1.5;color:var(--navy)}
+.jp p{margin-top:8px;font-size:14.5px;line-height:1.7;color:var(--sub)}
+/* 起点：左に赤のラインで「入口」であることを示す */
+.jlayer--start .jp{border-left:3px solid var(--red)}
+/* 中核：少し強く見せる */
+.jlayer--core .jp{background:var(--bg-soft);border-color:var(--line-mid,#c3cade)}
+.jlayer--core .jp b{font-size:18px}
+
+/* 中核3職種の相互接続 */
+.jlink{display:grid;place-items:center}
+.jlink span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;
+  background:#fff;border:1px solid rgba(207,19,27,.5);color:var(--red);font-size:14px;line-height:1}
+
+@media (max-width:1000px){
+  .jrow2--3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .jrow2--3 > *:last-child{grid-column:1 / -1}
+  .jrow2--core{grid-template-columns:minmax(0,1fr);gap:0}
+  .jlink{padding:8px 0}
+  .jlink span{transform:rotate(90deg)}
+}
+@media (max-width:620px){
+  .jrow2--2,.jrow2--3{grid-template-columns:minmax(0,1fr)}
+  .jrow2--3 > *:last-child{grid-column:auto}
+  .jpurpose{padding:24px 20px 26px}
+  .jlayer--core{padding:18px}
+  .jp{padding:20px 18px 22px}
+}
+/* ===== JOBFLOW v2 END ===== */

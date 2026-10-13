@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261013y">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013z">
 </head>
 <body class="p-work">
 
@@ -203,42 +203,57 @@
       <p class="slead">PALでは、営業、現場運営、FDE、システム開発など、異なる専門性を持つメンバーが連携しながら物流課題に向き合っています。それぞれの役割がつながることで、提案から実行、改善までを進めていきます。</p>
     </div>
     <p class="note rv" style="margin:-8px 0 26px">※ 正式な組織図ではありません。PALの代表的な業務連携を紹介する図です。実際の担当範囲はプロジェクトによって変わります。</p>
-    <div class="jflow rv">
-      <div class="jtier">
-        <p class="jtier__h"><span class="en">01</span>営業・事業開発</p>
-        <ul class="jrow jrow--2">
-          <li class="jcard"><b>顧客エンゲージメント</b><p>顧客との関係を深め、課題や改善の可能性を見つける</p></li>
-          <li class="jcard"><b>BizDev / 新規営業</b><p>新たな顧客課題を整理し、事業や提案の機会をつくる</p></li>
+    <!-- ===== JOBFLOW v2：箱と矢印だけのフロー図をやめ、「人が見える実行体制の関係図」へ。
+         上に共通目的を置き、3つの層を「役割の意味が分かる見出し」に変更。
+         各カードは 人物アイコン＋英字ラベル＋職種名＋一言の役割 の4要素に統一した。 ===== -->
+    <div class="jmap2 rv">
+
+      <div class="jpurpose">
+        <p class="jpurpose__en en">COMMON PURPOSE</p>
+        <b>物流DXを、現場で動く形にする。</b>
+        <ul class="jpurpose__steps" aria-label="仕事の進み方">
+          <li>見つける</li><li>つなぐ</li><li>動かす</li><li>支える</li>
         </ul>
-        <p class="jtier__note">※ 課題を見つけるのは営業だけではありません。代表的な業務の流れとして示しています。</p>
       </div>
 
-      <p class="jdown" aria-hidden="true"><span></span></p>
+      <p class="jarrow" aria-hidden="true"><span></span></p>
 
-      <div class="jtier">
-        <p class="jtier__h"><span class="en">02</span>現場運営・FDE・システム</p>
-        <ul class="jrow jrow--3bi">
-          <li class="jcard"><b>BPO / 現場運営</b><p>現場の安定稼働、改善活動、運営体制の構築</p></li>
-          <li class="jbi" aria-hidden="true"><span>⇄</span></li>
-          <li class="jcard"><b>FDE</b><p>現場課題の整理、技術的な解決方法の検討、実装支援</p></li>
-          <li class="jbi" aria-hidden="true"><span>⇄</span></li>
-          <li class="jcard"><b>プロダクト企画・開発</b><p>現場で利用するシステムや仕組みの企画・設計・開発</p></li>
+      <div class="jlayer jlayer--start">
+        <p class="jlayer__h"><span class="en">LAYER 01</span><b>課題・機会を見つける人たち</b><em>起点</em></p>
+        <ul class="jrow2 jrow2--2">
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="jp__en en">ENGAGEMENT</span><b>顧客エンゲージメント</b><p>顧客の課題を見つける</p></li>
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="jp__en en">BIZDEV</span><b>BizDev・新規営業</b><p>新しい事業機会をつくる</p></li>
         </ul>
-        <p class="jtier__link">この3つは一方通行の関係ではありません。情報を共有しながら、実行・検証・改善を繰り返します。</p>
+        <p class="jlayer__note">※ 課題を見つけるのは営業だけではありません。代表的な業務の流れとして示しています。</p>
       </div>
 
-      <div class="jtier jtier--side">
-        <p class="jtier__h"><span class="en">03</span>専門領域・支援機能</p>
-        <ul class="jrow jrow--3">
-          <li class="jcard"><b>DTS / 運行管理</b><p>輸送・運行の専門領域を担い、日々の安定運行と改善につなげる</p></li>
-          <li class="jcard"><b>マーケティング</b><p>PALの取り組みや価値を発信し、新たな顧客との接点をつくる</p></li>
-          <li class="jcard"><b>コーポレート</b><p>人事・管理・組織運営などを通じて、各部門の活動を支える</p></li>
+      <p class="jarrow" aria-hidden="true"><span></span></p>
+
+      <div class="jlayer jlayer--core">
+        <p class="jlayer__h"><span class="en">LAYER 02</span><b>現場で動く形にする人たち</b><em class="is-core">中核</em></p>
+        <ul class="jrow2 jrow2--core">
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="jp__en en">OPERATION</span><b>BPO / 現場運営</b><p>現場を安定稼働させる</p></li>
+          <li class="jlink" aria-hidden="true"><span>⇄</span></li>
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="jp__en en">FDE</span><b>FDE</b><p>課題を技術要件へ翻訳する</p></li>
+          <li class="jlink" aria-hidden="true"><span>⇄</span></li>
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-operate"></use></svg><span class="jp__en en">PRODUCT</span><b>プロダクト企画・開発</b><p>現場で使える仕組みにする</p></li>
         </ul>
-        <p class="jtier__note">※ 業務上の役割が異なるため、主な業務フローと分けて示しています。重要度の違いを示すものではありません。</p>
+        <p class="jlayer__bind">この3つは一方通行の関係ではありません。情報を共有しながら、実行・検証・改善を繰り返します。</p>
       </div>
+
+      <p class="jarrow jarrow--up" aria-hidden="true"><span></span><em>支える</em></p>
+
+      <div class="jlayer jlayer--support">
+        <p class="jlayer__h"><span class="en">LAYER 03</span><b>継続して支える人たち</b><em>支援</em></p>
+        <ul class="jrow2 jrow2--3">
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="jp__en en">TRANSPORT</span><b>DTS / 運行管理</b><p>輸送・運行を安定させる</p></li>
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="jp__en en">MARKETING</span><b>マーケティング</b><p>価値を伝え、接点をつくる</p></li>
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic-office"></use></svg><span class="jp__en en">CORPORATE</span><b>コーポレート</b><p>人と組織を支える</p></li>
+        </ul>
+        <p class="jlayer__note">※ 業務上の役割が異なるため、主な業務フローと分けて示しています。重要度の違いを示すものではありません。</p>
+      </div>
+
     </div>
-
-    
 
     <p class="rv" style="margin-top:30px"><a class="textlink" href="../jobs/">募集要項で、条件と選考の流れを見る</a></p>
 
