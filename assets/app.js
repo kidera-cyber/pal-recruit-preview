@@ -139,3 +139,33 @@
     });
   });
 })();
+
+/* ============================================================
+   ===== HASH-LANDING v1：ハッシュ付きURLで開いたときの着地を確実にする =====
+   html{scroll-behavior:smooth} があると、読み込み中のレイアウト確定や
+   Webフォントの反映で、ブラウザ任せのスクロールが取り消されることがある。
+   読み込み完了後とフォント確定後に、ページ先頭のままなら対象へ合わせ直す。
+   すでにスクロールされている場合（＝利用者が動かした／ブラウザが成功した）
+   場合は何もしない。位置合わせは CSS の scroll-padding-top /
+   scroll-margin-top に任せる。
+   ============================================================ */
+(function () {
+  if (!location.hash || location.hash.length < 2) return;
+  var id;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+  var el = document.getElementById(id);
+  if (!el) return;
+
+  var land = function () {
+    if (Math.round(window.scrollY) !== 0) return;      // すでに動いていれば触らない
+    if (el.getBoundingClientRect().top < window.innerHeight) return; // 画面内なら不要
+    el.scrollIntoView({ behavior: 'auto', block: 'start' });
+  };
+
+  if (document.readyState === 'complete') land();
+  else window.addEventListener('load', land);
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { setTimeout(land, 80); });
+  }
+})();

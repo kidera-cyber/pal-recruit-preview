@@ -1201,27 +1201,26 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .comp td:last-child{color:var(--red);font-family:Lato,sans-serif;font-size:12.5px;letter-spacing:.04em;white-space:nowrap}
 .comp .note{margin-top:14px}
 
-/* ===== NEXTLINKS v1：削除済み（ページ末尾の関連ページ一覧を廃止したため未使用）
-   救済情報：下記のコメントを外せば復元できます。
 .nextlinks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;list-style:none;border-top:1px solid var(--line-mid,#c3cade)}
+/* 3枚で使うときは4列目が空かないよう3列に */
+.nextlinks--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .nextlinks a{display:block;padding:22px 2px;border-bottom:1px solid var(--line);transition:background-color .25s,padding .25s var(--ease)}
 .nextlinks a:hover{background:var(--bg-soft);padding-inline:14px 4px}
 .nextlinks small{display:block;font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--red)}
 .nextlinks b{display:block;margin-top:6px;font-size:16px;line-height:1.5}
 .nextlinks span{display:block;margin-top:6px;font-size:12.5px;line-height:1.8;color:var(--sub)}
-   ===== */
 
 @media (max-width:1080px){
   .hub{grid-template-columns:minmax(0,1fr);gap:28px}
   .iconcards{grid-template-columns:repeat(2,minmax(0,1fr))}
-  /* .nextlinks ← NEXTLINKS v1 削除済み */
+  .nextlinks,.nextlinks--3{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
 }
 @media (max-width:720px){
   .hub__nodes,.hub__nodes--5{grid-template-columns:minmax(0,1fr);gap:0}
   .hub__center{padding:28px 22px}
   .iconcards{grid-template-columns:minmax(0,1fr);gap:14px}
   .iconcards li{padding:20px 18px 22px}
-  /* .nextlinks ← NEXTLINKS v1 削除済み */
+  .nextlinks,.nextlinks--3{grid-template-columns:minmax(0,1fr)}
   .comp{margin-top:40px;overflow-x:auto}
   .comp table{min-width:560px}
 }
@@ -2245,3 +2244,20 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .entry p{font-size:15.5px;line-height:1.95}
 }
 /* ===== NEXT-CTA v1 END ===== */
+
+/* ============================================================
+   ===== JOB-ANCHOR v1 START =====
+   HOME や社員インタビューから、募集要項ページの該当職種へ直接飛ぶためのアンカー。
+   固定ヘッダー（72px）の下に見出しが隠れないよう、着地位置を下げる。
+   スムーススクロールと prefers-reduced-motion は既存の html 指定に従う。
+   ============================================================ */
+/* html の scroll-padding-top:88px と合算されるため、ここは少しだけ足す */
+#job-bpo,#job-fde,#job-engineer,#job-dts,
+#job-sales,#job-bizdev,#job-marketing,#job-corporate{scroll-margin-top:12px}
+/* そのほかの募集職種は行単位のアンカーなので、着地時に見出しごと見えるようにする */
+#job-sales,#job-bizdev,#job-marketing,#job-corporate{scroll-margin-top:252px}
+/* スマホは一覧が1列になり行が縦に伸びるため、職種名そのものを上寄せで着地させる */
+@media (max-width:860px){
+  #job-sales,#job-bizdev,#job-marketing,#job-corporate{scroll-margin-top:120px}
+}
+/* ===== JOB-ANCHOR v1 END ===== */
