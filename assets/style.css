@@ -2801,3 +2801,71 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .posmap__base li small,.posmap__core small,.gapline__item small,
   .jobtile__meta,.tmap__note,.others__none{font-size:14px}
 }
+
+/* ============================================================
+   ===== BRAND v2 START =====
+   配色・CTA・カードのトーンを、コーポレートサイト（www.pal-style.co.jp）へ寄せる。
+   実測した基準：本文 #1b1d31／#262946、アクセント #cf131b、
+   背景 #fff・#f2f3f6、補助文字 #6b6d81・#797dac。
+   紫→ピンクのグラデーションは、コーポレートではほぼ使われていないため整理する。
+   構成・内容・文言は変更しない（見た目のトーンのみ）。
+   ============================================================ */
+:root{
+  --red-light:#ffb3b8;   /* 濃紺背景の上で使うPALレッド */
+}
+
+/* ---- グラデーションを、赤または濃紺の面へ置き換える ---- */
+.slabel::before,.hero__badge::before,.look2__ch::after{background:var(--red)}
+.compare__card--pal::before,.tl::before{background:var(--red)}
+.hero__title em{background:none;-webkit-background-clip:border-box;background-clip:border-box;
+  color:var(--red);-webkit-text-fill-color:var(--red)}
+.fde__tag,.cross__node--new,.step:last-child .step__no{background:var(--red);border-color:transparent}
+.num b{background:none;-webkit-background-clip:border-box;background-clip:border-box;
+  color:var(--navy-d);-webkit-text-fill-color:var(--navy-d)}
+.phil__body>p.phil__slogan,.posmap__core{background:var(--navy-d)}
+.flowsel li:last-child{background:var(--red);border-color:transparent}
+
+/* ---- 白・ライトグレー背景の上のアクセントは PALレッドへ ---- */
+.ticker__row span::after,.integrate .en,.compare__card--pal .compare__type,
+.field--core .field__cat,.persona__base span,.phil__no,.posmap__base .en,
+.chain__step--mid .en,.effects .en,.iv__quote::before{color:var(--red)}
+.pftl--e::after{background:var(--red)!important}
+
+/* ---- 濃紺背景の上は、沈まない明るいレッドへ ---- */
+.fde__points i,.cross__node--pal small,.branch__from small,.ftr h3,
+.fdeflow .en,.hub__center .en,.tmap__goal .en,.cstory__steps li.cstory__last .cstory__sno,
+.entry__label,.flowsel .en{color:var(--red-light)}
+.stance li{border-left-color:var(--red-light)}
+
+/* ---- 濃紺背景の文字を読みやすく ---- */
+.sec--navy p,.sec--navy li,.sec--navy dd{color:#e8eaf2}
+.sec--navy .note{color:#c8cbd6}
+.sec--navy h2,.sec--navy h3,.sec--navy h4,.sec--navy b{color:#fff}
+
+/* ---- CTA：役割ごとに見た目を固定する ---- */
+/* PRIMARY：PALレッド背景＋白文字（コーポレートと同じ） */
+.btn--red{background:var(--red);color:#fff;border:1px solid var(--red)}
+.btn--red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+/* SECONDARY：白背景＋濃紺文字＋濃紺の細枠 */
+.btn--ghost{background:#fff;color:var(--navy-d);border:1px solid var(--navy-d)}
+.btn--ghost:hover{background:var(--navy-d);color:#fff;border-color:var(--navy-d)}
+/* 濃紺の上の SECONDARY */
+.btn--onnavy{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn--onnavy:hover{background:#fff;color:var(--navy-d);border-color:#fff}
+/* 動きは控えめに */
+.btn:hover{transform:none}
+.btn{min-height:52px}
+.btn--lg{min-height:58px}
+
+/* ---- カード：影を控えめにし、角丸も少し締める ---- */
+:root{--radius-lg:12px}
+.field:hover,.jobtile:hover,.iconcards li:hover{transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(38,41,70,.07)}
+.person:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(38,41,70,.09)}
+.field:hover,.jobtile:hover{border-color:var(--line-mid,#c3cade)}
+
+@media (max-width:720px){
+  .btn{min-height:50px}
+  .btn--lg{min-height:52px}
+}
+/* ===== BRAND v2 END ===== */
