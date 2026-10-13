@@ -2685,3 +2685,119 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pjump__cta .btn{width:100%;justify-content:center}
 }
 /* ===== PJUMP v1 END ===== */
+
+/* ============================================================
+   ===== TYPO v2 START =====
+   サイト全体の文字階層を再設定する。本文は16px未満を原則つくらない。
+   役割ごとにサイズ・行間・幅を決め、ラベル／英字／タグだけ小さいままにする。
+   一律の拡大ではなく、既存の個別指定を後勝ちで整えるための追記。
+   ============================================================ */
+:root{
+  --fs-label:12px;     /* ラベル・英字見出し */
+  --fs-note:14.5px;    /* 補足・注記 */
+  --fs-card:16px;      /* カード本文 */
+  --fs-base:16.5px;    /* 本文 */
+  --fs-body-lg:17px;   /* 長文本文（FAQ・インタビュー） */
+  --fs-lead:18px;      /* リード文 */
+  --lh-body:1.85;
+  --lh-card:1.75;
+  --lh-head:1.4;
+  --measure:820px;     /* 長文の最大幅 */
+}
+
+/* ---- リード文 ---- */
+.slead,.plead,.day__lead,.day2__lead,.cstory__sub,.pjump__t,.lookto,
+.iv__intro,.ch__sub,.cyc__lead{font-size:var(--fs-lead);line-height:1.9}
+.slead,.plead,.ch__sub{max-width:var(--measure)}
+
+/* ---- 長文本文 ---- */
+.faq p,.iv__qa p,.phil__body>p,.msg__body p,.spec dd,.job__body dd{
+  font-size:var(--fs-body-lg);line-height:var(--lh-body)}
+.faq p,.iv__qa p,.phil__body>p,.msg__body p{max-width:var(--measure)}
+.faq summary{font-size:var(--fs-lead);line-height:1.6}
+.faq p{padding-top:4px}
+
+/* ---- 一般の本文・カード本文 ---- */
+.pillar p,.prob p,.cross__body p,.compare__card p,.cstep__b p,
+.person__body p,.people--4 .person__body p,.people--5 .person__body p,
+.field p,.values p,.twocol p,.culture__card p,.cycle p,.tl p,.tl3 p,
+.flow2 li,.step p,.jcard p,.iconcards p,.key__desc,.gphase dd,
+.lookv p,.cstory__skills p,.cstory__steps p,.cstory__items li,
+.jcmp tbody td,.cflow__t,.scene p,.spots p,.voices span,.nextlinks span,
+.tmap__job span,.hub__nodes span,.skills3 span,.branch__to li,
+.sline p:not(.sline__h),.stance p,.fde__points span,.relpeople span,
+.chain__step p,.persona__grid li span,.pf__t,.pf__bub li,
+.trans__steps li,.trans__voice li,.trans__req li,.jnode span,.effects p,
+.pickrow__d,.pick__desc,.places p,.cyc__d,.cyc__steps li,.ivmission li,
+.ivstep p,.ivday p,.flowsel p,.fdeflow p,.field__meta,.field__fit,
+.stepline li,.steps-flow p,.num span,.product span,.comp table,
+.persona__note,.integrate span,.sidecta,.ajcta p,.transnote,
+.look2__close p:last-child,.fde__points li,.cstory__t,.entry__sec,
+.role__note,.day2__lead+.daydraft{font-size:var(--fs-card);line-height:var(--lh-card)}
+
+/* ---- カード内の小見出し（太字） ---- */
+.jcard b,.jnode b,.tl b,.tl3 b,.tmap__job b,.stance b,.posmap__cus b,
+.rolenav b,.flowline b,.flowsel b,.steps-flow b,.product b,.fdeflow b,
+.hub__nodes b,.gphase dd b,.spots b,.relpeople--photo b,.rolestep b,
+.cross__node b,.cycband b,.posmap__base b,.wwd b,.fde__points b,
+.persona__grid li b{font-size:17px;line-height:1.55}
+
+/* ---- 補足・注記 ---- */
+.note,.ph,.transnote,.jtier__note,.persona__note,.updated,.ivnote,
+.daydraft,.role__note,.pftl__legend{font-size:var(--fs-note);line-height:1.7}
+
+/* ---- 募集要項 ---- */
+.spec dt{font-size:var(--fs-card);font-weight:700}
+.job__body dt{font-size:15.5px}
+.jcmp tbody th b{font-weight:700}
+
+/* ---- ボタン・リンク ---- */
+.btn{font-size:16px;font-weight:700}
+.btn--lg{font-size:17px}
+.textlink{font-size:15.5px;font-weight:700}
+.textlink--sm{font-size:14px}
+.tab,.tabs--big .tab{font-size:15px}
+/* ヘッダーだけは幅が限られるため据え置き */
+.gnav a{font-size:14.5px}
+.hdr__cta{font-size:15px}
+
+/* ---- 図解の中の文字 ---- */
+.cflow__roles li,.cflow__role span,.jcmp__cat,.real__cat,.rolenav__cat,
+.pjump__jobs li,.cstep__who span,.chain__tags li,.jobcats span,
+.cross__tag,.field__cat,.job__cat{font-size:13px}
+.cflow__rh,.gphase dt,.jcmp tbody td::before,.cstory__blk h4 em{font-size:12.5px}
+
+@media (max-width:720px){
+  :root{--fs-lead:17px;--fs-base:16px;--fs-body-lg:16.5px;--fs-card:16px;--fs-note:14px}
+  .btn{font-size:16px}
+  .btn--lg{font-size:16px}
+  .faq summary{font-size:17px}
+  /* 日本語の極小ラベルは12px未満にしない */
+  .cflow__rh,.gphase dt,.jcmp tbody td::before,.cstory__blk h4 em,
+  .jcmp__cat,.real__cat,.rolenav__cat,.person__cat,.updated{font-size:12.5px}
+}
+/* ===== TYPO v2 END ===== */
+
+/* ---- TYPO v2 追補：残っていた小さい本文を引き上げる ---- */
+.pfsteps li span,.pfline b,.jtier__link,.person__copy,
+.people--4 .person__copy,.people--5 .person__copy,
+.cstep__who,.chain__step p,.flow2 li,.pf__ic li{font-size:15.5px;line-height:1.75}
+.posmap__base li small,.posmap__core small,.gapline__item small,
+.hub__nodes span,.jnode span,.relpeople span,.relpeople--photo span,
+.pftl li,.jmap__hub small,.tmap__note,.others__none,
+.jobtile__meta,.gphase dd span{font-size:14.5px;line-height:1.7}
+.branch p,.mission__slogan,.pjump__q,.trans__h,.pf__h,.jtier__h,
+.day__lead,.cycband b{font-size:16px}
+.hero__badge{font-size:14px}
+.person__cat,.people--4 .person__cat,.people--5 .person__cat{font-size:12.5px}
+/* 図解のなかの説明文も、本文と同じ下限にそろえる */
+.cyc__d,.cycle p,.trans__steps li,.trans__voice li,.trans__req li,
+.pf__bub li,.pf__t,.effects p,.stepline li,.ivmission li,
+.persona__grid li span,.integrate span,.wwd span{font-size:15.5px;line-height:1.75}
+
+@media (max-width:720px){
+  .pfsteps li span,.pfline b,.jtier__link,.person__copy,
+  .people--4 .person__copy,.people--5 .person__copy{font-size:15px}
+  .posmap__base li small,.posmap__core small,.gapline__item small,
+  .jobtile__meta,.tmap__note,.others__none{font-size:14px}
+}
