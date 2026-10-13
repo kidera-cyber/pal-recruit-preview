@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261013i">
+<link rel="stylesheet" href="../../assets/style.css?v=20261013k">
 </head>
 <body class="p-career">
 
@@ -31,6 +31,12 @@
 <symbol id="ic2-fde" viewBox="0 0 32 32"><path class="s" d="M2 9v14M6.5 9v14M2 16h4.5"/><rect class="s" x="24" y="10" width="7" height="10" rx="1.5"/><circle class="s" cx="16" cy="10" r="3.5"/><path class="s" d="M10.5 22c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><path class="a" d="M8.5 16h3M20.5 16h3"/></symbol>
 <symbol id="ic2-system" viewBox="0 0 32 32"><rect class="s" x="9" y="7" width="18" height="13" rx="2"/><path class="s" d="M5 25h26l-2-5H9z"/><path class="a" d="M15 11l-2.5 2.5L15 16M21 11l2.5 2.5L21 16"/></symbol>
 <symbol id="ic2-transport" viewBox="0 0 32 32"><path class="s" d="M2 8h13v11H2zM15 11h4.5l4 4v4H15z"/><circle class="s" cx="8" cy="22.5" r="2.2"/><circle class="s" cx="21" cy="22.5" r="2.2"/><path class="a" d="M3 28h26"/><path class="s" d="M5 13h6"/></symbol>
+<symbol id="ic-manager" viewBox="0 0 32 32"><rect class="s" x="4" y="9" width="24" height="18" rx="2"/><path class="s" d="M11 9V6a2 2 0 012-2h6a2 2 0 012 2v3"/><path class="a" d="M12 18h8M16 14v8"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 32 32"><path class="s" d="M5 5v22h22"/><path class="a" d="M9 21l5-6 4 3 7-9"/><circle class="af" cx="25" cy="9" r="2"/></symbol>
+<symbol id="ic-worker" viewBox="0 0 32 32"><path class="a" d="M9 11a7 7 0 0114 0"/><path class="s" d="M7 11h18"/><circle class="s" cx="16" cy="17" r="3.5"/><path class="s" d="M8 29c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+<symbol id="ic2-improve" viewBox="0 0 32 32"><path class="s" d="M4 27h25"/><path class="a" d="M7 22l6-6 4 3 8-9"/><path class="a" d="M21 10h4v4"/><circle class="s" cx="9" cy="8" r="2.6"/><path class="s" d="M4 16c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+<symbol id="ic2-data" viewBox="0 0 32 32"><rect class="s" x="4" y="4" width="24" height="15" rx="2"/><path class="a" d="M10 15v-4M15 15v-7M20 15v-3"/><circle class="s" cx="16" cy="24" r="2.6"/><path class="s" d="M10.5 30c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/></symbol>
+<symbol id="ic-dashboard" viewBox="0 0 32 32"><rect class="s" x="3" y="6" width="26" height="17" rx="2"/><path class="s" d="M11 27h10M16 23v4"/><path class="s" d="M8 18v-4M13 18v-7"/><path class="a" d="M18 18v-5M23 18v-8"/></symbol>
 </svg>
 <!-- ===== CAREER-SPRITE v1 END ===== -->
 
@@ -84,7 +90,7 @@
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:34px">
       <p class="slabel">01 Start</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">入社して、<br>最初にすること。</h2>
+      <h2 class="stitle cstory__ttl" style="font-size:clamp(23px,2.7vw,32px)">入社して、最初にすること。</h2>
       <p class="slead">「入社したての人が、実際にどんな仕事をしているのか」。最初に経験する場面を、順に紹介します。</p>
     </div>
     <!-- ===== CAREER-START v1 START：入社直後の具体的な場面（成長段階の説明はGROWTH PROCESSに集約） ===== -->
@@ -204,92 +210,220 @@
         <button class="tab" role="tab" id="cp-tab-dts" aria-controls="cp-dts" aria-selected="false"><svg aria-hidden="true"><use href="#ic2-transport"></use></svg>DTS・運送</button>
       </div>
       <div class="cpanel" id="cp-bpo" role="tabpanel" aria-labelledby="cp-tab-bpo">
-        <p class="cpanel__h"><b>センター長キャリア</b><span>現場を入口に、事業へ広がる</span></p>
-        <div class="cpath">
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">01</span>最初に経験する仕事</p>
-            <p class="cpath__t">センター長候補として、現場運営の実務を担います。現場マネジメント・オペレーション改善・数値管理の経験は歓迎しますが、未経験・新卒でも応募できます。</p>
-          </div>
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">02</span>身につく専門性</p>
-            <ul class="cpath__skills"><li>現場マネジメント</li><li>オペレーション改善</li><li>数値管理</li><li>顧客との関係づくり</li></ul>
-          </div>
-          <div class="cpath__col cpath__col--wide">
-            <p class="cpath__h"><span class="en">03</span>任される役割の広がり<em>一例</em></p>
-            <ol class="cpath__steps">
-              <li><span>入口</span>センター長候補｜現場運営の実務を担う</li>
-              <li><span>STEP 2</span>センター長｜現場が自走する環境をつくる</li>
-              <li><span>STEP 3</span>エンゲージメント｜築いた信頼を取引に変える</li>
-              <li><span>STEP 4</span>エリアマネージャー／他事業部へ</li>
+        <p class="cpanel__h"><b>センター長キャリア</b></p>
+        <p class="cstory__lead">現場を知り、専門性を身につけ、<br>任される範囲を広げていく。</p>
+        <p class="cstory__sub">センター運営の実務を経験しながら、マネジメントや改善の力を身につけ、より広い役割へ進んでいきます。</p>
+        <ol class="cstory">
+          <li class="cstory__blk">
+            <p class="cstory__no en">01</p>
+            <h4>まずは、現場を知る。</h4>
+            <p class="cstory__t">センター長候補として、現場運営の実務からスタートします。<br>人員配置、進捗、品質・安全など、日々の現場を回す基本を身につけます。</p>
+            <ul class="cstory__items">
+            <li><svg aria-hidden="true"><use href="#ic-manager"></use></svg>人員配置</li>
+            <li><svg aria-hidden="true"><use href="#ic-chart"></use></svg>進捗管理</li>
+            <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg>品質・安全</li>
+            <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>業務改善</li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">02</p>
+            <h4>現場を動かす力を、専門性へ。</h4>
+            <ul class="cstory__skills">
+            <li><b>現場マネジメント</b><p>人・配置・進捗を見ながら、安定した運営をつくる。</p></li>
+            <li><b>オペレーション改善</b><p>作業や導線を見直し、より良い方法へ変える。</p></li>
+            <li><b>数値管理</b><p>現場の状態を、数字でも捉える。</p></li>
+            <li><b>顧客との関係づくり</b><p>現場の状況を共有し、改善を一緒に進める。</p></li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">03</p>
+            <h4>少しずつ、任される範囲が広がる。<em>一例</em></h4>
+            <ol class="cstory__steps">
+            <li>
+              <span class="cstory__sno en">STEP 1</span>
+              <b>センター長候補</b>
+              <p>現場運営の実務を担う</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 2</span>
+              <b>センター長</b>
+              <p>現場が自走する環境をつくる</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 3</span>
+              <b>エンゲージメント</b>
+              <p>築いた信頼を取引に変える</p>
+            </li>
+            <li class="cstory__last">
+              <span class="cstory__sno en">STEP 4</span>
+              <b>エリアマネージャー／他事業部へ</b>
+              <p>より広い範囲で事業を動かす</p>
+            </li>
             </ol>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
       <div class="cpanel" id="cp-fde" role="tabpanel" aria-labelledby="cp-tab-fde" hidden>
-        <p class="cpanel__h"><b>FDE（Forward Deployed Engineer）</b><span>現場×技術の通訳のプロへ</span></p>
-        <div class="cpath">
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">01</span>最初に経験する仕事</p>
-            <p class="cpath__t">顧客の現場に入り、課題を把握するところから始めます。先輩と一緒に仮説を立て、改善を試すところまでを経験します。</p>
-          </div>
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">02</span>身につく専門性</p>
-            <ul class="cpath__skills"><li>現場の課題把握</li><li>仮説検証</li><li>改善提案</li><li>現場実装と活用推進</li></ul>
-          </div>
-          <div class="cpath__col cpath__col--wide">
-            <p class="cpath__h"><span class="en">03</span>任される役割の広がり<em>一例</em></p>
-            <ol class="cpath__steps">
-              <li><span>ジュニア</span>FDE｜現場に入り、仮説と改善を学ぶ</li>
-              <li><span>一人前</span>FDE｜自ら仮説を立て、現場に提案し改善</li>
-              <li><span>シニア</span>FDE｜活用まで見届け、実装をリード</li>
-              <li><span>その先</span>DXプロダクト開発本部への道も</li>
+        <p class="cpanel__h"><b>FDE（Forward Deployed Engineer）</b></p>
+        <p class="cstory__lead">現場に入り、課題を整理し、<br>実装までを担えるようになる。</p>
+        <p class="cstory__sub">顧客の現場で課題を把握するところから始め、仮説と改善を重ねながら、実装をリードする役割へ進んでいきます。</p>
+        <ol class="cstory">
+          <li class="cstory__blk">
+            <p class="cstory__no en">01</p>
+            <h4>まずは、現場に入る。</h4>
+            <p class="cstory__t">顧客の現場に入り、課題を把握するところから始めます。<br>先輩と一緒に仮説を立て、改善を試すところまでを経験します。</p>
+            <ul class="cstory__items">
+            <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg>現場の課題把握</li>
+            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>仮説検証</li>
+            <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg>改善提案</li>
+            <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>現場実装</li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">02</p>
+            <h4>現場と技術をつなぐ力を、専門性へ。</h4>
+            <ul class="cstory__skills">
+            <li><b>現場の課題把握</b><p>帳票に出ていない運用まで含めて、現場を見る。</p></li>
+            <li><b>仮説検証</b><p>何が原因かを、現場とデータの両方で確かめる。</p></li>
+            <li><b>改善提案</b><p>技術で解くか運用で変えるかを決めて、形にする。</p></li>
+            <li><b>現場実装と活用推進</b><p>使われる状態まで見届ける。</p></li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">03</p>
+            <h4>少しずつ、任される範囲が広がる。<em>一例</em></h4>
+            <ol class="cstory__steps">
+            <li>
+              <span class="cstory__sno en">STEP 1</span>
+              <b>FDE（ジュニア）</b>
+              <p>現場に入り、仮説と改善を学ぶ</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 2</span>
+              <b>FDE（一人前）</b>
+              <p>自ら仮説を立て、現場に提案し改善</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 3</span>
+              <b>FDE（シニア）</b>
+              <p>活用まで見届け、実装をリード</p>
+            </li>
+            <li class="cstory__last">
+              <span class="cstory__sno en">STEP 4</span>
+              <b>DXプロダクト開発本部へ</b>
+              <p>プロダクトをつくる側へ進む道も</p>
+            </li>
             </ol>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
       <div class="cpanel" id="cp-prod" role="tabpanel" aria-labelledby="cp-tab-prod" hidden>
-        <p class="cpanel__h"><b>プロダクト企画・開発</b><span>現場起点でプロダクトを創る</span></p>
-        <div class="cpath">
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">01</span>最初に経験する仕事</p>
-            <p class="cpath__t">自社プロダクトの機能を、現場起点で企画・実装します。React／TypeScriptでのWeb開発経験が前提の職種です。</p>
-          </div>
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">02</span>身につく専門性</p>
-            <ul class="cpath__skills"><li>React／TypeScriptでの実装</li><li>現場起点の要件整理</li><li>設計・技術選定</li><li>現場フィードバックの反映</li></ul>
-          </div>
-          <div class="cpath__col cpath__col--wide">
-            <p class="cpath__h"><span class="en">03</span>任される役割の広がり<em>一例</em></p>
-            <ol class="cpath__steps">
-              <li><span>メンバー</span>開発｜現場起点で機能を企画・実装</li>
-              <li><span>リーダー</span>開発リーダー｜設計・技術選定を主導</li>
-              <li><span>マネージャー</span>プロダクトマネージャー</li>
-              <li><span>その先</span>開発責任者／アーキテクト</li>
+        <p class="cpanel__h"><b>プロダクト企画・開発</b></p>
+        <p class="cstory__lead">現場を見ながらつくり、<br>プロダクト全体を見る役割へ。</p>
+        <p class="cstory__sub">現場起点で機能を企画・実装しながら、設計や技術選定を担い、プロダクト全体を見る役割へ進んでいきます。</p>
+        <ol class="cstory">
+          <li class="cstory__blk">
+            <p class="cstory__no en">01</p>
+            <h4>まずは、現場起点でつくる。</h4>
+            <p class="cstory__t">自社プロダクトの機能を、現場起点で企画・実装します。<br>React／TypeScriptでのWeb開発経験が前提の職種です。</p>
+            <ul class="cstory__items">
+            <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>企画・実装</li>
+            <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg>現場起点の要件整理</li>
+            <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg>フィードバック反映</li>
+            <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>活用推進</li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">02</p>
+            <h4>つくる力を、設計の力へ。</h4>
+            <ul class="cstory__skills">
+            <li><b>React／TypeScriptでの実装</b><p>現場で使われる画面を、自分の手でつくる。</p></li>
+            <li><b>現場起点の要件整理</b><p>要望の裏にある場面まで戻して考える。</p></li>
+            <li><b>設計・技術選定</b><p>続けられる形を選び、設計に落とす。</p></li>
+            <li><b>現場フィードバックの反映</b><p>使われ方を見て、より良い方法へ更新する。</p></li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">03</p>
+            <h4>少しずつ、任される範囲が広がる。<em>一例</em></h4>
+            <ol class="cstory__steps">
+            <li>
+              <span class="cstory__sno en">STEP 1</span>
+              <b>開発メンバー</b>
+              <p>現場起点で機能を企画・実装</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 2</span>
+              <b>開発リーダー</b>
+              <p>設計・技術選定を主導</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 3</span>
+              <b>プロダクトマネージャー</b>
+              <p>プロダクト全体の方針を決める</p>
+            </li>
+            <li class="cstory__last">
+              <span class="cstory__sno en">STEP 4</span>
+              <b>開発責任者／アーキテクト</b>
+              <p>技術と組織の両面を見る</p>
+            </li>
             </ol>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
       <div class="cpanel" id="cp-dts" role="tabpanel" aria-labelledby="cp-tab-dts" hidden>
-        <p class="cpanel__h"><b>DTS（運送）キャリア</b><span>安全を土台に、事業を牽引</span></p>
-        <div class="cpath">
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">01</span>最初に経験する仕事</p>
-            <p class="cpath__t">配車と運行の管理、そして安全管理を担います。ドライバーの目線に立てることが、この仕事の土台になります。</p>
-          </div>
-          <div class="cpath__col">
-            <p class="cpath__h"><span class="en">02</span>身につく専門性</p>
-            <ul class="cpath__skills"><li>配車・運行管理</li><li>安全管理</li><li>データに基づく業務改善</li><li>標準化の提案</li></ul>
-          </div>
-          <div class="cpath__col cpath__col--wide">
-            <p class="cpath__h"><span class="en">03</span>任される役割の広がり<em>一例</em></p>
-            <ol class="cpath__steps">
-              <li><span>STEP 1</span>運行管理｜配車・運行・安全管理を担う</li>
-              <li><span>STEP 2</span>配車リーダー｜データで現場を標準化</li>
-              <li><span>STEP 3</span>営業所長｜事業所運営とDX提案</li>
-              <li><span>STEP 4</span>事業統括マネージャー（次期役員）</li>
+        <p class="cpanel__h"><b>DTS（運送）キャリア</b></p>
+        <p class="cstory__lead">安全な運行を土台に、<br>事業所を動かす役割へ。</p>
+        <p class="cstory__sub">配車・運行・安全管理を担いながら、データで現場を標準化し、事業所の運営までを見る役割へ進んでいきます。</p>
+        <ol class="cstory">
+          <li class="cstory__blk">
+            <p class="cstory__no en">01</p>
+            <h4>まずは、運行を支える。</h4>
+            <p class="cstory__t">配車と運行の管理、そして安全管理を担います。<br>ドライバーの目線に立てることが、この仕事の土台になります。</p>
+            <ul class="cstory__items">
+            <li><svg aria-hidden="true"><use href="#ic2-transport"></use></svg>配車・運行管理</li>
+            <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg>安全管理</li>
+            <li><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg>データ確認</li>
+            <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>業務改善</li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">02</p>
+            <h4>現場を支える力を、専門性へ。</h4>
+            <ul class="cstory__skills">
+            <li><b>配車・運行管理</b><p>人と車両を見ながら、当日の運行を組み立てる。</p></li>
+            <li><b>安全管理</b><p>迷ったときに、安全を最優先で判断する。</p></li>
+            <li><b>データに基づく業務改善</b><p>実績と運行データから、次の手を考える。</p></li>
+            <li><b>標準化の提案</b><p>うまくいったやり方を、現場の手順にする。</p></li>
+            </ul>
+          </li>
+          <li class="cstory__blk">
+            <p class="cstory__no en">03</p>
+            <h4>少しずつ、任される範囲が広がる。<em>一例</em></h4>
+            <ol class="cstory__steps">
+            <li>
+              <span class="cstory__sno en">STEP 1</span>
+              <b>運行管理</b>
+              <p>配車・運行・安全管理を担う</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 2</span>
+              <b>配車リーダー</b>
+              <p>データで現場を標準化</p>
+            </li>
+            <li>
+              <span class="cstory__sno en">STEP 3</span>
+              <b>営業所長</b>
+              <p>事業所運営とDX提案</p>
+            </li>
+            <li class="cstory__last">
+              <span class="cstory__sno en">STEP 4</span>
+              <b>事業統括マネージャー</b>
+              <p>より広い範囲で事業を動かす</p>
+            </li>
             </ol>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </div>
     <!-- ===== CAREER-SALES v1：営業・事業開発の道すじは内容が確定していないため非表示。
@@ -380,29 +514,29 @@
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Real voices</p>
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,30px)">働く人の話から、<br>キャリアの実際を知る。</h2>
-      <p class="slead">キャリアは、制度の説明だけでは分かりません。実際に働く人の経歴と、1日の過ごし方から確かめてください。</p>
+      <p class="slead">キャリアは、制度の説明だけでは分かりません。実際に働く人の経歴から確かめてください。</p>
     </div>
     <!-- ===== CAREER-VOICES v1 START：応募者の疑問を見出しにした導線（リンク先の掲載状況も明示） ===== -->
-    <ul class="voices rv">
-      <li><a href="../people/">
-        <p class="voices__q">どんな人が働いているのか？</p>
-        <b>7職種の社員インタビュー<em class="voices__tag">準備中</em></b>
-        <span>現場運営・衛生清掃・輸送・FDE・開発・営業・総務。入社前の経歴と、いま考えていることを職種ごとに掲載しています。</span>
-      </a></li>
-      <li><a href="../culture/#day">
-        <p class="voices__q">どんな1日を過ごしているのか？</p>
-        <b>部署ごとに異なる、PALの1日</b>
-        <span>FDE・BPO／現場運営・エンジニア・コーポレートの4職種について、午前と午後の流れを紹介しています。</span>
-      </a></li>
-      <li><a href="../work/#reality">
-        <p class="voices__q">仕事の大変なところは？</p>
-        <b>正解がないから、考える仕事になる</b>
-        <span>職種ごとに、直面する課題と、そこで何を考えるのかを載せています。</span>
-      </a></li>
-    </ul>
+    <!-- ===== CAREER-VOICES v2：3カードの説明的な導線をやめ、
+         7職種を図解で見せる「人を知る」への1本の導線へ。 ===== -->
+    <div class="pjump rv">
+      <p class="pjump__q">どんな人が働いているのか？</p>
+      <h3 class="pjump__h">7職種の社員インタビュー</h3>
+      <p class="pjump__t">現場運営、衛生清掃、輸送、FDE、システム、営業、コーポレート。<br>それぞれの経歴と、いま考えていることを職種ごとに掲載しています。</p>
+      <ul class="pjump__jobs">
+          <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><span>BPO / 現場運営</span></li>
+          <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg><span>Cleaning / 衛生清掃</span></li>
+          <li><svg aria-hidden="true"><use href="#ic2-transport"></use></svg><span>DTS / 運行管理</span></li>
+          <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><span>FDE</span></li>
+          <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><span>Engineer / システム</span></li>
+          <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><span>Sales / 営業</span></li>
+          <li><svg aria-hidden="true"><use href="#ic-office"></use></svg><span>Corporate / 管理部門</span></li>
+      </ul>
+      <p class="pjump__cta"><a class="btn btn--red btn--lg" href="../people/">7職種の社員インタビューを見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    </div>
     <!-- ===== NEXT-CTA v1：「職種どうしのつながり／募集要項／よくあるご質問」の3枚は、
          ページ末尾のCTAおよびグローバルナビと重複するため削除した。 ===== -->
-    <p class="note rv">※ 社員インタビューは、内容を準備中です。掲載中の回答は、公開前の下書きです。1日の流れは、FDE・BPO／現場運営・エンジニア・コーポレートの4職種を公開しています。</p>
+    <p class="note rv">※ 社員インタビューは、内容を準備中です。掲載中の回答は、公開前の下書きです。</p>
     <!-- 内容を確認・更新したときに、この日付を手で書き換えてください。公開処理日やビルド日を自動で入れないこと。 -->
     <p class="updated rv">このページの内容を確認した日：2026年10月9日</p>
     <!-- ===== CAREER-VOICES v1 END ===== -->
