@@ -2036,7 +2036,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .p-jobs .sec--tight{padding-block:72px}
 
 /* ---- 職種ナビ ---- */
-.rolenav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none}
+.rolenav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;list-style:none}
 .rolenav a{display:grid;grid-template-columns:38px minmax(0,1fr);gap:2px 16px;align-items:center;
   height:100%;padding:18px 20px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);
   transition:border-color .25s,transform .25s var(--ease)}
@@ -2224,7 +2224,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    スムーススクロールと prefers-reduced-motion は既存の html 指定に従う。
    ============================================================ */
 /* html の scroll-padding-top:88px と合算されるため、ここは少しだけ足す */
-#job-bpo,#job-fde,#job-engineer,#job-dts,
+#job-bpo,#job-fde,#job-engineer,#job-dts,#job-engagement,
 #job-sales,#job-bizdev,#job-marketing,#job-corporate{scroll-margin-top:12px}
 /* そのほかの募集職種は行単位のアンカーなので、着地時に見出しごと見えるようにする */
 #job-sales,#job-bizdev,#job-marketing,#job-corporate{scroll-margin-top:252px}
