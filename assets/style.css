@@ -2854,3 +2854,32 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #why{padding-bottom:52px}
 }
 /* ===== ASK v3 END ===== */
+
+/* ============================================================
+   ===== EFFECT3 v1 START =====
+   PALを知る「仕事の範囲を決めているのはこの3つ。」の01〜03カード。
+   説明文を短文化したのに合わせ、余白を広げて文字密度を下げる。
+   既存の .effects--light（4カラム）／@media の2カラム・1カラム指定を、
+   #how スコープで後勝ち上書きする（3枚で4カラムだと右端が空くため）。
+   ============================================================ */
+#how .effects--light{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:0}
+#how .effects--light li{display:flex;flex-direction:column;padding:30px 28px 32px}
+#how .effects--light .en{font-size:12px;letter-spacing:.18em;font-weight:700;color:var(--red)}
+#how .effects--light li > b{display:block;margin-top:14px;font-size:18px;line-height:1.5;color:var(--navy)}
+#how .effects--light p{margin-top:14px;font-size:15px;line-height:1.85;color:var(--sub)}
+/* 本文中の強調は見出し用の display:block / font-size を引き継がせない */
+#how .effects--light p .hl{display:inline;margin-top:0;font-size:inherit;line-height:inherit;
+  color:var(--red);font-weight:700}
+@media (max-width:860px){
+  /* 2列相当：3枚目が左に1枚だけ残るのを避け、中央に配置する */
+  #how .effects--light{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+  #how .effects--light li{grid-column:span 2;padding:26px 24px 28px}
+  #how .effects--light li:last-child{grid-column:2 / span 2}
+}
+@media (max-width:620px){
+  /* 1列：860px側で付けた span 2 / 中央寄せを解除する */
+  #how .effects--light{grid-template-columns:minmax(0,1fr);gap:14px}
+  #how .effects--light li,#how .effects--light li:last-child{grid-column:auto}
+  #how .effects--light li > b{font-size:17px}
+}
+/* ===== EFFECT3 v1 END ===== */
