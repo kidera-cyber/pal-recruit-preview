@@ -2960,3 +2960,87 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .askto .textlink{margin-left:0;display:block;margin-top:8px;white-space:normal}
 }
 /* ===== PROBLEM v3 END ===== */
+
+/* ============================================================
+   ===== POSMAP v2 START =====
+   「分断を、ひとつの流れにつなぐ。」（濃紺セクション #position）。
+   背景もカードも暗く情報が沈んでいたため、カードをすべて白地にして
+   濃紺の面の上に浮かせる。色は 濃紺＝背景／白＝カード／濃紺・ダークグレー＝文字／
+   PALレッド＝ラベル・矢印・番号 の4階層に整理する。
+   既存の .posmap 系（rgba(255,255,255,…) の半透明カード）と
+   .effects（濃紺用）を #position スコープで後勝ち上書きする。
+   ============================================================ */
+#position .posmap{margin-top:32px;padding:0;background:none;border:0;border-radius:0}
+#position .posmap .en{display:block;font-family:Lato,sans-serif;font-size:11.5px;
+  letter-spacing:.16em;font-weight:700;color:var(--red)}
+
+/* CUSTOMER：破線をやめ、白の小カードへ */
+#position .posmap__cus{max-width:520px;margin-inline:auto;padding:20px 24px;
+  background:#fff;border:1px solid #d7dce5;border-radius:var(--radius);text-align:center}
+#position .posmap__cus b{display:block;margin-top:7px;font-size:16px;line-height:1.6;color:var(--navy)}
+
+/* 矢印：PALレッドで統一し、少し太く */
+#position .posmap__arrow{width:3px;height:34px;margin:12px auto 16px;
+  background:linear-gradient(180deg,var(--red),rgba(207,19,27,.35))}
+#position .posmap__arrow::after{bottom:-4px;width:10px;height:10px;margin-left:-6px;
+  border-right:3px solid var(--red);border-bottom:3px solid var(--red)}
+
+/* 中央のPALブロック：白地＋濃紺文字（このセクションの主役） */
+#position .posmap__core{padding:30px 28px 32px;background:#fff;border:1px solid #d7dce5;
+  border-radius:var(--radius);text-align:center;color:var(--navy)}
+#position .posmap__core .en{font-size:12.5px;letter-spacing:.24em;color:var(--red)}
+#position .posmap__core b{display:block;margin-top:12px;font-size:clamp(21px,2.3vw,28px);
+  line-height:1.55;color:var(--navy);font-weight:700}
+#position .posmap__core small{display:block;margin-top:12px;font-size:13.5px;color:#5f6675}
+
+/* FIELD / SYSTEM / DATA / OPERATION：4枚の白カード */
+#position .posmap__base{margin-top:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;list-style:none}
+#position .posmap__base li{display:flex;flex-direction:column;padding:22px 20px 24px;
+  background:#fff;border:1px solid #d7dce5;border-radius:var(--radius);text-align:left}
+#position .posmap__base .en{color:var(--red)}
+#position .posmap__base b{display:block;margin-top:10px;font-size:17px;line-height:1.55;color:var(--navy)}
+#position .posmap__base small{display:block;margin-top:9px;font-size:14.5px;line-height:1.8;color:#5f6675}
+
+/* 下段3カード（01〜03）も白地へ */
+#position .effects{margin-top:26px;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#position .effects li{display:flex;flex-direction:column;padding:24px 22px 26px;
+  background:#fff;border:1px solid #d7dce5;border-radius:var(--radius)}
+#position .effects .en{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--red)}
+#position .effects b{display:block;margin-top:11px;font-size:17px;line-height:1.55;color:var(--navy)}
+#position .effects p{margin-top:11px;font-size:15px;line-height:1.85;color:#5f6675}
+
+@media (max-width:1000px){
+  #position .posmap__base{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #position .effects{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  #position .posmap__base,#position .effects{grid-template-columns:minmax(0,1fr);gap:14px}
+  #position .posmap__core{padding:26px 20px 28px}
+  #position .posmap__base li{padding:20px 18px 22px}
+}
+/* ===== POSMAP v2 END ===== */
+
+/* ============================================================
+   ===== NUMBERS v2 START =====
+   「数字で見る、いまとこれからのPAL。」（#numbers）。
+   数値が濃紺一色で平坦だったため、数字をPALレッド、単位を濃紺にして
+   「数字 → 意味 → 補足」の順に視線が流れるようにする。
+   カード背景は白のまま。6枚とも同じルールで統一する（特定の1枚を濃色にしない）。
+   ACCENT v2 の .num / .num b / .num span を後勝ちで上書きする。
+   ============================================================ */
+#numbers .num{padding:34px 26px 32px;background:#fff;border:1px solid var(--line);
+  transition:border-color .25s}
+#numbers .num b{font-size:clamp(26px,2.6vw,34px);font-weight:800;line-height:1.25;
+  color:var(--red);letter-spacing:.01em}
+#numbers .num__u{font-style:normal;margin-left:3px;font-size:.56em;font-weight:700;color:var(--navy)}
+/* 120→230名 の矢印だけアクセントを強める */
+#numbers .num__ar{font-style:normal;margin:0 7px;font-size:.78em;font-weight:800;color:var(--red)}
+#numbers .num span{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:14.5px;line-height:1.85;color:#5f6675}
+/* ホバーは枠線がPALレッド寄りになる程度に留める（影・移動は使わない） */
+#numbers .num:hover{border-color:rgba(207,19,27,.45)}
+@media (max-width:620px){
+  #numbers .num{padding:28px 22px 26px}
+}
+/* ===== NUMBERS v2 END ===== */
