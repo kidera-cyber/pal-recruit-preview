@@ -4130,3 +4130,22 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pcard--av .pcard__ph{aspect-ratio:1/1}
 }
 /* ===== AVATAR v1 END ===== */
+
+/* ============================================================
+   ===== AVATAR v4 START =====
+   アバターは 900x975 の共通キャンバス（目線 y=316・頭頂 y=44）に統一した。
+   画像枠が 4:5 のときだけ contain が「幅合わせ＋下寄せ」になり、
+   頭上余白 17.2%・目線 41.4% が全アバターで一致する。
+   スマホの 3:2（PCARD v1）／正方形（AVATAR v1）では頭上余白が 4.5% に
+   変わってしまうため、全幅で 4:5 に統一する。実写カードも同じ枠にして
+   画像エリアの高さを揃える。
+   ============================================================ */
+@media (max-width:620px){
+  .pcard__ph,.pcard--av .pcard__ph{aspect-ratio:4/5}
+}
+/* PCARD v1 の 1100px以下のリセットが grid-column:auto のため、
+   .pgrid > * の span 2 まで打ち消され、5枚目だけ半分の幅になっていた。 */
+@media (max-width:1100px) and (min-width:621px){
+  .pgrid > *:nth-child(5){grid-column:span 2}
+}
+/* ===== AVATAR v4 END ===== */
