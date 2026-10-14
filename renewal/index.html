@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261014p">
+<link rel="stylesheet" href="../assets/style.css?v=20261014q">
 </head>
 <body>
 
@@ -372,88 +372,111 @@
       <h2 class="stitle" style="font-size:clamp(24px,2.8vw,34px)">PALの仕事を知る</h2>
       <p class="slead">PALの仕事は、職種によって役割も、向き合う課題も異なります。<br>気になる職種から、仕事内容と現在の募集状況をご覧ください。</p>
     </div>
-    <!-- ===== JOBLINK v3：セクションの役割を「募集一覧」から「PALの仕事を知る入口」へ。
-         募集状況はカードごとに表示し、募集要項リンクは募集中・通年募集の職種にだけ出す。 ===== -->
+    <!-- ===== JOBCTA v1：赤文字リンク2本をやめ、主導線（仕事内容）と副導線（募集要項）を
+         見た目で分ける。募集状況はCTAではなくステータスラベルとして上に置く。 ===== -->
     <div class="jobtiles rv">
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-handy"></use></svg>
-          <span class="jobtile__cat">FDE</span>
+          <span class="jobtile__cat en">FDE</span>
           <b>FDE（Forward Deployed Engineer）</b>
           <span class="jobtile__meta">大阪／東京・正社員・未経験可</span>
-          <span class="jobtile__st jobtile__st--now">募集中</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/fde/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="jobtile__lk" href="jobs/#job-fde">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--now">募集中</span>
+          <a class="jbtn jbtn--main" href="people/fde/">仕事内容を見る<i aria-hidden="true">→</i></a>
+          <a class="jbtn jbtn--sub" href="jobs/#job-fde">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-manager"></use></svg>
-          <span class="jobtile__cat">BPO / 現場運営</span>
+          <span class="jobtile__cat en">BPO / 現場運営</span>
           <b>センター長／候補</b>
           <span class="jobtile__meta">担当拠点・正社員・未経験可</span>
-          <span class="jobtile__st jobtile__st--now">募集中</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/bpo/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="jobtile__lk" href="jobs/#job-bpo">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--now">募集中</span>
+          <a class="jbtn jbtn--main" href="people/bpo/">仕事内容を見る<i aria-hidden="true">→</i></a>
+          <a class="jbtn jbtn--sub" href="jobs/#job-bpo">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-engineer"></use></svg>
-          <span class="jobtile__cat">ENGINEER</span>
+          <span class="jobtile__cat en">ENGINEER</span>
           <b>プロダクト企画・開発</b>
           <span class="jobtile__meta">大阪／東京・正社員</span>
-          <span class="jobtile__st jobtile__st--now">募集中</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/system/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="jobtile__lk" href="jobs/#job-engineer">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--now">募集中</span>
+          <a class="jbtn jbtn--main" href="people/system/">仕事内容を見る<i aria-hidden="true">→</i></a>
+          <a class="jbtn jbtn--sub" href="jobs/#job-engineer">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-truck"></use></svg>
-          <span class="jobtile__cat">DTS / 運行管理</span>
+          <span class="jobtile__cat en">DTS / 運行管理</span>
           <b>運行管理・所長</b>
           <span class="jobtile__meta">担当事業所・正社員</span>
-          <span class="jobtile__st jobtile__st--now">募集中</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/dts/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="jobtile__lk" href="jobs/#job-dts">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--now">募集中</span>
+          <a class="jbtn jbtn--main" href="people/dts/">仕事内容を見る<i aria-hidden="true">→</i></a>
+          <a class="jbtn jbtn--sub" href="jobs/#job-dts">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-meeting"></use></svg>
-          <span class="jobtile__cat">ENGAGEMENT / SALES</span>
+          <span class="jobtile__cat en">ENGAGEMENT / SALES</span>
           <b>エンゲージメント・新規営業</b>
           <span class="jobtile__meta">正社員</span>
-          <span class="jobtile__st jobtile__st--now">募集中</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/sales/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="jobtile__lk" href="jobs/#job-sales">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--now">募集中</span>
+          <a class="jbtn jbtn--main" href="people/sales/">仕事内容を見る<i aria-hidden="true">→</i></a>
+          <a class="jbtn jbtn--sub" href="jobs/#job-sales">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-worker"></use></svg>
-          <span class="jobtile__cat">CLEANING</span>
+          <span class="jobtile__cat en">CLEANING</span>
           <b>クレンリネス（衛生清掃）</b>
           <span class="jobtile__meta">食品プロセスセンター</span>
-          <span class="jobtile__st jobtile__st--na">募集状況は確認中</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/cleaning/">仕事内容を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--na">募集状況は確認中</span>
+          <a class="jbtn jbtn--main" href="people/cleaning/">仕事内容を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-chart"></use></svg>
-          <span class="jobtile__cat">MARKETING</span>
+          <span class="jobtile__cat en">MARKETING</span>
           <b>マーケティング</b>
           <span class="jobtile__meta">正社員</span>
-          <span class="jobtile__st jobtile__st--year">通年募集</span>
         </div>
-        <p class="jobtile__links"><span class="jobtile__lk jobtile__lk--none">仕事内容ページは準備中です</span><a class="jobtile__lk" href="jobs/#job-marketing">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--year">通年募集</span>
+          <span class="jbtn jbtn--none">仕事内容ページは準備中です</span>
+          <a class="jbtn jbtn--main" href="jobs/#job-marketing">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
-      <div class="jobtile jobtile--split">
+      <div class="jobtile">
         <div class="jobtile__main">
           <svg aria-hidden="true"><use href="#ic-office"></use></svg>
-          <span class="jobtile__cat">CORPORATE</span>
+          <span class="jobtile__cat en">CORPORATE</span>
           <b>コーポレート部門</b>
           <span class="jobtile__meta">正社員</span>
-          <span class="jobtile__st jobtile__st--year">通年募集</span>
         </div>
-        <p class="jobtile__links"><a class="jobtile__lk" href="people/corporate/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="jobtile__lk" href="jobs/#job-corporate">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        <div class="jobtile__foot">
+          <span class="jobtile__st jobtile__st--year">通年募集</span>
+          <a class="jbtn jbtn--main" href="people/corporate/">仕事内容を見る<i aria-hidden="true">→</i></a>
+          <a class="jbtn jbtn--sub" href="jobs/#job-corporate">募集要項を見る<i aria-hidden="true">→</i></a>
+        </div>
       </div>
     </div>
     <p class="rv" style="margin-top:28px"><a class="btn btn--ghost" href="jobs/">募集職種をすべて見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>

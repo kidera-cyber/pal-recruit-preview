@@ -3855,3 +3855,55 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 @media (max-width:620px){
   #chain,#change,#fields,#reality,#explore{padding-block:52px}
 }
+
+/* ============================================================
+   ===== JOBCTA v1 START =====
+   HOME「PALの仕事を知る」の職種カード。
+   赤文字リンクが2本並ぶ状態をやめ、導線の役割を見た目で分ける。
+   ・主導線「仕事内容を見る」＝白地＋濃紺文字＋濃紺枠のボタン
+   ・副導線「募集要項を見る」＝薄いグレー地、主導線より弱く
+   ・募集状況はCTAではなくステータスラベルとしてCTAの上に置く
+   JOBLINK v2 / v3 の .jobtile--split / __main / __sub / __lk を置き換える。
+   ============================================================ */
+.jobtile{display:flex;flex-direction:column;padding:0}
+.jobtile__main{display:flex;flex-direction:column;flex:1 1 auto;padding:24px 20px 10px}
+.jobtile svg{width:32px;height:32px;color:var(--navy)}
+.jobtile__cat{display:block;margin-top:14px;font-family:Lato,sans-serif;font-size:11.5px;
+  letter-spacing:.14em;font-weight:700;color:var(--red)}
+.jobtile b{display:block;margin-top:8px;font-size:19px;line-height:1.5;color:var(--navy)}
+.jobtile__meta{display:block;margin-top:auto;padding-top:12px;
+  font-size:14.5px;line-height:1.75;color:var(--sub)}
+
+/* ステータス（CTAではない） */
+.jobtile__foot{display:grid;gap:10px;padding:14px 20px 20px}
+.jobtile__st{justify-self:start;padding:3px 10px;border-radius:3px;
+  font-size:12.5px;font-weight:700;line-height:1.6;background:none}
+.jobtile__st--now{color:var(--red);border:1px solid rgba(207,19,27,.5)}
+.jobtile__st--year{color:var(--navy);border:1px solid var(--line-mid,#c3cade)}
+.jobtile__st--na{color:var(--muted);font-weight:400;border:1px solid var(--line)}
+
+/* 主導線・副導線 */
+.jbtn{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  min-height:46px;padding:11px 16px;border-radius:var(--radius);
+  font-size:15.5px;font-weight:700;line-height:1.5;color:var(--navy);
+  text-decoration:none;transition:background-color .25s,border-color .25s,color .25s}
+.jbtn i{font-style:normal;font-size:14px;color:var(--red);
+  transition:transform .25s var(--ease)}
+.jbtn--main{background:#fff;border:1px solid var(--navy)}
+.jbtn--main:hover{background:var(--bg-soft);border-color:var(--navy-d)}
+.jbtn--main:hover i{transform:translateX(4px)}
+.jbtn--sub{min-height:42px;padding:9px 16px;background:var(--bg-soft);border:1px solid transparent;
+  font-size:14.5px;font-weight:600}
+.jbtn--sub:hover{background:#eceef4;border-color:var(--line-mid,#c3cade)}
+.jbtn--sub:hover i{transform:translateX(4px)}
+/* 準備中はリンク風にしない */
+.jbtn--none{display:block;min-height:0;padding:4px 2px;
+  font-size:14px;font-weight:400;line-height:1.7;color:var(--muted)}
+/* カード自体のホバーは枠線のみに抑える */
+.jobtile:hover{transform:none;box-shadow:none;border-color:var(--line-mid,#c3cade)}
+
+@media (max-width:900px){
+  .jobtile__main{padding:20px 18px 10px}
+  .jobtile__foot{padding:12px 18px 18px}
+}
+/* ===== JOBCTA v1 END ===== */
