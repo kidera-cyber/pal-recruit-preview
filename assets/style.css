@@ -3657,3 +3657,34 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .fits3 li{font-size:16.5px}
 }
 /* ===== IV-CLEANING v3 END ===== */
+
+/* ============================================================
+   ===== JOBLINK v3 START =====
+   HOME「PALの仕事を知る」：全職種が募集中ではないため、
+   セクション全体ではなくカードごとに募集状況を表示する。
+   募集要項リンクは、募集中・通年募集の職種にだけ出す。
+   JOBLINK v2 の .jobtile__main / __sub を置き換える。
+   ============================================================ */
+.jobtile--split{display:flex;flex-direction:column;padding:0}
+.jobtile__main{display:flex;flex-direction:column;flex:1 1 auto;padding:24px 22px 18px;color:inherit}
+.jobtile--split .jobtile__meta{margin-top:8px;padding-top:0}
+/* 募集状況：カード全体の色は変えず、小さなラベルだけで示す */
+.jobtile__st{align-self:flex-start;margin-top:auto;padding-top:14px;
+  font-size:12.5px;font-weight:700;letter-spacing:.04em}
+.jobtile__st--now{color:var(--red)}
+.jobtile__st--year{color:var(--navy)}
+.jobtile__st--na{color:var(--muted);font-weight:400}
+.jobtile__links{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.jobtile__lk{display:flex;align-items:center;gap:7px;padding:12px 22px;
+  font-size:14.5px;font-weight:600;color:var(--red);text-decoration:none;transition:color .25s}
+.jobtile__lk+.jobtile__lk{border-top:1px solid var(--line-soft,#eff1f4)}
+.jobtile__lk span{transition:transform .25s var(--ease)}
+.jobtile__lk:hover{color:var(--red-dark,#a90f16)}
+.jobtile__lk:hover span{transform:translateX(4px)}
+.jobtile__lk--none{color:var(--muted);font-weight:400;cursor:default}
+.jobtile--split:hover{border-color:rgba(207,19,27,.35)}
+@media (max-width:900px){
+  .jobtile__main{padding:20px 18px 14px}
+  .jobtile__lk{padding:11px 18px}
+}
+/* ===== JOBLINK v3 END ===== */
