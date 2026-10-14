@@ -3517,3 +3517,143 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #why .shead{max-width:44em}
 }
 /* ===== WHYNOW-1LINE v1 END ===== */
+
+/* ============================================================
+   ===== IV-CLEANING v3 START =====
+   クレンリネス社員インタビューを編集記事型へ全面再設計。
+   回答内容は変更せず、HERO／章立て／写真配置／余白／配色／
+   タイポグラフィだけを作り直す。カードと枠を減らし、白を多く使う。
+   IV-CLEANING v1 / v2 の指定はこのページで未使用になった（復元はgit履歴から）。
+   ============================================================ */
+.p-iv-clean{background:#fff}
+
+/* ---- HERO ---- */
+.ivhero3{padding:46px 0 72px}
+.ivhero3__grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1fr);
+  gap:56px;align-items:start}
+.ivhero3__ph{margin:0}
+.ivhero3__ph img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--bg-soft)}
+.ivhero3__ph figcaption{margin-top:14px;padding-left:14px;border-left:2px solid var(--red);
+  font-size:13.5px;line-height:1.8;color:var(--sub)}
+.ivhero3__ph figcaption em{font-style:normal;margin-left:8px;color:var(--muted)}
+.ivhero3__label{display:flex;align-items:center;gap:12px;font-family:Lato,sans-serif;
+  font-size:11.5px;letter-spacing:.2em;font-weight:700;color:var(--red)}
+.ivhero3__label i{display:block;width:22px;height:1px;background:var(--red)}
+.ivhero3__ttl{margin-top:22px;font-size:clamp(30px,4.2vw,50px);line-height:1.38;
+  letter-spacing:.01em;color:var(--navy)}
+.ivhero3__lead{margin-top:24px;max-width:36em;font-size:17.5px;line-height:1.95;color:var(--sub)}
+.ivhero3__role{display:flex;align-items:baseline;gap:12px;margin-top:28px;padding-top:22px;
+  border-top:1px solid var(--line);font-size:15.5px;font-weight:700;color:var(--navy)}
+.ivhero3__role .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--red)}
+.ivhero3__prof{margin-top:20px;display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:9px 24px;font-size:14.5px}
+.ivhero3__prof dt{color:var(--muted);font-weight:700}
+.ivhero3__prof dd{color:var(--sub)}
+.ivhero3__sum{max-width:var(--measure,820px);margin-top:52px;padding-top:28px;
+  border-top:1px solid var(--line-mid,#c3cade);font-size:17.5px;line-height:1.95;color:var(--sub)}
+.ivhero3__sum b{color:var(--navy);font-weight:700}
+
+/* ---- 章 ---- */
+.chap{padding-block:84px}
+.chap--soft{background:#f5f6f8}
+.chap--step{padding-block:64px}
+.chap__h{display:flex;align-items:baseline;gap:14px}
+.chap__no{font-family:Lato,sans-serif;font-size:clamp(30px,3.4vw,40px);font-weight:700;
+  line-height:1;color:var(--red)}
+.chap__en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.2em;
+  font-weight:700;color:var(--red)}
+.chap__ttl{margin-top:20px;max-width:20em;font-size:clamp(26px,3.4vw,40px);line-height:1.45;color:var(--navy)}
+.chap__body{max-width:var(--measure,820px);margin-top:28px}
+.chap__body>p{margin-top:18px;font-size:17.5px;line-height:2;color:var(--sub)}
+.chap__body>p:first-child{margin-top:0}
+.chap__body>p.note{margin-top:22px;font-size:13.5px;line-height:1.85}
+.chap__lede{font-size:18.5px!important;font-weight:700;color:var(--navy)!important}
+.chap__sub{margin-top:38px!important;font-size:21px!important;font-weight:700;
+  line-height:1.6;color:var(--navy)!important}
+.chap__q{margin-top:0!important;padding-left:18px;border-left:3px solid var(--red);
+  font-size:20px!important;font-weight:700;line-height:1.8;color:var(--navy)!important}
+
+/* 写真と本文を左右に置く章 */
+.chap__figgrid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);
+  gap:52px;align-items:center}
+.chap__ph{margin:0}
+.chap__ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.chap__ph figcaption{margin-top:13px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.chap__ph figcaption em{font-style:normal;margin-left:8px;color:var(--muted)}
+
+/* CAREER STEP */
+.step3{list-style:none;display:grid;border-top:1px solid var(--line-mid,#c3cade)}
+.step3 li{display:grid;grid-template-columns:104px minmax(0,1fr);gap:4px 26px;
+  padding:22px 0;border-bottom:1px solid var(--line)}
+.step3__t{grid-row:span 2;font-family:Lato,sans-serif;font-size:18px;font-weight:700;
+  color:var(--red);line-height:1.4}
+.step3 b{font-size:17.5px;line-height:1.6;color:var(--navy)}
+.step3 p{font-size:15.5px;line-height:1.9;color:var(--sub)}
+.step3 .is-now b{color:var(--navy-d)}
+
+/* 清掃の進め方：カードではなく番号付きのテキスト列 */
+.flow4__h{margin-top:46px;font-size:19px;font-weight:700;line-height:1.6;color:var(--navy)}
+.flow4{margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:28px;list-style:none}
+.flow4 li{padding-top:16px;border-top:2px solid var(--red)}
+.flow4 .en{font-family:Lato,sans-serif;font-size:12.5px;letter-spacing:.14em;
+  font-weight:700;color:var(--red)}
+.flow4 b{display:block;margin-top:9px;font-size:17px;line-height:1.5;color:var(--navy)}
+.flow4 p{margin-top:9px;font-size:15px;line-height:1.85;color:var(--sub)}
+
+/* 大きな引用 */
+.chap--quote{padding-block:76px}
+.bigq{max-width:22em;font-size:clamp(26px,4vw,44px);line-height:1.5;font-weight:700;color:var(--navy)}
+.bigq b{color:var(--red);font-weight:700}
+.bigq__by{margin-top:26px;font-size:14px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+
+/* 1日の流れ */
+.chap--day .chap__ttl{margin-top:8px}
+.day3{margin-top:38px;list-style:none;display:grid;position:relative}
+.day3::before{content:"";position:absolute;left:118px;top:14px;bottom:28px;width:2px;background:var(--line)}
+.day3 li{position:relative;display:grid;grid-template-columns:100px minmax(0,1fr);
+  gap:0 54px;padding:0 0 38px}
+.day3 time{font-family:Lato,sans-serif;font-size:26px;line-height:1.2;color:var(--navy);text-align:right}
+.day3 li::after{content:"";position:absolute;left:112px;top:8px;width:14px;height:14px;
+  border-radius:50%;background:#fff;border:2px solid var(--red)}
+.day3 b{display:block;font-size:19px;line-height:1.5;color:var(--navy)}
+.day3 p{margin-top:10px;font-size:16px;line-height:1.95;color:var(--sub)}
+.day3__pt{display:inline-block;margin-top:14px;padding-left:14px;border-left:2px solid var(--red);
+  font-size:14.5px;font-weight:700;line-height:1.7;color:var(--navy)}
+
+/* こんな人と働きたい */
+.fits3{margin-top:28px;list-style:none;display:grid;max-width:var(--measure,820px);
+  border-top:1px solid var(--line-mid,#c3cade)}
+.fits3 li{padding:18px 0;border-bottom:1px solid var(--line);
+  font-size:18px;line-height:1.7;color:var(--navy);font-weight:700}
+
+/* 本人のメッセージ（濃紺は1箇所だけ） */
+.chap--msg{background:var(--navy-d);color:#fff;padding-block:86px}
+.chap--msg .chap__en{color:var(--red-light,#ffb3b8)}
+.msg3{font-size:clamp(23px,3.2vw,36px);line-height:1.6;font-weight:700;color:#fff}
+.msg3__by{margin-top:26px;font-size:14px;font-weight:700;letter-spacing:.04em;color:#9aa0c4}
+
+@media (max-width:1000px){
+  .ivhero3__grid{grid-template-columns:minmax(0,1fr);gap:30px}
+  .ivhero3__ph img{aspect-ratio:16/9}
+  .chap__figgrid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .chap__ph img{aspect-ratio:16/9}
+  .flow4{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+}
+@media (max-width:620px){
+  .ivhero3{padding:32px 0 52px}
+  .chap{padding-block:56px}
+  .chap--msg{padding-block:60px}
+  .chap__ttl{font-size:25px}
+  .chap__body>p{font-size:16.5px;line-height:1.95}
+  .ivhero3__sum{margin-top:36px;font-size:16.5px}
+  .flow4{grid-template-columns:minmax(0,1fr);gap:20px}
+  .step3 li{grid-template-columns:minmax(0,1fr);gap:2px}
+  .step3__t{grid-row:auto}
+  .day3::before{left:5px}
+  .day3 li{grid-template-columns:minmax(0,1fr);gap:0;padding-left:28px;padding-bottom:30px}
+  .day3 time{text-align:left;font-size:22px}
+  .day3 li::after{left:-1px;top:6px}
+  .fits3 li{font-size:16.5px}
+}
+/* ===== IV-CLEANING v3 END ===== */
