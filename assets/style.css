@@ -3140,3 +3140,22 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ch__body > p{font-size:15.5px}
 }
 /* ===== IV-CLEANING v1 END ===== */
+
+/* ============================================================
+   ===== DAY-CLEAN v1 START =====
+   「部署ごとに異なる、PALの1日。」クレンリネスのタブ。
+   14時台から深夜帯までの流れのため、AM / PM の2カラムではなく
+   1本のタイムラインで見せる。既存の .tlcols / .tlcol / .tl3 を流用する。
+   ============================================================ */
+.tlcols--one{grid-template-columns:minmax(0,1fr)}
+.tlcol--flow .tlcol__h{background:var(--navy-d);color:#fff}
+.tlcol--flow .tlcol__h .en{color:var(--red-light,#ffb3b8)}
+/* 時刻が決まらない最終項目の目印（時計の代わり） */
+.tlend{position:relative;z-index:1;display:block;width:56px;height:56px;border-radius:50%;
+  background:#fff;border:2px solid var(--navy-d)}
+.tlend::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;
+  margin:-5px 0 0 -5px;border-radius:50%;background:var(--red)}
+@media (max-width:860px){
+  .tlend{width:48px;height:48px}
+}
+/* ===== DAY-CLEAN v1 END ===== */
