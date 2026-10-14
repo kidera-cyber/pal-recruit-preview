@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014fit3">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014hero6">
 </head>
 <body class="p-iv">
 
@@ -80,33 +80,31 @@
 <!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
      HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
      本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
-<section class="ivtop">
+<!-- ===== IV-HERO v2：冲頭を「コピー＋人物＋プロフィール＋CURRENT ROLE」の
+     一体型HEROへ再設計。IV-INTRO v1 の .ivtop／.ivrole を置き換える。
+     本文・PROFILE STORY 以降は変更していない。 ===== -->
+<section class="ivhero">
   <div class="ivwrap">
-    <div class="ivtop__head rv">
-      <p class="ivtop__label en">INTERVIEW</p>
-      <p class="ivtop__role"><span class="en">BPO</span>現場運営</p>
-      <h1 class="ivtop__ttl">毎日の運営の中に、次の改善がある。</h1>
-    </div>
-    <div class="ivtop__grid">
-      <div class="ivtop__body rv">
-        <ul class="ivtop__prof">
-          <li><span>所属・役職</span>BPO／現場運営</li>
-          <li><span>入社年・入社区分</span>2020年・中途入社</li>
-          <li><span>前職</span>物流センター運営</li>
-        </ul>
-        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+    <div class="ivhero__grid">
+      <div class="ivhero__head rv">
+        <p class="ivhero__label en">INTERVIEW</p>
+        <p class="ivhero__role"><span class="en">BPO</span>現場運営</p>
+        <h1 class="ivhero__ttl"><span class="nw"><span class="nw2">毎日の</span><span class="nw2">運営の</span><span class="nw2">中に、</span></span><span class="nw"><span class="nw2">次の改善が</span><span class="nw2">ある。</span></span></h1>
       </div>
-      <figure class="ivtop__ph ivtop__ph--av rv">
+      <figure class="ivhero__ph rv">
+        <span class="ivhero__cat en">BPO</span>
         <img class="av-pad" src="../../../assets/avatar-bpo.png?v=20261014fit" alt="BPO／現場運営のメンバーのイラスト（プロフィール画像）" width="900" height="975" fetchpriority="high">
         <figcaption>進捗・品質・安全を見ながら、現場が止まらない状態をつくる。<em>※ 本人の写真ではなく、イラストのプロフィール画像です</em></figcaption>
       </figure>
+      <div class="ivhero__meta rv">
+        <p class="ivhero__prof"><span class="ivhero__dep">BPO／現場運営</span><span>2020年・中途入社</span><span>前職：物流センター運営</span></p>
+        <div class="ivhero__now">
+          <p class="ivhero__en en">CURRENT ROLE</p>
+          <p class="ivhero__t">物流センターの運営に入り、人員配置や作業進捗、品質・安全を見ながら、現場が安定して動く状態をつくる。日々の運営に加えて、業務改善にも継続して関わる。</p>
+        </div>
+        <p class="ivhero__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
     </div>
-  </div>
-</section>
-<section class="ivrole">
-  <div class="ivwrap">
-    <p class="ivrole__en en rv">CURRENT ROLE</p>
-    <p class="ivrole__t rv">物流センターの運営に入り、人員配置や作業進捗、品質・安全を見ながら、現場が安定して動く状態をつくる。日々の運営に加えて、業務改善にも継続して関わる。</p>
   </div>
 </section>
 <section class="pstory">

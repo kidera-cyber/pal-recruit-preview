@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014fit3">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014hero6">
 </head>
 <body class="p-iv">
 
@@ -80,33 +80,31 @@
 <!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
      HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
      本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
-<section class="ivtop">
+<!-- ===== IV-HERO v2：冲頭を「コピー＋人物＋プロフィール＋CURRENT ROLE」の
+     一体型HEROへ再設計。IV-INTRO v1 の .ivtop／.ivrole を置き換える。
+     本文・PROFILE STORY 以降は変更していない。 ===== -->
+<section class="ivhero">
   <div class="ivwrap">
-    <div class="ivtop__head rv">
-      <p class="ivtop__label en">INTERVIEW</p>
-      <p class="ivtop__role"><span class="en">DTS</span>運行管理</p>
-      <h1 class="ivtop__ttl">運ぶだけではない。物流を、止めない仕事。</h1>
-    </div>
-    <div class="ivtop__grid">
-      <div class="ivtop__body rv">
-        <ul class="ivtop__prof">
-          <li><span>所属・役職</span>DTS／運送部（配車・運行管理）</li>
-          <li><span>入社年・入社区分</span>—</li>
-          <li><span>前職</span>—</li>
-        </ul>
-        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+    <div class="ivhero__grid">
+      <div class="ivhero__head rv">
+        <p class="ivhero__label en">INTERVIEW</p>
+        <p class="ivhero__role"><span class="en">DTS</span>運行管理</p>
+        <h1 class="ivhero__ttl"><span class="nw"><span class="nw2">運ぶだけではない。</span></span><span class="nw"><span class="nw2">物流を、</span><span class="nw2">止めない</span><span class="nw2">仕事。</span></span></h1>
       </div>
-      <figure class="ivtop__ph ivtop__ph--av rv">
+      <figure class="ivhero__ph rv">
+        <span class="ivhero__cat en">DTS</span>
         <img class="av-pad" src="../../../assets/avatar-dts.png?v=20261014fit" alt="DTS／運送部（配車・運行管理）のメンバーのイラスト（プロフィール画像）" width="900" height="975" fetchpriority="high">
         <figcaption>倉庫側の出荷状況と運行の見え方を確認してから、その日の配送を組む。<em>※ 本人の写真ではなく、イラストのプロフィール画像です</em></figcaption>
       </figure>
+      <div class="ivhero__meta rv">
+        <p class="ivhero__prof"><span class="ivhero__dep">DTS／運送部（配車・運行管理）</span><span>入社年・入社区分 確認中</span><span>前職 確認中</span></p>
+        <div class="ivhero__now">
+          <p class="ivhero__en en">CURRENT ROLE</p>
+          <p class="ivhero__t">食品物流を中心に、配送計画や運行状況を確認しながら、安全・品質・時間を守って商品を届ける。輸送を実行するだけでなく、運行の可視化や改善にも関わる。</p>
+        </div>
+        <p class="ivhero__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
     </div>
-  </div>
-</section>
-<section class="ivrole">
-  <div class="ivwrap">
-    <p class="ivrole__en en rv">CURRENT ROLE</p>
-    <p class="ivrole__t rv">食品物流を中心に、配送計画や運行状況を確認しながら、安全・品質・時間を守って商品を届ける。輸送を実行するだけでなく、運行の可視化や改善にも関わる。</p>
   </div>
 </section>
 <section class="pstory">

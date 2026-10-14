@@ -4149,3 +4149,75 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pgrid > *:nth-child(5){grid-column:span 2}
 }
 /* ===== AVATAR v4 END ===== */
+
+/* ============================================================
+   ===== IV-HERO v2 START =====
+   社員インタビュー冒頭を「キャッチコピー＋人物＋プロフィール＋CURRENT ROLE」
+   の一体型HEROへ再設計。
+   旧 IV-INTRO v1 は 見出し全幅 → 2カラム（プロフィール／写真）→ 別セクションの
+   CURRENT ROLE という3分割で、プロフィールが短いページほど左に大きな空白が残った。
+   .ivtop / .ivrole は未使用になった（他への影響を避けるためCSSは残置）。
+   人物枠は PEOPLE一覧と同じ 4:5 にして、顔サイズ・頭上余白を一覧と一致させる。
+   ============================================================ */
+.ivhero{padding:34px 0 54px}
+.ivhero__grid{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);
+  grid-template-rows:auto 1fr;column-gap:52px;align-items:start}
+.ivhero__head{grid-column:1;grid-row:1}
+.ivhero__meta{grid-column:1;grid-row:2;margin-top:24px}
+.ivhero__ph{grid-column:2;grid-row:1 / span 2;position:relative;margin:0;
+  max-width:420px;margin-left:auto}
+
+.ivhero__label{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.22em;
+  font-weight:700;color:var(--iv-accent)}
+.ivhero__role{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-top:12px;
+  font-size:15.5px;font-weight:700;color:var(--iv-heading)}
+.ivhero__role .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--iv-accent)}
+.ivhero__ttl{margin-top:14px;padding-bottom:24px;border-bottom:1px solid var(--line);
+  font-size:clamp(29px,3.3vw,44px);line-height:1.42;letter-spacing:.01em;
+  color:var(--iv-heading);text-wrap:pretty}
+/* 文節を inline-block にして、助詞・句読点が行頭に来る改行を防ぐ。
+   shrink-to-fit なので、文節が画面幅より長い場合は文節内で折り返す（はみ出さない） */
+.ivhero__ttl .nw,.ivhero__ttl .nw2{display:inline-block;max-width:100%}
+
+/* プロフィール：表組みをやめ、1つのまとまりにする */
+.ivhero__prof{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 20px;
+  font-size:15.5px;line-height:1.85;color:var(--iv-text)}
+.ivhero__prof b{flex:0 0 100%;font-size:20px;line-height:1.5;color:var(--iv-heading)}
+.ivhero__prof .ivhero__dep{flex:0 0 100%;font-size:16.5px;font-weight:700;color:var(--iv-heading)}
+.ivhero__prof span:not(.ivhero__dep){position:relative}
+.ivhero__prof span:not(.ivhero__dep) ~ span:not(.ivhero__dep)::before{content:"";
+  position:absolute;left:-11px;top:.45em;bottom:.45em;width:1px;background:var(--line-mid)}
+
+/* CURRENT ROLE：別セクションにせず、HERO内に置く */
+.ivhero__now{margin-top:22px;padding-left:18px;border-left:2px solid var(--red)}
+.ivhero__en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.2em;
+  font-weight:700;color:var(--iv-accent)}
+.ivhero__t{margin-top:9px;max-width:33em;font-size:17.5px;line-height:1.9;
+  font-weight:600;color:var(--iv-heading)}
+.ivhero__note{margin-top:18px;font-size:13px;line-height:1.8;color:var(--iv-muted)}
+
+/* 人物：薄い色面＋細い枠＋小さな職種ラベル */
+.ivhero__ph img{width:100%;aspect-ratio:4/5;object-fit:contain;object-position:50% 100%;
+  display:block;border-radius:var(--radius-lg);border:1px solid var(--line)}
+.ivhero__cat{position:absolute;left:15px;top:14px;z-index:1;
+  font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.16em;
+  font-weight:700;color:var(--navy)}
+.ivhero__ph figcaption{margin-top:13px;padding-left:14px;border-left:2px solid var(--iv-accent);
+  font-size:13px;line-height:1.8;color:var(--iv-muted)}
+.ivhero__ph figcaption em{font-style:normal;margin-left:6px}
+
+@media (max-width:900px){
+  /* スマホ：職種ラベル → コピー → 人物 → プロフィール → CURRENT ROLE */
+  .ivhero{padding:26px 0 40px}
+  .ivhero__grid{grid-template-columns:minmax(0,1fr);grid-template-rows:auto;row-gap:26px}
+  .ivhero__head,.ivhero__meta,.ivhero__ph{grid-column:1;grid-row:auto}
+  .ivhero__meta{margin-top:0}
+  .ivhero__ph{max-width:360px;margin-inline:auto}
+  .ivhero__ttl{padding-bottom:0;border-bottom:0}
+}
+@media (max-width:620px){
+  .ivhero__ph{max-width:none}
+  .ivhero__t{font-size:17px}
+  .ivhero__ttl{font-size:28px}
+}
+/* ===== IV-HERO v2 END ===== */
