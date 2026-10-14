@@ -4087,3 +4087,46 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   border:1px solid rgba(207,19,27,.5);color:var(--red);
   font-size:12.5px;font-weight:700;line-height:1.6}
 /* ===== JOBMETA v1 END ===== */
+
+/* ============================================================
+   ===== AVATAR v1 START =====
+   クレンリネス／BPO／コーポレートの人物写真を、背景を透過させた
+   イラストアバター（avatar-*.png）へ差し替える。
+   透過PNGをそのまま置くと背景が抜けて間延びするため、淡い色面と
+   下端で切る「台座」を用意し、人物を面の上に立たせる。
+   PCARD v1 の .pcard__ph / IV-INTRO v1 の .ivtop__ph を後勝ちで上書き。
+   対象は renewal/people 配下のみ。culture・career の現場写真は従来のまま。
+   ============================================================ */
+/* 透過人物を乗せる共通の色面（白〜ライトグレー〜ごく薄いネイビー） */
+.av-pad{
+  background-color:#eef1f7;
+  background-image:
+    radial-gradient(120% 68% at 50% 112%, rgba(38,41,70,.13) 0%, rgba(38,41,70,0) 64%),
+    linear-gradient(180deg,#fbfcfe 0%,#f1f3f8 54%,#e7eaf3 100%);
+  background-repeat:no-repeat;background-size:cover}
+
+/* ── 一覧カード ── */
+.pcard--av .pcard__ph img{object-fit:contain;object-position:50% 100%;
+  transform-origin:50% 100%;background:transparent}
+/* 色面が明るいので、職種ラベルは白ではなく濃紺にする */
+.pcard--av .pcard__cat{color:var(--navy);text-shadow:none}
+/* 一言コピーの下地は、人物の胸元に自然に落ちる濃さへ */
+.pcard--av .pcard__copy{background:linear-gradient(rgba(27,29,49,0) 0%,rgba(27,29,49,.52) 46%,rgba(27,29,49,.9) 100%)}
+
+/* ── 詳細ページ HERO ── */
+.p-iv .ivtop__ph--av img{aspect-ratio:1/1;object-fit:contain;object-position:50% 100%;
+  border-radius:var(--radius-lg)}
+
+/* ── 他の社員インタビュー（関連サムネ） ── */
+/* 他2枚の実写サムネと高さを揃えるため、顔まわりを切り出して面いっぱいに見せる */
+.relpeople--photo .av-th img{object-fit:cover;object-position:50% 0}
+
+@media (max-width:1000px){
+  /* 1カラムになると全幅の色面に人物が埋もれるため、写真枠の幅を抑える */
+  .p-iv .ivtop__ph--av{max-width:440px}
+}
+@media (max-width:620px){
+  /* 1カラムでは 3:2 だと人物が小さくなるため、正方形で大きく見せる */
+  .pcard--av .pcard__ph{aspect-ratio:1/1}
+}
+/* ===== AVATAR v1 END ===== */
