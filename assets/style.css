@@ -3416,3 +3416,104 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .lookend__cta .btn{width:100%;justify-content:center}
 }
 /* ===== LOOKFOR v4 END ===== */
+
+/* ============================================================
+   ===== JOBFLOW v3 START =====
+   仕事を知る：3レイヤーの見直し。
+   ・LAYER 01 にマーケティングとBizDevを移し、3つの役割に
+   ・LAYER 03 を「継続して支える人たち」→「専門性で事業を動かす人たち」へ。
+     DTSは支援機能ではなく事業・現場を担う専門職として扱う
+   ・LAYER 02 ⇄ LAYER 03 を一方向の「支える」ではなく往復の線にし、
+     最後にフィードバックが循環することを明示する
+   JOBFLOW v2 の .jlayer--support / .jarrow--up を置き換える。
+   ============================================================ */
+.jlayer__sub{margin:-6px 0 16px;font-size:15px;line-height:1.85;color:var(--sub)}
+.jlayer--field{padding:24px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.jlayer--field .jp{border-color:var(--line-mid,#c3cade)}
+
+/* 往復の線：上下どちらにも矢じりを置き、序列に見せない */
+.jarrow--both span{background:linear-gradient(180deg,var(--red),rgba(207,19,27,.35),var(--red))}
+.jarrow--both span::after{content:"";position:absolute;left:50%;bottom:-1px;width:9px;height:9px;
+  border-right:2px solid var(--red);border-bottom:2px solid var(--red);transform:translateX(-50%) rotate(45deg)}
+.jarrow--both span::before{content:"";position:absolute;left:50%;top:-1px;width:9px;height:9px;
+  border-left:2px solid var(--red);border-top:2px solid var(--red);transform:translateX(-50%) rotate(45deg)}
+
+/* 循環：専門領域から、次の改善と提案へ戻る */
+.jcycle{margin-top:26px;padding:20px 24px;background:var(--bg-soft);
+  border-left:3px solid var(--red);border-radius:0 var(--radius) var(--radius) 0}
+.jcycle__en{display:block;font-family:Lato,sans-serif;font-size:11px;letter-spacing:.18em;
+  font-weight:700;color:var(--red)}
+.jcycle b{display:block;margin-top:9px;font-size:16.5px;line-height:1.75;color:var(--navy)}
+.jmap2__note{margin-top:16px}
+
+/* ============================================================
+   ===== FDE-FIG v1 START =====
+   FDE紹介：濃紺地の長文から、白地の図解主体へ。
+   「現場の言葉 → FDE → 技術の言葉」の橋渡しを図で見せる。
+   ============================================================ */
+.fdebridge{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr);
+  gap:0;align-items:stretch}
+.fdebridge__side{position:relative;display:flex;flex-direction:column;
+  padding:26px 28px 28px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.fdebridge__h{display:flex;flex-direction:column;gap:6px;font-size:16.5px;font-weight:700;color:var(--navy)}
+.fdebridge__h .en{font-family:Lato,sans-serif;font-size:11px;letter-spacing:.16em;color:var(--red)}
+.fdebridge__side ul{margin-top:16px;display:grid;gap:9px;list-style:none}
+.fdebridge__side li{position:relative;padding-left:18px;font-size:15px;line-height:1.75;color:var(--sub)}
+.fdebridge__side li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--line-mid,#c3cade)}
+/* 中央のFDEへ向かう赤い線 */
+.fdebridge__side::after{content:"";position:absolute;top:50%;width:34px;height:2px;background:var(--red)}
+.fdebridge__side:not(.fdebridge__side--r)::after{right:-34px}
+.fdebridge__side--r::after{left:-34px}
+.fdebridge__side--r::before{content:"";position:absolute;left:-26px;top:50%;width:10px;height:10px;
+  margin-top:-5px;border-right:2px solid var(--red);border-top:2px solid var(--red);transform:rotate(45deg)}
+.fdebridge__core{margin:0 34px;display:flex;flex-direction:column;justify-content:center;
+  padding:30px 28px;background:var(--navy-d);border-radius:var(--radius);text-align:center;color:#fff}
+.fdebridge__en{font-family:Lato,sans-serif;font-size:13px;letter-spacing:.22em;
+  font-weight:700;color:var(--red-light,#ffb3b8)}
+.fdebridge__core b{margin-top:14px;font-size:clamp(20px,2.3vw,26px);line-height:1.5;font-weight:700}
+.fdebridge__core small{margin-top:12px;font-size:12px;letter-spacing:.06em;color:#c9cce0}
+
+/* 要点3つ */
+.fdepoint{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;list-style:none}
+.fdepoint li{padding-top:18px;border-top:2px solid var(--red)}
+.fdepoint__no{display:block;font-family:Lato,sans-serif;font-size:13px;letter-spacing:.14em;
+  font-weight:700;color:var(--red)}
+.fdepoint b{display:block;margin-top:10px;font-size:18px;line-height:1.5;color:var(--navy)}
+.fdepoint p{margin-top:9px;font-size:15px;line-height:1.85;color:var(--sub)}
+
+/* 写真＋CTA */
+.fdecta{margin-top:40px;display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);
+  gap:34px;align-items:center}
+.fdecta__ph{margin:0}
+.fdecta__ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:var(--radius)}
+.fdecta__btns{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px}
+
+@media (max-width:980px){
+  .fdebridge{grid-template-columns:minmax(0,1fr);gap:0}
+  .fdebridge__core{margin:18px 0}
+  .fdebridge__side::after,.fdebridge__side--r::before{display:none}
+  .fdepoint{grid-template-columns:minmax(0,1fr);gap:18px}
+  .fdecta{grid-template-columns:minmax(0,1fr);gap:22px}
+  .fdecta__ph img{aspect-ratio:16/9}
+}
+@media (max-width:620px){
+  .fdebridge__side{padding:22px 20px 24px}
+  .fdebridge__core{padding:26px 20px}
+  .fdecta__btns .btn{width:100%;justify-content:center}
+}
+/* ===== FDE-FIG v1 END ===== */
+/* ===== JOBFLOW v3 END ===== */
+
+/* ============================================================
+   ===== WHYNOW-1LINE v1 START =====
+   PALを知る「なぜ今、物流DXが避けられないのか。」をPCで1行に。
+   固定改行を外したうえで、見出し領域の幅制限（.shead の 44em）を外す。
+   リード文は従来どおりの可読幅に保つ。
+   ============================================================ */
+#why .shead{max-width:none}
+#why .shead .slead{max-width:var(--measure,820px)}
+@media (max-width:860px){
+  #why .shead{max-width:44em}
+}
+/* ===== WHYNOW-1LINE v1 END ===== */
