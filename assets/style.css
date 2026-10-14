@@ -3781,3 +3781,77 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pcard__copy{padding:40px 18px 15px}
 }
 /* ===== PCARD v1 END ===== */
+
+/* ============================================================
+   ===== WORK-5SEC v1 START =====
+   仕事を知る：重複を整理して5セクションへ再編。
+   01 共通ゴール／02 仕事は、こう進む／03 誰が、どこで関わるのか／
+   04 職種ごとに、向き合う課題は違う／05 もっと詳しく知る
+   「PALの仕事の特徴」とFDE単独セクションは重複のため削除し、
+   FDEの役割は02の中に1行で内在させた。
+   ============================================================ */
+/* 01：左に4職種・右に3職種を配置できるように */
+.tmap__side--4{grid-template-rows:repeat(4,1fr)}
+.tmap--l4 .tmap__rail--l::before{top:12.5%;bottom:12.5%}
+
+/* 02：FDEの役割を1行で内在させる補足ブロック */
+.flowadd{margin-top:30px;padding:20px 24px;background:#fff;
+  border-left:3px solid var(--red);border-radius:0 var(--radius) var(--radius) 0}
+.flowadd__h{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;
+  font-size:17px;font-weight:700;line-height:1.6;color:var(--navy)}
+.flowadd__h .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--red)}
+.flowadd__t{margin-top:9px;font-size:14.5px;line-height:1.85;color:var(--sub)}
+.flowadd__t .textlink{margin-left:10px}
+
+/* 05：仕事内容（PEOPLE）と募集要項（JOBS）を1行で並べる一覧 */
+.xlist{list-style:none;display:grid;border-top:1px solid var(--line-mid,#c3cade)}
+.xrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 32px;
+  align-items:center;padding:20px 2px 22px;border-bottom:1px solid var(--line)}
+.xrow__t b{display:block;font-size:17px;line-height:1.5;color:var(--navy)}
+.xrow__t span{display:block;margin-top:7px;font-size:15px;line-height:1.75;color:var(--sub)}
+.xrow__lk{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:flex-end}
+.xlist__lk{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;
+  color:var(--red);text-decoration:none;transition:color .25s}
+.xlist__lk span{transition:transform .25s var(--ease)}
+.xlist__lk:hover{color:var(--red-dark,#a90f16)}
+.xlist__lk:hover span{transform:translateX(4px)}
+.xlist__lk--sub{color:var(--navy)}
+.xlist__lk--sub:hover{color:var(--red)}
+.xlist__lk--none{color:var(--muted);font-weight:400;cursor:default}
+
+@media (max-width:860px){
+  .tmap__side--4{grid-template-rows:auto}
+  .xrow{grid-template-columns:minmax(0,1fr);gap:12px}
+  .xrow__lk{justify-content:flex-start}
+}
+@media (max-width:620px){
+  .flowadd{padding:18px 20px}
+  .xrow__lk{flex-direction:column;gap:10px}
+}
+/* ===== WORK-5SEC v1 END ===== */
+
+/* ===== WORK-5SEC v1 追補：重複を削った分、余白と行間も締める ===== */
+#chain,#change,#fields,#reality,#explore{padding-block:60px}
+#fields .jlayer__h{margin-bottom:12px}
+#fields .jrow2{gap:14px}
+#fields .jlayer__bind{margin-top:12px;padding:10px 16px}
+#chain .tmap{row-gap:0}
+/* STEP見出しは H3 の目安（22〜28px）に合わせる */
+#change .cflow__step h3{font-size:clamp(19px,2vw,22px);line-height:1.5}
+#fields .jarrow{padding:10px 0}
+#fields .jp{padding:18px 20px 20px}
+#fields .jlayer--core,#fields .jlayer--field{padding:20px}
+#fields .jcycle{margin-top:20px;padding:16px 22px}
+#fields .jlayer__sub{margin:-4px 0 12px}
+/* 05：1行1職種だと縦に長くなるため、PCは2列で比較できる形に */
+.xlist{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;
+  border-top:1px solid var(--line-mid,#c3cade)}
+.xrow{padding:16px 2px 18px}
+.xrow:last-child{grid-column:1 / -1}
+@media (max-width:1000px){
+  .xlist{grid-template-columns:minmax(0,1fr)}
+  .xrow:last-child{grid-column:auto}
+}
+@media (max-width:620px){
+  #chain,#change,#fields,#reality,#explore{padding-block:52px}
+}

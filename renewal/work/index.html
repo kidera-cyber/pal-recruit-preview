@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261014n">
+<link rel="stylesheet" href="../../assets/style.css?v=20261014p">
 </head>
 <body class="p-work">
 
@@ -126,17 +126,22 @@
   <div class="wrap">
     <div class="shead rv">
       <p class="slabel">How We Work</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">職種は違っても、<br>向き合っている課題は同じです。</h2>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">職種は違っても、<br>向き合っているゴールは同じ。</h2>
     </div>
-    <p class="slead rv" style="margin-top:18px">それぞれの専門性を持ち寄り、ひとつの現場課題をチームで解いていきます。</p>
+    <p class="slead rv" style="margin-top:18px">PALでは、異なる専門性を持つメンバーが連携しながら、現場で実際に使われる仕組みをつくっています。</p>
     <!-- ===== TEAMMAP v1：職種の一覧ではなく、ひとつのGOALに向かうチームの関係図として見せる。
          Career Crossover の .hub とは別クラスにして、そちらには影響させない。 ===== -->
-    <div class="tmap rv">
-      <ul class="tmap__side tmap__side--l">
+    <div class="tmap tmap--l4 rv">
+      <ul class="tmap__side tmap__side--l tmap__side--4">
         <li class="tmap__job">
           <svg aria-hidden="true"><use href="#ic-meeting"></use></svg>
           <b>エンゲージメント・BizDev</b>
           <span>顧客課題を整理し、提案と実行へつなぐ</span>
+        </li>
+        <li class="tmap__job">
+          <svg aria-hidden="true"><use href="#ic-chart"></use></svg>
+          <b>マーケティング</b>
+          <span>市場や顧客の変化を捉え、接点をつくる</span>
         </li>
         <li class="tmap__job">
           <svg aria-hidden="true"><use href="#ic2-field"></use></svg>
@@ -172,51 +177,71 @@
           <span>各部署が仕事に集中できる環境を整える</span>
         </li>
       </ul>
-      <p class="tmap__note">6つの職種が、同じGOALに向かっています。</p>
+      <p class="tmap__note">7つの職種が、同じGOALに向かっています。</p>
     </div>
-    <p class="rv" style="margin-top:34px;text-align:center"><a class="btn btn--ghost" href="../about/#process">PALの仕事の進め方を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
-    <p class="note rv" style="text-align:center">※ 現場から改善までの進め方は「PALを知る」で紹介しています。</p>
   </div>
 </section>
 <!-- ===== WORKCHAIN v1 END ===== -->
 
-<section class="sec sec--tight" id="character">
+
+
+<section class="sec sec--soft sec--tight" id="change">
   <div class="wrap">
-    <div class="shead rv">
-      <p class="slabel">What makes it different</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,32px)">PALの仕事の特徴。</h2>
+    <div class="shead rv" style="margin-bottom:30px">
+      <p class="slabel">Work flow</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">仕事は、こう進む。</h2>
+      <p class="slead">課題を見つけるだけでも、仕組みを導入するだけでも終わりません。現場で使われ、改善が続く状態をつくるために、異なる専門性を持つメンバーが協力します。</p>
     </div>
-    <ul class="effects effects--light rv">
-      <li><span class="en">01</span><b>現場とデジタル、両方を見る</b><p>現場を理解していなければ、データや技術は使われる形になりません。</p></li>
-      <li><span class="en">02</span><b>設計だけで終わらず、実装まで関わる</b><p>提案書で終わらず、実際に動く仕組みにするところまで担当します。</p></li>
-      <li><span class="en">03</span><b>導入後の運用・改善まで見る</b><p>運用そのものを請け負うから、使われ方を見て更新し続けられます。</p></li>
-      <li><span class="en">04</span><b>複数の専門領域と連携する</b><p>経営・現場・3PL・SIer。立場の違う相手と組んで進めます。</p></li>
-    </ul>
+    <!-- ===== CSTEP-FLOW v1：縦積みの説明から、横並びのフロー図へ。
+     文章は短く整理し、関わる役割はカード下のピル型ラベルにまとめた。
+     STEP 03 の「コーポレート」は、現場課題→改善の流れの直接の担い手ではないため外した。 ===== -->
+    <ol class="cflow rv">
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 01</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
+          <h3>現場の違和感に気づく</h3>
+          <p class="cflow__t">作業の滞り、数字の変化、スタッフの声。毎日見ているからこそ気づける、改善につながる課題を見つけます。</p>
+        </li>
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 02</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
+          <h3>原因を考える</h3>
+          <p class="cflow__t">現場の状況とデータの双方を確認し、何が問題なのかを整理します。</p>
+        </li>
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 03</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg>
+          <h3>専門性を持ち寄る</h3>
+          <p class="cflow__t">技術で解くのか、運用で変えるのか。現場運営、FDE、エンゲージメント・BizDev、開発がそれぞれの立場から実行できる形に落とします。</p>
+        </li>
+        <li class="cflow__step">
+          <p class="cflow__no en">STEP 04</p>
+          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+          <h3>現場で試し、改善する</h3>
+          <p class="cflow__t">完成してから確認するのではなく、途中段階から使ってもらい、実際の使われ方を見て、より良い方法へ更新していきます。</p>
+        </li>
+    </ol>
+    <div class="flowadd rv">
+      <p class="flowadd__h"><span class="en">FDE</span>現場の課題を技術要件へ翻訳し、実装・運用へつなぐ。</p>
+      <p class="flowadd__t">STEP 02〜04では、FDEが現場と技術の間に立ちます。<a class="textlink textlink--sm" href="../people/fde/">FDEとして働く人を見る</a></p>
+    </div>
+    <p class="note rv">※ PALの仕事は、設計・実装・運用・改善を行き来しながら進みます。進め方の詳細は<a class="textlink textlink--sm" href="../about/#process">「PALを知る」</a>で紹介しています。</p>
+    <p class="note rv">※ 進め方は案件や現場によって変わります。誰か一人で完結する仕事ではない、という点だけは共通しています。</p>
   </div>
 </section>
 
 <section class="sec sec--soft sec--tight" id="fields">
   <div class="wrap">
     <div class="shead rv">
-      <p class="slabel">Careers</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">職種がつながり、仕事が動く。</h2>
-      <p class="slead">PALでは、エンゲージメント・BizDev、現場運営、FDE、システム開発など、異なる専門性を持つメンバーが連携しながら物流課題に向き合っています。それぞれの役割がつながることで、提案から実行、改善までを進めていきます。</p>
+      <p class="slabel">Who does what</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">誰が、どこで関わるのか。</h2>
+      <p class="slead">同じゴールに向かいながら、職種によって関わる場面が違います。役割の違いを3つのまとまりで整理しました。</p>
     </div>
     <p class="note rv" style="margin:-8px 0 26px">※ 正式な組織図ではありません。PALの代表的な業務連携を紹介する図です。実際の担当範囲はプロジェクトによって変わります。</p>
     <!-- ===== JOBFLOW v2：箱と矢印だけのフロー図をやめ、「人が見える実行体制の関係図」へ。
          上に共通目的を置き、3つの層を「役割の意味が分かる見出し」に変更。
          各カードは 人物アイコン＋英字ラベル＋職種名＋一言の役割 の4要素に統一した。 ===== -->
     <div class="jmap2 rv">
-
-      <div class="jpurpose">
-        <p class="jpurpose__en en">COMMON PURPOSE</p>
-        <b>物流DXを、現場で動く形にする。</b>
-        <ul class="jpurpose__steps" aria-label="仕事の進み方">
-          <li>見つける</li><li>つなぐ</li><li>動かす</li><li>支える</li>
-        </ul>
-      </div>
-
-      <p class="jarrow" aria-hidden="true"><span></span></p>
 
       <div class="jlayer jlayer--start">
         <p class="jlayer__h"><span class="en">LAYER 01</span><b>課題・機会を見つける人たち</b><em>起点</em></p>
@@ -226,7 +251,7 @@
           <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="jp__en en">MARKETING</span><b>マーケティング</b><p>市場や顧客の変化を捉え、新しい接点やニーズを見つける</p></li>
           <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="jp__en en">BIZDEV</span><b>BizDev</b><p>顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にする</p></li>
         </ul>
-        <p class="jlayer__note">※ 課題を見つけるのはこの3つだけではありません。代表的な業務の流れとして示しています。エンゲージメント・新規営業とBizDevは、募集職種としては<b>「エンゲージメント・新規営業」</b>にまとまっています。ここでは役割の違いとして示しています。</p>
+        <p class="jlayer__note">※ 代表的な業務の流れです。エンゲージメント・新規営業とBizDevは、募集職種としては<b>「エンゲージメント・新規営業」</b>にまとまっています。</p>
       </div>
 
       <p class="jarrow" aria-hidden="true"><span></span></p>
@@ -260,8 +285,6 @@
 
     </div>
 
-    <p class="rv" style="margin-top:30px"><a class="textlink" href="../jobs/">募集要項で、条件と選考の流れを見る</a></p>
-
     
   </div>
 </section>
@@ -269,8 +292,8 @@
 <section class="sec sec--tight" id="reality">
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">The reality of work</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">正解がないから、考える仕事になる。</h2>
+      <p class="slabel">Role difference</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">職種ごとに、向き合う課題は違う。</h2>
       <p class="slead">物流現場の課題は、マニュアルどおりに解決できるものばかりではありません。現場の状況、働く人、設備、データ。さまざまな条件を踏まえながら、その現場に合った答えを探していきます。</p>
     </div>
     <!-- ===== REAL-COMPARE v1：長文の読み比べから、3つの視点を並べて比べられるカードへ。
@@ -335,140 +358,66 @@
   </div>
 </section>
 
-<section class="sec sec--soft sec--tight" id="change">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">From challenge to change</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">気づいた課題を、改善につなげる。</h2>
-      <p class="slead">課題を見つけるだけでも、仕組みを導入するだけでも終わりません。現場で使われ、改善が続く状態をつくるために、異なる専門性を持つメンバーが協力します。</p>
-    </div>
-    <!-- ===== CSTEP-FLOW v1：縦積みの説明から、横並びのフロー図へ。
-     文章は短く整理し、関わる役割はカード下のピル型ラベルにまとめた。
-     STEP 03 の「コーポレート」は、現場課題→改善の流れの直接の担い手ではないため外した。 ===== -->
-    <ol class="cflow rv">
-        <li class="cflow__step">
-          <p class="cflow__no en">STEP 01</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
-          <h3>現場の違和感に気づく</h3>
-          <p class="cflow__t">作業の滞り、数字の変化、スタッフの声。毎日見ているからこそ気づける、改善につながる課題を見つけます。</p>
-          <div class="cflow__roles">
-            <p class="cflow__role"><span>気づく人</span></p>
-            <p class="cflow__rh">関わる部署</p>
-            <ul><li>現場運営</li><li>DTS</li><li>衛生清掃</li></ul>
-          </div>
-        </li>
-        <li class="cflow__step">
-          <p class="cflow__no en">STEP 02</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
-          <h3>原因を考える</h3>
-          <p class="cflow__t">現場の状況とデータの双方を確認し、何が問題なのかを整理します。</p>
-          <div class="cflow__roles">
-            <p class="cflow__role"><span>整理する人</span></p>
-            <p class="cflow__rh">関わる部署</p>
-            <ul><li>現場運営</li><li>FDE</li></ul>
-          </div>
-        </li>
-        <li class="cflow__step">
-          <p class="cflow__no en">STEP 03</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg>
-          <h3>専門性を持ち寄る</h3>
-          <p class="cflow__t">技術で解くのか、運用で変えるのか。現場運営、FDE、エンゲージメント・BizDev、開発がそれぞれの立場から実行できる形に落とします。</p>
-          <div class="cflow__roles">
-            <p class="cflow__role"><span>持ち寄る人</span></p>
-            <p class="cflow__rh">関わる部署</p>
-            <ul><li>FDE</li><li>プロダクト開発</li><li>エンゲージメント・BizDev</li></ul>
-          </div>
-        </li>
-        <li class="cflow__step">
-          <p class="cflow__no en">STEP 04</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg>
-          <h3>現場で試し、改善する</h3>
-          <p class="cflow__t">完成してから確認するのではなく、途中段階から使ってもらい、実際の使われ方を見て、より良い方法へ更新していきます。</p>
-          <div class="cflow__roles">
-            <p class="cflow__role"><span>続ける人</span></p>
-            <p class="cflow__rh">関わる部署</p>
-            <ul><li>現場運営</li><li>FDE</li><li>プロダクト開発</li></ul>
-          </div>
-        </li>
-    </ol>
-    <p class="note rv">※ 進め方は案件や現場によって変わります。誰か一人で完結する仕事ではない、という点だけは共通しています。</p>
-  </div>
-</section>
 
-<!-- ===== FDE-FIG v1：濃紺地に長文という構成をやめ、白地の図解主体へ。
-     「現場の言葉 → FDE → 技術の言葉」の橋渡しを図で見せ、本文は要点3つに短縮した。 ===== -->
-<section class="sec sec--soft sec--tight" id="fde">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
-      <p class="slabel">Forward Deployed Engineer</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">仕様書だけでは、現場は動かない。だから、現場に入り込む。</h2>
-      <p class="slead">FDEは、現場に入り、業務の流れを理解しながら、課題を実装・運用につながる形へ変えていく役割です。</p>
-    </div>
 
-    <!-- 現場の言葉 → FDE → 技術の言葉 -->
-    <div class="fdebridge rv">
-      <div class="fdebridge__side">
-        <p class="fdebridge__h"><span class="en">FIELD</span>現場の言葉</p>
-        <ul>
-          <li>現場の声</li>
-          <li>業務の流れ</li>
-          <li>作業の違和感</li>
-          <li>運用上の課題</li>
-        </ul>
-      </div>
 
-      <div class="fdebridge__core">
-        <span class="fdebridge__en en">FDE</span>
-        <b>現場と技術を、<br>つなぎ変える。</b>
-        <small>Forward Deployed Engineer</small>
-      </div>
-
-      <div class="fdebridge__side fdebridge__side--r">
-        <p class="fdebridge__h"><span class="en">TECHNOLOGY</span>技術の言葉</p>
-        <ul>
-          <li>要件整理</li>
-          <li>設計</li>
-          <li>実装</li>
-          <li>運用改善</li>
-        </ul>
-      </div>
-    </div>
-
-    <ol class="fdepoint rv">
-      <li><span class="fdepoint__no en">01</span><b>現場を見る</b><p>実際の作業・運用・判断を確認する。</p></li>
-      <li><span class="fdepoint__no en">02</span><b>技術要件へ翻訳する</b><p>課題を、設計・実装できる形に整理する。</p></li>
-      <li><span class="fdepoint__no en">03</span><b>使われるところまでつなぐ</b><p>導入して終わりではなく、運用・改善まで関わる。</p></li>
-    </ol>
-
-    <div class="fdecta rv">
-      <figure class="fdecta__ph">
-        <img src="../../assets/person-fde.jpg" alt="物流現場でタブレットを手に業務を確認するFDE" width="896" height="1200" loading="lazy">
-      </figure>
-      <div class="fdecta__body">
-        <p class="note">※ FDEという考え方や、PALの仕事の進め方（Design / Deploy / Operate / Evolve）は「PALを知る」で紹介しています。</p>
-        <p class="fdecta__btns">
-          <a class="btn btn--red btn--lg" href="fde/">FDEという仕事を詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a>
-          <a class="btn btn--ghost" href="../about/#process">PALの仕事の進め方を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== NEXT-CTA v1：「この仕事を、誰がしているのか。」(4カード)を削除。CTA「人を知る」に一本化 ===== -->
 
 <!-- ===== NEXT-CTA v1：「ほかのページを見る」を削除。回遊はグローバルナビとフッターに任せ、
      ページ末尾は次のアクション1つに絞る。 ===== -->
+<!-- ===== WORK-5SEC v1：05 もっと詳しく知る。仕事内容＝PEOPLE、募集要項＝JOBS に
+     導線の役割を分ける。 ===== -->
+<section class="sec sec--tight" id="explore">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:28px">
+      <p class="slabel">Explore</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">気になる仕事から、実際に働く人を見てみる。</h2>
+      <p class="slead">同じ仕事でも、向き合い方は人によって違います。7職種のメンバーの話を掲載しています。</p>
+    </div>
+    <ul class="xlist rv">
+        <li class="xrow">
+          <div class="xrow__t"><b>BPO / 現場運営</b><span>安定稼働と改善を、同時に進める</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/bpo/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="xlist__lk xlist__lk--sub" href="../jobs/#job-bpo">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="xrow">
+          <div class="xrow__t"><b>Cleaning / クレンリネス</b><span>清掃を、計画から支える</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/cleaning/">仕事内容を見る<span aria-hidden="true">→</span></a><span class="xlist__lk xlist__lk--none">募集要項は準備中です</span></p>
+        </li>
+        <li class="xrow">
+          <div class="xrow__t"><b>DTS / 運行管理</b><span>時間・品質・安全を、同時に守る</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/dts/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="xlist__lk xlist__lk--sub" href="../jobs/#job-dts">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="xrow">
+          <div class="xrow__t"><b>FDE</b><span>現場の課題を、技術で解ける形に変える</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/fde/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="xlist__lk xlist__lk--sub" href="../jobs/#job-fde">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="xrow">
+          <div class="xrow__t"><b>Engineer / プロダクト企画・開発</b><span>現場ごとに違う要求を、使われる形にする</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/system/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="xlist__lk xlist__lk--sub" href="../jobs/#job-engineer">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="xrow">
+          <div class="xrow__t"><b>Engagement / BizDev・新規営業</b><span>要望の裏にある、本当の課題を探す</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/sales/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="xlist__lk xlist__lk--sub" href="../jobs/#job-sales">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        </li>
+        <li class="xrow">
+          <div class="xrow__t"><b>Corporate / 管理部門</b><span>人と組織が、動きやすい状態をつくる</span></div>
+          <p class="xrow__lk"><a class="xlist__lk" href="../people/corporate/">仕事内容を見る<span aria-hidden="true">→</span></a><a class="xlist__lk xlist__lk--sub" href="../jobs/#job-corporate">募集要項を見る<span aria-hidden="true">→</span></a></p>
+        </li>
+    </ul>
+  </div>
+</section>
+
 <section class="entry">
   <div class="entry__media"><img src="../../assets/hero-bg.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"></div>
   <div class="entry__inner wrap--narrow">
     <p class="entry__label en">NEXT STEP</p>
-    <h2>その仕事をしている人を、<br>見てみる。</h2>
-    <p>同じ仕事でも、向き合い方は人によって違います。7職種のメンバーの話を掲載しています。</p>
+    <h2>この仕事に<br>興味を持った方へ。</h2>
+    <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。<br>新卒・キャリアともに通年で募集しています。</p>
     <div class="entry__ctas">
-      <a class="btn btn--red btn--lg" href="../people/">人を知る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--red btn--lg" href="../jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
-    <p class="entry__sec"><a href="../jobs/">募集中の職種を見る</a></p>
+    <p class="entry__sec"><a href="../entry/">カジュアル面談・エントリーについて</a></p>
   </div>
 </section>
 </main>
