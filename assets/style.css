@@ -3937,3 +3937,34 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #chain{padding-bottom:40px}
 }
 /* ===== GOALLEAD v1 END ===== */
+
+/* ============================================================
+   ===== IV-HEAD v1 START =====
+   社員インタビューのHERO：見出しが単語の途中で折り返さないよう、
+   ラベルと見出しを全幅のブロックへ出して横幅を確保する。
+   文字サイズは変更しない。
+   ============================================================ */
+.ivhero3__head{margin-bottom:34px}
+.ivhero3__head .ivhero3__ttl{margin-top:16px;max-width:none}
+.p-iv .ivhero3__grid{align-items:start}
+.p-iv .ivhero3__body .ivhero3__lead{margin-top:0}
+@media (max-width:620px){
+  .ivhero3__head{margin-bottom:24px}
+}
+/* ===== IV-HEAD v1 END ===== */
+
+/* ===== IV-HEAD v1 追補：章タイトルが単語の途中で折り返さないよう幅を広げる ===== */
+/* 20em(800px)では「…いく。」「…聞く。」が次行に1〜3文字だけ残っていた */
+.p-iv .chap__ttl{max-width:27em}
+/* 写真と並ぶ章は列幅が決まるため、意味の切れ目（読点）で自然に折り返す */
+.p-iv .chap--fig .chap__ttl{max-width:none}
+/* 写真と並ぶ章は、読点までが1行に収まるようテキスト側を広く取る
+   （文字サイズは変えずに列幅で解決する） */
+.p-iv .chap--fig .chap__figgrid{grid-template-columns:minmax(0,.66fr) minmax(0,1fr)}
+/* 本文が左・写真が右の章は比率を左右反転させる（本文側を広く保つ） */
+.p-iv .chap--fig .chap__figgrid--rev{grid-template-columns:minmax(0,1fr) minmax(0,.66fr)}
+/* 1文字・句読点だけが次行に残るのを避ける（対応ブラウザのみ） */
+.p-iv .ivhero3__ttl,.p-iv .chap__ttl{text-wrap:pretty}
+/* 1024px前後で「。」だけが next line に落ちていたため、可変部分だけ微調整
+   （PCの最大50pxは変更なし） */
+.p-iv .ivhero3__ttl{font-size:clamp(28px,3.9vw,50px)}
