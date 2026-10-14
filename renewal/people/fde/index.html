@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014t">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014v">
 </head>
 <body class="p-iv">
 
@@ -77,41 +77,63 @@
 <!-- DRAFT-NOTICE END -->
 <!-- ===== IV-EDIT v1：編集記事型へ再設計。回答・設問・プロフィール・キャリア・
      1日の流れは既存ページの内容をそのまま使用し、見せ方だけを作り直した。 ===== -->
-<section class="ivhero3">
+<!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
+     HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
+     本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
+<section class="ivtop">
   <div class="ivwrap">
-    <div class="ivhero3__head rv">
-      <p class="ivhero3__label en">INTERVIEW<i></i>FDE</p>
-      <h1 class="ivhero3__ttl">現場で使われて、<br>初めて「できた」と言える。</h1>
+    <div class="ivtop__head rv">
+      <p class="ivtop__label en">INTERVIEW</p>
+      <p class="ivtop__role"><span class="en">FDE</span>Forward Deployed Engineer</p>
+      <h1 class="ivtop__ttl">現場で使われて、初めて「できた」と言える。</h1>
     </div>
-    <div class="ivhero3__grid">
-      <figure class="ivhero3__ph rv">
+    <div class="ivtop__grid">
+      <div class="ivtop__body rv">
+        <ul class="ivtop__prof">
+          <li><span>所属・役職</span>FDE</li>
+          <li><span>入社年・入社区分</span>—</li>
+          <li><span>前職</span>物流センターの運営</li>
+        </ul>
+        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
+      <figure class="ivtop__ph rv">
         <img src="../../../assets/person-fde.jpg?v=20261008d" alt="物流現場でタブレットを手に業務の流れを確認する様子" width="1600" height="1200" fetchpriority="high">
         <figcaption>現場に入り、人の判断とデータの両方を確認する。<em>※ イメージ写真</em></figcaption>
       </figure>
-      <div class="ivhero3__body rv">
-        <p class="ivhero3__lead">倉庫の現場責任者からFDEへ。仕様書に載らない判断こそ、物流DXの鍵だと感じています。</p>
-        <dl class="ivhero3__prof">
-          <dt>所属・役職</dt><dd>FDE</dd>
-          <dt>入社年月・入社区分</dt><dd>—</dd>
-          <dt>前職・これまでの経験</dt><dd>—</dd>
-          <dt>担当業務</dt><dd>物流現場の理解／課題整理／技術要件への翻訳／設計・実装・運用との接続</dd>
-        </dl>
-        <p class="iv__proflabel">仮プロフィール<small>※ 氏名・所属・役職・入社年・前職・担当領域は未確認です</small></p>
+    </div>
+  </div>
+</section>
+<section class="ivrole">
+  <div class="ivwrap">
+    <p class="ivrole__en en rv">CURRENT ROLE</p>
+    <p class="ivrole__t rv">物流現場に入って業務の流れとどこで止まっているかを確認し、課題を技術要件へ翻訳する。設計・実装・運用の側ともやりとりしながら、実際に使われる形になるまでつなぐ。</p>
+  </div>
+</section>
+<section class="pstory">
+  <div class="ivwrap">
+    <p class="pstory__en en rv">PROFILE STORY</p>
+    <div class="pstory__grid rv">
+      <div class="pstory__col">
+        <p class="pstory__no en">01<i></i>CAREER STEP</p>
+        <h2 class="pstory__h">これまでのキャリア</h2>
+                <p class="pstory__step"><span class="en">〜2020</span>物流センターの運営。作業進捗・人員配置・改善活動を担当。</p>
+        <p class="pstory__step"><span class="en">2021</span>PAL入社／FDE。現場に入り、課題を技術要件へ翻訳する役割へ。</p>
+        <p class="pstory__step"><span class="en">NOW</span>物流DXの設計・実装・運用。現場とシステム部をつなぎ、使われる仕組みまで担当。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">02<i></i>JOINING REASON</p>
+        <h2 class="pstory__h">PALに入社した理由</h2>
+                <p class="pstory__t"><b>現場も技術も、どちらか一方では解けない。</b>現場のことも技術のことも、どちらか一方だけでは解けない課題があると感じていた。両方に関われる仕事がしたいと思ったことが入社の決め手。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">03<i></i>WORK PHILOSOPHY</p>
+        <h2 class="pstory__h">仕事で大切にしていること</h2>
+                <p class="pstory__t"><b>正解を持ち込まず、その現場に合う形を一緒に決める。</b>現場ごとに運用が違うので、同じやり方がそのまま通用しない。現場で聞いた話は、そのままの言葉でシステム側に伝えるようにしている。</p>
       </div>
     </div>
   </div>
 </section>
-<section class="chap chap--soft chap--step">
-  <div class="ivwrap">
-    <p class="chap__en en rv" style="margin-bottom:22px">CAREER STEP</p>
-    <ol class="step3 rv">
-      <li><span class="step3__t en">〜2020</span><b>物流センターの運営</b><p>作業進捗・人員配置・改善活動を担当</p></li>
-      <li><span class="step3__t en">2021</span><b>PAL入社／FDE</b><p>現場に入り、課題を技術要件へ翻訳する役割へ</p></li>
-      <li class="is-now"><span class="step3__t en">現在</span><b>物流DXの設計・実装・運用</b><p>現場とシステム部をつなぎ、使われる仕組みまで担当</p></li>
-    </ol>
-    <p class="note rv">※ 経歴は、正式回答とご本人確認のうえ差し替えます。</p>
-  </div>
-</section>
+
 <section class="chap">
   <div class="ivwrap">
     <div class="chap__h rv"><span class="chap__no en">01</span><p class="chap__en en">REASON</p></div>

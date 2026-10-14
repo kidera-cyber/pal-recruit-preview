@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014t">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014v">
 </head>
 <body class="p-iv">
 
@@ -77,41 +77,63 @@
 <!-- DRAFT-NOTICE END -->
 <!-- ===== IV-EDIT v1：編集記事型へ再設計。回答・設問・プロフィール・キャリア・
      1日の流れは既存ページの内容をそのまま使用し、見せ方だけを作り直した。 ===== -->
-<section class="ivhero3">
+<!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
+     HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
+     本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
+<section class="ivtop">
   <div class="ivwrap">
-    <div class="ivhero3__head rv">
-      <p class="ivhero3__label en">INTERVIEW<i></i>ENGINEER</p>
-      <h1 class="ivhero3__ttl">つくるのは、<br>現場が明日から使えるもの。</h1>
+    <div class="ivtop__head rv">
+      <p class="ivtop__label en">INTERVIEW</p>
+      <p class="ivtop__role"><span class="en">Engineer</span>システム・プロダクト企画開発</p>
+      <h1 class="ivtop__ttl">つくるのは、現場が明日から使えるもの。</h1>
     </div>
-    <div class="ivhero3__grid">
-      <figure class="ivhero3__ph rv">
+    <div class="ivtop__grid">
+      <div class="ivtop__body rv">
+        <ul class="ivtop__prof">
+          <li><span>所属・役職</span>システム部</li>
+          <li><span>入社年・入社区分</span>—</li>
+          <li><span>前職</span>業務システムの開発</li>
+        </ul>
+        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
+      <figure class="ivtop__ph rv">
         <img src="../../../assets/person-eng.jpg" alt="ディスプレイでデータ連携の設計を確認する様子" width="1600" height="1200" fetchpriority="high">
         <figcaption>開発側だけで決めず、現場と事業側を交えて仕様を決める。<em>※ イメージ写真</em></figcaption>
       </figure>
-      <div class="ivhero3__body rv">
-        <p class="ivhero3__lead">Core Firstの開発に携わり、経営と現場をつなぐ実感を毎日得ています。</p>
-        <dl class="ivhero3__prof">
-          <dt>所属・役職</dt><dd>システム部</dd>
-          <dt>入社年月・入社区分</dt><dd>—</dd>
-          <dt>前職・これまでの経験</dt><dd>—</dd>
-          <dt>担当業務</dt><dd>プロダクト企画／要件整理／データ連携／開発／運用</dd>
-        </dl>
-        <p class="iv__proflabel">仮プロフィール<small>※ 氏名・所属・役職・入社年・前職・担当領域は未確認です</small></p>
+    </div>
+  </div>
+</section>
+<section class="ivrole">
+  <div class="ivwrap">
+    <p class="ivrole__en en rv">CURRENT ROLE</p>
+    <p class="ivrole__t rv">プロダクトの企画と要件整理、データ連携の仕組みづくり、開発と運用まで関わる。担当はひとつの工程で区切られていない。</p>
+  </div>
+</section>
+<section class="pstory">
+  <div class="ivwrap">
+    <p class="pstory__en en rv">PROFILE STORY</p>
+    <div class="pstory__grid rv">
+      <div class="pstory__col">
+        <p class="pstory__no en">01<i></i>CAREER STEP</p>
+        <h2 class="pstory__h">これまでのキャリア</h2>
+                <p class="pstory__step"><span class="en">〜2022</span>業務システムの開発。要件に沿った開発が中心。</p>
+        <p class="pstory__step"><span class="en">2023</span>PAL入社／システム部。要件が決まる前から現場・事業側と関わる。</p>
+        <p class="pstory__step"><span class="en">NOW</span>データ連携基盤の設計・開発。現場で使われる状態まで見届ける。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">02<i></i>JOINING REASON</p>
+        <h2 class="pstory__h">PALに入社した理由</h2>
+                <p class="pstory__t"><b>つくったものが、どう使われているかまで見たい。</b>物流はシステムだけで完結せず、人や設備との組み合わせで決まる。その環境で開発できる点に魅力を感じた。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">03<i></i>WORK PHILOSOPHY</p>
+        <h2 class="pstory__h">仕事で大切にしていること</h2>
+                <p class="pstory__t"><b>正しく作るだけでは、使われない。</b>開発側では問題なく見えても、現場では操作しづらいことがある。完成してから確認するのではなく、途中から使ってもらうようにしている。</p>
       </div>
     </div>
   </div>
 </section>
-<section class="chap chap--soft chap--step">
-  <div class="ivwrap">
-    <p class="chap__en en rv" style="margin-bottom:22px">CAREER STEP</p>
-    <ol class="step3 rv">
-      <li><span class="step3__t en">〜2022</span><b>業務システムの開発</b><p>要件に沿った開発が中心</p></li>
-      <li><span class="step3__t en">2023</span><b>PAL入社／システム部</b><p>要件が決まる前から現場・事業側と関わる</p></li>
-      <li class="is-now"><span class="step3__t en">現在</span><b>データ連携基盤の設計・開発</b><p>現場で使われる状態まで見届ける</p></li>
-    </ol>
-    <p class="note rv">※ 経歴は、正式回答とご本人確認のうえ差し替えます。</p>
-  </div>
-</section>
+
 <section class="chap">
   <div class="ivwrap">
     <div class="chap__h rv"><span class="chap__no en">01</span><p class="chap__en en">REASON</p></div>

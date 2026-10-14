@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014t">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014v">
 </head>
 <body class="p-iv">
 
@@ -77,41 +77,63 @@
 <!-- DRAFT-NOTICE END -->
 <!-- ===== IV-EDIT v1：編集記事型へ再設計。回答・設問・プロフィール・キャリア・
      1日の流れは既存ページの内容をそのまま使用し、見せ方だけを作り直した。 ===== -->
-<section class="ivhero3">
+<!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
+     HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
+     本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
+<section class="ivtop">
   <div class="ivwrap">
-    <div class="ivhero3__head rv">
-      <p class="ivhero3__label en">INTERVIEW<i></i>CORPORATE</p>
-      <h1 class="ivhero3__ttl">人と組織が、<br>動きやすい状態をつくる。</h1>
+    <div class="ivtop__head rv">
+      <p class="ivtop__label en">INTERVIEW</p>
+      <p class="ivtop__role"><span class="en">Corporate</span>管理部門</p>
+      <h1 class="ivtop__ttl">人と組織が、動きやすい状態をつくる。</h1>
     </div>
-    <div class="ivhero3__grid">
-      <figure class="ivhero3__ph rv">
+    <div class="ivtop__grid">
+      <div class="ivtop__body rv">
+        <ul class="ivtop__prof">
+          <li><span>所属・役職</span>総務部</li>
+          <li><span>入社年・入社区分</span>—</li>
+          <li><span>前職</span>管理部門（人事・組織運営）</li>
+        </ul>
+        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
+      <figure class="ivtop__ph rv">
         <img src="../../../assets/person-corporate.jpg?v=20261008c" alt="社内の各部署とやりとりしながら手続きを進める様子" width="1600" height="1200" fetchpriority="high">
         <figcaption>各部署の仕事と課題を知ることから、組織の仕組みを考える。<em>※ イメージ写真</em></figcaption>
       </figure>
-      <div class="ivhero3__body rv">
-        <p class="ivhero3__lead">採用や組織運営、管理業務を通じて、現場・技術・営業が仕事に集中できる環境を整えています。</p>
-        <dl class="ivhero3__prof">
-          <dt>所属・役職</dt><dd>総務部</dd>
-          <dt>入社年月</dt><dd>—</dd>
-          <dt>前職・これまでのご経験</dt><dd>—</dd>
-          <dt>現在の担当業務</dt><dd>備品・設備／契約／社内申請／庶務 ほか</dd>
-        </dl>
-        <p class="iv__proflabel">仮プロフィール<small>※ 氏名・所属・役職・入社年・前職・担当領域は未確認です</small></p>
+    </div>
+  </div>
+</section>
+<section class="ivrole">
+  <div class="ivwrap">
+    <p class="ivrole__en en rv">CURRENT ROLE</p>
+    <p class="ivrole__t rv">備品や設備まわりの対応、契約に関する手続き、社内申請の受付などを担当。日々の庶務も含めて、各部署が困らないように進める。</p>
+  </div>
+</section>
+<section class="pstory">
+  <div class="ivwrap">
+    <p class="pstory__en en rv">PROFILE STORY</p>
+    <div class="pstory__grid rv">
+      <div class="pstory__col">
+        <p class="pstory__no en">01<i></i>CAREER STEP</p>
+        <h2 class="pstory__h">これまでのキャリア</h2>
+                <p class="pstory__step"><span class="en">〜2019</span>管理部門（人事・組織運営）。業務を支える立場で組織に関わる。</p>
+        <p class="pstory__step"><span class="en">2020</span>PAL入社／コーポレート。変化の途中にある会社で、制度と仕組みを整える。</p>
+        <p class="pstory__step"><span class="en">NOW</span>採用・組織運営・社内制度。各部署が仕事を進めやすい環境をつくる。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">02<i></i>JOINING REASON</p>
+        <h2 class="pstory__h">PALに入社した理由</h2>
+                <p class="pstory__t"><b>できあがったものを運用するのではなく、一緒につくる。</b>会社が変わっていくタイミングで、仕組みを整える仕事に関われることに魅力を感じた。必要なものを一緒につくっていく環境だと思った。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">03<i></i>WORK PHILOSOPHY</p>
+        <h2 class="pstory__h">仕事で大切にしていること</h2>
+                <p class="pstory__t"><b>大きな改善でなくても、毎日のことなので効果は出る。</b>正確さと、返事の早さ。すぐ答えられないことでも、いつまでに確認するかだけは先に伝えるようにしている。</p>
       </div>
     </div>
   </div>
 </section>
-<section class="chap chap--soft chap--step">
-  <div class="ivwrap">
-    <p class="chap__en en rv" style="margin-bottom:22px">CAREER STEP</p>
-    <ol class="step3 rv">
-      <li><span class="step3__t en">〜2019</span><b>管理部門（人事・組織運営）</b><p>業務を支える立場で組織に関わる</p></li>
-      <li><span class="step3__t en">2020</span><b>PAL入社／コーポレート</b><p>変化の途中にある会社で、制度と仕組みを整える</p></li>
-      <li class="is-now"><span class="step3__t en">現在</span><b>採用・組織運営・社内制度</b><p>各部署が仕事を進めやすい環境をつくる</p></li>
-    </ol>
-    <p class="note rv">※ 元の仮原稿にあった「2020年中途入社」「前職：管理部門（人事・組織運営）」はデザイン用の仮設定です。ご本人確認前のため、確定情報としては記載していません。</p>
-  </div>
-</section>
+
 <section class="chap">
   <div class="ivwrap">
     <div class="chap__h rv"><span class="chap__no en">01</span><p class="chap__en en">REASON</p></div>

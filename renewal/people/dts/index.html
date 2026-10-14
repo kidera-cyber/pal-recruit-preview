@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014t">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014v">
 </head>
 <body class="p-iv">
 
@@ -77,36 +77,61 @@
 <!-- DRAFT-NOTICE END -->
 <!-- ===== IV-EDIT v1：編集記事型へ再設計。回答・設問・プロフィール・キャリア・
      1日の流れは既存ページの内容をそのまま使用し、見せ方だけを作り直した。 ===== -->
-<section class="ivhero3">
+<!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
+     HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
+     本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
+<section class="ivtop">
   <div class="ivwrap">
-    <div class="ivhero3__head rv">
-      <p class="ivhero3__label en">INTERVIEW<i></i>DTS / 運行管理</p>
-      <h1 class="ivhero3__ttl">運ぶだけではない。<br>物流を、止めない仕事。</h1>
+    <div class="ivtop__head rv">
+      <p class="ivtop__label en">INTERVIEW</p>
+      <p class="ivtop__role"><span class="en">DTS</span>運行管理</p>
+      <h1 class="ivtop__ttl">運ぶだけではない。物流を、止めない仕事。</h1>
     </div>
-    <div class="ivhero3__grid">
-      <figure class="ivhero3__ph rv">
+    <div class="ivtop__grid">
+      <div class="ivtop__body rv">
+        <ul class="ivtop__prof">
+          <li><span>所属・役職</span>DTS／運送部（配車・運行管理）</li>
+          <li><span>入社年・入社区分</span>—</li>
+          <li><span>前職</span>—</li>
+        </ul>
+        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
+      <figure class="ivtop__ph rv">
         <img src="../../../assets/person-dts.jpg?v=20261008i" alt="保冷トラックの前で積み込みと運行の状況を確認する様子" width="1600" height="1200" fetchpriority="high">
         <figcaption>倉庫側の出荷状況と運行の見え方を確認してから、その日の配送を組む。<em>※ イメージ写真</em></figcaption>
       </figure>
-      <div class="ivhero3__body rv">
-        <p class="ivhero3__lead">食品物流を中心に、配送計画や運行状況を確認しながら、安全・品質・時間を守って商品を届けます。輸送を実行するだけでなく、運行の可視化や改善にも関わる仕事です。</p>
-        <dl class="ivhero3__prof">
-          <dt>所属・役職</dt><dd>DTS／運送部（配車・運行管理）</dd>
-          <dt>入社年月・入社区分</dt><dd>—</dd>
-          <dt>前職・これまでの経験</dt><dd>—</dd>
-          <dt>担当業務</dt><dd>配車・運行管理／配送計画／DTSシステムの活用／ドライバー・物流センターとの連携</dd>
-        </dl>
-        <p class="iv__proflabel">仮プロフィール<small>※ 氏名・所属・役職・入社年・前職・担当領域は未確認です</small></p>
+    </div>
+  </div>
+</section>
+<section class="ivrole">
+  <div class="ivwrap">
+    <p class="ivrole__en en rv">CURRENT ROLE</p>
+    <p class="ivrole__t rv">食品物流を中心に、配送計画や運行状況を確認しながら、安全・品質・時間を守って商品を届ける。輸送を実行するだけでなく、運行の可視化や改善にも関わる。</p>
+  </div>
+</section>
+<section class="pstory">
+  <div class="ivwrap">
+    <p class="pstory__en en rv">PROFILE STORY</p>
+    <div class="pstory__grid rv">
+      <div class="pstory__col">
+        <p class="pstory__no en">01<i></i>CAREER STEP</p>
+        <h2 class="pstory__h">これまでのキャリア</h2>
+                <p class="pstory__t">物流・運送の領域で経験を積んだあとPALに入り、いまは配車や運行管理に加えて、輸送の改善にも関わっている。<br><small>※ 年・担当業務・役割の変化は、正式回答とご本人確認のうえ掲載します。</small></p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">02<i></i>JOINING REASON</p>
+        <h2 class="pstory__h">PALに入社した理由</h2>
+                <p class="pstory__t"><b>運ぶところだけで、終わらせない。</b>運ぶところだけで終わらない仕事がしたいと思っていた。PALなら倉庫側の動きやデータまで含めて輸送を見られそうだと感じたことが決め手。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">03<i></i>WORK PHILOSOPHY</p>
+        <h2 class="pstory__h">仕事で大切にしていること</h2>
+                <p class="pstory__t"><b>全部を元の計画に、戻そうとはしない。</b>何を優先して守るかを決める。迷ったときは安全を最優先にして、そのうえで届け方を組み直す。</p>
       </div>
     </div>
   </div>
 </section>
-<section class="chap chap--soft chap--step">
-  <div class="ivwrap">
-    <p class="chap__en en rv" style="margin-bottom:22px">CAREER STEP</p>
-    <p class="note rv">※ キャリアステップは、正式回答とご本人確認のうえ掲載します。年・前職などの仮情報は表示していません。</p>
-  </div>
-</section>
+
 <section class="chap">
   <div class="ivwrap">
     <div class="chap__h rv"><span class="chap__no en">01</span><p class="chap__en en">REASON</p></div>

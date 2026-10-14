@@ -3968,3 +3968,106 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 /* 1024px前後で「。」だけが next line に落ちていたため、可変部分だけ微調整
    （PCの最大50pxは変更なし） */
 .p-iv .ivhero3__ttl{font-size:clamp(28px,3.9vw,50px)}
+
+/* ============================================================
+   ===== IV-COLOR v1 START =====
+   社員インタビュー共通の文字色。薄いグレーで本文が背景に負けていたため、
+   本文を一段濃くし、補足だけを控えめにする階層へ統一する。
+   ============================================================ */
+.p-iv{
+  --iv-text:#252b3d;        /* 本文：濃紺〜ダークグレー */
+  --iv-heading:#1f2742;     /* 見出し：PALの濃紺 */
+  --iv-muted:#5f6675;       /* 補足：中間グレー（薄くしすぎない） */
+  --iv-on-dark:#f2f4f8;     /* 濃紺背景上の本文 */
+  --iv-on-dark-muted:#cdd1db;
+  --iv-accent:var(--red);
+}
+/* ---- 白・ライトグレー背景 ---- */
+.p-iv .chap__body>p,.p-iv .chap__lede{color:var(--iv-text)}
+.p-iv .chap__ttl,.p-iv .chap__sub,.p-iv .chap__q,.p-iv .chap__q2,
+.p-iv .ivtop__ttl,.p-iv .bigq,.p-iv .fits3 li,.p-iv .day3 b,
+.p-iv .step3 b,.p-iv .flow4 b,.p-iv .ivrole__t{color:var(--iv-heading)}
+.p-iv .chap__body>p.note,.p-iv .note,.p-iv .chap__ph figcaption,
+.p-iv .ivtop__ph figcaption,.p-iv .ivtop__note{color:var(--iv-muted)}
+.p-iv .day3 p,.p-iv .step3 p,.p-iv .flow4 p,.p-iv .ivtop__prof li{color:var(--iv-text)}
+.p-iv .bigq__by,.p-iv .ivquote__by{color:var(--iv-muted)}
+/* 時刻・年・番号はPALレッド、業務名は濃紺 */
+.p-iv .day3 time{color:var(--iv-heading)}
+.p-iv .step3__t,.p-iv .chap__no,.p-iv .chap__en,.p-iv .flow4 .en{color:var(--iv-accent)}
+/* ---- 濃紺背景 ---- */
+.p-iv .chap--msg .msg3{color:#fff}
+.p-iv .chap--msg .msg3__q{color:var(--iv-on-dark)}
+.p-iv .chap--msg .msg3__by{color:var(--iv-on-dark-muted)}
+/* ===== IV-COLOR v1 END ===== */
+
+/* ============================================================
+   ===== IV-INTRO v1 START =====
+   冒頭を「HERO → CURRENT ROLE → PROFILE STORY」の編集型イントロへ。
+   プロフィール表・年表・小さなカードをやめ、写真・大きな言葉・色面・余白で見せる。
+   本文（CHAPTER 01以降）のデザインには手を入れていない。
+   ============================================================ */
+.ivtop{padding:40px 0 56px}
+/* ラベル・職種・コピーは全幅に置き、見出しが単語の途中で折り返さないようにする */
+.ivtop__head{margin-bottom:34px}
+.ivtop__head .ivtop__role{max-width:none}
+/* 写真を主役にし、プロフィールを右に添える */
+.ivtop__grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);
+  gap:48px;align-items:start}
+.ivtop__label{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.22em;
+  font-weight:700;color:var(--iv-accent)}
+.ivtop__role{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin-top:14px;
+  padding-bottom:16px;border-bottom:1px solid var(--line);
+  font-size:16px;font-weight:700;color:var(--iv-heading)}
+.ivtop__role .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;color:var(--iv-accent)}
+.ivtop__ttl{margin-top:20px;font-size:clamp(28px,3.6vw,48px);line-height:1.42;
+  letter-spacing:.01em;color:var(--iv-heading);text-wrap:pretty}
+.ivtop__prof{margin-top:0;display:grid;gap:10px;list-style:none}
+.ivtop__prof li{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;
+  font-size:15.5px;line-height:1.75;color:var(--iv-text)}
+.ivtop__prof li span{font-size:13px;font-weight:700;color:var(--iv-muted)}
+.ivtop__note{margin-top:18px;font-size:13px;line-height:1.8;color:var(--iv-muted)}
+.ivtop__ph{margin:0}
+.ivtop__ph img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--bg-soft)}
+.ivtop__ph figcaption{margin-top:13px;padding-left:14px;border-left:2px solid var(--iv-accent);
+  font-size:13.5px;line-height:1.8;color:var(--iv-muted)}
+.ivtop__ph figcaption em{font-style:normal;margin-left:8px}
+
+/* CURRENT ROLE */
+.ivrole{padding:0 0 60px}
+.ivrole__en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.2em;
+  font-weight:700;color:var(--iv-accent)}
+.ivrole__t{max-width:var(--measure,820px);margin-top:14px;
+  font-size:18.5px;line-height:1.9;font-weight:600;color:var(--iv-heading)}
+
+/* PROFILE STORY（唯一の大きな色面） */
+.pstory{padding:68px 0;background:var(--navy-d);color:var(--iv-on-dark)}
+.pstory__en{font-family:Lato,sans-serif;font-size:11.5px;letter-spacing:.2em;
+  font-weight:700;color:var(--red-light,#ffb3b8)}
+.pstory__grid{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.pstory__col{padding-top:22px;border-top:2px solid rgba(255,179,184,.5)}
+.pstory__no{display:flex;align-items:center;gap:10px;font-family:Lato,sans-serif;
+  font-size:11.5px;letter-spacing:.16em;font-weight:700;color:var(--red-light,#ffb3b8)}
+.pstory__no i{display:block;width:16px;height:1px;background:rgba(255,179,184,.6)}
+.pstory__h{margin-top:12px;font-size:clamp(19px,2vw,22px);line-height:1.5;color:#fff}
+.pstory__t{margin-top:14px;font-size:16.5px;line-height:1.95;color:var(--iv-on-dark)}
+.pstory__t b{display:block;margin-bottom:8px;font-size:17.5px;line-height:1.7;color:#fff;font-weight:700}
+.pstory__t small{display:block;margin-top:10px;font-size:13px;line-height:1.8;color:var(--iv-on-dark-muted)}
+.pstory__step{margin-top:16px;display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:14px;
+  font-size:16px;line-height:1.9;color:var(--iv-on-dark)}
+.pstory__step .en{font-family:Lato,sans-serif;font-size:19px;font-weight:700;
+  line-height:1.5;color:var(--red-light,#ffb3b8)}
+.pstory__col .pstory__step:first-of-type{margin-top:14px}
+
+@media (max-width:1000px){
+  .ivtop__head{margin-bottom:24px}
+  .ivtop__grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .ivtop__ph img{aspect-ratio:16/9}
+  .pstory__grid{grid-template-columns:minmax(0,1fr);gap:34px}
+}
+@media (max-width:620px){
+  .ivtop{padding:28px 0 40px}
+  .ivrole{padding-bottom:44px}
+  .pstory{padding:52px 0}
+  .ivrole__t{font-size:17px}
+}
+/* ===== IV-INTRO v1 END ===== */

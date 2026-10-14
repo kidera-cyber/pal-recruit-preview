@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014t">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014v">
 </head>
 <body class="p-iv">
 
@@ -77,36 +77,61 @@
 <!-- DRAFT-NOTICE END -->
 <!-- ===== IV-EDIT v1：編集記事型へ再設計。回答・設問・プロフィール・キャリア・
      1日の流れは既存ページの内容をそのまま使用し、見せ方だけを作り直した。 ===== -->
-<section class="ivhero3">
+<!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
+     HERO → CURRENT ROLE → PROFILE STORY の編集型イントロへ。
+     本文（CHAPTER 01以降）のデザインは変更していない。 ===== -->
+<section class="ivtop">
   <div class="ivwrap">
-    <div class="ivhero3__head rv">
-      <p class="ivhero3__label en">INTERVIEW<i></i>ENGAGEMENT / SALES</p>
-      <h1 class="ivhero3__ttl">売る前に、<br>まず課題を見つける。</h1>
+    <div class="ivtop__head rv">
+      <p class="ivtop__label en">INTERVIEW</p>
+      <p class="ivtop__role"><span class="en">Engagement / Sales</span>エンゲージメント・新規営業</p>
+      <h1 class="ivtop__ttl">売る前に、まず課題を見つける。</h1>
     </div>
-    <div class="ivhero3__grid">
-      <figure class="ivhero3__ph rv">
+    <div class="ivtop__grid">
+      <div class="ivtop__body rv">
+        <ul class="ivtop__prof">
+          <li><span>所属・役職</span>エンゲージメント・新規営業</li>
+          <li><span>入社年・入社区分</span>—</li>
+          <li><span>前職</span>法人営業</li>
+        </ul>
+        <p class="ivtop__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
+      </div>
+      <figure class="ivtop__ph rv">
         <img src="../../../assets/person-consultant.jpg?v=20261008e" alt="顧客と打ち合わせを行い、課題を整理する様子" width="1600" height="1200" fetchpriority="high">
         <figcaption>提案の前に、まず現場と業務を見にいく。<em>※ イメージ写真</em></figcaption>
       </figure>
-      <div class="ivhero3__body rv">
-        <p class="ivhero3__lead">顧客の課題を聞き、整理する。そこからFDEやシステム部、現場運営とつないで、解決の形にしていく仕事です。</p>
-        <dl class="ivhero3__prof">
-          <dt>所属・役職</dt><dd>エンゲージメント・新規営業</dd>
-          <dt>入社年月・入社区分</dt><dd>—</dd>
-          <dt>前職・これまでの経験</dt><dd>—</dd>
-          <dt>担当業務</dt><dd>顧客ヒアリング／課題整理／提案／社内連携／導入までの調整</dd>
-        </dl>
-        <p class="iv__proflabel">仮プロフィール<small>※ 氏名・所属・役職・入社年・前職・担当領域は未確認です</small></p>
+    </div>
+  </div>
+</section>
+<section class="ivrole">
+  <div class="ivwrap">
+    <p class="ivrole__en en rv">CURRENT ROLE</p>
+    <p class="ivrole__t rv">顧客の話を聞いて、どこで止まっているのかを整理するところから始める。社内のメンバーと相談しながら提案をつくり、導入までの調整まで担当する。</p>
+  </div>
+</section>
+<section class="pstory">
+  <div class="ivwrap">
+    <p class="pstory__en en rv">PROFILE STORY</p>
+    <div class="pstory__grid rv">
+      <div class="pstory__col">
+        <p class="pstory__no en">01<i></i>CAREER STEP</p>
+        <h2 class="pstory__h">これまでのキャリア</h2>
+                <p class="pstory__t">法人営業の経験を経てPALに入り、いまは顧客の課題整理から提案、導入までの調整に関わっている。<br><small>※ 年・担当業務・役割の変化は、正式回答とご本人確認のうえ掲載します。</small></p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">02<i></i>JOINING REASON</p>
+        <h2 class="pstory__h">PALに入社した理由</h2>
+                <p class="pstory__t"><b>決まった商材を売るのではなく、課題に向き合いたかった。</b>顧客ごとに違う課題へ向き合える仕事がしたいと思っていた。物流やDXの領域は、提案そのものを組み立てられる余地が大きいと感じた。</p>
+      </div>
+      <div class="pstory__col">
+        <p class="pstory__no en">03<i></i>WORK PHILOSOPHY</p>
+        <h2 class="pstory__h">仕事で大切にしていること</h2>
+                <p class="pstory__t"><b>現場と経営で、見ているものが違う。</b>現場は日々の負荷を、経営は投資判断を見ている。どちらかに寄せるのではなく、同じ課題として並べ直すようにしている。</p>
       </div>
     </div>
   </div>
 </section>
-<section class="chap chap--soft chap--step">
-  <div class="ivwrap">
-    <p class="chap__en en rv" style="margin-bottom:22px">CAREER STEP</p>
-    <p class="note rv">※ キャリアステップは、正式回答とご本人確認のうえ掲載します。年・前職などの仮情報は表示していません。</p>
-  </div>
-</section>
+
 <section class="chap">
   <div class="ivwrap">
     <div class="chap__h rv"><span class="chap__no en">01</span><p class="chap__en en">REASON</p></div>
