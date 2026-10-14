@@ -3288,3 +3288,50 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jobtile__sub{padding:12px 18px 14px}
 }
 /* ===== JOBLINK v2 END ===== */
+
+/* ============================================================
+   ===== LOOKFOR v3 START =====
+   「PALが、求める人。」を3段（6つの姿勢 → 3つの力 → 実際に働く人）へ整理。
+   重複していた「採用で大切にしていること」は冒頭リードへ統合して削除。
+   文字サイズは下げず、余白・写真高さ・項目間の詰めだけで縦幅を圧縮する。
+   LOOKFOR v2 の .look2 / .lookv / .look2__skill / .skills3 を後勝ちで上書き。
+   ============================================================ */
+#look{padding-block:72px}
+.look2{grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:48px}
+/* 写真は縦に大きくしすぎない */
+.look2__ph{aspect-ratio:1/1.08}
+#look .stitle{font-size:clamp(28px,3.2vw,36px)}
+#look .slead{margin-top:16px;font-size:17px;line-height:1.85;color:var(--navy);font-weight:700}
+
+/* 6つの姿勢：項目間の余白を約3割詰める（文字は大きくする） */
+.lookv li{padding:16px 0 18px}
+.lookv h3{margin-top:7px;font-size:clamp(18px,1.9vw,20px)}
+.lookv p{margin-top:6px;font-size:15px;line-height:1.8}
+
+/* 3つの力：姿勢の下に、間を空けずに続ける */
+.look2__skill{margin-top:40px;padding-top:30px}
+.look2__h{font-size:clamp(17px,1.8vw,20px);text-align:left}
+.skills3{margin-top:22px;gap:26px 34px;text-align:left}
+.skills3 li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:4px 14px;justify-items:start}
+.skills3 svg{grid-row:span 2;width:26px;height:26px;margin-top:2px;color:var(--navy)}
+.skills3 b{font-size:17px;line-height:1.5}
+.skills3 span{font-size:15px;line-height:1.8}
+
+/* 締め：社員インタビューへの導入 */
+.lookto2{margin-top:40px;padding-top:30px;border-top:1px solid var(--line-mid,#c3cade)}
+.lookto2 h3{font-size:clamp(20px,2.2vw,25px);line-height:1.55;color:var(--navy)}
+.lookto2 p{margin-top:12px;font-size:16px;line-height:1.9;color:var(--sub)}
+.lookto2__cta{margin-top:22px}
+
+@media (max-width:980px){
+  .look2{gap:30px}
+  .look2__ph{aspect-ratio:16/9}
+}
+@media (max-width:620px){
+  #look{padding-block:56px}
+  .skills3{grid-template-columns:minmax(0,1fr);gap:20px}
+  .look2__skill{margin-top:32px;padding-top:26px}
+  .lookto2{margin-top:32px;padding-top:26px}
+  .lookto2__cta .btn{width:100%;justify-content:center}
+}
+/* ===== LOOKFOR v3 END ===== */
