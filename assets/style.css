@@ -3907,3 +3907,33 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jobtile__foot{padding:12px 18px 18px}
 }
 /* ===== JOBCTA v1 END ===== */
+
+/* ============================================================
+   ===== GOALLEAD v1 START =====
+   仕事を知る 01：共通ゴールの見せ方を軽くする。
+   ・COMMON PURPOSE の濃紺パネルは WORK-5SEC v1 で削除済み
+   ・図解中央のGOALも濃紺のベタ面をやめ、白地＋濃紺文字＋赤ラベルへ
+   ・見出しの下に短い説明文を置き、そのまま 02 WORK FLOW へつなぐ
+   ============================================================ */
+.goallead{max-width:var(--measure,820px);margin-top:18px}
+.goallead p{font-size:17.5px;line-height:1.95;color:var(--sub)}
+/* .goallead p より詳細度を上げる */
+.goallead p.goallead__g{margin-top:14px;font-size:19px;line-height:1.8;font-weight:600;color:var(--navy)}
+.goallead__g b{color:var(--navy);font-weight:700;
+  background:linear-gradient(transparent 62%,rgba(207,19,27,.16) 62%)}
+
+/* 図解中央のGOAL：濃紺のベタ面をやめる */
+#chain .tmap__goal{background:#fff;border:1px solid var(--line-mid,#c3cade);
+  border-radius:var(--radius);color:var(--navy);padding:28px 26px}
+#chain .tmap__goal .en{color:var(--red)}
+#chain .tmap__goal b{color:var(--navy)}
+/* 01 → 02 の間隔を詰める */
+#chain{padding-bottom:48px}
+#chain .tmap{margin-top:30px}
+#chain .tmap__note{margin-top:22px}
+@media (max-width:620px){
+  .goallead p{font-size:16px}
+  .goallead__g{font-size:17px}
+  #chain{padding-bottom:40px}
+}
+/* ===== GOALLEAD v1 END ===== */
