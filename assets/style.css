@@ -4071,3 +4071,19 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ivrole__t{font-size:17px}
 }
 /* ===== IV-INTRO v1 END ===== */
+
+/* ============================================================
+   ===== JOBMETA v1 START =====
+   HOME職種カード：補足情報を「勤務地・拠点」に統一し、
+   募集ステータスは「募集中」の1種類だけにする。
+   雇用形態・応募条件・通年募集などは募集職種ページ側で確認する。
+   JOBCTA v1 の .jobtile__meta / .jobtile__st--* を置き換える。
+   ============================================================ */
+.jobtile__place{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:12px;
+  font-size:14.5px;line-height:1.7;color:var(--sub)}
+.jobtile__pin{flex:0 0 auto;width:15px;height:15px;color:var(--muted)}
+/* 募集中：PALレッドの細枠＋白背景＋PALレッド文字、職種名より控えめに */
+.jobtile__st{align-self:flex-start;padding:3px 10px;border-radius:3px;background:#fff;
+  border:1px solid rgba(207,19,27,.5);color:var(--red);
+  font-size:12.5px;font-weight:700;line-height:1.6}
+/* ===== JOBMETA v1 END ===== */
