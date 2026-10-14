@@ -3258,3 +3258,33 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .p-iv-clean .iv__intro{font-size:15.5px}
 }
 /* ===== IV-CLEANING v2 END ===== */
+
+/* ============================================================
+   ===== JOBLINK v2 START =====
+   HOME「募集中の職種」：全職種カードを同じ2リンク構成に統一する。
+   ・カード本体 → 募集要項（JOBS の各アンカー）
+   ・下部の小リンク → 仕事内容（PEOPLE の各職種ページ）
+   JOBLINK v1 の .jobtile--split / __main / __sub を後勝ちで上書きする。
+   ============================================================ */
+/* 行をまたいでもカード高さを揃える */
+.jobtiles{grid-auto-rows:1fr}
+.jobtile--split{display:flex;flex-direction:column;padding:0}
+.jobtile__main{display:flex;flex-direction:column;flex:1 1 auto;
+  padding:24px 22px 18px;color:inherit;text-decoration:none}
+/* 雇用・地域情報をカード下端（仕事内容リンクの直上）で揃える */
+.jobtile--split .jobtile__meta{margin-top:auto;padding-top:10px}
+.jobtile__sub{display:flex;align-items:center;gap:7px;
+  padding:13px 22px 16px;border-top:1px solid var(--line);
+  font-size:14.5px;font-weight:600;color:var(--red);text-decoration:none;
+  transition:color .25s}
+.jobtile__sub span{transition:transform .25s var(--ease)}
+.jobtile__sub:hover{color:var(--red-dark,#a90f16)}
+.jobtile__sub:hover span{transform:translateX(4px)}
+/* 仕事内容ページがまだない職種（リンクは張らない） */
+.jobtile__sub--none{color:var(--muted);font-weight:400;cursor:default}
+.jobtile--split:hover{border-color:rgba(207,19,27,.35)}
+@media (max-width:900px){
+  .jobtile__main{padding:20px 18px 16px}
+  .jobtile__sub{padding:12px 18px 14px}
+}
+/* ===== JOBLINK v2 END ===== */
