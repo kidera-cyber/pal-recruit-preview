@@ -3086,3 +3086,57 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jp{padding:20px 18px 22px}
 }
 /* ===== JOBFLOW v2 END ===== */
+
+/* ============================================================
+   ===== IV-CLEANING v1 START =====
+   社員インタビュー詳細ページ：設問の羅列（Q&A）ではなく、
+   見出し＋本文のストーリー型で読ませるための追加パーツ。
+   ・.ivsum   冒頭要約（AIO用／「誰が・どこで・何を」を1ブロックで）
+   ・.ivlede  各章の冒頭に置く結論文
+   ・.ivh     本文中の小見出し（Q接頭辞を出さない）
+   ・.ivsteps CAREER STEP
+   ・.ivbul   箇条書き／.ivmsg 本人メッセージ
+   既存の .iv__q（先頭に赤いQが付く）は他ページでそのまま使用中。
+   ============================================================ */
+.ivsum{margin-top:36px;padding:24px 28px;background:var(--bg-soft);
+  border-left:3px solid var(--red);border-radius:0 var(--radius) var(--radius) 0}
+.ivsum p{font-size:16px;line-height:1.95;color:var(--sub)}
+.ivsum b{color:var(--navy);font-weight:700}
+
+.ivlede{font-size:17px;line-height:1.9;font-weight:700;color:var(--navy)}
+
+.ivh{margin-top:38px;padding-left:16px;border-left:3px solid var(--red);
+  font-size:clamp(17px,1.8vw,20px);line-height:1.6;font-weight:700;color:var(--navy)}
+.ch__body > .ivlede + .ivh,.ch__body > .ivh:first-child{margin-top:26px}
+.ivh + p{margin-top:14px}
+.ch__body > p{margin-top:14px;font-size:16.5px;line-height:1.95;color:var(--sub)}
+.ch--navy .ivh{color:#fff;border-left-color:var(--red-light,#ffb3b8)}
+.ch--navy .ch__body > p{color:#c9cce0}
+
+.ivsteps{margin-top:4px;list-style:none;display:grid;
+  border-top:1px solid var(--line-mid,#c3cade)}
+.ivsteps li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:4px 24px;
+  padding:20px 0;border-bottom:1px solid var(--line)}
+.ivsteps__t{grid-row:span 2;font-family:Lato,sans-serif;font-size:17px;font-weight:700;
+  color:var(--red);line-height:1.4}
+.ivsteps b{font-size:16.5px;line-height:1.6;color:var(--navy)}
+.ivsteps p{font-size:14.5px;line-height:1.9;color:var(--sub)}
+.ivsteps .is-now,.ivsteps li.is-now{background:var(--bg-soft)}
+
+.ivbul{margin-top:16px;display:grid;gap:10px;list-style:none}
+.ivbul li{position:relative;padding-left:20px;font-size:16px;line-height:1.8;color:var(--sub)}
+.ivbul li::before{content:"";position:absolute;left:0;top:.78em;width:9px;height:1px;background:var(--red)}
+
+.ivmsg{margin-top:18px;padding:24px 28px;background:#fff;border:1px solid var(--line);
+  border-left:3px solid var(--red);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:clamp(17px,1.9vw,21px);line-height:1.75;font-weight:700;color:var(--navy)}
+
+@media (max-width:620px){
+  .ivsum{padding:20px 20px}
+  .ivsum p{font-size:15px}
+  .ivsteps li{grid-template-columns:minmax(0,1fr);gap:2px}
+  .ivsteps__t{grid-row:auto}
+  .ivmsg{padding:20px 20px;font-size:17px}
+  .ch__body > p{font-size:15.5px}
+}
+/* ===== IV-CLEANING v1 END ===== */
