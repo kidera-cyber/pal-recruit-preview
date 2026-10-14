@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261014c">
+<link rel="stylesheet" href="../assets/style.css?v=20261014e">
 </head>
 <body>
 
@@ -208,7 +208,7 @@
     <a href="work/fde/">FDE</a>
     <a href="jobs/#job-engineer">プロダクト開発</a>
     <a href="jobs/#job-dts">DTS・運行管理</a>
-    <a href="jobs/#job-sales">営業・事業開発</a>
+    <a href="jobs/#job-sales">エンゲージメント・新規営業</a>
     <a href="jobs/#job-marketing">マーケティング</a>
     <a href="jobs/#job-corporate">コーポレート</a>
   </div>
@@ -377,9 +377,13 @@
       <a class="jobtile" href="jobs/#job-bpo" aria-label="センター長／候補（現場運営）の募集要項を見る"><svg aria-hidden="true"><use href="#ic-manager"></use></svg><span class="jobtile__cat">BPO / 現場運営</span><b>センター長／候補</b><span class="jobtile__meta">担当拠点・正社員・未経験可</span></a>
       <a class="jobtile" href="jobs/#job-engineer" aria-label="プロダクト企画・開発エンジニアの募集要項を見る"><svg aria-hidden="true"><use href="#ic-engineer"></use></svg><span class="jobtile__cat">ENGINEER</span><b>プロダクト企画・開発</b><span class="jobtile__meta">大阪／東京・正社員</span></a>
       <a class="jobtile" href="jobs/#job-dts" aria-label="運行管理・所長（DTS）の募集要項を見る"><svg aria-hidden="true"><use href="#ic-truck"></use></svg><span class="jobtile__cat">DTS / 運行管理</span><b>運行管理・所長</b><span class="jobtile__meta">担当事業所・正社員</span></a>
-      <a class="jobtile" href="jobs/#job-engagement" aria-label="エンゲージメントの募集職種を見る"><svg aria-hidden="true"><use href="#ic-worker"></use></svg><span class="jobtile__cat">ENGAGEMENT</span><b>エンゲージメント</b><span class="jobtile__meta">働く人と現場の関係を、より良くする</span></a>
-      <a class="jobtile" href="jobs/#job-sales" aria-label="顧客エンゲージメント・新規営業の募集職種を見る"><svg aria-hidden="true"><use href="#ic-chart"></use></svg><span class="jobtile__cat">SALES / BizDev</span><b>顧客エンゲージメント・新規営業</b><span class="jobtile__meta">通年募集・正社員</span></a>
-      <a class="jobtile" href="jobs/#job-marketing" aria-label="マーケティングの募集職種を見る"><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="jobtile__cat">MARKETING</span><b>マーケティング</b><span class="jobtile__meta">通年募集・正社員</span></a>
+      <!-- ===== JOBLINK v1：エンゲージメントと新規営業を1職種へ統合。
+           カード本体＝募集要項（#job-sales）、下の小リンク＝仕事内容（/people/sales/）。 ===== -->
+      <div class="jobtile jobtile--split">
+        <a class="jobtile__main" href="jobs/#job-sales" aria-label="エンゲージメント・新規営業の募集要項を見る"><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="jobtile__cat">ENGAGEMENT / SALES</span><b>エンゲージメント・新規営業</b><span class="jobtile__meta">通年募集・正社員</span></a>
+        <a class="jobtile__sub" href="people/sales/">仕事内容を見る<span aria-hidden="true">→</span></a>
+      </div>
+      <a class="jobtile" href="jobs/#job-marketing" aria-label="マーケティングの募集職種を見る"><svg aria-hidden="true"><use href="#ic-chart"></use></svg><span class="jobtile__cat">MARKETING</span><b>マーケティング</b><span class="jobtile__meta">通年募集・正社員</span></a>
       <a class="jobtile" href="jobs/#job-corporate" aria-label="コーポレート部門の募集職種を見る"><svg aria-hidden="true"><use href="#ic-office"></use></svg><span class="jobtile__cat">CORPORATE</span><b>コーポレート部門</b><span class="jobtile__meta">通年募集・正社員</span></a>
     </div>
     <p class="rv" style="margin-top:28px"><a class="btn btn--ghost" href="jobs/">募集職種をすべて見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>

@@ -3159,3 +3159,36 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .tlend{width:48px;height:48px}
 }
 /* ===== DAY-CLEAN v1 END ===== */
+
+/* ============================================================
+   ===== JOBLINK v1 START =====
+   エンゲージメント・新規営業の導線を2本に分ける。
+   ・カード本体／写真・職種名 → 仕事内容（/renewal/people/sales/）
+   ・CTA・ボタン              → 募集要項（/renewal/jobs/#job-sales）
+   HOMEの職種タイルは1枚だけ、本体リンク＋下部の小リンクの2リンク構成にする。
+   ============================================================ */
+.jobtile--split{display:flex;flex-direction:column;padding:0}
+.jobtile__main{display:block;padding:24px 22px 18px;color:inherit;text-decoration:none}
+.jobtile__sub{display:flex;align-items:center;gap:7px;margin-top:auto;
+  padding:13px 22px 16px;border-top:1px solid var(--line);
+  font-size:14px;font-weight:700;color:var(--red);text-decoration:none;
+  transition:gap .25s var(--ease)}
+.jobtile__sub:hover{gap:12px}
+/* 仕事の関係図：起点が1職種になった層 */
+.jrow2--1{grid-template-columns:minmax(0,1fr)}
+@media (max-width:900px){
+  .jobtile__main{padding:20px 18px 16px}
+  .jobtile__sub{padding:12px 18px 14px}
+}
+/* ===== JOBLINK v1 END ===== */
+
+/* ===== JOBLINK v1 追補：募集要項ページの写真から仕事内容へ ===== */
+.role__phlink{position:relative;display:block;overflow:hidden;border-radius:var(--radius)}
+.role__phlink img{display:block;transition:transform .5s var(--ease)}
+.role__phcta{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:8px;
+  padding:34px 20px 16px;
+  background:linear-gradient(0deg,rgba(27,29,49,.82),rgba(27,29,49,0));
+  color:#fff;font-size:14px;font-weight:700}
+.role__phcta i{font-style:normal;color:var(--red-light,#ffb3b8);transition:transform .25s var(--ease)}
+.role__phlink:hover img{transform:scale(1.03)}
+.role__phlink:hover .role__phcta i{transform:translateX(5px)}
