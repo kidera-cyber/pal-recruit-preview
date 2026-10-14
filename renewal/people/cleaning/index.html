@@ -13,9 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261014e">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261014f">
 </head>
-<body>
+<body class="p-iv-clean">
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
@@ -78,17 +78,21 @@
 
 <!-- ===== IV-CLEANING v1：アンケート回答のみを根拠に全面差し替え。
      SEO/AIO向けに H1・冒頭要約・見出しを整理し、本人の言い回しは残す。 ===== -->
-<section class="iv__hero">
+<!-- ===== IV-CLEANING v2：内容はそのままに、記事としての導入・章立て・写真の
+     リズム・余白を再設計。ファーストビューを強化し、仕事の進め方を4枚の
+     小カードに、現場写真を章の区切りの全幅バンドにした。 ===== -->
+<section class="iv__hero ivhero2">
   <div class="ivwrap">
     <div class="iv__head">
       <figure class="iv__photo">
         <img src="../../../assets/person-cleaning.jpg?v=20261008b" alt="食品プロセスセンターの清掃現場で状態を確認する様子（イメージ写真）" width="1600" height="1200" fetchpriority="high">
+        <figcaption>担当する現場を回り、清掃の状態を確認する。<em>※ イメージ写真</em></figcaption>
       </figure>
       <div class="iv__lead">
-        <p class="slabel">CLEANING / INTERVIEW</p>
+        <p class="slabel">INTERVIEW / CLEANING</p>
+        <p class="ivrole"><span class="en">Cleaning</span>クレンリネス（衛生清掃）</p>
         <h1 class="iv__title">食品プロセスセンターの清掃を、計画から支える。</h1>
         <p class="iv__intro">汚れた場所をきれいにするだけではありません。状態を見て、頻度を考え、現場と連携しながら清掃を続けていく仕事です。</p>
-        <p class="iv__proflabel">掲載前に確認中の項目があります<small>※ 正式な所属・役職名、顔写真の掲載可否、顧客企業名・勤務例の掲載可否は確認中です。</small></p>
         <dl class="iv__prof">
           <dt>掲載名</dt><dd>S.K</dd>
           <dt>所属・役職</dt><dd>BPO／クレンリネス課　MGR</dd>
@@ -96,6 +100,7 @@
           <dt>前職</dt><dd>ハウスメーカー 支店長／ファーストフードチェーン 店長</dd>
           <dt>担当業務</dt><dd>食品プロセスセンターの清掃業務／複数センターの清掃管理／クレンリネス課の運営／清掃案件の営業</dd>
         </dl>
+        <p class="iv__proflabel">掲載前に確認中の項目があります<small>※ 正式な所属・役職名、顔写真の掲載可否、顧客企業名・勤務例の掲載可否は確認中です。</small></p>
       </div>
     </div>
 
@@ -134,34 +139,37 @@
 <section class="ch ch--soft">
   <div class="ivwrap">
       <div class="ch__h rv"><span class="ch__no en">02</span><p class="ch__en en">WORK</p><h2 class="ch__ja">いまの仕事</h2></div>
-    <div class="ch__2col">
-      <div class="ch__body rv">
+    <div class="ch__body rv">
         <h3 class="ivh">複数のセンターの清掃を、管理する。</h3>
         <p>現在は食品プロセスセンターでの清掃業務を担当し、複数のセンターの清掃と衛生管理の維持を担っています。クレンリネス課の運営MGRとして、清掃案件の営業にも関わります。</p>
         <p>入社当初は畜産の機械洗浄が中心でしたが、いまはセンター全体をまるごと清掃する範囲まで広がりました。担当する現場を広げていくための横展開にも取り組んでいます。</p>
         <h3 class="ivh">「お願いしたい」と言われることが、やりがいになる。</h3>
         <p>担当しているセンターからお礼や感謝の言葉をもらったとき。新しい依頼を受けたとき。自分の仕事が評価されたと感じたとき。そういう瞬間にやりがいを感じるといいます。</p>
       </div>
-      <figure class="ch__fig ch__fig--wide rv"><img src="../../../assets/cleaning-site.jpg" alt="食品プロセスセンターで設備の清掃状況を確認する様子" width="1600" height="1200" loading="lazy"><figcaption>機械の内部、設備の裏側、高所。手が届きにくい場所ほど、状態を見て計画に入れていく。<em>※ イメージ写真</em></figcaption></figure>
-    </div>
     <div class="rv">
-      <p class="ch__flowh">清掃の実施から、計画づくり、現場との連携、課の運営と営業まで。</p>
-      <ol class="ivmission">
-          <li>現場の清掃業務</li>
-          <li>汚れ方と頻度の確認</li>
-          <li>年間清掃計画への落とし込み</li>
-          <li>現場との連携</li>
-          <li>複数センターの清掃管理</li>
-          <li>クレンリネス課の運営</li>
-          <li>清掃案件の営業</li>
-          </ol>
+      <p class="ch__flowh">清掃の進め方は、この4つの繰り返しです。</p>
+      <ul class="ivwork">
+        <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg><b>清掃する</b><p>食品プロセスセンターなどの現場で、清掃を実施する。</p></li>
+        <li><svg aria-hidden="true"><use href="#ic-chart"></use></svg><b>状態と頻度を見る</b><p>どこがどの程度汚れるのか、どのくらいの頻度が必要かを考える。</p></li>
+        <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg><b>年間計画に落とす</b><p>考えた内容を、年間の清掃計画へ落とし込む。</p></li>
+        <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><b>現場と連携する</b><p>現場と状態を共有し、汚れた状態を放置しない。</p></li>
+      </ul>
+      <p class="note">※ このほかに、複数センターの清掃管理、クレンリネス課の運営、清掃案件の営業も担当しています。</p>
     </div>
   </div>
 </section>
 
-<section class="ch ch--quote">
+<!-- 章の区切り：現場写真のバンド -->
+<figure class="ivband rv">
+  <img src="../../../assets/cleaning-site.jpg" alt="食品プロセスセンターで設備の清掃状況を確認する様子" width="1600" height="1200" loading="lazy">
+  <figcaption>機械の内部、設備の裏側、高所。手が届きにくい場所ほど、状態を見て計画に入れていく。<em>※ イメージ写真</em></figcaption>
+</figure>
+
+<section class="ch ch--quote" id="value">
   <div class="ivwrap">
-    <blockquote class="pullquote rv">こだわりをもってピカピカにする。相手を感動させるのが基準です。</blockquote>
+    <p class="ch__en en rv" style="margin-bottom:16px">VALUE</p>
+    <blockquote class="pullquote pullquote--lg rv">こだわりをもってピカピカにする。<br>相手を感動させるのが基準です。</blockquote>
+    <p class="ivquote__by rv">— S.K / クレンリネス課 MGR</p>
   </div>
 </section>
 
@@ -259,8 +267,9 @@
     <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。<br>新卒・キャリアともに通年で募集しています。</p>
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="../../jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--ghost" href="../../culture/#day">クレンリネスの一日を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
-    <p class="entry__sec"><a href="../">ほかの社員を見る</a></p>
+    <p class="entry__sec"><a href="../">ほかの社員インタビューを見る</a></p>
   </div>
 </section>
 </main>

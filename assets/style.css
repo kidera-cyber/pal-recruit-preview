@@ -3192,3 +3192,69 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .role__phcta i{font-style:normal;color:var(--red-light,#ffb3b8);transition:transform .25s var(--ease)}
 .role__phlink:hover img{transform:scale(1.03)}
 .role__phlink:hover .role__phcta i{transform:translateX(5px)}
+
+/* ============================================================
+   ===== IV-CLEANING v2 START =====
+   クレンリネス社員インタビューを「記事」として読ませるための再設計。
+   文章・回答内容は変更せず、導入・章立て・写真のリズム・余白だけを整える。
+   body.p-iv-clean でこのページにだけ適用し、他6ページには影響させない。
+   ============================================================ */
+/* ---- ファーストビュー ---- */
+.p-iv-clean .iv__hero{padding-top:34px}
+/* 見出しが不自然に3行へ割れないよう、テキスト側を少し広く取る */
+.p-iv-clean .iv__head{grid-template-columns:minmax(0,.86fr) minmax(0,1fr);gap:48px;align-items:start}
+.p-iv-clean .iv__photo figcaption{margin-top:12px;font-size:13px;line-height:1.8;color:var(--sub)}
+.p-iv-clean .iv__photo figcaption em{font-style:normal;margin-left:8px;color:var(--muted)}
+.ivrole{display:flex;align-items:baseline;gap:12px;margin-top:16px;
+  padding-bottom:16px;border-bottom:1px solid var(--line);
+  font-size:15px;font-weight:700;color:var(--navy)}
+.ivrole .en{font-family:Lato,sans-serif;font-size:12px;letter-spacing:.16em;
+  font-weight:700;color:var(--red)}
+.p-iv-clean .iv__title{margin-top:20px;font-size:clamp(28px,3.6vw,44px);line-height:1.4;letter-spacing:.01em}
+.p-iv-clean .iv__intro{margin-top:22px;font-size:17px;line-height:1.95;color:var(--sub)}
+.p-iv-clean .iv__prof{margin-top:28px}
+.p-iv-clean .iv__proflabel{margin-top:22px}
+
+/* ---- 章の余白と見出し ---- */
+.p-iv-clean .ch{padding-block:92px}
+.p-iv-clean .ch--step{padding-block:72px}
+.p-iv-clean .ch__h{margin-bottom:34px}
+.p-iv-clean .ivh{margin-top:48px}
+.p-iv-clean .ch__body > p{margin-top:16px}
+
+/* ---- 章を区切る全幅の写真バンド ---- */
+.ivband{margin:0;position:relative}
+.ivband img{width:100%;height:clamp(240px,34vw,420px);object-fit:cover;display:block}
+.ivband figcaption{max-width:var(--wrap,1280px);margin:14px auto 0;padding:0 24px;
+  font-size:13.5px;line-height:1.85;color:var(--sub)}
+.ivband figcaption em{font-style:normal;margin-left:8px;color:var(--muted)}
+
+/* ---- 仕事の進め方（4枚の小カード） ---- */
+.ivwork{margin-top:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;list-style:none}
+.ivwork li{display:flex;flex-direction:column;padding:26px 24px 28px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.ivwork svg{width:30px;height:30px;color:var(--navy)}
+.ivwork b{margin-top:16px;font-size:16.5px;line-height:1.5;color:var(--navy)}
+.ivwork p{margin-top:9px;font-size:14.5px;line-height:1.8;color:var(--sub)}
+
+/* ---- VALUE の引用 ---- */
+.pullquote--lg{font-size:clamp(22px,3vw,34px);line-height:1.65}
+.ivquote__by{margin-top:22px;font-size:13.5px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+
+@media (max-width:1000px){
+  .ivwork{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .p-iv-clean .iv__head{grid-template-columns:minmax(0,1fr)}
+  .p-iv-clean .ch{padding-block:66px}
+  .p-iv-clean .iv__head{gap:30px}
+  .p-iv-clean .ivh{margin-top:38px}
+}
+@media (max-width:620px){
+  .ivwork{grid-template-columns:minmax(0,1fr);gap:12px}
+  .ivwork li{padding:22px 20px 24px}
+  .ivband figcaption{padding:0 20px}
+  .p-iv-clean .iv__intro{font-size:15.5px}
+}
+/* ===== IV-CLEANING v2 END ===== */
