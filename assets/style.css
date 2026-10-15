@@ -4644,3 +4644,35 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
     grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 /* ===== TYPO-WRAP v3 END ===== */
+
+/* ============================================================
+   ===== CP-FDE v2 START =====
+   FDEキャリアパスに「分岐」ブロック（.cfork）を追加した。
+   DXプロダクト開発本部は STEP ではなくキャリアの広がりの一例なので、
+   STEP3 と STEP4 の間に、ステップとは見た目を変えたカードとして置く。
+   ・ステップ（背景 --bg-soft の塗り）に対して、分岐は白地＋破線枠にして
+     「昇進の段ではない」ことを見た目で区別する。
+   ・複雑な組織図にはせず、2カラムの短い対比に留める。
+   ・配色は既存トークンのみ（--red / --line-mid / --navy / --sub）。
+   .cstory__steps b / .cstory__steps p は (0,1,1) で .cfork__col b より
+   強いため、親クラスを足した (0,2,1) / (0,2,0) で後勝ち上書きする。
+   ============================================================ */
+.cstory__steps li.cfork{background:#fff;border:1px dashed var(--line-mid,#c3cade);
+  padding:16px 22px 18px}
+.cstory__steps .cfork__h{display:flex;align-items:baseline;gap:10px;margin-top:0;
+  font-size:14px;font-weight:700;line-height:1.6;color:var(--navy)}
+.cfork__en{flex:none;font-size:11.5px;font-weight:700;letter-spacing:.12em;color:var(--red)}
+.cfork__cols{margin-top:13px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.cfork__col{padding-left:14px;border-left:2px solid var(--line-mid,#c3cade)}
+.cfork__col--deep{border-left-color:var(--red)}
+.cstory__steps .cfork__col b{margin-top:0;font-size:15.5px;line-height:1.6;color:var(--navy)}
+.cstory__steps .cfork__col p{margin-top:5px;font-size:13.5px;line-height:1.8;color:var(--sub)}
+@media (max-width:620px){
+  .cstory__steps li.cfork{padding:14px 18px 16px}
+  .cfork__cols{grid-template-columns:minmax(0,1fr);gap:11px}
+  /* 狭幅では BRANCH ラベルを見出しの横に置くと3行に折れて読みにくいため、
+     ラベルを独立した1行にする */
+  .cstory__steps .cfork__h{display:block}
+  .cfork__en{display:block;margin-bottom:5px}
+}
+/* ===== CP-FDE v2 END ===== */
