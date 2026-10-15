@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261015p">
+<link rel="stylesheet" href="../../assets/style.css?v=20261015q">
 </head>
 <body class="p-work">
 
@@ -180,7 +180,8 @@
           <span>各部署が仕事に集中できる環境を整える</span>
         </li>
       </ul>
-      <p class="tmap__note">7つの職種が、同じGOALに向かっています。</p>
+      <!-- ===== WORKNOTE v1：.tmap__note「7つの職種が、同じGOALに向かっています。」削除済み。
+           図解が GOAL を中心に7職種を配置しており、再説明が不要なため。 ===== -->
     </div>
   </div>
 </section>
@@ -193,7 +194,7 @@
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Work flow</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">仕事は、こう進む。</h2>
-      <p class="slead">現場で使われ、改善が続く状態をつくるために、異なる専門性を持つメンバーが協力します。</p>
+      <p class="slead">現場で使われ、改善が続く状態をつくるために、設計・実装・運用・改善を行き来しながら、異なる専門性を持つメンバーが協力します。進め方は案件や現場によって変わります。</p>
     </div>
     <!-- ===== CSTEP-FLOW v1：縦積みの説明から、横並びのフロー図へ。
      文章は短く整理し、関わる役割はカード下のピル型ラベルにまとめた。
@@ -228,8 +229,11 @@
       <p class="flowadd__h"><span class="en">FDE</span>現場の課題を技術要件へ翻訳し、実装・運用へつなぐ。</p>
       <p class="flowadd__t">STEP 02〜04では、FDEが現場と技術の間に立ちます。<a class="textlink textlink--sm" href="../people/fde/">FDEとして働く人を見る</a></p>
     </div>
-    <p class="note rv">※ PALの仕事は、設計・実装・運用・改善を行き来しながら進みます。進め方の詳細は<a class="textlink textlink--sm" href="../about/#process">「PALを知る」</a>で紹介しています。</p>
-    <p class="note rv">※ 進め方は案件や現場によって変わります。誰か一人で完結する仕事ではない、という点だけは共通しています。</p>
+    <!-- ===== WORKNOTE v1：.note 2本を削除済み。
+         「設計・実装・運用・改善を行き来する」「進め方は案件や現場によって変わる」は
+         上の .slead へ統合。「誰か一人で完結する仕事ではない」は .slead の
+         「異なる専門性を持つメンバーが協力します」で表現済み。
+         「PALを知る」への導線は注釈では案内せず、グローバルナビ／フッターに集約した。 ===== -->
   </div>
 </section>
 
@@ -238,9 +242,12 @@
     <div class="shead rv">
       <p class="slabel">Who does what</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">誰が、どこで関わるのか。</h2>
-      <p class="slead">同じゴールに向かいながら、職種によって関わる場面が違います。役割の違いを3つのまとまりで整理しました。</p>
+      <p class="slead">同じゴールに向かいながら、職種によって関わる場面が違います。役割の違いを3つのまとまりで整理したもので、案件や現場に応じて関わる職種や役割は変わります。</p>
     </div>
-    <p class="note rv" style="margin:-8px 0 26px">※ 正式な組織図ではありません。PALの代表的な業務連携を紹介する図です。実際の担当範囲はプロジェクトによって変わります。</p>
+    <!-- ===== WORKNOTE v1：.note「※ 正式な組織図ではありません…」削除済み。
+         「代表的な業務連携を紹介する図」＝ .slead の「3つのまとまりで整理したもの」、
+         「担当範囲はプロジェクトによって変わる」＝ .slead の
+         「案件や現場に応じて関わる職種や役割は変わります」へ統合。 ===== -->
     <!-- ===== JOBFLOW v2：箱と矢印だけのフロー図をやめ、「人が見える実行体制の関係図」へ。
          上に共通目的を置き、3つの層を「役割の意味が分かる見出し」に変更。
          各カードは 人物アイコン＋英字ラベル＋職種名＋一言の役割 の4要素に統一した。 ===== -->
@@ -252,9 +259,11 @@
         <ul class="jrow2 jrow2--3">
           <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="jp__en en">MARKETING / CONTENT</span><b>マーケティング・コンテンツ制作</b><p>市場や顧客の変化を捉え、コンテンツで新しい接点をつくる</p></li>
           <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="jp__en en">ENGAGEMENT / SALES</span><b>エンゲージメント・新規営業</b><p>顧客との対話を通じて、課題や新しい事業機会を見つける</p></li>
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="jp__en en">BIZDEV</span><b>BizDev</b><p>顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にする</p></li>
+          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="jp__en en">BIZDEV</span><b>BizDev</b><p>顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にする。募集職種は「エンゲージメント・新規営業」に含まれます。</p></li>
         </ul>
-        <p class="jlayer__note">※ 代表的な業務の流れです。エンゲージメント・新規営業とBizDevは、募集職種としては<b>「エンゲージメント・新規営業」</b>にまとまっています。</p>
+        <!-- ===== WORKNOTE v1：.jlayer__note 削除済み。
+             「代表的な業務の流れ」は図解で自明。募集職種のまとまり（求職者の判断に必要な情報）は
+             BizDev カードの本文末へ吸収した。 ===== -->
       </div>
 
       <p class="jarrow" aria-hidden="true"><span></span></p>
@@ -268,7 +277,7 @@
           <li class="jlink" aria-hidden="true"><span>⇄</span></li>
           <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-operate"></use></svg><span class="jp__en en">PRODUCT</span><b>プロダクト企画・開発</b><p>現場で使える仕組みにする</p></li>
         </ul>
-        <p class="jlayer__bind">この3つは一方通行の関係ではありません。情報を共有しながら、実行・検証・改善を繰り返します。</p>
+        <p class="jlayer__bind">この3つは情報を共有しながら、実行・検証・改善を繰り返します。</p>
       </div>
 
       <p class="jarrow jarrow--both" aria-hidden="true"><span></span><em>現場と専門領域が、行き来する</em></p>
@@ -284,11 +293,10 @@
 
       <!-- 専門領域からのフィードバックが、再び課題・機会の発見へ戻る循環 -->
       <p class="jcycle rv"><span class="jcycle__en en">FEEDBACK</span><b>現場と専門領域で分かったことが、次の改善と新しい提案に戻っていく。</b></p>
-      <p class="jlayer__note jmap2__note">※ レイヤーは<b>役割の違い</b>を整理したものです。上下の序列や、どちらかが補助であることを示すものではありません。</p>
+      <!-- ===== WORKNOTE v1：.jmap2__note 削除済み（制作上の誤解防止のみを目的とした注記）。
+           「役割の違いを整理したもの」は #fields の .slead に記載済み。 ===== -->
 
     </div>
-
-    
   </div>
 </section>
 

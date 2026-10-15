@@ -4547,3 +4547,24 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #look.sec--tight{padding-top:62px}
 }
 /* ===== PEOPLE-FLOW v3 END ===== */
+
+/* ============================================================
+   ===== WORKNOTE v1 START =====
+   WORKページの補足注釈を全廃した（.note×3 / .tmap__note / .jlayer__note×2）。
+   意味は各セクションの .slead と BizDev カード本文へ統合済み。
+   削除で詰まりすぎる2箇所だけ余白を補う：
+   ・#chain：図解の下にあった .tmap__note（約50px分）が消え、図の足元が
+     セクション境界に近づくため padding-bottom を 48px → 66px に。
+   ・#change：.flowadd の下にあった .note×2 が消えたため、
+     グレー帯の下端に少しだけ余白を足す。
+   未使用になった既存ルール（残置）：
+     .note（他ページで使用中のため残す）/ .tmap__note / .jmap2__note /
+     #chain .tmap__note
+   ============================================================ */
+#chain.sec{padding-bottom:66px}
+#change.sec{padding-bottom:70px}
+@media (max-width:720px){
+  #chain.sec{padding-bottom:52px}
+  #change.sec{padding-bottom:56px}
+}
+/* ===== WORKNOTE v1 END ===== */
