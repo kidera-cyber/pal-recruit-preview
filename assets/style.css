@@ -4221,3 +4221,24 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ivhero__ttl{font-size:28px}
 }
 /* ===== IV-HERO v2 END ===== */
+
+/* ============================================================
+   ===== IV-FDE v1 START =====
+   FDEインタビューをアンケート実回答へ差し替えるにあたり、
+   既存デザインに無い2つの部品だけを追加する。
+   .defbox  … 職種の一般的な定義を、本人の発言と分けて示す補足枠（AIO対応）
+   .msg3__t … MESSAGE（濃紺面）の本文。.chap__body は濃紺上で読めないため。
+   既存の .chap / .bigq / .msg3 / .day3 などのデザインは変更していない。
+   ============================================================ */
+.defbox{max-width:var(--measure,820px);margin-top:44px;padding:26px 30px;background:#fff;
+  border:1px solid var(--line);border-left:3px solid var(--red);border-radius:var(--radius)}
+.defbox h3{font-size:18.5px;line-height:1.6;color:var(--iv-heading,var(--navy))}
+.defbox p{margin-top:12px;font-size:16.5px;line-height:1.95;color:var(--iv-text,var(--text))}
+.defbox small{display:block;margin-top:14px;font-size:13px;line-height:1.8;color:var(--sub)}
+.msg3__t{margin-top:22px;max-width:40em;font-size:17px;line-height:2;color:var(--iv-on-dark,#f2f4f8)}
+.msg3__t + .msg3__t{margin-top:15px}
+@media (max-width:620px){
+  .defbox{margin-top:34px;padding:22px 20px}
+  .msg3__t{font-size:16px}
+}
+/* ===== IV-FDE v1 END ===== */
