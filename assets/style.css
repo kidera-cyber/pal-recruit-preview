@@ -4813,3 +4813,52 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .relcard:hover{transform:none}
 }
 /* ===== RELCARD v1 END ===== */
+
+/* ============================================================
+   ===== RELCARD v2 START =====
+   「他の社員インタビュー」カードを、職種ラベル＋キャッチコピー＋CTA だけで
+   成立する軽い導線へ。RELCARD v1 を後勝ちで上書きする。
+   ・削除：ラベル直下の職種名（.relcard__ttl）と説明文（.relcard__t）。
+     「FDE → FDE」のような職種名の二重表示を全カードで解消。
+   ・ラベルは職種名そのもの（BPO / 現場運営、ENGAGEMENT / SALES など）。
+     日本語を含むため Lato（.en）ではなく本文フォントで字間 .08em。
+   ・キャッチコピーは h3。18px／line-height 1.45／太字／濃紺。
+     カード内で職種名を繰り返さない。
+   ・アバターは 120×130px。枠を画像と同じ 12/13 にして全カード同一スケール。
+   ・左端に2pxのPALレッドライン。影は使わない。
+   ・1024px以下2列、767px以下1列＋縦積み（画像→ラベル→コピー→CTA）。
+   未使用化（残置）：.relcard__ttl / .relcard__t
+   ============================================================ */
+.relcards{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.relcard{position:relative;overflow:hidden;
+  grid-template-columns:120px minmax(0,1fr);gap:0 16px;align-items:start;
+  padding:18px 18px 18px 20px;border-radius:10px;box-shadow:none}
+.relcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--red)}
+.relcard:hover{border-color:rgba(207,19,27,.45);transform:translateY(-2px);box-shadow:none}
+.relcard__ph{width:120px;aspect-ratio:12/13;border-radius:8px;overflow:hidden}
+.relcard__ph img{transition:transform .25s var(--ease)}
+.relcard:hover .relcard__ph img{transform:scale(1.02)}
+.relcard__cat{display:block;font-family:inherit;font-size:11.5px;font-weight:700;
+  letter-spacing:.08em;line-height:1.5;color:var(--red)}
+.relcard__copy{margin-top:9px;font-size:18px;line-height:1.45;font-weight:700;
+  color:var(--navy);text-wrap:pretty}
+.relcard__go{margin-top:13px;font-size:14px;font-weight:700;color:var(--navy)}
+.relcard__go i{color:var(--red)}
+
+@media (max-width:1024px){
+  .relcards{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .relcard{grid-template-columns:108px minmax(0,1fr)}
+  .relcard__ph{width:108px}
+  .relcard__copy{font-size:17px}
+}
+@media (max-width:767px){
+  /* スマホは縦積み：画像 → ラベル → コピー → CTA */
+  .relcards{grid-template-columns:minmax(0,1fr);gap:14px}
+  .relcard{grid-template-columns:minmax(0,1fr);gap:14px 0;padding:0 0 18px}
+  .relcard::before{right:0;bottom:auto;width:auto;height:2px}
+  .relcard__ph{width:100%;aspect-ratio:auto;height:140px;border-radius:0}
+  .relcard__b{padding-inline:18px}
+  .relcard__copy{font-size:18px}
+}
+/* ===== RELCARD v2 END ===== */
