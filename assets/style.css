@@ -4718,3 +4718,16 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .dtsfork__col{padding:14px 16px 16px}
 }
 /* ===== CP-DTS v1 END ===== */
+
+/* ============================================================
+   ===== IV-NOTE v1 START =====
+   社員インタビューから、制作・編集意図を説明する注釈（.note）を外した。
+   応募条件・勤務時間の誤認防止だけは残す必要があるため、「※＋小さい文字」を
+   やめて、セクションのリード文として本文サイズで見せる。
+   .chap__body を持たないセクション（WHO FITS のリスト型など）用の
+   汎用リード。.day3__lead と同じ見え方に揃える。
+   ============================================================ */
+.chap__lead{max-width:var(--measure,820px);margin-top:18px;font-size:17px;line-height:1.95;
+  color:var(--iv-text,var(--sub))}
+.chap__lead--end{margin-top:26px}
+/* ===== IV-NOTE v1 END ===== */
