@@ -1,6 +1,6 @@
 # 社員インタビュー →「PALの1日」連動ルール
 
-作成日：2026-10-14
+作成日：2026-10-14（最終更新：2026-10-15）
 
 ## 原則
 
@@ -20,7 +20,7 @@
 | BPO / 現場運営 | `#panel-bpo` | `renewal/people/bpo/` | 未回答（仮） |
 | Cleaning / クレンリネス | `#panel-cleaning` | `renewal/people/cleaning/` | **反映済み（2026-10-14）** |
 | DTS / 運送 | `#panel-dts` | `renewal/people/dts/` | 未回答（仮） |
-| FDE | `#panel-fde` | `renewal/people/fde/` | 未回答（仮） |
+| FDE | `#panel-fde` | `renewal/people/fde/` | **反映済み（2026-10-15）** |
 | Engineer / システム | `#panel-system` | `renewal/people/system/` | 未回答（仮） |
 | Sales / 営業 | `#panel-sales` | `renewal/people/sales/` | 未回答（仮） |
 | Corporate | `#panel-corporate` | `renewal/people/corporate/` | 未回答（仮） |
