@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261015day">
+<link rel="stylesheet" href="../../assets/style.css?v=20261015look5">
 </head>
 <body class="p-people">
 
@@ -83,27 +83,39 @@
      写真＋6つの姿勢を一体の記事ブロックに。番号を大きな赤の数字としてリズムに使い、
      横罫線（表組みに見える要因）を廃止。3つの力はライトグレーの帯で続け、
      最後は白地で結論＋CTA1つに絞る。 ===== -->
+<!-- ===== LOOKFOR v5：「写真＋右に6項目」の2カラムをやめ、中央に人物、
+     その左右に6つの姿勢を置く編集型レイアウトへ。番号は小さなラベルに弱め、
+     カードをやめて細い罫線と余白で構成。締めのメッセージを下部に大きく置く。
+     6項目の文言は変更していない。LOOKFOR v4 の .look3 系は #look では未使用
+     （.look3__h は #look-skill で引き続き使用）。 ===== -->
 <section class="sec sec--tight" id="look">
   <div class="wrap">
-    <div class="shead look3__head rv">
+    <div class="shead look5__head rv">
       <p class="slabel">Who we look for</p>
       <h2 class="stitle">PALが、求める人。</h2>
-      <p class="slead">経験や専門性だけではなく、仕事への向き合い方を大切にしています。</p>
+      <p class="slead">仕事への向き合い方を、私たちは見ています。</p>
     </div>
 
-    <div class="look3">
-      <figure class="look3__ph rv">
-        <img src="../../assets/person-consultant.jpg?v=20261008e" alt="顧客や仲間と話しながら、課題を整理していくPALのメンバー" width="1600" height="1200" loading="lazy">
-        <figcaption><span class="en">PAL MEMBERS</span>職種を越えて、同じ課題に向き合う。</figcaption>
-      </figure>
-      <ol class="look3__v rv">
-            <li><span class="look3__no en">01</span><h3>挑戦する</h3><p>失敗を恐れず、まず動いてみる。</p></li>
-            <li><span class="look3__no en">02</span><h3>自ら動く</h3><p>待つのではなく、自分から課題を見つける。</p></li>
-            <li><span class="look3__no en">03</span><h3>未来を見る</h3><p>今だけでなく、その先まで考える。</p></li>
-            <li><span class="look3__no en">04</span><h3>変化を楽しむ</h3><p>変化を、新しい可能性として捉える。</p></li>
-            <li><span class="look3__no en">05</span><h3>学び続ける</h3><p>知らないことに好奇心を持つ。</p></li>
-            <li><span class="look3__no en">06</span><h3>相手を尊重する</h3><p>立場を越えて、相手の考えに耳を傾ける。</p></li>
+    <div class="look5">
+      <ol class="look5__v look5__v--l rv">
+        <li><span class="look5__no en">01</span><h3>挑戦する</h3><p>失敗を恐れず、まず動いてみる。</p></li>
+        <li><span class="look5__no en">02</span><h3>自ら動く</h3><p>待つのではなく、自分から課題を見つける。</p></li>
+        <li><span class="look5__no en">03</span><h3>未来を見る</h3><p>今だけでなく、その先まで考える。</p></li>
       </ol>
+      <figure class="look5__ph rv">
+        <img src="../../assets/person-consultant.jpg?v=20261008e" alt="職種を越えて、同じ課題に向き合うPALのメンバー" width="1600" height="1200" loading="lazy">
+        <span class="look5__cap en">PAL MEMBERS</span>
+      </figure>
+      <ol class="look5__v look5__v--r rv">
+        <li><span class="look5__no en">04</span><h3>変化を楽しむ</h3><p>変化を、新しい可能性として捉える。</p></li>
+        <li><span class="look5__no en">05</span><h3>学び続ける</h3><p>知らないことに好奇心を持つ。</p></li>
+        <li><span class="look5__no en">06</span><h3>相手を尊重する</h3><p>立場を越えて、相手の考えに耳を傾ける。</p></li>
+      </ol>
+    </div>
+
+    <div class="look5__end rv">
+      <p class="look5__endlabel">PALが採用で大切にしていること</p>
+      <p class="look5__endt">経験や専門性だけではなく、<br>仕事への向き合い方を大切にしています。</p>
     </div>
   </div>
 </section>
