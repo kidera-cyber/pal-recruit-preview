@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# ローカルプレビュー設定（環境依存のため共有しない）
+.claude/

@@ -4317,3 +4317,147 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .look5__end{margin-top:52px}
 }
 /* ===== LOOKFOR v5 END ===== */
+
+/* ============================================================
+   ===== PCARD v2 START =====
+   「人を知る。」社員カード一覧のデザイン性・視認性向上。
+   PCARD v1 の .pcard / .pcard__cat / .pcard__copy / .pcard__b /
+   .pcard__dep / .pcard__meta / .pcard__ar を後勝ちで上書き。
+   変更点：
+   - #people セクション背景を #F7F8FA 化（境界を強調）
+   - カード：薄ネイビー枠＋ごく淡いシャドウ＋上部3pxのPALレッドライン
+   - 角丸8px（控えめ）
+   - 職種ラベルを薄白背景＋赤枠＋赤文字のチップに
+   - 画像上コピーを19px semibold 行間1.4に強化、グラデ統一
+   - 下部情報エリア：職種名（濃紺太字）・サブ（中間グレー）・矢印（赤）
+   - 矢印ボタン：hover時は淡赤背景＋赤枠、右へ3pxシフト
+   - 画像背景にカード別のごく薄いニュアンス（PAL配色内）
+   - 人物画像サイズ・位置は維持（.pcard--av の object-fit:contain は不変更）
+   ============================================================ */
+
+/* セクション背景：カードと白の境界を強調 */
+#people.sec,
+#people.sec--tight{background:#F7F8FA}
+
+/* グリッドのギャップを少し広げてカード区切り感を強化 */
+.pgrid{gap:34px 28px}
+
+/* カード本体 */
+.pcard{
+  position:relative;
+  background:#fff;
+  border:1px solid #cfd4e4;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 2px 6px rgba(38,41,70,.05);
+  transition:border-color .3s,transform .3s var(--ease),box-shadow .3s;
+}
+.pcard::before{
+  content:"";
+  position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,#cf131b 0%,#cf131b 40%,rgba(207,19,27,.55) 100%);
+  z-index:3;pointer-events:none;
+}
+.pcard:hover{
+  border-color:#cf131b;
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(38,41,70,.10);
+}
+.pcard:hover .pcard__ph img{transform:scale(1.03)}
+
+/* 職種ラベル（チップ化） */
+.pcard__cat{
+  position:absolute;left:12px;top:12px;z-index:2;
+  display:inline-flex;align-items:center;
+  padding:4px 9px;border-radius:4px;
+  font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.12em;font-weight:700;
+  color:#cf131b;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(207,19,27,.55);
+  text-shadow:none;
+  box-shadow:0 1px 3px rgba(38,41,70,.06);
+}
+/* .pcard--av で変わっていた色指定を打ち消し */
+.pcard--av .pcard__cat{color:#cf131b;background:rgba(255,255,255,.94)}
+
+/* 画像上コピー */
+.pcard__copy{
+  padding:52px 18px 18px;
+  background:linear-gradient(rgba(27,29,49,0) 0%,rgba(27,29,49,.5) 48%,rgba(27,29,49,.92) 100%);
+  color:#fff;font-size:19px;font-weight:600;line-height:1.4;letter-spacing:.01em;
+}
+.pcard--av .pcard__copy{
+  background:linear-gradient(rgba(27,29,49,0) 0%,rgba(27,29,49,.5) 48%,rgba(27,29,49,.92) 100%);
+}
+
+/* 下部情報エリア */
+.pcard__b{position:relative;flex:1 1 auto;padding:16px 18px 18px}
+.pcard__dep{
+  min-height:calc(15px * 1.6 * 2);padding-right:46px;
+  font-size:15px;font-weight:700;line-height:1.55;color:var(--navy);
+}
+.pcard__meta{
+  margin-top:4px;padding-right:46px;
+  font-size:12.5px;line-height:1.7;color:#6a7390;letter-spacing:.02em;
+}
+
+/* 矢印ボタン */
+.pcard__ar{
+  position:absolute;right:14px;bottom:16px;
+  display:grid;place-items:center;
+  width:34px;height:34px;border-radius:50%;
+  border:1.5px solid #c0c7dc;
+  background:#fff;
+  font-size:14px;color:#cf131b;
+  transition:border-color .25s,background-color .25s,color .25s,transform .25s var(--ease);
+}
+.pcard:hover .pcard__ar{
+  border-color:#cf131b;
+  background:#fdecee;
+  color:#cf131b;
+  transform:translateX(3px);
+}
+
+/* 画像背景トーン（カード別ニュアンス、PAL配色内） */
+.pcard[href="bpo/"]       .pcard__ph{background:#eceff5}
+.pcard[href="cleaning/"]  .pcard__ph{background:#f1f3f7}
+.pcard[href="dts/"]       .pcard__ph{background:#e8ecf4}
+.pcard[href="fde/"]       .pcard__ph{background:#e3e7f0}
+.pcard[href="system/"]    .pcard__ph{background:#e8edf6}
+.pcard[href="sales/"]     .pcard__ph{background:#f1efea}
+.pcard[href="corporate/"] .pcard__ph{background:#f1eeeb}
+
+/* レスポンシブ微調整 */
+@media (max-width:860px){
+  .pcard__copy{font-size:17px}
+}
+@media (max-width:620px){
+  .pcard__copy{font-size:16px;padding:40px 16px 14px}
+  .pcard__cat{font-size:10px;padding:3px 7px}
+  .pcard__ar{width:30px;height:30px;font-size:13px}
+  .pcard::before{height:2px}
+  .pgrid{gap:20px}
+}
+/* ===== PCARD v2 END ===== */
+
+/* ============================================================
+   ===== PGRID v2 START =====
+   社員一覧を1つのグリッドとして整える。
+   ・2段目（3枚）の中央寄せをやめ、1段目と同じ左基準に揃える
+     （PCARD v1 の nth-child(5){2 / span 2} と last-child の中央寄せを後勝ちで解除）
+   ・人物画像エリアの下地を単色 #f4f5f8 に統一する
+     （AVATAR v1 の .av-pad のグラデーションを解除。アバター自体の色は変えない）
+   カード幅・高さ・コピー高・職種名位置・矢印位置は PCARD v1 で既に全カード共通。
+   ============================================================ */
+/* 620px以下は PCARD v1 が1カラムにするため、span 2 を効かせない
+   （効かせると暗黙の2列目ができてカード幅が2pxに潰れる） */
+@media (min-width:621px){
+  .pgrid > *:nth-child(5){grid-column:span 2}
+  .pgrid > *:last-child{grid-column:span 2}
+}
+/* 人物画像エリアの下地を単色に統一する。
+   別セッションの PCARD v2 が職種ごとに別トーンを当てていたが、
+   「背景色を共通化する」という最新の指示を優先して後勝ちで揃える。 */
+.av-pad{background:#f4f5f8;background-image:none}
+.pcard.pcard--av .pcard__ph.av-pad{background:#f4f5f8}
+/* ===== PGRID v2 END ===== */
