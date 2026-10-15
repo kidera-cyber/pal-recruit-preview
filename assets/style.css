@@ -4461,3 +4461,17 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .av-pad{background:#f4f5f8;background-image:none}
 .pcard.pcard--av .pcard__ph.av-pad{background:#f4f5f8}
 /* ===== PGRID v2 END ===== */
+
+/* ============================================================
+   ===== PEOPLE-FLOW v1 START =====
+   「7職種の社員インタビューを見る」CTAを削除し、導入文から
+   社員カード一覧へ直接つながる構成にした。
+   2つのセクションが意味的に連続するため、間を 120px → 72px に詰める。
+   ============================================================ */
+#look-next{padding-block:56px 0}
+#people.sec--tight{padding-top:72px}
+@media (max-width:620px){
+  #look-next{padding-block:52px 0}
+  #people.sec--tight{padding-top:56px}
+}
+/* ===== PEOPLE-FLOW v1 END ===== */
