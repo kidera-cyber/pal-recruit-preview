@@ -4475,3 +4475,23 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #people.sec--tight{padding-top:56px}
 }
 /* ===== PEOPLE-FLOW v1 END ===== */
+
+/* ============================================================
+   ===== LOOKFOR v6 START =====
+   「PALが採用で大切にしていること」を、セクション末尾の締めから
+   「PALが、求める人。」の直前の導入へ移動した。
+   デザイン（白背景・上部のPALレッド細ライン・小さな赤ラベル・濃紺の大きめ
+   テキスト）は LOOKFOR v5 の締めブロックの見え方をそのまま引き継ぐ。
+   一続きのストーリーに見えるよう、導入と見出しの間は 44px に詰める。
+   LOOKFOR v5 の .look5__end / __endlabel / __endt は未使用になった（残置）。
+   ============================================================ */
+.look5__intro{max-width:var(--measure,820px);padding-top:26px;border-top:2px solid var(--red)}
+.look5__introlabel{font-size:13.5px;font-weight:700;letter-spacing:.04em;color:var(--red)}
+.look5__introt{margin-top:14px;font-size:clamp(20px,2.3vw,24px);line-height:1.7;
+  font-weight:700;color:var(--navy)}
+.look5__head{margin:44px 0 46px}
+@media (max-width:620px){
+  .look5__intro{padding-top:22px}
+  .look5__head{margin:34px 0 34px}
+}
+/* ===== LOOKFOR v6 END ===== */
