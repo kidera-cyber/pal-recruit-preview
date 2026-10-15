@@ -4568,3 +4568,79 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #change.sec{padding-bottom:56px}
 }
 /* ===== WORKNOTE v1 END ===== */
+
+/* ============================================================
+   ===== TYPO-WRAP v1 START =====
+   「文章は短いのに、レイアウト都合で不自然に改行される」状態を
+   採用サイト共通のルールとして解消する（ABOUT個別CSSを乱発しない）。
+
+   1) .shead の幅：44em（＝704px）では、41字のリードがあと24px足りずに
+      2行目へ2文字だけこぼれていた（例：ABOUT #values
+      「入社時の高いITスキルは必須ではありません。技術力よりも人物面を
+      最優先しています。」必要728px）。47em（＝752px）へ広げて1行に収める。
+      文字サイズは下げない方針を維持する。
+   2) .nw / .nw2 を共通化：これまで IV-HERO v2 / PEOPLE-FLOW v2 /
+      LOOKFOR v7 で個別に display:inline-block を当てていたものを1箇所へ。
+      固定 <br> の代わりに文節を inline-block にして、
+      「PCでは1行、幅が足りなければ意味の切れ目で改行」を実現する。
+      max-width:100% により、文節が親より長くても内部で折り返して
+      はみ出さない。
+   3) text-wrap：見出しは balance（行長を揃える）、本文は pretty
+      （最終行が極端に短くなるのを避ける）。未対応ブラウザでは無視される。
+   後勝ち上書き：.shead{max-width:44em}（L42）
+   未使用化はなし（個別の .nw ルールは残置。同値のため衝突しない）
+   ============================================================ */
+.shead{max-width:47em}
+.nw,.nw2{display:inline-block;max-width:100%}
+.ptitle,.stitle,.plead,
+.shead h2,.shead h3,.phead h1,
+.entry h2,.lookend h3,.look3__h,
+.pillar h3,.prob h3{text-wrap:balance}
+.slead,.note,.prob__list li,.prob__sum,
+.pillar p,.num span,.cflow__t,.jp p,.pcard__t{text-wrap:pretty}
+/* ===== TYPO-WRAP v1 END ===== */
+
+/* ============================================================
+   ===== TYPO-WRAP v2 START =====
+   v1 の実測で残った2つの構造要因を直す。
+   1) #numbers の4列グリッド：1024px幅ではカード内の文字領域が175pxしかなく、
+      主要数値そのもの（「9,000万円」「120→230名」）まで2〜3行に折り返し、
+      4領域の説明は5行になっていた。6枚なので3列×2行にすると行も揃い、
+      文字領域が262pxに広がって数値は1行、説明は3行に収まる。
+      文字サイズは変更しない。
+   2) 1024px前後でカード内本文の最終行が1〜2文字になる箇所へ
+      text-wrap:pretty を追加（v1で拾えていなかったクラス）。
+      .pillar は左右パディングを 30px → 24px にして文字領域を12px広げる。
+   後勝ち上書き：.nums{grid-template-columns:repeat(4,1fr)}（L271）は
+   #numbers 配下のみ上書き。960px以下の2列・720px以下の1列は既存のまま有効。
+   ============================================================ */
+#numbers .nums{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:960px){
+  #numbers .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  #numbers .nums{grid-template-columns:minmax(0,1fr)}
+}
+.pillar{padding-inline:24px}
+.hub__nodes li span,.pfsteps li span,
+.posmap__base li b,.posmap__base li small,
+.effects li b,.effects li p,
+.prob__list li .nw2{text-wrap:pretty}
+/* ===== TYPO-WRAP v2 END ===== */
+
+/* ============================================================
+   ===== TYPO-WRAP v3 START =====
+   1024px前後（タブレット横）で、ABOUTの図解グリッドが列数を保ったまま
+   1列あたり230〜313pxまで痩せ、カード内の短文が「末尾1〜2文字だけ次行」に
+   なっていた（実測11件）。該当する4つのグリッドだけ1100px以下で2列へ落とす。
+   .pillars / .people / .culture / .compare などの共通グリッドには触れない
+   （他ページのタブレット表示を変えないため）。
+   対象クラスはいずれもABOUT専用（hub__nodes のみ CAREER と共用だが、
+   元から2列なので列数は変わらない）。
+   文字サイズは変更しない。
+   ============================================================ */
+@media (max-width:1100px){
+  .pfsteps,.posmap__base,.effects,.effects--light{
+    grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* ===== TYPO-WRAP v3 END ===== */
