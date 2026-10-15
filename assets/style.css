@@ -4757,3 +4757,59 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    ============================================================ */
 .ivhero__ph img{aspect-ratio:12/13}
 /* ===== AVATAR v13 END ===== */
+
+/* ============================================================
+   ===== RELCARD v1 START =====
+   社員インタビュー最下部の「他の社員インタビュー」を、主役級の大きな
+   アバターカードから「次に読む導線」のコンパクトカードへ再設計。
+   旧：.relpeople--photo（1カラム392×294pxのアバター＋テキストの縦長カード）
+   新：.relcards / .relcard（左104pxのアバター＋右テキストの横並び）
+   ・情報の優先順位は 職種名 → 一言コピー → 短い説明 → アバター → ラベル。
+     職種名16px／コピー13.5px／説明13px／ラベル10.5px でこの順に強弱をつける。
+   ・アバターは全カードで同一スケール。枠を画像と同じ 12/13 にしているため
+     レターボックスが出ず、目線の高さも全カードで揃う（AVATAR v13 と同じ考え方）。
+   ・赤はラベル・CTA・ホバーの枠線だけに使い、ベタ面には使わない。
+   未使用化（残置）：.relpeople / .relpeople--photo / .relpeople--photo .av-th img
+   ============================================================ */
+.ch__h--sm{margin-bottom:28px}
+.ch__h--sm .ch__ja{font-size:clamp(22px,2.4vw,28px)}
+.ch__lead{max-width:var(--measure,820px);margin-top:12px;font-size:15.5px;line-height:1.9;
+  color:var(--sub);text-wrap:pretty}
+#related.ch{padding-block:84px 76px}
+
+.relcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.relcard{display:grid;grid-template-columns:104px minmax(0,1fr);gap:0 16px;align-items:start;
+  padding:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  text-decoration:none;transition:border-color .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease)}
+.relcard:hover{border-color:rgba(207,19,27,.45);transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(27,29,49,.07)}
+.relcard__ph{margin:0;width:104px;aspect-ratio:12/13;border-radius:var(--radius);overflow:hidden}
+.relcard__ph img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.relcard__b{min-width:0}
+.relcard__cat{display:block;font-family:Lato,sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.16em;color:var(--red)}
+.relcard__ttl{display:block;margin-top:7px;font-size:16px;font-weight:700;line-height:1.5;
+  color:var(--navy)}
+.relcard__copy{display:block;margin-top:6px;font-size:13.5px;line-height:1.7;color:var(--navy)}
+.relcard__t{margin-top:7px;font-size:13px;line-height:1.75;color:var(--sub);text-wrap:pretty}
+.relcard__go{display:inline-flex;align-items:center;gap:6px;margin-top:11px;
+  font-size:12.5px;font-weight:700;color:var(--red)}
+.relcard__go i{font-style:normal;transition:transform .25s var(--ease)}
+.relcard:hover .relcard__go i{transform:translateX(3px)}
+
+@media (max-width:1000px){
+  .relcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .relcard{grid-template-columns:92px minmax(0,1fr)}
+  .relcard__ph{width:92px}
+  #related.ch{padding-block:68px 64px}
+}
+@media (max-width:620px){
+  .relcards{grid-template-columns:minmax(0,1fr);gap:12px}
+  .relcard{grid-template-columns:84px minmax(0,1fr);padding:16px}
+  .relcard__ph{width:84px}
+}
+@media (prefers-reduced-motion:reduce){
+  .relcard,.relcard__go i{transition:none}
+  .relcard:hover{transform:none}
+}
+/* ===== RELCARD v1 END ===== */

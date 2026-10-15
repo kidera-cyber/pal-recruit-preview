@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../assets/style.css?v=20261015z">
+<link rel="stylesheet" href="../../../assets/style.css?v=20261016a">
 </head>
 <body class="p-iv">
 
@@ -284,11 +284,45 @@
 </section>
 <section class="ch ch--soft" id="related">
   <div class="ivwrap">
-    <div class="ch__h rv"><p class="ch__en en">RELATED</p><h2 class="ch__ja">他の社員インタビュー</h2></div>
-    <div class="relpeople relpeople--photo rv">
-        <a href="../bpo/"><figure class="av-th av-pad"><img src="../../../assets/avatar-bpo.png?v=20261015dts2" alt="" width="900" height="975" loading="lazy"></figure><small>BPO</small><b>BPO / 現場運営</b><span>毎日の運営の中に、次の改善がある。</span></a>
-        <a href="../cleaning/"><figure class="av-th av-pad"><img src="../../../assets/avatar-cleaning.png?v=20261015g" alt="" width="900" height="975" loading="lazy"></figure><small>CLEANING</small><b>クレンリネス</b><span>食品プロセスセンターの清掃を、計画から支える。</span></a>
-        <a href="../fde/"><figure class="av-th av-pad"><img src="../../../assets/avatar-fde.png?v=20261015dts2" alt="" width="900" height="975" loading="lazy"></figure><small>FDE</small><b>FDE</b><span>現場で使われて、初めて「できた」と言える。</span></a>
+    <div class="ch__h ch__h--sm rv"><p class="ch__en en">RELATED</p><h2 class="ch__ja">他の社員インタビューも見る</h2>
+      <p class="ch__lead">職種によって、仕事の進め方も向き合い方も違います。気になる仕事から、ほかの社員の話もご覧ください。</p></div>
+    <!-- ===== RELCARD v1：「他の社員インタビュー」を、主役級の大きなアバターカードから
+         次に読む導線としてのコンパクトカードへ再設計（2026-10-15）。
+         アバター 392×294 → 104×113px。縦長カードをやめ、左アバター＋右テキストの
+         横並びに。職種名を最も強く見せ、アバターは識別できる程度に留める。
+         説明文とCTA（インタビューを見る →）を追加。
+         現在開いているページ自身はカードに含めていない。 ===== -->
+    <div class="relcards rv">
+      <a class="relcard" href="../bpo/">
+        <figure class="relcard__ph av-pad"><img src="../../../assets/avatar-bpo.png?v=20261015dts2" alt="" width="900" height="975" loading="lazy"></figure>
+        <div class="relcard__b">
+          <span class="relcard__cat en">BPO</span>
+          <b class="relcard__ttl">BPO / 現場運営</b>
+          <span class="relcard__copy">毎日の運営の中に、次の改善がある。</span>
+          <p class="relcard__t">物流センターの運営を預かり、人員配置や品質管理から業務改善までを担う。</p>
+          <span class="relcard__go">インタビューを見る<i aria-hidden="true">→</i></span>
+        </div>
+      </a>
+      <a class="relcard" href="../cleaning/">
+        <figure class="relcard__ph av-pad"><img src="../../../assets/avatar-cleaning.png?v=20261015g" alt="" width="900" height="975" loading="lazy"></figure>
+        <div class="relcard__b">
+          <span class="relcard__cat en">CLEANING</span>
+          <b class="relcard__ttl">クレンリネス</b>
+          <span class="relcard__copy">食品プロセスセンターの清掃を、計画から支える。</span>
+          <p class="relcard__t">清掃の実施から、衛生状態の確認、年間の清掃計画づくりまで関わる。</p>
+          <span class="relcard__go">インタビューを見る<i aria-hidden="true">→</i></span>
+        </div>
+      </a>
+      <a class="relcard" href="../fde/">
+        <figure class="relcard__ph av-pad"><img src="../../../assets/avatar-fde.png?v=20261015dts2" alt="" width="900" height="975" loading="lazy"></figure>
+        <div class="relcard__b">
+          <span class="relcard__cat en">FDE</span>
+          <b class="relcard__ttl">FDE</b>
+          <span class="relcard__copy">現場で使われて、初めて「できた」と言える。</span>
+          <p class="relcard__t">物流現場で使うシステムを開発し、現場で確かめながら改善につなげる。</p>
+          <span class="relcard__go">インタビューを見る<i aria-hidden="true">→</i></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
