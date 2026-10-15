@@ -4505,3 +4505,45 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .lookend h3 .nw,
 #look .stitle .nw{display:inline-block;max-width:100%}
 /* ===== PEOPLE-FLOW v2 END ===== */
+
+/* ============================================================
+   ===== LOOKFOR v7 START =====
+   WHO WE LOOK FOR 一式（#look の6つの姿勢／#look-skill の3つの力）を
+   社員インタビュー一覧（#people）の後ろへ移動した。
+   ・.look5__intro（旧「PALが採用で大切にしていること」独立ブロック）は
+     HTML から削除し、内容を .slead へ統合。LOOKFOR v6 の
+     .look5__intro / __introlabel / __introt は未使用になった（残置）。
+   ・LOOKFOR v6 の .look5__head{margin:44px 0 46px} は導入ブロック前提の
+     上マージンだったため、見出しがセクション先頭になった今は 0 に戻す
+     （セクション padding と二重に空かないようにする）。
+   ・見出し「社員の仕事から見えてくる、PALが大切にしていること。」と
+     「その姿勢を、仕事で活かすための3つの力。」は .nw/.nw2 の2階層で
+     折り返しを制御する（IV-HERO v2 と同じ手法）。
+   ============================================================ */
+.look5__head{margin:0 0 46px}
+#look .stitle .nw2,
+#look-skill .look3__h .nw{display:inline-block;max-width:100%}
+#look .look5__head .slead{max-width:40em}
+@media (max-width:620px){
+  .look5__head{margin:0 0 34px}
+}
+/* ===== LOOKFOR v7 END ===== */
+
+/* ============================================================
+   ===== PEOPLE-FLOW v3 START =====
+   セクション順が .phead → #look-next → #people → #look → #look-skill
+   に変わったため、前後関係が変わった4箇所の余白を再調整する。
+   ・ページ上部：.phead(下8px) → #look-next を 56px → 40px に詰め、
+     導入からカード一覧へテンポよく入れる（PEOPLE-FLOW v1 を後勝ち上書き）。
+   ・#people 下 → #look 上：白→#F7F8FA→白の切り替わりなので
+     88px+88px(=.sec--tight) は空きすぎ。80px+84px に詰める。
+   ============================================================ */
+#look-next{padding-block:40px 0}
+#people.sec--tight{padding-bottom:80px}
+#look.sec--tight{padding-top:84px}
+@media (max-width:620px){
+  #look-next{padding-block:34px 0}
+  #people.sec--tight{padding-bottom:60px}
+  #look.sec--tight{padding-top:62px}
+}
+/* ===== PEOPLE-FLOW v3 END ===== */
