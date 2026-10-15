@@ -4502,5 +4502,6 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    スマホで「…表れ／る。」と単語の途中で折り返すため、文節を
    inline-block にして読点の位置で改行させる（IV-HERO v2 と同じ手法）。
    ============================================================ */
-.lookend h3 .nw{display:inline-block;max-width:100%}
+.lookend h3 .nw,
+#look .stitle .nw{display:inline-block;max-width:100%}
 /* ===== PEOPLE-FLOW v2 END ===== */
