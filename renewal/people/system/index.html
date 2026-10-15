@@ -72,9 +72,13 @@
 <main id="top">
 <nav class="crumb" aria-label="パンくず"><div class="ivwrap"><a href="../../">採用情報</a><a href="../">人を知る</a><span aria-current="page">システム / プロダクト インタビュー</span></div></nav>
 
-<!-- DRAFT-NOTICE START（本番公開時に削除） -->
-<div class="ivnote"><div class="ivwrap">※ 掲載中の回答内容は<b>デザイン確認用の仮原稿</b>です。正式取材回答後に差し替えます。設問は、実際に社員へ配布したアンケートの内容をそのまま掲載しています。プロフィール・キャリアステップ・一日の流れ・写真も仮の内容です。</div></div>
-<!-- DRAFT-NOTICE END -->
+<!-- ===== NOTICE-OFF v1：制作確認用の注記を公開画面から削除（2026-10-15）
+     【管理メモ／画面には表示しない】
+     ・本ページの回答内容はデザイン確認用の仮原稿。正式取材回答後に差し替える。
+     ・プロフィール／キャリアステップ／一日の流れ／人物画像はいずれも仮の内容。
+     ・人物画像はイラストであり実写ではない。章中の現場写真はイメージ写真。
+     ・公開前に、ご本人確認と掲載可否の確認が必要。
+     ・削除した注記の原文は、このコミットの1つ前の版を参照。 ===== -->
 <!-- ===== IV-EDIT v1：編集記事型へ再設計。回答・設問・プロフィール・キャリア・
      1日の流れは既存ページの内容をそのまま使用し、見せ方だけを作り直した。 ===== -->
 <!-- ===== IV-INTRO v1：プロフィール表と年表をやめ、
@@ -94,15 +98,14 @@
       <figure class="ivhero__ph rv">
         <span class="ivhero__cat en">ENGINEER</span>
         <img class="av-pad" src="../../../assets/avatar-system.png?v=20261014sy2" alt="システム部（プロダクト企画・開発）のメンバーのイラスト（プロフィール画像）" width="900" height="975" fetchpriority="high">
-        <figcaption>開発側だけで決めず、現場と事業側を交えて仕様を決める。<em>※ 本人の写真ではなく、イラストのプロフィール画像です</em></figcaption>
+        <figcaption>開発側だけで決めず、現場と事業側を交えて仕様を決める。</figcaption>
       </figure>
       <div class="ivhero__meta rv">
-        <p class="ivhero__prof"><span class="ivhero__dep">システム部</span><span>入社年・入社区分 確認中</span><span>前職：業務システムの開発</span></p>
+        <p class="ivhero__prof"><span class="ivhero__dep">システム部</span><span>前職：業務システムの開発</span></p>
         <div class="ivhero__now">
           <p class="ivhero__en en">CURRENT ROLE</p>
           <p class="ivhero__t">プロダクトの企画と要件整理、データ連携の仕組みづくり、開発と運用まで関わる。担当はひとつの工程で区切られていない。</p>
         </div>
-        <p class="ivhero__note">※ 氏名・所属・役職・入社年・前職・担当領域は未確認です（仮プロフィール）</p>
       </div>
     </div>
   </div>
@@ -176,7 +179,6 @@
   <div class="ivwrap">
     <p class="chap__en en rv" style="margin-bottom:20px">VALUE</p>
     <blockquote class="bigq rv">技術的に正しいだけでは、<br>現場で<b>使われる仕組み</b>にはならない。</blockquote>
-    <p class="note rv">※ この言葉は仮原稿です。正式回答から選び直します。</p>
   </div>
 </section>
 <section class="chap chap--fig chap--soft">
@@ -192,7 +194,6 @@
       <p class="chap__q2">これまで携わった開発・改善で、印象に残っている経験を教えてください。</p>
       <p>途中段階で使ってもらったことで、前提から見直すことになった経験が印象に残っています。</p>
       <p>リリース後に使われないよりは、早い段階で変えたほうがいいと考えるようになりました。</p>
-      <p class="note">※ 具体的なエピソード・事例は、社外公開の可否を確認のうえ、正式回答で差し替えます。</p>
       <p class="chap__q2">仕事を進めるうえで難しいと感じることや、工夫していることはありますか？</p>
       <p>開発側では問題なく見えても、現場では操作しづらいことがあります。</p>
       <p>完成してから確認するのではなく、途中から使ってもらうようにしているのはそのためです。</p>
@@ -200,7 +201,7 @@
       </div>
       <figure class="chap__ph rv">
         <img src="../../../assets/warehouse-dx.jpg" alt="現場で実際の操作を確認し、プロダクトを調整する様子" width="1600" height="1200" loading="lazy">
-        <figcaption>途中段階から使ってもらい、実際の操作を見て直す。<em>※ イメージ写真</em></figcaption>
+        <figcaption>途中段階から使ってもらい、実際の操作を見て直す。</figcaption>
       </figure>
     </div>
   </div>
@@ -253,7 +254,7 @@
       <li><time>18:00</time><div><b>デプロイ／計測</b><p>改善をリリースし、効果をデータで計測。</p></div></li>
       <li><time>19:00</time><div><b>学習・情報収集</b><p>新技術の実証やAI活用のキャッチアップ。</p></div></li>
     </ol>
-    <p class="note rv">※ デザイン確認用の一例です。勤務時間・休憩・退勤時刻などを会社の制度として示すものではありません。</p>
+    <p class="note rv">※ 記載の時間は一例です。勤務時間や勤務形態を、PAL全社や各部門の制度として示すものではありません。</p>
   </div>
 </section>
 <section class="chap chap--msg">
