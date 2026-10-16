@@ -5091,3 +5091,23 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    飲み込まれないよう、旧 .stance__h（18px）＋ .phil__body h4（白）と同じ見た目に固定する。 */
 .phil__body h3.stance__h{font-size:18px;line-height:1.7;color:#fff}
 /* ===== SEO-HEADING v1 END ===== */
+
+/* ============================================================
+   ===== PROCESS-MERGE v1 START =====
+   ABOUT：OUR POSITION（濃紺）を OUR PROCESS へ統合したことに伴う調整。
+   ・3つの価値は既存の .effects--light（白カード・赤番号）を再利用し、
+     3項目なので横3列に。基底の .effects--light は4列、1080px/1100pxで2列、
+     720pxで1列の指定があるが、#process 配下はID込みで特異性が上がるため、
+     同じブレークポイントの打ち消しをここに明示する。
+   ・.pf__ic の各項目に、旧 OUR POSITION の4領域の役割を1行で補足。
+   既存の .effects / .effects--light / .pf__ic 自体は変更していない。
+   ============================================================ */
+#process .effects--light{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0}
+#process .pf__ic li small{display:block;margin-top:1px;font-size:11.5px;font-weight:400;line-height:1.55;color:var(--sub)}
+@media (max-width:1100px){
+  #process .effects--light{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  #process .effects--light{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== PROCESS-MERGE v1 END ===== */

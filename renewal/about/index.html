@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261016s">
+<link rel="stylesheet" href="../../assets/style.css?v=20261016t">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "PALを知る"}]}</script>
@@ -260,7 +260,7 @@
     <div class="shead rv" style="margin-bottom:34px">
       <p class="slabel">Our Process</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">現場から改善まで、ひと続きで。</h2>
-      <p class="slead">FDE（Forward Deployed Engineer）は、顧客の業務課題を技術要件へ整理し、設計・実装・導入・運用までをつなぐエンジニアです。PALでは、物流現場で起きている課題を整理し、システム・設備・データを組み合わせて、実際に使える仕組みへつなげます。</p>
+      <p class="slead">PALは、物流現場の課題を整理し、システム・設備・データ・運用をつなぎながら、現場で動く仕組みをつくる会社です。現場運営を請け負うだけ、システムを入れるだけ、という分担にしないことが、ほかの支援の形との違いです。<br>FDE（Forward Deployed Engineer）は、現場の業務課題を技術要件へ整理し、各部門と連携して設計・実装・運用・改善へとつなぐ役割を担います。</p>
     </div>
 
 <!-- ===== FDEFIG v1：図解を「現場 → FDE → 技術・仕組み → 現場へ戻る」の
@@ -291,11 +291,16 @@
         </div>
         <div class="pf pf--tech">
           <p class="pf__h"><span class="en">TECHNOLOGY</span>技術・仕組み</p>
+          <!-- ===== PROCESS-MERGE v1：旧 OUR POSITION の4領域カード
+               （FIELD 物流現場・設備／SYSTEM 自社プロダクト・システム／
+               DATA 受注から配送までのデータ／OPERATION 日々の運用・改善）は
+               この4項目と意味が重複していたため、新しいカード群は追加せず、
+               各項目に1行の補足を足して吸収した。 ===== -->
           <ul class="pf__ic">
-            <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>システム</li>
-            <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>設備</li>
-            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>データ</li>
-            <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>運用</li>
+            <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>システム<small>自社プロダクト</small></li>
+            <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>設備<small>物流現場の設備</small></li>
+            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>データ<small>受注から配送まで</small></li>
+            <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>運用<small>日々の運用・改善</small></li>
           </ul>
         </div>
       </div>
@@ -305,47 +310,36 @@
            完全重複だったため。ここはFDEが現場と技術の間で担う役割の説明に集中させる。
            .pfsteps のCSSは他ページ未使用のまま残置（復元はgit履歴 ca9ca13 から）。 ===== -->
     </div>
-    <p class="transnote rv" style="margin-top:34px">FDEがひとりで設計から運用までを担うわけではありません。現場の運営はBPO・現場運営が、プロダクトの開発はシステム・プロダクト企画が、輸送はDTSが受け持ちます。FDEは、その間で課題と技術要件を翻訳し、全体がつながった状態を保つ役割です。</p>
-      <p class="rv" style="margin-top:16px"><a class="textlink" href="../#message">設計・実装・運用・改善という4つの段階は、TOP「PALの仕事」で紹介しています</a></p>
-    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="../work/fde/">FDEについて詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <p class="transnote rv" style="margin-top:30px">FDEがひとりで設計から運用までを担うわけではありません。現場運営はBPO・現場運営部門、プロダクト開発はシステム・プロダクト企画、輸配送はDTSなど、それぞれの専門部門が連携して仕組みを動かします。</p>
+
+    <!-- ===== PROCESS-MERGE v1：旧 OUR POSITION（濃紺セクション）の
+         「調整の重複を減らす／責任点を明確にする／意思決定を速くする」3カードを、
+         大型カードのまま移設せず .effects--light（白カード・赤番号）で横3列に圧縮して統合。
+         濃紺セクションごと削除したため、ページの縦幅は大きく減っている。 ===== -->
+    <div class="shead rv" style="margin:44px 0 18px">
+      <h3 class="stitle" style="font-size:clamp(18px,2vw,22px)">PALがつなぐことで生まれる価値。</h3>
+    </div>
+    <ul class="effects effects--light rv">
+      <li><span class="en">01</span><b>調整の重複を減らす</b><p>複数の関係者とのやり取りを整理し、同じ説明の繰り返しを減らします。</p></li>
+      <li><span class="en">02</span><b>責任の所在を明確にする</b><p>誰が何を担うのかを整理し、責任が曖昧になる状態を防ぎます。</p></li>
+      <li><span class="en">03</span><b>意思決定を速くする</b><p>必要な情報と関係者をつなぎ、判断から実行までの停滞を減らします。</p></li>
+    </ul>
+
+    <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="../work/fde/">FDEについて詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a>　<a class="textlink" href="../#message">設計・実装・運用・改善の4段階は、TOPで紹介しています</a></p>
   </div>
 </section>
 
-<section class="sec sec--navy" id="position">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">Our Position ／ 結論</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">分断を、ひとつの流れにつなぐ。</h2>
-      <p class="slead">PALは、物流現場の運営だけでなく、課題整理、システム、設備、データ、改善までをつなぎ、現場で動く仕組みとして実装していきます。<br>関係者・役割・情報を、一つの実行体制にまとめることを大切にしています。現場運営を請け負うだけ、システムを入れるだけ、という分担にしないことが、ほかの支援の形との違いです。</p>
-    </div>
-    <!-- ===== POSMAP v2：濃紺背景の中でカードが沈んでいたため、
-         CUSTOMER / PAL / FIELD・SYSTEM・DATA・OPERATION / 下段3カードを
-         すべて白カードにし、ラベル・矢印・番号をPALレッドで統一した。 ===== -->
-    <div class="rv">
-    <div class="posmap">
-            <div class="posmap__cus"><span class="en">CUSTOMER</span><b>顧客の経営・事業課題</b></div>
-            <div class="posmap__arrow" aria-hidden="true"></div>
-            <div class="posmap__core">
-              <span class="en">PAL</span>
-              <b><span class="nw">分断された関係者・情報・役割を、</span><span class="nw">一つの実行体制へ</span></b>
-              <small>ロジテックインテグレーション</small>
-            </div>
-            <div class="posmap__arrow" aria-hidden="true"></div>
-            <ul class="posmap__base">
-              <li><span class="en">FIELD</span><b>物流現場・設備</b><small>顧客の現場を請け負い、自分たちで回す。</small></li>
-              <li><span class="en">SYSTEM</span><b>自社プロダクト・システム</b><small>システム開発＆エンジニアリングを自社で。</small></li>
-              <li><span class="en">DATA</span><b>受注から配送までのデータ</b><small>受注→在庫引当→ピッキング→出荷→配送をつなぐ。</small></li>
-              <li><span class="en">OPERATION</span><b>日々の運用・改善</b><small>導入して終わりにせず、動き続ける状態を保つ。</small></li>
-            </ul>
-          </div>
-    <ul class="effects">
-            <li><span class="en">01</span><b>調整の重複を減らす</b><p>複数の関係者とのやり取りを整理し、同じ説明や調整の繰り返しを減らします。</p></li>
-            <li><span class="en">02</span><b>責任点を明確にする</b><p>誰が何を担うのかを整理し、責任が曖昧になる状態を防ぎます。</p></li>
-            <li><span class="en">03</span><b>意思決定を速くする</b><p>必要な情報と関係者をつなぎ、判断から実行までの停滞を減らします。</p></li>
-          </ul>
-    </div>
-  </div>
-</section>
+<!-- ===== PROCESS-MERGE v1：OUR POSITION（分断を、ひとつの流れにつなぐ。／濃紺背景）を
+     OUR PROCESS へ統合して削除。両セクションとも「分断された現場・技術・データ・運用を
+     つなぎ、現場で動く仕組みを実現する」という同じ訴求だったため。
+     吸収先：
+       ・slead「現場運営を請け負うだけ…ほかの支援の形との違い」 → #process 導入文
+       ・4領域カード（FIELD/SYSTEM/DATA/OPERATION）        → #process 図解の .pf__ic 補足
+       ・3つの価値カード                                   → #process の .effects--light 3列
+     削除：CUSTOMER→PAL の大型図（#process の FIELD→FDE→TECHNOLOGY と構造が重複）、
+           .posmap__core の「ロジテックインテグレーション」ラベル（#how に正式な定義あり）。
+     CSS .posmap / .posmap__cus / .posmap__arrow / .posmap__core / .posmap__base と
+     navy版 .effects li/.en/p は未使用化（残置）。復元は git 履歴 31068de から。 ===== -->
 
 
 
