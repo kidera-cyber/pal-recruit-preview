@@ -4957,3 +4957,62 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .pfback{margin:26px 0 22px;padding:13px 15px;font-size:13.5px}
 }
 /* ===== FDEFIG v1 END ===== */
+
+/* ============================================================
+   ===== FLOW4 v2 START =====
+   HOME の WHAT WE DO を「導入説明 → 図解 → 補足」の順に。
+   図解は 現場の課題 → 01 DESIGN → 02 DEPLOY → 03 OPERATE → 04 EVOLVE
+   → 次の改善へ、という左から右へ進むフロー。カード間は矢印でつなぎ、
+   部署一覧ではなく仕事の流れとして読めるようにする。
+   配色は 濃紺＝骨格 ／ PALレッド＝番号・矢印・強調 ／
+   ライトグレー＝背景面 の3つに限定。
+   FLOW4 v1 の .wwd--flow / .wwd__t / .wwd__loop を置き換える（残置）。
+   ============================================================ */
+.flowmap{margin-top:32px}
+.flowmap__cap{display:inline-flex;align-items:center;gap:10px;
+  padding:9px 18px;border-radius:9999px;font-size:14px;font-weight:700;line-height:1.5;
+  color:var(--navy);background:var(--bg-soft)}
+.flowmap__cap .en{font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.16em;color:var(--red)}
+.flowmap__cap i{font-style:normal;font-size:16px;color:var(--red)}
+.flowmap__cap--start{position:relative;margin-bottom:30px}
+.flowmap__cap--start::after{content:"";position:absolute;left:28px;bottom:-24px;
+  width:2px;height:18px;background:var(--line-mid,#c3cade)}
+.flowmap__cap--end{margin-top:30px;position:relative}
+.flowmap__cap--end::before{content:"";position:absolute;left:28px;top:-24px;
+  width:2px;height:18px;background:var(--line-mid,#c3cade)}
+
+.flowmap__steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 36px;
+  list-style:none}
+.fstep{position:relative;padding:22px 20px 24px;background:#fff;
+  border:1px solid var(--line);border-radius:var(--radius-lg);border-top:3px solid var(--navy-d)}
+/* カード間の矢印（左から右へ進む流れ） */
+.fstep + .fstep::before{content:"";position:absolute;left:-25px;top:50%;
+  width:10px;height:10px;margin-top:-5px;
+  border-right:2px solid var(--red);border-top:2px solid var(--red);transform:rotate(45deg)}
+.fstep__no{font-family:Lato,sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;
+  color:var(--red)}
+.fstep__ico{display:block;width:34px;height:34px;margin-top:12px;color:var(--navy)}
+.fstep__ph{margin-top:12px;font-size:14px;font-weight:700;line-height:1.5;color:var(--navy)}
+.fstep__ph .en{display:block;margin-bottom:3px;font-family:Lato,sans-serif;font-size:11.5px;
+  letter-spacing:.16em;color:var(--sub)}
+.fstep__h{display:block;margin-top:10px;font-size:15.5px;font-weight:700;line-height:1.6;
+  color:var(--navy);text-wrap:pretty}
+.fstep__t{margin-top:8px;font-size:13.5px;line-height:1.85;color:var(--sub);text-wrap:pretty}
+.fstep__job{margin-top:13px;padding-top:11px;border-top:1px solid var(--line);
+  font-size:12px;line-height:1.7;color:var(--muted)}
+.flowmap__note{max-width:var(--measure,820px);margin-top:24px;font-size:15px;line-height:1.95;
+  color:var(--sub);text-wrap:pretty}
+
+@media (max-width:1000px){
+  .flowmap__steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 30px}
+  .fstep + .fstep::before{left:-22px}
+  /* 3枚目は行が変わるため、横向きの矢印を縦向きに置き換える */
+  .fstep:nth-child(3)::before{left:28px;top:-26px;margin-top:0;transform:rotate(135deg)}
+}
+@media (max-width:620px){
+  .flowmap__steps{grid-template-columns:minmax(0,1fr);gap:30px}
+  .fstep + .fstep::before{left:28px;top:-26px;margin-top:0;transform:rotate(135deg)}
+  .fstep{padding:20px 18px 22px}
+  .flowmap__cap{font-size:13.5px;padding:8px 15px}
+}
+/* ===== FLOW4 v2 END ===== */

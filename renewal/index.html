@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261016i">
+<link rel="stylesheet" href="../assets/style.css?v=20261016j">
 </head>
 <body>
 
@@ -224,39 +224,60 @@
       </div>
       <div class="msg__body">
         <p>物流DXは、システムを入れるだけでは進みません。現場には、働き方や設備、データ、これまで積み重ねてきた運用があります。</p>
-        <p>PALの仕事は、その現場を理解するところから始まります。現場・システム・データ・設備をつなぎ、設計、実装、運用、改善まで関わりながら、実際に使われる仕組みをつくっていく。</p>
-        <p>職種は違っても、一人ひとりの仕事が、現場の変化につながっています。</p>
+        <p>PALの仕事は、その現場を理解するところから始まります。現場・システム・データ・設備をつなぎ、実際に使われる仕組みをつくっていく。</p>
       </div>
     </div>
 
-    <!-- ===== FLOW4 v1：Design / Deploy / Operate / Evolve が唐突に見えるため、
-         直前に「なぜこの4つなのか」の導入を置き、4つを独立した分類ではなく
-         ひと続きの流れ（最後はまた設計へ戻る循環）として見せる。
-         HOMEでは細かく説明せず各段階1文に。FDEなどの専門用語は
-         この位置では出さない（職種の紹介は下のセクションで行う）。 ===== -->
+    <!-- ===== FLOW4 v2：4分類が「部署一覧」にも「唐突な分類」にも見えないよう、
+         見出し → 導入説明 → 図解（起点・4ステップ・次の改善へ）→ 補足 の順に。
+         図解は左から右へ進むフロー。各カードに番号・アイコン・段階名・
+         一言・説明・関わる職種例を置き、カード間は矢印でつなぐ。
+         スマホは縦積みで、矢印も縦向きに切り替える。
+         FLOW4 v1 の .wwd--flow / .wwd__loop を置き換える。 ===== -->
     <div class="wwdlead rv">
-      <h3 class="wwdlead__t"><span class="nw">PALの仕事は、</span><span class="nw">現場を知ることから始まり、改善まで続く。</span></h3>
-      <p class="wwdlead__d">課題を整理し、仕組みを設計する。現場へ実装し、実際に使われる状態まで支える。そして、運用から得た気づきを次の改善につなげていく。PALでは、この流れを4つの段階で捉えています。</p>
+      <h3 class="wwdlead__t"><span class="nw">PALの仕事は、現場を知ることから始まり、</span><span class="nw">設計・実装・運用・改善まで続いていく。</span></h3>
+      <p class="wwdlead__d">この流れを、PALでは4つの段階で整理しています。</p>
     </div>
-    <ol class="wwd wwd--flow rv">
-      <li class="wwd__phase">
-        <p class="wwd__ph"><span class="en">DESIGN</span>設計</p>
-        <p class="wwd__t">現場全体を捉え、人・設備・システム・データが連携する仕組みを考える。</p>
-      </li>
-      <li class="wwd__phase">
-        <p class="wwd__ph"><span class="en">DEPLOY</span>実装</p>
-        <p class="wwd__t">必要な技術や仕組みを、現場で使える形にする。</p>
-      </li>
-      <li class="wwd__phase">
-        <p class="wwd__ph"><span class="en">OPERATE</span>運用</p>
-        <p class="wwd__t">導入した仕組みを、実際の現場で安定して動かす。</p>
-      </li>
-      <li class="wwd__phase">
-        <p class="wwd__ph"><span class="en">EVOLVE</span>進化</p>
-        <p class="wwd__t">現場から得たデータや気づきをもとに、次の改善へつなげる。</p>
-      </li>
-    </ol>
-    <p class="wwd__loop rv"><i aria-hidden="true">↻</i>改善で見つかったことが、次の設計につながります。</p>
+
+    <div class="flowmap rv">
+      <p class="flowmap__cap flowmap__cap--start"><span class="en">START</span>現場の課題</p>
+      <ol class="flowmap__steps">
+        <li class="fstep">
+          <p class="fstep__no en">01</p>
+          <svg class="fstep__ico" aria-hidden="true"><use href="#ic2-fde"></use></svg>
+          <p class="fstep__ph"><span class="en">DESIGN</span>設計</p>
+          <b class="fstep__h">現場全体を捉え、課題を整理する。</b>
+          <p class="fstep__t">人・設備・システム・データをどうつなぐかを考える。</p>
+          <p class="fstep__job">エンゲージメント／BizDev／マーケティング</p>
+        </li>
+        <li class="fstep">
+          <p class="fstep__no en">02</p>
+          <svg class="fstep__ico" aria-hidden="true"><use href="#ic2-system"></use></svg>
+          <p class="fstep__ph"><span class="en">DEPLOY</span>実装</p>
+          <b class="fstep__h">使える形へ落とし込む。</b>
+          <p class="fstep__t">必要な技術や仕組みを、現場で動く形にする。</p>
+          <p class="fstep__job">FDE／システム／プロダクト企画</p>
+        </li>
+        <li class="fstep">
+          <p class="fstep__no en">03</p>
+          <svg class="fstep__ico" aria-hidden="true"><use href="#ic2-operate"></use></svg>
+          <p class="fstep__ph"><span class="en">OPERATE</span>運用</p>
+          <b class="fstep__h">現場で安定して使える状態をつくる。</b>
+          <p class="fstep__t">導入して終わりではなく、実際に動く状態を支える。</p>
+          <p class="fstep__job">BPO／DTS／クレンリネス</p>
+        </li>
+        <li class="fstep">
+          <p class="fstep__no en">04</p>
+          <svg class="fstep__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+          <p class="fstep__ph"><span class="en">EVOLVE</span>進化</p>
+          <b class="fstep__h">運用の気づきを、次の改善へつなげる。</b>
+          <p class="fstep__t">現場から得たデータや気づきを、次の改善へ反映する。</p>
+          <p class="fstep__job">FDE／システム／現場運営／マーケティング</p>
+        </li>
+      </ol>
+      <p class="flowmap__cap flowmap__cap--end"><i aria-hidden="true">↻</i>次の改善へ、そしてまた設計へ</p>
+    </div>
+    <p class="flowmap__note rv">PALでは、現場の課題を「見つける」だけで終わらせず、「使える形にし、動かし、改善する」ところまでを仕事と考えています。職種は違っても、それぞれの役割がこの流れのどこかに関わっています。</p>
     <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="work/">仕事を知る（8つのフィールドと職種）<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
