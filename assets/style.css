@@ -5016,3 +5016,31 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .flowmap__cap{font-size:13.5px;padding:8px 15px}
 }
 /* ===== FLOW4 v2 END ===== */
+
+/* ============================================================
+   ===== CULTURE-MOVE v1 START =====
+   CULTUREページ廃止にともない .vrows / .mission / .vals / .movie を
+   ABOUT の #values（白背景）へ移設した。移設元は sec--soft（薄グレー背景）
+   だったため、白背景でも段差が出るよう .vrow の境界を補強する。
+   また .mission__h が1024px帯で「向上さ／せ、」と1字孤立するため、
+   当該ブロックに限りフォントサイズ上限を 34px → 30px に後勝ち上書きする。
+   既存の .vrow{} .mission__h{} 自体は変更していない（CULTURE復元時も無害）。
+   ============================================================ */
+#values .mission__h{font-size:clamp(22px,2.5vw,30px)}
+#values .vrow{border:1px solid var(--line)}
+#values .mission{margin-top:64px}
+#values .vals{margin-top:60px}
+#values .movie{margin-top:48px}
+@media (max-width:860px){
+  #values .mission__h{font-size:clamp(21px,3.6vw,27px)}
+}
+/* ===== CULTURE-MOVE v1 END ===== */
+
+/* ============================================================
+   ===== KEY-ODD v1 START =====
+   HOME のキーカードが CULTURE 削除で 6枚→5枚（.key--sm は 4枚→3枚）になり、
+   2カラムグリッドの最終行が片側空きになるため、奇数末尾のみ全幅に伸ばす。
+   既存の .key--sm{grid-template-columns:repeat(2,...)} を後勝ちで部分上書き。
+   ============================================================ */
+.key--sm .key__item:last-child:nth-child(odd){grid-column:1 / -1}
+/* ===== KEY-ODD v1 END ===== */

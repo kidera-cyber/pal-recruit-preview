@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261016j">
+<link rel="stylesheet" href="../../assets/style.css?v=20261016m">
 </head>
 <body>
 
@@ -133,7 +133,6 @@
       <a href="../about/" aria-current="page" class="is-current">PALを知る<small>ABOUT</small></a>
       <a href="../work/">仕事を知る<small>WORK</small></a>
       <a href="../people/">人を知る<small>PEOPLE</small></a>
-      <a href="../culture/">働き方を知る<small>CULTURE</small></a>
       <a href="../career/">キャリア<small>CAREER</small></a>
       <a href="../jobs/">募集職種<small>JOBS</small></a>
       <a href="../faq/">FAQ<small>Q&A</small></a>
@@ -149,7 +148,6 @@
   <a href="../about/" aria-current="page" class="is-current">PALを知る<span>ABOUT</span></a>
   <a href="../work/">仕事を知る<span>WORK</span></a>
   <a href="../people/">人を知る<span>PEOPLE</span></a>
-  <a href="../culture/">働き方を知る<span>CULTURE</span></a>
   <a href="../career/">キャリア<span>CAREER</span></a>
   <a href="../jobs/">募集職種<span>JOBS</span></a>
   <a href="../faq/">FAQ<span>Q&A</span></a>
@@ -410,34 +408,102 @@
   </div>
 </section>
 
-<section class="sec sec--navy sec--tight" id="values">
+<!-- ===== VALUES-MOVE v1 START：CULTUREページ（/renewal/culture/）の
+     「PALが、大切にする3つのこと。」「Our Mission」「VALUE 3つ」「動画」を
+     ABOUTへ実体移設。移設前のABOUTは .effects による要約版＋「詳しくは働き方を知るで」
+     という外部送客だったため、同一内容の二重管理になっていた。
+     旧 #values（navy・要約＋Mission＋Who fits）は「活躍している人の、共通点」だけを
+     残して #whofits へ分離。旧マークアップはgit履歴（コミット 13487f8 以前）から復元可。 ===== -->
+<section class="sec" id="values">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">Our Mission / Values</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">仕事の進め方にも、PALらしさがあります。</h2>
-      <p class="slead">大切にしていることを3つだけ。詳しくは「働き方を知る」で紹介しています。</p>
+    <div class="shead rv">
+      <p class="slabel">Our Values</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">PALが、</span><span class="nw">大切にする3つのこと。</span></h2>
+      <p class="slead">制度や勤務方法の話ではなく、PALが仕事を進めるうえで判断の軸にしている考え方です。裁量も、挑戦も、物流DXも、それ単独ではどこでも聞く言葉です。&quot;現場を請け負う当事者&quot;だからこそ語れる——それがPALの考え方です。</p>
     </div>
-    <ul class="effects rv">
-      <li><span class="en">01</span><b>現場の当事者となる</b><p>外から提案するのではなく、顧客の現場を請け負い、自分たちの責任で回します。</p></li>
-      <li><span class="en">02</span><b>個を尊重し、平等に接する</b><p>上下や勤続年数で判断されない。誰もが対等に意見を出せる土台があります。</p></li>
-      <li><span class="en">03</span><b>自分の「手」で変えていく</b><p>提案するだけでなく、現場に立ち、データと技術で変えていきます。</p></li>
-    </ul>
-    <div class="branch rv" style="margin-top:40px">
-      <h3><span class="nw">モノの流れの生産性を向上させ、</span><span class="nw">企業と人と街の成長を支える。</span></h3>
-      <p style="display:inline-block;margin-top:18px;padding:9px 20px;border-radius:9999px;background:var(--grad);color:#fff;font-size:13.5px;font-weight:700;line-height:1.6">SLOGAN ── 物流をコストから、戦略資産に。</p>
-      <p style="margin-top:18px">行動の指針となる VALUE として「大胆に突き進もう」「チームへの貢献と信頼」「匠の精神」の3つを掲げています。</p>
+    <div class="vrows">
+      <div class="vrow c-01 rv">
+        <figure class="vrow__ill"><img src="../../assets/ill-field.jpg?v=20261008f" alt="物流現場でタブレットを手に、現場の担当者と作業の流れを確認するイラスト" width="1400" height="781" loading="lazy"></figure>
+        <div class="vrow__b">
+          <p class="vrow__no en">01</p>
+          <h3>現場の当事者となる</h3>
+          <p>外から提案するのではなく、顧客の現場を請け負い、自分たちの責任で回す。だから、机上で終わらない課題に向き合えます。</p>
+        </div>
+      </div>
+      <div class="vrow c-02 rv vrow--rev">
+        <figure class="vrow__ill"><img src="../../assets/ill-equal.jpg?v=20261008f" alt="制服のメンバーと私服のメンバーが円卓で対等に意見を交わすイラスト" width="1400" height="781" loading="lazy"></figure>
+        <div class="vrow__b">
+          <p class="vrow__no en">02</p>
+          <h3>個を尊重し、平等に接する</h3>
+          <p>上下や勤続年数で判断されない。互いを個として尊重し合う土台があるから、誰もが対等に意見を出せます。</p>
+        </div>
+      </div>
+      <div class="vrow c-03 rv">
+        <figure class="vrow__ill"><img src="../../assets/ill-hands.jpg?v=20261008f" alt="ダッシュボードとプログラムを通じて現場の動きを変えていくイラスト" width="1400" height="781" loading="lazy"></figure>
+        <div class="vrow__b">
+          <p class="vrow__no en">03</p>
+          <h3>自分の「手」で変えていく</h3>
+          <p>提案するだけでなく、自分たちが現場に立ち、データと技術で変えていく。考える・つくる・動かすが地続きです。</p>
+        </div>
+      </div>
     </div>
-    <div class="shead rv" style="margin:52px 0 20px">
+
+    <div class="mission rv">
+      <figure class="mission__ph"><img src="../../assets/office.jpg" alt="大阪本社のオフィスで打ち合わせをするメンバー" width="2752" height="1536" loading="lazy"></figure>
+      <div class="mission__msg">
+        <p class="slabel">Our Mission</p>
+        <h3 class="mission__h"><span class="nw">モノの流れの生産性を向上させ、</span><br><span class="nw">企業と人と街の成長を支える。</span></h3>
+        <p class="mission__slogan">SLOGAN ── 物流をコストから、戦略資産に。</p>
+      </div>
+    </div>
+
+    <div class="vals rv">
+      <div class="val">
+        <figure class="val__ill"><img src="../../assets/ill-bold.jpg?v=20261008f" alt="前例のない領域へ一歩を踏み出すイラスト" width="1400" height="781" loading="lazy"></figure>
+        <p class="val__no en">VALUE 01</p>
+        <h4>大胆に突き進もう</h4>
+        <p>前例のない領域にこそ、価値がある。<br>まず一歩を踏み出す。</p>
+      </div>
+      <div class="val">
+        <figure class="val__ill"><img src="../../assets/ill-team.jpg?v=20261008f" alt="3人でホワイトボードの成果を確認するイラスト" width="1400" height="781" loading="lazy"></figure>
+        <p class="val__no en">VALUE 02</p>
+        <h4>チームへの貢献と信頼</h4>
+        <p>仲間を信じ、チームで成果を出す。<br>その積み重ねが社会を動かす。</p>
+      </div>
+      <div class="val">
+        <figure class="val__ill"><img src="../../assets/ill-craft.jpg?v=20261008f" alt="画面上の設計や数値を細部まで確かめるイラスト" width="1400" height="781" loading="lazy"></figure>
+        <p class="val__no en">VALUE 03</p>
+        <h4>匠の精神</h4>
+        <p>目の前の課題に真摯に向き合い、<br>仕事の質を最後まで高める。</p>
+      </div>
+    </div>
+
+    <a class="movie rv" href="https://www.youtube.com/shorts/MTsZZ7EFoKY" target="_blank" rel="noopener">
+      <span class="movie__thumb"><img src="../../assets/warehouse-dx.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"><span class="movie__play" aria-hidden="true">▶</span></span>
+      <span class="movie__b">
+        <span class="slabel">Movie</span>
+        <b>PALの現場を、動画で見る。</b>
+        <span class="movie__d">実際に働く空間や仕事の雰囲気を、短い動画で紹介します。</span>
+        <span class="textlink">動画を見る</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<section class="sec sec--navy sec--tight" id="whofits">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:20px">
       <p class="slabel">Who fits</p>
-      <h3 class="stitle" style="font-size:clamp(19px,2.1vw,24px)">活躍している人の、共通点。</h3>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">活躍している人の、共通点。</h2>
       <p class="slead">入社時の高いITスキルは必須ではありません。技術力よりも人物面を最優先しています。</p>
     </div>
     <div class="jobcats rv" style="margin-bottom:0">
       <span>現場を理解したい</span><span>仕組みづくりに興味がある</span><span>チームで進めるのが好き</span><span>改善を積み重ねられる</span>
     </div>
-    <p class="rv" style="margin-top:28px"><a class="btn btn--onnavy" href="../culture/">PALの価値観と、求める人を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <p class="rv" style="margin-top:28px"><a class="btn btn--onnavy" href="../people/#look">PALが求める人を、くわしく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
+<!-- ===== VALUES-MOVE v1 END ===== -->
 
 <section class="sec" id="numbers">
   <div class="wrap">
@@ -504,8 +570,7 @@
           <a href="../work/">仕事を知る</a>
           <a href="../career/">キャリアの掛け合わせ</a>
           <a href="../career/">キャリアパス</a>
-          <a href="../culture/">1日の流れ・働く環境</a>
-          <a href="../people/">社員を知る</a>
+          <a href="../people/">社員インタビュー・1日の流れ</a>
           <a href="../jobs/">募集要項</a>
           <a href="../faq/">よくある質問</a>
           <a href="../entry/">エントリー</a>
