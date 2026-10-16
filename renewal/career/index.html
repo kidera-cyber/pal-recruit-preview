@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>物流DXのキャリアパス｜入社後の成長と職種別の道すじ｜株式会社PAL採用</title>
-<meta name="description" content="株式会社PALに入社したあとの働き方と、その先のキャリア。研修・配属の流れ、働く場所と関わる職種、仕事の難しさ、現場運営からFDEへ、エンジニアからプロダクトへといった経験の掛け合わせ方と、センター長・FDE・プロダクト開発・DTSの職種別キャリアパスを紹介します。">
+<meta name="description" content="株式会社PALに入社したあとの働き方と、その先のキャリア。研修・配属の流れ、働く場所と関わる職種、仕事の難しさ、専門性を深め役割を広げていくキャリア形成の考え方と、センター長・FDE・プロダクト開発・DTSの職種別キャリアパスを紹介します。">
 <!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
 <link rel="canonical" href="./">
 <meta name="theme-color" content="#1b1d31">
@@ -13,11 +13,11 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="物流DXのキャリアパス｜入社後の成長と職種別の道すじ｜株式会社PAL採用">
-<meta property="og:description" content="株式会社PALに入社したあとの働き方と、その先のキャリア。研修・配属の流れ、働く場所と関わる職種、仕事の難しさ、現場運営からFDEへ、エンジニアからプロダクトへといった経験の掛け合わせ方と、センター長・FDE・プロダクト開発・DTSの職種別キャリアパスを紹介します。">
+<meta property="og:description" content="株式会社PALに入社したあとの働き方と、その先のキャリア。研修・配属の流れ、働く場所と関わる職種、仕事の難しさ、専門性を深め役割を広げていくキャリア形成の考え方と、センター長・FDE・プロダクト開発・DTSの職種別キャリアパスを紹介します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261017d">
+<link rel="stylesheet" href="../../assets/style.css?v=20261017e">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "キャリアを知る"}]}</script>
@@ -190,7 +190,9 @@
       <span>課題を整理する</span><span>改善を進める</span><span>プロジェクトを動かす</span>
     </div>
     <!-- ===== CAREER-BRANCH v1：削除済み（Career Crossover と主旨が重複するため／縦幅の最適化）
-         救済情報：下記をそのまま戻せば復元できます。
+         【2026-10-16 追記】下記の救済情報は、職種間の異動を前提にしたキャリア表現を含みます。
+         CAREER-DEV v1 でこの方針自体を廃止したため、そのまま復元しないでください。
+         救済情報：
     <div class="branch rv">
       <h3>ひとつの職種だけで、キャリアを決めなくていい。</h3>
       <p>入口はひとつでも、その先は一方向ではありません。現場・技術・事業――どの入口から入っても、経験の掛け合わせ次第で複数の方向へキャリアが伸びていきます。</p>
@@ -646,79 +648,51 @@
   </div>
 </section>
 
-<section class="sec sec--tight" id="crossover">
+<!-- ===== CAREER-DEV v1：旧「CAREER CROSSOVER／キャリアは、一本道じゃない。」を全面的に作り直し。
+     ■ 削除した理由
+       旧セクションは「BPO → FDE」「エンジニア → FDE」「FDE → 戦略・PM」という
+       3つの職種転換を PREVIOUS / EXPERIENCE / PAL / NEW CAREER の矢印フローで掲載していたが、
+       PALの実際のキャリアの考え方と一致せず、異動の実績や正式な制度として確認されていない。
+       「職種を自由に横断できる」「BPOからFDEへ進むのがキャリアアップ」という誤解を招くため、
+       根拠のない職種間異動を中心としたキャリア表現を廃止した。
+     ■ 削除した要素
+       ONE PROJECT の濃紺メッセージボックス（.hub__center）／7職種を並べた旧CROSSOVER図解
+       （.hub__nodes--7）／3本の職種転換フロー（.cross / .cross__flow / .cross__node /
+       .cross__arrow / .cross__body / .cross__tag）／「上流へ越境する」等の断定的な説明。
+     ■ 新しい考え方
+       職種間の異動ではなく「専門性を深める／役割を広げる／専門性を掛け合わせる」の
+       3つの側面でキャリア形成を示す。3つは昇進ステップではなく、成長の異なる側面。
+     ■ id を crossover → development に変更（サイト内に #crossover への参照は0件を確認済み）
+     ■ .cross 系CSSは未使用化（残置）。.hub 系は WORK #whypal で引き続き使用。
+     ■ 復元は git 履歴（コミット fcdbc09）から。 ===== -->
+<section class="sec sec--tight" id="development">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
-      <p class="slabel">Career Crossover</p>
-      <h2 class="stitle" style="font-size:clamp(24px,2.9vw,36px)">キャリアは、一本道じゃない。PALでは、交わり、掛け合わさる。</h2>
-      <p class="slead">現場（BPO）で培った肌感覚と、エンジニアの実装力。その両方がFDEで交わり、やがて戦略やプロダクトへ広がっていく。職種の壁を越えて経験を掛け合わせられることが、PALのキャリアの強みです。</p>
+    <div class="shead rv" style="margin-bottom:30px">
+      <p class="slabel">Career Development</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">専門性を深める。</span><span class="nw">その先に、仕事の広がりがある。</span></h2>
+      <p class="slead">PALでは、それぞれの職種で専門性を磨きながら、担当する仕事や役割の幅を広げていきます。異なる専門性を持つメンバーとの連携も、新しい視点や知識に触れる機会になります。</p>
     </div>
-    <div class="hub rv">
-      <div class="hub__center">
-        <span class="en">ONE PROJECT</span>
-        <b>ひとつの物流課題に、<br>職種が交わる</b>
-      </div>
-      <ul class="hub__nodes hub__nodes--7">
-        <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>BPO / 現場運営</b><span>現場の肌感覚が、設計や提案に効いてくる</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-transport"></use></svg><b>DTS / 運送</b><span>安全な運行を土台に、輸送をつなぐ</span></li>
-        <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg><b>衛生清掃</b><span>清掃の計画をつくり、品質を保つ</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>FDE</b><span>現場と技術、どちらの経験からでも入れる</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>プロダクト企画・開発</b><span>現場で使われる仕組みを設計・開発する</span></li>
-        <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg><b>営業・事業開発</b><span>顧客の課題を整理し、提案・実行につなぐ</span></li>
-        <li><svg aria-hidden="true"><use href="#ic-office"></use></svg><b>コーポレート</b><span>各部署が仕事に集中できる環境を整える</span></li>
-      </ul>
-    </div>
-    <p class="note rv" style="margin-bottom:34px">※ 職種が分断されていないという意味です。異動や職種変更が約束されるものではありません。</p>
-    <div class="cross">
-      <article class="cross__card rv">
-        <div class="cross__flow" aria-label="BPOの現場経験がFDEへ、そして本当に動く設計へ">
-          <div class="cross__node"><small>PREVIOUS</small><b>物流現場（BPO）</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node"><small>EXPERIENCE</small><b>現場運営・改善</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node cross__node--pal"><small>PAL</small><b>FDE</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node cross__node--new"><small>NEW CAREER</small><b>動く設計をつくる</b></div>
-        </div>
-        <div class="cross__body">
-          <span class="cross__tag">現場 × 設計</span>
-          <h3>BPOで現場を知り尽くした人が、FDEになる。</h3>
-          <p>倉庫のリアルを肌で理解しているからこそ、「本当に動く設計」がつくれる。現場出身のFDEは、PALの大きな武器です。</p>
-        </div>
-      </article>
-      <article class="cross__card rv">
-        <div class="cross__flow" aria-label="エンジニアの実装力がFDEへ、そして本物のDXへ">
-          <div class="cross__node"><small>PREVIOUS</small><b>エンジニア</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node"><small>EXPERIENCE</small><b>実装・プロダクト開発</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node cross__node--pal"><small>PAL</small><b>FDE</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node cross__node--new"><small>NEW CAREER</small><b>現場で効くDX</b></div>
-        </div>
-        <div class="cross__body">
-          <span class="cross__tag">実装 × 現場</span>
-          <h3>エンジニアが現場に出て、FDEへ広がる。</h3>
-          <p>プロダクトを作る力に、現場を見る目が加わる。コードと現場の両方がわかる人材が、DXを本物にします。</p>
-        </div>
-      </article>
-      <article class="cross__card rv">
-        <div class="cross__flow" aria-label="FDEの現場知見が戦略・PMへ広がる">
-          <div class="cross__node"><small>PREVIOUS</small><b>FDE</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node"><small>EXPERIENCE</small><b>現場×システムの設計</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node cross__node--pal"><small>PAL</small><b>戦略・PM</b></div>
-          <span class="cross__arrow" aria-hidden="true">→</span>
-          <div class="cross__node cross__node--new"><small>NEW CAREER</small><b>上流へ越境する</b></div>
-        </div>
-        <div class="cross__body">
-          <span class="cross__tag">設計 × 戦略</span>
-          <h3>FDEの現場知見を携え、戦略を描く。</h3>
-          <p>現場×システムを設計してきた経験は、そのまま経営を動かすコンサル・PMの力になる。上流へ越境できます。</p>
-        </div>
-      </article>
-    </div>
+    <ol class="cdev rv">
+      <li>
+        <span class="cdev__no en">01</span>
+        <svg class="cdev__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+        <h3>専門性を深める</h3>
+        <p>現場運営、システム開発、FDE、営業など、それぞれの職種で経験を積み、専門性を高めていきます。</p>
+      </li>
+      <li>
+        <span class="cdev__no en">02</span>
+        <svg class="cdev__ic" aria-hidden="true"><use href="#ic-manager"></use></svg>
+        <h3>役割を広げる</h3>
+        <p>経験を重ねながら、担当する案件や改善活動、マネジメントなど、役割の幅を広げていきます。</p>
+      </li>
+      <li>
+        <span class="cdev__no en">03</span>
+        <svg class="cdev__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
+        <h3>専門性を掛け合わせる</h3>
+        <p>異なる専門性を持つメンバーと協力しながら、自分の仕事に新しい視点を取り入れていきます。</p>
+      </li>
+    </ol>
+    <p class="note rv" style="margin-top:22px">※ キャリアの広がり方は、職種・経験・適性・配属先によって異なります。特定の昇格や職種変更を保証するものではありません。</p>
   </div>
 </section>
 
