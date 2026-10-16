@@ -4522,7 +4522,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    ============================================================ */
 .look5__head{margin:0 0 46px}
 #look .stitle .nw2,
-#look-skill .look3__h .nw{display:inline-block;max-width:100%}
+#look .look3__h .nw{display:inline-block;max-width:100%}
 #look .look5__head .slead{max-width:40em}
 @media (max-width:620px){
   .look5__head{margin:0 0 34px}
@@ -5027,7 +5027,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    既存の .vrow{} .mission__h{} 自体は変更していない（CULTURE復元時も無害）。
    ============================================================ */
 #values .mission__h{font-size:clamp(22px,2.5vw,30px)}
-#values .vrow{border:1px solid var(--line)}
+#look .vrow{border:1px solid var(--line)}
 #values .mission{margin-top:64px}
 #values .vals{margin-top:60px}
 #values .movie{margin-top:48px}
@@ -5188,7 +5188,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 
 /* ============================================================
    ===== VROW-CARDS v1 START =====
-   ABOUT「PALが、大切にする3つのこと。」(#values .vrows) を
+   ABOUT「PALが、大切にする3つのこと。」(#look .vrows) を
    画像と文章を交互に置く縦3段から、PC横3列のカードへ変更する。
    ・HTMLは一切変更せず、CSSのみで配置を組み替える（本文・イラスト・altは不変）。
    ・.c-01/.c-02/.c-03 の地色（白寄りグレー／淡いピンク／淡いパープル）は維持。
@@ -5197,22 +5197,51 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    ・基底の .vrows / .vrow / .vrow__ill / .vrow__b は変更していないため、
      他ページ・他セクションへの影響はない。
    ============================================================ */
-#values .vrows{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
-#values .vrow,#values .vrow--rev{grid-template-columns:minmax(0,1fr);gap:0;
+#look .vrows{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+#look .vrow,#look .vrow--rev{grid-template-columns:minmax(0,1fr);gap:0;
   align-items:start;padding:0 0 24px;overflow:hidden}
-#values .vrow--rev .vrow__ill{order:0}
-#values .vrow__ill img{aspect-ratio:16/10;border-radius:0}
-#values .vrow__b{padding:18px 20px 0}
-#values .vrow__b h3{margin-top:7px;font-size:clamp(18px,1.75vw,21px);line-height:1.55}
-#values .vrow__b p{margin-top:11px;font-size:14.5px;line-height:1.9}
+#look .vrow--rev .vrow__ill{order:0}
+#look .vrow__ill img{aspect-ratio:16/10;border-radius:0}
+#look .vrow__b{padding:18px 20px 0}
+#look .vrow__b h3{margin-top:7px;font-size:clamp(18px,1.75vw,21px);line-height:1.55}
+#look .vrow__b p{margin-top:11px;font-size:14.5px;line-height:1.9}
 
 @media (max-width:1080px){
-  #values .vrows{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  #look .vrows{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 }
 @media (max-width:680px){
-  #values .vrows{grid-template-columns:minmax(0,1fr);gap:16px}
-  #values .vrow,#values .vrow--rev{padding:0 0 20px}
-  #values .vrow__b{padding:16px 18px 0}
-  #values .vrow__b p{font-size:14.5px;line-height:1.85}
+  #look .vrows{grid-template-columns:minmax(0,1fr);gap:16px}
+  #look .vrow,#look .vrow--rev{padding:0 0 20px}
+  #look .vrow__b{padding:16px 18px 0}
+  #look .vrow__b p{font-size:14.5px;line-height:1.85}
 }
 /* ===== VROW-CARDS v1 END ===== */
+
+/* ============================================================
+   ===== VALUES-TO-PEOPLE v1 START =====
+   PEOPLE #look を「3つの価値観 → 6つの姿勢 → 3つの力」の統合セクションにした。
+   ・.vrow 系のスコープは #values → #look へ付け替え済み（ABOUTから移設したため）。
+   ・2つの小見出しは既存の .look3__h を再利用し、グループ間の余白だけを .look__sub で与える。
+   ・6つの行動特性は H3 の小見出し配下になったため h3→h4 に変更。
+     見た目を変えないよう .look5__v h3 と同値の指定を h4 にも与える（h3側は残置）。
+   ・3つの力は旧 #look-skill（薄グレー背景の独立セクション）から取り込んだため、
+     背景を外し、上に細い区切り線を置いて「補足情報」として主張を抑える。
+   ============================================================ */
+#look .look3__h.look__sub{margin-top:62px}
+#look .look5{margin-top:28px}
+#look .force3{margin-top:22px}
+.look5__v h4{margin-top:10px;font-size:clamp(21px,2.2vw,25px);line-height:1.45;color:var(--navy)}
+#look .force3{padding-top:26px;border-top:1px solid var(--line)}
+#look .force3 li{padding-top:0}
+#look .force3 b{font-size:clamp(17px,1.7vw,18.5px)}
+#look .force3 p{font-size:14.5px;line-height:1.85}
+#look .force3 svg{width:22px;height:22px}
+@media (max-width:1080px){
+  #look .look3__h.look__sub{margin-top:48px}
+}
+@media (max-width:640px){
+  #look .look3__h.look__sub{margin-top:40px}
+  #look .look5{margin-top:22px}
+  #look .force3{margin-top:18px;padding-top:22px}
+}
+/* ===== VALUES-TO-PEOPLE v1 END ===== */

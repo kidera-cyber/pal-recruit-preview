@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261016x">
+<link rel="stylesheet" href="../../assets/style.css?v=20261016y">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "人を知る"}]}</script>
@@ -208,41 +208,65 @@
      カードをやめて細い罫線と余白で構成。締めのメッセージを下部に大きく置く。
      6項目の文言は変更していない。LOOKFOR v4 の .look3 系は #look では未使用
      （.look3__h は #look-skill で引き続き使用）。 ===== -->
+<!-- ===== VALUES-TO-PEOPLE v1：ABOUT の「PALが、大切にする3つのこと。」(#values) と
+     PEOPLE の「WHO WE LOOK FOR」「3つの力」(#look-skill) を1セクションへ統合。
+     「PALが大切にする価値観 → 日々の仕事に表れる姿勢 → 仕事で活かす力」の
+     階層が一度で読めるようにするため。本文・イラスト・写真はすべて既存のまま。
+     旧 #look-skill セクションは廃止し、この中に取り込んでいる
+     （#look-skill へのアンカー参照はサイト内に存在しなかった）。 ===== -->
 <section class="sec sec--tight" id="look">
   <div class="wrap">
-    <!-- ===== LOOKFOR v7：「PALが採用で大切にしていること」の独立ブロックを削除。
-         内容は下の .slead へ統合した（独立した大きな空間を取らない）。
-         救済情報：旧文言「経験や専門性だけではなく、仕事にどう向き合うかを
-         大切にしています。」＝ .slead の第2文に吸収。 ===== -->
-
     <div class="shead look5__head rv">
-      <p class="slabel">Who we look for</p>
-      <h2 class="stitle"><span class="nw"><span class="nw2">社員の仕事から</span><span class="nw2">見えてくる、</span></span><span class="nw"><span class="nw2">PALが</span><span class="nw2">大切にしていること。</span></span></h2>
-      <p class="slead">職種や役割は違っても、仕事への向き合い方には共通するものがあります。経験や専門性だけでなく、日々の仕事の中で表れる姿勢を、6つの言葉で整理しています。</p>
+      <p class="slabel">Our values &amp; people</p>
+      <h2 class="stitle"><span class="nw">PALが大切にすること、</span><span class="nw">そこで働く人の姿勢。</span></h2>
+      <p class="slead">PALが大切にする3つの価値観と、日々の仕事に表れる6つの姿勢。さらに、その姿勢を仕事で活かす3つの力をご紹介します。</p>
+    </div>
+    <div class="vrows">
+      <div class="vrow c-01 rv">
+        <figure class="vrow__ill"><img src="../../assets/ill-field.jpg?v=20261008f" alt="物流現場でタブレットを手に、現場の担当者と作業の流れを確認するイラスト" width="1400" height="781" loading="lazy"></figure>
+        <div class="vrow__b">
+          <p class="vrow__no en">01</p>
+          <h3>現場の当事者となる</h3>
+          <p>外から提案するのではなく、顧客の現場を請け負い、自分たちの責任で回す。だから、机上で終わらない課題に向き合えます。</p>
+        </div>
+      </div>
+      <div class="vrow c-02 rv vrow--rev">
+        <figure class="vrow__ill"><img src="../../assets/ill-equal.jpg?v=20261008f" alt="制服のメンバーと私服のメンバーが円卓で対等に意見を交わすイラスト" width="1400" height="781" loading="lazy"></figure>
+        <div class="vrow__b">
+          <p class="vrow__no en">02</p>
+          <h3>個を尊重し、平等に接する</h3>
+          <p>上下や勤続年数で判断されない。互いを個として尊重し合う土台があるから、誰もが対等に意見を出せます。</p>
+        </div>
+      </div>
+      <div class="vrow c-03 rv">
+        <figure class="vrow__ill"><img src="../../assets/ill-hands.jpg?v=20261008f" alt="ダッシュボードとプログラムを通じて現場の動きを変えていくイラスト" width="1400" height="781" loading="lazy"></figure>
+        <div class="vrow__b">
+          <p class="vrow__no en">03</p>
+          <h3>自分の「手」で変えていく</h3>
+          <p>提案するだけでなく、自分たちが現場に立ち、データと技術で変えていく。考える・つくる・動かすが地続きです。</p>
+        </div>
+      </div>
     </div>
 
+    <h3 class="look3__h look__sub rv"><span class="nw">その価値観が、</span><span class="nw">日々の仕事に表れる。</span></h3>
     <div class="look5">
       <ol class="look5__v look5__v--l rv">
-        <li><span class="look5__no en">01</span><h3>挑戦する</h3><p>失敗を恐れず、まず動いてみる。</p></li>
-        <li><span class="look5__no en">02</span><h3>自ら動く</h3><p>待つのではなく、自分から課題を見つける。</p></li>
-        <li><span class="look5__no en">03</span><h3>未来を見る</h3><p>今だけでなく、その先まで考える。</p></li>
+        <li><span class="look5__no en">01</span><h4>挑戦する</h4><p>失敗を恐れず、まず動いてみる。</p></li>
+        <li><span class="look5__no en">02</span><h4>自ら動く</h4><p>待つのではなく、自分から課題を見つける。</p></li>
+        <li><span class="look5__no en">03</span><h4>未来を見る</h4><p>今だけでなく、その先まで考える。</p></li>
       </ol>
       <figure class="look5__ph rv">
         <img src="../../assets/person-consultant.jpg?v=20261008e" alt="職種を越えて、同じ課題に向き合うPALのメンバー" width="1600" height="1200" loading="lazy">
         <span class="look5__cap en">PAL MEMBERS</span>
       </figure>
       <ol class="look5__v look5__v--r rv">
-        <li><span class="look5__no en">04</span><h3>変化を楽しむ</h3><p>変化を、新しい可能性として捉える。</p></li>
-        <li><span class="look5__no en">05</span><h3>学び続ける</h3><p>知らないことに好奇心を持つ。</p></li>
-        <li><span class="look5__no en">06</span><h3>相手を尊重する</h3><p>立場を越えて、相手の考えに耳を傾ける。</p></li>
+        <li><span class="look5__no en">04</span><h4>変化を楽しむ</h4><p>変化を、新しい可能性として捉える。</p></li>
+        <li><span class="look5__no en">05</span><h4>学び続ける</h4><p>知らないことに好奇心を持つ。</p></li>
+        <li><span class="look5__no en">06</span><h4>相手を尊重する</h4><p>立場を越えて、相手の考えに耳を傾ける。</p></li>
       </ol>
     </div>
-  </div>
-</section>
 
-<section class="sec sec--soft sec--tight" id="look-skill">
-  <div class="wrap">
-    <h3 class="look3__h rv"><span class="nw">その姿勢を、</span><span class="nw">仕事で活かすための3つの力。</span></h3>
+    <h3 class="look3__h look__sub rv"><span class="nw">その姿勢を、</span><span class="nw">仕事で活かすための3つの力。</span></h3>
     <ul class="force3 rv">
       <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="force3__en en">STRUCTURE</span><b>構造で捉える</b><p>複雑な課題を整理し、本質を見る。</p></li>
       <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><span class="force3__en en">TECHNOLOGY</span><b>テクノロジーフレンドリー</b><p>新しい技術を、まず使ってみる。</p></li>
@@ -262,7 +286,7 @@
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="../jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
-    <p class="entry__sec"><a href="../about/#values">PALが大切にする3つのこと</a></p>
+    <p class="entry__sec"><a href="../about/">PALを知る</a></p>
   </div>
 </section>
 </main>

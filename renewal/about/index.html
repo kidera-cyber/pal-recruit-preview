@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261016x">
+<link rel="stylesheet" href="../../assets/style.css?v=20261016y">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "PALを知る"}]}</script>
@@ -387,59 +387,8 @@
       <li><span class="en">03</span><b>やる前に、効果を検証する</b><p><b class="hl">PoV（価値検証）</b>で効果を確かめてから進め、投資判断のハードルを下げます。</p></li>
     </ul>
     <p class="note rv">※ 8つの強みの全文は、コーポレートサイト「PALの強み」で公開しています。</p>
-  </div>
-</section>
-
-<!-- ===== WHYPAL-TO-WORK v1：「WHY PAL IS INTERESTING／PALの仕事が、面白い理由。」を
-     WORKページ（/renewal/work/ の ROLE DIFFERENCE と EXPLORE の間）へ移設。
-     会社の説明ではなく「PALで働く魅力」を伝える内容のため、職種・仕事内容を扱う
-     WORK の方が求職者の読む順序として自然、という判断。
-     ABOUT側はこれで「では、誰がこの4つをひとつの流れにつなぐのか。」→
-     OUR PROCESS が直結する。復元は git 履歴（コミット 6ee33ca）から。 ===== -->
-
-<!-- ===== VALUES-MOVE v1 START：CULTUREページ（/renewal/culture/）の
-     「PALが、大切にする3つのこと。」「Our Mission」「VALUE 3つ」「動画」を
-     ABOUTへ実体移設。移設前のABOUTは .effects による要約版＋「詳しくは働き方を知るで」
-     という外部送客だったため、同一内容の二重管理になっていた。
-     旧 #values（navy・要約＋Mission＋Who fits）は「活躍している人の、共通点」だけを
-     残して #whofits へ分離。旧マークアップはgit履歴（コミット 13487f8 以前）から復元可。 ===== -->
-<section class="sec" id="values">
-  <div class="wrap">
-    <div class="shead rv">
-      <p class="slabel">Our Values</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">PALが、</span><span class="nw">大切にする3つのこと。</span></h2>
-      <p class="slead">制度や勤務方法の話ではありません。ここまでに見てきた仕事の進め方を、日々どのような姿勢で実行しているのか。判断に迷ったときにPALが立ち返る、3つの軸です。</p>
-    </div>
-    <div class="vrows">
-      <div class="vrow c-01 rv">
-        <figure class="vrow__ill"><img src="../../assets/ill-field.jpg?v=20261008f" alt="物流現場でタブレットを手に、現場の担当者と作業の流れを確認するイラスト" width="1400" height="781" loading="lazy"></figure>
-        <div class="vrow__b">
-          <p class="vrow__no en">01</p>
-          <h3>現場の当事者となる</h3>
-          <p>外から提案するのではなく、顧客の現場を請け負い、自分たちの責任で回す。だから、机上で終わらない課題に向き合えます。</p>
-        </div>
-      </div>
-      <div class="vrow c-02 rv vrow--rev">
-        <figure class="vrow__ill"><img src="../../assets/ill-equal.jpg?v=20261008f" alt="制服のメンバーと私服のメンバーが円卓で対等に意見を交わすイラスト" width="1400" height="781" loading="lazy"></figure>
-        <div class="vrow__b">
-          <p class="vrow__no en">02</p>
-          <h3>個を尊重し、平等に接する</h3>
-          <p>上下や勤続年数で判断されない。互いを個として尊重し合う土台があるから、誰もが対等に意見を出せます。</p>
-        </div>
-      </div>
-      <div class="vrow c-03 rv">
-        <figure class="vrow__ill"><img src="../../assets/ill-hands.jpg?v=20261008f" alt="ダッシュボードとプログラムを通じて現場の動きを変えていくイラスト" width="1400" height="781" loading="lazy"></figure>
-        <div class="vrow__b">
-          <p class="vrow__no en">03</p>
-          <h3>自分の「手」で変えていく</h3>
-          <p>提案するだけでなく、自分たちが現場に立ち、データと技術で変えていく。考える・つくる・動かすが地続きです。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== MISSION-TOP v1：Our Mission（写真＋カード）と VALUE 01-03 カードは
-         TOP（/renewal/#mission）へ移設。同一内容の重複掲載を避けるため、ここは
-         該当セクションへのテキストリンクのみとする。復元はgit履歴から。 ===== -->
+    <!-- ===== VALUES-TO-PEOPLE v1：#values 削除にともない、TOPのミッション・バリューへの
+         テキストリンクと、非表示中のMOVIEブロックをこのセクションの末尾へ移した。 ===== -->
     <p class="rv" style="margin-top:40px"><a class="textlink" href="../#mission">PALのミッション・バリューを見る</a></p>
 
     <!-- ============================================================
@@ -474,8 +423,23 @@
       </span>
     </a>
     -->
+
   </div>
 </section>
+
+<!-- ===== WHYPAL-TO-WORK v1：「WHY PAL IS INTERESTING／PALの仕事が、面白い理由。」を
+     WORKページ（/renewal/work/ の ROLE DIFFERENCE と EXPLORE の間）へ移設。
+     会社の説明ではなく「PALで働く魅力」を伝える内容のため、職種・仕事内容を扱う
+     WORK の方が求職者の読む順序として自然、という判断。
+     ABOUT側はこれで「では、誰がこの4つをひとつの流れにつなぐのか。」→
+     OUR PROCESS が直結する。復元は git 履歴（コミット 6ee33ca）から。 ===== -->
+
+<!-- ===== VALUES-TO-PEOPLE v1：「PALが、大切にする3つのこと。」(#values) を
+     PEOPLEページの統合セクション（/renewal/people/#look）へ移設し、
+     本セクションを削除。PALの価値観と、社員の姿勢・力を1か所で読める構成にするため。
+     同セクションに同居していた「PALのミッション・バリューを見る」リンクと
+     非表示中のMOVIEブロックは #how（Why PAL can）の末尾へ移している。
+     復元は git 履歴（コミット b1d8f5f）から。 ===== -->
 
 <section class="sec sec--navy sec--tight" id="whofits">
   <div class="wrap">
