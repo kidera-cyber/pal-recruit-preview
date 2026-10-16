@@ -27,7 +27,7 @@
 | `renewal/jobs/fde/index.html` | FDE（Forward Deployed Engineer） |
 | `renewal/jobs/center-manager/index.html` | センター長／候補（現場運営） |
 | `renewal/jobs/product-engineer/index.html` | プロダクト企画・開発エンジニア |
-| `renewal/jobs/dts/index.html` | 運行管理・所長（DTS） |
+| `renewal/jobs/dts/index.html` | 配送ドライバー（DTS）※**募集条件が未確認のため現時点では作成不可** |
 
 ## 値の出典
 
@@ -200,56 +200,18 @@
 
 > 勤務地欄に「リモート相談可」とあるが、常時フルリモートではないため `jobLocationType: TELECOMMUTE` は付けない（Google はフルリモート求人にのみ使用を認めている）。
 
-### 運行管理・所長（DTS）（`renewal/jobs/dts/index.html`）
+### 配送ドライバー（DTS）（`renewal/jobs/dts/index.html`）
 
-```html
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "JobPosting",
-  "title": "運行管理・所長（DTS）",
-  "description": "安全な運行を土台に、データで現場を進化させる仕事です（配車・運行の管理／データに基づく業務改善・標準化の提案／安全管理）。配車・運行管理の経験者歓迎。勤務は実働8時間（拠点によりシフト制）、シフトによる週休2日。選考はエントリー→カジュアル面談→面接（複数回）→最終面接→内定（Web面接可）です。",
-  "datePosted": "★★★ 公開日を入れる（例 2026-10-31）★★★",
-  "employmentType": "FULL_TIME",
-  "hiringOrganization": {
-    "@type": "Organization",
-    "name": "株式会社PAL",
-    "sameAs": "https://www.pal-style.co.jp/"
-  },
-  "jobLocation": [
-    {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "JP",
-        "addressRegion": "大阪府",
-        "addressLocality": "",
-        "streetAddress": ""
-      }
-    },
-    {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "JP",
-        "addressRegion": "東京都",
-        "addressLocality": "",
-        "streetAddress": ""
-      }
-    }
-  ],
-  "applicantLocationRequirements": {
-    "@type": "Country",
-    "name": "JP"
-  },
-  "baseSalary": {
-    "@type": "MonetaryAmount",
-    "currency": "JPY",
-    "value": {
-      "@type": "QuantitativeValue",
-      "minValue": 4000000,
-      "maxValue": 7000000,
-      "unitText": "YEAR"
-    }
-  }
-}</script>
-```
+**2026-10-16：作成を保留しました。**
+
+この職種は「運行管理・所長（DTS）」から「配送ドライバー（DTS）」へ変更されましたが、
+雇用形態・必要な運転免許・運転する車両・配送エリア・配送する荷物・積み降ろしの有無・
+給与・勤務地・勤務時間・休日休暇・福利厚生・未経験可否が**すべて社内確認中**です。
+
+旧「運行管理・所長」前提の条件（正社員／想定年収400万〜700万円／担当事業所／実働8時間／
+シフトによる週休2日）を JobPosting に流用すると、検索エンジンやAI検索に
+**実際の職務と異なる運行管理者の求人として認識される**ため、意図的に作成していません。
+旧内容は git 履歴（コミット `13dd271` 以前の本ファイル）から参照できます。
+
+募集条件が確定しだい、他職種と同じ形式で作成してください（`baseSalary` は給与が
+確定した場合のみ。`jobLocation` は実際の勤務地、`description` は確定した募集要項と一致させる）。
