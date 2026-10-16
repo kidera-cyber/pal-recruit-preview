@@ -396,37 +396,12 @@
   </div>
 </section>
 
-<!-- ===== WHYPAL-MOVE v1：「PALの仕事が、面白い理由。」を #why の直後から
-     #values（PALが、大切にする3つのこと。）の直前へ移動。
-     移動前は「では、誰がこの4つをひとつの流れにつなぐのか。」という問いの直後に
-     このセクションが入り、問いへの答え（Our Process）に届いていなかったため。
-     セクションの中身（ラベル・見出し・導入文・濃紺カード・4つの訴求）は無変更。 ===== -->
-<section class="sec sec--tight" id="whypal">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
-      <p class="slabel">Why PAL is interesting</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">PALの仕事が、面白い理由。</h2>
-      <p class="slead">この「分断」を、自分たちの手でひとつの流れにつないでいく。<br>そこに、PALで働く面白さがあります。</p>
-    </div>
-    <div class="hub rv">
-      <div class="hub__center">
-        <span class="en">PAL</span>
-        <b><span class="nw">物流DXを、</span><span class="nw">現場で動く形にする</span></b>
-      </div>
-      <ul class="hub__nodes">
-        <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>01　現場に近い</b><span>机上で考えるだけではなく、実際の物流現場を見ながら仕事を進めます。</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>02　自分たちで仕組みをつくれる</b><span>提案して引き渡すのではなく、つくったものが現場で動くところまで自分の担当範囲になります。</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>03　職種を越えて仕事ができる</b><span>BPO、FDE、システム、営業、DTS、衛生清掃、コーポレート。異なる専門性を持つ人と一緒に進めます。</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg><b>04　変化を自分の目で見られる</b><span>自分たちが関わった改善が、現場の動きや仕事の進め方として返ってきます。</span></li>
-      </ul>
-    </div>
-    <!-- ===== WHYPAL-MOVE v1：この1文は #process（Our Process）への橋渡しだったため、
-         移動後は直後が「PALが、大切にする3つのこと。」になり文脈が合わなくなる。
-         テキストは削除せずコメントアウトで残置。復元は下記1行のコメントを外すだけ。
-    <p class="note rv" style="font-size:15px;color:var(--navy);font-weight:700;margin-top:34px">では、PALはどうやって現場と技術をつないでいるのか。</p>
-         ===== -->
-  </div>
-</section>
+<!-- ===== WHYPAL-TO-WORK v1：「WHY PAL IS INTERESTING／PALの仕事が、面白い理由。」を
+     WORKページ（/renewal/work/ の ROLE DIFFERENCE と EXPLORE の間）へ移設。
+     会社の説明ではなく「PALで働く魅力」を伝える内容のため、職種・仕事内容を扱う
+     WORK の方が求職者の読む順序として自然、という判断。
+     ABOUT側はこれで「では、誰がこの4つをひとつの流れにつなぐのか。」→
+     OUR PROCESS が直結する。復元は git 履歴（コミット 6ee33ca）から。 ===== -->
 
 <!-- ===== VALUES-MOVE v1 START：CULTUREページ（/renewal/culture/）の
      「PALが、大切にする3つのこと。」「Our Mission」「VALUE 3つ」「動画」を
