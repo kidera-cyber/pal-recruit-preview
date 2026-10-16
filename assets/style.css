@@ -5227,7 +5227,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    ・3つの力は旧 #look-skill（薄グレー背景の独立セクション）から取り込んだため、
      背景を外し、上に細い区切り線を置いて「補足情報」として主張を抑える。
    ============================================================ */
-#look .look3__h.look__sub{margin-top:62px}
+#look .look__sub,#look .look3__h.look__sub2{margin-top:62px}
 #look .look5{margin-top:28px}
 #look .force3{margin-top:22px}
 .look5__v h4{margin-top:10px;font-size:clamp(21px,2.2vw,25px);line-height:1.45;color:var(--navy)}
@@ -5237,11 +5237,55 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 #look .force3 p{font-size:14.5px;line-height:1.85}
 #look .force3 svg{width:22px;height:22px}
 @media (max-width:1080px){
-  #look .look3__h.look__sub{margin-top:48px}
+  #look .look__sub,#look .look3__h.look__sub2{margin-top:48px}
 }
 @media (max-width:640px){
-  #look .look3__h.look__sub{margin-top:40px}
+  #look .look__sub,#look .look3__h.look__sub2{margin-top:40px}
   #look .look5{margin-top:22px}
   #look .force3{margin-top:18px;padding-top:22px}
 }
 /* ===== VALUES-TO-PEOPLE v1 END ===== */
+
+/* ============================================================
+   ===== LOOK6-CARDS v1 START =====
+   PEOPLE #look：6つの姿勢を「中央写真＋左右3項目」から横3列×2段のカードへ、
+   3つの力をカード型へ変更する。
+   ・HTMLの文章・01〜06の順序は変更していない（アイコンは他ページのsymbolを再利用）。
+   ・6つの姿勢＝白カード、3つの力＝薄グレーカードにして、補足情報であることを示しつつ
+     カードという形で統一感を持たせる。影・グラデーション・追加アニメーションはなし。
+   ・旧 .look5 / .look5__v / .look5__ph / .look5__cap は未使用化（残置）。
+     .look5__head はセクション冒頭の見出しブロックで引き続き使用している。
+   ============================================================ */
+#look .look__sub .slabel{margin-bottom:9px}
+
+/* 6つの姿勢：横3列×2段 */
+.look6{margin-top:26px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;list-style:none;align-items:stretch}
+.look6 li{padding:24px 22px 26px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:#fff}
+.look6__no{display:block;font-family:Lato,sans-serif;font-size:13px;
+  font-weight:700;letter-spacing:.16em;color:var(--red)}
+.look6__ic{display:block;width:30px;height:30px;margin-top:14px;color:var(--navy)}
+.look6 h4{margin-top:12px;font-size:clamp(18px,1.8vw,21px);line-height:1.45;color:var(--navy)}
+.look6 p{margin-top:9px;font-size:14.5px;line-height:1.9;color:var(--sub);text-wrap:pretty}
+
+/* 3つの力：横3列・6つの姿勢よりコンパクト */
+#look .force3{margin-top:22px;padding-top:0;border-top:0;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
+#look .force3 li{padding:20px 20px 22px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:var(--bg-soft)}
+#look .force3 svg{width:24px;height:24px;opacity:1}
+#look .force3__en{margin-top:12px}
+#look .force3 b{font-size:clamp(16.5px,1.6vw,18px)}
+#look .force3 p{font-size:14px;line-height:1.85}
+
+@media (max-width:1080px){
+  .look6{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  #look .force3{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+}
+@media (max-width:640px){
+  .look6,#look .force3{grid-template-columns:minmax(0,1fr);gap:14px}
+  .look6 li{padding:20px 18px 22px}
+  #look .force3 li{padding:18px 18px 20px}
+}
+/* ===== LOOK6-CARDS v1 END ===== */

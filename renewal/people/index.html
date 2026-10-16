@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261016y">
+<link rel="stylesheet" href="../../assets/style.css?v=20261016z">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "人を知る"}]}</script>
@@ -37,6 +37,14 @@
   .r{fill:none;stroke:#cf131b;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
   .fn{fill:#262946}.fr{fill:#cf131b}.fp{fill:#ffe3e6}.fg{fill:#eef0f6}.fw{fill:#fff}
 </style></defs>
+<!-- ===== LOOK6-CARDS v1：6つの姿勢のカード用アイコン。
+     他ページ（ABOUT等）のスプライトから同一の線画symbolをコピーしただけで、
+     新規のイラスト生成はしていない。 ===== -->
+<symbol id="ic2-improve" viewBox="0 0 32 32"><path class="s" d="M4 27h25"/><path class="a" d="M7 22l6-6 4 3 8-9"/><path class="a" d="M21 10h4v4"/><circle class="s" cx="9" cy="8" r="2.6"/><path class="s" d="M4 16c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+<symbol id="ic2-field" viewBox="0 0 32 32"><path class="s" d="M3 6v21M11 6v21M3 13h8M3 20h8"/><rect class="a" x="4.5" y="14.5" width="5" height="4"/><circle class="s" cx="22" cy="12" r="3.5"/><path class="s" d="M15.5 27c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/></symbol>
+<symbol id="ic-chart" viewBox="0 0 32 32"><path class="s" d="M5 5v22h22"/><path class="a" d="M9 21l5-6 4 3 7-9"/><circle class="af" cx="25" cy="9" r="2"/></symbol>
+<symbol id="ic2-operate" viewBox="0 0 32 32"><circle class="s" cx="22" cy="12" r="5"/><path class="s" d="M22 4v2M22 18v2M14 12h2M28 12h2M16.5 6.5l1.4 1.4M26.1 16.1l1.4 1.4M27.5 6.5l-1.4 1.4M17.9 16.1l-1.4 1.4"/><path class="a" d="M19.8 12l1.6 1.6 3-3.4"/><circle class="s" cx="9" cy="16" r="3"/><path class="s" d="M4 27c0-2.8 2.2-5 5-5s5 2.2 5 5"/></symbol>
+<symbol id="ic-cloud" viewBox="0 0 32 32"><path class="s" d="M9 21a5 5 0 011-9.9 7 7 0 0113.3 2A4.5 4.5 0 0123 21z"/><path class="a" d="M16 24v5M11 27l5 2 5-2"/></symbol>
 <symbol id="ic-meeting" viewBox="0 0 32 32"><path class="s" d="M4 6h17a2 2 0 012 2v8a2 2 0 01-2 2H11l-5 4v-4H4a2 2 0 01-2-2V8a2 2 0 012-2z" transform="translate(2 1)"/><path class="a" d="M10 12h10"/><path class="s" d="M10 16h6"/></symbol>
 <symbol id="ic2-fde" viewBox="0 0 32 32"><path class="s" d="M2 9v14M6.5 9v14M2 16h4.5"/><rect class="s" x="24" y="10" width="7" height="10" rx="1.5"/><circle class="s" cx="16" cy="10" r="3.5"/><path class="s" d="M10.5 22c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5"/><path class="a" d="M8.5 16h3M20.5 16h3"/></symbol>
 <symbol id="ic2-system" viewBox="0 0 32 32"><rect class="s" x="9" y="7" width="18" height="13" rx="2"/><path class="s" d="M5 25h26l-2-5H9z"/><path class="a" d="M15 11l-2.5 2.5L15 16M21 11l2.5 2.5L21 16"/></symbol>
@@ -248,25 +256,28 @@
       </div>
     </div>
 
-    <h3 class="look3__h look__sub rv"><span class="nw">その価値観が、</span><span class="nw">日々の仕事に表れる。</span></h3>
-    <div class="look5">
-      <ol class="look5__v look5__v--l rv">
-        <li><span class="look5__no en">01</span><h4>挑戦する</h4><p>失敗を恐れず、まず動いてみる。</p></li>
-        <li><span class="look5__no en">02</span><h4>自ら動く</h4><p>待つのではなく、自分から課題を見つける。</p></li>
-        <li><span class="look5__no en">03</span><h4>未来を見る</h4><p>今だけでなく、その先まで考える。</p></li>
-      </ol>
-      <figure class="look5__ph rv">
-        <img src="../../assets/person-consultant.jpg?v=20261008e" alt="職種を越えて、同じ課題に向き合うPALのメンバー" width="1600" height="1200" loading="lazy">
-        <span class="look5__cap en">PAL MEMBERS</span>
-      </figure>
-      <ol class="look5__v look5__v--r rv">
-        <li><span class="look5__no en">04</span><h4>変化を楽しむ</h4><p>変化を、新しい可能性として捉える。</p></li>
-        <li><span class="look5__no en">05</span><h4>学び続ける</h4><p>知らないことに好奇心を持つ。</p></li>
-        <li><span class="look5__no en">06</span><h4>相手を尊重する</h4><p>立場を越えて、相手の考えに耳を傾ける。</p></li>
-      </ol>
+    <!-- ===== LOOK6-CARDS v1：6つの姿勢の見出しをご指定の「WHO WE LOOK FOR／
+         PALで働く人の、6つの姿勢。」に変更。導入文はセクション冒頭の slead を維持。 ===== -->
+    <div class="look__sub rv">
+      <p class="slabel">Who we look for</p>
+      <h3 class="look3__h"><span class="nw">PALで働く人の、</span><span class="nw">6つの姿勢。</span></h3>
     </div>
+    <!-- ===== LOOK6-CARDS v1：中央に社員写真を置き左右に3項目ずつ並べる .look5 を廃止し、
+         横3列×2段のカード（番号・線画アイコン・見出し・説明文）に変更。
+         01〜06 の順序・文章は一切変更していない。
+         外した写真 person-consultant.jpg はファイルを残置しており、
+         TOP（/renewal/）と JOBS（/renewal/jobs/）では引き続き使用している。
+         .look5 系のCSSは他ページ未使用のまま残置（復元は git 履歴 71f866c から）。 ===== -->
+    <ol class="look6 rv">
+      <li><span class="look6__no en">01</span><svg class="look6__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg><h4>挑戦する</h4><p>失敗を恐れず、まず動いてみる。</p></li>
+      <li><span class="look6__no en">02</span><svg class="look6__ic" aria-hidden="true"><use href="#ic2-field"></use></svg><h4>自ら動く</h4><p>待つのではなく、自分から課題を見つける。</p></li>
+      <li><span class="look6__no en">03</span><svg class="look6__ic" aria-hidden="true"><use href="#ic-chart"></use></svg><h4>未来を見る</h4><p>今だけでなく、その先まで考える。</p></li>
+      <li><span class="look6__no en">04</span><svg class="look6__ic" aria-hidden="true"><use href="#ic2-operate"></use></svg><h4>変化を楽しむ</h4><p>変化を、新しい可能性として捉える。</p></li>
+      <li><span class="look6__no en">05</span><svg class="look6__ic" aria-hidden="true"><use href="#ic-cloud"></use></svg><h4>学び続ける</h4><p>知らないことに好奇心を持つ。</p></li>
+      <li><span class="look6__no en">06</span><svg class="look6__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><h4>相手を尊重する</h4><p>立場を越えて、相手の考えに耳を傾ける。</p></li>
+    </ol>
 
-    <h3 class="look3__h look__sub rv"><span class="nw">その姿勢を、</span><span class="nw">仕事で活かすための3つの力。</span></h3>
+    <h3 class="look3__h look__sub2 rv"><span class="nw">その姿勢を、</span><span class="nw">仕事で活かすための3つの力。</span></h3>
     <ul class="force3 rv">
       <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="force3__en en">STRUCTURE</span><b>構造で捉える</b><p>複雑な課題を整理し、本質を見る。</p></li>
       <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><span class="force3__en en">TECHNOLOGY</span><b>テクノロジーフレンドリー</b><p>新しい技術を、まず使ってみる。</p></li>
