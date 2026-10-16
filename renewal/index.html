@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261016g">
+<link rel="stylesheet" href="../assets/style.css?v=20261016h">
 </head>
 <body>
 
@@ -229,36 +229,34 @@
       </div>
     </div>
 
-    <div class="wwd rv">
-      <div class="wwd__phase">
-        <p class="wwd__ph"><span class="en">DESIGN</span>設計</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>物流現場・業務</b><span>現場の制約や業務の流れを理解するところから始まります。</span></li>
-          <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg><b>物流データ</b><span>現場から集まるデータを統合し、判断に使える形に整えます。</span></li>
-          <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>課題整理・技術要件への翻訳</b><span>FDEが現場の課題を技術要件へ翻訳し、実装までをつなぎます。</span></li>
-        </ul>
-      </div>
-      <div class="wwd__phase">
-        <p class="wwd__ph"><span class="en">DEPLOY</span>実装・導入</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>システム</b><span>業務に必要なシステムを設計・開発し、既存のシステムとも連携します。</span></li>
-          <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg><b>設備・ロボティクス</b><span>マテハンやAGVなどの設備を、現場に合わせて組み合わせます。</span></li>
-          <li><svg aria-hidden="true"><use href="#ic2-transport"></use></svg><b>輸送</b><span>輸配送と運行を可視化し、現場の運用につなげます。</span></li>
-        </ul>
-      </div>
-      <div class="wwd__phase">
-        <p class="wwd__ph"><span class="en">OPERATE</span>運用</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg><b>運用</b><span>導入した仕組みが、現場で安定して使われる状態をつくります。</span></li>
-        </ul>
-      </div>
-      <div class="wwd__phase">
-        <p class="wwd__ph"><span class="en">EVOLVE</span>進化</p>
-        <ul>
-          <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg><b>改善</b><span>データと現場の声をもとに、改善を重ねていきます。</span></li>
-        </ul>
-      </div>
+    <!-- ===== FLOW4 v1：Design / Deploy / Operate / Evolve が唐突に見えるため、
+         直前に「なぜこの4つなのか」の導入を置き、4つを独立した分類ではなく
+         ひと続きの流れ（最後はまた設計へ戻る循環）として見せる。
+         HOMEでは細かく説明せず各段階1文に。FDEなどの専門用語は
+         この位置では出さない（職種の紹介は下のセクションで行う）。 ===== -->
+    <div class="wwdlead rv">
+      <h3 class="wwdlead__t"><span class="nw">PALの仕事は、</span><span class="nw">現場を知ることから始まり、改善まで続く。</span></h3>
+      <p class="wwdlead__d">課題を整理し、仕組みを設計する。現場へ実装し、実際に使われる状態まで支える。そして、運用から得た気づきを次の改善につなげていく。PALでは、この流れを4つの段階で捉えています。</p>
     </div>
+    <ol class="wwd wwd--flow rv">
+      <li class="wwd__phase">
+        <p class="wwd__ph"><span class="en">DESIGN</span>設計</p>
+        <p class="wwd__t">現場全体を捉え、人・設備・システム・データが連携する仕組みを考える。</p>
+      </li>
+      <li class="wwd__phase">
+        <p class="wwd__ph"><span class="en">DEPLOY</span>実装</p>
+        <p class="wwd__t">必要な技術や仕組みを、現場で使える形にする。</p>
+      </li>
+      <li class="wwd__phase">
+        <p class="wwd__ph"><span class="en">OPERATE</span>運用</p>
+        <p class="wwd__t">導入した仕組みを、実際の現場で安定して動かす。</p>
+      </li>
+      <li class="wwd__phase">
+        <p class="wwd__ph"><span class="en">EVOLVE</span>進化</p>
+        <p class="wwd__t">現場から得たデータや気づきをもとに、次の改善へつなげる。</p>
+      </li>
+    </ol>
+    <p class="wwd__loop rv"><i aria-hidden="true">↻</i>改善で見つかったことが、次の設計につながります。</p>
     <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="work/">仕事を知る（8つのフィールドと職種）<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>

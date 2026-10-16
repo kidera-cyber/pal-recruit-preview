@@ -4862,3 +4862,40 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .relcard__copy{font-size:18px}
 }
 /* ===== RELCARD v2 END ===== */
+
+/* ============================================================
+   ===== FLOW4 v1 START =====
+   HOMEの Design / Deploy / Operate / Evolve が唐突に見えるため、
+   直前に「なぜこの4つなのか」の導入を置き、4つを独立した分類ではなく
+   ひと続きの流れとして見せる。最後に「また設計へ戻る」循環を1行で補う。
+   ・各段階の説明は1文のみ（HOMEで細かく説明しない）。
+   ・.wwd は 3fr/3fr/1.25fr/1.25fr の不均等グリッドだったが、
+     流れとして見せるため4等分にする。
+   後勝ち上書き：.wwd{grid-template-columns:3fr 3fr 1.25fr 1.25fr}
+   未使用化（残置）：.wwd ul / .wwd li / .wwd svg / .wwd b / .wwd span
+   ============================================================ */
+.wwdlead{max-width:var(--measure,820px);margin-top:52px;padding-top:26px;
+  border-top:2px solid var(--red)}
+.wwdlead__t{font-size:clamp(20px,2.3vw,26px);line-height:1.6;font-weight:700;color:var(--navy);
+  text-wrap:balance}
+.wwdlead__t .nw{display:inline-block;max-width:100%}
+.wwdlead__d{margin-top:14px;font-size:16.5px;line-height:1.95;color:var(--sub);text-wrap:pretty}
+
+.wwd.wwd--flow{margin-top:34px;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 34px;
+  list-style:none}
+.wwd--flow .wwd__phase{padding-top:20px}
+.wwd--flow .wwd__phase::after{top:-6px}
+.wwd__t{margin-top:14px;font-size:14.5px;line-height:1.9;color:var(--sub);text-wrap:pretty}
+.wwd__loop{margin-top:22px;display:flex;align-items:center;gap:9px;
+  font-size:14px;line-height:1.8;color:var(--sub)}
+.wwd__loop i{font-style:normal;font-size:17px;color:var(--red)}
+
+@media (max-width:960px){
+  .wwd.wwd--flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 28px}
+  .wwd--flow .wwd__phase:nth-child(2)::after{display:none}
+}
+@media (max-width:620px){
+  .wwd.wwd--flow{grid-template-columns:minmax(0,1fr);gap:24px}
+  .wwdlead{margin-top:40px}
+}
+/* ===== FLOW4 v1 END ===== */
