@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261016h">
+<link rel="stylesheet" href="../../assets/style.css?v=20261016i">
 </head>
 <body>
 
@@ -170,42 +170,41 @@
 
 <section class="sec sec--soft sec--tight" id="why">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:10px">
+    <!-- ===== WHYNOW v3：物流業界の前提知識がない読者でも分かる順序へ。
+         旧版は PROBLEM 01「3PLだけでは届かない領域がある」で他社のモデルを
+         下げる書き方になっていたため廃止し、業界共通の課題3点を平易に示す形へ。
+         3PLは「物流運営の選択肢の一つ」として中立に1度だけ触れる。
+         CLOは主役にせず、「物流を経営課題として捉える動きが強まっている」の
+         補足に留める。「分断」も抽象語のままにせず具体例で説明する。
+         未使用化（残置）：.probs / .prob / .prob__no / .prob__list / .prob__sum ===== -->
+    <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Why now</p>
-      <h2 class="stitle">なぜ今、物流DXが避けられないのか。</h2>
-      <p class="slead">人手不足、物流コストの上昇、CLO対応。効率化とデータ活用が、これまで以上に求められています。<br>ただし、現場・システム・設備・データが<b class="hl">分断</b>されたままでは、個別に改善しても全体は変わりません。</p>
+      <h2 class="stitle"><span class="nw">なぜ今、</span><span class="nw">物流の仕組みを見直す必要があるのか。</span></h2>
+      <p class="slead">物流の現場では、働く人の数も、かかるコストも、求められる品質も変わってきています。まずは、その3つから。</p>
     </div>
+    <ol class="why3 rv">
+      <li class="why3__item">
+        <p class="why3__no"><span class="en">01</span>人手不足</p>
+        <p class="why3__t">人を増やすだけでは、現場を維持することが難しくなっています。</p>
+      </li>
+      <li class="why3__item">
+        <p class="why3__no"><span class="en">02</span>物流コストの上昇</p>
+        <p class="why3__t">人件費や輸送コストなど、物流にかかる負担は大きくなっています。</p>
+      </li>
+      <li class="why3__item">
+        <p class="why3__no"><span class="en">03</span>求められる仕事の高度化</p>
+        <p class="why3__t">より少ない人員でも、安全・品質・スピードを維持する仕組みが必要です。</p>
+      </li>
+    </ol>
+    <p class="why3__add rv">こうした背景から、物流を経営課題として捉える企業の動きも強まっています。</p>
 
-
-    <!-- ===== PROBLEM v3：文字のベタ置きをやめ、PROBLEM 01 / 02 を
-         「英字ラベル（赤）→ 見出し（濃紺）→ 3点の箇条書き → 結論の強調文」
-         で構成した白いカードに再構成した。 ===== -->
-    <div class="probs rv">
-      <div class="prob">
-        <span class="prob__no en">PROBLEM 01</span>
-        <h3>3PLだけでは届かない領域がある</h3>
-        <ul class="prob__list">
-          <li>3PLは倉庫・輸配送など現場オペレーションに強い</li>
-          <li>ただし、全社横断のデータ整理や業務設計までは担いにくい</li>
-          <li>そのため、業務単位では改善できても、物流全体はつながりにくい</li>
-        </ul>
-        <p class="prob__sum">業務単体では改善しても、物流全体ではつながらない。</p>
-      </div>
-      <div class="prob">
-        <span class="prob__no en">PROBLEM 02</span>
-        <h3>分離発注で「<b class="hl">つなぎ目</b>」が生まれる</h3>
-        <ul class="prob__list">
-          <li><span class="nw2">コンサルティング会社、SIer、マテハンメーカー、3PLなどへ</span><span class="nw2">分かれて発注される</span></li>
-          <li>それぞれに専門性がある一方、間に橋渡しコストや調整負担が生まれる</li>
-          <li>結果として「誰が全体をつなぐのか」が曖昧になる</li>
-        </ul>
-        <p class="prob__sum">では、誰が<b class="hl">全体をつなぐ</b>のか。</p>
-      </div>
+    <!-- ===== WHYNOW v3：ここから「個別の改善だけでは難しい理由」。
+         抽象語の「分断」を、具体例 → まとめの順で説明する。 ===== -->
+    <div class="whygap rv">
+      <h3 class="whygap__h"><span class="nw">それでも、</span><span class="nw">個別に改善するだけでは変わりにくい。</span></h3>
+      <p class="whygap__t">現場では人が作業し、システムには別の情報があり、設備は設備で動いている。それぞれが別々に改善されると、全体としてはうまくつながらないことがあります。</p>
     </div>
-
-    <!-- ===== WHYNOW v2：4要素を横並びのカードにし、間を「切れた線＋✕」で分断として見せる。
-     アイコン・番号（赤）・左揃え・1行説明に整理した。 ===== -->
-    <ol class="gap4 rv" aria-label="つながるべき4要素が分断されている状態">
+    <ol class="gap4 rv" aria-label="つながるべき4つが、別々に動いている状態">
       <li class="gap4__item">
         <p class="gap4__no"><span class="en">01</span>FIELD</p>
         <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
@@ -234,13 +233,12 @@
         <small>見えていても、活用しきれていない</small>
       </li>
     </ol>
-    <p class="note rv">※ 本来つながるべき4つが、連携しないまま個別に最適化されている状態です。</p>
-
+    <p class="why3__add rv">物流運営には3PLをはじめ、さまざまな支援の形があります。PALはその中でも、現場運営だけでなく、システムや設備、データ活用、改善まで一体で関わる点に特徴があります。</p>
     <!-- ===== ASK v3：濃紺の大判カードを廃止し、問題提起と次セクションをつなぐ
          ブリッジコピーへ。PCは1〜2行、改行は入れない。 ===== -->
     <div class="ask rv">
       <span class="en">THE QUESTION</span>
-      <b>では、誰が現場・システム・設備・データを<b class="hl">つなぐ</b>のか。</b>
+      <b>では、誰がこの4つを<b class="hl">ひとつの流れ</b>につなぐのか。</b>
     </div>
     <!-- ===== ASKTO v1：THE QUESTION の直後に、次のFDE（OUR PROCESS）への接続文を置く。 ===== -->
     <p class="askto rv">PALでは、この「つなぎ目」を埋める役割として、<b>FDE（Forward Deployed Engineer）</b>の考え方を物流DXに適用しています。<a class="textlink textlink--sm" href="#process">現場から改善までの進め方を見る</a></p>
@@ -275,67 +273,53 @@
     <div class="shead rv" style="margin-bottom:34px">
       <p class="slabel">Our Process</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">現場から改善まで、ひと続きで。</h2>
-      <p class="slead">FDE（Forward Deployed Engineer）が、現場の業務課題を技術要件へ翻訳しながら、設計・実装・運用・改善までをひと続きでつないでいきます。</p>
-      <p class="note">PALでは、このFDEの考え方を物流DXに適用しています。</p>
+      <p class="slead">FDE（Forward Deployed Engineer）は、顧客の業務課題を技術要件へ整理し、設計・実装・導入・運用までをつなぐエンジニアです。PALでは、物流現場で起きている課題を整理し、システム・設備・データを組み合わせて、実際に使える仕組みへつなげます。</p>
     </div>
 
-<div class="pflow rv">
+<!-- ===== FDEFIG v1：図解を「現場 → FDE → 技術・仕組み → 現場へ戻る」の
+         3段＋戻りに絞った。旧版は .pfline / .pfsteps（4段階）/ .pftl（7ステップ）/
+         .pftl__legend が重なり、何を見ればよいか分かりにくかったため、
+         7ステップの帯と凡例、FDE横断ラベルを削除し、4段階だけ残す。
+         図の中の文字数も減らし、詳細は図の下の1文に寄せた。
+         未使用化（残置）：.pfline / .pftl / .pftl--d/p/o/e / .pftl__legend ===== -->
+    <div class="pflow rv">
       <div class="pflow__row">
         <div class="pf pf--field">
-          <p class="pf__h"><span class="en">FIELD</span>現場の言葉</p>
+          <p class="pf__h"><span class="en">FIELD</span>現場</p>
           <figure class="pf__ill"><svg aria-hidden="true"><use href="#il-field"></use></svg></figure>
           <ul class="pf__bub">
-            <li>作業が追いつかない</li>
-            <li>人によってやり方が違う</li>
-            <li>情報が分散している</li>
-            <li>設備と業務が合っていない</li>
+            <li>この作業に時間がかかる</li>
+            <li>この画面が使いにくい</li>
+            <li>もっと安全にできないか</li>
           </ul>
         </div>
-
         <div class="pf pf--fde">
           <figure class="pf__ill pf__ill--sm"><svg aria-hidden="true"><use href="#il-person2"></use></svg></figure>
-          <p class="pf__fde"><span class="en">FDE</span>翻訳する</p>
+          <p class="pf__fde"><span class="en">FDE</span>整理する</p>
           <p class="pf__sub">Forward Deployed Engineer</p>
           <ol class="pf__t">
-            <li>現場を見る</li>
             <li>課題を整理する</li>
             <li>技術要件へ変える</li>
           </ol>
         </div>
-
         <div class="pf pf--tech">
-          <p class="pf__h"><span class="en">TECHNOLOGY</span>技術要件</p>
+          <p class="pf__h"><span class="en">TECHNOLOGY</span>技術・仕組み</p>
           <ul class="pf__ic">
             <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>システム</li>
-            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>データ</li>
             <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>設備</li>
-            <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>自動化</li>
-            <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>運用設計</li>
+            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>データ</li>
+            <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>運用</li>
           </ul>
         </div>
       </div>
-
-      <p class="pfline"><span class="en">FDE</span><i aria-hidden="true"></i><b>現場理解から改善まで横断する</b></p>
-
+      <p class="pfback"><i aria-hidden="true">↻</i>つくったものは現場で使われ、そこで出た声が次の改善につながります。</p>
       <ol class="pfsteps">
         <li><span class="en">01 DESIGN</span><b>設計</b><span>現場全体を捉え、最適な仕組みを設計する。</span></li>
         <li><span class="en">02 DEPLOY</span><b>実装・導入</b><span>技術を組み合わせ、現場へ実装する。</span></li>
         <li><span class="en">03 OPERATE</span><b>運用</b><span>現場で安定して価値を生み出す。</span></li>
         <li><span class="en">04 EVOLVE</span><b>進化</b><span>データをもとに改善を重ねる。</span></li>
       </ol>
-
-      <ol class="pftl">
-        <li class="pftl--d"><span class="en">01</span>現場を見る</li>
-        <li class="pftl--d"><span class="en">02</span>課題を整理する</li>
-        <li class="pftl--d"><span class="en">03</span>技術要件へ変える</li>
-        <li class="pftl--d"><span class="en">04</span>設計する</li>
-        <li class="pftl--p"><span class="en">05</span>実装する</li>
-        <li class="pftl--o"><span class="en">06</span>運用する</li>
-        <li class="pftl--e"><span class="en">07</span>改善する</li>
-      </ol>
-      <p class="pftl__legend"><span>01–04 DESIGN</span><span>05 DEPLOY</span><span>06 OPERATE</span><span>07 EVOLVE</span><em>07 のあと、01 に戻ります。</em></p>
     </div>
-
     <p class="transnote rv" style="margin-top:34px">現場・技術・運用・改善を、ひとつの流れとしてつないでいく。それがPALの仕事です。</p>
     <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="../work/fde/">FDEについて詳しく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
@@ -346,7 +330,7 @@
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Our Position ／ 結論</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">分断を、ひとつの流れにつなぐ。</h2>
-      <p class="slead">既存の3PLやSIerを置き換えるのではなく、関係者・役割・情報を一つの実行体制にまとめる。<br>それが、PALの立ち位置です。</p>
+      <p class="slead">PALは、物流現場の運営だけでなく、課題整理、システム、設備、データ、改善までをつなぎ、現場で動く仕組みとして実装していきます。<br>関係者・役割・情報を、一つの実行体制にまとめることを大切にしています。</p>
     </div>
     <!-- ===== POSMAP v2：濃紺背景の中でカードが沈んでいたため、
          CUSTOMER / PAL / FIELD・SYSTEM・DATA・OPERATION / 下段3カードを

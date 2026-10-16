@@ -4883,7 +4883,10 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 
 .wwd.wwd--flow{margin-top:34px;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 34px;
   list-style:none}
-.wwd--flow .wwd__phase{padding-top:20px}
+/* .wwd__phase を li にしたため、旧 .wwd li（44pxのアイコン欄を持つグリッド）が
+   当たってしまう。display を戻して2カラム化を打ち消す。 */
+.wwd--flow .wwd__phase{display:block;padding-top:20px}
+.wwd--flow .wwd__ph{display:block;font-size:13.5px}
 .wwd--flow .wwd__phase::after{top:-6px}
 .wwd__t{margin-top:14px;font-size:14.5px;line-height:1.9;color:var(--sub);text-wrap:pretty}
 .wwd__loop{margin-top:22px;display:flex;align-items:center;gap:9px;
@@ -4899,3 +4902,58 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .wwdlead{margin-top:40px}
 }
 /* ===== FLOW4 v1 END ===== */
+
+/* ============================================================
+   ===== WHYNOW v3 START =====
+   ABOUT の「なぜ今」を、物流業界の前提知識がない読者向けに作り直した。
+   旧 PROBLEM 01/02（3PLとの比較・分離発注の説明）を廃止し、
+   業界共通の課題3点（人手不足／コスト上昇／仕事の高度化）を
+   平易な1文ずつで示す .why3 と、「個別改善だけでは変わりにくい」理由を
+   具体例で説明する .whygap を追加。
+   gap4（4要素が別々に動いている図）は視覚的に分かりやすいため残置。
+   未使用化（残置）：.probs / .prob / .prob__no / .prob__list / .prob__sum
+   ============================================================ */
+.why3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;list-style:none}
+.why3__item{padding:24px 24px 26px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius-lg);border-top:3px solid var(--red)}
+.why3__no{display:flex;align-items:baseline;gap:11px;font-size:18px;font-weight:700;
+  line-height:1.5;color:var(--navy)}
+.why3__no .en{flex:none;font-family:Lato,sans-serif;font-size:12.5px;font-weight:700;
+  letter-spacing:.1em;color:var(--red)}
+.why3__t{margin-top:12px;font-size:15.5px;line-height:1.95;color:var(--sub);text-wrap:pretty}
+.why3__add{max-width:var(--measure,820px);margin-top:22px;font-size:15.5px;line-height:1.95;
+  color:var(--sub);text-wrap:pretty}
+
+.whygap{max-width:var(--measure,820px);margin-top:48px;padding-top:26px;
+  border-top:2px solid var(--line-mid,#c3cade)}
+.whygap__h{font-size:clamp(19px,2.1vw,23px);line-height:1.6;font-weight:700;color:var(--navy);
+  text-wrap:balance}
+.whygap__h .nw{display:inline-block;max-width:100%}
+.whygap__t{margin-top:13px;font-size:16px;line-height:1.95;color:var(--sub);text-wrap:pretty}
+#why .gap4{margin-top:28px}
+
+@media (max-width:860px){
+  .why3{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+}
+@media (max-width:620px){
+  .why3{grid-template-columns:minmax(0,1fr)}
+  .why3__item{padding:20px 20px 22px}
+  .whygap{margin-top:38px}
+}
+/* ===== WHYNOW v3 END ===== */
+
+/* ============================================================
+   ===== FDEFIG v1 START =====
+   ABOUT の「現場の言葉」図解を、現場 → FDE → 技術・仕組み → 現場へ戻る、の
+   3段＋戻りに絞った。7ステップの帯（.pftl）と凡例、FDE横断ラベル（.pfline）を
+   外したぶん、戻りの1文（.pfback）を足して循環が分かるようにしている。
+   未使用化（残置）：.pfline / .pftl / .pftl li / .pftl--d/p/o/e / .pftl__legend
+   ============================================================ */
+.pfback{margin:34px 0 26px;display:flex;align-items:center;gap:10px;
+  padding:14px 18px;border-radius:var(--radius);background:var(--bg-soft);
+  font-size:14.5px;line-height:1.8;color:var(--sub);text-wrap:pretty}
+.pfback i{flex:none;font-style:normal;font-size:18px;color:var(--red)}
+@media (max-width:620px){
+  .pfback{margin:26px 0 22px;padding:13px 15px;font-size:13.5px}
+}
+/* ===== FDEFIG v1 END ===== */
