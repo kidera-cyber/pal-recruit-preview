@@ -5072,3 +5072,22 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #mission .mission__slogan{font-size:13px;padding:8px 16px}
 }
 /* ===== MISSION-TOP v1 END ===== */
+
+/* ============================================================
+   ===== SEO-HEADING v1 START =====
+   見出し階層のスキップ（h1→h3）を解消するため、
+   ・PEOPLE  .lookend の「働く姿勢は、仕事の中に表れる。」
+   ・WORK/FDE .phil__body の「仕様書だけでは、現場は動かない。」
+   を h3 → h2 に変更した。既存の h3 向けルールは一切変更せず、
+   同じ指定を h2 にも与えて見た目を完全に据え置く。
+   （h3 側のルールは他ページで使用中のため残置）
+   ============================================================ */
+.lookend h2{margin-top:14px;font-size:clamp(23px,2.6vw,28px);line-height:1.55;color:var(--navy)}
+.lookend h2+p{margin-top:14px;font-size:16px;line-height:1.9;color:var(--sub)}
+.lookend h2 .nw{display:inline-block;max-width:100%}
+.lookend h2{text-wrap:balance}
+.phil__body h2{font-size:clamp(21px,2.5vw,32px);line-height:1.6;color:#fff}
+/* 「FDEが現場で担うこと。」は h4→h3 にしたため、.phil__body h3 の大見出し指定に
+   飲み込まれないよう、旧 .stance__h（18px）＋ .phil__body h4（白）と同じ見た目に固定する。 */
+.phil__body h3.stance__h{font-size:18px;line-height:1.7;color:#fff}
+/* ===== SEO-HEADING v1 END ===== */
