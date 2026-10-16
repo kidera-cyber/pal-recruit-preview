@@ -5289,3 +5289,17 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #look .force3 li{padding:18px 18px 20px}
 }
 /* ===== LOOK6-CARDS v1 END ===== */
+
+/* ============================================================
+   ===== JARROW-REMOVE v1 START =====
+   WORK #fields：LAYER 02 と LAYER 03 の間にあった双方向矢印ブロック
+   （padding:16px 0 ＋ 矢印36px ＋ 文言）を削除したため、2つのレイヤーが
+   密着してしまう。LAYER 01 → LAYER 02 の間隔（56px）に近い余白を
+   .jlayer--field にだけ与えて、配置を自然につなぐ。
+   他のレイヤー・矢印・職種カードのスタイルは変更していない。
+   ============================================================ */
+#fields .jlayer--field{margin-top:34px}
+@media (max-width:720px){
+  #fields .jlayer--field{margin-top:26px}
+}
+/* ===== JARROW-REMOVE v1 END ===== */
