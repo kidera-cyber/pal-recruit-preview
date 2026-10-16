@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261016m">
+<link rel="stylesheet" href="../assets/style.css?v=20261016q">
 </head>
 <body>
 
@@ -211,6 +211,48 @@
     <a href="jobs/#job-corporate">コーポレート</a>
   </div>
 </nav>
+
+<!-- ===== MISSION-TOP v1 START：ABOUT（/renewal/about/#values）にあった
+     「Our Mission」写真＋カードと「VALUE 01-03」カードを、FIND YOUR FIELD の直後・
+     What We Do の前へ移設。文章・写真・イラスト・カードデザインはABOUTのものをそのまま使用し、
+     画像パスのみ ../../assets/ → ../assets/ に調整している。
+     見出し階層のみ、TOPのセクション見出しとして mission__h を h3→h2、
+     VALUE名を h4→h3 に変更（h2→h4 の階層スキップを解消）。
+     ABOUT側は同内容を削除し、本セクションへのテキストリンクに置換した。 ===== -->
+<section class="sec" id="mission">
+  <div class="wrap">
+    <div class="mission rv">
+      <figure class="mission__ph"><img src="../assets/office.jpg" alt="大阪本社のオフィスで打ち合わせをするメンバー" width="2752" height="1536" loading="lazy"></figure>
+      <div class="mission__msg">
+        <p class="slabel">Our Mission</p>
+        <h2 class="mission__h"><span class="nw"><span class="nw2">モノの流れの</span><span class="nw2">生産性を向上させ、</span></span><br><span class="nw"><span class="nw2">企業と人と街の</span><span class="nw2">成長を支える。</span></span></h2>
+        <p class="mission__slogan"><span class="nw">SLOGAN ── 物流をコストから、</span><span class="nw">戦略資産に。</span></p>
+      </div>
+    </div>
+
+    <div class="vals rv">
+      <div class="val">
+        <figure class="val__ill"><img src="../assets/ill-bold.jpg?v=20261008f" alt="前例のない領域へ一歩を踏み出すイラスト" width="1400" height="781" loading="lazy"></figure>
+        <p class="val__no en">VALUE 01</p>
+        <h3>大胆に突き進もう</h3>
+        <p>前例のない領域にこそ、価値がある。<br>まず一歩を踏み出す。</p>
+      </div>
+      <div class="val">
+        <figure class="val__ill"><img src="../assets/ill-team.jpg?v=20261008f" alt="3人でホワイトボードの成果を確認するイラスト" width="1400" height="781" loading="lazy"></figure>
+        <p class="val__no en">VALUE 02</p>
+        <h3>チームへの貢献と信頼</h3>
+        <p>仲間を信じ、チームで成果を出す。<br>その積み重ねが社会を動かす。</p>
+      </div>
+      <div class="val">
+        <figure class="val__ill"><img src="../assets/ill-craft.jpg?v=20261008f" alt="画面上の設計や数値を細部まで確かめるイラスト" width="1400" height="781" loading="lazy"></figure>
+        <p class="val__no en">VALUE 03</p>
+        <h3>匠の精神</h3>
+        <p>目の前の課題に真摯に向き合い、<br>仕事の質を最後まで高める。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== MISSION-TOP v1 END ===== -->
 
 <!-- ===== MESSAGE v1 START：FVとKEY CONTENTSの間に、PALの仕事を定義する ===== -->
 <section class="sec msgsec" id="message">
