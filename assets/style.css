@@ -5185,3 +5185,34 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   font-size:11px;font-style:normal;font-weight:700;letter-spacing:.04em;
   background:rgba(255,255,255,.16);color:#ffb3b8;vertical-align:middle}
 /* ===== CP-CARDS v1 END ===== */
+
+/* ============================================================
+   ===== VROW-CARDS v1 START =====
+   ABOUT「PALが、大切にする3つのこと。」(#values .vrows) を
+   画像と文章を交互に置く縦3段から、PC横3列のカードへ変更する。
+   ・HTMLは一切変更せず、CSSのみで配置を組み替える（本文・イラスト・altは不変）。
+   ・.c-01/.c-02/.c-03 の地色（白寄りグレー／淡いピンク／淡いパープル）は維持。
+   ・.vrow--rev（交互配置用）は #values 配下だけ order を戻して無効化し、
+     全カードを「画像 → 番号 → 見出し → 説明文」の順に統一する。
+   ・基底の .vrows / .vrow / .vrow__ill / .vrow__b は変更していないため、
+     他ページ・他セクションへの影響はない。
+   ============================================================ */
+#values .vrows{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+#values .vrow,#values .vrow--rev{grid-template-columns:minmax(0,1fr);gap:0;
+  align-items:start;padding:0 0 24px;overflow:hidden}
+#values .vrow--rev .vrow__ill{order:0}
+#values .vrow__ill img{aspect-ratio:16/10;border-radius:0}
+#values .vrow__b{padding:18px 20px 0}
+#values .vrow__b h3{margin-top:7px;font-size:clamp(18px,1.75vw,21px);line-height:1.55}
+#values .vrow__b p{margin-top:11px;font-size:14.5px;line-height:1.9}
+
+@media (max-width:1080px){
+  #values .vrows{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+}
+@media (max-width:680px){
+  #values .vrows{grid-template-columns:minmax(0,1fr);gap:16px}
+  #values .vrow,#values .vrow--rev{padding:0 0 20px}
+  #values .vrow__b{padding:16px 18px 0}
+  #values .vrow__b p{font-size:14.5px;line-height:1.85}
+}
+/* ===== VROW-CARDS v1 END ===== */
