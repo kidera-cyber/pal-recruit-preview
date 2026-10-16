@@ -5341,3 +5341,30 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #now-hiring .jbtn{height:auto;min-height:42px}
 }
 /* ===== JOBTILE-ALIGN v1 END ===== */
+
+/* ============================================================
+   ===== FAQ-GROUPS v1 START =====
+   FAQを「応募・選考・働き方／職種別／物流DX・FDE」の3グループに再構成。
+   既存の .tabs / .tab / .faq / .faqcat をそのまま再利用し、
+   2段目（職種タブ）用に小さめの .faqtabs--job だけを足している。
+   背景・配色・枠線・角丸は既存のまま。画像・装飾・アニメーションの追加なし。
+   ============================================================ */
+.faqtabs{margin-bottom:0}
+.faqtabs--job{gap:8px;margin-top:20px;margin-bottom:0}
+.faqtabs--job .tab{padding:9px 16px;font-size:13px}
+.faqcat__d{margin-top:12px;max-width:var(--measure,820px);
+  font-size:14.5px;line-height:1.95;color:var(--sub)}
+.faqjob__h{margin-top:30px;padding-bottom:12px;border-bottom:1px solid var(--line);
+  font-size:17px;font-weight:700;line-height:1.5;color:var(--navy)}
+.faqjob__h::before{content:"";display:inline-block;width:3px;height:15px;
+  margin-right:10px;border-radius:2px;background:var(--red);vertical-align:-2px}
+#fq-jobs .faq,#fq-common .faq,#fq-dx .faq{margin-top:18px}
+#fq-jobs .faqcat,#fq-common .faqcat,#fq-dx .faqcat{margin-top:40px}
+/* JavaScript無効時は全パネルが縦に並ぶため、グループの切れ目を分かりやすくする */
+#fq-jobs>[role="tabpanel"]+[role="tabpanel"]{margin-top:0}
+@media (max-width:620px){
+  .faqtabs--job{gap:7px}
+  .faqtabs--job .tab{padding:8px 13px;font-size:12.5px}
+  .faqjob__h{margin-top:24px;font-size:16px}
+}
+/* ===== FAQ-GROUPS v1 END ===== */

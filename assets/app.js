@@ -82,10 +82,20 @@
     setTimeout(request, 600);
   }
 
-  /* ---- A Day in the Life：タブ切替 ---- */
+  /* ---- タブ切替（A Day in the Life / CAREER PATH / FAQ）----
+     FAQページでカテゴリタブと職種タブの2段構成を使うため、
+     ページ内の全タブを1グループとして扱っていた処理を、
+     tab が属する [role="tablist"] 単位にスコープした。
+     タブリストが1つしかないページの挙動は変わらない。 */
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab[role="tab"]'));
+  var tabGroup = function (tab) {
+    var list = tab.closest ? tab.closest('[role="tablist"]') : null;
+    return list
+      ? Array.prototype.slice.call(list.querySelectorAll(':scope > .tab[role="tab"]'))
+      : tabs;
+  };
   var selectTab = function (tab) {
-    tabs.forEach(function (t) {
+    tabGroup(tab).forEach(function (t) {
       var on = t === tab;
       t.setAttribute('aria-selected', on ? 'true' : 'false');
       t.setAttribute('tabindex', on ? '0' : '-1');
@@ -100,6 +110,12 @@
       }
     });
   };
+  /* JS有効時だけ未選択パネルを隠す。HTMLに hidden を書かないページ（FAQ）では、
+     JSが無効でもすべての質問が本文として読める。 */
+  tabs.forEach(function (tab) {
+    var panel = document.getElementById(tab.getAttribute('aria-controls'));
+    if (panel && tab.getAttribute('aria-selected') !== 'true') panel.hidden = true;
+  });
   tabs.forEach(function (tab, i) {
     tab.setAttribute('tabindex', tab.getAttribute('aria-selected') === 'true' ? '0' : '-1');
     tab.addEventListener('click', function () { selectTab(tab); });
@@ -107,7 +123,9 @@
       var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
       if (!d) return;
       e.preventDefault();
-      var next = tabs[(i + d + tabs.length) % tabs.length];
+      var g = tabGroup(tab);
+      var gi = g.indexOf(tab);
+      var next = g[(gi + d + g.length) % g.length];
       selectTab(next);
       next.focus();
     });
