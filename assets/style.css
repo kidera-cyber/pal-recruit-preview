@@ -5111,3 +5111,77 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #process .effects--light{grid-template-columns:minmax(0,1fr)}
 }
 /* ===== PROCESS-MERGE v1 END ===== */
+
+/* ============================================================
+   ===== CP-CARDS v1 START =====
+   CAREER PATH（#career）の縦積みタイムラインを、
+   エリアB＝01〜03の横並びカード／エリアC＝横型キャリアマップ に再構成する。
+   ・HTMLは STEP リストを 03 ブロックの外へ出しただけで、文章・項目・注記は不変。
+   ・既存の .cstory / .cstory__blk / .cstory__items / .cstory__skills /
+     .cstory__steps の基底ルールは変更せず、.cstory--cards と .cmap の配下だけ
+     後勝ちで上書きする（他ページ・他セクションへの影響なし）。
+   ・エンゲージメントは 01〜04 の4ブロックのため .cstory--cards4 で 2×2。
+   ============================================================ */
+.cstory--cards{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.cstory--cards4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cstory--cards .cstory__blk{padding:22px 20px 24px;border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff}
+.cstory--cards .cstory__blk::before{display:none}
+.cstory--cards .cstory__no{position:static;margin-bottom:12px}
+.cstory--cards .cstory__blk h4{font-size:clamp(16.5px,1.6vw,19px)}
+.cstory--cards .cstory__blk h4 em{margin-left:8px}
+.cstory--cards .cstory__t{margin-top:11px;max-width:none;font-size:14.5px;line-height:1.9}
+.cstory--cards .cstory__items{margin-top:16px;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cstory--cards .cstory__items li{padding:13px 8px;font-size:12.5px;gap:7px}
+.cstory--cards .cstory__items svg{width:24px;height:24px}
+.cstory--cards .cstory__skills{margin-top:14px;grid-template-columns:minmax(0,1fr);gap:0}
+.cstory--cards .cstory__skills li{padding:12px 0 13px}
+.cstory--cards .cstory__skills li:last-child{border-bottom:0;padding-bottom:0}
+.cstory--cards .cstory__skills b{font-size:15px}
+.cstory--cards .cstory__skills p{margin-top:4px;font-size:13.5px;line-height:1.78}
+.cstory--cards .cstory__to{margin-top:14px;display:flex;gap:8px;font-size:14px;line-height:1.85;color:var(--sub)}
+.cstory--cards .cstory__to i{flex:none;font-style:normal;font-weight:700;color:var(--red)}
+.cstory--cards .note{margin-top:12px}
+
+/* --- エリアC：横型キャリアマップ --- */
+.cmap{margin-top:26px}
+.cmap .cstory__steps{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 30px}
+.cmap .cstory__steps li{padding:17px 18px 19px}
+.cmap .cstory__steps b{font-size:clamp(15.5px,1.5vw,17.5px)}
+.cmap .cstory__steps p{margin-top:5px;font-size:13.5px;line-height:1.78}
+.cmap .cstory__steps li+li::before{left:-20px;top:50%;margin-top:-5px;width:9px;height:9px;
+  border-right:2px solid var(--red);border-top:2px solid var(--red);
+  border-bottom:0;border-left:0;transform:rotate(45deg)}
+/* 分岐（FDE）は全幅。分岐の前後では矢印を出さない */
+.cmap .cstory__steps li.cfork{grid-column:1 / -1}
+.cmap .cstory__steps li.cfork::before,
+.cmap .cstory__steps li.cfork+li::before{display:none}
+/* DTSはSTEP1＋A/B分岐のため1列のまま */
+/* 分岐を含む場合（FDE）は3列。:has() 非対応ブラウザでは4列のまま崩れない */
+.cmap .cstory__steps:has(li.cfork){grid-template-columns:repeat(3,minmax(0,1fr))}
+.cmap .cstory__steps--dts{grid-template-columns:minmax(0,1fr)}
+.cmap .note{margin-top:16px}
+
+@media (max-width:1000px){
+  .cstory--cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cmap .cstory__steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 26px}
+  .cmap .cstory__steps li:nth-child(odd)::before{display:none}
+  .cmap .cstory__steps li+li::before{left:-18px}
+}
+@media (max-width:640px){
+  .cstory--cards,.cstory--cards4{grid-template-columns:minmax(0,1fr);gap:14px}
+  .cstory--cards .cstory__blk{padding:20px 18px 22px}
+  .cmap .cstory__steps{grid-template-columns:minmax(0,1fr);gap:12px}
+  .cmap .cstory__steps li:nth-child(odd)::before{display:block}
+  .cmap .cstory__steps li+li::before{left:28px;top:-9px;margin-top:0;width:7px;height:7px;
+    border-right:1.5px solid var(--line-mid,#c3cade);border-bottom:1.5px solid var(--line-mid,#c3cade);
+    border-top:0;transform:rotate(45deg)}
+  .cmap .cstory__steps li.cfork+li::before{display:block}
+}
+/* STEP 3 / STEP 4 を「分岐・一例」として見せる（一本道の昇進ルートに見せない） */
+.cmap .cstory__steps li.cstep--branch{background:#fff;border:1px dashed var(--line-mid,#c3cade)}
+.cmap .cstory__steps li.cstory__last.cstep--branch{background:var(--navy-d);border-color:rgba(255,255,255,.34)}
+.cmap .cstory__steps li.cstep--branch::before{border-right-color:var(--line-mid,#c3cade);border-top-color:var(--line-mid,#c3cade)}
+.cmap .cstory__steps .cstep__eg{margin-left:8px;padding:2px 9px;border-radius:9999px;
+  font-size:11px;font-style:normal;font-weight:700;letter-spacing:.04em;
+  background:rgba(255,255,255,.16);color:#ffb3b8;vertical-align:middle}
+/* ===== CP-CARDS v1 END ===== */
