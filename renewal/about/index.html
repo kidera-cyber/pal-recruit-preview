@@ -442,6 +442,28 @@
          該当セクションへのテキストリンクのみとする。復元はgit履歴から。 ===== -->
     <p class="rv" style="margin-top:40px"><a class="textlink" href="../#mission">PALのミッション・バリューを見る</a></p>
 
+    <!-- ============================================================
+         ===== MOVIE-HIDE v1：MOVIEセクションを一時非表示（2026-10-16）=====
+         理由：採用サイト用のYouTube動画が制作中で、公開できる状態にないため。
+               未完成の動画が存在するように見えることを避ける。
+
+         ■ 現在の状態
+           ・公開HTMLのDOMには出力されません（コメントアウトのみ・コードは削除していません）
+           ・VideoObject 構造化データは元から未実装のため、除外対象なし
+           ・このブロックを参照する内部リンク・アンカーはサイト内に存在しません
+           ・CSS（.movie / .movie__thumb / .movie__play / .movie__b / .movie__d）は
+             他ページ未使用のまま残置しているため、復元時にそのまま効きます
+
+         ■ 再公開の手順（動画完成後）
+           1. 下の <a class="movie rv"> 〜 </a> を囲っているコメントを外す
+           2. href を正式なYouTube動画URLに差し替える
+           3. img の src をサムネイル画像に、alt を動画内容の説明に差し替える
+              （現在は装飾扱いの alt="" + aria-hidden="true"）
+           4. <b> の動画タイトル、<span class="movie__d"> の説明文を確定版に差し替える
+           5. 必要に応じて VideoObject 構造化データを <head> に追加する
+              （name / description / thumbnailUrl / uploadDate / contentUrl または embedUrl）
+         ============================================================ -->
+    <!--
     <a class="movie rv" href="https://www.youtube.com/shorts/MTsZZ7EFoKY" target="_blank" rel="noopener">
       <span class="movie__thumb"><img src="../../assets/warehouse-dx.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"><span class="movie__play" aria-hidden="true">▶</span></span>
       <span class="movie__b">
@@ -451,6 +473,7 @@
         <span class="textlink">動画を見る</span>
       </span>
     </a>
+    -->
   </div>
 </section>
 
