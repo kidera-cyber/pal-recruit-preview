@@ -5303,3 +5303,41 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #fields .jlayer--field{margin-top:26px}
 }
 /* ===== JARROW-REMOVE v1 END ===== */
+
+/* ============================================================
+   ===== JOBTILE-ALIGN v1 START =====
+   TOP #now-hiring：8枚の職種カードで、勤務地・募集中ラベル・CTA2本の
+   縦位置をそろえる。
+   ■ ズレていた原因
+     ・職種名が1行のカードと2行のカード（FDE（Forward Deployed Engineer）等）がある
+     ・クレンリネスには「募集中」ラベルがなく、クレンリネスとマーケティングには
+       「募集要項を見る」ボタンがない → .jobtile__foot の高さが3種類あり、
+       grid-auto-rows:1fr の中で .jobtile__main の高さが変わっていた
+   ■ 対応（CSSのみ。HTML・文言・募集状況・並び順は変更していない）
+     ・職種名に2行分の min-height を与え、勤務地の開始位置をカード上端から固定
+     ・.jobtile__foot を固定3行グリッドにし、ラベル行・ボタン行の高さを全カード共通に。
+       「募集中」が無いカードは1行目が空のまま高さだけ確保されるため、
+       ラベルを足さずにボタン位置がそろう
+   .jobtile は TOP でのみ使用しているため、他ページへの影響はない。
+   ============================================================ */
+#now-hiring .jobtile b{min-height:calc(19px * 1.5 * 2)}
+#now-hiring .jobtile__place{margin-top:12px;padding-top:0}
+#now-hiring .jobtile__main{padding-bottom:16px}
+#now-hiring .jobtile__foot{grid-template-rows:25px 42px 42px;gap:10px;align-content:end}
+#now-hiring .jobtile__st{grid-row:1;align-self:center}
+#now-hiring .jbtn--main{grid-row:2}
+#now-hiring .jbtn--sub{grid-row:3}
+#now-hiring .jbtn{min-height:0;height:100%}
+@media (max-width:1080px){
+  #now-hiring .jobtile b{min-height:calc(18px * 1.5 * 2)}
+}
+@media (max-width:620px){
+  /* 1列になると grid-auto-rows:1fr の等高指定が「一番背の高いカードに全部そろえる」
+     働きになり、職種名が1行のカードに空白が生まれる。縦1列では高さをそろえる
+     必要がないため content 高さに戻し、不要な空白を出さない。 */
+  #now-hiring .jobtiles{grid-auto-rows:auto}
+  #now-hiring .jobtile b{min-height:0}
+  #now-hiring .jobtile__foot{grid-template-rows:auto auto auto}
+  #now-hiring .jbtn{height:auto;min-height:42px}
+}
+/* ===== JOBTILE-ALIGN v1 END ===== */
