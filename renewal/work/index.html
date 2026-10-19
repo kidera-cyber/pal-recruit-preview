@@ -176,258 +176,312 @@
       <p class="slabel">What each role does</p>
       <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">それぞれの職種は、何をしているのか。</h2>
     </div>
-    <div class="role-cards">
-      <article class="role-card rv" id="role-bpo">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
-            <div>
-              <p class="role-card__en en">OPERATION</p>
-              <h3>BPO / 現場運営</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-bpo.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">現場を安定させ、改善を進める</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+    <!-- ===== WORKCARD v1：職種カードを「PC2列・縦積み」へ再配置（A案）。
+     上から 職種情報 → 主な仕事 → 関わる相手 → この仕事らしさ → 社員紹介とCTA。
+     9職種の名称・順番・主な仕事の各項目・関わる相手・この仕事らしさ・注記・
+     リンク先は1文字も変えていない（装飾の矢印のみ追加）。
+     社員インタビューや募集要項がない職種（Marketing／BizDev）にはCTAを置いていない。 ===== -->
+<div class="role-cards role-cards--a">
+<article class="role-card rv" id="role-bpo">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
+      <div>
+        <p class="role-card__en en">OPERATION</p>
+        <h3>BPO / 現場運営</h3>
+      </div>
+    </div>
+    <p class="role-card__one">現場を安定させ、改善を進める</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>各拠点の稼働状況の確認と、人員配置</li>
             <li>作業進捗・品質・安全の管理</li>
             <li>生産性・収支の確認と、業務改善の推進</li>
             <li>取引先との打ち合わせ、現場確認</li>
             <li>拠点間の調整と、改善施策の横展開</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>現場スタッフ</li><li>拠点責任者</li><li>取引先</li><li>DX・システム部門</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
-        <p class="role-links"><a class="textlink" href="../people/bpo/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/center-manager/">募集要項を見る</a></p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-clean">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
-            <div>
-              <p class="role-card__en en">CLEANLINESS</p>
-              <h3>Cleanliness / クレンリネス</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-cleaning.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">清掃を、計画と運用で支える</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>現場スタッフ</li><li>拠点責任者</li><li>取引先</li><li>DX・システム部門</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
+    </div>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-bpo.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/bpo/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+      <a class="rcbtn rcbtn--sub" href="../jobs/center-manager/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+    </div>
+  </div>
+</article>
+<article class="role-card rv" id="role-clean">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
+      <div>
+        <p class="role-card__en en">CLEANLINESS</p>
+        <h3>Cleanliness / クレンリネス</h3>
+      </div>
+    </div>
+    <p class="role-card__one">清掃を、計画と運用で支える</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>食品プロセスセンターなどの日常清掃・特別清掃</li>
             <li>汚れ方と頻度から考える清掃計画づくり</li>
             <li>各現場の巡回と、清掃状態の確認</li>
             <li>複数センターの進捗・作業終了報告の管理</li>
             <li>見積・請求の作成と、協力会社との連絡</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>各センターの現場</li><li>協力会社</li><li>取引先</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
-        <p class="role-card__note">※ 個別の募集要項は掲載していません。</p>
-        <p class="role-links"><a class="textlink" href="../people/cleaning/">この仕事をしている社員を見る</a></p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-fde">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
-            <div>
-              <p class="role-card__en en">FDE</p>
-              <h3>FDE</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-fde.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">現場課題を技術へつなぐ</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>各センターの現場</li><li>協力会社</li><li>取引先</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
+    </div>
+    <p class="role-card__note">※ 個別の募集要項は掲載していません。</p>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-cleaning.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/cleaning/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="role-card rv" id="role-fde">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
+      <div>
+        <p class="role-card__en en">FDE</p>
+        <h3>FDE</h3>
+      </div>
+    </div>
+    <p class="role-card__one">現場課題を技術へつなぐ</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>物流現場での業務課題のヒアリングと整理</li>
             <li>課題を技術要件へ翻訳する</li>
             <li>システム・設備・データとの接続を設計する</li>
             <li>開発・改修と、現場での動作確認</li>
             <li>運用後の問い合わせ対応と改善</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
-        <p class="role-links"><a class="textlink" href="../people/fde/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/fde/">募集要項を見る</a>　<a class="textlink" href="../work/fde/">FDEをくわしく見る</a></p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-system">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
-            <div>
-              <p class="role-card__en en">SYSTEM / PRODUCT</p>
-              <h3>System / Product</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-system.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">現場で使われる仕組みをつくる</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
+    </div>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-fde.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/fde/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+      <a class="rcbtn rcbtn--sub" href="../jobs/fde/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+      <a class="rcbtn rcbtn--text" href="../work/fde/">FDEをくわしく見る<i aria-hidden="true">&#8594;</i></a>
+    </div>
+  </div>
+</article>
+<article class="role-card rv" id="role-system">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
+      <div>
+        <p class="role-card__en en">SYSTEM / PRODUCT</p>
+        <h3>System / Product</h3>
+      </div>
+    </div>
+    <p class="role-card__one">現場で使われる仕組みをつくる</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>現場ヒアリングと要件整理</li>
             <li>物流センター向けAndroidアプリの設計・開発</li>
             <li>OCR・バーコード読み取り、ダッシュボードの開発</li>
             <li>倉庫での実機確認と、改善対応</li>
             <li>現場フィードバックの反映と、活用推進</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>物流現場</li><li>FDE</li><li>プロダクト企画</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
-        <p class="role-links"><a class="textlink" href="../people/system/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/product-engineer/">募集要項を見る</a></p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-dts">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
-            <div>
-              <p class="role-card__en en">TRANSPORT</p>
-              <h3>DTS / 運送・運行</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-dts.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">安全・品質・時間を守って届ける</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>物流現場</li><li>FDE</li><li>プロダクト企画</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
+    </div>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-system.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/system/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+      <a class="rcbtn rcbtn--sub" href="../jobs/product-engineer/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+    </div>
+  </div>
+</article>
+<article class="role-card rv" id="role-dts">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
+      <div>
+        <p class="role-card__en en">TRANSPORT</p>
+        <h3>DTS / 運送・運行</h3>
+      </div>
+    </div>
+    <p class="role-card__one">安全・品質・時間を守って届ける</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>配送業務・納品対応</li>
             <li>車両点検と、運行前後の確認</li>
             <li>安全運転・配送品質の維持</li>
             <li>配車と運行状況の確認・調整</li>
             <li>配送先・物流センターとの連携</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>配送先</li><li>物流センター</li><li>ドライバー</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
-        <p class="role-card__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
-        <p class="role-links"><a class="textlink" href="../people/dts/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/dts/">募集要項を見る</a></p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-sales">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
-            <div>
-              <p class="role-card__en en">ENGAGEMENT / SALES</p>
-              <h3>Engagement / Sales</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-sales.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">顧客課題を次の提案につなげる</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>配送先</li><li>物流センター</li><li>ドライバー</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
+    </div>
+    <p class="role-card__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-dts.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/dts/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+      <a class="rcbtn rcbtn--sub" href="../jobs/dts/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+    </div>
+  </div>
+</article>
+<article class="role-card rv" id="role-sales">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
+      <div>
+        <p class="role-card__en en">ENGAGEMENT / SALES</p>
+        <h3>Engagement / Sales</h3>
+      </div>
+    </div>
+    <p class="role-card__one">顧客課題を次の提案につなげる</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>既存顧客への定期的な連絡と、関係づくり</li>
             <li>新しい顧客との接点づくり</li>
             <li>現場見学・課題のヒアリングと整理</li>
             <li>新たな提案・事業機会づくり</li>
             <li>現場・組織の状態把握と、各部門との連携</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>顧客</li><li>センター長</li><li>FDE</li><li>BPO</li><li>システム / プロダクト</li><li>DTS</li><li>BizDev</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
-        <p class="role-card__note">※ 募集条件は確認中です。</p>
-        <p class="role-links"><a class="textlink" href="../people/sales/">この仕事をしている社員を見る</a></p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-mkt">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
-            <div>
-              <p class="role-card__en en">MARKETING / CONTENT</p>
-              <h3>Marketing / Content</h3>
-            </div>
-            
-          </div>
-          <p class="role-card__one">コンテンツで新しい接点をつくる</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>顧客</li><li>センター長</li><li>FDE</li><li>BPO</li><li>システム / プロダクト</li><li>DTS</li><li>BizDev</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
+    </div>
+    <p class="role-card__note">※ 募集条件は確認中です。</p>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-sales.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/sales/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="role-card rv" id="role-mkt">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
+      <div>
+        <p class="role-card__en en">MARKETING / CONTENT</p>
+        <h3>Marketing / Content</h3>
+      </div>
+    </div>
+    <p class="role-card__one">コンテンツで新しい接点をつくる</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>市場や顧客の変化を捉える</li>
             <li>コンテンツの企画・制作</li>
             <li>顧客との新しい接点づくり</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
-        <p class="role-card__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-bizdev">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
-            <div>
-              <p class="role-card__en en">BIZDEV</p>
-              <h3>BizDev</h3>
-            </div>
-            
-          </div>
-          <p class="role-card__one">事業機会を形にする</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
+    </div>
+    <p class="role-card__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
+  </div>
+</article>
+<article class="role-card rv" id="role-bizdev">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+      <div>
+        <p class="role-card__en en">BIZDEV</p>
+        <h3>BizDev</h3>
+      </div>
+    </div>
+    <p class="role-card__one">事業機会を形にする</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>顧客課題と市場機会の整理</li>
             <li>新しい事業・サービスの可能性を形にする</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li><li>社内の各専門部門</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
-        <p class="role-card__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
-        </div>
-      </article>
-      <article class="role-card rv" id="role-corp">
-        <div class="role-summary">
-          <div class="role-card__head">
-            <svg class="role-card__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
-            <div>
-              <p class="role-card__en en">CORPORATE</p>
-              <h3>Corporate</h3>
-            </div>
-            <figure class="role-card__av av-pad"><img src="../../assets/avatar-corporate.png" alt="" width="900" height="975" loading="lazy"></figure>
-          </div>
-          <p class="role-card__one">組織と働く環境を支える</p>
-          <p class="role-card__ch">主な仕事</p>
-          <ul class="role-points">
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li><li>社内の各専門部門</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
+    </div>
+    <p class="role-card__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
+  </div>
+</article>
+<article class="role-card rv" id="role-corp">
+  <div class="role-summary">
+    <div class="role-card__head">
+      <svg class="role-card__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
+      <div>
+        <p class="role-card__en en">CORPORATE</p>
+        <h3>Corporate</h3>
+      </div>
+    </div>
+    <p class="role-card__one">組織と働く環境を支える</p>
+    <p class="role-card__ch">主な仕事</p>
+    <ul class="role-points">
             <li>社宅・社用車・通信・資産管理などの日常業務</li>
             <li>社内申請のシステム化</li>
             <li>業務フロー改善</li>
             <li>関係部署との打ち合わせと、中長期的な課題への対応</li>
           </ul>
-        </div>
-        <div class="role-meta">
-          <p class="role-card__ch">関わる相手</p>
-          <ul class="role-people"><li>各部署のメンバー</li><li>社員</li></ul>
-          <p class="role-card__ch">この仕事らしさ</p>
-          <p class="role-card__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
-        <p class="role-card__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
-        <p class="role-links"><a class="textlink" href="../people/corporate/">この仕事をしている社員を見る</a></p>
-        </div>
-      </article>
+  </div>
+  <div class="role-meta">
+    <p class="role-card__ch">関わる相手</p>
+    <ul class="role-people"><li>各部署のメンバー</li><li>社員</li></ul>
+    <div class="rcwhy">
+      <p class="role-card__ch">この仕事らしさ</p>
+      <p class="role-card__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
     </div>
+    <p class="role-card__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
+    <div class="rcfoot">
+      <div class="rcperson">
+        <span class="rcperson__av av-pad"><img src="../../assets/avatar-corporate.png" alt="" width="900" height="975" loading="lazy"></span>
+        <a class="rcbtn rcbtn--main" href="../people/corporate/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
   </div>
 </section>
 

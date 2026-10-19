@@ -184,8 +184,8 @@
          補足に留める。「分断」も抽象語のままにせず具体例で説明する。
          未使用化（残置）：.probs / .prob / .prob__no / .prob__list / .prob__sum ===== -->
     <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">Why now</p>
-      <h2 class="stitle"><span class="nw">なぜ今、</span><span class="nw">物流の仕組みを見直す必要があるのか。</span></h2>
+      <p class="slabel">Why PAL</p>
+      <h2 class="stitle"><span class="nw">物流の課題を、</span><span class="nw">現場と技術の両方から変える。</span></h2>
       <p class="slead">物流の現場では、働く人の数も、かかるコストも、求められる品質も変わってきています。まずは、その3つから。</p>
     </div>
     <ol class="why3 rv">
@@ -210,35 +210,12 @@
       <h3 class="whygap__h"><span class="nw">それでも、</span><span class="nw">個別に改善するだけでは変わりにくい。</span></h3>
       <p class="whygap__t">現場では人が作業し、システムには別の情報があり、設備は設備で動いている。それぞれが別々に改善されると、全体としてはうまくつながらないことがあります。</p>
     </div>
-    <ol class="gap4 rv" aria-label="つながるべき4つが、別々に動いている状態">
-      <li class="gap4__item">
-        <p class="gap4__no"><span class="en">01</span>FIELD</p>
-        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
-        <b>物流現場</b>
-        <small>現場ごとに制約や運用の違いがある</small>
-      </li>
-      <li class="gap4__cut" aria-hidden="true"><span class="gap4__x">✕</span><span class="en">GAP</span></li>
-      <li class="gap4__item">
-        <p class="gap4__no"><span class="en">02</span>SYSTEM</p>
-        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-system"></use></svg>
-        <b>物流システム</b>
-        <small>情報は入っていても、現場とつながらない</small>
-      </li>
-      <li class="gap4__cut" aria-hidden="true"><span class="gap4__x">✕</span><span class="en">GAP</span></li>
-      <li class="gap4__item">
-        <p class="gap4__no"><span class="en">03</span>FACILITY</p>
-        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-equip"></use></svg>
-        <b>設備</b>
-        <small>メーカーごとに独立し、全体最適になりにくい</small>
-      </li>
-      <li class="gap4__cut" aria-hidden="true"><span class="gap4__x">✕</span><span class="en">GAP</span></li>
-      <li class="gap4__item">
-        <p class="gap4__no"><span class="en">04</span>DATA</p>
-        <svg class="gap4__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
-        <b>物流データ</b>
-        <small>見えていても、活用しきれていない</small>
-      </li>
-    </ol>
+    <!-- ===== ABOUTSLIM v1：FIELD／SYSTEM／FACILITY／DATA の4分断を示す大型図解を削除。
+     同じ4領域の関係は #process の FIELD→FDE→TECHNOLOGY 図解でも扱っており重複していた。
+     図解が持っていた要点は、直前の「それでも、個別に改善するだけでは変わりにくい。」の
+     本文がそのまま説明しているため、文章側を残して図解のみを外している。
+     原文は、このコミットの1つ前の版を参照。 ===== -->
+
     <!-- ===== ABOUT-DEDUP v1：後半「PALはその中でも、現場運営だけでなく…」を削除。
          #position 冒頭とほぼ同一文で、ここで結論を先出ししていたため。
          このセクションは「問題の提示」に集中させ、答えは #position に集約する。 ===== -->
@@ -251,6 +228,89 @@
     </div>
     <!-- ===== ASKTO v1：THE QUESTION の直後に、次のFDE（OUR PROCESS）への接続文を置く。 ===== -->
     <p class="askto rv">PALでは、この「つなぎ目」を埋める役割として、<b>FDE（Forward Deployed Engineer）</b>の考え方を物流DXに適用しています。<a class="textlink textlink--sm" href="#process">現場から改善までの進め方を見る</a></p>
+
+    <!-- ===== ABOUTSLIM v1：旧 #how「その理由は、現場と技術の両方にいるから。」を
+         この節へ統合。課題の提示 → PALが取り組む理由 → 事業構造の3領域、までを一続きにした。
+         3領域・ロジテックインテグレーション・3つの強みの文言は変更していない。 ===== -->
+
+    <ul class="pillars rv">
+      <li class="pillar">
+        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
+        <p class="pillar__no en">01</p>
+        <h3><small>STRATEGY</small>戦略を描く</h3>
+        <p>物流戦略の設計から案件設計まで。顧客の課題を構造化し、経営に効く打ち手に落とし込みます。</p>
+      </li>
+      <li class="pillar">
+        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
+        <p class="pillar__no en">02</p>
+        <h3><small>TECHNOLOGY</small>技術をつくる</h3>
+        <p>Core First をはじめとする自社DXプロダクトを開発。データを統合し、経営と現場をつなぎます。</p>
+      </li>
+      <li class="pillar">
+        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
+        <p class="pillar__no en">03</p>
+        <h3><small>OPERATION</small>現場を回す</h3>
+        <p>物流現場の運用そのものを受託。24/365で止めない運用を、自分たちの責任で担います。</p>
+      </li>
+    </ul>
+    <div class="integrate rv">
+      <span class="en">LOGITECH INTEGRATION</span>
+      <b>分断された関係者や複数ベンダーを、一つの流れにつなぐ。</b>
+      <span>PALが実践するロジテックインテグレーションは、上の3つの機能を組み合わせて進める方法です。すべてを自社に置き換えるのではなく、既存の3PLや各種パートナーの強みを活かしながら、分断させずに前へ進めます。</span>
+    </div>
+    <!-- ===== ABOUTSLIM v1：見出し「なかでも、仕事の範囲を決めているのはこの3つ。」を削除。
+     3領域（STRATEGY／TECHNOLOGY／OPERATION）の直下に続く補足なので、節を分けずに
+     つなげた。下の3項目の文言は変更していない（PoVの記述も残している）。 ===== -->
+
+    <!-- ===== EFFECT3 v1：3つの違いが一目で分かるよう、説明文を1〜2行へ短文化。
+         各カード 重要語1つだけを .hl（PALレッド）で強調する。
+         Core First / Core Zero などの詳細はコーポレートサイト側へ委ねる。 ===== -->
+    <ul class="effects effects--light effects--row rv">
+      <li><span class="en">01</span><b>戦略から実行まで、一社で担う</b><p>外部に預ける工程がないため、方針が変わっても<b class="hl">一気通貫</b>で動かし続けられます。</p></li>
+      <li><span class="en">02</span><b>既存のシステム・ベンダーを活かす</b><p>すべてを入れ替えるのではなく、<b class="hl">既存資産</b>を活かして最適化します。</p></li>
+      <li><span class="en">03</span><b>やる前に、効果を検証する</b><p><b class="hl">PoV（価値検証）</b>で効果を確かめてから進め、投資判断のハードルを下げます。</p></li>
+    </ul>
+    <p class="note rv">※ 8つの強みの全文は、コーポレートサイト「PALの強み」で公開しています。</p>
+    <!-- ===== HOMESLIM v1：TOPの #message（WHAT WE DO）と #mission（OUR MISSION / VALUES）を
+         削除したため、そこへ飛んでいたテキストリンク2本を外した。
+         ・「設計・実装・運用・改善の4段階は、TOPで紹介しています」
+           → 同じ4段階は、このページの #process に掲載があるため、リンク自体が不要。
+         ・「PALのミッション・バリューを見る」
+           → 遷移先がなくなった。ミッション文とVALUE 01〜03 の掲載先は未定（※要確認）。
+             原文は docs/home-mission-values-archive.md に保存済み。 ===== -->
+
+    <!-- ============================================================
+         ===== MOVIE-HIDE v1：MOVIEセクションを一時非表示（2026-10-16）=====
+         理由：採用サイト用のYouTube動画が制作中で、公開できる状態にないため。
+               未完成の動画が存在するように見えることを避ける。
+
+         ■ 現在の状態
+           ・公開HTMLのDOMには出力されません（コメントアウトのみ・コードは削除していません）
+           ・VideoObject 構造化データは元から未実装のため、除外対象なし
+           ・このブロックを参照する内部リンク・アンカーはサイト内に存在しません
+           ・CSS（.movie / .movie__thumb / .movie__play / .movie__b / .movie__d）は
+             他ページ未使用のまま残置しているため、復元時にそのまま効きます
+
+         ■ 再公開の手順（動画完成後）
+           1. 下の <a class="movie rv"> 〜 </a> を囲っているコメントを外す
+           2. href を正式なYouTube動画URLに差し替える
+           3. img の src をサムネイル画像に、alt を動画内容の説明に差し替える
+              （現在は装飾扱いの alt="" + aria-hidden="true"）
+           4. <b> の動画タイトル、<span class="movie__d"> の説明文を確定版に差し替える
+           5. 必要に応じて VideoObject 構造化データを <head> に追加する
+              （name / description / thumbnailUrl / uploadDate / contentUrl または embedUrl）
+         ============================================================ -->
+    <!--
+    <a class="movie rv" href="https://www.youtube.com/shorts/MTsZZ7EFoKY" target="_blank" rel="noopener">
+      <span class="movie__thumb"><img src="../../assets/warehouse-dx.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"><span class="movie__play" aria-hidden="true">▶</span></span>
+      <span class="movie__b">
+        <span class="slabel">Movie</span>
+        <b>PALの現場を、動画で見る。</b>
+        <span class="movie__d">実際に働く空間や仕事の雰囲気を、短い動画で紹介します。</span>
+        <span class="textlink">動画を見る</span>
+      </span>
+    </a>
+    -->
   </div>
 </section>
 
@@ -259,7 +319,7 @@
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:34px">
       <p class="slabel">Our Process</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">現場から改善まで、ひと続きで。</h2>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">現場で見つけた課題を、</span><span class="nw">動く仕組みへ。</span></h2>
       <p class="slead">PALは、物流現場の課題を起点に、システム・設備・データ・運用をつなぎ、現場で動く仕組みをつくります。<br>FDE（Forward Deployed Engineer）は、現場の課題を技術要件へと整理し、各部門と連携して実装・改善につなげます。</p>
     </div>
 
@@ -323,9 +383,9 @@
          大型カードのまま移設せず .effects--light（白カード・赤番号）で横3列に圧縮して統合。
          濃紺セクションごと削除したため、ページの縦幅は大きく減っている。 ===== -->
     <div class="shead rv" style="margin:44px 0 18px">
-      <h3 class="stitle" style="font-size:clamp(18px,2vw,22px)">PALがつなぐことで生まれる価値。</h3>
+      <h3 class="stitle" style="font-size:clamp(18px,1.9vw,21px)">PALがつなぐことで生まれる価値。</h3>
     </div>
-    <ul class="effects effects--light rv">
+    <ul class="effects effects--light effects--row rv">
       <li><span class="en">01</span><b>調整の重複を減らす</b><p>複数の関係者とのやり取りを整理し、同じ説明の繰り返しを減らします。</p></li>
       <li><span class="en">02</span><b>責任の所在を明確にする</b><p>誰が何を担うのかを整理し、責任が曖昧になる状態を防ぎます。</p></li>
       <li><span class="en">03</span><b>意思決定を速くする</b><p>必要な情報と関係者をつなぎ、判断から実行までの停滞を減らします。</p></li>
@@ -349,93 +409,8 @@
 
 
 
-<section class="sec sec--soft sec--tight" id="how">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">Why PAL can</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">その理由は、</span><span class="nw">現場と技術の両方にいるから。</span></h2>
-      <p class="slead">戦略の設計、システムの開発、物流現場の運用。この3つを自社で持っているから、つなぐところまで引き受けられます。</p>
-    </div>
-    <ul class="pillars rv">
-      <li class="pillar">
-        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
-        <p class="pillar__no en">01</p>
-        <h3><small>STRATEGY</small>戦略を描く</h3>
-        <p>物流戦略の設計から案件設計まで。顧客の課題を構造化し、経営に効く打ち手に落とし込みます。</p>
-      </li>
-      <li class="pillar">
-        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
-        <p class="pillar__no en">02</p>
-        <h3><small>TECHNOLOGY</small>技術をつくる</h3>
-        <p>Core First をはじめとする自社DXプロダクトを開発。データを統合し、経営と現場をつなぎます。</p>
-      </li>
-      <li class="pillar">
-        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
-        <p class="pillar__no en">03</p>
-        <h3><small>OPERATION</small>現場を回す</h3>
-        <p>物流現場の運用そのものを受託。24/365で止めない運用を、自分たちの責任で担います。</p>
-      </li>
-    </ul>
-    <div class="integrate rv">
-      <span class="en">LOGITECH INTEGRATION</span>
-      <b>分断された関係者や複数ベンダーを、一つの流れにつなぐ。</b>
-      <span>PALが実践するロジテックインテグレーションは、上の3つの機能を組み合わせて進める方法です。すべてを自社に置き換えるのではなく、既存の3PLや各種パートナーの強みを活かしながら、分断させずに前へ進めます。</span>
-    </div>
-    <div class="shead rv" style="margin:56px 0 24px">
-      <h3 class="stitle" style="font-size:clamp(19px,2.1vw,24px)">なかでも、仕事の範囲を決めているのはこの3つ。</h3>
-    </div>
-    <!-- ===== EFFECT3 v1：3つの違いが一目で分かるよう、説明文を1〜2行へ短文化。
-         各カード 重要語1つだけを .hl（PALレッド）で強調する。
-         Core First / Core Zero などの詳細はコーポレートサイト側へ委ねる。 ===== -->
-    <ul class="effects effects--light rv">
-      <li><span class="en">01</span><b>戦略から実行まで、一社で担う</b><p>外部に預ける工程がないため、方針が変わっても<b class="hl">一気通貫</b>で動かし続けられます。</p></li>
-      <li><span class="en">02</span><b>既存のシステム・ベンダーを活かす</b><p>すべてを入れ替えるのではなく、<b class="hl">既存資産</b>を活かして最適化します。</p></li>
-      <li><span class="en">03</span><b>やる前に、効果を検証する</b><p><b class="hl">PoV（価値検証）</b>で効果を確かめてから進め、投資判断のハードルを下げます。</p></li>
-    </ul>
-    <p class="note rv">※ 8つの強みの全文は、コーポレートサイト「PALの強み」で公開しています。</p>
-    <!-- ===== HOMESLIM v1：TOPの #message（WHAT WE DO）と #mission（OUR MISSION / VALUES）を
-         削除したため、そこへ飛んでいたテキストリンク2本を外した。
-         ・「設計・実装・運用・改善の4段階は、TOPで紹介しています」
-           → 同じ4段階は、このページの #process に掲載があるため、リンク自体が不要。
-         ・「PALのミッション・バリューを見る」
-           → 遷移先がなくなった。ミッション文とVALUE 01〜03 の掲載先は未定（※要確認）。
-             原文は docs/home-mission-values-archive.md に保存済み。 ===== -->
+<!-- ===== ABOUTSLIM v1：旧 #how は #why へ統合済み。 ===== -->
 
-    <!-- ============================================================
-         ===== MOVIE-HIDE v1：MOVIEセクションを一時非表示（2026-10-16）=====
-         理由：採用サイト用のYouTube動画が制作中で、公開できる状態にないため。
-               未完成の動画が存在するように見えることを避ける。
-
-         ■ 現在の状態
-           ・公開HTMLのDOMには出力されません（コメントアウトのみ・コードは削除していません）
-           ・VideoObject 構造化データは元から未実装のため、除外対象なし
-           ・このブロックを参照する内部リンク・アンカーはサイト内に存在しません
-           ・CSS（.movie / .movie__thumb / .movie__play / .movie__b / .movie__d）は
-             他ページ未使用のまま残置しているため、復元時にそのまま効きます
-
-         ■ 再公開の手順（動画完成後）
-           1. 下の <a class="movie rv"> 〜 </a> を囲っているコメントを外す
-           2. href を正式なYouTube動画URLに差し替える
-           3. img の src をサムネイル画像に、alt を動画内容の説明に差し替える
-              （現在は装飾扱いの alt="" + aria-hidden="true"）
-           4. <b> の動画タイトル、<span class="movie__d"> の説明文を確定版に差し替える
-           5. 必要に応じて VideoObject 構造化データを <head> に追加する
-              （name / description / thumbnailUrl / uploadDate / contentUrl または embedUrl）
-         ============================================================ -->
-    <!--
-    <a class="movie rv" href="https://www.youtube.com/shorts/MTsZZ7EFoKY" target="_blank" rel="noopener">
-      <span class="movie__thumb"><img src="../../assets/warehouse-dx.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"><span class="movie__play" aria-hidden="true">▶</span></span>
-      <span class="movie__b">
-        <span class="slabel">Movie</span>
-        <b>PALの現場を、動画で見る。</b>
-        <span class="movie__d">実際に働く空間や仕事の雰囲気を、短い動画で紹介します。</span>
-        <span class="textlink">動画を見る</span>
-      </span>
-    </a>
-    -->
-
-  </div>
-</section>
 
 <!-- ===== WHYPAL-TO-WORK v1：「WHY PAL IS INTERESTING／PALの仕事が、面白い理由。」を
      WORKページ（/renewal/work/ の ROLE DIFFERENCE と EXPLORE の間）へ移設。
@@ -451,20 +426,28 @@
      非表示中のMOVIEブロックは #how（Why PAL can）の末尾へ移している。
      復元は git 履歴（コミット b1d8f5f）から。 ===== -->
 
-<section class="sec sec--navy sec--tight" id="whofits">
+<!-- ===== ABOUTSLIM v1：旧 #whofits を「OUR VALUES（PEOPLEへの案内）＋応募条件の注意」に再構成。
+     ・3つの価値観の本文とイラストは PEOPLE #look が担当しているため、ABOUT では見出しだけを示して
+       PEOPLE へ送る（同じ本文を2ページに置かない）。
+     ・人物像のタグ4つ（現場を理解したい／仕組みづくりに興味がある／チームで進めるのが好き／
+       改善を積み重ねられる）は PEOPLE の「6つの姿勢」と役割が重なるため削除。
+     ・応募条件の注意書きは、FDE・センター長／候補の「入社時の高いITスキルは必須としない」が
+       JOBS側に記載がないため、ABOUT に残している（※要確認）。 ===== -->
+<section class="sec sec--navy sec--tight" id="values">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:20px">
-      <p class="slabel">Who fits</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">活躍している人の、共通点。</h2>
-      <!-- ===== ABOUT-DEDUP v1：「入社時の高いITスキルは必須ではありません」は全職種共通ではない。
-         jobs/product-engineer は「React／TypeScriptでのWeb開発経験が必須」と明記しており、
-         FAQ も同旨。サイト内の既存記載に合わせて職種を限定した表現へ是正した。 ===== -->
-      <p class="slead">FDEとセンター長／候補では、入社時の高いITスキルを必須としていません。技術力よりも人物面を最優先しています。<br>一方で、プロダクト企画・開発エンジニアはReact／TypeScriptでのWeb開発経験を必須としています。応募条件は職種ごとに異なるため、<a class="textlink" href="../jobs/">各募集要項</a>をご確認ください。</p>
+    <div class="shead rv" style="margin-bottom:22px">
+      <p class="slabel">Our Values</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">PALが、</span><span class="nw">大切にする3つのこと。</span></h2>
     </div>
-    <div class="jobcats rv" style="margin-bottom:0">
-      <span>現場を理解したい</span><span>仕組みづくりに興味がある</span><span>チームで進めるのが好き</span><span>改善を積み重ねられる</span>
+    <ul class="val3 rv">
+      <li><span class="val3__no en">01</span><b>現場の当事者となる</b></li>
+      <li><span class="val3__no en">02</span><b>個を尊重し、平等に接する</b></li>
+      <li><span class="val3__no en">03</span><b>自分の「手」で変えていく</b></li>
+    </ul>
+    <p class="rv" style="margin-top:24px"><a class="btn btn--onnavy" href="../people/#look">3つの価値観と、働く人の姿勢を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    <div class="whonote rv">
+      <p class="whonote__t">FDEとセンター長／候補では、入社時の高いITスキルを必須としていません。技術力よりも人物面を最優先しています。<br>一方で、プロダクト企画・開発エンジニアはReact／TypeScriptでのWeb開発経験を必須としています。応募条件は職種ごとに異なるため、<a class="textlink" href="../jobs/">各募集要項</a>をご確認ください。</p>
     </div>
-    <p class="rv" style="margin-top:28px"><a class="btn btn--onnavy" href="../people/#look">PALが求める人を、くわしく見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 <!-- ===== VALUES-MOVE v1 END ===== -->
@@ -473,7 +456,7 @@
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">PAL by the Numbers</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">数字で見る、いまとこれからのPAL。</h2>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">数字で見るPAL。</h2>
       <p class="slead">会社概要として公表している情報を中心にまとめました。</p>
     </div>
     <!-- ===== NUMBERS v2：数字をPALレッド、単位を濃紺にして「数字→意味→補足」の
@@ -487,6 +470,7 @@
       <div class="num"><b>120<em class="num__ar" aria-hidden="true">→</em>230<em class="num__u">名</em></b><span>採用計画（FY2029に230名）※現時点の目標値</span></div>
     </div>
     <p class="note rv">※ 設立・従業員数・資本金・拠点・事業内容は、株式会社PALの会社概要に基づく公表情報です。採用計画は現時点の目標値であり、確定した計画を示すものではありません。</p>
+    <p class="rv" style="margin-top:20px"><a class="btn btn--ghost" href="https://www.pal-style.co.jp/company/" target="_blank" rel="noopener">会社概要を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
   </div>
 </section>
 
@@ -505,7 +489,7 @@
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="../work/">仕事を知る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
-    <p class="entry__sec"><a href="../jobs/">募集中の職種を見る</a></p>
+    <p class="entry__sec"><a href="../people/">社員インタビューを見る</a>　<a href="../jobs/">募集中の職種を見る</a></p>
   </div>
 </section>
 </main>
