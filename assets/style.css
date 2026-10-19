@@ -5395,3 +5395,45 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .cdev li{padding:20px 18px 22px}
 }
 /* ===== CAREER-DEV v1 END ===== */
+
+/* ============================================================
+   ===== WORK-JOBS v1 START =====
+   WORK：9職種を「職種名／一言／主な仕事／関わる相手／手ごたえ／CTA」の
+   まとまったブロックで見せる。小カードの大量配置にせず、1職種1ブロック。
+   既存の配色（白・薄グレー・濃紺・PALレッド・淡いブルーグレーの枠線）のみ使用し、
+   アイコンは本ページのスプライト、アバターは people の既存画像を再利用する。
+   旧 #fields / #reality / #explore 用の .tmap / .jcmp / .xlist / .xrow は
+   未使用化（残置）。.jmap2 系は #chain で引き続き使用。
+   ============================================================ */
+.jobblks{display:grid;gap:18px}
+.jobblk{padding:26px 26px 28px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:#fff}
+.jobblk__head{display:flex;align-items:center;gap:16px}
+.jobblk__ic{flex:0 0 auto;width:34px;height:34px;color:var(--navy)}
+.jobblk__ttl{flex:1 1 auto;min-width:0}
+.jobblk__en{font-family:Lato,sans-serif;font-size:11px;letter-spacing:.14em;color:var(--red)}
+.jobblk__ttl h3{margin-top:5px;font-size:clamp(19px,2vw,23px);line-height:1.45;color:var(--navy)}
+.jobblk__av{flex:0 0 auto;width:54px;aspect-ratio:12/13;margin:0;
+  border-radius:10px;overflow:hidden}
+.jobblk__av img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.jobblk__lead{margin-top:15px;font-size:16px;line-height:1.75;font-weight:700;color:var(--navy);text-wrap:pretty}
+.jobblk__cols{margin-top:18px;display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:20px 34px}
+.jobblk__ch{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--red)}
+.jobblk__t+.jobblk__ch{margin-top:16px}
+.jobblk__list{margin-top:9px;list-style:none;display:grid;gap:7px}
+.jobblk__list li{position:relative;padding-left:16px;font-size:14.5px;
+  line-height:1.8;color:var(--sub);text-wrap:pretty}
+.jobblk__list li::before{content:"";position:absolute;left:2px;top:.72em;
+  width:5px;height:5px;border-radius:50%;background:var(--line-mid,#c3cade)}
+.jobblk__t{margin-top:9px;font-size:14.5px;line-height:1.85;color:var(--sub);text-wrap:pretty}
+.jobblk__note{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:13px;line-height:1.8;color:var(--muted);text-wrap:pretty}
+.jobblk__cta{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 22px}
+@media (max-width:760px){
+  .jobblk{padding:22px 20px 24px}
+  .jobblk__cols{grid-template-columns:minmax(0,1fr);gap:18px}
+  .jobblk__av{width:46px}
+  .jobblk__ic{width:30px;height:30px}
+}
+/* ===== WORK-JOBS v1 END ===== */
