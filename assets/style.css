@@ -6152,3 +6152,80 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .gnav__ext small{display:none}
 }
 /* ===== NAVCORP v1 END ===== */
+
+/* ============================================================
+   ===== PALTHEME v1 START =====
+   配色・ブランド表現の比較用プレビュー専用のテーマ。
+   body に .th-a（Brand Balanced）または .th-b（Brand Impact）が付いたときだけ効く。
+   正式ページはどちらのクラスも持たないため、この追記で表示は変わらない。
+
+   【調査結果】コーポレートサイト（www.pal-style.co.jp）と公式ロゴSVGから実測:
+     PALレッド #CF131B（ロゴの赤・主CTAの塗り）／ネイビー #262946・#1B1D31
+     グレー #6B6D81・#797DAC ／ 枠線 #DAE1F2 ／ 背景 #F2F3F6
+   → 採用サイトの既存トークンと完全に一致していたため、色の値は変更しない。
+     指示にあった #D71920 / #202339 / #111318 は公式カラーではないため採用しない。
+     変えるのは「赤をどこに、どれだけ使うか」の配分と、本文のコントラスト。
+   ============================================================ */
+
+/* ---- 共通：コントラストの底上げ（WCAG AA） ---- */
+.th-a, .th-b{
+  --sub:#4f5168;          /* 本文 #6b6d81 → 白地 5.09:1 から 7.75:1 へ */
+  --muted:#656a90;        /* 注記 #797dac は白地 3.93:1 でAA未達 → 5.23:1 へ */
+  --red-on-dark:#d94249;  /* 濃紺・動画の上で使う赤。#cf131b は濃紺上 2.97:1 で不足 */
+}
+.th-a :focus-visible, .th-b :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* ---- 共通：HEROの「自分の手で、」 ---- */
+/* 紫→赤のグラデーション（紫はPALの公式色ではない）をやめ、PALレッド系の単色に。
+   濃紺の上なので、大見出し向けに明度を上げた --red-on-dark を使う（3.81:1／大文字AA） */
+.th-a .hero__title em, .th-b .hero__title em{
+  background:none;-webkit-background-clip:initial;background-clip:initial;
+  -webkit-text-fill-color:currentColor;color:var(--red-on-dark)}
+
+/* ---- 共通：副CTA をコーポレートと同じ「白地＋赤文字＋赤枠」に ---- */
+/* 会社サイトの副CTA（お問い合わせ）と同じ形。主CTA＝赤塗り、副CTA＝赤枠、で赤が2段階に */
+.th-a .btn--ghost, .th-b .btn--ghost,
+.th-a .rbtn--line, .th-b .rbtn--line,
+.th-a .rcbtn--sub, .th-b .rcbtn--sub{background:#fff;color:var(--red);border:1px solid var(--red)}
+.th-a .btn--ghost:hover, .th-b .btn--ghost:hover,
+.th-a .rbtn--line:hover, .th-b .rbtn--line:hover,
+.th-a .rcbtn--sub:hover, .th-b .rcbtn--sub:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.th-a .btn--red:hover, .th-b .btn--red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+
+/* ---- 共通：カードのホバーで赤を効かせる（通常時は白のまま） ---- */
+.th-a .role-chip:hover, .th-b .role-chip:hover,
+.th-a .vcard:hover,     .th-b .vcard:hover,
+.th-a .dcard:hover,     .th-b .dcard:hover,
+.th-a .role-card:hover, .th-b .role-card:hover{border-color:var(--red)}
+
+/* ============================================================
+   A案｜Brand Balanced：現行の清潔感を保ったまま、赤の存在感を一段上げる
+   ============================================================ */
+.th-a .hero__badge{border-color:rgba(255,255,255,.4)}
+.th-a .btn--red{box-shadow:0 6px 18px rgba(207,19,27,.22)}
+.th-a .stitle::after{content:"";display:block;width:46px;height:3px;margin-top:16px;background:var(--red)}
+.th-a .ptitle::after{content:"";display:block;width:52px;height:3px;margin-top:18px;background:var(--red)}
+
+/* ============================================================
+   B案｜Brand Impact：強いセクション（HERO・JOIN PAL）で赤と濃紺を大きく使う
+   ============================================================ */
+.th-b .hero__badge{background:var(--red);border-color:var(--red);color:#fff}
+.th-b .hero__badge::before{background:#fff}
+.th-b .btn--red{box-shadow:0 10px 26px rgba(207,19,27,.3)}
+.th-b .hero__ctas .btn--red{padding:19px 34px;font-size:17px}
+.th-b .stitle::after{content:"";display:block;width:56px;height:4px;margin-top:16px;background:var(--red)}
+.th-b .ptitle::after{content:"";display:block;width:64px;height:4px;margin-top:18px;background:var(--red)}
+/* 強いセクション：JOIN PAL を写真から濃紺ベタ＋赤のアクセントへ */
+.th-b .entry{background:var(--navy-d)}
+.th-b .entry__media{opacity:.14}
+.th-b .entry::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--red);z-index:2}
+.th-b .entry__inner{position:relative;z-index:2}
+.th-b .entry__label{color:var(--red-on-dark)}
+.th-b .entry__ctas .btn--red{padding:19px 34px;font-size:17px}
+/* 読ませるセクションは白・薄グレーのまま（赤背景は増やさない） */
+
+@media (max-width:700px){
+  .th-a .stitle::after,.th-b .stitle::after{width:40px;margin-top:13px}
+  .th-b .hero__ctas .btn--red{padding:17px 24px;font-size:16px}
+}
+/* ===== PALTHEME v1 END ===== */

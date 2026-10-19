@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>【比較用】配色 現行／A案 Brand Balanced／B案 Brand Impact｜PAL採用サイト</title>
+<style>
+  :root{--navy:#262946;--navy-d:#1b1d31;--red:#cf131b;--sub:#6b6d81;--line:#dae1f2;--bg:#f2f3f6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--navy);
+    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif}
+  header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;
+    padding:12px clamp(14px,2.6vw,26px);background:var(--navy-d);color:#fff}
+  header h1{margin:0;font-size:15px;line-height:1.5}
+  header p{margin:0;font-size:12px;color:#b9bdd6}
+  .seg{display:flex;gap:6px;margin-left:auto}
+  .seg button{padding:6px 14px;border:1px solid rgba(255,255,255,.34);border-radius:9999px;
+    background:transparent;color:#fff;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
+  .seg button[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+  header a{color:#fff;font-size:12.5px;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:16px clamp(14px,2.6vw,26px) 28px}
+  .pane{min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .pane>h2{margin:0;padding:11px 16px;border-bottom:1px solid var(--line);
+    font-size:13.5px;line-height:1.5;background:#fff}
+  .pane>h2 small{display:block;margin-top:2px;font-size:11.5px;font-weight:400;color:var(--sub)}
+  .stage{position:relative;overflow:hidden;background:#fff}
+  .stage iframe{display:block;border:0;transform-origin:0 0;background:#fff}
+  .stage--sp{background:var(--bg)}
+  @media (max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>配色 比較用プレビュー（現行／A案／B案）</h1>
+    <p>現在のTOPは変更していません。表示幅を切り替えて比較できます。各パネルは個別にスクロールできます。</p>
+  </div>
+  <div class="seg" role="group" aria-label="表示幅">
+    <button type="button" data-w="1280" aria-pressed="true">PC 1280</button>
+    <button type="button" data-w="768" aria-pressed="false">タブレット 768</button>
+    <button type="button" data-w="390" aria-pressed="false">スマホ 390</button>
+  </div>
+  <a href="./">現在のTOPを開く</a>
+</header>
+<div class="grid">
+  <section class="pane">
+    <h2>現在の配色<small>基準。<a href="./" target="_blank" rel="noopener">HOME</a>／<a href="work/" target="_blank" rel="noopener">WORK</a></small></h2>
+    <div class="stage"><iframe src="./" title="現在の配色" loading="lazy"></iframe></div>
+  </section>
+  <section class="pane">
+    <h2>A案｜Brand Balanced<small>清潔感を保ち、赤を一段強く。<a href="theme-a/" target="_blank" rel="noopener">HOME</a>／<a href="work/theme-a.html" target="_blank" rel="noopener">WORK</a></small></h2>
+    <div class="stage"><iframe src="theme-a/" title="A案 Brand Balanced" loading="lazy"></iframe></div>
+  </section>
+  <section class="pane">
+    <h2>B案｜Brand Impact<small>HERO・JOIN PALを赤と濃紺で強く。<a href="theme-b/" target="_blank" rel="noopener">HOME</a>／<a href="work/theme-b.html" target="_blank" rel="noopener">WORK</a></small></h2>
+    <div class="stage"><iframe src="theme-b/" title="B案 Brand Impact" loading="lazy"></iframe></div>
+  </section>
+  <section class="pane">
+    <h2>WORK（A案）<small>読ませるセクションの見え方。<a href="work/theme-a.html" target="_blank" rel="noopener">単独で開く</a></small></h2>
+    <div class="stage"><iframe src="work/theme-a.html" title="WORK A案" loading="lazy"></iframe></div>
+  </section>
+</div>
+<script>
+(function(){
+  var W = 1280, H = 900;
+  function layout(){
+    document.querySelectorAll('.stage').forEach(function(st){
+      var k = Math.min(1, st.clientWidth / W);          /* 実寸より大きくしない */
+      var offset = Math.max(0, (st.clientWidth - W * k) / 2);
+      var f = st.querySelector('iframe');
+      f.style.width = W + 'px';
+      f.style.height = H + 'px';
+      f.style.transform = 'translateX(' + offset + 'px) scale(' + k + ')';
+      st.style.height = Math.round(H * k) + 'px';
+    });
+  }
+  document.querySelectorAll('.seg button').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.seg button').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+      b.setAttribute('aria-pressed','true');
+      W = parseInt(b.dataset.w, 10);
+      H = W < 500 ? 1400 : (W < 900 ? 1100 : 900);
+      layout();
+    });
+  });
+  window.addEventListener('resize', layout);
+  layout();
+})();
+</script>
+</body>
+</html>
