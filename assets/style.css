@@ -5864,3 +5864,145 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .hero__imgnote{right:24px;bottom:12px;font-size:10px}
 }
 /* ===== HEROVID-NOTE v1 END ===== */
+
+/* ============================================================
+   ===== WORKCARD v1 START =====
+   WORK「それぞれの職種は、何をしているのか。」の比較用プレビュー専用。
+   renewal/work/cards-a.html（A案：PC2列）と cards-b.html（B案：1列3ゾーン）だけに効く。
+   セレクタはすべて .role-cards--a / .role-cards--b 配下にあり、
+   正式な WORK ページ（.role-cards のみ）の表示はこの追記では一切変わらない。
+   文言・箇条書き・関わる相手・この仕事らしさ・リンク先は1文字も変更していない。
+   ============================================================ */
+
+/* ---- 共通：文字の視認性（STEP3・4・5・6） ---- */
+.role-cards--a .role-card__head h3,
+.role-cards--b .role-card__head h3{font-size:clamp(19px,1.9vw,22px);line-height:1.45}
+.role-cards--a .role-card__ic,
+.role-cards--b .role-card__ic{width:30px;height:30px}
+.role-cards--a .role-card__en,
+.role-cards--b .role-card__en{font-size:11px;letter-spacing:.14em}
+.role-cards--a .role-card__one,
+.role-cards--b .role-card__one{margin-top:12px;font-size:15.5px;line-height:1.65;color:var(--navy)}
+.role-cards--a .role-card__ch,
+.role-cards--b .role-card__ch{margin-top:18px;font-size:12px;letter-spacing:.08em}
+/* 「主な仕事」：行間を広げ、本文色を濃くし、点を少し大きく */
+.role-cards--a .role-points,
+.role-cards--b .role-points{margin-top:10px;gap:9px}
+.role-cards--a .role-points li,
+.role-cards--b .role-points li{padding-left:19px;font-size:14.5px;line-height:1.75;color:#4f5168}
+.role-cards--a .role-points li::before,
+.role-cards--b .role-points li::before{left:2px;top:.62em;width:6px;height:6px}
+/* 「関わる相手」：淡いグレー背景のタグへ。文字を小さくしすぎない */
+.role-cards--a .role-people,
+.role-cards--b .role-people{margin-top:10px;gap:7px}
+.role-cards--a .role-people li,
+.role-cards--b .role-people li{padding:5px 12px;border:0;background:var(--bg-soft);
+  font-size:12.5px;line-height:1.5;color:#4f5168}
+/* 「この仕事らしさ」：淡い背景で独立した領域に */
+.rcwhy{margin-top:16px;padding:14px 16px 16px;border-radius:var(--radius);background:var(--bg-soft)}
+.rcwhy .role-card__ch{margin-top:0}
+.rcwhy .role-card__t{margin-top:7px;font-size:14.5px;line-height:1.8;color:#4f5168}
+.role-cards--a .role-card__note,
+.role-cards--b .role-card__note{margin-top:12px;font-size:12.5px;line-height:1.75;color:var(--muted)}
+
+/* ---- 共通：社員紹介とCTA（STEP7・8） ---- */
+.rcfoot{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.rcperson{display:flex;align-items:center;gap:10px}
+.rcperson__av{flex:0 0 auto;width:48px;aspect-ratio:12/13;overflow:hidden;
+  border-radius:var(--radius);background:var(--bg-soft)}
+.rcperson__av img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.rcbtn{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;border-radius:9999px;
+  font-size:13.5px;font-weight:700;line-height:1.4;white-space:nowrap;
+  transition:background-color .25s,color .25s,border-color .25s}
+.rcbtn i{font-style:normal;font-size:12px;transition:transform .25s var(--ease)}
+.rcbtn:hover i{transform:translateX(3px)}
+.rcbtn--main{background:var(--navy);color:#fff}          /* 主CTA：社員インタビュー */
+.rcbtn--main:hover{background:var(--navy-d)}
+.rcbtn--sub{border:1px solid var(--line-mid,#c3cade);color:var(--navy);background:#fff}  /* 副CTA：募集要項 */
+.rcbtn--sub:hover{border-color:var(--navy)}
+.rcbtn--text{padding:10px 0;color:var(--red)}            /* 3本目（FDEのみ） */
+
+/* ============================================================
+   A案：PC2列・縦積みカード
+   ============================================================ */
+.role-cards--a{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.role-cards--a .role-card{grid-template-columns:minmax(0,1fr);gap:0;
+  padding:26px 26px 22px;display:flex;flex-direction:column}
+.role-cards--a .role-summary{flex:0 0 auto}
+.role-cards--a .role-meta{flex:1 1 auto;display:flex;flex-direction:column}
+.role-cards--a .role-meta>.role-card__ch:first-child{margin-top:18px}
+.role-cards--a .rcfoot{margin-top:auto;padding-top:18px}  /* 高さが違ってもCTAの位置をそろえる */
+
+/* ============================================================
+   B案：1列・3ゾーン（左=仕事／中=相手と特徴／右=社員と募集）
+   ============================================================ */
+.role-cards--b{grid-template-columns:minmax(0,1fr);gap:14px}
+.role-cards--b .role-card{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,.78fr);
+  gap:0 30px;padding:26px 28px 24px;align-items:start}
+.role-cards--b .role-meta>.role-card__ch:first-child{margin-top:0}
+.role-cards--b .role-side{display:flex;flex-direction:column;justify-content:center;height:100%;
+  padding-left:28px;border-left:1px solid var(--line)}
+.role-cards--b .rcfoot{flex-direction:column;align-items:stretch;gap:12px}
+.role-cards--b .rcperson{flex-direction:column;align-items:flex-start;gap:10px}
+.role-cards--b .rcbtn{justify-content:center}
+.role-cards--b .rcbtn--text{justify-content:flex-start;padding:4px 0}
+
+/* ---- レスポンシブ ---- */
+@media (max-width:1180px){
+  .role-cards--b .role-card{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0 26px}
+  .role-cards--b .role-side{grid-column:1 / -1;height:auto;margin-top:18px;padding-left:0;
+    padding-top:18px;border-left:0;border-top:1px solid var(--line)}
+  .role-cards--b .rcfoot{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .role-cards--b .rcperson{flex-direction:row;align-items:center}
+}
+@media (max-width:1000px){
+  .role-cards--a{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  /* スマホは1列。DOM順が 職種名→仕事内容→関わる相手→この仕事らしさ→社員紹介→募集要項 */
+  .role-cards--b .role-card{grid-template-columns:minmax(0,1fr);gap:0;padding:22px 18px 20px}
+  .role-cards--b .role-meta>.role-card__ch:first-child{margin-top:18px}
+  .role-cards--a .role-card{padding:22px 18px 20px}
+  .role-cards--a .role-points li,.role-cards--b .role-points li{font-size:14px}
+  .rcwhy{padding:13px 14px 14px}
+  .rcfoot{gap:10px}
+  .rcbtn{flex:1 1 auto;justify-content:center;font-size:13px;padding:11px 14px}
+  .rcperson{flex:1 1 100%}
+  .rcperson .rcbtn{flex:1 1 auto}
+  .rcbtn--text{flex:1 1 100%}
+}
+/* ===== WORKCARD v1 END ===== */
+
+/* ============================================================
+   ===== ABOUTSLIM v1 START =====
+   ABOUT コンパクト版の比較用プレビュー（renewal/about-compact-preview/）専用。
+   .effects--row / .val3 / .whonote の3つだけが新規で、正式な ABOUT ページは
+   いずれも使っていないため、この追記で表示は変わらない。
+   ============================================================ */
+
+/* 「PALがつなぐことで生まれる価値。」「仕事の範囲を決めているのはこの3つ。」を、
+   見出し＋本文の縦積みカードから、1行に収まる横並びの補足へ圧縮する。文言は変更なし。 */
+.effects--row{margin-top:18px;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.effects--row li{padding:15px 17px 16px}
+.effects--row li .en{font-size:11px}
+.effects--row li b{display:block;margin-top:6px;font-size:14.5px;line-height:1.55}
+.effects--row li p{margin-top:7px;font-size:13px;line-height:1.75}
+
+/* OUR VALUES：見出しだけを3つ並べ、本文とイラストは PEOPLE に任せる */
+.val3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none}
+.val3 li{padding:17px 18px 18px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius-lg)}
+.val3__no{display:block;font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.14em;color:var(--red-light,#ffb3b8)}
+.val3 li b{display:block;margin-top:8px;font-size:clamp(16px,1.7vw,19px);line-height:1.5;color:#fff}
+
+/* 応募条件の注意書き */
+.whonote{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2)}
+.whonote__t{font-size:14px;line-height:1.95;color:#c3c7dd}
+.whonote__t a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+@media (max-width:860px){
+  .effects--row{grid-template-columns:minmax(0,1fr)}
+  .val3{grid-template-columns:minmax(0,1fr);gap:10px}
+  .val3 li{padding:15px 16px 16px}
+}
+/* ===== ABOUTSLIM v1 END ===== */
