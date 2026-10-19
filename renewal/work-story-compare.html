@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>【比較用】WORK ストーリー再設計 A案／B案｜株式会社PAL 採用サイト</title>
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#cf131b;--red-lt:#f61c25;--line:#e2e2e6;--sub:#4a4a4a;--muted:#6b6b70;--soft:#f4f4f5}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans JP",sans-serif;color:#111;background:#fff;line-height:1.8;-webkit-font-smoothing:antialiased}
+.en{font-family:Lato,sans-serif;font-weight:700;letter-spacing:.14em}
+.wrap{width:min(100% - 40px,1180px);margin-inline:auto}
+header{background:#000;color:#fff;padding:34px 0 30px;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;top:0;height:5px;
+  background:linear-gradient(90deg,var(--red),var(--red-lt))}
+header .lab{display:inline-block;padding:6px 13px;background:#fff;color:#000;border-radius:3px;
+  font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.14em}
+header h1{margin-top:16px;font-size:clamp(23px,3vw,34px);line-height:1.4}
+header p{margin-top:12px;font-size:14.5px;line-height:1.95;color:#e2e2e2;max-width:52em}
+main{padding:44px 0 72px}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card__h{padding:22px 24px 18px;border-bottom:1px solid var(--line)}
+.card__h .en{display:block;font-size:11px;letter-spacing:.18em;color:var(--red)}
+.card__h h2{margin-top:6px;font-size:21px;line-height:1.45}
+.card__h h2::after{content:"";display:block;width:52px;height:4px;margin-top:14px;background:var(--red)}
+.card__b{padding:20px 24px 24px;flex:1 1 auto}
+.card__b dt{margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--red)}
+.card__b dt:first-child{margin-top:0}
+.card__b dd{margin-top:6px;font-size:14px;line-height:1.85;color:var(--sub)}
+.card__f{padding:0 24px 24px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 20px;border-radius:9999px;
+  background:var(--red);color:#fff;font-weight:700;font-size:15px;text-decoration:none;
+  box-shadow:0 8px 22px rgba(207,19,27,.26);transition:background-color .25s}
+.btn:hover{background:#a20f15}
+.btn--g{background:#fff;color:#000;border:1px solid #000;box-shadow:none;margin-top:10px}
+.btn--g:hover{background:var(--red);color:#fff;border-color:var(--red)}
+h3.sec{margin:52px 0 18px;font-size:19px}
+h3.sec::after{content:"";display:block;width:52px;height:4px;margin-top:13px;background:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:11px 13px;border:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.75}
+th{background:var(--soft);font-weight:700;white-space:nowrap}
+td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ok{color:#a20f15;font-weight:700}
+.note{margin-top:18px;padding:16px 18px;background:var(--soft);border-radius:8px;
+  font-size:13.5px;line-height:1.9;color:var(--sub)}
+.note b{color:#000}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color:var(--muted)}
+footer a{color:#000}
+@media (max-width:860px){ .cols{grid-template-columns:minmax(0,1fr)} table{font-size:12.5px} th,td{padding:9px 10px} }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="lab">WORK — STORY REDESIGN</span>
+    <h1>「PALの仕事を説明する」から<br>「PALで働く自分を想像させる」へ。</h1>
+    <p>WORKページを、事業説明の順番から、仕事への興味で始まる順番へ組み替えた比較用プレビューです。9職種の仕事内容・関わる相手・社員インタビューへの導線・募集状況は、現行WORKから1文字も変えていません。正式なWORKページは変更していません。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="cols">
+    <section class="card">
+      <div class="card__h"><span class="en">PLAN A</span><h2>2列カード</h2></div>
+      <div class="card__b"><dl>
+        <dt>仕事の面白さ（02）</dt><dd>4テーマを 2×2 の大きな組版で。番号を大きな赤字にし、日本語見出しを強く見せます。</dd>
+        <dt>職種カード（04）</dt><dd>PC2列。1枚のなかで 職種名 → 一言 → 主な仕事 → この仕事らしさ → 関わる相手 → 社員 → 募集 を縦に読ませます。CTAはカード下端でそろえます。</dd>
+        <dt>向いている読み方</dt><dd>気になる職種を見つけて、その1枚をじっくり読む。</dd>
+        <dt>縦の長さ</dt><dd>PC 7,372px（現行比 −512px）／スマホ 12,616px（−562px）</dd>
+      </dl></div>
+      <div class="card__f">
+        <a class="btn" href="work-story-preview-a/">A案を見る</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card__h"><span class="en">PLAN B</span><h2>1列カード</h2></div>
+      <div class="card__b"><dl>
+        <dt>仕事の面白さ（02）</dt><dd>4テーマを横1行の帯で。4つを一目で見比べられます。</dd>
+        <dt>職種カード（04）</dt><dd>1列・3ゾーン。左＝職種名と一言／中＝主な仕事・この仕事らしさ・関わる相手／右＝社員と募集。1枚が横に広く、上から順に職種を流し読みできます。</dd>
+        <dt>向いている読み方</dt><dd>9職種を上から順に見比べて、自分に近いものを探す。</dd>
+        <dt>縦の長さ</dt><dd>PC 7,884px（現行比 ±0px）／スマホ 12,574px（−604px）</dd>
+      </dl></div>
+      <div class="card__f">
+        <a class="btn" href="work-story-preview-b/">B案を見る</a>
+      </div>
+    </section>
+  </div>
+
+  <h3 class="sec">構成の変更点（現行 → 新ストーリー）</h3>
+  <table>
+    <tr><th>現行WORKのセクション</th><th>扱い</th><th>新しい位置づけ</th></tr>
+    <tr><td>HERO「仕事を知る。」</td><td>差し替え</td><td>01 HERO「自分の仕事が、現場の変化になる。」仕事への興味から始める</td></tr>
+    <tr><td>HOW WE WORK「PALの仕事は、職種ごとに役割が違う。」</td><td>削除</td><td>冒頭の組織説明をやめた。同じ主旨は 05 のリード文が担う</td></tr>
+    <tr><td>WHY PAL IS INTERESTING「PALの仕事が、面白い理由。」</td><td>前半へ移動</td><td>02 WHY THIS WORK MATTERS「考えたことが、現場で動く。その手応えがある。」</td></tr>
+    <tr><td>OUR ROLES「9つの職種。」</td><td>維持（見出しのみ変更）</td><td>03 FIND YOUR ROLE「あなたなら、どこから変えていく？」</td></tr>
+    <tr><td>WHAT EACH ROLE DOES「それぞれの職種は、何をしているのか。」</td><td>維持（項目の順序を変更）</td><td>04 THE WORK「その仕事で、何を任されるのか。」</td></tr>
+    <tr><td>HOW ROLES CONNECT「職種は、つながって一つの仕事になる。」</td><td>維持</td><td>05 連携のイメージ。これ1つに統合</td></tr>
+    <tr><td>「そのなかで、仕事はこう進む。」（FLOW 01–04）</td><td>削除</td><td>05 と役割が重複。同じ内容は ABOUT の OUR PROCESS と work/fde/ に残っている</td></tr>
+    <tr><td>NEXT STEP</td><td>維持</td><td>変更なし</td></tr>
+  </table>
+
+  <h3 class="sec">保護した情報の照合結果</h3>
+  <table>
+    <tr><th>照合した項目</th><th class="n">件数</th><th>結果</th></tr>
+    <tr><td>職種名・英字ラベル・一言・主な仕事の各項目・関わる相手・この仕事らしさ・注記・リンク先・アイコン・アバター</td><td class="n">9職種 × 10項目</td><td class="ok">差分0件</td></tr>
+    <tr><td>職種一覧チップ（9件）</td><td class="n">1ブロック</td><td class="ok">ハッシュ一致</td></tr>
+    <tr><td>本文中の内部リンク</td><td class="n">全件</td><td class="ok">増減なし</td></tr>
+    <tr><td>見出し階層の飛び（h1→h3 等）</td><td class="n">—</td><td class="ok">0件</td></tr>
+    <tr><td>WCAG AA コントラスト違反（1280px / 390px）</td><td class="n">—</td><td class="ok">0件</td></tr>
+    <tr><td>横スクロールの発生</td><td class="n">—</td><td class="ok">0件</td></tr>
+  </table>
+
+  <div class="note">
+    <b>判断が要る点：</b>H1 を「仕事を知る。」から「自分の仕事が、現場の変化になる。」に差し替えています。title・meta description・canonical・構造化データは変更していません。「仕事を知る」の語はパンくず・グローバルナビ・BreadcrumbList に引き続き残ります。<br>
+    <b>B案はPCでは短くなりません。</b>1列カードは1枚あたりは低くなりますが、9枚積むためPCでは現行と同じ高さになりました。縦を詰めたい場合はA案です。
+  </div>
+
+  <h3 class="sec">参考</h3>
+  <p style="font-size:14px;line-height:1.95;color:var(--sub)">
+    <a href="work/" style="color:#000">現行のWORKページを見る</a>（比較元・変更していません）
+  </p>
+</main>
+
+<footer><div class="wrap">株式会社PAL 採用サイト｜比較用プレビュー（noindex）。正式ページには反映していません。</div></footer>
+</body>
+</html>

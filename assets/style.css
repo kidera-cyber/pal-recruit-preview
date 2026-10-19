@@ -6472,3 +6472,136 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .chap--msg .chap__en,
 .p-iv .chap--msg .chap__en{color:var(--red-on-dark)}
 /* ===== PALCORP v1 END ===== */
+
+/* ============================================================
+   ===== WORKSTORY v1 START =====
+   WORK ストーリー再設計の比較用プレビュー専用。
+   body に .p-wsa（A案＝PC2列カード）／.p-wsb（B案＝1列コンパクトカード）が付く。
+   正式WORK（body.p-work）には一切かからない。
+   承認後に .p-ws 系のスコープを外して既定化する。
+   ============================================================ */
+
+/* ---- 01 HERO ---- */
+/* .p-work は見出しを中央寄せにするため、導線リンクも中央で揃える */
+.p-ws .ws-hero__nav{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px}
+.p-ws .ws-hero__nav a{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:#000;
+  border-bottom:2px solid var(--red);padding-bottom:3px}
+.p-ws .ws-hero__nav a::after{content:"→";color:var(--red);font-size:13px;transition:transform .25s var(--ease)}
+.p-ws .ws-hero__nav a:hover::after{transform:translateX(3px)}
+.p-ws .ws-hero .plead{max-width:40em}
+
+/* ---- 02 WHY THIS WORK MATTERS ----
+   4テーマの本文は正式WORKの .hub__nodes から1文字も変えていない。
+   カードの箱ではなく、赤い大きな番号＋大きな日本語見出しの組版で見せる。 */
+.p-ws .wsw{list-style:none;display:grid;gap:0}
+.p-ws .wsw__item{position:relative;padding:28px 0 28px 84px;border-top:1px solid var(--line-mid,#cfcfd4)}
+.p-ws .wsw__item:last-child{border-bottom:1px solid var(--line-mid,#cfcfd4)}
+.p-ws .wsw__no{position:absolute;left:0;top:24px;font-size:38px;line-height:1;font-weight:900;
+  color:var(--red);letter-spacing:.01em}
+.p-ws .wsw__ic{position:absolute;left:2px;top:74px;width:28px;height:28px;color:#000;opacity:.45}
+.p-ws .wsw__h{display:block;font-size:clamp(20px,2.2vw,27px);line-height:1.45;font-weight:700;color:#000;
+  text-wrap:balance}
+.p-ws .wsw__t{margin-top:11px;max-width:46em;font-size:15px;line-height:1.95;color:var(--sub);text-wrap:pretty}
+
+/* A案：2列（番号を大きく、1枚あたりの面積を広く取る） */
+.p-wsa .wsw--a{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.p-wsa .wsw--a .wsw__item:nth-child(-n+2){border-top:2px solid #000}
+.p-wsa .wsw--a .wsw__item:nth-last-child(-n+2){border-bottom:1px solid var(--line-mid,#cfcfd4)}
+
+/* B案：横4列の帯（1行で4テーマを俯瞰させる） */
+.p-wsb .wsw--b{grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.p-wsb .wsw--b .wsw__item{padding:26px 22px 26px 0;border-top:3px solid #000;border-bottom:0}
+.p-wsb .wsw--b .wsw__item+.wsw__item{padding-left:22px;border-left:1px solid var(--line)}
+.p-wsb .wsw--b .wsw__no{position:static;font-size:30px}
+.p-wsb .wsw--b .wsw__ic{position:static;display:block;margin-top:14px;width:26px;height:26px}
+.p-wsb .wsw--b .wsw__h{margin-top:12px;font-size:clamp(16px,1.5vw,18.5px);line-height:1.5}
+.p-wsb .wsw--b .wsw__t{font-size:13.5px;line-height:1.85}
+
+/* ---- 04 THE WORK：職種カード ----
+   項目の並びは 1職種名 → 2一言 → 3主な仕事 → 4この仕事らしさ → 5関わる相手
+   → 6実際に働く社員 → 7募集要項、の順。中身は正式WORKのまま。 */
+.p-ws .ws-cards{display:grid}
+.p-ws .ws-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);
+  transition:border-color .25s,box-shadow .25s}
+.p-ws .ws-card:hover{border-color:var(--red);box-shadow:0 8px 24px rgba(0,0,0,.07)}
+.p-ws .ws-card__top{border-bottom:1px solid var(--line-soft,#f0f0f2)}
+.p-ws .ws-card .role-card__head{display:flex;align-items:flex-start;gap:12px}
+.p-ws .ws-card .role-card__ic{flex:0 0 auto;width:30px;height:30px;color:#000}
+.p-ws .ws-card .role-card__en{font-family:Lato,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.14em;color:var(--red)}
+.p-ws .ws-card .role-card__head h3{margin-top:3px;font-size:clamp(19px,1.9vw,22px);line-height:1.45;color:#000}
+.p-ws .ws-card .role-card__one{margin-top:12px;font-size:15.5px;line-height:1.65;font-weight:700;color:#000}
+.p-ws .ws-card__ch{margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--red)}
+.p-ws .ws-card__body>.ws-card__ch:first-child{margin-top:0}
+.p-ws .ws-card .role-points{margin-top:10px;list-style:none;display:grid;gap:9px}
+.p-ws .ws-card .role-points li{position:relative;padding-left:19px;font-size:14.5px;line-height:1.75;color:#4a4a4a}
+.p-ws .ws-card .role-points li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;
+  border-radius:50%;background:var(--red)}
+.p-ws .ws-card__t{margin-top:8px;font-size:14.5px;line-height:1.8;color:#4a4a4a;text-wrap:pretty}
+.p-ws .ws-card .role-people{margin-top:10px;display:flex;flex-wrap:wrap;gap:7px;list-style:none}
+.p-ws .ws-card .role-people li{padding:5px 12px;border-radius:9999px;background:var(--bg-soft);
+  font-size:12.5px;line-height:1.5;color:#4a4a4a}
+.p-ws .ws-card__note{margin-top:14px;font-size:12.5px;line-height:1.75;color:var(--muted)}
+.p-ws .ws-card__foot{border-top:1px solid var(--line-soft,#f0f0f2)}
+
+/* A案：PC2列。CTAはカードの高さが違っても下端でそろえる */
+.p-wsa .ws-cards--a{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.p-wsa .ws-card--a{display:flex;flex-direction:column}
+.p-wsa .ws-card--a .ws-card__top{padding:26px 26px 20px}
+.p-wsa .ws-card--a .ws-card__body{flex:1 1 auto;padding:20px 26px 22px}
+.p-wsa .ws-card--a .ws-card__foot{margin-top:auto;padding:18px 26px 22px}
+
+/* B案：1列。左＝職種と一言／中＝仕事の中身／右＝社員と募集 */
+.p-wsb .ws-cards--b{grid-template-columns:minmax(0,1fr);gap:14px}
+.p-wsb .ws-card--b{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.46fr) minmax(0,.62fr);
+  align-items:start;padding:26px 28px 24px;gap:0 28px}
+/* 左カラムは幅が狭いので、長い職種名（Cleanliness / クレンリネス 等）が
+   2行で崩れないよう、見出しだけ1段階小さくする */
+.p-wsb .ws-card--b .role-card__head h3{font-size:clamp(17px,1.65vw,20px)}
+.p-wsb .ws-card--b .role-card__one{font-size:14.5px}
+.p-wsb .ws-card--b .ws-card__top{border-bottom:0;padding:0}
+.p-wsb .ws-card--b .ws-card__body{padding:0}
+.p-wsb .ws-card--b .ws-card__foot{border-top:0;padding:0 0 0 28px;height:100%;
+  border-left:1px solid var(--line);display:flex;align-items:center}
+.p-wsb .ws-card--b .rcfoot{flex-direction:column;align-items:stretch;gap:12px;width:100%}
+.p-wsb .ws-card--b .rcperson{flex-direction:column;align-items:flex-start;gap:10px}
+.p-wsb .ws-card--b .rcbtn{justify-content:center}
+.p-wsb .ws-card--b .role-points li{font-size:14px}
+
+@media (max-width:1000px){
+  .p-wsa .wsw--a{grid-template-columns:minmax(0,1fr);gap:0}
+  .p-wsa .wsw--a .wsw__item:nth-child(2){border-top:1px solid var(--line-mid,#cfcfd4)}
+  .p-wsa .ws-cards--a{grid-template-columns:minmax(0,1fr)}
+  .p-wsb .wsw--b{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .p-wsb .wsw--b .wsw__item:nth-child(odd){padding-left:0;border-left:0}
+  .p-wsb .wsw--b .wsw__item:nth-child(even){padding-left:22px;border-left:1px solid var(--line)}
+  .p-wsb .ws-card--b{grid-template-columns:minmax(0,1fr);gap:18px}
+  .p-wsb .ws-card--b .ws-card__foot{padding:18px 0 0;border-left:0;border-top:1px solid var(--line-soft,#f0f0f2)}
+  .p-wsb .ws-card--b .rcfoot{flex-direction:row;flex-wrap:wrap;align-items:center}
+  .p-wsb .ws-card--b .rcperson{flex-direction:row;align-items:center}
+}
+@media (max-width:700px){
+  .p-ws .wsw__item{padding:22px 0 22px 62px}
+  .p-ws .wsw__no{font-size:30px;top:20px}
+  .p-ws .wsw__ic{display:none}
+  .p-wsb .wsw--b{grid-template-columns:minmax(0,1fr)}
+  .p-wsb .wsw--b .wsw__item{padding:22px 0;border-left:0!important;padding-left:0!important;
+    border-top:1px solid var(--line-mid,#cfcfd4)}
+  .p-wsb .wsw--b .wsw__item:first-child{border-top:3px solid #000}
+  .p-wsa .ws-card--a .ws-card__top{padding:22px 20px 18px}
+  .p-wsa .ws-card--a .ws-card__body{padding:18px 20px 20px}
+  .p-wsa .ws-card--a .ws-card__foot{padding:16px 20px 20px}
+  .p-wsb .ws-card--b{padding:22px 20px 20px}
+  .p-ws .ws-hero__nav{gap:10px 16px}
+}
+/* ===== WORKSTORY v1 END ===== */
+
+/* WORKSTORY v1 追補：正式WORKの .hub__center にあった PAL のステートメント
+   「物流DXを、現場で動く形にする」を、4テーマの冒頭に原文のまま残す。
+   .hub の円形レイアウトは使わず、黒帯の1行として置いた。 */
+.p-ws .wsw__st{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;
+  margin-bottom:34px;padding:18px 24px;background:#000;border-radius:var(--radius)}
+.p-ws .wsw__st .en{font-size:12px;letter-spacing:.2em;color:var(--red-on-dark)}
+.p-ws .wsw__st b{font-size:clamp(17px,1.8vw,21px);line-height:1.5;color:#fff}
+.p-ws .wsw__st .nw{display:inline-block}
+@media (max-width:700px){ .p-ws .wsw__st{padding:16px 18px;margin-bottom:26px} }
