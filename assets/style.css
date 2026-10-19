@@ -5847,3 +5847,20 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .scenes__links .btn{width:100%;justify-content:center}
 }
 /* ===== HOMEAPP v1 END ===== */
+
+/* ============================================================
+   ===== HEROVID-NOTE v1 START =====
+   TOPのFV動画は実際のPAL現場を撮影したものではないため、右下に注記を出す。
+   .hero__inner（コピー・CTA）と同じ左右の基準（var(--wrap)）に右端をそろえ、
+   HEROの下パディング内に置くので、コピーともCTAとも重ならない。
+   既存の .hero / .hero__inner / .hero__media--video には手を入れていない。
+   ============================================================ */
+.hero__imgnote{position:absolute;z-index:2;
+  right:max(24px,calc((100vw - var(--wrap)) / 2));bottom:16px;
+  margin:0;font-size:11px;line-height:1.5;letter-spacing:.02em;
+  color:rgba(255,255,255,.6);text-shadow:0 1px 6px rgba(0,0,0,.5);
+  pointer-events:none;user-select:none}
+@media (max-width:620px){
+  .hero__imgnote{right:24px;bottom:12px;font-size:10px}
+}
+/* ===== HEROVID-NOTE v1 END ===== */
