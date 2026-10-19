@@ -5819,7 +5819,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 
 /* ---- 旧 KEY CONTENTS の受け皿（FAQへの1本だけ） ---- */
 .beforeapply{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;
-  padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--bg-soft)}
+  padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff}
 .beforeapply .slead{margin-top:8px;max-width:46em}
 
 /* ---- 07 OUR MISSION / VALUES：本文は変えず、表示だけ控えめにする ---- */
