@@ -5601,3 +5601,155 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .hcareer li{padding:17px 18px 19px}
 }
 /* ===== HOME-HUB v1 END ===== */
+
+/* ============================================================
+   ===== HERO-RB v1 START =====
+   TOPファーストビューの比較用プレビュー（renewal/hero-a.html / hero-b.html）専用。
+   既存の .hero / .heroicons / .hil 系には一切手を入れていないため、
+   現在のTOP（renewal/index.html）の表示はこの追記では変化しない。
+   採用する案が決まった時点で、この節のうち必要なものだけを本実装へ移す。
+   新規クラスのみ（.rhero / .edcopy / .edph / .ffield / .fchip / .pvbar）で、
+   既存セレクタとの衝突は 0 件（追記前に grep 済み）。
+   ============================================================ */
+
+/* ---- 共通：ヘッダーが白なので、明るいFVとの境目を常時引く ---- */
+.pv .hdr{border-bottom-color:var(--line)}
+
+/* ---- 共通：コピー部分のタイポグラフィ ---- */
+.rhero{position:relative;background:#fff;color:var(--navy)}
+.rhero__eyebrow{display:flex;align-items:center;gap:11px;
+  font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.18em;color:var(--muted)}
+.rhero__eyebrow .en:first-child{color:var(--red);letter-spacing:.22em}
+.rhero__eyebrow i{display:block;width:22px;height:1px;background:var(--line-mid)}
+.rhero__badge{display:inline-block;margin-top:20px;padding:7px 17px;
+  border:1px solid var(--line-mid);border-radius:9999px;
+  font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--navy)}
+.rhero__title{margin-top:22px;font-weight:700;line-height:1.2;letter-spacing:.005em;color:var(--navy)}
+.rhero__title em{font-style:normal;color:var(--red)}   /* 「自分の手で、」＝PALレッド */
+.rhero__lead{margin-top:28px;font-size:16px;line-height:2.05;color:var(--sub)}
+.rhero__ctas{margin-top:38px;display:flex;flex-wrap:wrap;gap:13px}
+/* 副CTA：主CTA（btn--red）より一段弱い白地アウトライン */
+.rbtn--line{background:#fff;border:1px solid var(--navy);color:var(--navy);
+  transition:background-color .25s,color .25s}
+.rbtn--line:hover{background:var(--navy);color:#fff}
+
+/* ============================================================
+   案A：スプリットヒーロー（左=メッセージ／右=人と現場）
+   ============================================================ */
+.rhero--split{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);
+  min-height:min(88vh,820px);align-items:stretch}
+.rhero__copy{display:flex;align-items:center;
+  padding:calc(var(--header-h) + 68px) clamp(32px,4.4vw,76px) 72px
+          max(24px,calc((100vw - var(--wrap)) / 2))}
+.rhero__copyin{max-width:620px}
+.rhero--split .rhero__title{font-size:clamp(38px,4.9vw,74px)}
+.rhero--split .rhero__lead{max-width:27em}
+.rhero--split{overflow:hidden}
+/* サブ写真を左の白面へはみ出させるため、visual 側では切り抜かず、メイン写真だけを切り抜く */
+.rhero__visual{position:relative;z-index:1;background:var(--navy-d)}
+.rhero__ph{margin:0}
+.rhero__ph img{display:block;width:100%;height:100%;object-fit:cover}
+.rhero__ph--main{position:absolute;inset:0;overflow:hidden}
+.rhero__ph--main img{object-position:62% 34%}
+/* 小さい方を左へはみ出させて、コピー面とビジュアル面をつなぎ、奥行きを出す */
+.rhero__ph--sub{position:absolute;left:-84px;bottom:46px;width:min(44%,268px);
+  aspect-ratio:4/3;border:5px solid #fff;border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:0 20px 46px rgba(27,29,49,.26)}
+
+/* ============================================================
+   案B：エディトリアル型（巨大コピー＋人・現場・技術の3枚組）
+   ============================================================ */
+.rhero--ed{padding:calc(var(--header-h) + 44px) 0 58px}
+/* 3枚組の構図がファーストビュー内に収まるよう、.rhero--ed だけコピー周りの余白を詰める */
+.rhero--ed .rhero__title{margin-top:18px}
+.rhero--ed .rhero__lead{margin-top:22px}
+.rhero--ed .rhero__ctas{margin-top:32px}
+.rhero__ed{width:min(100% - 48px,var(--wrap));margin-inline:auto;
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px 22px}
+.edcopy{grid-column:1 / 7;grid-row:1;align-self:center;padding-right:10px}
+.rhero--ed .rhero__title{font-size:clamp(38px,5.2vw,78px)}
+.rhero--ed .rhero__lead{max-width:26em}
+.edph{position:relative;margin:0;overflow:hidden;border-radius:var(--radius-lg);background:var(--bg-soft)}
+.edph img{display:block;width:100%;height:100%;object-fit:cover}
+.edph__cap{position:absolute;left:0;bottom:0;display:flex;align-items:baseline;gap:9px;
+  padding:9px 15px 10px;border-radius:0 var(--radius-lg) 0 var(--radius-lg);
+  background:rgba(27,29,49,.84);color:#fff;font-size:12.5px;font-weight:700;line-height:1.4}
+.edph__cap .en{font-family:Lato,sans-serif;font-size:10px;letter-spacing:.16em;color:var(--red-light,#ffb3b8)}
+.edph--1{grid-column:7 / 13;grid-row:1 / 3;aspect-ratio:auto}
+.edph--1 img{object-position:62% 34%}
+.edph--2{grid-column:1 / 4;grid-row:2;aspect-ratio:16/9}
+.edph--3{grid-column:4 / 7;grid-row:2;aspect-ratio:16/9}
+.edph--3 img{object-position:50% 30%}
+
+/* ============================================================
+   FV直下：FIND YOUR FIELD（職種探索）
+   HOME-HUB v1 の #work セクションをそのまま移設し、募集状況の表示だけ足した。
+   ============================================================ */
+.ffield{background:var(--bg-soft);border-top:1px solid var(--line)}
+.fchip__st{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+  margin-left:6px;text-align:right}
+.fchip__st b{display:inline-block;padding:3px 10px;border-radius:9999px;
+  background:var(--red);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;line-height:1.5;
+  white-space:nowrap}
+.fchip__st--tbd b{background:#fff;color:var(--sub);border:1px solid var(--line-mid)}
+.ffield__foot{margin-top:22px;padding-top:20px;border-top:1px solid var(--line-mid)}
+.ffield__note{font-size:13.5px;line-height:1.8;color:var(--sub)}
+.ffield__links{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px}
+
+/* ============================================================
+   比較用プレビューであることを示す下部バー（本実装では削除する）
+   ============================================================ */
+.pvbar{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;flex-wrap:wrap;
+  align-items:center;gap:8px 16px;padding:9px clamp(14px,3vw,28px);
+  background:var(--navy-d);color:#fff;font-size:12.5px;line-height:1.6}
+.pvbar b{color:#fff}
+.pvbar span{color:#b9bdd6}
+.pvbar a{margin-left:0;padding:4px 12px;border:1px solid rgba(255,255,255,.34);
+  border-radius:9999px;color:#fff;font-weight:700;transition:background-color .2s}
+.pvbar a:hover{background:var(--red);border-color:var(--red)}
+.pv .ftr{padding-bottom:64px}
+
+/* ---- レスポンシブ ---- */
+@media (max-width:860px){
+  /* プレビューバーを1行に収める（本実装では削除する要素） */
+  .pvbar span{display:none}
+}
+@media (max-width:1040px){
+  /* STEP10：スマホ／タブレットではコピーを最優先にし、ビジュアルはその下に置く */
+  .rhero--split{grid-template-columns:minmax(0,1fr);min-height:0}
+  .rhero__copy{align-items:flex-start;padding:calc(var(--header-h) + 42px) 24px 34px}
+  .rhero__copyin{max-width:none}
+  .rhero__visual{height:min(54vw,400px)}
+  .rhero__ph--sub{left:auto;right:18px;bottom:18px;width:36%;max-width:210px;border-width:4px}
+  .rhero--ed{padding-top:calc(var(--header-h) + 40px)}
+  .edcopy{grid-column:1 / 13;grid-row:1}
+  .edph--1{grid-column:1 / 13;grid-row:2;aspect-ratio:16/9}
+  .edph--2{grid-column:1 / 7;grid-row:3;aspect-ratio:4/3}
+  .edph--3{grid-column:7 / 13;grid-row:3;aspect-ratio:4/3}
+}
+@media (max-width:620px){
+  /* 英字ラベルが2行に折り返して高さを食うので、1行に収める（主役はコピー） */
+  .rhero__eyebrow{gap:8px;font-size:10px}
+  .rhero__eyebrow i{display:none}
+  .rhero__badge{margin-top:14px}
+  .rhero__title{margin-top:16px;font-size:clamp(31px,8.4vw,42px) !important;line-height:1.26}
+  .rhero__lead{margin-top:22px;font-size:14.5px;line-height:1.95}
+  .rhero__ctas{margin-top:28px;gap:10px}
+  .rhero__ctas .btn{width:100%;justify-content:center}
+  /* 顔と作業している手元が切れないよう、モバイルでは注視点を上げる */
+  .rhero__visual{height:min(68vw,300px)}
+  .rhero__ph--main img{object-position:60% 30%}
+  .rhero__ph--sub{display:none}
+  .edph--1{aspect-ratio:4/3}
+  .edph--1 img{object-position:60% 30%}
+  .edph__cap{padding:7px 11px 8px;font-size:11.5px}
+  /* サブ写真が小さくなるモバイルでは、キャプションは主写真のみに絞る */
+  .edph--2 .edph__cap,.edph--3 .edph__cap{display:none}
+  .ffield__links .btn{width:100%;justify-content:center}
+  .pvbar{font-size:11.5px;gap:6px 10px;padding:8px 14px}
+  .pv .ftr{padding-bottom:92px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rbtn--line,.rhero__ph{transition:none}
+}
+/* ===== HERO-RB v1 END ===== */
