@@ -18,10 +18,10 @@
   --red-on-dark:#f61c25;
   /* 旧 --pink #f72a48（赤紫）→ ブランドの明るい赤。参照19箇所を一括で赤へ */
   --pink:#f61c25; --purple:#8a8a90;
-  /* PALTHEME A v1：本文と注記のコントラストを上げた。
-     --sub  #6b6d81（白地5.09:1）→ #4f5168（7.75:1）
-     --muted #797dac（白地3.93:1＝WCAG AA未達）→ #656a90（5.23:1）
-     旧値は、このコミットの1つ前の版を参照。 */
+  /* 本文・注記のコントラスト（白地）：
+     --text  #111111  18.88:1 ／ --sub #4a4a4a  8.86:1 ／ --muted #6b6b70  5.30:1
+     経緯：#6b6d81 → #4f5168（PALTHEME A v1）→ #4a4a4a（PAL CORPORATE STYLE v1）
+           #797dac（3.93:1＝AA未達）→ #656a90 → #6b6b70。旧値は git 履歴を参照。 */
   --text:#111111; --sub:#4a4a4a; --muted:#6b6b70;
   --bg:#fff; --bg-soft:#f4f4f5; --line:#e2e2e6; --line-mid:#cfcfd4; --line-soft:#f0f0f2;
   /* バナーの斜線と同じ角度・同じ赤。装飾の罫線・ドット用 */
