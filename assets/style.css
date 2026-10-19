@@ -6088,3 +6088,22 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 /* PEOPLE：インタビュー一覧がHERO直後に来るので、上の余白だけ少し詰める */
 .people--first{padding-top:clamp(34px,4vw,52px)}
 /* ===== WPSPLIT v1 END ===== */
+
+/* ============================================================
+   ===== DTSEXP v1 START =====
+   DTS社員インタビュー拡充案の比較用プレビュー
+   （renewal/people/dts-interview-preview/）専用。
+   .ednote / .pstory__note だけが新規で、正式ページは使っていないため表示は変わらない。
+   「編集部より」は、本人の発言ではない客観的な補足であることを見た目でも分けるための枠。
+   ============================================================ */
+.ednote{margin-top:20px;padding:15px 18px 16px;border-left:3px solid var(--line-mid,#c3cade);
+  background:var(--bg-soft);border-radius:0 var(--radius) var(--radius) 0}
+.ednote__h{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--muted)}
+.ednote__t{margin-top:7px;font-size:13.5px;line-height:1.9;color:#4f5168}
+.p-iv .ednote__t{color:var(--iv-body,#4f5168)}
+.pstory__note{display:block;margin-top:8px;font-size:12px;color:var(--muted)}
+@media (max-width:700px){
+  .ednote{padding:13px 14px 14px}
+  .ednote__t{font-size:13px}
+}
+/* ===== DTSEXP v1 END ===== */
