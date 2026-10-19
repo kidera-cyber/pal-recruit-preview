@@ -6107,3 +6107,48 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ednote__t{font-size:13px}
 }
 /* ===== DTSEXP v1 END ===== */
+
+/* ============================================================
+   ===== NAVCORP v1 START =====
+   ABOUT廃止・ナビ再設計の比較用プレビュー
+   （renewal/nav-preview/ ・ renewal/about-moved-preview/）専用。
+   .gnav__ext / .drawer__ext / .moved* だけが新規で、正式ページは使っていないため
+   この追記で表示は変わらない。
+   ============================================================ */
+
+/* ヘッダー：企業サイトへの外部リンク。採用メニューとは別色にし、ENTRYより弱くする */
+.gnav__ext{display:inline-flex;align-items:center;flex-wrap:wrap;gap:0 5px;color:var(--muted);
+  font-size:13px;font-weight:700}
+/* 他のナビ項目と同じく、日本語の下に英字を置く */
+.gnav__ext small{display:block;width:100%;margin-top:3px;font-size:9.5px;letter-spacing:.12em;color:var(--muted)}
+.gnav__ext::after{display:none}            /* 現在地の下線は出さない（採用ページではないため） */
+.gnav__ext:hover{color:var(--navy)}
+.gnav__ext:hover::after{transform:scaleX(0)}
+.gnav__extico{flex:0 0 auto;width:11px;height:11px;margin-left:-1px}
+
+/* スマートフォンのドロワー：同じ外部リンクを最後に置く */
+.drawer__ext{display:flex;align-items:center;gap:8px;color:#9aa0c4}
+.drawer__ext span{color:#9aa0c4}
+.drawer__ext .gnav__extico{width:12px;height:12px}
+
+/* 旧ABOUTの移行案内ページ（案） */
+.moved{padding-block:clamp(70px,9vw,120px)}
+.moved__h{font-size:clamp(25px,3.4vw,40px);font-weight:700;line-height:1.45;color:var(--navy)}
+.moved__t{margin-top:22px;font-size:16px;line-height:2;color:var(--sub)}
+.moved__grid{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.moved__col{padding:22px 24px 24px;border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff}
+.moved__ch{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--red)}
+.moved__list{margin-top:13px;list-style:none;display:grid;gap:11px}
+.moved__list a{display:inline-block;font-size:14.5px;line-height:1.7;color:var(--navy);
+  text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line-mid,#c3cade)}
+.moved__list a:hover{text-decoration-color:var(--red)}
+.moved__ctas{margin-top:34px;display:flex;flex-wrap:wrap;gap:13px}
+
+@media (max-width:860px){
+  .moved__grid{grid-template-columns:minmax(0,1fr)}
+  .moved__ctas .btn{width:100%;justify-content:center}
+}
+@media (max-width:1100px){
+  .gnav__ext small{display:none}
+}
+/* ===== NAVCORP v1 END ===== */
