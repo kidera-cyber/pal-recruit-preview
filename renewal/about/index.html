@@ -204,27 +204,22 @@
     </ol>
     <p class="why3__add rv">こうした背景から、物流を経営課題として捉える企業の動きも強まっています。</p>
 
-    <!-- ===== WHYNOW v3：ここから「個別の改善だけでは難しい理由」。
-         抽象語の「分断」を、具体例 → まとめの順で説明する。 ===== -->
-    <div class="whygap rv">
-      <h3 class="whygap__h"><span class="nw">それでも、</span><span class="nw">個別に改善するだけでは変わりにくい。</span></h3>
-      <p class="whygap__t">現場では人が作業し、システムには別の情報があり、設備は設備で動いている。それぞれが別々に改善されると、全体としてはうまくつながらないことがあります。</p>
-    </div>
-    <!-- ===== ABOUTSLIM v1：FIELD／SYSTEM／FACILITY／DATA の4分断を示す大型図解を削除。
-     同じ4領域の関係は #process の FIELD→FDE→TECHNOLOGY 図解でも扱っており重複していた。
-     図解が持っていた要点は、直前の「それでも、個別に改善するだけでは変わりにくい。」の
-     本文がそのまま説明しているため、文章側を残して図解のみを外している。
-     原文は、このコミットの1つ前の版を参照。 ===== -->
-
-    <!-- ===== ABOUT-DEDUP v1：後半「PALはその中でも、現場運営だけでなく…」を削除。
-         #position 冒頭とほぼ同一文で、ここで結論を先出ししていたため。
-         このセクションは「問題の提示」に集中させ、答えは #position に集約する。 ===== -->
-    <p class="why3__add rv">物流運営には3PLをはじめ、さまざまな支援の形があります。それぞれ得意とする範囲は異なります。</p>
+    <!-- ===== ABOUTCUT v1：削除対象①
+         削除した要素（本文はここに引用しない。復元は git 履歴 59d6dfe を参照）：
+           ・<div class="whygap"> ＝ 見出し1行＋本文1段落＋このブロック専用の
+             区切り線（.whygap の border-top:2px）と上余白 48px
+           ・<p class="why3__add"> 2つ目（3PL への言及）
+         言い換えも、別の場所への移動もしていない。空のコンテナも残していない。
+         CSS の .whygap / .whygap__h / .whygap__t は未使用化（残置）。
+         先行して削除済み：4分断の大型図解（ABOUTSLIM v1）／
+         「PALはその中でも…」（ABOUT-DEDUP v1）。いずれも記録のみ。 ===== -->
     <!-- ===== ASK v3：濃紺の大判カードを廃止し、問題提起と次セクションをつなぐ
          ブリッジコピーへ。PCは1〜2行、改行は入れない。 ===== -->
     <div class="ask rv">
       <span class="en">THE QUESTION</span>
-      <b>では、誰がこの4つを<b class="hl">ひとつの流れ</b>につなぐのか。</b>
+      <!-- ABOUTCUT v1：指示語「この4つ」は削除した .whygap 本文を受けていたため
+           参照先が無くなった。説明を足さず、指示語だけを直前の3課題へ向け直す。 -->
+      <b>では、誰がこれらを<b class="hl">ひとつの流れ</b>につなぐのか。</b>
     </div>
     <!-- ===== ASKTO v1：THE QUESTION の直後に、次のFDE（OUR PROCESS）への接続文を置く。 ===== -->
     <p class="askto rv">PALでは、この「つなぎ目」を埋める役割として、<b>FDE（Forward Deployed Engineer）</b>の考え方を物流DXに適用しています。<a class="textlink textlink--sm" href="#process">現場から改善までの進め方を見る</a></p>
@@ -317,10 +312,17 @@
 
 <section class="sec sec--tight" id="process">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
+    <div class="shead rv" style="margin-bottom:22px">
       <p class="slabel">Our Process</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">現場で見つけた課題を、</span><span class="nw">動く仕組みへ。</span></h2>
-      <p class="slead">PALは、物流現場の課題を起点に、システム・設備・データ・運用をつなぎ、現場で動く仕組みをつくります。<br>FDE（Forward Deployed Engineer）は、現場の課題を技術要件へと整理し、各部門と連携して実装・改善につなげます。</p>
+      <!-- ===== ABOUTCUT v1：削除対象②
+           <p class="slead"> の2文を削除（本文はここに引用しない。復元は git 履歴 59d6dfe）。
+           どちらも直下の図解が同じことを示していたため、代替文は足していない。
+           SEOで必要な語は、図解内のHTMLテキストが引き続き保持している：
+             FDE / Forward Deployed Engineer → .pf__fde・.pf__sub
+             システム・設備・データ・運用     → .pf__ic の4項目
+             課題を整理する・技術要件へ変える → .pf__t
+           見出し直下の余白は .shead の margin-bottom を 34px → 22px に詰めて調整。 ===== -->
     </div>
 
 <!-- ===== FDEFIG v1：図解を「現場 → FDE → 技術・仕組み → 現場へ戻る」の
@@ -416,8 +418,9 @@
      WORKページ（/renewal/work/ の ROLE DIFFERENCE と EXPLORE の間）へ移設。
      会社の説明ではなく「PALで働く魅力」を伝える内容のため、職種・仕事内容を扱う
      WORK の方が求職者の読む順序として自然、という判断。
-     ABOUT側はこれで「では、誰がこの4つをひとつの流れにつなぐのか。」→
-     OUR PROCESS が直結する。復元は git 履歴（コミット 6ee33ca）から。 ===== -->
+     ABOUT側はこれで THE QUESTION → OUR PROCESS が直結する。
+     （ABOUTCUT v1 で、その問いの指示語は「この4つ」から「これら」に変更済み）
+     復元は git 履歴（コミット 6ee33ca）から。 ===== -->
 
 <!-- ===== VALUES-TO-PEOPLE v1：「PALが、大切にする3つのこと。」(#values) を
      PEOPLEページの統合セクション（/renewal/people/#look）へ移設し、

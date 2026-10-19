@@ -4964,6 +4964,9 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .why3__add{max-width:var(--measure,820px);margin-top:22px;font-size:15.5px;line-height:1.95;
   color:var(--sub);text-wrap:pretty}
 
+/* ===== ABOUTCUT v1：.whygap はABOUTから削除され、未使用化（残置）。
+   区切り線（border-top）もこの定義ごと使われなくなる。
+   renewal/about-compact-preview/ では今も使用中のため、定義は残す。 ===== */
 .whygap{max-width:var(--measure,820px);margin-top:48px;padding-top:26px;
   border-top:2px solid var(--line-mid,#cacaca)}
 .whygap__h{font-size:clamp(19px,2.1vw,23px);line-height:1.6;font-weight:700;color:var(--navy);
