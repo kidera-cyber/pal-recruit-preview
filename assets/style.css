@@ -5340,6 +5340,11 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   #now-hiring .jobtile__foot{grid-template-rows:auto auto auto}
   #now-hiring .jbtn{height:auto;min-height:42px}
 }
+/* 【2026-10-19】HOME-HUB v1 でタイルに .jobtile__one（一言）を追加。
+   職種名は2行ぶんの min-height を維持しつつ、一言は1〜2行で可変にするため、
+   勤務地を .jobtile__main の下端に寄せて（margin-top:auto）位置をそろえる。
+   フッター（募集中ラベル＋ボタン2本）の固定3行はそのまま。 */
+#now-hiring .jobtile__place{margin-top:auto;padding-top:12px}
 /* ===== JOBTILE-ALIGN v1 END ===== */
 
 /* ============================================================
@@ -5544,3 +5549,55 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .wflow__st+.wflow__st::before{left:24px;top:-10px;margin-top:0;transform:rotate(135deg)}
 }
 /* ===== WFLOW v1 END ===== */
+
+/* ============================================================
+   ===== HOME-HUB v1 START =====
+   HOME を「各ページへの入口」に絞る。
+   ・WHAT WE DO の4段階図から説明文・職種例を外し、1行の要約だけにする
+   ・WORK セクションは WORK の .role-chip をそのまま再利用
+   ・PEOPLE はアバター＋職種＋一言コピーのみ（.hpeople）
+   ・CAREER は概念3つだけ（.hcareer）
+   ・JOBS タイルに一言説明（.jobtile__one）を追加
+   配色・カードの作りは既存のまま。旧 .quick / .pickrow / .ajcta は未使用化（残置）。
+   ============================================================ */
+#message .fstep{padding:20px 18px 22px}
+#message .fstep__h{margin-top:9px;font-size:14.5px;line-height:1.7}
+
+/* PEOPLE：アバター＋職種＋一言 */
+.hpeople{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;list-style:none}
+.hp{position:relative;display:block;padding-bottom:14px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:#fff;overflow:hidden;
+  text-decoration:none;color:inherit;transition:border-color .25s}
+.hp:hover{border-color:var(--line-mid,#c3cade)}
+.hp__ph{margin:0;aspect-ratio:12/13}
+.hp__ph img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.hp__cat{display:block;margin:11px 12px 0;font-family:Lato,sans-serif;
+  font-size:9.5px;letter-spacing:.08em;line-height:1.4;color:var(--red)}
+.hp__copy{display:block;margin:5px 12px 0;font-size:12.5px;line-height:1.55;color:var(--navy)}
+.hp__ar{position:absolute;right:10px;bottom:9px;font-style:normal;font-size:12px;
+  color:var(--red);transition:transform .25s var(--ease)}
+.hp:hover .hp__ar{transform:translateX(3px)}
+
+/* CAREER：概念3つ */
+.hcareer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;list-style:none}
+.hcareer li{padding:20px 20px 22px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:#fff}
+.hcareer__no{display:block;font-family:Lato,sans-serif;font-size:12px;
+  font-weight:700;letter-spacing:.14em;color:var(--red)}
+.hcareer li b{display:block;margin-top:9px;font-size:clamp(17px,1.7vw,20px);
+  line-height:1.5;color:var(--navy)}
+
+/* JOBS タイルの一言 */
+.jobtile__one{display:block;margin-top:7px;font-size:13px;line-height:1.7;color:var(--sub)}
+
+@media (max-width:1200px){
+  .hpeople{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .hp__cat{margin:12px 14px 0;font-size:10px}
+  .hp__copy{margin:5px 14px 0;font-size:13.5px}
+}
+@media (max-width:700px){
+  .hpeople{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .hcareer{grid-template-columns:minmax(0,1fr);gap:12px}
+  .hcareer li{padding:17px 18px 19px}
+}
+/* ===== HOME-HUB v1 END ===== */
