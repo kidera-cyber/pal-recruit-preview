@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261019a">
+<link rel="stylesheet" href="../../assets/style.css?v=20261019b">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "仕事を知る"}]}</script>
@@ -298,7 +298,8 @@
         </div>
       </div>
       <p class="jobblk__note">※ FDEがひとりで設計から運用までを担うわけではありません。各専門部門と連携して進めます。</p>
-      <p class="jobblk__cta"><a class="textlink" href="../work/fde/">FDEという仕事をくわしく見る</a>　<a class="textlink" href="../people/fde/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/fde/">FDEの募集要項</a></p>
+      <!-- ===== WORK-CAREER-SPLIT v1：CTAの優先順位を「社員を見る → 募集要項 → 詳細ページ」に統一。 ===== -->
+      <p class="jobblk__cta"><a class="textlink" href="../people/fde/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/fde/">FDEの募集要項</a>　<a class="textlink" href="../work/fde/">FDEという仕事をくわしく見る</a></p>
       </article>
       <article class="jobblk rv" id="job-system">
       <div class="jobblk__head">
@@ -358,7 +359,10 @@
         <p class="jobblk__t">組み直した計画が、そのとおり回る。</p>
         </div>
       </div>
-      <p class="jobblk__note">※ 現在の募集職種は配送ドライバーです。配車・運行管理や営業所長は、経験を重ねた先の役割として紹介しています。</p>
+      <!-- ===== WORK-CAREER-SPLIT v1：「配車・運行管理や営業所長は、経験を重ねた先の役割として
+           紹介しています。」を削除。役割の広がりはCAREERページの担当のため、
+           WORKでは現在の募集対象の明示だけに留める。 ===== -->
+      <p class="jobblk__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
       <p class="jobblk__cta"><a class="textlink" href="../people/dts/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/dts/">配送ドライバー（DTS）の募集要項</a></p>
       </article>
       <article class="jobblk rv" id="job-sales">
@@ -475,6 +479,10 @@
   </div>
 </section>
 
+<!-- ===== WORK-CAREER-SPLIT v1：仕事の進み方の番号を STEP → FLOW に変更。
+     内容は「今の仕事がどう進むか」でキャリアステップではないが、
+     CAREERページの STEP 1〜4（役割の広がり）と表記が衝突し、
+     昇進ステップと読み違えられるおそれがあったため。 ===== -->
 <section class="sec sec--soft sec--tight" id="change">
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:30px">
@@ -487,25 +495,25 @@
      STEP 03 の「コーポレート」は、現場課題→改善の流れの直接の担い手ではないため外した。 ===== -->
     <ol class="cflow rv">
         <li class="cflow__step">
-          <p class="cflow__no en">STEP 01</p>
+          <p class="cflow__no en">FLOW 01</p>
           <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
           <h3>現場の違和感に気づく</h3>
           <p class="cflow__t">作業の滞り、数字の変化、スタッフの声。毎日見ているからこそ気づける、改善につながる課題を見つけます。</p>
         </li>
         <li class="cflow__step">
-          <p class="cflow__no en">STEP 02</p>
+          <p class="cflow__no en">FLOW 02</p>
           <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
           <h3>原因を考える</h3>
           <p class="cflow__t">現場の状況とデータの双方を確認し、何が問題なのかを整理します。</p>
         </li>
         <li class="cflow__step">
-          <p class="cflow__no en">STEP 03</p>
+          <p class="cflow__no en">FLOW 03</p>
           <svg class="cflow__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg>
           <h3>専門性を持ち寄る</h3>
           <p class="cflow__t">技術で解くのか、運用で変えるのか。現場運営、FDE、エンゲージメント・BizDev、開発がそれぞれの立場から実行できる形に落とします。</p>
         </li>
         <li class="cflow__step">
-          <p class="cflow__no en">STEP 04</p>
+          <p class="cflow__no en">FLOW 04</p>
           <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg>
           <h3>現場で試し、改善する</h3>
           <p class="cflow__t">完成してから確認するのではなく、途中段階から使ってもらい、実際の使われ方を見て、より良い方法へ更新していきます。</p>
@@ -513,7 +521,7 @@
     </ol>
     <div class="flowadd rv">
       <p class="flowadd__h"><span class="en">FDE</span>現場の課題を技術要件へ翻訳し、実装・運用へつなぐ。</p>
-      <p class="flowadd__t">STEP 02〜04では、FDEが現場と技術の間に立ちます。<a class="textlink textlink--sm" href="../people/fde/">FDEとして働く人を見る</a></p>
+      <p class="flowadd__t">FLOW 02〜04では、FDEが現場と技術の間に立ちます。<a class="textlink textlink--sm" href="../people/fde/">FDEとして働く人を見る</a></p>
     </div>
     <!-- ===== WORKNOTE v1：.note 2本を削除済み。
          「設計・実装・運用・改善を行き来する」「進め方は案件や現場によって変わる」は
