@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261019g">
+<link rel="stylesheet" href="../assets/style.css?v=20261019i">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -115,109 +115,226 @@
 </div>
 
 <main id="top">
-<!-- ============================ 01 HERO -->
-<section class="hero">
-  <div class="hero__media">
-    <img src="../assets/warehouse-dx.jpg" alt="データとロボットが動く物流センターで作業するPALのメンバー" width="2752" height="1536" fetchpriority="high">
+<!-- ============================ 01 HERO（動画＋既存コピー／装飾アイコン削除／CTA2本） -->
+<!-- ===== HOMEAPP v1：背景は静止画 warehouse-dx.jpg から新しい動画へ。
+     コピー・サブコピー・暗色オーバーレイ・ヘッダー・FV高さは現TOPのまま。 ===== -->
+<section class="hero hero--rv">
+  <div class="hero__media hero__media--video">
+    <video class="hero__video" autoplay muted loop playsinline preload="metadata"
+           poster="../assets/video/hero-poster.jpg" aria-hidden="true" tabindex="-1"
+           width="1280" height="720">
+      <source src="../assets/video/hero-pal-2026-10.mp4" type="video/mp4">
+    </video>
+    <img class="hero__poster" src="../assets/video/hero-poster.jpg" alt=""
+         width="1280" height="720" aria-hidden="true">
   </div>
-    <div class="heroicons" aria-hidden="true">
-      <div class="hil hil--1">
-        <div class="hil__track">
-          <ul class="hil__set">
-          <li><svg aria-hidden="true"><use href="#ic-rack"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-engineer"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-cloud"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-chart"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-office"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg></li>
-          </ul>
-          <ul class="hil__set">
-          <li><svg aria-hidden="true"><use href="#ic-rack"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-engineer"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-cloud"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-chart"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-office"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-meeting"></use></svg></li>
-          </ul>
-        </div>
-      </div>
-      <div class="hil hil--2">
-        <div class="hil__track">
-          <ul class="hil__set">
-          <li><svg aria-hidden="true"><use href="#ic-forklift"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-agv"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-truck"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-conveyor"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-pallet"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-rack"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg></li>
-          </ul>
-          <ul class="hil__set">
-          <li><svg aria-hidden="true"><use href="#ic-forklift"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-agv"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-truck"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-conveyor"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-pallet"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-rack"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-handy"></use></svg></li>
-          </ul>
-        </div>
-      </div>
-      <div class="hil hil--3">
-        <div class="hil__track">
-          <ul class="hil__set">
-          <li><svg aria-hidden="true"><use href="#ic-truck"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-forklift"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-cloud"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-agv"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-engineer"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-conveyor"></use></svg></li>
-          </ul>
-          <ul class="hil__set">
-          <li><svg aria-hidden="true"><use href="#ic-truck"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-worker"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-dashboard"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-forklift"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-cloud"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-agv"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-engineer"></use></svg></li>
-          <li><svg aria-hidden="true"><use href="#ic-conveyor"></use></svg></li>
-          </ul>
-        </div>
-      </div>
-    </div>
   <div class="hero__inner">
-    <p class="hero__badge">新卒・キャリア採用　通年エントリー受付中</p>
-    <h1 class="hero__title">現場に立ち、<br><em>自分の手で</em>、変えていく。</h1>
+    <p class="hero__badge">新卒採用・キャリア採用</p>
+    <h1 class="hero__title">現場に立ち、<br><em>自分の手で</em>、<span class="nw">変えていく。</span></h1>
     <p class="hero__lead">外から提案するのではない。顧客の現場を請け負い、自分たちの責任で回す。<br>技術と現場の両方に立つPALだからできる、"当事者"の仕事が、ここにある。</p>
     <div class="hero__ctas">
       <a class="btn btn--red btn--lg" href="jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
-      <a class="btn btn--onnavy btn--lg" href="about/">PALを知る<span class="btn__ico" aria-hidden="true">▶</span></a>
-      <a class="btn btn--onnavy btn--lg" href="work/">仕事を知る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--onnavy btn--lg" href="people/">PALで働く人を知る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
     </div>
 
     <!-- ===== 孤立した </div> を2つ削除（HEROのマークアップに残っていた閉じ忘れ） ===== -->
 </section>
 
+<!-- ===== HOMEAPP v1：02 FIND YOUR FIELD。旧 #work をFV直下へ。
+     職種名・リンク先は変更していない。募集状況は「現在、募集している職種。」の
+     8タイルに募集要項があるものだけを「募集中」とし、対応がないBizDevは「確認中」。 ===== -->
+<section class="sec sec--tight ffield" id="work">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:22px">
+      <p class="slabel">Find Your Field</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">あなたの専門性が活きる</span><span class="nw">仕事を探す。</span></h2>
+      <p class="slead">PALには9つの職種があります。それぞれ異なる専門性を持ち、必要な場面で連携しています。担当している仕事の内容は「仕事を知る」ページでご覧いただけます。</p>
+    </div>
+    <nav class="work-role-index rv" aria-label="職種から探す">
+      <ul class="role-chips">
+        <li><a class="role-chip" href="work/#role-bpo"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="role-chip__b"><span class="role-chip__en en">OPERATION</span><b>BPO / 現場運営</b><span class="role-chip__one">現場を安定させ、改善を進める</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-clean"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-handy"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CLEANLINESS</span><b>Cleanliness / クレンリネス</b><span class="role-chip__one">清掃を、計画と運用で支える</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-fde"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="role-chip__b"><span class="role-chip__en en">FDE</span><b>FDE</b><span class="role-chip__one">現場課題を技術へつなぐ</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-system"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-system"></use></svg><span class="role-chip__b"><span class="role-chip__en en">SYSTEM / PRODUCT</span><b>System / Product</b><span class="role-chip__one">現場で使われる仕組みをつくる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-dts"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="role-chip__b"><span class="role-chip__en en">TRANSPORT</span><b>DTS / 運送・運行</b><span class="role-chip__one">安全・品質・時間を守って届ける</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-sales"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="role-chip__b"><span class="role-chip__en en">ENGAGEMENT / SALES</span><b>Engagement / Sales</b><span class="role-chip__one">顧客課題を次の提案につなげる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-mkt"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="role-chip__b"><span class="role-chip__en en">MARKETING / CONTENT</span><b>Marketing / Content</b><span class="role-chip__one">コンテンツで新しい接点をつくる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-bizdev"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="role-chip__b"><span class="role-chip__en en">BIZDEV</span><b>BizDev</b><span class="role-chip__one">事業機会を形にする</span></span><span class="fchip__st fchip__st--tbd"><b>確認中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-corp"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-office"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CORPORATE</span><b>Corporate</b><span class="role-chip__one">組織と働く環境を支える</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      </ul>
+    </nav>
+    <div class="ffield__foot rv">
+      <p class="ffield__note">「募集中」は、このページの「現在、募集している職種。」に募集要項がある職種です。「確認中」は現在の募集状況を確認中の職種で、募集していないという意味ではありません。勤務地・応募条件は募集職種ページでご確認ください。</p>
+      <p class="ffield__links">
+        <a class="btn btn--ghost" href="work/">職種ごとの仕事内容を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+        <a class="btn btn--ghost" href="jobs/">募集要項を確認する<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+      </p>
+    </div>
 
-<!-- ===== HOME-HUB v1：WHAT WE DO を「結論＋4段階の簡潔な図解」に絞った。
-     旧版は2段落の説明＋各段階に一言・説明・職種例を載せた図＋締めの1段落（計725字）で、
-     ABOUT（会社の考え方）・WORK（職種ごとの仕事）と内容が重なっていた。
-     HOMEは入口に徹し、詳細はABOUT／WORKへ送る。 ===== -->
-<section class="sec msgsec" id="message">
+    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="work/">仕事内容を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+  </div>
+</section>
+
+<!-- ===== HOMEAPP v1：03 PEOPLE / REAL VOICES。
+     見出しは各インタビューページの <h1 class="ivhero__ttl"> を、所属・入社年は
+     <p class="ivhero__prof"> を、そのまま引用している（要約・加筆はしていない）。
+     DTSのインタビューは「運行管理」の仕事であり、募集職種の「配送ドライバー」とは別。 ===== -->
+<section class="sec sec--tight" id="voices">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:22px">
+      <p class="slabel">People / Real Voices</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">その仕事をしている</span><span class="nw">人がいる。</span></h2>
+      <p class="slead">7人の社員が、入社のきっかけから今の仕事までを本人の言葉で話しています。下の見出しは、本人がインタビューで語った言葉です。</p>
+    </div>
+    <nav aria-label="社員インタビュー">
+      <ul class="vcards rv">
+        <li><a class="vcard" href="people/fde/">
+          <span class="vcard__ph"><img src="../assets/avatar-fde.png?v=20261015dts2" alt="FDE社員 H.Y のイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">FDE</span>
+            <b class="vcard__q">現場で使われて、初めて「できた」と言える。</b>
+            <span class="vcard__prof">H.Y／FDE・2023年新卒入社</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li><a class="vcard" href="people/system/">
+          <span class="vcard__ph"><img src="../assets/avatar-system.png?v=20261015g" alt="DXプロダクト開発のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">ENGINEER</span>
+            <b class="vcard__q">つくるのは、現場が明日から使えるもの。</b>
+            <span class="vcard__prof">M.M／DXプロダクト開発・2026年中途入社</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li><a class="vcard" href="people/bpo/">
+          <span class="vcard__ph"><img src="../assets/avatar-bpo.png?v=20261015dts2" alt="BPO／現場運営のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">BPO</span>
+            <b class="vcard__q">毎日の運営の中に、次の改善がある。</b>
+            <span class="vcard__prof">I.N／BPO事業部 Productivity推進部</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li><a class="vcard" href="people/dts/">
+          <span class="vcard__ph"><img src="../assets/avatar-dts.png?v=20261014fit" alt="DTS／運送部（配車・運行管理）のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">DTS</span>
+            <b class="vcard__q">運ぶだけではない。物流を、止めない仕事。</b>
+            <span class="vcard__prof">DTS／運送部（配車・運行管理）</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li><a class="vcard" href="people/sales/">
+          <span class="vcard__ph"><img src="../assets/avatar-sales.png?v=20261015g" alt="エンゲージメント・新規営業のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">ENGAGEMENT</span>
+            <b class="vcard__q">売る前に、まず課題を見つける。</b>
+            <span class="vcard__prof">H.S／マーケティング本部 グロース戦略室</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li><a class="vcard" href="people/cleaning/">
+          <span class="vcard__ph"><img src="../assets/avatar-cleaning.png?v=20261015g" alt="クレンリネス（衛生清掃）のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">CLEANLINESS</span>
+            <b class="vcard__q">食品プロセスセンターの清掃を、計画から支える。</b>
+            <span class="vcard__prof">S.K／BPO・クレンリネス課 MGR</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li><a class="vcard" href="people/corporate/">
+          <span class="vcard__ph"><img src="../assets/avatar-corporate.png?v=20261015g" alt="コーポレート／総務のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
+          <span class="vcard__b">
+            <span class="vcard__cat en">CORPORATE</span>
+            <b class="vcard__q">みんなが働きやすい環境を、仕組みから整える。</b>
+            <span class="vcard__prof">M.K／コーポレート本部 総務課 課長</span>
+          </span>
+          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+      </ul>
+    </nav>
+    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="people/">社員インタビューの一覧を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+  </div>
+</section>
+
+<!-- ===== HOMEAPP v1：04 DAY IN THE LIFE。
+     時刻・業務内容・順番は一切掲載していない（各インタビューページの A DAY が一次情報）。
+     見出しは掲載ページの h2 をそのまま引用。A DAY が未掲載の営業（sales）は入れていない。 ===== -->
+<section class="sec sec--soft sec--tight" id="day">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:22px">
+      <p class="slabel">A Day in the Life</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">この仕事の、</span><span class="nw">ある1日を見てみる。</span></h2>
+      <p class="slead">出社から退勤まで、何を、どの順番で進めているのか。6つの職種で、実際の1日を時間とともに掲載しています。</p>
+    </div>
+    <nav aria-label="職種ごとの1日の流れ">
+      <ul class="dcards rv">
+        <li><a class="dcard" href="people/fde/#a-day">
+          <span class="dcard__cat en">FDE</span>
+          <b class="dcard__h">FDEの1日。</b>
+          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
+        </a></li>
+        <li><a class="dcard" href="people/system/#a-day">
+          <span class="dcard__cat en">ENGINEER</span>
+          <b class="dcard__h">DXプロダクト開発の1日。</b>
+          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
+        </a></li>
+        <li><a class="dcard" href="people/bpo/#a-day">
+          <span class="dcard__cat en">BPO / 現場運営</span>
+          <b class="dcard__h">BPO / 現場運営の1日。</b>
+          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
+        </a></li>
+        <li><a class="dcard" href="people/dts/#a-day">
+          <span class="dcard__cat en">DTS / 運行管理</span>
+          <b class="dcard__h">ある一日の流れ。</b>
+          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
+        </a></li>
+        <li><a class="dcard" href="people/cleaning/#a-day">
+          <span class="dcard__cat en">CLEANLINESS</span>
+          <b class="dcard__h">クレンリネスの一日。</b>
+          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
+        </a></li>
+        <li><a class="dcard" href="people/corporate/#a-day">
+          <span class="dcard__cat en">CORPORATE / 総務</span>
+          <b class="dcard__h">総務の1日。</b>
+          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
+        </a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ===== HOMEAPP v1：05 AFTER JOINING PAL。
+     CAREER #start の SCENE 01〜04 の見出しをそのまま引用しただけで、本文は載せていない。
+     研修期間・配属方法・担当業務は追加していない。旧 #career セクションの置き換え。 ===== -->
+<section class="sec sec--tight" id="after">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:22px">
+      <p class="slabel">After Joining PAL</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">入社したら、</span><span class="nw">どんな毎日が始まる？</span></h2>
+      <p class="slead">入社したての人が、実際にどんな仕事をしているのか。最初に経験する場面を4つ、キャリアのページに載せています。</p>
+    </div>
+    <ol class="scenes rv">
+      <li><span class="scenes__no en">SCENE 01</span><b>会社と物流の全体像を知る</b></li>
+      <li><span class="scenes__no en">SCENE 02</span><b>現場に入って、自分の目で見る</b></li>
+      <li><span class="scenes__no en">SCENE 03</span><b>先輩に同行して、覚える</b></li>
+      <li><span class="scenes__no en">SCENE 04</span><b>担当を持って、やってみる</b></li>
+    </ol>
+    <p class="scenes__links rv">
+      <a class="btn btn--ghost" href="career/#start">入社後の流れを見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+      <a class="btn btn--ghost" href="career/">その先のキャリアを見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+    </p>
+  </div>
+</section>
+
+<!-- ===== HOMEAPP v1：06 WHAT WE DO。本文・4段階の図はそのまま。
+     見出しだけ「仕事 → 物流の仕組み」の順につなぐ言い方へ。 ===== -->
+<section class="sec sec--soft msgsec" id="message">
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:28px">
       <p class="slabel">What We Do</p>
-      <h2 class="stitle" style="font-size:clamp(26px,3.2vw,38px)"><span class="nw">現場の課題を、</span><span class="nw">動く仕組みに変える。</span></h2>
+      <h2 class="stitle" style="font-size:clamp(24px,2.9vw,34px)"><span class="nw">その仕事が、</span><span class="nw">物流の仕組みを変えていく。</span></h2>
       <p class="slead">PALは、物流現場を起点に、業務・システム・設備・データをつなぎ、実際に使われる仕組みをつくっています。</p>
     </div>
     <div class="flowmap rv">
@@ -250,18 +367,14 @@
       </ol>
       <p class="flowmap__cap flowmap__cap--end"><i aria-hidden="true">↻</i>次の改善へ、そしてまた設計へ</p>
     </div>
-    <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="about/">PALを知る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <p class="rv" style="margin-top:26px"><a class="btn btn--ghost" href="about/">PALという会社を知る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 
-<!-- ===== MISSION-TOP v1 START：ABOUT（/renewal/about/#values）にあった
-     「Our Mission」写真＋カードと「VALUE 01-03」カードを、FIND YOUR FIELD の直後・
-     What We Do の前へ移設。文章・写真・イラスト・カードデザインはABOUTのものをそのまま使用し、
-     画像パスのみ ../../assets/ → ../assets/ に調整している。
-     見出し階層のみ、TOPのセクション見出しとして mission__h を h3→h2、
-     VALUE名を h4→h3 に変更（h2→h4 の階層スキップを解消）。
-     ABOUT側は同内容を削除し、本セクションへのテキストリンクに置換した。 ===== -->
-<section class="sec" id="mission">
+<!-- ===== HOMEAPP v1：07 OUR MISSION / VALUES。
+     ミッション文・VALUE 01〜03 の本文は1文字も変えていない。
+     位置をページ後半へ移し、余白と文字サイズだけ控えめにした（.mission--compact）。 ===== -->
+<section class="sec mission--compact" id="mission" data-compact="1">
   <div class="wrap">
     <div class="mission rv">
       <figure class="mission__ph"><img src="../assets/office.jpg" alt="大阪本社のオフィスで打ち合わせをするメンバー" width="2752" height="1536" loading="lazy"></figure>
@@ -292,130 +405,6 @@
         <p>目の前の課題に真摯に向き合い、<br>仕事の質を最後まで高める。</p>
       </div>
     </div>
-  </div>
-</section>
-<!-- ===== MISSION-TOP v1 END ===== -->
-<!-- ===== MESSAGE v1 END ===== -->
-
-<section class="sec sec--tight" id="key">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
-      <p class="slabel">Key Contents</p>
-      <h2 class="stitle" style="font-size:clamp(24px,2.8vw,34px)">知りたいことから、選んでください。</h2>
-      <p class="slead">PALのこと、仕事のこと、働き方のこと。気になるところからご覧ください。</p>
-    </div>
-    <div class="key key--lg rv">
-      <a class="key__item key__item--lg" href="about/">
-        <figure class="key__media"><img src="../assets/office.jpg" alt="大阪本社のオフィスで打ち合わせをするメンバー" width="2752" height="1536" loading="lazy"></figure>
-        <div class="key__body">
-          <p class="key__no en">01</p>
-          <h3 class="key__ttl">PALを知る<span class="arrow" aria-hidden="true">▶</span></h3>
-          <p class="key__desc">PALが何を目指し、物流の中でどんな役割を担っているのか。</p>
-        </div>
-      </a>
-      <a class="key__item key__item--lg" href="work/">
-        <figure class="key__media"><img src="../assets/warehouse-dx.jpg" alt="データとロボットが動く物流センター" width="2752" height="1536" loading="lazy"></figure>
-        <div class="key__body">
-          <p class="key__no en">02</p>
-          <h3 class="key__ttl">仕事を知る<span class="arrow" aria-hidden="true">▶</span></h3>
-          <!-- ===== HOME-HUB v1：WORKが9職種構成になったため「8つのフィールドと自社プロダクト」を更新。 ===== -->
-          <p class="key__desc">物流DXの現場で、どんな仕事をするのか。9つの職種と、その連携。</p>
-        </div>
-      </a>
-    </div>
-    <div class="key key--sm rv">
-      <a class="key__item" href="people/">
-        <p class="key__no en">03</p>
-        <h3 class="key__ttl">人を知る<span class="arrow" aria-hidden="true">▶</span></h3>
-        <p class="key__desc">社員インタビューと、職種ごとの1日の流れ。</p>
-      </a>
-      <a class="key__item" href="career/">
-        <p class="key__no en">04</p>
-        <h3 class="key__ttl">キャリアを知る<span class="arrow" aria-hidden="true">▶</span></h3>
-        <p class="key__desc">PALで経験できる仕事と、その先のキャリア。</p>
-      </a>
-      <!-- ===== CULTURE-REMOVE v1：keyカード05「働き方を知る」を削除。
-           CULTUREページを廃止し、1日の流れは各社員インタビュー（PEOPLE）へ、
-           価値観はABOUTへ集約したため。以降の番号を繰り上げ。 ===== -->
-      <a class="key__item" href="jobs/">
-        <p class="key__no en">05</p>
-        <h3 class="key__ttl">募集職種を見る<span class="arrow" aria-hidden="true">▶</span></h3>
-        <p class="key__desc">現在募集中のポジションと、募集条件。</p>
-      </a>
-      <!-- ===== HOME-HUB v1：KEY CONTENTS をサイトナビの中心にするため FAQ を追加。 ===== -->
-      <a class="key__item" href="faq/">
-        <p class="key__no en">06</p>
-        <h3 class="key__ttl">よくある質問<span class="arrow" aria-hidden="true">▶</span></h3>
-        <p class="key__desc">応募前の疑問を、共通・職種別・物流DXの3つから。</p>
-      </a>
-    </div>
-      <!-- ===== HOME-HUB v1：AFTER JOINING の独立CTAを削除。
-           「キャリアを知る」カードと行き先（CAREERページ）が重なるため。 ===== -->
-  </div>
-</section>
-
-<!-- ===== HOME-HUB v1：WORK／PEOPLE／CAREER の3セクションを新設し、
-     旧 nav.quick（FIND YOUR FIELD）と #pickup（はじめに読むなら、この3つ。）を統合した。
-     #pickup は FDE の仕事・社員・キャリアを本文で説明していて各ページと重なり、
-     さらに「キャリアは、一本道じゃない／FDEで交わり、戦略やプロダクトへ」という
-     CAREER で廃止済みの表現が残っていたため。HOMEは入口に徹する。 ===== -->
-<section class="sec sec--soft sec--tight" id="work">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:22px">
-      <p class="slabel">Work</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">いろいろな専門性が、</span><span class="nw">ひとつの仕事につながる。</span></h2>
-      <p class="slead">PALには9つの職種があります。それぞれが何を担当しているのかは、仕事を知るページでご覧いただけます。</p>
-    </div>
-    <nav class="work-role-index rv" aria-label="職種から探す">
-      <ul class="role-chips">
-        <li><a class="role-chip" href="work/#role-bpo"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="role-chip__b"><span class="role-chip__en en">OPERATION</span><b>BPO / 現場運営</b><span class="role-chip__one">現場を安定させ、改善を進める</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-clean"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-handy"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CLEANLINESS</span><b>Cleanliness / クレンリネス</b><span class="role-chip__one">清掃を、計画と運用で支える</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-fde"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="role-chip__b"><span class="role-chip__en en">FDE</span><b>FDE</b><span class="role-chip__one">現場課題を技術へつなぐ</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-system"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-system"></use></svg><span class="role-chip__b"><span class="role-chip__en en">SYSTEM / PRODUCT</span><b>System / Product</b><span class="role-chip__one">現場で使われる仕組みをつくる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-dts"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="role-chip__b"><span class="role-chip__en en">TRANSPORT</span><b>DTS / 運送・運行</b><span class="role-chip__one">安全・品質・時間を守って届ける</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-sales"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="role-chip__b"><span class="role-chip__en en">ENGAGEMENT / SALES</span><b>Engagement / Sales</b><span class="role-chip__one">顧客課題を次の提案につなげる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-mkt"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="role-chip__b"><span class="role-chip__en en">MARKETING / CONTENT</span><b>Marketing / Content</b><span class="role-chip__one">コンテンツで新しい接点をつくる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-bizdev"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="role-chip__b"><span class="role-chip__en en">BIZDEV</span><b>BizDev</b><span class="role-chip__one">事業機会を形にする</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-corp"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-office"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CORPORATE</span><b>Corporate</b><span class="role-chip__one">組織と働く環境を支える</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      </ul>
-    </nav>
-    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="work/">仕事内容を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
-  </div>
-</section>
-
-<section class="sec sec--tight" id="people">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:24px">
-      <p class="slabel">People</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">仕事を知ったら、次は、</span><span class="nw">そこで働く人を見る。</span></h2>
-      <p class="slead">同じ仕事でも、向き合い方は人によって違います。</p>
-    </div>
-    <ul class="hpeople rv">
-        <li><a class="hp" href="people/bpo/"><figure class="hp__ph av-pad"><img src="../assets/avatar-bpo.png?v=20261015dts2" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">BPO / 現場運営</span><b class="hp__copy">現場を回し、<br>改善をつくる</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="hp" href="people/cleaning/"><figure class="hp__ph av-pad"><img src="../assets/avatar-cleaning.png?v=20261015g" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">CLEANLINESS</span><b class="hp__copy">清掃を、<br>計画から支える</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="hp" href="people/dts/"><figure class="hp__ph av-pad"><img src="../assets/avatar-dts.png?v=20261014fit" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">DTS / 運行管理</span><b class="hp__copy">届けるまでが、<br>物流。</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="hp" href="people/fde/"><figure class="hp__ph av-pad"><img src="../assets/avatar-fde.png?v=20261015dts2" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">FDE</span><b class="hp__copy">開発したものを、<br>現場まで見に行く</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="hp" href="people/system/"><figure class="hp__ph av-pad"><img src="../assets/avatar-system.png?v=20261015g" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">ENGINEER</span><b class="hp__copy">プロダクトを、<br>自分の手で</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="hp" href="people/sales/"><figure class="hp__ph av-pad"><img src="../assets/avatar-sales.png?v=20261015g" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">ENGAGEMENT / SALES</span><b class="hp__copy">売る前に、<br>まず課題を見つける</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="hp" href="people/corporate/"><figure class="hp__ph av-pad"><img src="../assets/avatar-corporate.png?v=20261015g" alt="" width="900" height="975" loading="lazy"></figure><span class="hp__cat en">CORPORATE</span><b class="hp__copy">人と組織から、<br>事業を前へ</b><i class="hp__ar" aria-hidden="true">→</i></a></li>
-    </ul>
-    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="people/">社員インタビューを見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
-  </div>
-</section>
-
-<section class="sec sec--soft sec--tight" id="career">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:22px">
-      <p class="slabel">Career</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">今の仕事だけで、</span><span class="nw">キャリアは決まらない。</span></h2>
-      <p class="slead">それぞれの職種で専門性を磨きながら、担当する仕事や役割の幅を広げていきます。</p>
-    </div>
-    <ul class="hcareer rv">
-      <li><span class="hcareer__no en">01</span><b>専門性を深める</b></li>
-      <li><span class="hcareer__no en">02</span><b>役割を広げる</b></li>
-      <li><span class="hcareer__no en">03</span><b>専門性を掛け合わせる</b></li>
-    </ul>
-    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="career/">キャリアを知る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 
@@ -543,6 +532,21 @@
       </div>
     </div>
     <p class="rv" style="margin-top:28px"><a class="btn btn--ghost" href="jobs/">募集職種をすべて見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+  </div>
+</section>
+
+<!-- ===== HOMEAPP v1：旧 KEY CONTENTS（6枚）を解体した受け皿。
+     6つの行き先は FV・各セクションのCTAへ分散させ、残ったFAQだけここに置いた。 ===== -->
+<section class="sec sec--tight" id="before-apply">
+  <div class="wrap">
+    <div class="beforeapply rv">
+      <div>
+        <p class="slabel">FAQ</p>
+        <h2 class="stitle" style="font-size:clamp(20px,2.2vw,26px)"><span class="nw">応募の前に、</span><span class="nw">気になることはありませんか。</span></h2>
+        <p class="slead" style="margin-top:10px">選考の進み方、未経験からの応募、勤務地や働き方について、47件の質問にお答えしています。</p>
+      </div>
+      <p><a class="btn btn--ghost" href="faq/">よくある質問を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    </div>
   </div>
 </section>
 
