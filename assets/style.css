@@ -7,8 +7,14 @@
    ============================================================ */
 :root{
   --navy:#262946; --navy-d:#1b1d31; --red:#cf131b; --red-dark:#a90f16;
+  /* 濃紺・動画の上でだけ使う赤。#cf131b は濃紺上 2.53:1 で読めないため */
+  --red-on-dark:#d94249;
   --pink:#f72a48; --purple:#7338ea;
-  --text:#262946; --sub:#6b6d81; --muted:#797dac;
+  /* PALTHEME A v1：本文と注記のコントラストを上げた。
+     --sub  #6b6d81（白地5.09:1）→ #4f5168（7.75:1）
+     --muted #797dac（白地3.93:1＝WCAG AA未達）→ #656a90（5.23:1）
+     旧値は、このコミットの1つ前の版を参照。 */
+  --text:#262946; --sub:#4f5168; --muted:#656a90;
   --bg:#fff; --bg-soft:#f2f3f6; --line:#dae1f2; --line-soft:#eff1f4;
   --grad:linear-gradient(287deg,#7338ea .79%,#f72a48 64.26%);
   --radius:8px; --radius-lg:16px;
@@ -27,7 +33,7 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 ul,ol,dl,dd{margin:0;padding:0;list-style:none}
 h1,h2,h3,h4,p,figure{margin:0}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
 
 /* ---------- layout ---------- */
 .wrap{width:min(100% - 48px,var(--wrap));margin-inline:auto}
@@ -2619,8 +2625,10 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 /* ---- グラデーションを、赤または濃紺の面へ置き換える ---- */
 .slabel::before,.hero__badge::before,.look2__ch::after{background:var(--red)}
 .compare__card--pal::before,.tl::before{background:var(--red)}
+/* PALTHEME A v1：動画＋濃紺オーバーレイの上なので、#cf131b では 2.53:1 で不足。
+   色相はPALレッドのまま明度を上げた --red-on-dark（3.81:1／大見出しAA）にする。 */
 .hero__title em{background:none;-webkit-background-clip:border-box;background-clip:border-box;
-  color:var(--red);-webkit-text-fill-color:var(--red)}
+  color:var(--red-on-dark);-webkit-text-fill-color:var(--red-on-dark)}
 .fde__tag,.cross__node--new,.step:last-child .step__no{background:var(--red);border-color:transparent}
 .num b{background:none;-webkit-background-clip:border-box;background-clip:border-box;
   color:var(--navy-d);-webkit-text-fill-color:var(--navy-d)}
@@ -2646,11 +2654,14 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 
 /* ---- CTA：役割ごとに見た目を固定する ---- */
 /* PRIMARY：PALレッド背景＋白文字（コーポレートと同じ） */
-.btn--red{background:var(--red);color:#fff;border:1px solid var(--red)}
+.btn--red{background:var(--red);color:#fff;border:1px solid var(--red);box-shadow:0 6px 18px rgba(207,19,27,.22)}
+.btn--red:hover{background:var(--red-dark);border-color:var(--red-dark)}
 .btn--red:hover{background:var(--red-dark);border-color:var(--red-dark)}
 /* SECONDARY：白背景＋濃紺文字＋濃紺の細枠 */
-.btn--ghost{background:#fff;color:var(--navy-d);border:1px solid var(--navy-d)}
-.btn--ghost:hover{background:var(--navy-d);color:#fff;border-color:var(--navy-d)}
+/* PALTHEME A v1：副CTAを濃紺枠から、コーポレートサイトと同じ赤枠へ。
+   主CTA＝赤塗り／副CTA＝赤枠、で赤に2段階の強弱をつける。白地に赤文字は 5.58:1。 */
+.btn--ghost{background:#fff;color:var(--red);border:1px solid var(--red)}
+.btn--ghost:hover{background:var(--red);color:#fff;border-color:var(--red)}
 /* 濃紺の上の SECONDARY */
 .btn--onnavy{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
 .btn--onnavy:hover{background:#fff;color:var(--navy-d);border-color:#fff}
@@ -5629,9 +5640,9 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .rhero__lead{margin-top:28px;font-size:16px;line-height:2.05;color:var(--sub)}
 .rhero__ctas{margin-top:38px;display:flex;flex-wrap:wrap;gap:13px}
 /* 副CTA：主CTA（btn--red）より一段弱い白地アウトライン */
-.rbtn--line{background:#fff;border:1px solid var(--navy);color:var(--navy);
-  transition:background-color .25s,color .25s}
-.rbtn--line:hover{background:var(--navy);color:#fff}
+.rbtn--line{background:#fff;border:1px solid var(--red);color:var(--red);
+  transition:background-color .25s,color .25s,border-color .25s}
+.rbtn--line:hover{background:var(--red);color:#fff;border-color:var(--red)}
 
 /* ============================================================
    案A：スプリットヒーロー（左=メッセージ／右=人と現場）
@@ -5918,8 +5929,8 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .rcbtn:hover i{transform:translateX(3px)}
 .rcbtn--main{background:var(--navy);color:#fff}          /* 主CTA：社員インタビュー */
 .rcbtn--main:hover{background:var(--navy-d)}
-.rcbtn--sub{border:1px solid var(--line-mid,#c3cade);color:var(--navy);background:#fff}  /* 副CTA：募集要項 */
-.rcbtn--sub:hover{border-color:var(--navy)}
+.rcbtn--sub{border:1px solid var(--red);color:var(--red);background:#fff}  /* 副CTA：募集要項 */
+.rcbtn--sub:hover{background:var(--red);color:#fff;border-color:var(--red)}
 .rcbtn--text{padding:10px 0;color:var(--red)}            /* 3本目（FDEのみ） */
 
 /* ============================================================
@@ -6229,3 +6240,31 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .th-b .hero__ctas .btn--red{padding:17px 24px;font-size:16px}
 }
 /* ===== PALTHEME v1 END ===== */
+
+/* ============================================================
+   ===== PALTHEME A v1 START =====
+   承認された A案（Brand Balanced）のうち、既存の定義を書き換えるだけでは足りない分。
+   ここに置くのは「新しく足す装飾」だけで、色の値は :root のトークンを参照する。
+   既存定義の変更（--sub / --muted / --red-on-dark / :focus-visible /
+   .hero__title em / .btn--ghost / .btn--red / .rbtn--line / .rcbtn--sub）は
+   それぞれの元の場所を直接書き換えてあり、この節では重複して上書きしていない。
+   ============================================================ */
+
+/* セクション見出しの下にPALレッドの短いルールを引く（赤を見出しの色にはしない） */
+.stitle::after{content:"";display:block;width:46px;height:3px;margin-top:16px;background:var(--red)}
+.ptitle::after{content:"";display:block;width:52px;height:3px;margin-top:18px;background:var(--red)}
+
+/* カードは通常時は白のまま。ホバーしたときだけ枠をPALレッドに */
+.role-chip:hover,
+.vcard:hover,
+.dcard:hover,
+.role-card:hover,
+.pcard:hover,
+.relcard:hover,
+.agate__card:hover{border-color:var(--red)}
+
+@media (max-width:700px){
+  .stitle::after{width:40px;margin-top:13px}
+  .ptitle::after{width:44px;margin-top:14px}
+}
+/* ===== PALTHEME A v1 END ===== */
