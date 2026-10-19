@@ -5753,3 +5753,97 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .rbtn--line,.rhero__ph{transition:none}
 }
 /* ===== HERO-RB v1 END ===== */
+
+/* ============================================================
+   ===== HOMEAPP v1 START =====
+   応募者視点のHOME比較用プレビュー（renewal/home-recruit-preview/）と
+   動画差し替えのみのプレビュー（renewal/home-video-preview.html）で使う。
+   現在のTOP（renewal/index.html）は .hero__media--video / .vcards / .dcards /
+   .scenes / .beforeapply / .mission--compact のいずれも使っていないため、
+   この追記で表示は変化しない（追記前に全ファイル grep 済み・衝突0件）。
+   ============================================================ */
+
+/* ---- FV：背景の静止画を動画へ。既存の .hero / .hero__inner / 暗色オーバーレイは流用 ---- */
+.hero__media--video{position:absolute;inset:0;z-index:0;background:var(--navy-d)}
+.hero__video,.hero__poster{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:50% 50%;display:block}
+.hero__poster{z-index:0}
+/* 既存の .hero__media img{transform:scale(1.04);animation:heroZoom} を、
+   詳細度で確実に打ち消す（scale が残ると390pxで横に4%はみ出す） */
+.hero__media--video .hero__poster{animation:none;transform:none}
+.hero__video{z-index:1}
+/* 既存の .hero__media::after（暗色オーバーレイ）を動画より前面へ */
+.hero__media--video::after{z-index:2}
+@media (prefers-reduced-motion:reduce){
+  .hero__video{display:none}        /* 動画を止め、ポスター画像のみを表示する */
+}
+
+/* ---- 03 PEOPLE / REAL VOICES ---- */
+.vcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none}
+.vcard{position:relative;display:flex;align-items:center;gap:14px;padding:13px 40px 13px 13px;
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff;
+  text-decoration:none;color:inherit;height:100%;transition:border-color .25s,background-color .25s}
+.vcard:hover{border-color:var(--line-mid,#c3cade);background:#fbfcfe}
+.vcard__ph{flex:0 0 auto;width:62px;height:67px;overflow:hidden;border-radius:var(--radius);background:var(--bg-soft)}
+.vcard__ph img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.vcard__b{flex:1 1 auto;min-width:0}
+.vcard__cat{display:block;font-family:Lato,sans-serif;font-size:10px;letter-spacing:.14em;color:var(--red)}
+.vcard__q{display:block;margin-top:4px;font-size:14.5px;line-height:1.55;color:var(--navy)}
+.vcard__prof{display:block;margin-top:5px;font-size:11.5px;line-height:1.5;color:var(--sub)}
+.vcard__ar{position:absolute;right:14px;top:50%;margin-top:-8px;font-style:normal;
+  font-size:13px;color:var(--red);transition:transform .25s var(--ease)}
+.vcard:hover .vcard__ar{transform:translateX(3px)}
+
+/* ---- 04 DAY IN THE LIFE ---- */
+.dcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none}
+.dcard{display:flex;flex-direction:column;height:100%;padding:17px 18px 16px;
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff;
+  text-decoration:none;color:inherit;transition:border-color .25s}
+.dcard:hover{border-color:var(--line-mid,#c3cade)}
+.dcard__cat{font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.12em;color:var(--red)}
+.dcard__h{display:block;margin-top:7px;font-size:16px;line-height:1.5;color:var(--navy)}
+.dcard__go{margin-top:auto;padding-top:14px;font-size:12.5px;font-weight:700;color:var(--navy)}
+.dcard__go i{display:inline-block;margin-left:6px;font-style:normal;color:var(--red);
+  transition:transform .25s var(--ease)}
+.dcard:hover .dcard__go i{transform:translateX(3px)}
+
+/* ---- 05 AFTER JOINING PAL ---- */
+.scenes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;list-style:none;counter-reset:none}
+.scenes li{position:relative;padding:17px 18px 19px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:var(--bg-soft)}
+.scenes li+li::before{content:"";position:absolute;left:-12px;top:50%;width:12px;height:1px;background:var(--line-mid)}
+.scenes__no{display:block;font-family:Lato,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.14em;color:var(--red)}
+.scenes li b{display:block;margin-top:8px;font-size:15px;line-height:1.6;color:var(--navy)}
+.scenes__links{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px}
+
+/* ---- 旧 KEY CONTENTS の受け皿（FAQへの1本だけ） ---- */
+.beforeapply{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;
+  padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--bg-soft)}
+.beforeapply .slead{margin-top:8px;max-width:46em}
+
+/* ---- 07 OUR MISSION / VALUES：本文は変えず、表示だけ控えめにする ---- */
+.mission--compact{padding-block:clamp(44px,5vw,64px)}
+.mission--compact .mission__h{font-size:clamp(21px,2.3vw,28px)}
+.mission--compact .mission__ph{align-self:center}
+.mission--compact .val h3{font-size:17px}
+.mission--compact .vals{margin-top:30px}
+
+/* ---- レスポンシブ ---- */
+@media (max-width:1040px){
+  .dcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .scenes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .scenes li+li::before{display:none}
+}
+@media (max-width:700px){
+  .vcards{grid-template-columns:minmax(0,1fr)}
+  .dcards{grid-template-columns:minmax(0,1fr)}
+  .scenes{grid-template-columns:minmax(0,1fr)}
+  .vcard{padding:12px 34px 12px 12px;gap:12px}
+  .vcard__ph{width:54px;height:58px}
+  .vcard__q{font-size:14px}
+  .beforeapply{padding:18px 18px 20px}
+  .beforeapply .btn{width:100%;justify-content:center}
+  .scenes__links .btn{width:100%;justify-content:center}
+}
+/* ===== HOMEAPP v1 END ===== */
