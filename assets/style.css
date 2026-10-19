@@ -5436,4 +5436,111 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jobblk__av{width:46px}
   .jobblk__ic{width:30px;height:30px}
 }
+/* 【2026-10-19】WORK-COMPACT v1 で .jobblk 系は未使用化（残置）。
+   現行は .role-chip / .role-card / .role-points / .role-people / .role-links を使用。 */
 /* ===== WORK-JOBS v1 END ===== */
+
+/* ============================================================
+   ===== WORK-COMPACT v1 START =====
+   WORK：縦積みの大型カードをやめ、「職種一覧ナビ（.role-chip）＋
+   2カラムの職種詳細（.role-card）」で、職種の違いを比較しやすくする。
+   配色は既存のまま（白主体／補助にライトグレー／見出しは濃紺／アイコンと強調は赤／
+   枠線は淡いブルーグレー）。カード内で色を使いすぎない。
+   旧 .jobblk 系は未使用化（残置）。
+   ============================================================ */
+
+/* ---- 職種一覧ナビ ---- */
+.role-chips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;list-style:none}
+.role-chip{display:flex;align-items:center;gap:13px;padding:15px 16px;
+  border:1px solid var(--line);border-radius:var(--radius);background:#fff;
+  text-decoration:none;color:inherit;transition:border-color .25s,background-color .25s}
+.role-chip:hover{border-color:var(--line-mid,#c3cade);background:#fbfcfe}
+.role-chip__ic{flex:0 0 auto;width:26px;height:26px;color:var(--navy)}
+.role-chip__b{flex:1 1 auto;min-width:0}
+.role-chip__en{display:block;font-family:Lato,sans-serif;font-size:10px;
+  letter-spacing:.12em;color:var(--red)}
+.role-chip__b b{display:block;margin-top:3px;font-size:15px;line-height:1.4;color:var(--navy)}
+.role-chip__one{display:block;margin-top:4px;font-size:12.5px;line-height:1.6;color:var(--sub)}
+.role-chip__ar{flex:0 0 auto;font-style:normal;font-size:13px;color:var(--red);
+  transition:transform .25s var(--ease)}
+.role-chip:hover .role-chip__ar{transform:translateX(3px)}
+
+/* ---- 職種詳細（2カラム） ---- */
+.role-cards{display:grid;gap:14px}
+.role-card{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:0 30px;padding:22px 24px 24px;border:1px solid var(--line);
+  border-radius:var(--radius-lg);background:#fff;scroll-margin-top:90px}
+.role-card__head{display:flex;align-items:center;gap:13px}
+.role-card__ic{flex:0 0 auto;width:28px;height:28px;color:var(--navy)}
+.role-card__en{font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.13em;color:var(--red)}
+.role-card__head h3{margin-top:3px;font-size:clamp(17px,1.7vw,20px);line-height:1.4;color:var(--navy)}
+.role-card__av{flex:0 0 auto;width:42px;aspect-ratio:12/13;margin:0 0 0 auto;
+  border-radius:8px;overflow:hidden}
+.role-card__av img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.role-card__one{margin-top:11px;font-size:15px;line-height:1.6;font-weight:700;color:var(--navy)}
+.role-card__ch{margin-top:15px;font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--red)}
+.role-summary>.role-card__ch:first-of-type{margin-top:16px}
+.role-meta>.role-card__ch:first-child{margin-top:0}
+.role-points{margin-top:8px;list-style:none;display:grid;gap:5px}
+.role-points li{position:relative;padding-left:15px;font-size:13.5px;line-height:1.75;color:var(--sub)}
+.role-points li::before{content:"";position:absolute;left:2px;top:.68em;width:4px;height:4px;
+  border-radius:50%;background:var(--line-mid,#c3cade)}
+.role-people{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;list-style:none}
+.role-people li{padding:4px 10px;border:1px solid var(--line);border-radius:9999px;
+  background:var(--bg-soft);font-size:12px;line-height:1.6;color:var(--navy)}
+.role-card__t{margin-top:8px;font-size:13.5px;line-height:1.8;color:var(--sub);text-wrap:pretty}
+.role-card__note{margin-top:12px;font-size:12px;line-height:1.7;color:var(--muted)}
+.role-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px 18px}
+.role-links .textlink{font-size:13.5px}
+
+@media (max-width:1080px){
+  .role-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .role-card{grid-template-columns:minmax(0,1fr);gap:0}
+  .role-meta>.role-card__ch:first-child{margin-top:16px}
+}
+@media (max-width:620px){
+  .role-chips{grid-template-columns:minmax(0,1fr);gap:10px}
+  .role-card{padding:20px 18px 22px}
+  .role-chip{padding:13px 14px}
+}
+/* ===== WORK-COMPACT v1 END ===== */
+
+/* ============================================================
+   ===== WFLOW v1 START =====
+   WORK：職種の連携を示す図。職種名だけを横方向に並べ、
+   CAREER（縦に役割が広がる図）と方向性を分ける。
+   最後のステップから次の提案へ戻るループを文で示す。
+   ============================================================ */
+.wflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;list-style:none}
+.wflow__st{position:relative;padding:18px 18px 20px;border:1px solid var(--line);
+  border-radius:var(--radius);background:#fff}
+.wflow__st+.wflow__st::before{content:"";position:absolute;left:-19px;top:50%;
+  width:9px;height:9px;margin-top:-5px;border-right:2px solid var(--red);
+  border-top:2px solid var(--red);transform:rotate(45deg)}
+.wflow__st--loop{border-style:dashed;border-color:var(--line-mid,#c3cade)}
+.wflow__no{font-family:Lato,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.12em;color:var(--red)}
+.wflow__st b{display:block;margin-top:7px;font-size:15.5px;line-height:1.5;color:var(--navy)}
+.wflow__p{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px;list-style:none}
+.wflow__p a{display:inline-block;padding:4px 10px;border:1px solid var(--line);
+  border-radius:9999px;background:var(--bg-soft);font-size:12px;line-height:1.6;
+  color:var(--navy);text-decoration:none;transition:border-color .25s,background-color .25s}
+.wflow__p a:hover{border-color:var(--red);background:#fff}
+.wflow__t{margin-top:11px;font-size:13px;line-height:1.8;color:var(--sub)}
+.wflow__base{margin-top:16px;display:flex;align-items:center;flex-wrap:wrap;gap:8px;
+  padding:13px 18px;border-radius:var(--radius);background:var(--bg-soft);
+  font-size:13.5px;line-height:1.7;color:var(--sub)}
+.wflow__base .en{font-family:Lato,sans-serif;font-size:10.5px;letter-spacing:.14em;color:var(--red)}
+.wflow__base a{color:var(--navy);font-weight:700}
+@media (max-width:1000px){
+  .wflow{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px}
+  .wflow__st:nth-child(odd)::before{display:none}
+}
+@media (max-width:620px){
+  .wflow{grid-template-columns:minmax(0,1fr);gap:12px}
+  .wflow__st:nth-child(odd)::before{display:block}
+  .wflow__st+.wflow__st::before{left:24px;top:-10px;margin-top:0;transform:rotate(135deg)}
+}
+/* ===== WFLOW v1 END ===== */

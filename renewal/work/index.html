@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261019b">
+<link rel="stylesheet" href="../../assets/style.css?v=20261019d">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "仕事を知る"}]}</script>
@@ -128,372 +128,359 @@
 </section>
 
 <!-- ===== WORKCHAIN v1 START：現場の課題→職種の連携→動く仕組み→運用・改善 ===== -->
-<!-- ===== WORK-JOBS v1：冒頭の総論を短縮し、#fields にあった職種の関係図（.jmap2）を
-     ここへ統合した。職種の関係を示す図解はページ内でこの1つだけにしている。
-     旧：GOAL中心の .tmap 図＋「職種は違っても、向き合うゴールは同じ。」＋2段落のリード。
-     ABOUT（会社の考え方）と図解・コピーを重複させないため、GOAL図は削除した。 ===== -->
-<section class="sec sec--tight" id="chain">
+<!-- ===== WORK-COMPACT v1：縦積みの大型カード（1職種フル幅・計4,346px）をやめ、
+     「導入 → 職種一覧ナビ → 2カラムの職種詳細 → 職種間のつながり → 関連導線」へ再設計。
+     内容の主旨は変えず、レイアウト・情報の優先順位・余白のみを見直している。
+     ・一覧ナビ（nav.work-role-index）で9職種を俯瞰できるようにし、アンカーで詳細へ
+     ・詳細（.role-card）は左＝職種名/一言/主な仕事、右＝関わる相手/この仕事らしさ/導線 の2カラム
+     ・「関わる相手」はタグ表示（.role-people）に変更し、本文から独立させた
+     ・制作上の注釈（「一人で完結する仕事ではありません」等）は削除し、
+       募集状況と確認中の事実だけを注記に残した
+     ・職種の関係図（.jmap2）と仕事の進み方（.cflow）は、後半の1セクションに統合
+     復元は git 履歴（コミット 58916bc）から。 ===== -->
+<section class="sec sec--tight work-overview" id="overview">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
+    <div class="shead rv" style="margin-bottom:0">
       <p class="slabel">How We Work</p>
       <h2 class="stitle" style="font-size:clamp(24px,2.9vw,34px)"><span class="nw">PALの仕事は、</span><span class="nw">職種ごとに役割が違う。</span></h2>
-      <p class="slead">顧客と向き合う人、現場を運営する人、システムをつくる人。役割は違っても、それぞれの専門性を持ち寄って仕事を進めています。</p>
-    </div>
-<div class="jmap2 rv">
-
-      <div class="jlayer jlayer--start">
-        <p class="jlayer__h"><span class="en">LAYER 01</span><b>課題・機会を見つける人たち</b><em>起点</em></p>
-        <p class="jlayer__sub">顧客・市場・事業の中から、課題や新しい機会を見つける役割です。</p>
-        <ul class="jrow2 jrow2--3">
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="jp__en en">MARKETING / CONTENT</span><b>マーケティング・コンテンツ制作</b><p>市場や顧客の変化を捉え、コンテンツで新しい接点をつくる</p></li>
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="jp__en en">ENGAGEMENT / SALES</span><b>エンゲージメント・新規営業</b><p>顧客との対話を通じて、課題や新しい事業機会を見つける</p></li>
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="jp__en en">BIZDEV</span><b>BizDev</b><p>顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にする。募集職種は「エンゲージメント・新規営業」に含まれます。</p></li>
-        </ul>
-        <!-- ===== WORKNOTE v1：.jlayer__note 削除済み。
-             「代表的な業務の流れ」は図解で自明。募集職種のまとまり（求職者の判断に必要な情報）は
-             BizDev カードの本文末へ吸収した。 ===== -->
-      </div>
-
-      <p class="jarrow" aria-hidden="true"><span></span></p>
-
-      <div class="jlayer jlayer--core">
-        <p class="jlayer__h"><span class="en">LAYER 02</span><b>現場で動く形にする人たち</b><em class="is-core">中核</em></p>
-        <ul class="jrow2 jrow2--core">
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="jp__en en">OPERATION</span><b>BPO / 現場運営</b><p>現場を安定稼働させる</p></li>
-          <li class="jlink" aria-hidden="true"><span>⇄</span></li>
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="jp__en en">FDE</span><b>FDE</b><p>課題を技術要件へ翻訳する</p></li>
-          <li class="jlink" aria-hidden="true"><span>⇄</span></li>
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-operate"></use></svg><span class="jp__en en">PRODUCT</span><b>プロダクト企画・開発</b><p>現場で使える仕組みにする</p></li>
-        </ul>
-        <p class="jlayer__bind">この3つは情報を共有しながら、実行・検証・改善を繰り返します。</p>
-      </div>
-
-      <!-- ===== JARROW-REMOVE v1：LAYER 02 と LAYER 03 の間にあった
-           赤い双方向矢印と「現場と専門領域が、行き来する」を削除（2026-10-16）。
-           PALの実態は職種間の連携であり、人材が現場と専門領域を日常的に
-           行き来する（異動・兼務する）という意味ではないため、
-           求職者の誤解を避ける目的で文言と矢印をセットで削除した。
-           .jarrow--both のCSSは他ページ未使用のまま残置（復元は git 履歴 b38f029 から）。 ===== -->
-
-      <div class="jlayer jlayer--field">
-        <p class="jlayer__h"><span class="en">LAYER 03</span><b>専門性で事業を動かす人たち</b><em>専門領域</em></p>
-        <p class="jlayer__sub">それぞれの専門領域で、事業と組織を動かす役割です。</p>
-        <ul class="jrow2 jrow2--2">
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="jp__en en">TRANSPORT</span><b>DTS / 運行管理</b><p>輸送・運行の専門性を担い、日々の物流を安全に動かす</p></li>
-          <li class="jp"><svg class="jp__ico" aria-hidden="true"><use href="#ic-office"></use></svg><span class="jp__en en">CORPORATE</span><b>コーポレート</b><p>人・組織・会社運営の面から、各部門が仕事を進めやすい環境を整える</p></li>
-        </ul>
-      </div>
-
-      <!-- 専門領域からのフィードバックが、再び課題・機会の発見へ戻る循環 -->
-      <p class="jcycle rv"><span class="jcycle__en en">FEEDBACK</span><b>現場と専門領域で分かったことが、次の改善と新しい提案に戻っていく。</b></p>
-      <!-- ===== WORKNOTE v1：.jmap2__note 削除済み（制作上の誤解防止のみを目的とした注記）。
-           「役割の違いを整理したもの」は #fields の .slead に記載済み。 ===== -->
-
+      <p class="slead">顧客と向き合う人、現場を運営する人、システムをつくる人。役割は違っても、それぞれの専門性を持ち寄って仕事を進めています。<br>9つの職種が、何を担当し、誰と関わるのかを整理しました。</p>
     </div>
   </div>
 </section>
 
-<!-- ===== WORK-JOBS v1：WORKを「各部署・職種が実際に何をしているのかが分かるページ」へ。
-     旧 #fields（Who does what）／#reality（Role difference）／#explore（Explore）の3セクションは、
-     いずれも職種の一覧を別の切り口で繰り返していたため廃止し、この1セクションへ統合した。
-     ・#fields の関係図（.jmap2）は #chain へ移動し、職種の関係を示す図解はページ内で1つだけにした
-     ・#reality の「仕事のやりがい」は各ブロックの「この仕事の手ごたえ」へ
-     ・#explore の「仕事内容を見る／募集要項を見る」は各ブロックのCTAへ
-     各ブロックの「主な仕事」「関わる相手」は、社員インタビュー・募集要項・キャリアページに
-     掲載済みの内容だけで構成している。確認できていない業務は書かず、注記で「確認中」と明記。
-     復元は git 履歴（コミット 81f96d4）から。 ===== -->
-<section class="sec sec--soft sec--tight" id="jobs">
+<section class="sec sec--soft sec--tight" id="roles">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">Our jobs</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">それぞれの職種は、何をしているのか。</h2>
-      <p class="slead">9つの職種について、主な仕事と、仕事のなかで関わる相手をまとめました。担当する範囲は案件や拠点によって変わります。</p>
+    <div class="shead rv" style="margin-bottom:22px">
+      <p class="slabel">Our roles</p>
+      <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">9つの職種。</h2>
     </div>
-    <div class="jobblks">
-      <article class="jobblk rv" id="job-bpo">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">OPERATION</p>
-          <h3>BPO / 現場運営</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-bpo.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">現場を安定して回しながら、より良い運営へ改善していく仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>各拠点の稼働状況の確認と、人員配置</li>
-          <li>作業進捗・品質・安全の管理</li>
-          <li>生産性・収支の確認と、業務改善の推進</li>
-          <li>取引先との打ち合わせ、現場確認</li>
-          <li>拠点間の調整と、改善施策の横展開</li>
+    <nav class="work-role-index rv" aria-label="職種から探す">
+      <ul class="role-chips">
+      <li><a class="role-chip" href="#role-bpo"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="role-chip__b"><span class="role-chip__en en">OPERATION</span><b>BPO / 現場運営</b><span class="role-chip__one">現場を安定させ、改善を進める</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-clean"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-handy"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CLEANLINESS</span><b>Cleanliness / クレンリネス</b><span class="role-chip__one">清掃を、計画と運用で支える</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-fde"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="role-chip__b"><span class="role-chip__en en">FDE</span><b>FDE</b><span class="role-chip__one">現場課題を技術へつなぐ</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-system"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-system"></use></svg><span class="role-chip__b"><span class="role-chip__en en">SYSTEM / PRODUCT</span><b>System / Product</b><span class="role-chip__one">現場で使われる仕組みをつくる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-dts"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="role-chip__b"><span class="role-chip__en en">TRANSPORT</span><b>DTS / 運送・運行</b><span class="role-chip__one">安全・品質・時間を守って届ける</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-sales"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="role-chip__b"><span class="role-chip__en en">ENGAGEMENT / SALES</span><b>Engagement / Sales</b><span class="role-chip__one">顧客課題を次の提案につなげる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-mkt"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="role-chip__b"><span class="role-chip__en en">MARKETING / CONTENT</span><b>Marketing / Content</b><span class="role-chip__one">コンテンツで新しい接点をつくる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-bizdev"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="role-chip__b"><span class="role-chip__en en">BIZDEV</span><b>BizDev</b><span class="role-chip__one">事業機会を形にする</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      <li><a class="role-chip" href="#role-corp"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-office"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CORPORATE</span><b>Corporate</b><span class="role-chip__one">組織と働く環境を支える</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<section class="sec sec--tight work-role-detail" id="jobs">
+  <div class="wrap">
+    <div class="shead rv" style="margin-bottom:24px">
+      <p class="slabel">What each role does</p>
+      <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">それぞれの職種は、何をしているのか。</h2>
+    </div>
+    <div class="role-cards">
+      <article class="role-card rv" id="role-bpo">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
+            <div>
+              <p class="role-card__en en">OPERATION</p>
+              <h3>BPO / 現場運営</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-bpo.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">現場を安定させ、改善を進める</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>各拠点の稼働状況の確認と、人員配置</li>
+            <li>作業進捗・品質・安全の管理</li>
+            <li>生産性・収支の確認と、業務改善の推進</li>
+            <li>取引先との打ち合わせ、現場確認</li>
+            <li>拠点間の調整と、改善施策の横展開</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">現場のスタッフと拠点責任者、取引先、社内のDX・システム部門</p>
-        <p class="jobblk__ch">この仕事の手ごたえ</p>
-        <p class="jobblk__t">改善が、そのまま現場の変化になる。</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>現場スタッフ</li><li>拠点責任者</li><li>取引先</li><li>DX・システム部門</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
+        <p class="role-links"><a class="textlink" href="../people/bpo/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/center-manager/">募集要項を見る</a></p>
         </div>
-      </div>
-      <p class="jobblk__cta"><a class="textlink" href="../people/bpo/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/center-manager/">センター長／候補の募集要項</a></p>
       </article>
-      <article class="jobblk rv" id="job-cleaning">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">CLEANLINESS</p>
-          <h3>Cleanliness / クレンリネス</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-cleaning.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">清掃を実施するだけでなく、計画・運営まで含めて現場を支える仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>食品プロセスセンターなどでの日常清掃・特別清掃</li>
-          <li>汚れ方と頻度から考える清掃計画づくり</li>
-          <li>各現場の巡回と、清掃状態の確認</li>
-          <li>複数センターの進捗・作業終了報告の管理</li>
-          <li>見積・請求の作成と、協力会社との連絡</li>
+      <article class="role-card rv" id="role-clean">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
+            <div>
+              <p class="role-card__en en">CLEANLINESS</p>
+              <h3>Cleanliness / クレンリネス</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-cleaning.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">清掃を、計画と運用で支える</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>食品プロセスセンターなどの日常清掃・特別清掃</li>
+            <li>汚れ方と頻度から考える清掃計画づくり</li>
+            <li>各現場の巡回と、清掃状態の確認</li>
+            <li>複数センターの進捗・作業終了報告の管理</li>
+            <li>見積・請求の作成と、協力会社との連絡</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">各センターの現場、協力会社、取引先</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>各センターの現場</li><li>協力会社</li><li>取引先</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
+        <p class="role-card__note">※ 個別の募集要項は掲載していません。</p>
+        <p class="role-links"><a class="textlink" href="../people/cleaning/">この仕事をしている社員を見る</a></p>
         </div>
-      </div>
-      <p class="jobblk__note">※ 清掃案件の営業にも関わります。個別の募集要項は掲載していません。</p>
-      <p class="jobblk__cta"><a class="textlink" href="../people/cleaning/">この仕事をしている社員を見る</a></p>
       </article>
-      <article class="jobblk rv" id="job-fde">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">FDE</p>
-          <h3>FDE（Forward Deployed Engineer）</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-fde.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">現場の課題を、技術で実際に動く仕組みへつなぐ仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>物流現場での業務課題のヒアリングと整理</li>
-          <li>課題を技術要件へ翻訳する</li>
-          <li>システム・設備・データとの接続を設計する</li>
-          <li>開発・改修と、現場での動作確認</li>
-          <li>運用後の問い合わせ対応と改善</li>
+      <article class="role-card rv" id="role-fde">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
+            <div>
+              <p class="role-card__en en">FDE</p>
+              <h3>FDE</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-fde.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">現場課題を技術へつなぐ</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>物流現場での業務課題のヒアリングと整理</li>
+            <li>課題を技術要件へ翻訳する</li>
+            <li>システム・設備・データとの接続を設計する</li>
+            <li>開発・改修と、現場での動作確認</li>
+            <li>運用後の問い合わせ対応と改善</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">物流現場のスタッフ、BPO・現場運営、システム／プロダクト企画</p>
-        <p class="jobblk__ch">この仕事の手ごたえ</p>
-        <p class="jobblk__t">つくった仕組みが、現場に定着する。</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
+        <p class="role-links"><a class="textlink" href="../people/fde/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/fde/">募集要項を見る</a>　<a class="textlink" href="../work/fde/">FDEをくわしく見る</a></p>
         </div>
-      </div>
-      <p class="jobblk__note">※ FDEがひとりで設計から運用までを担うわけではありません。各専門部門と連携して進めます。</p>
-      <!-- ===== WORK-CAREER-SPLIT v1：CTAの優先順位を「社員を見る → 募集要項 → 詳細ページ」に統一。 ===== -->
-      <p class="jobblk__cta"><a class="textlink" href="../people/fde/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/fde/">FDEの募集要項</a>　<a class="textlink" href="../work/fde/">FDEという仕事をくわしく見る</a></p>
       </article>
-      <article class="jobblk rv" id="job-system">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">PRODUCT</p>
-          <h3>システム / DXプロダクト開発</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-system.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">現場で使うシステムを、課題から設計・開発・改善していく仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>現場ヒアリングと要件整理</li>
-          <li>物流センター向けAndroidアプリの設計・開発</li>
-          <li>OCR・バーコード読み取り、ダッシュボードの開発</li>
-          <li>倉庫での実機確認と、改善対応</li>
-          <li>現場フィードバックの反映と、活用推進</li>
+      <article class="role-card rv" id="role-system">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
+            <div>
+              <p class="role-card__en en">SYSTEM / PRODUCT</p>
+              <h3>System / Product</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-system.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">現場で使われる仕組みをつくる</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>現場ヒアリングと要件整理</li>
+            <li>物流センター向けAndroidアプリの設計・開発</li>
+            <li>OCR・バーコード読み取り、ダッシュボードの開発</li>
+            <li>倉庫での実機確認と、改善対応</li>
+            <li>現場フィードバックの反映と、活用推進</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">物流現場、FDE、プロダクト企画</p>
-        <p class="jobblk__ch">この仕事の手ごたえ</p>
-        <p class="jobblk__t">見えなかったデータが、判断を変える。</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>物流現場</li><li>FDE</li><li>プロダクト企画</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
+        <p class="role-links"><a class="textlink" href="../people/system/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/product-engineer/">募集要項を見る</a></p>
         </div>
-      </div>
-      <p class="jobblk__cta"><a class="textlink" href="../people/system/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/product-engineer/">プロダクト企画・開発エンジニアの募集要項</a></p>
       </article>
-      <article class="jobblk rv" id="job-dts">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">TRANSPORT</p>
-          <h3>DTS / 運送・運行</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-dts.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">商品を届けるだけでなく、安全・品質・時間を守りながら輸送を支える仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>配送業務・納品対応</li>
-          <li>車両点検と、運行前後の確認</li>
-          <li>安全運転・配送品質の維持</li>
-          <li>配車と運行状況の確認・調整</li>
-          <li>配送先・物流センターとの連携</li>
+      <article class="role-card rv" id="role-dts">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
+            <div>
+              <p class="role-card__en en">TRANSPORT</p>
+              <h3>DTS / 運送・運行</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-dts.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">安全・品質・時間を守って届ける</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>配送業務・納品対応</li>
+            <li>車両点検と、運行前後の確認</li>
+            <li>安全運転・配送品質の維持</li>
+            <li>配車と運行状況の確認・調整</li>
+            <li>配送先・物流センターとの連携</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">配送先、物流センター、ドライバー</p>
-        <p class="jobblk__ch">この仕事の手ごたえ</p>
-        <p class="jobblk__t">組み直した計画が、そのとおり回る。</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>配送先</li><li>物流センター</li><li>ドライバー</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
+        <p class="role-card__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
+        <p class="role-links"><a class="textlink" href="../people/dts/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/dts/">募集要項を見る</a></p>
         </div>
-      </div>
-      <!-- ===== WORK-CAREER-SPLIT v1：「配車・運行管理や営業所長は、経験を重ねた先の役割として
-           紹介しています。」を削除。役割の広がりはCAREERページの担当のため、
-           WORKでは現在の募集対象の明示だけに留める。 ===== -->
-      <p class="jobblk__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
-      <p class="jobblk__cta"><a class="textlink" href="../people/dts/">この仕事をしている社員を見る</a>　<a class="textlink" href="../jobs/dts/">配送ドライバー（DTS）の募集要項</a></p>
       </article>
-      <article class="jobblk rv" id="job-sales">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">ENGAGEMENT / SALES</p>
-          <h3>エンゲージメント・新規営業</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-sales.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">顧客との接点をつくり、課題を次の提案機会へつなげる仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>既存顧客への定期的な連絡と、関係づくり</li>
-          <li>新しい顧客との接点づくり</li>
-          <li>現場見学・課題のヒアリングと整理</li>
-          <li>新たな提案・事業機会づくり</li>
-          <li>現場・組織の状態把握と、各部門との連携</li>
+      <article class="role-card rv" id="role-sales">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
+            <div>
+              <p class="role-card__en en">ENGAGEMENT / SALES</p>
+              <h3>Engagement / Sales</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-sales.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">顧客課題を次の提案につなげる</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>既存顧客への定期的な連絡と、関係づくり</li>
+            <li>新しい顧客との接点づくり</li>
+            <li>現場見学・課題のヒアリングと整理</li>
+            <li>新たな提案・事業機会づくり</li>
+            <li>現場・組織の状態把握と、各部門との連携</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">顧客、センター長、FDE・BPO・システム／プロダクト・DTS・BizDev</p>
-        <p class="jobblk__ch">この仕事の手ごたえ</p>
-        <p class="jobblk__t">一つの相談が、プロジェクトになる。</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>顧客</li><li>センター長</li><li>FDE</li><li>BPO</li><li>システム / プロダクト</li><li>DTS</li><li>BizDev</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
+        <p class="role-card__note">※ 募集条件は確認中です。</p>
+        <p class="role-links"><a class="textlink" href="../people/sales/">この仕事をしている社員を見る</a></p>
         </div>
-      </div>
-      <p class="jobblk__note">※ 提案から導入までのすべての工程を、営業が単独で担うわけではありません。募集条件は確認中です。</p>
-      <p class="jobblk__cta"><a class="textlink" href="../people/sales/">この仕事をしている社員を見る</a></p>
       </article>
-      <article class="jobblk rv" id="job-bizdev">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">BIZDEV</p>
-          <h3>BizDev</h3>
-        </div>
-        
-      </div>
-      <p class="jobblk__lead">顧客課題や市場の変化から、新しい事業の可能性を探る仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>顧客課題と市場機会の整理</li>
-          <li>新しい事業・サービスの可能性を形にする</li>
+      <article class="role-card rv" id="role-mkt">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
+            <div>
+              <p class="role-card__en en">MARKETING / CONTENT</p>
+              <h3>Marketing / Content</h3>
+            </div>
+            
+          </div>
+          <p class="role-card__one">コンテンツで新しい接点をつくる</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>市場や顧客の変化を捉える</li>
+            <li>コンテンツの企画・制作</li>
+            <li>顧客との新しい接点づくり</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">顧客、エンゲージメント・新規営業、社内の各専門部門</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
+        <p class="role-card__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
         </div>
-      </div>
-      <p class="jobblk__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
       </article>
-      <article class="jobblk rv" id="job-mkt">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">MARKETING / CONTENT</p>
-          <h3>マーケティング・コンテンツ制作</h3>
-        </div>
-        
-      </div>
-      <p class="jobblk__lead">市場や顧客の変化を捉え、コンテンツで新しい接点をつくる仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>市場や顧客の変化を捉える</li>
-          <li>コンテンツの企画・制作</li>
-          <li>顧客との新しい接点づくり</li>
+      <article class="role-card rv" id="role-bizdev">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+            <div>
+              <p class="role-card__en en">BIZDEV</p>
+              <h3>BizDev</h3>
+            </div>
+            
+          </div>
+          <p class="role-card__one">事業機会を形にする</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>顧客課題と市場機会の整理</li>
+            <li>新しい事業・サービスの可能性を形にする</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">顧客、エンゲージメント・新規営業</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li><li>社内の各専門部門</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
+        <p class="role-card__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
         </div>
-      </div>
-      <p class="jobblk__note">※ 担当する媒体や具体的な業務範囲は確認中です。通年で募集していますが、個別の募集要項は準備中です。</p>
       </article>
-      <article class="jobblk rv" id="job-corp">
-      <div class="jobblk__head">
-        <svg class="jobblk__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
-        <div class="jobblk__ttl">
-          <p class="jobblk__en en">CORPORATE</p>
-          <h3>コーポレート</h3>
-        </div>
-        <figure class="jobblk__av av-pad"><img src="../../assets/avatar-corporate.png" alt="" width="900" height="975" loading="lazy"></figure>
-      </div>
-      <p class="jobblk__lead">人と組織が動きやすい環境を、日々の運営と仕組みから支える仕事。</p>
-      <div class="jobblk__cols">
-        <div>
-          <p class="jobblk__ch">主な仕事</p>
-          <ul class="jobblk__list">
-          <li>社宅・社用車・通信・資産管理などの日常業務</li>
-          <li>社内申請のシステム化</li>
-          <li>業務フロー改善</li>
-          <li>関係部署との打ち合わせと、中長期的な課題への対応</li>
+      <article class="role-card rv" id="role-corp">
+        <div class="role-summary">
+          <div class="role-card__head">
+            <svg class="role-card__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
+            <div>
+              <p class="role-card__en en">CORPORATE</p>
+              <h3>Corporate</h3>
+            </div>
+            <figure class="role-card__av av-pad"><img src="../../assets/avatar-corporate.png" alt="" width="900" height="975" loading="lazy"></figure>
+          </div>
+          <p class="role-card__one">組織と働く環境を支える</p>
+          <p class="role-card__ch">主な仕事</p>
+          <ul class="role-points">
+            <li>社宅・社用車・通信・資産管理などの日常業務</li>
+            <li>社内申請のシステム化</li>
+            <li>業務フロー改善</li>
+            <li>関係部署との打ち合わせと、中長期的な課題への対応</li>
           </ul>
         </div>
-        <div>
-          <p class="jobblk__ch">関わる相手</p>
-          <p class="jobblk__t">各部署のメンバー、社員</p>
+        <div class="role-meta">
+          <p class="role-card__ch">関わる相手</p>
+          <ul class="role-people"><li>各部署のメンバー</li><li>社員</li></ul>
+          <p class="role-card__ch">この仕事らしさ</p>
+          <p class="role-card__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
+        <p class="role-card__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
+        <p class="role-links"><a class="textlink" href="../people/corporate/">この仕事をしている社員を見る</a></p>
         </div>
-      </div>
-      <p class="jobblk__note">※ 社員インタビューで紹介しているのは総務課の仕事です。ほかの部署の構成・業務分担は確認中です。</p>
-      <p class="jobblk__cta"><a class="textlink" href="../people/corporate/">この仕事をしている社員を見る</a></p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ===== WORK-CAREER-SPLIT v1：仕事の進み方の番号を STEP → FLOW に変更。
-     内容は「今の仕事がどう進むか」でキャリアステップではないが、
-     CAREERページの STEP 1〜4（役割の広がり）と表記が衝突し、
-     昇進ステップと読み違えられるおそれがあったため。 ===== -->
-<section class="sec sec--soft sec--tight" id="change">
+<section class="sec sec--soft sec--tight work-relationship-diagram" id="flow">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:30px">
-      <p class="slabel">Work flow</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">仕事は、こう進む。</h2>
-      <p class="slead">現場で使われ、改善が続く状態をつくるために、設計・実装・運用・改善を行き来しながら、異なる専門性を持つメンバーが協力します。進め方は案件や現場によって変わります。</p>
+    <div class="shead rv" style="margin-bottom:26px">
+      <p class="slabel">How roles connect</p>
+      <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">職種は、つながって一つの仕事になる。</h2>
+      <p class="slead">課題を見つける人、現場で動く形にする人、専門領域で支える人。関わる場面は違っても、ひとつの流れのなかでつながっています。</p>
     </div>
-    <!-- ===== CSTEP-FLOW v1：縦積みの説明から、横並びのフロー図へ。
-     文章は短く整理し、関わる役割はカード下のピル型ラベルにまとめた。
-     STEP 03 の「コーポレート」は、現場課題→改善の流れの直接の担い手ではないため外した。 ===== -->
-    <ol class="cflow rv">
+<!-- ===== WORK-COMPACT v1：9職種を一言つきで並べていた LAYER 図（.jmap2）を、
+         仕事の流れだけを示す横5ステップの連携図に置き換え。
+         一覧ナビ・職種詳細と合わせて同じ職種名を3度並べることになり、
+         ページが縦に伸びる最大の要因になっていたため。
+         職種名はリンクにして該当の詳細ブロックへ飛べるようにしている。
+         旧 .jmap2 / .jlayer / .jrow2 / .jp / .jcycle / .jarrow / .jlink は
+         未使用化（残置）。復元は git 履歴 58916bc から。 ===== -->
+    <ol class="wflow rv">
+      <li class="wflow__st">
+        <p class="wflow__no en">01</p>
+        <b>顧客の課題を見つける</b>
+        <ul class="wflow__p">
+          <li><a href="#role-sales">Engagement / Sales</a></li>
+          <li><a href="#role-mkt">Marketing / Content</a></li>
+          <li><a href="#role-bizdev">BizDev</a></li>
+        </ul>
+      </li>
+      <li class="wflow__st">
+        <p class="wflow__no en">02</p>
+        <b>技術で解ける形にする</b>
+        <ul class="wflow__p">
+          <li><a href="#role-fde">FDE</a></li>
+          <li><a href="#role-system">System / Product</a></li>
+        </ul>
+      </li>
+      <li class="wflow__st">
+        <p class="wflow__no en">03</p>
+        <b>現場で動かす</b>
+        <ul class="wflow__p">
+          <li><a href="#role-bpo">BPO / 現場運営</a></li>
+          <li><a href="#role-clean">Cleanliness</a></li>
+          <li><a href="#role-dts">DTS / 運送・運行</a></li>
+        </ul>
+      </li>
+      <li class="wflow__st wflow__st--loop">
+        <p class="wflow__no en">04</p>
+        <b>運用し、改善する</b>
+        <p class="wflow__t">現場で出た声が、次の提案と改善に戻っていきます。</p>
+      </li>
+    </ol>
+    <p class="wflow__base rv"><span class="en">SUPPORT</span><a href="#role-corp">Corporate</a>が、各部門の働く環境を支えます。</p>
+    <h3 class="look3__h rv" style="margin-top:56px"><span class="nw">そのなかで、</span><span class="nw">仕事はこう進む。</span></h3>
+<ol class="cflow rv">
         <li class="cflow__step">
           <p class="cflow__no en">FLOW 01</p>
           <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
@@ -519,15 +506,7 @@
           <p class="cflow__t">完成してから確認するのではなく、途中段階から使ってもらい、実際の使われ方を見て、より良い方法へ更新していきます。</p>
         </li>
     </ol>
-    <div class="flowadd rv">
-      <p class="flowadd__h"><span class="en">FDE</span>現場の課題を技術要件へ翻訳し、実装・運用へつなぐ。</p>
-      <p class="flowadd__t">FLOW 02〜04では、FDEが現場と技術の間に立ちます。<a class="textlink textlink--sm" href="../people/fde/">FDEとして働く人を見る</a></p>
-    </div>
-    <!-- ===== WORKNOTE v1：.note 2本を削除済み。
-         「設計・実装・運用・改善を行き来する」「進め方は案件や現場によって変わる」は
-         上の .slead へ統合。「誰か一人で完結する仕事ではない」は .slead の
-         「異なる専門性を持つメンバーが協力します」で表現済み。
-         「PALを知る」への導線は注釈では案内せず、グローバルナビ／フッターに集約した。 ===== -->
+    <p class="flowadd__h"><span class="en">FDE</span>現場の課題を技術要件へ翻訳し、実装・運用へつなぐ。</p>
   </div>
 </section>
 
