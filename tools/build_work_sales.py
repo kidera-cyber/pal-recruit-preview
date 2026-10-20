@@ -17,6 +17,14 @@ WORK の職種再編：
 """
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import os as _os
+if not _os.path.exists(_os.path.join(ROOT, "renewal/work-all-roles-expanded-preview/index.html")):
+    # 営業再編（SALESMERGE v1） は正式WORK（renewal/work/）へ反映済み。
+    # 入力にしていた比較プレビューは整理したため、このスクリプトは再実行しない。
+    # 文章の記録として残している。WORKの更新は renewal/work/index.html を直接編集する。
+    print("完了済み：営業再編（SALESMERGE v1） は renewal/work/ に反映済みです。再実行は不要です。")
+    raise SystemExit(0)
+
 def rd(p):
     with open(os.path.join(ROOT, p), encoding="utf-8") as f: return f.read()
 def wr(p, s):

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020y">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020z">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "募集職種"}]}</script>
@@ -690,6 +690,59 @@
   btns.forEach(function(b){
     b.addEventListener('click',function(){
       state[b.getAttribute('data-k')]=b.getAttribute('data-v'); apply();
+    });
+  });
+  apply();
+})();
+</script>
+<!-- ===== JOBSOPEN v2：職種・勤務地の絞り込み。このページだけで使う最小限のJS。
+     ・判定は表示テキストではなく data-job-category / data-location の内部値で行う。
+     ・職種と勤務地はAND条件。どちらかに条件が入っていれば必ず絞り込む。
+     ・総件数・グループ件数・0件メッセージは、いつも表示中のカード数と一致させる。
+     ・求人が増えてもJSは変更不要。カードに data 属性を付けるだけで動く。
+     ・カードと本文はすべてHTMLに入っているため、JavaScriptが無効でも全求人を読める
+       （その場合は絞り込みUIを出さず、すべての求人を表示する）。 ===== -->
+<script>
+(function(){
+  var root=document.getElementById('joblist'); if(!root) return;
+  root.classList.add('is-js');
+  var cards=[].slice.call(root.querySelectorAll('.jcard'));
+  var groups=[].slice.call(root.querySelectorAll('.jgroup'));
+  var total=document.getElementById('jobcount');
+  var none=document.getElementById('jobnone');
+  var selectedCategory='all', selectedLocation='all';
+
+  function apply(){
+    var shown=0;
+    cards.forEach(function(card){
+      var categoryMatch=(selectedCategory==='all')||(card.getAttribute('data-job-category')===selectedCategory);
+      var locationMatch=(selectedLocation==='all')||(card.getAttribute('data-location')===selectedLocation);
+      var ok=categoryMatch&&locationMatch;
+      card.hidden=!ok;
+      if(ok) shown++;
+    });
+    groups.forEach(function(g){
+      var vis=[].slice.call(g.querySelectorAll('.jcard')).filter(function(c){return !c.hidden;}).length;
+      g.hidden=(vis===0);
+      var c=g.querySelector('.jgroup__c');
+      if(c) c.textContent=vis+' '+(vis===1?'POSITION':'POSITIONS');
+    });
+    [].slice.call(root.querySelectorAll('.jfil__b')).forEach(function(b){
+      var on=(b.hasAttribute('data-filter-category')
+                ? b.getAttribute('data-filter-category')===selectedCategory
+                : b.getAttribute('data-filter-location')===selectedLocation);
+      b.setAttribute('aria-pressed', on?'true':'false');
+      b.classList.toggle('is-active', on);
+    });
+    if(total) total.textContent=shown;
+    if(none) none.hidden=(shown>0);
+  }
+
+  [].slice.call(root.querySelectorAll('.jfil__b')).forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.hasAttribute('data-filter-category')) selectedCategory=b.getAttribute('data-filter-category');
+      else selectedLocation=b.getAttribute('data-filter-location');
+      apply();
     });
   });
   apply();
