@@ -26,6 +26,10 @@ def e(x): return html.escape(str(x), quote=False)
 D    = json.loads(rd("data/jobs-openings.json"))
 CATS = {c["key"]: c for c in D["categories"]}
 OPEN = [o for o in D["openings"] if o["status"] == "open"]
+PREF_SLUGS = D.get("pref_slugs", {})
+def pref_slug(name):
+    """表示名ではなく内部値で絞り込むためのスラッグ。未登録の都道府県も必ず値を持つ。"""
+    return PREF_SLUGS.get(name) or ("pref-" + str(abs(hash(name)) % 100000))
 PREFS = []
 for o in OPEN:
     if o["pref"] and o["pref"] not in PREFS: PREFS.append(o["pref"])
@@ -41,7 +45,7 @@ MARK = ("<!-- ===== JOBSOPEN v1：リクナビHRTechで承認済みの求人票9
 # ------------------------------------------------------------------ カード
 def card(o):
     c = CATS[o["cat"]]
-    return f'''      <li class="jcard" data-cat="{e(o['cat'])}" data-pref="{e(o['pref'])}">
+    return f'''      <li class="jcard" data-job-category="{e(o['cat'])}" data-location="{e(pref_slug(o['pref']))}">
         <p class="jcard__cat">{e(c['name'])}</p>
         <h4 class="jcard__n">{e(o['title'])}<span class="jcard__lv">{e(o['level'])}｜{e(o['place_short'])}</span></h4>
         <dl class="jcard__dl">
@@ -59,65 +63,82 @@ def group(key):
     items = [o for o in OPEN if o["cat"] == key]
     cards = "\n".join(card(o) for o in items)
     return f'''    <section class="jgroup" data-group="{e(key)}">
-      <h3 class="jgroup__h"><span class="jgroup__n">{e(c['name'])}</span><span class="jgroup__c en">{len(items)} POSITIONS</span></h3>
+      <h3 class="jgroup__h"><span class="jgroup__n">{e(c['name'])}</span><span class="jgroup__c en" data-total="{len(items)}">{len(items)} {"POSITION" if len(items)==1 else "POSITIONS"}</span></h3>
       <p class="jgroup__lead">{hub}仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="{e(c['work_anchor'])}">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="{e(c['people'])}">{e(c['people_label'])}</a>をご覧ください。</p>
       <ul class="jcards">
 {cards}
       </ul>
     </section>'''
 
-FILTER_JS = '''<!-- ===== JOBSOPEN v1：職種・勤務地の絞り込み。このページだけで使う最小限のJS。
-     カードと本文はすべてHTMLに入っているため、JavaScriptが無効でも全求人を読める
-     （その場合は絞り込みUIを出さず、すべての求人を表示する）。 ===== -->
+FILTER_JS = '''<!-- ===== JOBSOPEN v2：職種・勤務地の絞り込み。このページだけで使う最小限のJS。
+     ・判定は表示テキストではなく data-job-category / data-location の内部値で行う。
+     ・職種と勤務地はAND条件。どちらかに条件が入っていれば必ず絞り込む。
+     ・総件数・グループ件数・0件メッセージは、いつも表示中のカード数と一致させる。
+     ・求人が増えてもJSは変更不要。カードに data 属性を付けるだけで動く。
+     ・カードと本文はすべてHTMLに入っているため、JavaScriptが無効でも全求人を読める
+       （その場合は絞り込みUIを出さず、すべての求人を表示する）。 ===== -->
 <script>
 (function(){
   var root=document.getElementById('joblist'); if(!root) return;
   root.classList.add('is-js');
-  var btns=[].slice.call(root.querySelectorAll('.jfil__b'));
   var cards=[].slice.call(root.querySelectorAll('.jcard'));
   var groups=[].slice.call(root.querySelectorAll('.jgroup'));
-  var count=document.getElementById('jobcount');
-  var state={cat:'all',pref:'all'};
+  var total=document.getElementById('jobcount');
+  var none=document.getElementById('jobnone');
+  var selectedCategory='all', selectedLocation='all';
+
   function apply(){
-    var n=0;
-    cards.forEach(function(c){
-      var ok=(state.cat==='all'||c.getAttribute('data-cat')===state.cat)
-          && (state.pref==='all'||c.getAttribute('data-pref')===state.pref);
-      c.hidden=!ok; if(ok) n++;
+    var shown=0;
+    cards.forEach(function(card){
+      var categoryMatch=(selectedCategory==='all')||(card.getAttribute('data-job-category')===selectedCategory);
+      var locationMatch=(selectedLocation==='all')||(card.getAttribute('data-location')===selectedLocation);
+      var ok=categoryMatch&&locationMatch;
+      card.hidden=!ok;
+      if(ok) shown++;
     });
     groups.forEach(function(g){
-      var vis=[].slice.call(g.querySelectorAll('.jcard')).some(function(c){return !c.hidden;});
-      g.hidden=!vis;
+      var vis=[].slice.call(g.querySelectorAll('.jcard')).filter(function(c){return !c.hidden;}).length;
+      g.hidden=(vis===0);
+      var c=g.querySelector('.jgroup__c');
+      if(c) c.textContent=vis+' '+(vis===1?'POSITION':'POSITIONS');
     });
-    btns.forEach(function(b){
-      var k=b.getAttribute('data-k'), v=b.getAttribute('data-v');
-      b.setAttribute('aria-pressed', state[k]===v ? 'true':'false');
+    [].slice.call(root.querySelectorAll('.jfil__b')).forEach(function(b){
+      var on=(b.hasAttribute('data-filter-category')
+                ? b.getAttribute('data-filter-category')===selectedCategory
+                : b.getAttribute('data-filter-location')===selectedLocation);
+      b.setAttribute('aria-pressed', on?'true':'false');
+      b.classList.toggle('is-active', on);
     });
-    if(count) count.textContent=n;
-    var none=document.getElementById('jobnone'); if(none) none.hidden=(n>0);
+    if(total) total.textContent=shown;
+    if(none) none.hidden=(shown>0);
   }
-  btns.forEach(function(b){
+
+  [].slice.call(root.querySelectorAll('.jfil__b')).forEach(function(b){
     b.addEventListener('click',function(){
-      state[b.getAttribute('data-k')]=b.getAttribute('data-v'); apply();
+      if(b.hasAttribute('data-filter-category')) selectedCategory=b.getAttribute('data-filter-category');
+      else selectedLocation=b.getAttribute('data-filter-location');
+      apply();
     });
   });
   apply();
 })();
 </script>'''
 
+
 def filters():
-    cat_b = '<button class="jfil__b" type="button" data-k="cat" data-v="all" aria-pressed="true">すべて</button>' + \
-        "".join('<button class="jfil__b" type="button" data-k="cat" data-v="%s" aria-pressed="false">%s</button>'
-                % (e(c["key"]), e(c["name"])) for c in D["categories"])
-    pref_b = '<button class="jfil__b" type="button" data-k="pref" data-v="all" aria-pressed="true">すべて</button>' + \
-        "".join('<button class="jfil__b" type="button" data-k="pref" data-v="%s" aria-pressed="false">%s</button>'
-                % (e(p), e(p)) for p in PREFS)
+    cat_b = '<button class="jfil__b is-active" type="button" data-filter-category="all" aria-pressed="true">すべて</button>' + \
+        "".join('<button class="jfil__b" type="button" data-filter-category="%s" aria-pressed="false">%s</button>'
+                % (e(c["key"]), e(c["name"])) for c in D["categories"]
+                if any(o["cat"] == c["key"] for o in OPEN))
+    pref_b = '<button class="jfil__b is-active" type="button" data-filter-location="all" aria-pressed="true">すべて</button>' + \
+        "".join('<button class="jfil__b" type="button" data-filter-location="%s" aria-pressed="false">%s</button>'
+                % (e(pref_slug(p)), e(p)) for p in PREFS)
     return f'''    <div class="jfil">
       <div class="jfil__row"><p class="jfil__k">職種</p><div class="jfil__bs">{cat_b}</div></div>
       <div class="jfil__row"><p class="jfil__k">勤務地</p><div class="jfil__bs">{pref_b}</div></div>
       <p class="jfil__n">現在 <b id="jobcount">{len(OPEN)}</b> 件の求人を掲載しています。</p>
     </div>
-    <p class="note" id="jobnone" hidden>条件に合う求人はありません。絞り込みを「すべて」に戻してください。</p>'''
+    <p class="jfil__none" id="jobnone" hidden>現在、この条件で募集中の求人はありません。</p>'''
 
 # ------------------------------------------------------------------ 一覧
 def build_index():

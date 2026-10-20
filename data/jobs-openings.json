@@ -10,6 +10,14 @@
   "updated_at": "2026-10-20",
   "source": "リクナビHRTech 承認済み求人票（2026-10-20 時点・10件）",
   "date_posted": null,
+  "pref_slugs": {
+    "千葉県": "chiba",
+    "神奈川県": "kanagawa",
+    "広島県": "hiroshima",
+    "兵庫県": "hyogo",
+    "大阪府": "osaka",
+    "東京都": "tokyo"
+  },
   "categories": [
     {
       "key": "bpo",

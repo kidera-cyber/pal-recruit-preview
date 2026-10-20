@@ -7413,3 +7413,22 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .rdeep__flow>li{padding:16px}
 }
 /* ===== ROLEDEEP v1 END ===== */
+
+/* ============================================================
+   ===== JOBSOPEN v2 START =====
+   不具合修正：.jcard に display:flex を指定していたため、hidden 属性を付けても
+   ブラウザ既定の [hidden]{display:none} が負けて、絞り込んだカードが
+   消えていなかった（ボタンの選択状態と件数だけが変わる状態になっていた）。
+   クラス側で明示的に打ち消す。
+   あわせて、選択中のフィルターに is-active を付けられるようにした。
+   ============================================================ */
+.jcard[hidden],.jgroup[hidden],.jfil__none[hidden]{display:none!important}
+.jfil__b.is-active{background:#000;border-color:#000;color:#fff}
+.jfil__none{margin-top:26px;padding:20px 22px;border:1px solid var(--line-mid);
+  border-radius:var(--radius);background:var(--bg-soft);
+  font-size:14.5px;line-height:1.85;font-weight:700;color:var(--text)}
+/* スマホではタップ領域を44px以上にする */
+@media (max-width:700px){
+  .jfil__b{padding:12px 16px}
+}
+/* ===== JOBSOPEN v2 END ===== */

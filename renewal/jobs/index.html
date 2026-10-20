@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020u">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020w">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "募集職種"}]}</script>
@@ -100,16 +100,16 @@
 <section class="sec sec--tight" id="openings">
   <div class="wrap" id="joblist">
     <div class="jfil">
-      <div class="jfil__row"><p class="jfil__k">職種</p><div class="jfil__bs"><button class="jfil__b" type="button" data-k="cat" data-v="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-k="cat" data-v="bpo" aria-pressed="false">物流センター運営</button><button class="jfil__b" type="button" data-k="cat" data-v="fde" aria-pressed="false">FDE</button><button class="jfil__b" type="button" data-k="cat" data-v="system" aria-pressed="false">システム / プロダクト開発</button><button class="jfil__b" type="button" data-k="cat" data-v="sales" aria-pressed="false">営業</button></div></div>
-      <div class="jfil__row"><p class="jfil__k">勤務地</p><div class="jfil__bs"><button class="jfil__b" type="button" data-k="pref" data-v="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-k="pref" data-v="千葉県" aria-pressed="false">千葉県</button><button class="jfil__b" type="button" data-k="pref" data-v="神奈川県" aria-pressed="false">神奈川県</button><button class="jfil__b" type="button" data-k="pref" data-v="広島県" aria-pressed="false">広島県</button><button class="jfil__b" type="button" data-k="pref" data-v="兵庫県" aria-pressed="false">兵庫県</button><button class="jfil__b" type="button" data-k="pref" data-v="大阪府" aria-pressed="false">大阪府</button></div></div>
+      <div class="jfil__row"><p class="jfil__k">職種</p><div class="jfil__bs"><button class="jfil__b is-active" type="button" data-filter-category="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-filter-category="bpo" aria-pressed="false">物流センター運営</button><button class="jfil__b" type="button" data-filter-category="fde" aria-pressed="false">FDE</button><button class="jfil__b" type="button" data-filter-category="system" aria-pressed="false">システム / プロダクト開発</button><button class="jfil__b" type="button" data-filter-category="sales" aria-pressed="false">営業</button></div></div>
+      <div class="jfil__row"><p class="jfil__k">勤務地</p><div class="jfil__bs"><button class="jfil__b is-active" type="button" data-filter-location="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-filter-location="chiba" aria-pressed="false">千葉県</button><button class="jfil__b" type="button" data-filter-location="kanagawa" aria-pressed="false">神奈川県</button><button class="jfil__b" type="button" data-filter-location="hiroshima" aria-pressed="false">広島県</button><button class="jfil__b" type="button" data-filter-location="hyogo" aria-pressed="false">兵庫県</button><button class="jfil__b" type="button" data-filter-location="osaka" aria-pressed="false">大阪府</button></div></div>
       <p class="jfil__n">現在 <b id="jobcount">9</b> 件の求人を掲載しています。</p>
     </div>
-    <p class="note" id="jobnone" hidden>条件に合う求人はありません。絞り込みを「すべて」に戻してください。</p>
+    <p class="jfil__none" id="jobnone" hidden>現在、この条件で募集中の求人はありません。</p>
     <section class="jgroup" data-group="bpo">
-      <h3 class="jgroup__h"><span class="jgroup__n">物流センター運営</span><span class="jgroup__c en">4 POSITIONS</span></h3>
+      <h3 class="jgroup__h"><span class="jgroup__n">物流センター運営</span><span class="jgroup__c en" data-total="4">4 POSITIONS</span></h3>
       <p class="jgroup__lead"><a class="textlink textlink--sm" href="center-manager/">物流センター運営の仕事と募集拠点</a>を見る。仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-bpo">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/bpo/">BPO・現場運営の社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
-      <li class="jcard" data-cat="bpo" data-pref="千葉県">
+      <li class="jcard" data-job-category="bpo" data-location="chiba">
         <p class="jcard__cat">物流センター運営</p>
         <h4 class="jcard__n">物流センター運営<span class="jcard__lv">アソシエイト｜船橋</span></h4>
         <dl class="jcard__dl">
@@ -120,7 +120,7 @@
         <p class="jcard__foot"><span class="jchip">募集中</span>
           <a class="jcard__cta" href="openings/funabashi-associate/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
       </li>
-      <li class="jcard" data-cat="bpo" data-pref="神奈川県">
+      <li class="jcard" data-job-category="bpo" data-location="kanagawa">
         <p class="jcard__cat">物流センター運営</p>
         <h4 class="jcard__n">物流センター運営<span class="jcard__lv">メンバー｜厚木</span></h4>
         <dl class="jcard__dl">
@@ -131,7 +131,7 @@
         <p class="jcard__foot"><span class="jchip">募集中</span>
           <a class="jcard__cta" href="openings/atsugi-member/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
       </li>
-      <li class="jcard" data-cat="bpo" data-pref="広島県">
+      <li class="jcard" data-job-category="bpo" data-location="hiroshima">
         <p class="jcard__cat">物流センター運営</p>
         <h4 class="jcard__n">物流センター運営<span class="jcard__lv">メンバー｜東広島</span></h4>
         <dl class="jcard__dl">
@@ -142,7 +142,7 @@
         <p class="jcard__foot"><span class="jchip">募集中</span>
           <a class="jcard__cta" href="openings/higashihiroshima-member/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
       </li>
-      <li class="jcard" data-cat="bpo" data-pref="兵庫県">
+      <li class="jcard" data-job-category="bpo" data-location="hyogo">
         <p class="jcard__cat">物流センター運営</p>
         <h4 class="jcard__n">物流センター責任者候補<span class="jcard__lv">責任者候補｜須磨</span></h4>
         <dl class="jcard__dl">
@@ -156,10 +156,10 @@
       </ul>
     </section>
     <section class="jgroup" data-group="fde">
-      <h3 class="jgroup__h"><span class="jgroup__n">FDE</span><span class="jgroup__c en">2 POSITIONS</span></h3>
+      <h3 class="jgroup__h"><span class="jgroup__n">FDE</span><span class="jgroup__c en" data-total="2">2 POSITIONS</span></h3>
       <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-fde">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/fde/">FDEの社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
-      <li class="jcard" data-cat="fde" data-pref="大阪府">
+      <li class="jcard" data-job-category="fde" data-location="osaka">
         <p class="jcard__cat">FDE</p>
         <h4 class="jcard__n">FDE（Forward Deployed Engineer）<span class="jcard__lv">アソシエイト〜メンバー｜大阪</span></h4>
         <dl class="jcard__dl">
@@ -170,7 +170,7 @@
         <p class="jcard__foot"><span class="jchip">募集中</span>
           <a class="jcard__cta" href="openings/fde-associate/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
       </li>
-      <li class="jcard" data-cat="fde" data-pref="大阪府">
+      <li class="jcard" data-job-category="fde" data-location="osaka">
         <p class="jcard__cat">FDE</p>
         <h4 class="jcard__n">FDE（Forward Deployed Engineer）<span class="jcard__lv">メンバー・リーダー候補｜大阪</span></h4>
         <dl class="jcard__dl">
@@ -184,10 +184,10 @@
       </ul>
     </section>
     <section class="jgroup" data-group="system">
-      <h3 class="jgroup__h"><span class="jgroup__n">システム / プロダクト開発</span><span class="jgroup__c en">1 POSITIONS</span></h3>
+      <h3 class="jgroup__h"><span class="jgroup__n">システム / プロダクト開発</span><span class="jgroup__c en" data-total="1">1 POSITION</span></h3>
       <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-system">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/system/">システム / プロダクト開発の社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
-      <li class="jcard" data-cat="system" data-pref="大阪府">
+      <li class="jcard" data-job-category="system" data-location="osaka">
         <p class="jcard__cat">システム / プロダクト開発</p>
         <h4 class="jcard__n">自社開発 Web・アプリエンジニア<span class="jcard__lv">メンバー・リーダークラス｜大阪</span></h4>
         <dl class="jcard__dl">
@@ -201,10 +201,10 @@
       </ul>
     </section>
     <section class="jgroup" data-group="sales">
-      <h3 class="jgroup__h"><span class="jgroup__n">営業</span><span class="jgroup__c en">2 POSITIONS</span></h3>
+      <h3 class="jgroup__h"><span class="jgroup__n">営業</span><span class="jgroup__c en" data-total="2">2 POSITIONS</span></h3>
       <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-sales">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/sales/">営業の社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
-      <li class="jcard" data-cat="sales" data-pref="大阪府">
+      <li class="jcard" data-job-category="sales" data-location="osaka">
         <p class="jcard__cat">営業</p>
         <h4 class="jcard__n">エンゲージメント・新規営業<span class="jcard__lv">メンバー｜大阪</span></h4>
         <dl class="jcard__dl">
@@ -215,7 +215,7 @@
         <p class="jcard__foot"><span class="jchip">募集中</span>
           <a class="jcard__cta" href="openings/engagement-member/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
       </li>
-      <li class="jcard" data-cat="sales" data-pref="大阪府">
+      <li class="jcard" data-job-category="sales" data-location="osaka">
         <p class="jcard__cat">営業</p>
         <h4 class="jcard__n">法人営業（人材派遣）<span class="jcard__lv">リーダー｜大阪</span></h4>
         <dl class="jcard__dl">
@@ -675,6 +675,59 @@
   btns.forEach(function(b){
     b.addEventListener('click',function(){
       state[b.getAttribute('data-k')]=b.getAttribute('data-v'); apply();
+    });
+  });
+  apply();
+})();
+</script>
+<!-- ===== JOBSOPEN v2：職種・勤務地の絞り込み。このページだけで使う最小限のJS。
+     ・判定は表示テキストではなく data-job-category / data-location の内部値で行う。
+     ・職種と勤務地はAND条件。どちらかに条件が入っていれば必ず絞り込む。
+     ・総件数・グループ件数・0件メッセージは、いつも表示中のカード数と一致させる。
+     ・求人が増えてもJSは変更不要。カードに data 属性を付けるだけで動く。
+     ・カードと本文はすべてHTMLに入っているため、JavaScriptが無効でも全求人を読める
+       （その場合は絞り込みUIを出さず、すべての求人を表示する）。 ===== -->
+<script>
+(function(){
+  var root=document.getElementById('joblist'); if(!root) return;
+  root.classList.add('is-js');
+  var cards=[].slice.call(root.querySelectorAll('.jcard'));
+  var groups=[].slice.call(root.querySelectorAll('.jgroup'));
+  var total=document.getElementById('jobcount');
+  var none=document.getElementById('jobnone');
+  var selectedCategory='all', selectedLocation='all';
+
+  function apply(){
+    var shown=0;
+    cards.forEach(function(card){
+      var categoryMatch=(selectedCategory==='all')||(card.getAttribute('data-job-category')===selectedCategory);
+      var locationMatch=(selectedLocation==='all')||(card.getAttribute('data-location')===selectedLocation);
+      var ok=categoryMatch&&locationMatch;
+      card.hidden=!ok;
+      if(ok) shown++;
+    });
+    groups.forEach(function(g){
+      var vis=[].slice.call(g.querySelectorAll('.jcard')).filter(function(c){return !c.hidden;}).length;
+      g.hidden=(vis===0);
+      var c=g.querySelector('.jgroup__c');
+      if(c) c.textContent=vis+' '+(vis===1?'POSITION':'POSITIONS');
+    });
+    [].slice.call(root.querySelectorAll('.jfil__b')).forEach(function(b){
+      var on=(b.hasAttribute('data-filter-category')
+                ? b.getAttribute('data-filter-category')===selectedCategory
+                : b.getAttribute('data-filter-location')===selectedLocation);
+      b.setAttribute('aria-pressed', on?'true':'false');
+      b.classList.toggle('is-active', on);
+    });
+    if(total) total.textContent=shown;
+    if(none) none.hidden=(shown>0);
+  }
+
+  [].slice.call(root.querySelectorAll('.jfil__b')).forEach(function(b){
+    b.addEventListener('click',function(){
+      if(b.hasAttribute('data-filter-category')) selectedCategory=b.getAttribute('data-filter-category');
+      else selectedLocation=b.getAttribute('data-filter-location');
+      apply();
     });
   });
   apply();
