@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
 <link rel="canonical" href="./">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020n">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020p">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "仕事を知る"}]}</script>
@@ -190,6 +190,11 @@
 </section>
 
 <!-- 03 ─────────── FIND YOUR ROLE ─────────── -->
+<!-- ===== WORKTABS v2（2026-10-20）：職種タブを、アイコン＋職種名だけのピル型に変更。
+     タブ内にあった英字カテゴリ・一言・矢印は、下の詳細パネルに同じ情報があり
+     重複していたため削除（詳細パネル側は一切変更していない）。
+     旧 .rtab__b / .rtab__en / .rtab__one / .rtab__ar は未使用化（残置）。
+     切り替えのJS・ARIA・ハッシュ連動・履歴対応は作り直していない。 ===== -->
 <!-- ===== WORKTABS v1：FIND YOUR ROLE（9職種の一覧）と THE WORK（9職種の大型カード）を
      ひとつのタブUIに統合。同じ職種情報が2度出てページが伸びていたため。
      ■ 既存の職種IDは変更していない。role-bpo など9つのIDは、そのままタブパネルの
@@ -217,56 +222,47 @@
         <button class="rtab" type="button" role="tab" id="rt-role-bpo" aria-controls="role-bpo"
           aria-selected="true" tabindex="0">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">OPERATION</span><b class="rtab__n">BPO / 現場運営</b><span class="rtab__one">現場を安定させ、改善を進める</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">BPO / 現場運営</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-clean" aria-controls="role-clean"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">CLEANLINESS</span><b class="rtab__n">Cleanliness / クレンリネス</b><span class="rtab__one">清掃を、計画と運用で支える</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">Cleanliness / クレンリネス</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-fde" aria-controls="role-fde"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">FDE</span><b class="rtab__n">FDE</b><span class="rtab__one">現場課題を技術へつなぐ</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">FDE</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-system" aria-controls="role-system"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">SYSTEM / PRODUCT</span><b class="rtab__n">System / Product</b><span class="rtab__one">現場で使われる仕組みをつくる</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">System / Product</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-dts" aria-controls="role-dts"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">TRANSPORT</span><b class="rtab__n">DTS / 運送・運行</b><span class="rtab__one">安全・品質・時間を守って届ける</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">DTS / 運送・運行</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-sales" aria-controls="role-sales"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">ENGAGEMENT / SALES</span><b class="rtab__n">Engagement / Sales</b><span class="rtab__one">顧客課題を次の提案につなげる</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">Engagement / Sales</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-mkt" aria-controls="role-mkt"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">MARKETING / CONTENT</span><b class="rtab__n">Marketing / Content</b><span class="rtab__one">コンテンツで新しい接点をつくる</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">Marketing / Content</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-bizdev" aria-controls="role-bizdev"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">BIZDEV</span><b class="rtab__n">BizDev</b><span class="rtab__one">事業機会を形にする</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">BizDev</b>
         </button>
         <button class="rtab" type="button" role="tab" id="rt-role-corp" aria-controls="role-corp"
           aria-selected="false" tabindex="-1">
           <svg class="rtab__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
-          <span class="rtab__b"><span class="rtab__en en">CORPORATE</span><b class="rtab__n">Corporate</b><span class="rtab__one">組織と働く環境を支える</span></span>
-          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+          <b class="rtab__n">Corporate</b>
         </button>
       </div>
       <p class="rpick__hint">※ 職種を選ぶと、下に仕事の内容が表示されます。</p>
