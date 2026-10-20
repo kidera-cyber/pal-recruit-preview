@@ -7187,3 +7187,111 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .drvbox .spec dd{padding:6px 15px 13px}
 }
 /* ===== DRVJOB v1 END ===== */
+
+/* ============================================================
+   ===== CMJOB v1 START =====
+   JOBS：センター長・センター長候補の3階層（一覧／共通紹介／拠点別募集要項）用。
+   使用箇所は renewal/jobs/center-manager* のみで、既存ルールは上書きしていない。
+   HTMLは tools/build_center_manager.py が生成するため、クラス名を変更するときは
+   スクリプト側も合わせること。
+   ============================================================ */
+
+/* ---- デモデータの明示（正式な募集情報と取り違えないための注意書き） ---- */
+.cmdemo{margin:0 0 20px;padding:16px 20px 15px;border:1px solid var(--red);
+  border-left-width:4px;border-radius:var(--radius);background:#fff}
+.cmdemo__h{font-size:14.5px;line-height:1.7;font-weight:700;color:var(--red)}
+.cmdemo__t{margin-top:7px;font-size:13px;line-height:1.85;color:var(--sub)}
+
+/* ---- THE ROLE：共通する仕事 6項目 ---- */
+.cmrole{list-style:none;display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cmrole>li{padding:20px 20px 18px;border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:#fff}
+.cmrole .en{display:block;font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.14em;color:var(--red)}
+.cmrole>li>b{display:block;margin-top:7px;font-size:15.5px;line-height:1.6;font-weight:700;color:#000}
+.cmrole>li>p{margin-top:9px;font-size:13.5px;line-height:1.85;color:var(--sub)}
+
+/* ---- 断り書きブロック ---- */
+.cmnote{margin-top:26px;padding:22px 24px 20px;border:1px solid var(--line-mid);
+  border-radius:var(--radius-lg);background:var(--bg-soft)}
+.cmnote__h{font-size:15px;font-weight:700;line-height:1.6;color:#000}
+.cmnote>p{margin-top:9px;font-size:14px;line-height:1.9;color:var(--sub);text-wrap:pretty}
+.cmnote>p>b{font-weight:700;color:#000}
+.cmnote__s{font-size:12.5px!important;color:var(--muted)!important}
+
+/* ---- WORKING ENVIRONMENTS：業態カード ---- */
+.cmenvs{list-style:none;display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cmenv{padding:22px 20px 20px;border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:#fff}
+.cmenv__k{font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  color:var(--red)}
+.cmenv>b{display:block;margin-top:7px;font-size:16px;line-height:1.6;font-weight:700;color:#000}
+.cmenv__t{margin-top:10px;font-size:13.5px;line-height:1.85;color:var(--sub)}
+.cmenv__n{margin-top:12px;padding-top:11px;border-top:1px solid var(--line-soft,#f0f0f2);
+  font-size:12.5px;line-height:1.75;color:var(--muted)}
+
+/* ---- REAL VOICES ---- */
+.cmvoice{display:grid;grid-template-columns:minmax(0,.4fr) minmax(0,1fr);gap:0;
+  border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;background:#fff}
+.cmvoice__head{padding:26px 26px 24px;background:#000}
+.cmvoice__role{font-size:12.5px;line-height:1.7;font-weight:700;letter-spacing:.04em;
+  color:var(--red-on-dark)}
+.cmvoice__name{margin-top:8px;font-family:Lato,sans-serif;font-size:30px;font-weight:900;
+  letter-spacing:.06em;color:#fff}
+.cmvoice__meta{margin-top:12px;font-size:12.5px;line-height:1.85;color:#d6d6d6}
+.cmvoice__body{padding:26px 28px 24px}
+.cmvoice__q{margin-top:20px;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--red)}
+.cmvoice__body>.cmvoice__q:first-child{margin-top:0}
+.cmvoice__t{margin-top:9px;font-size:14.5px;line-height:1.9;color:var(--sub);text-wrap:pretty}
+.cmvoice__n{margin-top:18px;font-size:12.5px;line-height:1.8;color:var(--muted)}
+.cmvoice__cta{margin-top:18px}
+
+/* ---- OPEN POSITIONS：拠点カード（PC2列／スマホ1列） ---- */
+.cmlist{list-style:none;display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start}
+.cmcard{padding:22px 24px 20px;border:1px solid var(--line);border-radius:var(--radius-lg);
+  background:#fff}
+.cmcard--empty{grid-column:1/-1;font-size:14.5px;line-height:1.9;color:var(--sub)}
+.cmcard__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cmchip{padding:4px 11px;border-radius:9999px;font-size:11.5px;font-weight:700;line-height:1.6}
+.cmchip--open{background:var(--red);color:#fff}
+.cmchip--tbd{background:var(--bg-soft);color:var(--sub);border:1px solid var(--line-mid)}
+.cmchip--closed{background:var(--bg-soft);color:var(--muted);border:1px solid var(--line-mid)}
+.cmchip--demo{background:#000;color:#fff}
+.cmcard__id{font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;
+  color:var(--muted)}
+.cmcard__n{margin-top:12px;font-size:17px;line-height:1.55;font-weight:700;color:#000}
+.cmcard__dl{margin-top:14px;display:grid;grid-template-columns:5.5em minmax(0,1fr);
+  gap:8px 14px;align-items:baseline}
+.cmcard__dl dt{font-size:12px;font-weight:700;color:var(--red)}
+.cmcard__dl dd{margin:0;font-size:13.5px;line-height:1.75;color:var(--sub)}
+.cmtbd{color:var(--muted)}
+.cmcard__cta{display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+  padding:11px 18px;border-radius:9999px;background:#000;color:#fff;
+  font-size:13.5px;font-weight:700;text-decoration:none}
+.cmcard__cta:hover{background:#1c1c1c}
+.cmcard__none{margin-top:16px;font-size:12.5px;line-height:1.8;color:var(--muted)}
+
+/* ---- 拠点別募集要項のこまかい見出し ---- */
+.cmsub{margin-bottom:10px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--red)}
+.cmsplit{display:grid;gap:22px 28px;grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start}
+.cmrel{display:flex;flex-wrap:wrap;gap:12px 14px}
+
+@media (max-width:1000px){
+  .cmrole,.cmenvs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cmvoice{grid-template-columns:minmax(0,1fr)}
+  .cmlist,.cmsplit{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  .cmrole,.cmenvs{grid-template-columns:minmax(0,1fr)}
+  .cmdemo{padding:14px 16px 13px}
+  .cmcard{padding:19px 18px 17px}
+  .cmcard__dl{grid-template-columns:minmax(0,1fr);gap:3px}
+  .cmcard__dl dd{margin-bottom:7px}
+  .cmcard__cta{width:100%;justify-content:center}
+  .cmvoice__head,.cmvoice__body{padding:20px 18px 18px}
+  .cmvoice__name{font-size:26px}
+  .cmrel .btn{width:100%;justify-content:center}
+}
+/* ===== CMJOB v1 END ===== */
