@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>株式会社PALとは？物流DXを現場から実装する仕事と強み｜PAL RECRUIT</title>
 <meta name="description" content="株式会社PALは、物流現場の運営を請け負いながら、システム・設備・データを組み合わせて現場で使われる仕組みをつくる会社です。いま物流の仕組みを見直す必要がある背景、FDEという役割、仕事の進め方で大切にしている3つのこと、設立・拠点などの会社概要を紹介します。">
-<!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
-<link rel="canonical" href="./">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="株式会社PAL 採用サイト">
@@ -17,7 +15,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020h">
+<!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
+<link rel="canonical" href="./">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020j">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "PALを知る"}]}</script>
@@ -183,85 +183,73 @@
          CLOは主役にせず、「物流を経営課題として捉える動きが強まっている」の
          補足に留める。「分断」も抽象語のままにせず具体例で説明する。
          未使用化（残置）：.probs / .prob / .prob__no / .prob__list / .prob__sum ===== -->
+    <!-- ===== PALSTR v1：物流業界の課題解説（人手不足／物流コスト／仕事の高度化の3カード、
+         「こうした背景から…」、THE QUESTION「では、誰がこれらを…」、askto）を削除し、
+         PALが何を持ち、どう仕事を進める会社なのかの説明に差し替えた。
+         削除した文章は別表現でも足していない。復元は git 履歴（7c98c38）から。
+         未使用化（残置）：.why3 / .why3__item / .why3__no / .why3__t / .why3__add /
+                           .ask / .ask .en / .askto / .pillars / .pillar
+         ■ 典拠：PR TIMES 原稿（Core シリーズ・公開前ドラフト）のうち、
+           確認済みの事業・運用実績に当たる記述のみを使用している。
+           使っていないもの＝Core シリーズの個別製品名／開発中・開発予定の機能
+           （Core Trace・AIによる実行指示など）／顧客名／効果数値。
+           原稿の編集メモに「数値はダミー・参考値」「顧客名は許諾未確認」「仮称あり」と
+           明記されているため、いずれもこのページには持ち込んでいない。 ===== -->
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Why PAL</p>
-      <h2 class="stitle"><span class="nw">物流の課題を、</span><span class="nw">現場と技術の両方から変える。</span></h2>
-      <p class="slead">物流の現場では、働く人の数も、かかるコストも、求められる品質も変わってきています。まずは、その3つから。</p>
+      <h2 class="stitle"><span class="nw">現場を知り、仕組みをつくり、</span><span class="nw">運用し、改善する。</span></h2>
+      <p class="slead">物流現場の運営で得た知見を、戦略・技術・設備・データ活用へつなぎ、実際に使える仕組みづくりに取り組んでいます。</p>
     </div>
-    <ol class="why3 rv">
-      <li class="why3__item">
-        <p class="why3__no"><span class="en">01</span>人手不足</p>
-        <p class="why3__t">人を増やすだけでは、現場を維持することが難しくなっています。</p>
-      </li>
-      <li class="why3__item">
-        <p class="why3__no"><span class="en">02</span>物流コストの上昇</p>
-        <p class="why3__t">人件費や輸送コストなど、物流にかかる負担は大きくなっています。</p>
-      </li>
-      <li class="why3__item">
-        <p class="why3__no"><span class="en">03</span>求められる仕事の高度化</p>
-        <p class="why3__t">より少ない人員でも、安全・品質・スピードを維持する仕組みが必要です。</p>
-      </li>
-    </ol>
-    <p class="why3__add rv">こうした背景から、物流を経営課題として捉える企業の動きも強まっています。</p>
 
-    <!-- ===== ABOUTCUT v1：削除対象①
-         削除した要素（本文はここに引用しない。復元は git 履歴 59d6dfe を参照）：
-           ・<div class="whygap"> ＝ 見出し1行＋本文1段落＋このブロック専用の
-             区切り線（.whygap の border-top:2px）と上余白 48px
-           ・<p class="why3__add"> 2つ目（3PL への言及）
-         言い換えも、別の場所への移動もしていない。空のコンテナも残していない。
-         CSS の .whygap / .whygap__h / .whygap__t は未使用化（残置）。
-         先行して削除済み：4分断の大型図解（ABOUTSLIM v1）／
-         「PALはその中でも…」（ABOUT-DEDUP v1）。いずれも記録のみ。 ===== -->
-    <!-- ===== ASK v3：濃紺の大判カードを廃止し、問題提起と次セクションをつなぐ
-         ブリッジコピーへ。PCは1〜2行、改行は入れない。 ===== -->
-    <div class="ask rv">
-      <span class="en">THE QUESTION</span>
-      <!-- ABOUTCUT v1：指示語「この4つ」は削除した .whygap 本文を受けていたため
-           参照先が無くなった。説明を足さず、指示語だけを直前の3課題へ向け直す。 -->
-      <b>では、誰がこれらを<b class="hl">ひとつの流れ</b>につなぐのか。</b>
+    <!-- 4つの力。中央にPALを置き、周囲の4領域が一方向ではなく循環することを示す。 -->
+    <div class="force4 rv">
+      <p class="force4__hub"><span class="en">PAL</span><b><span class="nw">現場から改善まで、</span><span class="nw">ひとつながりで関わる</span></b></p>
+      <ol class="force4__list">
+        <li class="force4__i">
+          <p class="force4__no en">01</p>
+          <p class="force4__en en">Field Operation</p>
+          <h3 class="force4__h">現場を、自分たちで知っている。</h3>
+          <p class="force4__t">物流BPOとして、現場の運営そのものを請け負っています。</p>
+          <p class="force4__k">物流BPO・現場運営</p>
+        </li>
+        <li class="force4__i">
+          <p class="force4__no en">02</p>
+          <p class="force4__en en">Strategy &amp; Design</p>
+          <h3 class="force4__h">課題を整理し、改善を設計する。</h3>
+          <p class="force4__t">現場で起きていることを分析し、何をどう変えるかを決めます。</p>
+          <p class="force4__k">現場分析・戦略・実行計画</p>
+        </li>
+        <li class="force4__i">
+          <p class="force4__no en">03</p>
+          <p class="force4__en en">Technology &amp; Data</p>
+          <h3 class="force4__h">技術とデータで、仕組みをつくる。</h3>
+          <p class="force4__t">システム開発に加え、自動化設備やデータの取得・可視化を組み合わせます。</p>
+          <p class="force4__k">システム開発・自動化設備の活用・データの取得と可視化</p>
+        </li>
+        <li class="force4__i">
+          <p class="force4__no en">04</p>
+          <p class="force4__en en">Implementation &amp; Improvement</p>
+          <h3 class="force4__h">現場で動かし、改善を重ねる。</h3>
+          <p class="force4__t">導入して終わりにせず、運用と効果検証を続けます。</p>
+          <p class="force4__k">実装・運用・効果検証・改善</p>
+        </li>
+      </ol>
+      <p class="force4__note">※ 4つは、PALが持つ機能を整理したものです。すべての案件が同じ工程をたどるわけではありません。技術と設備は自社開発に加え、外部製品やパートナーとの連携も含みます。</p>
     </div>
-    <!-- ===== ASKTO v1：THE QUESTION の直後に、次のFDE（OUR PROCESS）への接続文を置く。 ===== -->
-    <p class="askto rv">PALでは、この「つなぎ目」を埋める役割として、<b>FDE（Forward Deployed Engineer）</b>の考え方を物流DXに適用しています。<a class="textlink textlink--sm" href="#process">現場から改善までの進め方を見る</a></p>
 
-    <!-- ===== ABOUTSLIM v1：旧 #how「その理由は、現場と技術の両方にいるから。」を
-         この節へ統合。課題の提示 → PALが取り組む理由 → 事業構造の3領域、までを一続きにした。
-         3領域・ロジテックインテグレーション・3つの強みの文言は変更していない。 ===== -->
-
-    <ul class="pillars rv">
-      <li class="pillar">
-        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
-        <p class="pillar__no en">01</p>
-        <h3><small>STRATEGY</small>戦略を描く</h3>
-        <p>物流戦略の設計から案件設計まで。顧客の課題を構造化し、経営に効く打ち手に落とし込みます。</p>
-      </li>
-      <li class="pillar">
-        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
-        <p class="pillar__no en">02</p>
-        <h3><small>TECHNOLOGY</small>技術をつくる</h3>
-        <p>Core First をはじめとする自社DXプロダクトを開発。データを統合し、経営と現場をつなぎます。</p>
-      </li>
-      <li class="pillar">
-        <svg class="pillar__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
-        <p class="pillar__no en">03</p>
-        <h3><small>OPERATION</small>現場を回す</h3>
-        <p>物流現場の運用そのものを受託。24/365で止めない運用を、自分たちの責任で担います。</p>
-      </li>
-    </ul>
+    <!-- ロジテックインテグレーション：設備・製品の仕様には踏み込まず、
+         「自分たちの現場で試したことを仕組みづくりへ活かしている」だけを伝える。 -->
     <div class="integrate rv">
       <span class="en">LOGITECH INTEGRATION</span>
-      <b>分断された関係者や複数ベンダーを、一つの流れにつなぐ。</b>
-      <span>PALが実践するロジテックインテグレーションは、上の3つの機能を組み合わせて進める方法です。すべてを自社に置き換えるのではなく、既存の3PLや各種パートナーの強みを活かしながら、分断させずに前へ進めます。</span>
+      <b>自分たちの現場で試したことを、仕組みづくりに活かす。</b>
+      <span>PALが運営する倉庫オートメーションセンター「ロジテックインテグレーション」では、搬送・仕分の自動化設備、無線での作業指示、現場アプリ、ダッシュボードを組み合わせた運用を実践してきました。そこで確かめたことを、ほかの現場でも使える仕組みづくりに活かしています。<a class="textlink textlink--sm" href="https://www.pal-style.co.jp/" target="_blank" rel="noopener">コーポレートサイトで見る</a></span>
     </div>
-    <!-- ===== ABOUTSLIM v1：見出し「なかでも、仕事の範囲を決めているのはこの3つ。」を削除。
-     3領域（STRATEGY／TECHNOLOGY／OPERATION）の直下に続く補足なので、節を分けずに
-     つなげた。下の3項目の文言は変更していない（PoVの記述も残している）。 ===== -->
 
-    <!-- ===== EFFECT3 v1：3つの違いが一目で分かるよう、説明文を1〜2行へ短文化。
-         各カード 重要語1つだけを .hl（PALレッド）で強調する。
-         Core First / Core Zero などの詳細はコーポレートサイト側へ委ねる。 ===== -->
+    <!-- ===== PALSTR v1：3つの強みのうち 01 の「外部に預ける工程がないため」は
+         完全内製を断定する表現だったため、関わり方の説明に書き換えた。
+         02・03（既存資産の活用／PoVでの検証）は原文のまま。 ===== -->
     <ul class="effects effects--light effects--row rv">
-      <li><span class="en">01</span><b>戦略から実行まで、一社で担う</b><p>外部に預ける工程がないため、方針が変わっても<b class="hl">一気通貫</b>で動かし続けられます。</p></li>
+      <li><span class="en">01</span><b>戦略から実行まで、続けて関わる</b><p>設計して渡して終わりにせず、運用と改善まで<b class="hl">一気通貫</b>で関わります。</p></li>
       <li><span class="en">02</span><b>既存のシステム・ベンダーを活かす</b><p>すべてを入れ替えるのではなく、<b class="hl">既存資産</b>を活かして最適化します。</p></li>
       <li><span class="en">03</span><b>やる前に、効果を検証する</b><p><b class="hl">PoV（価値検証）</b>で効果を確かめてから進め、投資判断のハードルを下げます。</p></li>
     </ul>
@@ -325,53 +313,21 @@
            見出し直下の余白は .shead の margin-bottom を 34px → 22px に詰めて調整。 ===== -->
     </div>
 
-<!-- ===== FDEFIG v1：図解を「現場 → FDE → 技術・仕組み → 現場へ戻る」の
-         3段＋戻りに絞った。旧版は .pfline / .pfsteps（4段階）/ .pftl（7ステップ）/
-         .pftl__legend が重なり、何を見ればよいか分かりにくかったため、
-         7ステップの帯と凡例、FDE横断ラベルを削除し、4段階だけ残す。
-         図の中の文字数も減らし、詳細は図の下の1文に寄せた。
-         未使用化（残置）：.pfline / .pftl / .pftl--d/p/o/e / .pftl__legend ===== -->
-    <div class="pflow rv">
-      <div class="pflow__row">
-        <div class="pf pf--field">
-          <p class="pf__h"><span class="en">FIELD</span>現場</p>
-          <figure class="pf__ill"><svg aria-hidden="true"><use href="#il-field"></use></svg></figure>
-          <ul class="pf__bub">
-            <li>この作業に時間がかかる</li>
-            <li>この画面が使いにくい</li>
-            <li>もっと安全にできないか</li>
-          </ul>
-        </div>
-        <div class="pf pf--fde">
-          <figure class="pf__ill pf__ill--sm"><svg aria-hidden="true"><use href="#il-person2"></use></svg></figure>
-          <p class="pf__fde"><span class="en">FDE</span>整理する</p>
-          <p class="pf__sub">Forward Deployed Engineer</p>
-          <ol class="pf__t">
-            <li>課題を整理する</li>
-            <li>技術要件へ変える</li>
-          </ol>
-        </div>
-        <div class="pf pf--tech">
-          <p class="pf__h"><span class="en">TECHNOLOGY</span>技術・仕組み</p>
-          <!-- ===== PROCESS-MERGE v1：旧 OUR POSITION の4領域カード
-               （FIELD 物流現場・設備／SYSTEM 自社プロダクト・システム／
-               DATA 受注から配送までのデータ／OPERATION 日々の運用・改善）は
-               この4項目と意味が重複していたため、新しいカード群は追加せず、
-               各項目に1行の補足を足して吸収した。 ===== -->
-          <ul class="pf__ic">
-            <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>システム<small>自社プロダクト</small></li>
-            <li><svg aria-hidden="true"><use href="#ic2-equip"></use></svg>設備<small>物流現場の設備</small></li>
-            <li><svg aria-hidden="true"><use href="#ic2-data"></use></svg>データ<small>受注から配送まで</small></li>
-            <li><svg aria-hidden="true"><use href="#ic2-operate"></use></svg>運用<small>日々の運用・改善</small></li>
-          </ul>
-        </div>
-      </div>
-      <p class="pfback"><i aria-hidden="true">↻</i>つくったものは現場で使われ、そこで出た声が次の改善につながります。</p>
-      <!-- ===== ABOUT-DEDUP v1：4段階（01 DESIGN／02 DEPLOY／03 OPERATE／04 EVOLVE）を削除。
-           TOP「WHAT WE DO」(/renewal/#message) に同じ4段階が職種例つきで掲載されており
-           完全重複だったため。ここはFDEが現場と技術の間で担う役割の説明に集中させる。
-           .pfsteps のCSSは他ページ未使用のまま残置（復元はgit履歴 ca9ca13 から）。 ===== -->
-    </div>
+<!-- ===== PALSTR v1：FIELD → FDE → TECHNOLOGY の大型図解（.pflow）を削除。
+         FIELD と TECHNOLOGY の中身は上の「4つの力」と重複しており、説明図解が
+         2つ続いていたため、主図解を上の1つに集約した。
+         この節に固有だった「FDEが現場の課題を技術要件へ整理する」という役割だけを、
+         1行のフローとして残している。
+         未使用化（残置）：.pflow / .pflow__row / .pf / .pf--field / .pf--fde / .pf--tech /
+                           .pf__h / .pf__ill / .pf__bub / .pf__fde / .pf__sub / .pf__t /
+                           .pf__ic / .pfback
+         復元は git 履歴（7c98c38）から。 ===== -->
+    <ol class="fdeline rv">
+      <li class="fdeline__i"><span class="fdeline__en en">Field</span><b>現場で課題が見つかる</b></li>
+      <li class="fdeline__i fdeline__i--key"><span class="fdeline__en en">FDE</span><b>課題を整理し、技術要件へ変える</b></li>
+      <li class="fdeline__i"><span class="fdeline__en en">Teams</span><b>各部門が実装し、現場で動かす</b></li>
+      <li class="fdeline__i fdeline__i--loop"><span class="fdeline__en en">Improve</span><b>使われた結果が、次の改善に戻る</b></li>
+    </ol>
     <!-- ===== WORK-JOBS v1：部署ごとの役割の列挙（現場運営はBPO・現場運営部門、
          プロダクト開発はシステム・プロダクト企画、輸配送はDTS…）を削除。
          職種ごとの仕事内容はWORKの役割とし、ABOUTは「会社としてどう考えているか」に留める。

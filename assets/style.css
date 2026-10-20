@@ -6887,3 +6887,71 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .ajcard:hover .ajcard__ar,.ajq__a:hover .ajq__ar,.ajq__a:focus-visible .ajq__ar{transform:none}
 }
 /* ===== AJOIN v1 END ===== */
+
+/* ============================================================
+   ===== PALSTR v1 START =====
+   ABOUT「PALの総合力」：4つの力の図解（.force4）と、FDEの1行フロー（.fdeline）。
+   正式ABOUTと比較用プレビューの両方で使えるよう、スコープは付けていない。
+   旧 .why3 / .ask / .askto / .pillars / .pflow 系は、正式ABOUT と
+   about-compact-preview が使用中のため定義は残置する。
+   ============================================================ */
+
+/* ---- 4つの力。中央にPALを置き、周囲の4領域が循環することを示す ---- */
+.force4{margin-top:30px}
+.force4__hub{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;
+  padding:18px 24px;border-radius:var(--radius);background:#000}
+.force4__hub .en{font-size:12px;letter-spacing:.2em;color:var(--red-on-dark)}
+.force4__hub b{font-size:clamp(16px,1.8vw,20px);line-height:1.5;color:#fff}
+.force4__hub .nw{display:inline-block}
+.force4__list{margin-top:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0;border-bottom:1px solid var(--line)}
+.force4__i{position:relative;padding:26px 30px 24px 0;border-top:1px solid var(--line)}
+.force4__i:nth-child(even){padding-left:30px;border-left:1px solid var(--line)}
+/* 循環であることを示す、左端の短い赤い縦罫 */
+.force4__i::before{content:"";position:absolute;left:0;top:26px;width:3px;height:22px;background:var(--red)}
+.force4__i:nth-child(even)::before{left:30px}
+.force4__no{padding-left:14px;font-family:Lato,sans-serif;font-size:26px;font-weight:900;line-height:1;
+  color:var(--red);font-variant-numeric:tabular-nums}
+.force4__i:nth-child(even) .force4__no{padding-left:44px}
+.force4__en{margin-top:9px;font-family:Lato,sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;color:var(--muted)}
+.force4__h{margin-top:8px;font-size:clamp(18px,1.9vw,22px);line-height:1.5;font-weight:700;color:#000;
+  text-wrap:pretty}
+.force4__t{margin-top:10px;font-size:14.5px;line-height:1.85;color:var(--sub);text-wrap:pretty}
+.force4__k{margin-top:12px;font-size:12.5px;line-height:1.7;color:var(--muted)}
+.force4__note{margin-top:20px;max-width:52em;font-size:12.5px;line-height:1.85;color:var(--muted)}
+
+/* 黒帯（.integrate）の中のテキストリンクは、既定の var(--red) だと黒地 3.76:1 で
+   AA未達になる。黒地用の明るい赤（5.11:1）に差し替える。 */
+.integrate .textlink{color:var(--red-on-dark);border-bottom-color:var(--red-on-dark)}
+
+/* ---- FDEの役割を1行で。大型図解の代わり ---- */
+.fdeline{margin-top:26px;list-style:none;display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid #000}
+.fdeline__i{position:relative;padding:20px 22px 20px 0}
+.fdeline__i+.fdeline__i{padding-left:22px;border-left:1px solid var(--line)}
+.fdeline__i+.fdeline__i::before{content:"→";position:absolute;left:-8px;top:22px;
+  font-size:13px;color:var(--red);background:#fff;padding:0 2px;line-height:1}
+.fdeline__en{display:block;font-family:Lato,sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.16em;color:var(--muted)}
+.fdeline__i b{display:block;margin-top:8px;font-size:14.5px;line-height:1.7;color:var(--text);
+  text-wrap:pretty}
+.fdeline__i--key{background:var(--bg-soft)}
+.fdeline__i--key .fdeline__en{color:var(--red)}
+.fdeline__i--key b{font-weight:700;color:#000}
+.fdeline__i--loop .fdeline__en{color:var(--red)}
+
+@media (max-width:860px){
+  .force4__list{grid-template-columns:minmax(0,1fr)}
+  .force4__i,.force4__i:nth-child(even){padding:22px 0 20px 0;border-left:0}
+  .force4__i:nth-child(even)::before{left:0}
+  .force4__i:nth-child(even) .force4__no{padding-left:14px}
+  .force4__hub{padding:16px 18px}
+  .fdeline{grid-template-columns:minmax(0,1fr);border-top:0}
+  .fdeline__i{padding:16px 0;border-top:1px solid var(--line)}
+  .fdeline__i:first-child{border-top:2px solid #000}
+  .fdeline__i+.fdeline__i{padding-left:0;border-left:0}
+  .fdeline__i+.fdeline__i::before{content:"↓";left:0;top:-9px;background:#fff;padding:0 4px}
+  .fdeline__i--key{padding-left:16px;padding-right:16px}
+}
+/* ===== PALSTR v1 END ===== */
