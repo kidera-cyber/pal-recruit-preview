@@ -187,7 +187,7 @@ def build_index():
       <li id="job-dts"><b>4tルート配送ドライバー（DTS / 運送部）</b><a class="textlink textlink--sm" href="dts/">募集要項を見る</a></li>
       <li id="job-marketing"><b>Marketing / Content（マーケティング・コンテンツ制作）</b><span class="others__none">募集条件を確認中です</span></li>
       <li id="job-corporate"><b>Corporate（コーポレート）</b><a class="textlink textlink--sm" href="../people/corporate/">コーポレートの社員インタビュー</a></li>
-      <li id="job-clean"><b>Cleanliness（クレンリネス）</b><span class="others__none">募集条件を確認中です</span></li>
+      <li id="job-clean"><b>Cleanliness（クレンリネス）</b><span class="others__none">現在募集していません</span></li>
     </ul>
     <p class="note rv">※ 4tルート配送ドライバーには正式な募集要項があります。ほかの職種は募集条件を確認中のため、「募集中」として掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
     <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">カジュアル面談・エントリーについて<span class="btn__ico" aria-hidden="true">▶</span></a></p>

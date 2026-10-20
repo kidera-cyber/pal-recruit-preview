@@ -2885,6 +2885,9 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    文字主体リンクリストにする。角丸・影・アイコンは使わず、薄い罫線のみ。
    ============================================================ */
 .slabel--ja{letter-spacing:.04em}
+/* ===== CAREER-VOICES v2：CAREERの「7職種の社員インタビュー」セクションを削除したため、
+   以下の .vlist 系は未使用化（残置）。ほかのページでは使っていない。
+   復元する場合は、CAREERのセクションごと git 履歴から戻すこと。 ===== */
 .vlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;
   list-style:none;border-top:1px solid var(--line-mid,#cacaca)}
 .vlist li{border-bottom:1px solid var(--line)}

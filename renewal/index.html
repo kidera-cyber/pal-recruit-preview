@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261020x">
+<link rel="stylesheet" href="../assets/style.css?v=20261020y">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -166,16 +166,21 @@
       <p class="slead">PALには9つの職種があります。それぞれ異なる専門性を持ち、必要な場面で連携しています。担当している仕事の内容は「仕事を知る」ページでご覧いただけます。</p>
     </div>
     <nav class="work-role-index rv" aria-label="職種から探す">
+<!-- ===== FIELD9 v1：WORKの正式9職種に合わせて FIND YOUR FIELD を更新。
+     ・BizDev は Engagement / Sales・BizDev へ統合したため、独立チップを廃止
+     ・人材派遣営業（work/#role-staffing）を追加
+     ・募集状況は JOBS の掲載と揃える（承認済み求人票のある職種だけを「募集中」にする）
+     旧構成は git 履歴から参照できる。 ===== -->
       <ul class="role-chips">
         <li><a class="role-chip" href="work/#role-bpo"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="role-chip__b"><span class="role-chip__en en">OPERATION</span><b>BPO / 現場運営</b><span class="role-chip__one">現場を安定させ、改善を進める</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
         <li><a class="role-chip" href="work/#role-clean"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-handy"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CLEANLINESS</span><b>Cleanliness / クレンリネス</b><span class="role-chip__one">清掃を、計画と運用で支える</span></span><span class="fchip__st fchip__st--off"><b>募集なし</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
         <li><a class="role-chip" href="work/#role-fde"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="role-chip__b"><span class="role-chip__en en">FDE</span><b>FDE</b><span class="role-chip__one">現場課題を技術へつなぐ</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
         <li><a class="role-chip" href="work/#role-system"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-system"></use></svg><span class="role-chip__b"><span class="role-chip__en en">SYSTEM / PRODUCT</span><b>System / Product</b><span class="role-chip__one">現場で使われる仕組みをつくる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
         <li><a class="role-chip" href="work/#role-dts"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="role-chip__b"><span class="role-chip__en en">TRANSPORT</span><b>DTS / 運送・運行</b><span class="role-chip__one">安全・品質・時間を守って届ける</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-sales"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="role-chip__b"><span class="role-chip__en en">ENGAGEMENT / SALES</span><b>Engagement / Sales</b><span class="role-chip__one">顧客課題を次の提案につなげる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-mkt"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="role-chip__b"><span class="role-chip__en en">MARKETING / CONTENT</span><b>Marketing / Content</b><span class="role-chip__one">コンテンツで新しい接点をつくる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-bizdev"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="role-chip__b"><span class="role-chip__en en">BIZDEV</span><b>BizDev</b><span class="role-chip__one">事業機会を形にする</span></span><span class="fchip__st fchip__st--tbd"><b>確認中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-        <li><a class="role-chip" href="work/#role-corp"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-office"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CORPORATE</span><b>Corporate</b><span class="role-chip__one">組織と働く環境を支える</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-sales"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="role-chip__b"><span class="role-chip__en en">ENGAGEMENT / SALES &amp; BIZDEV</span><b>Engagement / Sales・BizDev</b><span class="role-chip__one">顧客課題を次の提案につなげる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-mkt"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="role-chip__b"><span class="role-chip__en en">MARKETING / CONTENT</span><b>Marketing / Content</b><span class="role-chip__one">コンテンツで新しい接点をつくる</span></span><span class="fchip__st fchip__st--tbd"><b>確認中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-staffing"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-worker"></use></svg><span class="role-chip__b"><span class="role-chip__en en">STAFFING SALES</span><b>人材派遣営業</b><span class="role-chip__one">人材の提案から、物流現場の改善につなげる</span></span><span class="fchip__st"><b>募集中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
+        <li><a class="role-chip" href="work/#role-corp"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-office"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CORPORATE</span><b>Corporate</b><span class="role-chip__one">組織と働く環境を支える</span></span><span class="fchip__st fchip__st--tbd"><b>確認中</b></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
       </ul>
     </nav>
     <div class="ffield__foot rv">
