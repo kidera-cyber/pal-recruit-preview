@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261019x">
+<link rel="stylesheet" href="../assets/style.css?v=20261020a">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -189,76 +189,89 @@
     <div class="shead rv" style="margin-bottom:22px">
       <p class="slabel">People / Real Voices</p>
       <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">その仕事をしている</span><span class="nw">人がいる。</span></h2>
-      <p class="slead">7人の社員が、入社のきっかけから今の仕事までを本人の言葉で話しています。下の見出しは、本人がインタビューで語った言葉です。</p>
+      <!-- RVOICES v1：7名の掲載が「全社員の紹介」と読まれないよう、前半を指定の文面に差し替え。
+           後半「下の見出しは、本人がインタビューで語った言葉です。」は、見出し＝本人の発言である
+           ことを示す必要があるため現行のまま残した。 -->
+      <p class="slead">異なる専門性を持つ社員の、仕事への向き合い方。本人の言葉から、その一部をご紹介します。<br>下の見出しは、本人がインタビューで語った言葉です。</p>
     </div>
+    <!-- ===== RVOICES v1：横長カード（.vcards／.vcard）を、文字を主役にした
+         エディトリアルな一覧（.rvoices／.rvoice）へ差し替え。
+         ・社員アバターの <img> と、その専用領域 <span class="vcard__ph"> をHTMLごと削除。
+           空の alt や中身のない img タグは残していない。画像ファイルは消していない。
+         ・7名の職種カテゴリ・インタビュー見出し・所属・リンク先・掲載順は、
+           現行HTMLから機械抽出してそのまま流用（打ち直し・要約・加筆なし）。
+         ・連番 01-07 を追加（本文ではなく位置を示す装飾テキスト）。
+         ・.vcards / .vcard のCSSは他ページのプレビューが使っているため残置。
+           新しいクラス名にしてあるので、PEOPLE一覧・各インタビュー詳細には影響しない。
+         復元は git 履歴 17b42e2 から。 ===== -->
     <nav aria-label="社員インタビュー">
-      <ul class="vcards rv">
-        <li><a class="vcard" href="people/fde/">
-          <span class="vcard__ph"><img src="../assets/avatar-fde.png?v=20261015dts2" alt="FDE社員 H.Y のイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">FDE</span>
-            <b class="vcard__q">現場で使われて、初めて「できた」と言える。</b>
-            <span class="vcard__prof">H.Y／FDE・2023年新卒入社</span>
+      <ol class="rvoices rv">
+        <li class="rvoice"><a class="rvoice__a" href="people/fde/">
+          <span class="rvoice__no en">01</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">FDE</span>
+            <b class="rvoice__q">現場で使われて、初めて「できた」と言える。</b>
+            <span class="rvoice__prof">H.Y／FDE・2023年新卒入社</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-        <li><a class="vcard" href="people/system/">
-          <span class="vcard__ph"><img src="../assets/avatar-system.png?v=20261015g" alt="DXプロダクト開発のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">ENGINEER</span>
-            <b class="vcard__q">つくるのは、現場が明日から使えるもの。</b>
-            <span class="vcard__prof">M.M／DXプロダクト開発・2026年中途入社</span>
+        <li class="rvoice"><a class="rvoice__a" href="people/system/">
+          <span class="rvoice__no en">02</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">ENGINEER</span>
+            <b class="rvoice__q">つくるのは、現場が明日から使えるもの。</b>
+            <span class="rvoice__prof">M.M／DXプロダクト開発・2026年中途入社</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-        <li><a class="vcard" href="people/bpo/">
-          <span class="vcard__ph"><img src="../assets/avatar-bpo.png?v=20261015dts2" alt="BPO／現場運営のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">BPO</span>
-            <b class="vcard__q">毎日の運営の中に、次の改善がある。</b>
-            <span class="vcard__prof">I.N／BPO事業部 Productivity推進部</span>
+        <li class="rvoice"><a class="rvoice__a" href="people/bpo/">
+          <span class="rvoice__no en">03</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">BPO</span>
+            <b class="rvoice__q">毎日の運営の中に、次の改善がある。</b>
+            <span class="rvoice__prof">I.N／BPO事業部 Productivity推進部</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-        <li><a class="vcard" href="people/dts/">
-          <span class="vcard__ph"><img src="../assets/avatar-dts.png?v=20261014fit" alt="DTS事業部 運送課 千葉営業所 所長 K.Y のイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">DTS</span>
-            <b class="vcard__q">運ぶだけではない。物流を、止めない仕事。</b>
-            <span class="vcard__prof">K.Y／DTS事業部 運送課 千葉営業所 所長・2018年中途入社</span>
+        <li class="rvoice"><a class="rvoice__a" href="people/dts/">
+          <span class="rvoice__no en">04</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">DTS</span>
+            <b class="rvoice__q">運ぶだけではない。物流を、止めない仕事。</b>
+            <span class="rvoice__prof">K.Y／DTS事業部 運送課 千葉営業所 所長・2018年中途入社</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-        <li><a class="vcard" href="people/sales/">
-          <span class="vcard__ph"><img src="../assets/avatar-sales.png?v=20261015g" alt="エンゲージメント・新規営業のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">ENGAGEMENT</span>
-            <b class="vcard__q">売る前に、まず課題を見つける。</b>
-            <span class="vcard__prof">H.S／マーケティング本部 グロース戦略室</span>
+        <li class="rvoice"><a class="rvoice__a" href="people/sales/">
+          <span class="rvoice__no en">05</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">ENGAGEMENT</span>
+            <b class="rvoice__q">売る前に、まず課題を見つける。</b>
+            <span class="rvoice__prof">H.S／マーケティング本部 グロース戦略室</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-        <li><a class="vcard" href="people/cleaning/">
-          <span class="vcard__ph"><img src="../assets/avatar-cleaning.png?v=20261015g" alt="クレンリネス（衛生清掃）のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">CLEANLINESS</span>
-            <b class="vcard__q">食品プロセスセンターの清掃を、計画から支える。</b>
-            <span class="vcard__prof">S.K／BPO・クレンリネス課 MGR</span>
+        <li class="rvoice"><a class="rvoice__a" href="people/cleaning/">
+          <span class="rvoice__no en">06</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">CLEANLINESS</span>
+            <b class="rvoice__q">食品プロセスセンターの清掃を、計画から支える。</b>
+            <span class="rvoice__prof">S.K／BPO・クレンリネス課 MGR</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-        <li><a class="vcard" href="people/corporate/">
-          <span class="vcard__ph"><img src="../assets/avatar-corporate.png?v=20261015g" alt="コーポレート／総務のメンバーのイラスト（プロフィール画像）" width="900" height="975" loading="lazy" decoding="async"></span>
-          <span class="vcard__b">
-            <span class="vcard__cat en">CORPORATE</span>
-            <b class="vcard__q">みんなが働きやすい環境を、仕組みから整える。</b>
-            <span class="vcard__prof">M.K／コーポレート本部 総務課 課長</span>
+        <li class="rvoice"><a class="rvoice__a" href="people/corporate/">
+          <span class="rvoice__no en">07</span>
+          <span class="rvoice__b">
+            <span class="rvoice__cat en">CORPORATE</span>
+            <b class="rvoice__q">みんなが働きやすい環境を、仕組みから整える。</b>
+            <span class="rvoice__prof">M.K／コーポレート本部 総務課 課長</span>
           </span>
-          <i class="vcard__ar" aria-hidden="true">&#8594;</i>
+          <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
-      </ul>
+      </ol>
     </nav>
-    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="people/">社員インタビューの一覧を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="people/">社員インタビューをもっと見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
   </div>
 </section>
 
