@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>物流DXの仕事と職種｜現場運営・FDE・システム開発｜株式会社PAL採用</title>
 <meta name="description" content="株式会社PALの8つの仕事のフィールドと、自社で開発する物流DXプロダクト。現場運営、FDE、プロダクト企画・開発、運行管理、エンゲージメント・新規営業、マーケティング、コーポレートなど、職種ごとの役割と仕事の進め方、PALで働く面白さを紹介します。">
-<!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
-<link rel="canonical" href="./">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="株式会社PAL 採用サイト">
@@ -17,12 +15,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020g">
+<!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
+<link rel="canonical" href="./">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020h">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "仕事を知る"}]}</script>
 </head>
-<body class="p-work">
+<body class="p-work p-ws p-wsa">
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <!-- PAL RECRUIT 専用アイコン：32x32グリッド／線2px・角丸／赤はアクセント1点のみ -->
@@ -106,6 +106,7 @@
     </button>
   </div>
 </header>
+
 <div class="drawer" id="drawer">
   <a href="../">ホーム<span>HOME</span></a>
   <a href="../about/">PALを知る<span>ABOUT</span></a>
@@ -117,42 +118,83 @@
   <a class="btn btn--red" href="../entry/">エントリーする<span class="btn__ico" aria-hidden="true">▶</span></a>
 </div>
 
-<main id="top">
+<main id="main">
 <nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../">採用情報</a><span aria-current="page">仕事を知る</span></div></nav>
-<section class="phead">
+
+<!-- ===== WORKSTORY v1：A案（WORK IS IMPACT）を正式WORKへ反映（2026-10-20 承認）。
+     構成：01 HERO → 02 WHY THIS WORK MATTERS → 03 FIND YOUR ROLE
+           → 04 THE WORK（PC2列カード） → 05 HOW ROLES CONNECT → NEXT STEP
+     ■ 旧構成からの変更
+       ・HERO の H1「仕事を知る。」→「自分の仕事が、現場の変化になる。」
+         title・meta description・canonical・構造化データは変更していない。
+         「仕事を知る」の語はパンくず・グローバルナビ・BreadcrumbList に残る。
+       ・旧 HOW WE WORK「PALの仕事は、職種ごとに役割が違う。」を削除
+         （冒頭の組織説明をやめた。同じ主旨は 05 のリード文が担う）
+       ・旧 WHY PAL IS INTERESTING を 02 として前半へ移動
+       ・2つあったフロー図のうち「そのなかで、仕事はこう進む。」（.cflow 4ステップ＋
+         .flowadd__h）を削除し、「職種は、つながって一つの仕事になる。」1つに統合。
+         削除分は ABOUT #process と work/fde/ に残っていることを確認済み。
+       ・.hub__center の「物流DXを、現場で動く形にする」は文言のまま 02 冒頭に残した。
+     ■ 9職種の職種名・一言・主な仕事・この仕事らしさ・関わる相手・注記・リンク先・
+       社員アバターは、旧WORKから1文字も変えていない（並べ替えのみ）。
+     ■ body の p-ws / p-wsa は、この2列カードのレイアウトを呼び出すクラス。
+       B案プレビュー（work-story-preview-b）が p-wsb を使っているため、
+       クラス名はそのままにしてある。復元は git 履歴（765d190）から。 ===== -->
+
+<!-- 01 ─────────── HERO：WORK IS IMPACT ─────────── -->
+<section class="phead ws-hero">
   <div class="wrap">
-    <p class="slabel">Our Work</p>
-    <h1 class="ptitle">仕事を知る。</h1>
-    <p class="plead">ひとつの職種だけでは完結しません。<br>仕事の中身と、関わる相手からPALの仕事を整理しました。</p>
+    <p class="slabel">Work is Impact</p>
+    <h1 class="ptitle"><span class="nw">自分の仕事が、</span><span class="nw">現場の変化になる。</span></h1>
+    <p class="plead">現場を安定して動かす。技術で仕組みをつくる。顧客の課題に向き合う。<br>それぞれの専門性が、物流の仕事を前に進めています。</p>
+    <p class="ws-hero__nav"><a href="#jobs">9職種の仕事内容を見る</a><a href="../jobs/">募集中の職種を見る</a></p>
   </div>
 </section>
 
-<!-- ===== WORKCHAIN v1 START：現場の課題→職種の連携→動く仕組み→運用・改善 ===== -->
-<!-- ===== WORK-COMPACT v1：縦積みの大型カード（1職種フル幅・計4,346px）をやめ、
-     「導入 → 職種一覧ナビ → 2カラムの職種詳細 → 職種間のつながり → 関連導線」へ再設計。
-     内容の主旨は変えず、レイアウト・情報の優先順位・余白のみを見直している。
-     ・一覧ナビ（nav.work-role-index）で9職種を俯瞰できるようにし、アンカーで詳細へ
-     ・詳細（.role-card）は左＝職種名/一言/主な仕事、右＝関わる相手/この仕事らしさ/導線 の2カラム
-     ・「関わる相手」はタグ表示（.role-people）に変更し、本文から独立させた
-     ・制作上の注釈（「一人で完結する仕事ではありません」等）は削除し、
-       募集状況と確認中の事実だけを注記に残した
-     ・職種の関係図（.jmap2）と仕事の進み方（.cflow）は、後半の1セクションに統合
-     復元は git 履歴（コミット 58916bc）から。 ===== -->
-<section class="sec sec--tight work-overview" id="overview">
+<!-- 02 ─────────── WHY THIS WORK MATTERS ─────────── -->
+<section class="sec sec--soft sec--tight" id="why">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:0">
-      <p class="slabel">How We Work</p>
-      <h2 class="stitle" style="font-size:clamp(24px,2.9vw,34px)"><span class="nw">PALの仕事は、</span><span class="nw">職種ごとに役割が違う。</span></h2>
-      <p class="slead">顧客と向き合う人、現場を運営する人、システムをつくる人。役割は違っても、それぞれの専門性を持ち寄って仕事を進めています。<br>9つの職種が、何を担当し、誰と関わるのかを整理しました。</p>
+    <div class="shead rv" style="margin-bottom:30px">
+      <p class="slabel">Why this work matters</p>
+      <h2 class="stitle" style="font-size:clamp(24px,3vw,38px)"><span class="nw">考えたことが、現場で動く。</span><span class="nw">その手応えがある。</span></h2>
+      <p class="slead">現場・システム・設備・データの分断を、自分たちの手でひとつの流れにつないでいく。<br>そこに、PALで働く面白さがあります。</p>
     </div>
+  <p class="wsw__st rv"><span class="en">PAL</span><b><span class="nw">物流DXを、</span><span class="nw">現場で動く形にする</span></b></p>
+  <ul class="wsw wsw--a rv">
+    <li class="wsw__item">
+      <p class="wsw__no en">01</p>
+      <svg class="wsw__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
+      <b class="wsw__h">現場に近い</b>
+      <p class="wsw__t">机上で考えるだけではなく、実際の物流現場を見ながら仕事を進めます。</p>
+    </li>
+    <li class="wsw__item">
+      <p class="wsw__no en">02</p>
+      <svg class="wsw__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
+      <b class="wsw__h">自分たちで仕組みをつくれる</b>
+      <p class="wsw__t">提案して引き渡すのではなく、つくったものが現場で動くところまで自分の担当範囲になります。</p>
+    </li>
+    <li class="wsw__item">
+      <p class="wsw__no en">03</p>
+      <svg class="wsw__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
+      <b class="wsw__h">職種を越えて仕事ができる</b>
+      <p class="wsw__t">BPO、FDE、システム、営業、DTS、衛生清掃、コーポレート。異なる専門性を持つ人と一緒に進めます。</p>
+    </li>
+    <li class="wsw__item">
+      <p class="wsw__no en">04</p>
+      <svg class="wsw__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+      <b class="wsw__h">変化を自分の目で見られる</b>
+      <p class="wsw__t">自分たちが関わった改善が、現場の動きや仕事の進め方として返ってきます。</p>
+    </li>
+  </ul>
   </div>
 </section>
 
-<section class="sec sec--soft sec--tight" id="roles">
+<!-- 03 ─────────── FIND YOUR ROLE ─────────── -->
+<section class="sec sec--tight" id="roles">
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:22px">
-      <p class="slabel">Our roles</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">9つの職種。</h2>
+      <p class="slabel">Find your role</p>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,31px)">あなたなら、どこから変えていく？</h2>
     </div>
     <nav class="work-role-index rv" aria-label="職種から探す">
       <ul class="role-chips">
@@ -170,20 +212,16 @@
   </div>
 </section>
 
-<section class="sec sec--tight work-role-detail" id="jobs">
+<!-- 04 ─────────── THE WORK ─────────── -->
+<section class="sec sec--soft sec--tight" id="jobs">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:24px">
-      <p class="slabel">What each role does</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">それぞれの職種は、何をしているのか。</h2>
+    <div class="shead rv" style="margin-bottom:26px">
+      <p class="slabel">The work</p>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,31px)">その仕事で、何を任されるのか。</h2>
     </div>
-    <!-- ===== WORKCARD v1：職種カードを「PC2列・縦積み」へ再配置（A案）。
-     上から 職種情報 → 主な仕事 → 関わる相手 → この仕事らしさ → 社員紹介とCTA。
-     9職種の名称・順番・主な仕事の各項目・関わる相手・この仕事らしさ・注記・
-     リンク先は1文字も変えていない（装飾の矢印のみ追加）。
-     社員インタビューや募集要項がない職種（Marketing／BizDev）にはCTAを置いていない。 ===== -->
-<div class="role-cards role-cards--a">
-<article class="role-card rv" id="role-bpo">
-  <div class="role-summary">
+    <div class="ws-cards ws-cards--a">
+<article class="ws-card ws-card--a rv" id="role-bpo">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
       <div>
@@ -192,7 +230,9 @@
       </div>
     </div>
     <p class="role-card__one">現場を安定させ、改善を進める</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>各拠点の稼働状況の確認と、人員配置</li>
             <li>作業進捗・品質・安全の管理</li>
@@ -200,14 +240,12 @@
             <li>取引先との打ち合わせ、現場確認</li>
             <li>拠点間の調整と、改善施策の横展開</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>現場スタッフ</li><li>拠点責任者</li><li>取引先</li><li>DX・システム部門</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
-    </div>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-bpo.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -217,8 +255,8 @@
     </div>
   </div>
 </article>
-<article class="role-card rv" id="role-clean">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-clean">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
       <div>
@@ -227,7 +265,9 @@
       </div>
     </div>
     <p class="role-card__one">清掃を、計画と運用で支える</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>食品プロセスセンターなどの日常清掃・特別清掃</li>
             <li>汚れ方と頻度から考える清掃計画づくり</li>
@@ -235,15 +275,14 @@
             <li>複数センターの進捗・作業終了報告の管理</li>
             <li>見積・請求の作成と、協力会社との連絡</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>各センターの現場</li><li>協力会社</li><li>取引先</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
-    </div>
-    <p class="role-card__note">※ 個別の募集要項は掲載していません。</p>
+    <!-- CLEANOFF v1（2026-10-20）：旧「※ 個別の募集要項は掲載していません。」→ 現状に合わせて明記 -->
+    <p class="ws-card__note">※ クレンリネスは現在募集していません。仕事内容の紹介として掲載しています。</p>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-cleaning.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -252,8 +291,8 @@
     </div>
   </div>
 </article>
-<article class="role-card rv" id="role-fde">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-fde">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
       <div>
@@ -262,7 +301,9 @@
       </div>
     </div>
     <p class="role-card__one">現場課題を技術へつなぐ</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>物流現場での業務課題のヒアリングと整理</li>
             <li>課題を技術要件へ翻訳する</li>
@@ -270,14 +311,12 @@
             <li>開発・改修と、現場での動作確認</li>
             <li>運用後の問い合わせ対応と改善</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
-    </div>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-fde.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -288,8 +327,8 @@
     </div>
   </div>
 </article>
-<article class="role-card rv" id="role-system">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-system">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
       <div>
@@ -298,7 +337,9 @@
       </div>
     </div>
     <p class="role-card__one">現場で使われる仕組みをつくる</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>現場ヒアリングと要件整理</li>
             <li>物流センター向けAndroidアプリの設計・開発</li>
@@ -306,14 +347,12 @@
             <li>倉庫での実機確認と、改善対応</li>
             <li>現場フィードバックの反映と、活用推進</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>物流現場</li><li>FDE</li><li>プロダクト企画</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
-    </div>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-system.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -323,8 +362,8 @@
     </div>
   </div>
 </article>
-<article class="role-card rv" id="role-dts">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-dts">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
       <div>
@@ -333,7 +372,9 @@
       </div>
     </div>
     <p class="role-card__one">安全・品質・時間を守って届ける</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>配送業務・納品対応</li>
             <li>車両点検と、運行前後の確認</li>
@@ -341,15 +382,13 @@
             <li>配車と運行状況の確認・調整</li>
             <li>配送先・物流センターとの連携</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>配送先</li><li>物流センター</li><li>ドライバー</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
-    </div>
-    <p class="role-card__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
+    <p class="ws-card__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-dts.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -359,8 +398,8 @@
     </div>
   </div>
 </article>
-<article class="role-card rv" id="role-sales">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-sales">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
       <div>
@@ -369,7 +408,9 @@
       </div>
     </div>
     <p class="role-card__one">顧客課題を次の提案につなげる</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>既存顧客への定期的な連絡と、関係づくり</li>
             <li>新しい顧客との接点づくり</li>
@@ -377,15 +418,13 @@
             <li>新たな提案・事業機会づくり</li>
             <li>現場・組織の状態把握と、各部門との連携</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>顧客</li><li>センター長</li><li>FDE</li><li>BPO</li><li>システム / プロダクト</li><li>DTS</li><li>BizDev</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
-    </div>
-    <p class="role-card__note">※ 募集条件は確認中です。</p>
+    <p class="ws-card__note">※ 募集条件は確認中です。</p>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-sales.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -394,8 +433,8 @@
     </div>
   </div>
 </article>
-<article class="role-card rv" id="role-mkt">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-mkt">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
       <div>
@@ -404,25 +443,23 @@
       </div>
     </div>
     <p class="role-card__one">コンテンツで新しい接点をつくる</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>市場や顧客の変化を捉える</li>
             <li>コンテンツの企画・制作</li>
             <li>顧客との新しい接点づくり</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
-    </div>
-    <p class="role-card__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
+    <p class="ws-card__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
   </div>
 </article>
-<article class="role-card rv" id="role-bizdev">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-bizdev">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
       <div>
@@ -431,24 +468,22 @@
       </div>
     </div>
     <p class="role-card__one">事業機会を形にする</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>顧客課題と市場機会の整理</li>
             <li>新しい事業・サービスの可能性を形にする</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li><li>社内の各専門部門</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
-    </div>
-    <p class="role-card__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
+    <p class="ws-card__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
   </div>
 </article>
-<article class="role-card rv" id="role-corp">
-  <div class="role-summary">
+<article class="ws-card ws-card--a rv" id="role-corp">
+  <div class="ws-card__top">
     <div class="role-card__head">
       <svg class="role-card__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
       <div>
@@ -457,22 +492,22 @@
       </div>
     </div>
     <p class="role-card__one">組織と働く環境を支える</p>
-    <p class="role-card__ch">主な仕事</p>
+  </div>
+  <div class="ws-card__body">
+    <p class="ws-card__ch">主な仕事</p>
     <ul class="role-points">
             <li>社宅・社用車・通信・資産管理などの日常業務</li>
             <li>社内申請のシステム化</li>
             <li>業務フロー改善</li>
             <li>関係部署との打ち合わせと、中長期的な課題への対応</li>
           </ul>
-  </div>
-  <div class="role-meta">
-    <p class="role-card__ch">関わる相手</p>
+    <p class="ws-card__ch">この仕事らしさ</p>
+    <p class="ws-card__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
+    <p class="ws-card__ch">関わる相手</p>
     <ul class="role-people"><li>各部署のメンバー</li><li>社員</li></ul>
-    <div class="rcwhy">
-      <p class="role-card__ch">この仕事らしさ</p>
-      <p class="role-card__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
-    </div>
-    <p class="role-card__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
+    <p class="ws-card__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
+  </div>
+  <div class="ws-card__foot">
     <div class="rcfoot">
       <div class="rcperson">
         <span class="rcperson__av av-pad"><img src="../../assets/avatar-corporate.png" alt="" width="900" height="975" loading="lazy"></span>
@@ -481,24 +516,26 @@
     </div>
   </div>
 </article>
-</div>
+    </div>
   </div>
 </section>
 
-<section class="sec sec--soft sec--tight work-relationship-diagram" id="flow">
+<!-- 05 ─────────── HOW ROLES CONNECT（1つに統合） ─────────── -->
+<!-- ===== WORKSTORY v1：正式WORKにあった2つのフロー図のうち、
+     「そのなかで、仕事はこう進む。」（.cflow 4ステップ＋.flowadd__h）を削除し、
+     「職種は、つながって一つの仕事になる。」（.wflow）1つに統合した。
+     残した .wflow が、要求された5点をすべて含んでいるため：
+       各職種の役割（01-04に職種名リンク）／顧客との接点（01）／
+       FDEとシステムの関係（02）／現場運営との連携（03）／改善へのつながり（04）
+     削除した .cflow の内容は ABOUT #process（現場→FDE→技術→戻り）と
+     work/fde/ に残っている。復元は git 履歴 ca82a06 から。 ===== -->
+<section class="sec sec--tight" id="connect">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:26px">
+    <div class="shead rv" style="margin-bottom:24px">
       <p class="slabel">How roles connect</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.5vw,29px)">職種は、つながって一つの仕事になる。</h2>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,31px)">職種は、つながって一つの仕事になる。</h2>
       <p class="slead">課題を見つける人、現場で動く形にする人、専門領域で支える人。関わる場面は違っても、ひとつの流れのなかでつながっています。</p>
     </div>
-<!-- ===== WORK-COMPACT v1：9職種を一言つきで並べていた LAYER 図（.jmap2）を、
-         仕事の流れだけを示す横5ステップの連携図に置き換え。
-         一覧ナビ・職種詳細と合わせて同じ職種名を3度並べることになり、
-         ページが縦に伸びる最大の要因になっていたため。
-         職種名はリンクにして該当の詳細ブロックへ飛べるようにしている。
-         旧 .jmap2 / .jlayer / .jrow2 / .jp / .jcycle / .jarrow / .jlink は
-         未使用化（残置）。復元は git 履歴 58916bc から。 ===== -->
     <ol class="wflow rv">
       <li class="wflow__st">
         <p class="wflow__no en">01</p>
@@ -533,62 +570,9 @@
       </li>
     </ol>
     <p class="wflow__base rv"><span class="en">SUPPORT</span><a href="#role-corp">Corporate</a>が、各部門の働く環境を支えます。</p>
-    <h3 class="look3__h rv" style="margin-top:56px"><span class="nw">そのなかで、</span><span class="nw">仕事はこう進む。</span></h3>
-<ol class="cflow rv">
-        <li class="cflow__step">
-          <p class="cflow__no en">FLOW 01</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-field"></use></svg>
-          <h3>現場の違和感に気づく</h3>
-          <p class="cflow__t">作業の滞り、数字の変化、スタッフの声。毎日見ているからこそ気づける、改善につながる課題を見つけます。</p>
-        </li>
-        <li class="cflow__step">
-          <p class="cflow__no en">FLOW 02</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-data"></use></svg>
-          <h3>原因を考える</h3>
-          <p class="cflow__t">現場の状況とデータの双方を確認し、何が問題なのかを整理します。</p>
-        </li>
-        <li class="cflow__step">
-          <p class="cflow__no en">FLOW 03</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic-meeting"></use></svg>
-          <h3>専門性を持ち寄る</h3>
-          <p class="cflow__t">技術で解くのか、運用で変えるのか。現場運営、FDE、エンゲージメント・BizDev、開発がそれぞれの立場から実行できる形に落とします。</p>
-        </li>
-        <li class="cflow__step">
-          <p class="cflow__no en">FLOW 04</p>
-          <svg class="cflow__ico" aria-hidden="true"><use href="#ic2-improve"></use></svg>
-          <h3>現場で試し、改善する</h3>
-          <p class="cflow__t">完成してから確認するのではなく、途中段階から使ってもらい、実際の使われ方を見て、より良い方法へ更新していきます。</p>
-        </li>
-    </ol>
-    <p class="flowadd__h"><span class="en">FDE</span>現場の課題を技術要件へ翻訳し、実装・運用へつなぐ。</p>
   </div>
 </section>
-
-<section class="sec sec--tight" id="whypal">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
-      <p class="slabel">Why PAL is interesting</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">PALの仕事が、面白い理由。</h2>
-      <!-- ===== WHYPAL-TO-WORK v1：原文は「この「分断」を、…」。この指示語はABOUTの
-           「現場・システム・設備・データの分断」図を受けたもので、WORK本文にその説明が
-           ないため、指示語を具体語に置き換えて自己完結させた。文意は変えていない。
-           原文：<p class="slead">この「分断」を、自分たちの手でひとつの流れにつないでいく。<br>そこに、PALで働く面白さがあります。</p> ===== -->
-      <p class="slead">現場・システム・設備・データの分断を、自分たちの手でひとつの流れにつないでいく。<br>そこに、PALで働く面白さがあります。</p>
-    </div>
-    <div class="hub rv">
-      <div class="hub__center">
-        <span class="en">PAL</span>
-        <b><span class="nw">物流DXを、</span><span class="nw">現場で動く形にする</span></b>
-      </div>
-      <ul class="hub__nodes">
-        <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg><b>01　現場に近い</b><span>机上で考えるだけではなく、実際の物流現場を見ながら仕事を進めます。</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-fde"></use></svg><b>02　自分たちで仕組みをつくれる</b><span>提案して引き渡すのではなく、つくったものが現場で動くところまで自分の担当範囲になります。</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg><b>03　職種を越えて仕事ができる</b><span>BPO、FDE、システム、営業、DTS、衛生清掃、コーポレート。異なる専門性を持つ人と一緒に進めます。</span></li>
-        <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg><b>04　変化を自分の目で見られる</b><span>自分たちが関わった改善が、現場の動きや仕事の進め方として返ってきます。</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+</main>
 
 <section class="entry">
   <div class="entry__media"><img src="../../assets/hero-bg.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"></div>
@@ -602,7 +586,6 @@
     <p class="entry__sec"><a href="../entry/">カジュアル面談・エントリーについて</a></p>
   </div>
 </section>
-</main>
 
 <footer class="ftr">
   <div class="wrap">
@@ -653,6 +636,7 @@
     </div>
   </div>
 </footer>
+
 
 <script src="../../assets/app.js?v=20261017a" defer></script>
 </body>

@@ -5735,6 +5735,9 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   background:var(--red);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;line-height:1.5;
   white-space:nowrap}
 .fchip__st--tbd b{background:#fff;color:var(--sub);border:1px solid var(--line-mid)}
+/* CLEANOFF v1：募集していない職種。「確認中」（白地）と区別がつくよう、
+   薄いグレー地に落として主張を弱める。仕事内容の紹介としてタイル自体は残す。 */
+.fchip__st--off b{background:var(--bg-soft);color:var(--muted);border:1px solid var(--line)}
 .ffield__foot{margin-top:22px;padding-top:20px;border-top:1px solid var(--line-mid)}
 .ffield__note{font-size:13.5px;line-height:1.8;color:var(--sub)}
 .ffield__links{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px}
