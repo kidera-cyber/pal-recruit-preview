@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261020f">
+<link rel="stylesheet" href="../assets/style.css?v=20261020g">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -275,109 +275,113 @@
   </div>
 </section>
 
-<!-- ===== HOMEAPP v1：04 DAY IN THE LIFE。
-     時刻・業務内容・順番は一切掲載していない（各インタビューページの A DAY が一次情報）。
-     見出しは掲載ページの h2 をそのまま引用。A DAY が未掲載の営業（sales）は入れていない。 ===== -->
-<section class="sec sec--soft sec--tight" id="day">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:22px">
-      <p class="slabel">A Day in the Life</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">この仕事の、</span><span class="nw">ある1日を見てみる。</span></h2>
-      <p class="slead">出社から退勤まで、何を、どの順番で進めているのか。6つの職種で、実際の1日を時間とともに掲載しています。</p>
-    </div>
-    <nav aria-label="職種ごとの1日の流れ">
-      <ul class="dcards rv">
-        <li><a class="dcard" href="people/fde/#a-day">
-          <span class="dcard__cat en">FDE</span>
-          <b class="dcard__h">FDEの1日。</b>
-          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
-        </a></li>
-        <li><a class="dcard" href="people/system/#a-day">
-          <span class="dcard__cat en">ENGINEER</span>
-          <b class="dcard__h">DXプロダクト開発の1日。</b>
-          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
-        </a></li>
-        <li><a class="dcard" href="people/bpo/#a-day">
-          <span class="dcard__cat en">BPO / 現場運営</span>
-          <b class="dcard__h">BPO / 現場運営の1日。</b>
-          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
-        </a></li>
-        <li><a class="dcard" href="people/dts/#a-day">
-          <span class="dcard__cat en">DTS / 運送</span>
-          <b class="dcard__h">DTSドライバーの1日。</b>
-          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
-        </a></li>
-        <li><a class="dcard" href="people/cleaning/#a-day">
-          <span class="dcard__cat en">CLEANLINESS</span>
-          <b class="dcard__h">クレンリネスの一日。</b>
-          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
-        </a></li>
-        <li><a class="dcard" href="people/corporate/#a-day">
-          <span class="dcard__cat en">CORPORATE / 総務</span>
-          <b class="dcard__h">総務の1日。</b>
-          <span class="dcard__go">1日の流れを見る<i aria-hidden="true">&#8594;</i></span>
-        </a></li>
-      </ul>
-    </nav>
-  </div>
-</section>
 
-<!-- ===== CSPOT v2：旧「AFTER JOINING PAL／入社したら、どんな毎日が始まる？」を
-     CAREER SPOTLIGHT に作り替え、3項目を「読むだけの3ステップ」から
-     「気になることを選んで見に行ける3つの入口」へ。
-     ■ 廃止したもの（原文は career/#start に残っている）
-       ・SCENE 01-04 の4枚のグレーカード（<ol class="scenes">）
-       ・末尾に並んでいた同じ重さのアウトラインボタン2つ
-       ・旧見出し「入社したら、どんな毎日が始まる？」は直前の A DAY IN THE LIFE と
-         目的が重複していたため、役割をキャリアへの入口に変更した
-       復元は git 履歴（bb16918）から。.scenes / .scenes__links のCSSは
-       他プレビュー6件が使用中のため残置。
-     ■ v1 からの変更
-       ・見出し「入社後、どんな経験を重ねていくのか。」→「入社後の自分を、想像できていますか。」
-         赤は「想像」の2文字だけに当てている（黒地 5.11:1／大見出しのためAA）
-       ・3項目を問いかけ型にし、項目全体を <a> にしてキーボードでも操作できるようにした
-       ・遷移先が違うことが分かるよう、各項目に CAREER 側のセクション名を表示
-       ・主CTA「PALで描くキャリアを見る」→「入社後の仕事とキャリアを知る」（リンク先は career/ のまま）
-     ■ リンク先は CAREER ページに実在するIDのみを使用（推測していない）
-       #start   → 「01 Start／入社して、最初にすること。」
-       #growth  → 「02 Growth process／理解する。実践する。自分で考えて動く。」
-       #career  → 「03 Career path／専門性を深める。仕事の幅を広げる。」
-     ■ 3つは閲覧テーマであり、研修工程でも昇格順序でもない。注記は残している。
-       職種間の異動や標準キャリアを示唆する表現は入れていない。
+<!-- ===== AJOIN v1：旧「A DAY IN THE LIFE」(#day) と「CAREER SPOTLIGHT」(#after) を
+     ひとつの AFTER JOINING PAL ＝ WORK LIFE & CAREER に統合。
+     ■ 統合の考え方
+       01 実際の1日（短期）→ 02 その先のキャリア（中長期）という1本の流れにした。
+       背景は切り替えず黒で通し、エリア間は細い区切り線だけでつなぐ。
+       職種カード（ダークグレーのUI）とキャリアの問い（赤い番号と罫のエディトリアル）で
+       情報の種類を見た目で区別している。
+     ■ 中身は既存HTMLから機械抽出してそのまま流用（打ち直し・要約・加筆なし）
+       6職種の職種ラベル・1日のタイトル・リンク先（people/*/#a-day）・掲載順
+       キャリア3問の番号・問い・補足・リンク先（career/#start|#growth|#career）・注記
+     ■ 1日の流れの時刻・内容・順番はHOMEに転記していない。リンクのみ。
+       DTSは既存どおり「DTSドライバーの1日」。社員インタビューの営業所長とは別。
+     ■ 下部のCTAは1本だけ。6職種カードが各1日へ直接リンクするため、
+       「1日の流れを見る」の重複CTAは置いていない。
      ===== -->
-<section class="csp" id="after">
-  <div class="csp__in wrap">
-    <p class="csp__label en">Career / Your Next Chapter</p>
-    <h2 class="csp__ttl"><span class="nw">入社後の自分を、</span><span class="nw"><em>想像</em>できていますか。</span></h2>
-    <p class="csp__lead">最初に任される仕事も、経験の積み方も、職種によって異なります。<br>PALでの仕事とキャリアを、もう少し具体的に見てみませんか。</p>
-    <ol class="csp__themes">
-      <li class="csp__th">
-        <a class="csp__a" href="career/#start">
-          <span class="csp__no en">01</span>
-          <b class="csp__q">入社して最初に、<span class="nw">何をする？</span></b>
-          <span class="csp__t">最初に関わる仕事や、現場との関わり方</span>
-          <span class="csp__go"><span class="csp__dest en">CAREER / START</span><i class="csp__ar" aria-hidden="true">&#8594;</i></span>
-        </a>
-      </li>
-      <li class="csp__th">
-        <a class="csp__a" href="career/#growth">
-          <span class="csp__no en">02</span>
-          <b class="csp__q"><span class="nw">どんな経験を</span><span class="nw">積んでいく？</span></b>
-          <span class="csp__t">仕事を覚え、役割が広がっていく過程</span>
-          <span class="csp__go"><span class="csp__dest en">CAREER / GROWTH PROCESS</span><i class="csp__ar" aria-hidden="true">&#8594;</i></span>
-        </a>
-      </li>
-      <li class="csp__th">
-        <a class="csp__a" href="career/#career">
-          <span class="csp__no en">03</span>
-          <b class="csp__q">その先に、<span class="nw">どんな道がある？</span></b>
-          <span class="csp__t">職種ごとのキャリアや専門性の広がり</span>
-          <span class="csp__go"><span class="csp__dest en">CAREER / CAREER PATH</span><i class="csp__ar" aria-hidden="true">&#8594;</i></span>
-        </a>
-      </li>
-    </ol>
-    <p class="csp__cta"><a class="btn btn--red btn--lg" href="career/">入社後の仕事とキャリアを知る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
-    <p class="csp__note">※ 上の3つは、CAREERページを読むための切り口です。全社員共通の研修ステップや、昇格・職種転換の順序ではありません。</p>
+<section class="aj" id="after">
+  <div class="aj__in wrap">
+
+    <!-- AREA A：イントロ -->
+    <div class="aj__intro rv">
+      <p class="aj__labels"><span class="aj__label en">After Joining PAL</span><span class="aj__sub en">Work Life &amp; Career</span></p>
+      <h2 class="aj__ttl"><span class="nw">入社後の自分を、</span><span class="nw"><em>想像</em>できていますか。</span></h2>
+      <p class="aj__lead">実際の仕事の1日から、経験を重ねた先のキャリアまで。<br>気になる職種から、PALで働く毎日を見てみませんか。</p>
+    </div>
+
+    <!-- AREA B：01 / A DAY IN THE LIFE -->
+    <div class="aj__area rv">
+      <div class="aj__ah">
+        <p class="aj__ano en">01</p>
+        <div class="aj__ahb">
+          <p class="aj__aen en">A Day in the Life</p>
+          <h3 class="aj__at">まずは、<span class="nw">実際の1日を</span><span class="nw">のぞいてみる。</span></h3>
+        </div>
+      </div>
+      <nav aria-label="職種ごとの1日の流れ">
+        <ul class="ajcards">
+        <li><a class="ajcard" href="people/fde/#a-day">
+          <span class="ajcard__top"><span class="ajcard__cat en">FDE</span><i class="ajcard__ar" aria-hidden="true">&#8594;</i></span>
+          <b class="ajcard__h">FDEの1日。</b>
+          <span class="ajcard__go">1日の流れを見る</span>
+        </a></li>
+        <li><a class="ajcard" href="people/system/#a-day">
+          <span class="ajcard__top"><span class="ajcard__cat en">ENGINEER</span><i class="ajcard__ar" aria-hidden="true">&#8594;</i></span>
+          <b class="ajcard__h">DXプロダクト開発の1日。</b>
+          <span class="ajcard__go">1日の流れを見る</span>
+        </a></li>
+        <li><a class="ajcard" href="people/bpo/#a-day">
+          <span class="ajcard__top"><span class="ajcard__cat en">BPO / 現場運営</span><i class="ajcard__ar" aria-hidden="true">&#8594;</i></span>
+          <b class="ajcard__h">BPO / 現場運営の1日。</b>
+          <span class="ajcard__go">1日の流れを見る</span>
+        </a></li>
+        <li><a class="ajcard" href="people/dts/#a-day">
+          <span class="ajcard__top"><span class="ajcard__cat en">DTS / 運送</span><i class="ajcard__ar" aria-hidden="true">&#8594;</i></span>
+          <b class="ajcard__h">DTSドライバーの1日。</b>
+          <span class="ajcard__go">1日の流れを見る</span>
+        </a></li>
+        <li><a class="ajcard" href="people/cleaning/#a-day">
+          <span class="ajcard__top"><span class="ajcard__cat en">CLEANLINESS</span><i class="ajcard__ar" aria-hidden="true">&#8594;</i></span>
+          <b class="ajcard__h">クレンリネスの一日。</b>
+          <span class="ajcard__go">1日の流れを見る</span>
+        </a></li>
+        <li><a class="ajcard" href="people/corporate/#a-day">
+          <span class="ajcard__top"><span class="ajcard__cat en">CORPORATE / 総務</span><i class="ajcard__ar" aria-hidden="true">&#8594;</i></span>
+          <b class="ajcard__h">総務の1日。</b>
+          <span class="ajcard__go">1日の流れを見る</span>
+        </a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- AREA C：02 / CAREER PATH -->
+    <div class="aj__area rv">
+      <div class="aj__ah">
+        <p class="aj__ano en">02</p>
+        <div class="aj__ahb">
+          <p class="aj__aen en">Career Path</p>
+          <h3 class="aj__at">その先、<span class="nw">どんな経験が待っている？</span></h3>
+        </div>
+      </div>
+      <ol class="ajq">
+        <li class="ajq__i"><a class="ajq__a" href="career/#start">
+          <span class="ajq__no en">01</span>
+          <b class="ajq__q">入社して最初に、<span class="nw">何をする？</span></b>
+          <span class="ajq__t">最初に関わる仕事や、現場との関わり方</span>
+          <span class="ajq__dest en">CAREER / START</span>
+          <i class="ajq__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li class="ajq__i"><a class="ajq__a" href="career/#growth">
+          <span class="ajq__no en">02</span>
+          <b class="ajq__q"><span class="nw">どんな経験を</span><span class="nw">積んでいく？</span></b>
+          <span class="ajq__t">仕事を覚え、役割が広がっていく過程</span>
+          <span class="ajq__dest en">CAREER / GROWTH PROCESS</span>
+          <i class="ajq__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+        <li class="ajq__i"><a class="ajq__a" href="career/#career">
+          <span class="ajq__no en">03</span>
+          <b class="ajq__q">その先に、<span class="nw">どんな道がある？</span></b>
+          <span class="ajq__t">職種ごとのキャリアや専門性の広がり</span>
+          <span class="ajq__dest en">CAREER / CAREER PATH</span>
+          <i class="ajq__ar" aria-hidden="true">&#8594;</i>
+        </a></li>
+      </ol>
+      <p class="aj__cta"><a class="btn btn--red btn--lg" href="career/">入社後の仕事とキャリアを知る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+      <p class="aj__note">※ 上の3つは、CAREERページを読むための切り口です。全社員共通の研修ステップや、昇格・職種転換の順序ではありません。</p>
+    </div>
+
   </div>
 </section>
 

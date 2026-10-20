@@ -6759,6 +6759,13 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    ・横幅・余白の基準と 01/02 の番号体系、見出しのタイポグラフィは両エリアで共通
    旧 .dcards / .dcard と .csp 系は、正式HOMEと他プレビューが使用中のため残置。
    ============================================================ */
+/* AJOIN v1 を正式HOMEに反映済み（2026-10-20）。
+   旧 .dcards / .dcard（A DAY の白カード）と .csp 系（CAREER SPOTLIGHT）は
+   正式HOMEでは未使用になったが、比較用プレビューが使用中のため残置する：
+     .dcard → home-recruit-preview / nav-preview / theme-a / theme-b /
+              design-red-black-a / design-red-black-b / home-sections-preview
+     .csp   → home-career-spotlight-preview / design-red-black-a・b 系
+   復元は git 履歴（765d190）から。 */
 .aj{position:relative;background:#000;color:#fff;padding-block:100px;overflow:hidden}
 .aj::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;
   background:linear-gradient(90deg,var(--red) 0,var(--red-lt) 100%)}
