@@ -6749,3 +6749,131 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .csp__a:hover .csp__ar,.csp__a:focus-visible .csp__ar{transform:none}
 }
 /* ===== CSPOT v1 END ===== */
+
+/* ============================================================
+   ===== AJOIN v1 START =====
+   HOME「AFTER JOINING PAL ／ WORK LIFE & CAREER」統合セクション。
+   旧 #day（A DAY IN THE LIFE）と旧 #after（CAREER SPOTLIGHT）を1枚の黒面に統合する。
+   ・背景は切り替えず黒で通し、エリア間は細い区切り線だけでつなぐ
+   ・職種カード（ダークグレーのUI）とキャリアの問い（赤い番号と罫）で情報の種類を分ける
+   ・横幅・余白の基準と 01/02 の番号体系、見出しのタイポグラフィは両エリアで共通
+   旧 .dcards / .dcard と .csp 系は、正式HOMEと他プレビューが使用中のため残置。
+   ============================================================ */
+.aj{position:relative;background:#000;color:#fff;padding-block:100px;overflow:hidden}
+.aj::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;
+  background:linear-gradient(90deg,var(--red) 0,var(--red-lt) 100%)}
+.aj__in{position:relative;z-index:1}
+
+/* ---- AREA A：イントロ（大きくしすぎない） ---- */
+.aj__labels{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.aj__label{display:inline-block;padding:6px 13px;border-radius:3px;background:#fff;color:#000;
+  font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.aj__sub{font-size:11px;letter-spacing:.2em;color:var(--red-on-dark)}
+.aj__ttl{margin-top:20px;font-size:clamp(28px,4vw,52px);line-height:1.34;letter-spacing:.005em;
+  font-weight:700;color:#fff;text-wrap:balance}
+.aj__ttl .nw{display:inline-block;max-width:100%}
+.aj__ttl em{font-style:normal;color:var(--red-on-dark)}
+.aj__ttl::after{content:"";display:block;width:64px;height:4px;margin-top:20px;background:var(--red)}
+.aj__lead{margin-top:22px;max-width:44em;font-size:16px;line-height:2.05;color:#d2d2d2;text-wrap:pretty}
+
+/* ---- 2つのエリアに共通の見出し（番号体系・字送りをそろえる） ---- */
+.aj__area{margin-top:60px;padding-top:44px;border-top:1px solid rgba(255,255,255,.18)}
+.aj__ah{display:flex;align-items:baseline;gap:20px;margin-bottom:26px}
+.aj__ano{font-family:Lato,sans-serif;font-size:clamp(30px,3.4vw,42px);font-weight:900;line-height:1;
+  color:var(--red-on-dark);font-variant-numeric:tabular-nums}
+.aj__aen{font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#9a9a9a}
+.aj__at{margin-top:8px;font-size:clamp(21px,2.5vw,30px);line-height:1.45;font-weight:700;color:#fff;
+  text-wrap:pretty}
+.aj__at .nw{display:inline-block;max-width:100%}
+@media (max-width:860px){ .aj__ah{flex-direction:column;gap:6px} .aj__ano{line-height:1} }
+
+/* ---- AREA B：職種カード（ダークグレーのUI） ----
+   カード面は黒地より明るいため、--red-on-dark（#f61c25）だと
+   通常 4.48:1 / ホバー 4.15:1 で AA を割る。カード面専用に一段だけ明るい赤を置く。
+   #ff3139：通常 5.04:1 ／ ホバー 5.06:1 ／ 黒地 5.75:1 でいずれもAA。 */
+.ajcards{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+  --red-on-card:#ff3139}
+.ajcard{display:flex;flex-direction:column;height:100%;min-height:168px;
+  padding:20px 22px 22px;border-radius:6px;background:#141414;border:1px solid #2e2e2e;
+  transition:background-color .25s,border-color .25s}
+.ajcard:hover{background:#1c1c1c;border-color:var(--red)}
+.ajcard__top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ajcard__cat{font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;
+  color:var(--red-on-card,#ff3139);line-height:1.5}
+.ajcard__ar{flex:0 0 auto;font-style:normal;font-size:15px;color:var(--red-on-card,#ff3139);
+  transition:transform .25s var(--ease)}
+.ajcard:hover .ajcard__ar{transform:translateX(4px)}
+.ajcard__h{display:block;margin-top:14px;font-size:18.5px;line-height:1.5;font-weight:700;color:#fff;
+  text-wrap:pretty}
+.ajcard__go{display:block;margin-top:auto;padding-top:18px;font-size:12.5px;line-height:1.6;color:#b4b4b4}
+
+/* ---- AREA C：キャリアの問い（カードにせず、赤い番号と罫で見せる） ---- */
+.ajq{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.ajq__i{position:relative}
+.ajq__a{position:relative;display:block;height:100%;padding:24px 56px 22px 0;
+  border-top:1px solid rgba(255,255,255,.22);transition:background-color .25s var(--ease)}
+.ajq__i+.ajq__i .ajq__a{padding-left:30px;border-left:1px solid rgba(255,255,255,.22)}
+.ajq__a::before{content:"";position:absolute;left:0;top:-1px;width:0;height:2px;
+  background:var(--red-lt);transition:width .3s var(--ease)}
+.ajq__i+.ajq__i .ajq__a::before{left:-1px}
+.ajq__a:hover::before,.ajq__a:focus-visible::before{width:100%}
+.ajq__a:hover,.ajq__a:focus-visible{background:rgba(255,255,255,.045)}
+.ajq__no{display:block;font-family:Lato,sans-serif;font-size:30px;font-weight:900;line-height:1;
+  color:var(--red-on-dark);font-variant-numeric:tabular-nums}
+.ajq__q{display:block;margin-top:14px;font-size:clamp(18px,2vw,23px);line-height:1.5;font-weight:700;
+  color:#e4e4e4;text-wrap:pretty;transition:color .25s}
+.ajq__q .nw{display:inline-block;max-width:100%}
+.ajq__a:hover .ajq__q,.ajq__a:focus-visible .ajq__q{color:#fff}
+.ajq__t{display:block;margin-top:10px;font-size:13.5px;line-height:1.8;color:#b4b4b4}
+.ajq__dest{display:block;margin-top:16px;font-size:11px;letter-spacing:.14em;color:#8f8f8f;
+  transition:color .25s}
+.ajq__a:hover .ajq__dest,.ajq__a:focus-visible .ajq__dest{color:var(--red-on-dark)}
+/* 右端の固定タブ（.sidecta／幅58px）に重ならないよう内側へ寄せる */
+.ajq__ar{position:absolute;right:40px;top:22px;font-style:normal;font-size:16px;
+  color:var(--red-on-dark);transition:transform .25s var(--ease)}
+.ajq__a:hover .ajq__ar,.ajq__a:focus-visible .ajq__ar{transform:translateX(4px)}
+/* 黒地では既定の赤いフォーカスリング（3.76:1）が沈むので明るい赤に */
+.aj :focus-visible{outline:3px solid var(--red-lt);outline-offset:-3px}
+
+/* ---- 下部CTA（1本だけ）と注記 ---- */
+.aj__cta{margin-top:46px}
+.aj__cta .btn{padding:21px 40px;font-size:17.5px;box-shadow:0 10px 28px rgba(207,19,27,.34)}
+.aj__cta .btn__ico{width:30px;height:30px;font-size:12px}
+.aj__note{margin-top:26px;max-width:48em;font-size:13.5px;line-height:1.95;color:#b4b4b4}
+
+@media (max-width:1100px){
+  .ajcards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .aj{padding-block:64px}
+  .aj__ttl{margin-top:18px}
+  .aj__area{margin-top:44px;padding-top:34px}
+  .aj__ah{gap:14px;margin-bottom:20px}
+  .ajcard{min-height:0;padding:18px 18px 20px}
+  .ajcard__h{margin-top:12px;font-size:16.5px}
+  .ajcard__go{padding-top:14px;font-size:12px}
+  .ajq{grid-template-columns:minmax(0,1fr)}
+  .ajq__a,.ajq__i+.ajq__i .ajq__a{padding:22px 44px 20px 0;border-left:0}
+  .ajq__i+.ajq__i .ajq__a::before{left:0}
+  .ajq__no{font-size:26px}
+  .ajq__q{font-size:19.5px}
+  .ajq__ar{right:0;top:20px}
+  .aj__cta{margin-top:34px}
+  .aj__cta .btn{width:100%;justify-content:center;padding-block:18px}
+  .aj__note{margin-top:22px;font-size:13px}
+}
+@media (max-width:370px){
+  /* 360px 以下でカード内の文字が詰まるため1列へ */
+  .ajcards{grid-template-columns:minmax(0,1fr)}
+}
+/* スマホはホバー前提にしない */
+@media (hover:none){
+  .ajq__a::before{width:100%;opacity:.45}
+  .ajq__q{color:#fff}
+  .ajcard{border-color:#3c3c3c}
+}
+@media (prefers-reduced-motion:reduce){
+  .ajcard,.ajcard__ar,.ajq__a,.ajq__a::before,.ajq__q,.ajq__dest,.ajq__ar{transition:none}
+  .ajcard:hover .ajcard__ar,.ajq__a:hover .ajq__ar,.ajq__a:focus-visible .ajq__ar{transform:none}
+}
+/* ===== AJOIN v1 END ===== */
