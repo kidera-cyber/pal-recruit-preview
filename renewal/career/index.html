@@ -763,7 +763,6 @@
         <nav aria-label="採用サイト内ナビゲーション">
           <a href="../about/">PALを知る</a>
           <a href="../about/">PALを知る（Mission / Position）</a>
-          <a href="../work/fde/">FDEという仕事</a>
           <a href="../work/">仕事を知る</a>
           <a href="../career/">キャリアの掛け合わせ</a>
           <a href="../career/">キャリアパス</a>
@@ -793,6 +792,27 @@
   </div>
 </footer>
 
+<!-- ===== CPHASH v1：URLハッシュで職種別キャリアパスのタブを開く。
+     WORKのFDEパネルから career/#cp-fde へ飛んだときに、該当タブが開いた状態で
+     着地できるようにするための追加。このページだけで使う最小限のJS。
+     掲載内容・タブ構成・本文は変更していない。
+     app.js（defer）のタブ初期化のあとに動かすため DOMContentLoaded で待つ。 ===== -->
+<script>
+(function(){
+  function open(){
+    var id=(location.hash||'').replace('#','');
+    if(!id) return;
+    var tab=document.getElementById(id.indexOf('cp-tab-')===0?id:'cp-tab-'+id.replace(/^cp-/,''));
+    if(!tab||tab.getAttribute('role')!=='tab') return;
+    if(tab.getAttribute('aria-selected')!=='true') tab.click();
+    var panel=document.getElementById(tab.getAttribute('aria-controls'));
+    if(panel) panel.scrollIntoView({behavior:'auto',block:'start'});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',open);
+  else open();
+  window.addEventListener('hashchange',open);
+})();
+</script>
 <script src="../../assets/app.js?v=20261017a" defer></script>
 </body>
 </html>

@@ -133,7 +133,7 @@
        ・旧 WHY PAL IS INTERESTING を 02 として前半へ移動
        ・2つあったフロー図のうち「そのなかで、仕事はこう進む。」（.cflow 4ステップ＋
          .flowadd__h）を削除し、「職種は、つながって一つの仕事になる。」1つに統合。
-         削除分は ABOUT #process と work/fde/ に残っていることを確認済み。
+         削除分は ABOUT #process と WORK の FDE タブに残っていることを確認済み。
        ・.hub__center の「物流DXを、現場で動く形にする」は文言のまま 02 冒頭に残した。
      ■ 9職種の職種名・一言・主な仕事・この仕事らしさ・関わる相手・注記・リンク先・
        社員アバターは、旧WORKから1文字も変えていない（並べ替えのみ）。
@@ -334,7 +334,7 @@
         <div class="rpanel__top">
           <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
           <div>
-            <p class="rpanel__en en">FDE</p>
+            <p class="rpanel__en en">FORWARD DEPLOYED ENGINEER</p>
             <h3 class="rpanel__n">FDE</h3>
             <p class="rpanel__one">現場課題を技術へつなぐ</p>
           </div>
@@ -355,10 +355,46 @@
             <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
           </div>
         </div>
+
+        <!-- ===== FDEMERGE v1：FDE特設ページ（renewal/work/fde/）の内容をこのパネルへ統合。
+             FDEだけが別ページ・別デザインを持つ構造をやめ、9職種を同じ選択UIで紹介するため。
+             移植元の8項目フローは4つのまとまりへ再構成し、各項目の具体的な記述は保持している。
+             統合時に採用しなかった記述とその理由は完了報告に記載。
+             このブロックは #role-fde のパネル内にのみ置き、他8職種のパネルは変更していない。 ===== -->
+        <div class="rfde">
+          <h4 class="rfde__h"><span class="nw">仕様書だけでは、現場は動かない。</span><span class="nw">だから、現場に入り込む。</span></h4>
+          <p class="rfde__lead">FDE（Forward Deployed Engineer）は、顧客の業務課題と技術の間をつなぐエンジニアの職種です。立ち位置は、顧客に近い場所。課題を整理して提案するだけでなく、技術を実際に使える形へ落とし込むところまで関わります。生み出すものは提案書や計画ではなく、現場で使われる仕組みです。</p>
+
+          <p class="rpanel__ch">仕事の流れ</p>
+          <ol class="rfde__flow">
+            <li><span class="en">01</span><b>現場を知る</b>
+              <p><span>現場へ行く</span>倉庫や配送の現場に入り、実際の動きを見る。</p>
+              <p><span>話を聞く</span>現場責任者や作業者に、何に困っているかを聞く。</p></li>
+            <li><span class="en">02</span><b>課題を技術へつなぐ</b>
+              <p><span>課題を整理する</span>帳票外の判断や例外処理を書き出し、論点を絞る。</p>
+              <p><span>技術要件へ翻訳する</span>現場の言葉を、画面・帳票・データの要件に置き換える。</p></li>
+            <li><span class="en">03</span><b>仕組みをつくる</b>
+              <p><span>設計する</span>平常時の運用と、止まったときの切り替えを設計する。</p>
+              <p><span>実装する</span>エンジニアと組み、自社プロダクトを現場に合わせて形にする。</p></li>
+            <li><span class="en">04</span><b>使われ方を見て改善する</b>
+              <p><span>使われ方を見る</span>導入後に現場へ戻り、実際に使われているかを確認する。</p>
+              <p><span>改善する</span>訓練を重ね、手順とシステムを更新し続ける。</p></li>
+          </ol>
+          <p class="rfde__note">※ 上の4つは仕事内容を理解するための整理で、すべての案件が同じ順に進むわけではありません。進め方はプロジェクトや現場によって異なります。設計・実装・運用は、システム / プロダクト企画やBPO・現場運営などの専門部門と分担して進めます。</p>
+
+          <p class="rpanel__ch">FDEが大切にしていること</p>
+          <ul class="rfde__pts">
+            <li><i>01</i><b>例外処理を、業務観察から拾い上げる</b><p>仕様書に現れない現場の判断を可視化する。</p></li>
+            <li><i>02</i><b>暗黙知を、代替運用の設計へ</b><p>属人化していた手順を、ほかの人でも動かせる形にする。</p></li>
+            <li><i>03</i><b>効率化と、止まったときの切り替えを設計する</b><p>平常時の運用だけでなく、止まったときの手順まで含めて考える。</p></li>
+            <li><i>04</i><b>訓練を通じて、手順を更新し続ける</b><p>設計して終わりにせず、現場に伴走しながら手順を直していく。</p></li>
+          </ul>
+        </div>
+        <!-- ===== FDEMERGE v1 END ===== -->
           <div class="rpanel__foot">
-            <a class="rcbtn rcbtn--main" href="../people/fde/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
-            <a class="rcbtn rcbtn--sub" href="../jobs/fde/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
-            <a class="rcbtn rcbtn--text" href="../work/fde/">FDEをくわしく見る<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--main" href="../people/fde/">FDEとして働く社員の声を見る<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--sub" href="../career/#cp-fde">FDEのキャリアを見る<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--sub" href="../jobs/fde/">FDEの募集要項を見る<i aria-hidden="true">&#8594;</i></a>
           </div>
       </article>
       <article class="rpanel" role="tabpanel" id="role-system"
@@ -551,7 +587,7 @@
        各職種の役割（01-04に職種名リンク）／顧客との接点（01）／
        FDEとシステムの関係（02）／現場運営との連携（03）／改善へのつながり（04）
      削除した .cflow の内容は ABOUT #process（現場→FDE→技術→戻り）と
-     work/fde/ に残っている。復元は git 履歴 ca82a06 から。 ===== -->
+     WORK の FDE タブに統合済み。復元は git 履歴 ca82a06 から。 ===== -->
 <section class="sec sec--tight" id="connect">
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:24px">
@@ -630,7 +666,6 @@
         <nav aria-label="採用サイト内ナビゲーション">
           <a href="../about/">PALを知る</a>
           <a href="../about/">PALを知る（Mission / Position）</a>
-          <a href="../work/fde/">FDEという仕事</a>
           <a href="../work/">仕事を知る</a>
           <a href="../career/">キャリアの掛け合わせ</a>
           <a href="../career/">キャリアパス</a>

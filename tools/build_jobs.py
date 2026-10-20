@@ -55,11 +55,12 @@ def card(o):
 
 def group(key):
     c = CATS[key]
+    hub = ('<a class="textlink textlink--sm" href="%s">%s</a>を見る。' % (e(c["hub"]), e(c["hub_label"]))) if c.get("hub") else ""
     items = [o for o in OPEN if o["cat"] == key]
     cards = "\n".join(card(o) for o in items)
     return f'''    <section class="jgroup" data-group="{e(key)}">
       <h3 class="jgroup__h"><span class="jgroup__n">{e(c['name'])}</span><span class="jgroup__c en">{len(items)} POSITIONS</span></h3>
-      <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="{e(c['work_anchor'])}">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="{e(c['people'])}">{e(c['people_label'])}</a>をご覧ください。</p>
+      <p class="jgroup__lead">{hub}仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="{e(c['work_anchor'])}">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="{e(c['people'])}">{e(c['people_label'])}</a>をご覧ください。</p>
       <ul class="jcards">
 {cards}
       </ul>
@@ -124,15 +125,18 @@ def build_index():
     head = S[:S.index('<main id="top">')]
     tail = S[S.index('<section class="sec sec--navy sec--tight" id="selection">'):]
 
-    title = "募集中の求人一覧｜物流センター運営・FDE・営業｜株式会社PAL 採用"
+    title = "募集中の求人一覧｜物流センター運営・FDE・システム開発・営業｜株式会社PAL 採用"
     desc = ("株式会社PALが現在募集している求人の一覧です。物流センター運営（千葉・船橋／神奈川・厚木／"
-            "広島・東広島／兵庫・須磨）、FDE（大阪本社）、エンゲージメント・新規営業と法人営業（人材派遣・大阪本社）の"
-            "8求人について、勤務地・想定年収・雇用形態・勤務時間・休日・応募条件を掲載しています。")
+            "広島・東広島／兵庫・須磨）、FDE（大阪本社）、"
+            "システム / プロダクト開発（大阪本社）、エンゲージメント・新規営業と法人営業（人材派遣・大阪本社）の"
+            "求人について、勤務地・想定年収・雇用形態・勤務時間・休日・応募条件を掲載しています。")
     head = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(title), head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % html.escape(desc), head, count=1)
     head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % html.escape(title), head, count=1)
     head = re.sub(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="%s">' % html.escape(desc), head, count=1)
 
+    groups_html = "\n".join(group(c["key"]) for c in D["categories"]
+                            if any(o["cat"] == c["key"] for o in OPEN))
     body = f'''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../">採用情報</a><span aria-current="page">募集職種</span></div></nav>
 
 {MARK}
@@ -147,9 +151,7 @@ def build_index():
 <section class="sec sec--tight" id="openings">
   <div class="wrap" id="joblist">
 {filters()}
-{group("bpo")}
-{group("fde")}
-{group("sales")}
+{groups_html}
     <p class="note" style="margin-top:28px">※ 給与はいずれも固定残業代を含む金額です。内訳は各求人の募集要項に掲載しています。</p>
   </div>
 </section>
@@ -162,12 +164,11 @@ def build_index():
     </div>
     <ul class="others rv">
       <li id="job-dts"><b>4tルート配送ドライバー（DTS / 運送部）</b><a class="textlink textlink--sm" href="dts/">募集要項を見る</a></li>
-      <li id="job-engineer"><b>System / Product（プロダクト企画・開発）</b><span class="others__none">募集条件を確認中です</span></li>
       <li id="job-marketing"><b>Marketing / Content（マーケティング・コンテンツ制作）</b><span class="others__none">募集条件を確認中です</span></li>
       <li id="job-corporate"><b>Corporate（コーポレート）</b><a class="textlink textlink--sm" href="../people/corporate/">コーポレートの社員インタビュー</a></li>
       <li id="job-clean"><b>Cleanliness（クレンリネス）</b><span class="others__none">募集条件を確認中です</span></li>
     </ul>
-    <p class="note rv">※ 上記のうち、正式な募集要項があるのは4tルート配送ドライバーのみです。ほかの職種は募集条件を確認中のため、「募集中」として掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
+    <p class="note rv">※ 4tルート配送ドライバーには正式な募集要項があります。ほかの職種は募集条件を確認中のため、「募集中」として掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
     <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">カジュアル面談・エントリーについて<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
@@ -246,6 +247,8 @@ def build_detail(o):
     if o.get("team"):      extra.append(("配属先", e(o["team"])))
 
     mode = o.get("req_must_mode", "必須")
+    groups_html = "\n".join(group(c["key"]) for c in D["categories"]
+                            if any(o["cat"] == c["key"] for o in OPEN))
     body = f'''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../../../">採用情報</a><a href="../../">募集職種</a><span aria-current="page">{e(name)}</span></div></nav>
 
 {MARK}
