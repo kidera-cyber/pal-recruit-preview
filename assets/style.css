@@ -6651,3 +6651,53 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .rvoice__q{font-size:16.5px;line-height:1.6}
 }
 /* ===== RVOICES v1 END ===== */
+
+/* ============================================================
+   ===== CSPOT v1 START =====
+   HOME「CAREER SPOTLIGHT」比較用プレビュー専用。
+   旧 .scenes（SCENE 01-04 の4枚カード）と .scenes__links は、正式HOMEと
+   他プレビュー6件が今も使っているため、定義も markup も触っていない。
+   承認後に正式HOMEへ反映するときは、このブロックのスコープを外す必要はない
+   （クラス名が新規のため、そのまま共存できる）。
+   ============================================================ */
+.csp{position:relative;background:#000;color:#fff;padding-block:96px;overflow:hidden}
+/* 上辺のPALレッド：バナーおよび JOIN PAL と同じ扱い */
+.csp::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;
+  background:linear-gradient(90deg,var(--red) 0,var(--red-lt) 100%)}
+.csp__in{position:relative;z-index:1}
+.csp__label{display:inline-block;padding:6px 13px;border-radius:3px;background:#fff;color:#000;
+  font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.csp__ttl{margin-top:22px;font-size:clamp(28px,4vw,52px);line-height:1.34;letter-spacing:.005em;
+  font-weight:700;color:#fff;text-wrap:balance}
+.csp__ttl .nw{display:inline-block;max-width:100%}
+.csp__ttl::after{content:"";display:block;width:64px;height:4px;margin-top:22px;background:var(--red-lt)}
+.csp__lead{margin-top:24px;max-width:44em;font-size:16px;line-height:2.05;color:#e2e2e2;text-wrap:pretty}
+
+/* 3テーマ：カード化せず、細い区切り線だけの横組み */
+.csp__themes{margin-top:52px;list-style:none;display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  border-top:1px solid rgba(255,255,255,.22)}
+.csp__th{padding:28px 30px 4px 0}
+.csp__th+.csp__th{padding-left:30px;border-left:1px solid rgba(255,255,255,.22)}
+.csp__no{display:block;font-family:Lato,sans-serif;font-size:34px;font-weight:900;line-height:1;
+  letter-spacing:.01em;color:var(--red-on-dark);font-variant-numeric:tabular-nums}
+.csp__h{display:block;margin-top:16px;font-size:clamp(19px,2vw,24px);line-height:1.45;
+  font-weight:700;color:#fff}
+.csp__t{display:block;margin-top:10px;font-size:14.5px;line-height:1.85;color:#cacaca}
+
+.csp__cta{margin-top:52px}
+/* 主CTAは1つだけなので、黒帯のなかで明確に主役になる大きさにする */
+.csp__cta .btn{padding:21px 40px;font-size:17.5px;box-shadow:0 10px 28px rgba(207,19,27,.34)}
+.csp__cta .btn__ico{width:30px;height:30px;font-size:12px}
+.csp__note{margin-top:22px;max-width:46em;font-size:12.5px;line-height:1.9;color:#a2a2a2}
+
+@media (max-width:860px){
+  .csp{padding-block:66px}
+  .csp__themes{grid-template-columns:minmax(0,1fr);margin-top:40px}
+  .csp__th{padding:22px 0 6px}
+  .csp__th+.csp__th{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.22)}
+  .csp__no{font-size:28px}
+  .csp__cta{margin-top:38px}
+  .csp__cta .btn{width:100%;justify-content:center;padding-block:18px}
+}
+/* ===== CSPOT v1 END ===== */
