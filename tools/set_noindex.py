@@ -24,6 +24,8 @@ def main(mode):
     n = 0
     for ap in glob.glob(os.path.join(ROOT, "renewal/**/*.html"), recursive=True):
         s = open(ap, encoding="utf-8").read(); o = s
+        if "/jobs/openings/" in ap.replace("\\", "/"):
+            continue                          # 求人詳細はビルド側で noindex,follow を出力する
         if mode == "off":
             s = RE_TAG.sub("", s)
         else:

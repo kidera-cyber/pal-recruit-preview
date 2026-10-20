@@ -104,3 +104,26 @@ IoT専門エンジニア・フルスタック必須などへ言い換えてい�
 「想定年収500万〜900万円」「React／TypeScriptでのWeb開発経験が必須」は、
 いずれもリニューアル前のモックアップ由来で、承認済み求人票（必須＝何らかのWeb系システム開発の実務経験）と
 食い違っていたため差し替えた。旧記載は git 履歴から参照できる。
+
+
+---
+
+## 7. 2026-10-20：保留5項目の処理（すべて実装側で解決）
+
+| # | 項目 | 対応 | 結果 |
+|---|---|---|---|
+| 1 | JobPosting が検索に拾われる | `renewal/jobs/openings/` 配下に `noindex,follow` をビルド側で常時出力 | 9件すべて `noindex,follow`。求人を追加しても自動で付く |
+| 2 | ENTRY の応募先が contact-service | `tools/set_entry_cta.py off` で応募CTAをコメントアウト（削除ではない） | 採用応募としての contact-service リンク **0件**。ヘッダー・ドロワー・フッター・応募ボタンから ENTRY への導線 0件 |
+| 3 | datePosted | 値があるときだけ JSON-LD に出力する設計へ | 9件すべて未設定。架空の日付は入れていない |
+| 4 | 勤務地不一致の責任者候補求人 | `status: "hold"`。一覧・フィルター・件数・JobPosting・詳細ページ・内部リンクのすべてから除外 | 公開求人は9件。公開画面に制作管理情報は出していない |
+| 5 | WORK 9職種拡充・営業再編 | ROLEDEEP v1 と SALESMERGE v1 を正式WORKへ反映 | 9職種タブが正式公開。旧 `#role-bizdev` も統合後のタブを開く |
+
+### 本番公開時の手順（この順で実行）
+
+1. 正式な応募先URLを `renewal/entry/` に設定し、`python3 -I tools/set_entry_cta.py on`
+2. `data/jobs-openings.json` の各求人に `date_posted`（本番サイトへ掲載した実日付）を設定
+3. 必要であれば `validThrough` を追加
+4. `python3 -I tools/set_noindex.py off`（求人詳細の `noindex,follow` は
+   `tools/build_jobs.py` の該当行を外す）
+5. 旧URL2本（`renewal/work/fde/`・`renewal/jobs/center-manager/`）を HTTP 301 へ置き換え
+6. 勤務地が確定したら保留求人の `status` を `open` にして `sh tools/build_all.sh`

@@ -226,7 +226,10 @@ def jobposting(o):
         "jobBenefits": "／".join(o["benefits"]),
     }
     if o.get("req_welcome"): jp["experienceRequirements"] = "【歓迎】" + "／".join(o["req_welcome"])
-    if D.get("date_posted"): jp["datePosted"] = D["date_posted"]
+    # datePosted は求人票に記載がないため、値があるときだけ出力する。
+    # 本番公開時に、その求人を本番サイトへ掲載した実日付を入れる。
+    dp = o.get("date_posted") or D.get("date_posted")
+    if dp: jp["datePosted"] = dp
     return ('<!-- ===== JOBSOPEN v1：この求人の JobPosting。値は求人票と一致。\n'
             '     datePosted は求人票に掲載開始日の記載がないため入れていない。\n'
             '     Google しごと検索へ出す場合は data/jobs-openings.json の date_posted を設定する。 ===== -->\n'
@@ -253,6 +256,13 @@ def build_detail(o):
     head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % html.escape(desc), head, count=1)
     head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % html.escape(title), head, count=1)
     head = re.sub(r'<meta property="og:description" content="[^"]*">', '<meta property="og:description" content="%s">' % html.escape(desc), head, count=1)
+    # ===== ENTRY-CTA / NOINDEX：求人詳細は公開前の確認用のため常に検索対象外にする。
+    # リンクはたどらせたいので nofollow ではなく follow。求人が増えても自動で付く。
+    head = re.sub(r'<meta name="robots" content="[^"]*">',
+                  '<meta name="robots" content="noindex,follow">', head, count=1)
+    if 'name="robots"' not in head:
+        head = head.replace('<link rel="canonical" href="./">',
+                            '<link rel="canonical" href="./">\n<meta name="robots" content="noindex,follow">', 1)
     bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../../../"},
         {"@type": "ListItem", "position": 2, "name": "募集職種", "item": "../../"},
