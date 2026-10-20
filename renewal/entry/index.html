@@ -7,6 +7,9 @@
 <meta name="description" content="株式会社PALの採用エントリーと選考の流れ。エントリー→会社説明・カジュアル面談→選考面接→最終面接→内定の5ステップで進みます。新卒・キャリアともに通年で募集しており、選考前にカジュアル面談だけの参加も歓迎しています。Web面談にも対応しています。">
 <!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
 <link rel="canonical" href="./">
+<!-- ===== NOINDEX v1：公開前の確認用サイトのため検索インデックスさせない。
+     本番公開時に tools/set_noindex.py off で一括削除する。 ===== -->
+<meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#000000">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="株式会社PAL 採用サイト">
@@ -79,11 +82,17 @@
       <li><span class="en">STEP 04</span><b>最終面接</b><p>役員面接で相互に見極め。</p></li>
       <li><span class="en">STEP 05</span><b>内定</b><p>次の未来を、一緒に。</p></li>
     </ol>
-    <div class="entry__ctas" style="margin-top:48px;justify-content:flex-start">
-      <a class="btn btn--red btn--lg" href="https://www.pal-style.co.jp/contact-service/" target="_blank" rel="noopener">新卒採用エントリー<span class="btn__ico" aria-hidden="true">▶</span></a>
-      <a class="btn btn--navy btn--lg" href="https://www.pal-style.co.jp/contact-service/" target="_blank" rel="noopener">キャリア採用エントリー<span class="btn__ico" aria-hidden="true">▶</span></a>
+    <!-- ===== ENTRY-URL v1：エントリーボタンの遷移先が
+         https://www.pal-style.co.jp/contact-service/（BtoB営業のお問い合わせフォーム）
+         になっていたため、リンクを外した。応募者を誤ったフォームへ誘導しないための対応。
+         正式な応募先URLが確定するまで、推測で別のURLを置かない。
+         確定後は、このブロックを2つのボタン（新卒採用／キャリア採用）へ戻す。
+         旧記載は git 履歴から参照できる。 ===== -->
+    <div class="cmnote rv" style="margin-top:44px">
+      <p class="cmnote__h">エントリーフォームは準備中です</p>
+      <p>新卒採用・キャリア採用ともに、応募フォームの公開準備を進めています。公開までのあいだは、各募集要項に記載の内容をご確認ください。</p>
+      <p class="cmnote__s">※ このサイトは公開前の確認用です。応募の受け付けはまだ開始していません。</p>
     </div>
-    <p class="note rv">※ エントリーフォームはコーポレートサイトのお問い合わせページへ遷移します（仮設定）。</p>
   </div>
 </section>
 

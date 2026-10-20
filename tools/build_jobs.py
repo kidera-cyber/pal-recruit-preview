@@ -233,7 +233,7 @@ def jobposting(o):
             '<script type="application/ld+json">%s</script>' % json.dumps(jp, ensure_ascii=False))
 
 def build_detail(o):
-    S = rd("renewal/jobs/center-manager/index.html")
+    S = rd("renewal/jobs/logistics-operation/index.html")
     head = S[:S.index('<main id="top">')]
     tail = S[S.index('</main>'):]
     # renewal/jobs/center-manager/ より1階層深い renewal/jobs/openings/<id>/ に置くため、

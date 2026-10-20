@@ -60,7 +60,7 @@ MERGED = '''<article class="rpanel" role="tabpanel" id="role-sales"
 
         <div class="rdeep">
           <h4 class="rdeep__h">要望の裏にある、本当の課題を探す。</h4>
-          <p class="rdeep__lead">顧客との接点をつくり、現場を見て課題を整理し、社内の専門部門へつなぐ仕事です。あわせて、顧客課題や市場機会をもとに新しい事業・サービスの可能性を形にする事業開発（BizDev）も、この職種が担います。</p>
+          <p class="rdeep__lead">顧客との接点をつくり、現場を見て課題を整理し、社内の専門部門へつなぐ仕事です。あわせて、顧客課題や市場機会をもとに新しい事業・サービスの可能性を検討する事業開発（BizDev）も、同じ枠組みのなかにあります。2つは同じ仕事ではなく、顧客の課題と事業機会という同じ入口から広がる別の役割です。</p>
 
           <p class="rpanel__ch">営業と事業開発、それぞれの役割</p>
           <ol class="rdeep__flow">
@@ -69,7 +69,6 @@ MERGED = '''<article class="rpanel" role="tabpanel" id="role-sales"
             <li><span class="en">BIZDEV</span><b>BizDev</b>
               <p><span>担うこと</span>顧客課題や市場機会をもとに、新しい事業・サービスの可能性を検討し、形にする。</p></li>
           </ol>
-          <p class="rdeep__note">※ 2つの役割は同じではありません。ひとりがすべてを同時に担当するという意味ではなく、同じ職種のなかに別の役割があるという整理です。事業開発の対象範囲、社内での位置づけ、構想から実行までのどの工程に関わるかは確認中です。</p>
 
           <p class="rpanel__ch">仕事の進め方</p>
           <ol class="rdeep__flow">
@@ -85,7 +84,7 @@ MERGED = '''<article class="rpanel" role="tabpanel" id="role-sales"
               <p><span>トスアップする</span>設計部門や社内の提案専門組織へつなぐ。</p>
               <p><span>還元する</span>顧客の反応をマーケティング部門へ戻し、施策の精度を高める。</p></li>
           </ol>
-          <p class="rdeep__note">※ 提案から開発、現場導入までのすべての工程を営業が単独で担当するわけではありません。必要に応じてFDE・BPO・システム／プロダクト・DTSと連携します。</p>
+          <p class="rdeep__note">提案から現場導入までは、FDE・BPO・システム / プロダクト・DTSと分担して進めます。</p>
 
           <p class="rpanel__ch">この仕事で大切にしていること</p>
           <ul class="rdeep__pts">
@@ -98,7 +97,7 @@ MERGED = '''<article class="rpanel" role="tabpanel" id="role-sales"
             <a class="rcbtn rcbtn--main" href="../people/sales/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
             <a class="rcbtn rcbtn--sub" href="../jobs/openings/engagement-member/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
           </div>
-          <p class="rpanel__note">※ 事業開発（BizDev）としての対象範囲・社内での位置づけは確認中です。募集職種は「エンゲージメント・新規営業」です。</p>
+          <p class="rpanel__note">※ 募集職種は「エンゲージメント・新規営業」です。</p>
       </article>
 '''
 
@@ -135,7 +134,7 @@ STAFFING = '''<article class="rpanel" role="tabpanel" id="role-staffing"
 
         <div class="rdeep">
           <h4 class="rdeep__h">人材の提案だけで、終わらない。</h4>
-          <p class="rdeep__lead">物流倉庫への人材派遣の法人営業です。労働力の提供にとどまらず、顧客の課題に応じて自動化・省人化の提案も行います。求職者対応は営業事務4名が担当しているため、営業は企業への提案に時間を使えます。</p>
+          <p class="rdeep__lead">物流倉庫への人材派遣の法人営業です。労働力の提供にとどまらず、顧客の課題に応じて、社内の専門部署と連携しながらシステムの活用や省人化につながる提案までを行います。求職者対応は営業事務4名が担当しているため、営業は企業への提案に時間を使えます。</p>
 
           <p class="rpanel__ch">仕事の進め方</p>
           <ol class="rdeep__flow">
@@ -147,17 +146,17 @@ STAFFING = '''<article class="rpanel" role="tabpanel" id="role-staffing"
               <p><span>詰まりを探す</span>業務上のボトルネックをヒアリングする。</p></li>
             <li><span class="en">03</span><b>人材・仕組みを提案する</b>
               <p><span>人材を提案する</span>顧客の人員課題に応じた人材派遣を提案する。</p>
-              <p><span>仕組みを提案する</span>課題に応じて、自社開発の勤怠管理や作業可視化のシステムを提案する。</p></li>
+              <p><span>仕組みを提案する</span>課題に応じて、社内の専門部署と連携しながら、自社開発の勤怠管理や作業可視化のシステムを提案する。</p></li>
             <li><span class="en">04</span><b>営業活動を管理・改善する</b>
               <p><span>逆算する</span>目標から逆算した行動計画を立てる。</p>
               <p><span>見直す</span>営業行動の量と質を高め、プロセス管理を自ら実践する。</p></li>
           </ol>
-          <p class="rdeep__note">※ 4段階は仕事内容を理解しやすくするための整理で、すべての案件がこの順に進むわけではありません。また、営業担当自身がシステム開発や自動化設備の設計・導入そのものを担当するわけではありません。</p>
+          <p class="rdeep__note">4段階は仕事の流れを理解しやすくするための整理で、すべての案件がこの順に進むわけではありません。</p>
 
           <p class="rpanel__ch">この仕事で大切にしていること</p>
           <ul class="rdeep__pts">
             <li><i>01</i><b>人の課題を入口に、現場の課題を見る</b><p>欠員だけでなく、どこに時間がかかっているのかまで聞きにいきます。</p></li>
-            <li><i>02</i><b>自社のシステムを提案に使う</b><p>作業可視化システムなどで現場の状況をデータにし、自動化・省人化につながる提案へつなげます。</p></li>
+            <li><i>02</i><b>自社のシステムを提案に使う</b><p>作業可視化システムなどで現場の状況をデータにし、社内の専門部署とともに自動化・省人化につながる提案へつなげます。</p></li>
             <li><i>03</i><b>目標から逆算して動く</b><p>組織の営業行動量と質を高め、目標達成に向けたプロセス管理を自ら実践します。</p></li>
             <li><i>04</i><b>店舗運営・労務管理の経験が活きる</b><p>店長・副店長などで労務管理を経験した方が、その経験を活かして働いています。</p></li>
           </ul>
@@ -165,7 +164,7 @@ STAFFING = '''<article class="rpanel" role="tabpanel" id="role-staffing"
           <div class="rpanel__foot">
             <a class="rcbtn rcbtn--main" href="../jobs/openings/staffing-sales-leader/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
           </div>
-          <p class="rpanel__note">※ 応募条件は「店舗運営に関する経験」または「法人営業経験」のいずれかが必須で、第一種運転免許（普通自動車）が必要です。勤務地は大阪本社です。<br>※ この職種の社員インタビューは、まだ掲載がありません。</p>
+          <p class="rpanel__note">※ 応募条件・勤務地・給与は<a class="textlink textlink--sm" href="../jobs/openings/staffing-sales-leader/">募集要項</a>をご覧ください。</p>
       </article>
 '''
 
@@ -226,6 +225,20 @@ NEW_JS = '''  /* ===== SALESMERGE v1：旧タブIDの読み替え。
 if S.count(OLD_JS) != 1: print("FAIL tab js"); sys.exit(1)
 S = S.replace(OLD_JS, NEW_JS)
 
+S = re.sub(r'[ \t]*<a href="(?:\.\./)*work/fde/">FDEという仕事</a>\n', '', S)
 S = S.replace('<title>【比較プレビュー・9職種拡充版】', '<title>【比較プレビュー・営業再編版】', 1)
 wr("renewal/work-sales-restructured-preview/index.html", S)
-print("renewal/work-sales-restructured-preview/index.html を生成")
+
+# 正式WORK：ヘッダー（canonical・title・description）とフッターは現行の正式ページのものを使い、
+# <main> の中身だけを差し替える。プレビュー用の noindex は持ち込まない。
+OFF = rd("renewal/work/index.html")
+off_head = OFF[:OFF.index('<main id="main">')]
+off_tail = OFF[OFF.index('</main>'):]
+# 職種タブのJSは </main> より後ろにあるため、正式ページ側のJSにも別名を入れる
+if "ALIAS" not in off_tail:
+    if off_tail.count(OLD_JS) != 1:
+        print("FAIL: 正式WORKのタブJSが見つからない"); sys.exit(1)
+    off_tail = off_tail.replace(OLD_JS, NEW_JS)
+pre_main = S[S.index('<main id="main">'):S.index('</main>')]
+wr("renewal/work/index.html", off_head + pre_main + off_tail)
+print("renewal/work-sales-restructured-preview/index.html と renewal/work/index.html を生成")

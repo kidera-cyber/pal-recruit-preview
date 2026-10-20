@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-===== CMJOB v2 =====
-物流センター運営・責任者候補の「共通紹介ページ」（LEVEL 02）を組み立てる。
+===== LOGIOPS v1（旧 CMJOB v2）=====
+「物流センター運営」という仕事の紹介ページ（LEVEL 02）を組み立てる。
+募集レベル（アソシエイト／メンバー／責任者候補）の違いを見せる役割を持つ。
 
   LEVEL 01  renewal/jobs/                      募集中の求人を探す（tools/build_jobs.py）
-  LEVEL 02  renewal/jobs/center-manager/       この仕事を知る（このスクリプト）
+  LEVEL 02  renewal/jobs/logistics-operation/  この仕事を知る（このスクリプト）
   LEVEL 03  renewal/jobs/openings/<id>/        拠点ごとの正式な募集要項（tools/build_jobs.py）
 
 v1 ではデモデータを使っていたが、承認済み求人票4件（船橋・厚木・東広島・須磨）が
 そろったため、data/jobs-openings.json の実データだけで組み立てる。
 拠点が増減したときは JSON を直してこのスクリプトを実行するだけでよい。
 
-  python3 -I tools/build_center_manager.py
+  python3 -I tools/build_logistics_operation.py
 """
 import json, os, re, html
 
@@ -51,15 +52,16 @@ def industries():
     return out
 
 def build():
-    S = rd("renewal/jobs/center-manager/index.html")
+    S = rd("renewal/jobs/logistics-operation/index.html")
     head = S[:S.index('<main id="top">')]
     foot = S[S.index('</main>'):]
 
-    title = "物流センター運営・責任者候補の仕事と募集拠点｜船橋・厚木・東広島・須磨｜株式会社PAL"
-    desc  = ("株式会社PALの物流センター運営・責任者候補の仕事内容と募集拠点。物流拠点の運営、人員配置、"
+    title = "物流センター運営の仕事｜募集レベルと募集拠点｜株式会社PAL"
+    desc  = ("株式会社PALの物流センター運営の仕事内容と、募集レベル・募集拠点。物流拠点の運営、人員配置、"
              "作業進捗・品質・安全の管理、生産性・収支の確認と業務改善、取引先との調整までを担います。"
-             "千葉県船橋市、神奈川県厚木市、広島県東広島市、兵庫県神戸市須磨区の4拠点で募集しており、"
-             "拠点によって取扱商品・勤務シフト・想定年収・応募条件が異なります。")
+             "アソシエイト・メンバー・責任者候補の3つの募集レベルがあります。千葉県船橋市、神奈川県厚木市、"
+             "広島県東広島市、兵庫県神戸市須磨区の4拠点で募集しており、拠点によって取扱商品・勤務シフト・"
+             "想定年収・応募条件が異なります。")
     head = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(title), head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*">',
                   '<meta name="description" content="%s">' % html.escape(desc), head, count=1)
@@ -78,20 +80,20 @@ def build():
       for i, (k, v) in enumerate(industries()))
 
     cards = "\n".join(card(o) for o in BPO)
-    holdnote = ('<p class="note" style="margin-top:18px">※ このほかに1件、社内で公開前の確認を行っている求人があります。'
-                '確認が取れしだい掲載します。</p>') if HOLD else ""
+    # 社内で確認中の求人は、公開画面には一切出さない（制作管理側のみで保留する）
+    holdnote = ""
 
-    body = f'''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../../">採用情報</a><a href="../../jobs/">募集職種</a><span aria-current="page">物流センター運営・責任者候補</span></div></nav>
+    body = f'''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../../">採用情報</a><a href="../../jobs/">募集職種</a><span aria-current="page">物流センター運営の仕事</span></div></nav>
 
 <!-- ===== CMJOB v2：LEVEL 02（物流センター運営・責任者候補の共通紹介）。
-     tools/build_center_manager.py が data/jobs-openings.json から生成している。
+     tools/build_logistics_operation.py が data/jobs-openings.json から生成している。
      手で編集せず、JSON を直してからビルドし直すこと。
      ・仕事内容は WORK の BPO パネルと承認済み求人票4件で確認できる項目だけを使用。
      ・勤務地・給与・勤務時間・休日は拠点ごとに異なるため、拠点別の募集要項に置く。
      ・社員インタビューは people/bpo/ の記載から引用のみ。原文は変更していない。 ===== -->
 <section class="phead">
   <div class="wrap">
-    <p class="slabel">Center Manager / BPO</p>
+    <p class="slabel">Logistics Operation / BPO</p>
     <h1 class="ptitle"><span class="nw">物流現場を動かす。</span><span class="nw">その先の改善まで。</span></h1>
     <p class="plead">物流拠点の運営を担いながら、人員・作業進捗・品質・安全・生産性と、その先の業務改善に関わる仕事です。現在は4つの拠点で募集していて、拠点によって取り扱う商品、勤務シフト、求める経験が異なります。</p>
   </div>
@@ -101,7 +103,7 @@ def build():
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:20px">
       <p class="slabel">The Role</p>
-      <h2 class="stitle" style="font-size:clamp(21px,2.5vw,29px)"><span class="nw">センター運営は、</span><span class="nw">どんな仕事をするのか。</span></h2>
+      <h2 class="stitle" style="font-size:clamp(21px,2.5vw,29px)"><span class="nw">物流センター運営は、</span><span class="nw">どんな仕事をするのか。</span></h2>
       <p class="slead">現場が自律的に回り、成果を生み続ける状態をつくることが、この仕事のあるべき姿です。拠点をまたいで共通する仕事は、次の6つです。</p>
     </div>
     <ul class="cmrole rv">
@@ -113,7 +115,7 @@ def build():
       <li><span class="en">06</span><b>業務改善と顧客との調整</b><p>取引先との折衝や現場確認を重ね、改善提案につなげます。機械化の推進も進めます。</p></li>
     </ul>
     <div class="cmnote rv">
-      <p class="cmnote__h">募集レベルによって、担当する範囲が異なります</p>
+      <p class="cmnote__h">アソシエイト → メンバー → 責任者候補</p>
       <p><b>アソシエイト</b>（船橋）は、まず現場業務を習得しながら機械化推進に向けた情報収集を担当し、その後スタッフの育成・管理・教育やIT部門との連携へ広げていきます。職務経験は問いません。</p>
       <p><b>メンバー</b>（厚木・東広島）は、倉庫内の運営管理を中心に、人材配置・育成・業務標準化・品質管理を担当します。派遣・アルバイト・社員に対する何らかの取りまとめの経験が必要です。</p>
       <p><b>責任者候補</b>（須磨）は、運営管理に加えて、クライアントとの物量・価格・オペレーション交渉などの収益改善を主導します。エリアマネージャー経験、店舗・施設・営業所等の運営管理経験、営業組織のマネジメント経験のいずれかが必要です。</p>
@@ -153,7 +155,7 @@ def build():
         <p class="cmvoice__t">複数の物流センターの運営・改善に携わっています。日々の運営では、人員配置や作業進捗、品質・安全、生産性、収支、取引先への対応など、現場を止めないための仕事を見ています。</p>
         <p class="cmvoice__q">仕事で大切にしていること</p>
         <p class="cmvoice__t">現場を安定して運営する。そのうえで、今のやり方を疑ってみる。</p>
-        <p class="cmvoice__n">※ 掲載しているのは本人の経験とキャリアです。センター運営に共通する昇進の道すじを示したものではありません。</p>
+        <p class="cmvoice__n">※ 掲載しているのは本人の経験とキャリアです。物流センター運営に共通する昇進の道すじを示したものではありません。</p>
         <p class="cmvoice__cta"><a class="btn btn--ghost" href="../../people/bpo/">BPO・現場運営の社員インタビューを読む<span class="btn__ico" aria-hidden="true">▶</span></a></p>
       </div>
     </div>
@@ -189,7 +191,7 @@ def build():
   </div>
 </section>
 '''
-    wr("renewal/jobs/center-manager/index.html", head + '<main id="top">\n' + body + foot)
+    wr("renewal/jobs/logistics-operation/index.html", head + '<main id="top">\n' + body + foot)
     print("LEVEL 02 を生成：募集中 %d拠点 ／ 公開前確認 %d件" % (len(BPO), len(HOLD)))
 
 if __name__ == "__main__":
