@@ -17,7 +17,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <!-- SEO-BASE v1：相対自己参照canonical。本番ドメイン未確定のため絶対URLは使わない -->
 <link rel="canonical" href="./">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020k">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020n">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "仕事を知る"}]}</script>
@@ -147,7 +147,7 @@
     <p class="slabel">Work is Impact</p>
     <h1 class="ptitle"><span class="nw">自分の仕事が、</span><span class="nw">現場の変化になる。</span></h1>
     <p class="plead">現場を安定して動かす。技術で仕組みをつくる。顧客の課題に向き合う。<br>それぞれの専門性が、物流の仕事を前に進めています。</p>
-    <p class="ws-hero__nav"><a href="#jobs">9職種の仕事内容を見る</a><a href="../jobs/">募集中の職種を見る</a></p>
+    <p class="ws-hero__nav"><a href="#roles">9職種の仕事内容を見る</a><a href="../jobs/">募集中の職種を見る</a></p>
   </div>
 </section>
 
@@ -190,335 +190,362 @@
 </section>
 
 <!-- 03 ─────────── FIND YOUR ROLE ─────────── -->
+<!-- ===== WORKTABS v1：FIND YOUR ROLE（9職種の一覧）と THE WORK（9職種の大型カード）を
+     ひとつのタブUIに統合。同じ職種情報が2度出てページが伸びていたため。
+     ■ 既存の職種IDは変更していない。role-bpo など9つのIDは、そのままタブパネルの
+       id として使っている。他ページ16ファイルから work/#role-xxx のリンクが
+       計130本あり、URLハッシュに応じて該当タブを開く処理を入れている。
+     ■ 9職種の職種名・一言・主な仕事・この仕事らしさ・関わる相手・注記・リンク先は
+       既存HTMLから機械抽出してそのまま使用（打ち直し・省略・追加なし）。
+     ■ JSが無効でも読めるよう、.is-js が付かない場合はタブを隠して9パネルすべてを
+       縦に並べて表示する（従来と同じ見え方）。検索向けの隠しテキストは置いていない。
+     ■ 社員アバターの画像は、HOMEの方針に合わせてこのUIでは表示していない
+       （画像ファイルは削除していない）。リンク自体は維持。
+     ■ DTS は、運送部の社員インタビューと配送ドライバーの募集が別であることが
+       分かる文言にしている。募集要項が無い職種にリンクは作っていない。
+     ===== -->
 <section class="sec sec--tight" id="roles">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:22px">
+    <div class="shead rv" style="margin-bottom:24px">
       <p class="slabel">Find your role</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,31px)">あなたなら、どこから変えていく？</h2>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,31px)"><span class="nw">あなたの専門性で、</span><span class="nw">どんな仕事を支える？</span></h2>
+      <p class="slead">現場運営、開発、配送、営業、バックオフィス。それぞれの役割から、PALの仕事を支えています。</p>
     </div>
-    <nav class="work-role-index rv" aria-label="職種から探す">
-      <ul class="role-chips">
-      <li><a class="role-chip" href="#role-bpo"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-field"></use></svg><span class="role-chip__b"><span class="role-chip__en en">OPERATION</span><b>BPO / 現場運営</b><span class="role-chip__one">現場を安定させ、改善を進める</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-clean"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-handy"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CLEANLINESS</span><b>Cleanliness / クレンリネス</b><span class="role-chip__one">清掃を、計画と運用で支える</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-fde"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg><span class="role-chip__b"><span class="role-chip__en en">FDE</span><b>FDE</b><span class="role-chip__one">現場課題を技術へつなぐ</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-system"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-system"></use></svg><span class="role-chip__b"><span class="role-chip__en en">SYSTEM / PRODUCT</span><b>System / Product</b><span class="role-chip__one">現場で使われる仕組みをつくる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-dts"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg><span class="role-chip__b"><span class="role-chip__en en">TRANSPORT</span><b>DTS / 運送・運行</b><span class="role-chip__one">安全・品質・時間を守って届ける</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-sales"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg><span class="role-chip__b"><span class="role-chip__en en">ENGAGEMENT / SALES</span><b>Engagement / Sales</b><span class="role-chip__one">顧客課題を次の提案につなげる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-mkt"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-data"></use></svg><span class="role-chip__b"><span class="role-chip__en en">MARKETING / CONTENT</span><b>Marketing / Content</b><span class="role-chip__one">コンテンツで新しい接点をつくる</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-bizdev"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg><span class="role-chip__b"><span class="role-chip__en en">BIZDEV</span><b>BizDev</b><span class="role-chip__one">事業機会を形にする</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      <li><a class="role-chip" href="#role-corp"><svg class="role-chip__ic" aria-hidden="true"><use href="#ic-office"></use></svg><span class="role-chip__b"><span class="role-chip__en en">CORPORATE</span><b>Corporate</b><span class="role-chip__one">組織と働く環境を支える</span></span><i class="role-chip__ar" aria-hidden="true">→</i></a></li>
-      </ul>
-    </nav>
+    <div class="rpick rv" id="rolepick">
+      <script>document.currentScript.parentElement.classList.add('is-js');</script>
+      <div class="rtabs" role="tablist" aria-label="職種を選ぶ">
+        <button class="rtab" type="button" role="tab" id="rt-role-bpo" aria-controls="role-bpo"
+          aria-selected="true" tabindex="0">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">OPERATION</span><b class="rtab__n">BPO / 現場運営</b><span class="rtab__one">現場を安定させ、改善を進める</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-clean" aria-controls="role-clean"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">CLEANLINESS</span><b class="rtab__n">Cleanliness / クレンリネス</b><span class="rtab__one">清掃を、計画と運用で支える</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-fde" aria-controls="role-fde"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">FDE</span><b class="rtab__n">FDE</b><span class="rtab__one">現場課題を技術へつなぐ</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-system" aria-controls="role-system"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">SYSTEM / PRODUCT</span><b class="rtab__n">System / Product</b><span class="rtab__one">現場で使われる仕組みをつくる</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-dts" aria-controls="role-dts"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">TRANSPORT</span><b class="rtab__n">DTS / 運送・運行</b><span class="rtab__one">安全・品質・時間を守って届ける</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-sales" aria-controls="role-sales"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">ENGAGEMENT / SALES</span><b class="rtab__n">Engagement / Sales</b><span class="rtab__one">顧客課題を次の提案につなげる</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-mkt" aria-controls="role-mkt"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">MARKETING / CONTENT</span><b class="rtab__n">Marketing / Content</b><span class="rtab__one">コンテンツで新しい接点をつくる</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-bizdev" aria-controls="role-bizdev"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">BIZDEV</span><b class="rtab__n">BizDev</b><span class="rtab__one">事業機会を形にする</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+        <button class="rtab" type="button" role="tab" id="rt-role-corp" aria-controls="role-corp"
+          aria-selected="false" tabindex="-1">
+          <svg class="rtab__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
+          <span class="rtab__b"><span class="rtab__en en">CORPORATE</span><b class="rtab__n">Corporate</b><span class="rtab__one">組織と働く環境を支える</span></span>
+          <i class="rtab__ar" aria-hidden="true">&#8594;</i>
+        </button>
+      </div>
+      <p class="rpick__hint">※ 職種を選ぶと、下に仕事の内容が表示されます。</p>
+      <div class="rpanels">
+      <article class="rpanel is-active" role="tabpanel" id="role-bpo"
+        aria-labelledby="rt-role-bpo" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
+          <div>
+            <p class="rpanel__en en">OPERATION</p>
+            <h3 class="rpanel__n">BPO / 現場運営</h3>
+            <p class="rpanel__one">現場を安定させ、改善を進める</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>各拠点の稼働状況の確認と、人員配置</li>
+            <li>作業進捗・品質・安全の管理</li>
+            <li>生産性・収支の確認と、業務改善の推進</li>
+            <li>取引先との打ち合わせ、現場確認</li>
+            <li>拠点間の調整と、改善施策の横展開</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>現場スタッフ</li><li>拠点責任者</li><li>取引先</li><li>DX・システム部門</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/bpo/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--sub" href="../jobs/center-manager/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+          </div>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-clean"
+        aria-labelledby="rt-role-clean" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
+          <div>
+            <p class="rpanel__en en">CLEANLINESS</p>
+            <h3 class="rpanel__n">Cleanliness / クレンリネス</h3>
+            <p class="rpanel__one">清掃を、計画と運用で支える</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>食品プロセスセンターなどの日常清掃・特別清掃</li>
+            <li>汚れ方と頻度から考える清掃計画づくり</li>
+            <li>各現場の巡回と、清掃状態の確認</li>
+            <li>複数センターの進捗・作業終了報告の管理</li>
+            <li>見積・請求の作成と、協力会社との連絡</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>各センターの現場</li><li>協力会社</li><li>取引先</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/cleaning/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
+          </div>
+          <p class="rpanel__note">※ クレンリネスは現在募集していません。仕事内容の紹介として掲載しています。</p>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-fde"
+        aria-labelledby="rt-role-fde" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
+          <div>
+            <p class="rpanel__en en">FDE</p>
+            <h3 class="rpanel__n">FDE</h3>
+            <p class="rpanel__one">現場課題を技術へつなぐ</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>物流現場での業務課題のヒアリングと整理</li>
+            <li>課題を技術要件へ翻訳する</li>
+            <li>システム・設備・データとの接続を設計する</li>
+            <li>開発・改修と、現場での動作確認</li>
+            <li>運用後の問い合わせ対応と改善</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/fde/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--sub" href="../jobs/fde/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--text" href="../work/fde/">FDEをくわしく見る<i aria-hidden="true">&#8594;</i></a>
+          </div>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-system"
+        aria-labelledby="rt-role-system" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
+          <div>
+            <p class="rpanel__en en">SYSTEM / PRODUCT</p>
+            <h3 class="rpanel__n">System / Product</h3>
+            <p class="rpanel__one">現場で使われる仕組みをつくる</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>現場ヒアリングと要件整理</li>
+            <li>物流センター向けAndroidアプリの設計・開発</li>
+            <li>OCR・バーコード読み取り、ダッシュボードの開発</li>
+            <li>倉庫での実機確認と、改善対応</li>
+            <li>現場フィードバックの反映と、活用推進</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>物流現場</li><li>FDE</li><li>プロダクト企画</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/system/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--sub" href="../jobs/product-engineer/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+          </div>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-dts"
+        aria-labelledby="rt-role-dts" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
+          <div>
+            <p class="rpanel__en en">TRANSPORT</p>
+            <h3 class="rpanel__n">DTS / 運送・運行</h3>
+            <p class="rpanel__one">安全・品質・時間を守って届ける</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>配送業務・納品対応</li>
+            <li>車両点検と、運行前後の確認</li>
+            <li>安全運転・配送品質の維持</li>
+            <li>配車と運行状況の確認・調整</li>
+            <li>配送先・物流センターとの連携</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>配送先</li><li>物流センター</li><li>ドライバー</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/dts/">運送部の社員インタビューを見る<i aria-hidden="true">&#8594;</i></a>
+            <a class="rcbtn rcbtn--sub" href="../jobs/dts/">配送ドライバーの募集要項を見る<i aria-hidden="true">&#8594;</i></a>
+          </div>
+          <p class="rpanel__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-sales"
+        aria-labelledby="rt-role-sales" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
+          <div>
+            <p class="rpanel__en en">ENGAGEMENT / SALES</p>
+            <h3 class="rpanel__n">Engagement / Sales</h3>
+            <p class="rpanel__one">顧客課題を次の提案につなげる</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>既存顧客への定期的な連絡と、関係づくり</li>
+            <li>新しい顧客との接点づくり</li>
+            <li>現場見学・課題のヒアリングと整理</li>
+            <li>新たな提案・事業機会づくり</li>
+            <li>現場・組織の状態把握と、各部門との連携</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>顧客</li><li>センター長</li><li>FDE</li><li>BPO</li><li>システム / プロダクト</li><li>DTS</li><li>BizDev</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/sales/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
+          </div>
+          <p class="rpanel__note">※ 募集条件は確認中です。</p>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-mkt"
+        aria-labelledby="rt-role-mkt" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
+          <div>
+            <p class="rpanel__en en">MARKETING / CONTENT</p>
+            <h3 class="rpanel__n">Marketing / Content</h3>
+            <p class="rpanel__one">コンテンツで新しい接点をつくる</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>市場や顧客の変化を捉える</li>
+            <li>コンテンツの企画・制作</li>
+            <li>顧客との新しい接点づくり</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li></ul>
+          </div>
+        </div>
+          <p class="rpanel__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-bizdev"
+        aria-labelledby="rt-role-bizdev" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
+          <div>
+            <p class="rpanel__en en">BIZDEV</p>
+            <h3 class="rpanel__n">BizDev</h3>
+            <p class="rpanel__one">事業機会を形にする</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>顧客課題と市場機会の整理</li>
+            <li>新しい事業・サービスの可能性を形にする</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li><li>社内の各専門部門</li></ul>
+          </div>
+        </div>
+          <p class="rpanel__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
+      </article>
+      <article class="rpanel" role="tabpanel" id="role-corp"
+        aria-labelledby="rt-role-corp" tabindex="0">
+        <div class="rpanel__top">
+          <svg class="rpanel__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
+          <div>
+            <p class="rpanel__en en">CORPORATE</p>
+            <h3 class="rpanel__n">Corporate</h3>
+            <p class="rpanel__one">組織と働く環境を支える</p>
+          </div>
+        </div>
+        <div class="rpanel__body">
+          <div class="rpanel__main">
+            <p class="rpanel__ch">主な仕事</p>
+            <ul class="role-points"><li>社宅・社用車・通信・資産管理などの日常業務</li>
+            <li>社内申請のシステム化</li>
+            <li>業務フロー改善</li>
+            <li>関係部署との打ち合わせと、中長期的な課題への対応</li></ul>
+          </div>
+          <div class="rpanel__side">
+            <p class="rpanel__ch">この仕事らしさ</p>
+            <p class="rpanel__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
+            <p class="rpanel__ch">関わる相手</p>
+            <ul class="role-people"><li>各部署のメンバー</li><li>社員</li></ul>
+          </div>
+        </div>
+          <div class="rpanel__foot">
+            <a class="rcbtn rcbtn--main" href="../people/corporate/">この仕事をしている社員の声を読む<i aria-hidden="true">&#8594;</i></a>
+          </div>
+          <p class="rpanel__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
+      </article>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- 04 ─────────── THE WORK ─────────── -->
-<section class="sec sec--soft sec--tight" id="jobs">
-  <div class="wrap">
-    <div class="shead rv" style="margin-bottom:26px">
-      <p class="slabel">The work</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,31px)">その仕事で、何を任されるのか。</h2>
-    </div>
-    <div class="ws-cards ws-cards--a">
-<article class="ws-card ws-card--a rv" id="role-bpo">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-field"></use></svg>
-      <div>
-        <p class="role-card__en en">OPERATION</p>
-        <h3>BPO / 現場運営</h3>
-      </div>
-    </div>
-    <p class="role-card__one">現場を安定させ、改善を進める</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>各拠点の稼働状況の確認と、人員配置</li>
-            <li>作業進捗・品質・安全の管理</li>
-            <li>生産性・収支の確認と、業務改善の推進</li>
-            <li>取引先との打ち合わせ、現場確認</li>
-            <li>拠点間の調整と、改善施策の横展開</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">現場を安定して回しながら、より良い運営へ改善していくこと。改善が、そのまま現場の変化になります。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>現場スタッフ</li><li>拠点責任者</li><li>取引先</li><li>DX・システム部門</li></ul>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-bpo.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/bpo/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-      <a class="rcbtn rcbtn--sub" href="../jobs/center-manager/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
-    </div>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-clean">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic-handy"></use></svg>
-      <div>
-        <p class="role-card__en en">CLEANLINESS</p>
-        <h3>Cleanliness / クレンリネス</h3>
-      </div>
-    </div>
-    <p class="role-card__one">清掃を、計画と運用で支える</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>食品プロセスセンターなどの日常清掃・特別清掃</li>
-            <li>汚れ方と頻度から考える清掃計画づくり</li>
-            <li>各現場の巡回と、清掃状態の確認</li>
-            <li>複数センターの進捗・作業終了報告の管理</li>
-            <li>見積・請求の作成と、協力会社との連絡</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">清掃を実施するだけでなく、計画を考え、複数の現場の運営まで含めて支えること。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>各センターの現場</li><li>協力会社</li><li>取引先</li></ul>
-    <!-- CLEANOFF v1（2026-10-20）：旧「※ 個別の募集要項は掲載していません。」→ 現状に合わせて明記 -->
-    <p class="ws-card__note">※ クレンリネスは現在募集していません。仕事内容の紹介として掲載しています。</p>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-cleaning.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/cleaning/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-fde">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-fde"></use></svg>
-      <div>
-        <p class="role-card__en en">FDE</p>
-        <h3>FDE</h3>
-      </div>
-    </div>
-    <p class="role-card__one">現場課題を技術へつなぐ</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>物流現場での業務課題のヒアリングと整理</li>
-            <li>課題を技術要件へ翻訳する</li>
-            <li>システム・設備・データとの接続を設計する</li>
-            <li>開発・改修と、現場での動作確認</li>
-            <li>運用後の問い合わせ対応と改善</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">現場の課題を技術要件へ整理し、実際に動く仕組みまで持っていくこと。つくった仕組みが、現場に定着します。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>物流現場のスタッフ</li><li>BPO / 現場運営</li><li>システム / プロダクト企画</li></ul>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-fde.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/fde/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-      <a class="rcbtn rcbtn--sub" href="../jobs/fde/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
-      <a class="rcbtn rcbtn--text" href="../work/fde/">FDEをくわしく見る<i aria-hidden="true">&#8594;</i></a>
-    </div>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-system">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-system"></use></svg>
-      <div>
-        <p class="role-card__en en">SYSTEM / PRODUCT</p>
-        <h3>System / Product</h3>
-      </div>
-    </div>
-    <p class="role-card__one">現場で使われる仕組みをつくる</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>現場ヒアリングと要件整理</li>
-            <li>物流センター向けAndroidアプリの設計・開発</li>
-            <li>OCR・バーコード読み取り、ダッシュボードの開発</li>
-            <li>倉庫での実機確認と、改善対応</li>
-            <li>現場フィードバックの反映と、活用推進</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">つくって引き渡すのではなく、現場で使われる状態まで関わること。見えなかったデータが、判断を変えます。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>物流現場</li><li>FDE</li><li>プロダクト企画</li></ul>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-system.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/system/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-      <a class="rcbtn rcbtn--sub" href="../jobs/product-engineer/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
-    </div>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-dts">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-transport"></use></svg>
-      <div>
-        <p class="role-card__en en">TRANSPORT</p>
-        <h3>DTS / 運送・運行</h3>
-      </div>
-    </div>
-    <p class="role-card__one">安全・品質・時間を守って届ける</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>配送業務・納品対応</li>
-            <li>車両点検と、運行前後の確認</li>
-            <li>安全運転・配送品質の維持</li>
-            <li>配車と運行状況の確認・調整</li>
-            <li>配送先・物流センターとの連携</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">届けるだけでなく、安全・品質・時間を同時に守ること。組み直した計画が、そのとおり回ります。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>配送先</li><li>物流センター</li><li>ドライバー</li></ul>
-    <p class="ws-card__note">※ 現在の募集職種は配送ドライバーです。募集条件は確認中の項目があります。</p>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-dts.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/dts/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-      <a class="rcbtn rcbtn--sub" href="../jobs/dts/">募集要項を見る<i aria-hidden="true">&#8594;</i></a>
-    </div>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-sales">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic-meeting"></use></svg>
-      <div>
-        <p class="role-card__en en">ENGAGEMENT / SALES</p>
-        <h3>Engagement / Sales</h3>
-      </div>
-    </div>
-    <p class="role-card__one">顧客課題を次の提案につなげる</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>既存顧客への定期的な連絡と、関係づくり</li>
-            <li>新しい顧客との接点づくり</li>
-            <li>現場見学・課題のヒアリングと整理</li>
-            <li>新たな提案・事業機会づくり</li>
-            <li>現場・組織の状態把握と、各部門との連携</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">要望の裏にある、本当の課題を探すこと。一つの相談が、プロジェクトになります。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>顧客</li><li>センター長</li><li>FDE</li><li>BPO</li><li>システム / プロダクト</li><li>DTS</li><li>BizDev</li></ul>
-    <p class="ws-card__note">※ 募集条件は確認中です。</p>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-sales.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/sales/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-    </div>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-mkt">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-data"></use></svg>
-      <div>
-        <p class="role-card__en en">MARKETING / CONTENT</p>
-        <h3>Marketing / Content</h3>
-      </div>
-    </div>
-    <p class="role-card__one">コンテンツで新しい接点をつくる</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>市場や顧客の変化を捉える</li>
-            <li>コンテンツの企画・制作</li>
-            <li>顧客との新しい接点づくり</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">市場や顧客の変化を捉え、コンテンツで新しい接点をつくること。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li></ul>
-    <p class="ws-card__note">※ 担当する媒体と業務範囲は確認中です。個別の募集要項は準備中です。</p>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-bizdev">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic2-improve"></use></svg>
-      <div>
-        <p class="role-card__en en">BIZDEV</p>
-        <h3>BizDev</h3>
-      </div>
-    </div>
-    <p class="role-card__one">事業機会を形にする</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>顧客課題と市場機会の整理</li>
-            <li>新しい事業・サービスの可能性を形にする</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">顧客課題や市場機会をもとに、新しい事業・サービスの可能性を形にすること。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>顧客</li><li>Engagement / Sales</li><li>社内の各専門部門</li></ul>
-    <p class="ws-card__note">※ 募集職種は「エンゲージメント・新規営業」に含まれます。</p>
-  </div>
-</article>
-<article class="ws-card ws-card--a rv" id="role-corp">
-  <div class="ws-card__top">
-    <div class="role-card__head">
-      <svg class="role-card__ic" aria-hidden="true"><use href="#ic-office"></use></svg>
-      <div>
-        <p class="role-card__en en">CORPORATE</p>
-        <h3>Corporate</h3>
-      </div>
-    </div>
-    <p class="role-card__one">組織と働く環境を支える</p>
-  </div>
-  <div class="ws-card__body">
-    <p class="ws-card__ch">主な仕事</p>
-    <ul class="role-points">
-            <li>社宅・社用車・通信・資産管理などの日常業務</li>
-            <li>社内申請のシステム化</li>
-            <li>業務フロー改善</li>
-            <li>関係部署との打ち合わせと、中長期的な課題への対応</li>
-          </ul>
-    <p class="ws-card__ch">この仕事らしさ</p>
-    <p class="ws-card__t">日常業務を支えながら、社内の仕組み自体も改善していくこと。</p>
-    <p class="ws-card__ch">関わる相手</p>
-    <ul class="role-people"><li>各部署のメンバー</li><li>社員</li></ul>
-    <p class="ws-card__note">※ 社員インタビューは総務課の仕事です。ほかの部署の業務分担は確認中です。</p>
-  </div>
-  <div class="ws-card__foot">
-    <div class="rcfoot">
-      <div class="rcperson">
-        <span class="rcperson__av av-pad"><img src="../../assets/avatar-corporate.png" alt="" width="900" height="975" loading="lazy"></span>
-        <a class="rcbtn rcbtn--main" href="../people/corporate/">この仕事をしている社員を見る<i aria-hidden="true">&#8594;</i></a>
-      </div>
-    </div>
-  </div>
-</article>
-    </div>
-  </div>
-</section>
 
 <!-- 05 ─────────── HOW ROLES CONNECT（1つに統合） ─────────── -->
 <!-- ===== WORKSTORY v1：正式WORKにあった2つのフロー図のうち、
@@ -638,6 +665,71 @@
 </footer>
 
 
+<!-- ===== WORKTABS v1：職種タブの切り替え。このページだけで使う最小限のJS。
+     ・クリック／Enter・Space で切り替え（button要素なので既定動作）
+     ・← → Home End でタブ間を移動（WAI-ARIA Tabs パターン）
+     ・URLハッシュ（#role-xxx）で該当タブを開く。他ページからのリンク用
+     ・タブ切り替え時は pushState で履歴に積み、戻る・進むでも切り替わる
+     ・prefers-reduced-motion のときはスクロールを瞬間移動にする
+     ===== -->
+<script>
+(function(){
+  var root=document.getElementById('rolepick'); if(!root) return;
+  var tabs=[].slice.call(root.querySelectorAll('[role="tab"]'));
+  var panels=[].slice.call(root.querySelectorAll('[role="tabpanel"]'));
+  if(!tabs.length||tabs.length!==panels.length) return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  function indexOfId(id){
+    for(var i=0;i<panels.length;i++){ if(panels[i].id===id) return i; }
+    return -1;
+  }
+  function select(i,opts){
+    opts=opts||{};
+    if(i<0||i>=tabs.length) return;
+    tabs.forEach(function(t,n){
+      var on=(n===i);
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+    });
+    panels.forEach(function(p,n){ p.classList.toggle('is-active',n===i); });
+    if(opts.focus) tabs[i].focus();
+    if(opts.scroll){
+      var y=panels[i].getBoundingClientRect().top+window.pageYOffset-96;
+      window.scrollTo(reduce?{top:y}:{top:y,behavior:'smooth'});
+    }
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){
+      select(i);
+      var h='#'+panels[i].id;
+      if(location.hash!==h && history.pushState) history.pushState(null,'',h);
+    });
+    t.addEventListener('keydown',function(e){
+      var k=e.key,n=-1;
+      if(k==='ArrowRight'||k==='ArrowDown') n=(i+1)%tabs.length;
+      else if(k==='ArrowLeft'||k==='ArrowUp') n=(i-1+tabs.length)%tabs.length;
+      else if(k==='Home') n=0;
+      else if(k==='End') n=tabs.length-1;
+      if(n<0) return;
+      e.preventDefault(); select(n,{focus:true});
+      var h='#'+panels[n].id;
+      if(location.hash!==h && history.pushState) history.pushState(null,'',h);
+    });
+  });
+  function fromHash(scroll){
+    var i=indexOfId((location.hash||'').replace('#',''));
+    if(i>=0) select(i,{scroll:!!scroll});
+  }
+  window.addEventListener('hashchange',function(){ fromHash(true); });
+  window.addEventListener('popstate',function(){ fromHash(false); });
+  fromHash(false);
+  // 読み込み時にハッシュ指定があれば、ブラウザの既定ジャンプのあとに位置を整える
+  if(location.hash && indexOfId(location.hash.replace('#',''))>=0){
+    window.addEventListener('load',function(){ setTimeout(function(){ fromHash(true); },60); });
+  }
+})();
+</script>
 <script src="../../assets/app.js?v=20261017a" defer></script>
 </body>
 </html>
