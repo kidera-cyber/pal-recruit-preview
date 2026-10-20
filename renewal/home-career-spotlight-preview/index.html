@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020b">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020c">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -340,29 +340,53 @@
      ■ 3つは閲覧テーマであり、研修ステップでも昇格順序でもない。
        その旨を本文の注記として明示している（創作した制度・実績は書いていない）。
      ===== -->
+<!-- ===== CSPOT v2：3つの項目を「読むだけの3ステップ」から
+     「気になることを選んで見に行ける3つの入口」へ。比較用プレビュー（正式HOMEは未変更）。
+     ■ v1 からの変更
+       ・見出し「入社後、どんな経験を重ねていくのか。」→「入社後の自分を、想像できていますか。」
+         赤は「想像」の2文字だけに当てている（黒地 5.11:1／大見出しのためAA）
+       ・3項目を問いかけ型にし、項目全体を <a> にしてキーボードでも操作できるようにした
+       ・遷移先が違うことが分かるよう、各項目に CAREER 側のセクション名を表示
+       ・主CTA「PALで描くキャリアを見る」→「入社後の仕事とキャリアを知る」（リンク先は career/ のまま）
+     ■ リンク先は CAREER ページに実在するIDのみを使用（推測していない）
+       #start   → 「01 Start／入社して、最初にすること。」
+       #growth  → 「02 Growth process／理解する。実践する。自分で考えて動く。」
+       #career  → 「03 Career path／専門性を深める。仕事の幅を広げる。」
+     ■ 3つは閲覧テーマであり、研修工程でも昇格順序でもない。注記は残している。
+       職種間の異動や標準キャリアを示唆する表現は入れていない。
+     ===== -->
 <section class="csp" id="after">
   <div class="csp__in wrap">
     <p class="csp__label en">Career / Your Next Chapter</p>
-    <h2 class="csp__ttl"><span class="nw">入社後、どんな経験を</span><span class="nw">重ねていくのか。</span></h2>
-    <p class="csp__lead">最初に関わる仕事から、経験を積んだ先の役割まで。<br>PALでのキャリアを、職種ごとに紹介します。</p>
+    <h2 class="csp__ttl"><span class="nw">入社後の自分を、</span><span class="nw"><em>想像</em>できていますか。</span></h2>
+    <p class="csp__lead">最初に任される仕事も、経験の積み方も、職種によって異なります。<br>PALでの仕事とキャリアを、もう少し具体的に見てみませんか。</p>
     <ol class="csp__themes">
       <li class="csp__th">
-        <span class="csp__no en">01</span>
-        <b class="csp__h">入社直後</b>
-        <span class="csp__t">最初に関わる仕事</span>
+        <a class="csp__a" href="../career/#start">
+          <span class="csp__no en">01</span>
+          <b class="csp__q">入社して最初に、<span class="nw">何をする？</span></b>
+          <span class="csp__t">最初に関わる仕事や、現場との関わり方</span>
+          <span class="csp__go"><span class="csp__dest en">CAREER / START</span><i class="csp__ar" aria-hidden="true">&#8594;</i></span>
+        </a>
       </li>
       <li class="csp__th">
-        <span class="csp__no en">02</span>
-        <b class="csp__h">経験を積む</b>
-        <span class="csp__t">任される仕事の変化</span>
+        <a class="csp__a" href="../career/#growth">
+          <span class="csp__no en">02</span>
+          <b class="csp__q"><span class="nw">どんな経験を</span><span class="nw">積んでいく？</span></b>
+          <span class="csp__t">仕事を覚え、役割が広がっていく過程</span>
+          <span class="csp__go"><span class="csp__dest en">CAREER / GROWTH PROCESS</span><i class="csp__ar" aria-hidden="true">&#8594;</i></span>
+        </a>
       </li>
       <li class="csp__th">
-        <span class="csp__no en">03</span>
-        <b class="csp__h">その先へ</b>
-        <span class="csp__t">職種ごとのキャリア</span>
+        <a class="csp__a" href="../career/#career">
+          <span class="csp__no en">03</span>
+          <b class="csp__q">その先に、<span class="nw">どんな道がある？</span></b>
+          <span class="csp__t">職種ごとのキャリアや専門性の広がり</span>
+          <span class="csp__go"><span class="csp__dest en">CAREER / CAREER PATH</span><i class="csp__ar" aria-hidden="true">&#8594;</i></span>
+        </a>
       </li>
     </ol>
-    <p class="csp__cta"><a class="btn btn--red btn--lg" href="../career/">PALで描くキャリアを見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    <p class="csp__cta"><a class="btn btn--red btn--lg" href="../career/">入社後の仕事とキャリアを知る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
     <p class="csp__note">※ 上の3つは、CAREERページを読むための切り口です。全社員共通の研修ステップや、昇格・職種転換の順序ではありません。</p>
   </div>
 </section>

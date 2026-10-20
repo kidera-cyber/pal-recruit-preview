@@ -6673,31 +6673,79 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .csp__ttl::after{content:"";display:block;width:64px;height:4px;margin-top:22px;background:var(--red-lt)}
 .csp__lead{margin-top:24px;max-width:44em;font-size:16px;line-height:2.05;color:#e2e2e2;text-wrap:pretty}
 
-/* 3テーマ：カード化せず、細い区切り線だけの横組み */
+/* CSPOT v2：見出しの「想像」だけを赤に。黒地 5.11:1、大見出しサイズなのでAA */
+.csp__ttl em{font-style:normal;color:var(--red-on-dark)}
+
+/* 3テーマ：カード化せず、細い区切り線だけの横組み。
+   v2 で項目全体を <a> にしたため、クリック領域はセルいっぱいに広げている。 */
 .csp__themes{margin-top:52px;list-style:none;display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
   border-top:1px solid rgba(255,255,255,.22)}
-.csp__th{padding:28px 30px 4px 0}
-.csp__th+.csp__th{padding-left:30px;border-left:1px solid rgba(255,255,255,.22)}
+.csp__th{position:relative}
+.csp__th+.csp__th{border-left:1px solid rgba(255,255,255,.22)}
+.csp__a{position:relative;display:block;height:100%;padding:28px 30px 26px 0;
+  transition:background-color .25s var(--ease)}
+.csp__th+.csp__th .csp__a{padding-left:30px}
+/* ホバー：上辺のPALレッドが左から伸びる */
+.csp__a::before{content:"";position:absolute;left:0;right:auto;top:-1px;width:0;height:2px;
+  background:var(--red-lt);transition:width .3s var(--ease)}
+.csp__th+.csp__th .csp__a::before{left:-1px}
+.csp__a:hover::before,.csp__a:focus-visible::before{width:100%}
+.csp__a:hover,.csp__a:focus-visible{background:rgba(255,255,255,.045)}
 .csp__no{display:block;font-family:Lato,sans-serif;font-size:34px;font-weight:900;line-height:1;
   letter-spacing:.01em;color:var(--red-on-dark);font-variant-numeric:tabular-nums}
-.csp__h{display:block;margin-top:16px;font-size:clamp(19px,2vw,24px);line-height:1.45;
-  font-weight:700;color:#fff}
-.csp__t{display:block;margin-top:10px;font-size:14.5px;line-height:1.85;color:#cacaca}
+/* 質問文は v1 の .csp__h より一段階大きく。通常は少し落とし、ホバーで白へ上げる */
+.csp__q{display:block;margin-top:16px;padding-right:72px;
+  font-size:clamp(19px,2.1vw,25px);line-height:1.5;font-weight:700;color:#e4e4e4;
+  text-wrap:pretty;transition:color .25s}
+/* .nw（inline-block）で節ごとに折る。balance だと「どんな／な道」のように語中で切れる */
+.csp__q .nw{display:inline-block;max-width:100%}
+.csp__a:hover .csp__q,.csp__a:focus-visible .csp__q{color:#fff}
+.csp__t{display:block;margin-top:12px;font-size:14px;line-height:1.85;color:#b4b4b4}
+/* 遷移先が項目ごとに違うことを明示する */
+.csp__go{display:block;margin-top:20px;font-size:11px}
+.csp__dest{color:#8f8f8f;letter-spacing:.14em;transition:color .25s}
+.csp__a:hover .csp__dest,.csp__a:focus-visible .csp__dest{color:var(--red-on-dark)}
+/* 右端の固定タブ（.sidecta／幅58px）が 03 の矢印に重なるため、
+   3項目とも同じだけ内側に寄せて、位置はそろえたまま重なりを避ける。
+   スマホでは .sidecta が下部バーに変わるので、端まで寄せてよい。 */
+.csp__ar{position:absolute;right:40px;top:26px;font-style:normal;font-size:17px;
+  color:var(--red-on-dark);transition:transform .25s var(--ease)}
+.csp__a:hover .csp__ar,.csp__a:focus-visible .csp__ar{transform:translateX(4px)}
+/* 黒地では既定の赤いフォーカスリング（3.76:1）が沈むので明るい赤にする */
+.csp :focus-visible{outline:3px solid var(--red-lt);outline-offset:-3px}
 
 .csp__cta{margin-top:52px}
 /* 主CTAは1つだけなので、黒帯のなかで明確に主役になる大きさにする */
 .csp__cta .btn{padding:21px 40px;font-size:17.5px;box-shadow:0 10px 28px rgba(207,19,27,.34)}
 .csp__cta .btn__ico{width:30px;height:30px;font-size:12px}
-.csp__note{margin-top:22px;max-width:46em;font-size:12.5px;line-height:1.9;color:#a2a2a2}
+
+/* 注記：内容はそのまま。読める大きさ・明るさにして、CTAとの間を空ける */
+.csp__note{margin-top:30px;max-width:46em;font-size:13.5px;line-height:1.95;color:#b4b4b4}
 
 @media (max-width:860px){
   .csp{padding-block:66px}
   .csp__themes{grid-template-columns:minmax(0,1fr);margin-top:40px}
-  .csp__th{padding:22px 0 6px}
-  .csp__th+.csp__th{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.22)}
+  .csp__a,.csp__th+.csp__th .csp__a{padding:22px 0 22px}
+  .csp__th+.csp__th{border-left:0;border-top:1px solid rgba(255,255,255,.22)}
+  .csp__th+.csp__th .csp__a::before{left:0}
   .csp__no{font-size:28px}
+  .csp__q{font-size:21px;padding-right:32px}
+  .csp__ar{top:20px;right:0}
+  .csp__go{margin-top:16px}
   .csp__cta{margin-top:38px}
   .csp__cta .btn{width:100%;justify-content:center;padding-block:18px}
+  .csp__note{margin-top:24px;font-size:13px}
+}
+
+/* スマホはホバー前提にしない：ポインタが粗い端末では赤いラインを常時表示し、
+   ホバーでしか気づけない変化を作らない */
+@media (hover:none){
+  .csp__a::before{width:100%;opacity:.45}
+  .csp__q{color:#fff}
+}
+@media (prefers-reduced-motion:reduce){
+  .csp__a,.csp__a::before,.csp__q,.csp__dest,.csp__ar{transition:none}
+  .csp__a:hover .csp__ar,.csp__a:focus-visible .csp__ar{transform:none}
 }
 /* ===== CSPOT v1 END ===== */

@@ -75,14 +75,15 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color
     </section>
 
     <section class="card card--new">
-      <div class="card__h"><span class="en">AFTER</span><h2>CAREER SPOTLIGHT</h2></div>
+      <div class="card__h"><span class="en">AFTER（v2）</span><h2>CAREER SPOTLIGHT</h2></div>
       <div class="card__b">
-        「入社後、どんな経験を重ねていくのか。」<br>ブラック基調の大型エディトリアル1枚。3テーマは区切り線だけの横組み、主CTAは赤いボタン1つ。
+        「入社後の自分を、<b style="color:var(--red)">想像</b>できていますか。」<br>ブラック基調の大型エディトリアル1枚。3テーマは区切り線だけの横組みのまま、<b>1項目ずつクリックできる3つの入口</b>にしました。
         <ul>
-          <li>役割を「入社後の経験・成長・職種別キャリアへの入口」に変更</li>
-          <li>カード廃止・ボタンは1つだけ</li>
-          <li>CTA は PC 337×74px／スマホ 343×68px</li>
-          <li>上辺に PALレッド、見出し下に赤のライン</li>
+          <li>3テーマを問いかけ型にし、項目全体をリンク化（キーボード操作可）</li>
+          <li>遷移先が違うことが分かるよう、CAREER側のセクション名を表示</li>
+          <li>ホバー：赤いラインが伸びる／見出しが白へ／矢印が4px動く／背景が少し明るくなる</li>
+          <li>主CTA「入社後の仕事とキャリアを知る」PC 337×74px／スマホ 343×87px</li>
+          <li>タップ領域はスマホで 343×195px（1項目あたり）</li>
         </ul>
       </div>
       <div class="card__f"><a class="btn" href="home-career-spotlight-preview/#after">新デザインを見る</a></div>
@@ -91,14 +92,15 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color
 
   <h3 class="sec">3テーマと、CAREERページの実際の中身の対応</h3>
   <table>
-    <tr><th>HOMEの表示</th><th>CAREER側の該当箇所</th><th>実際の見出し・本文</th></tr>
-    <tr><td>01 入社直後<br>最初に関わる仕事</td><td><code>career/#start</code></td><td>「01 Start／入社して、最初にすること。」<br>旧SCENE 01〜04の原文がここにあります</td></tr>
-    <tr><td>02 経験を積む<br>任される仕事の変化</td><td><code>career/#growth</code></td><td>「02 Growth process／理解する。実践する。自分で考えて動く。」<br>「経験を重ねるにつれて、できることと任される範囲が変わります。」</td></tr>
-    <tr><td>03 その先へ<br>職種ごとのキャリア</td><td><code>career/#career</code></td><td>「03 Career path／専門性を深める。仕事の幅を広げる。」<br>「職種ごとの道すじを見る。」＋6職種のタブ</td></tr>
+    <tr><th>HOMEの表示</th><th>リンク先</th><th>CAREER側の実際の見出し・本文</th><th>着地の実測</th></tr>
+    <tr><td>01 入社して最初に、何をする？<br>最初に関わる仕事や、現場との関わり方</td><td><code>career/#start</code></td><td>「01 Start／入社して、最初にすること。」<br>旧SCENE 01〜04の原文がここにあります</td><td class="ok">ヘッダー直下88pxに着地</td></tr>
+    <tr><td>02 どんな経験を積んでいく？<br>仕事を覚え、役割が広がっていく過程</td><td><code>career/#growth</code></td><td>「02 Growth process／理解する。実践する。自分で考えて動く。」<br>「経験を重ねるにつれて、できることと任される範囲が変わります。」</td><td class="ok">ヘッダー直下88pxに着地</td></tr>
+    <tr><td>03 その先に、どんな道がある？<br>職種ごとのキャリアや専門性の広がり</td><td><code>career/#career</code></td><td>「03 Career path／専門性を深める。仕事の幅を広げる。」<br>「職種ごとの道すじを見る。」＋6職種のタブ</td><td class="ok">ヘッダー直下88pxに着地</td></tr>
   </table>
   <div class="note">
-    <b>3テーマはリンクにしていません。</b>アンカー（<code>#start</code> / <code>#growth</code> / <code>#career</code>）は3つとも実在しますが、まずは主CTAを1つに絞る方針を優先しました。個別リンクにする場合はすぐ切り替えられます。<br>
-    <b>「研修ステップ・昇格順序ではない」旨の注記を1行入れています。</b>01→02→03 と番号を振る以上、順番どおりの昇進や職種転換を保証すると読まれないようにするためです。
+    <b>リンク先は実在するIDのみを使っています。</b>CAREERページのHTMLを確認し、<code>#start</code> / <code>#growth</code> / <code>#career</code> が実在することと、3本とも固定ヘッダー直下（88px）に着地することを実測しました。推測でIDを置いた箇所はありません。<br>
+    <b>「研修ステップ・昇格順序ではない」旨の注記は残しています。</b>01→02→03 と番号を振る以上、順番どおりの昇進や職種転換を保証すると読まれないようにするためです。文字サイズは 12.5px → 13.5px、色は #A2A2A2 → #B4B4B4（黒地 10.13:1）に上げ、CTAとの間を 22px → 30px 空けました。<br>
+    <b>スマホではホバー前提の表示にしていません。</b><code>@media (hover:none)</code> で赤いラインを常時表示し、見出しも最初から白にしています。<code>prefers-reduced-motion</code> ではトランジションを無効化します。
   </div>
 
   <h3 class="sec">検証結果</h3>
@@ -106,13 +108,15 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:13px;color
     <tr><th>確認項目</th><th>結果</th></tr>
     <tr><td>① 4枚のSCENEカードが消えている</td><td class="ok">4枚 → 0枚</td></tr>
     <tr><td>③ A DAY IN THE LIFE と重複しない</td><td class="ok">A DAY は無変更（6枚のまま）。役割をキャリアへの入口に変更</td></tr>
-    <tr><td>④ CAREERへのリンクが正常</td><td class="ok">主CTA 1つ → <code>career/</code></td></tr>
+    <tr><td>④ CAREERへのリンクが正常</td><td class="ok">主CTA → <code>career/</code>、3項目 → <code>#start</code> / <code>#growth</code> / <code>#career</code>（全4本・着地位置まで実測）</td></tr>
+    <tr><td>各項目がクリック可能だと分かる</td><td class="ok">項目全体が &lt;a&gt;（キーボード操作可）／右上に赤い矢印／遷移先のセクション名を表示</td></tr>
+    <tr><td>黒背景の文字の読みやすさ</td><td class="ok">見出し 21:1／「想像」5.11:1／導入文 16.21:1／質問文 16.52:1／補足 10.13:1／遷移先 6.49:1／注記 10.13:1</td></tr>
     <tr><td>⑤ 旧SCENEの文章はCAREER側に維持</td><td class="ok">SCENE 01〜04 の見出し・本文とも無変更（CAREERの差分はCSS版番号のみ）</td></tr>
     <tr><td>⑥ PC・スマホで表示崩れがない</td><td class="ok">横スクロール 0件（1280px / 390px）</td></tr>
     <tr><td>⑦ 他セクションに変更がない</td><td class="ok"><code>#after</code> を除いた本文が正式HOMEと完全一致</td></tr>
     <tr><td>⑧ SEO・AIO設定が維持</td><td class="ok">H1・title・meta description・canonical・構造化データ・見出し階層すべて無変更</td></tr>
     <tr><td>コントラスト（WCAG AA）</td><td class="ok">違反 0件</td></tr>
-    <tr><td>縦幅</td><td>#after 571→835px（PC）／947→1064px（スマホ）</td></tr>
+    <tr><td>縦幅</td><td>#after 571→953px（PC）／947→1299px（スマホ）</td></tr>
   </table>
 </main>
 
