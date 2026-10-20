@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261020j">
+<link rel="stylesheet" href="../../assets/style.css?v=20261020k">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "PALを知る"}]}</script>
@@ -196,8 +196,12 @@
            明記されているため、いずれもこのページには持ち込んでいない。 ===== -->
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Why PAL</p>
-      <h2 class="stitle"><span class="nw">現場を知り、仕組みをつくり、</span><span class="nw">運用し、改善する。</span></h2>
-      <p class="slead">物流現場の運営で得た知見を、戦略・技術・設備・データ活用へつなぎ、実際に使える仕組みづくりに取り組んでいます。</p>
+      <!-- ===== PALSTR v2：会社の強みの説明で終わらせず、現場運営・システム開発の
+           経験者が自分の仕事として読めるコピーへ。事業構造（BPOでの現場運営と
+           自社でのシステム・設備・データ活用）は現行サイトとプレス原稿の双方で
+           確認できる範囲に収めている。 ===== -->
+      <h2 class="stitle"><span class="nw">現場を動かす。</span><span class="nw">仕組みをつくる。</span><br><span class="nw">その両方が、PALの仕事。</span></h2>
+      <p class="slead">物流現場の運営から、システム開発・自動化・データ活用まで。異なる専門性を組み合わせ、現場で使える仕組みをつくり、改善を重ねています。</p>
     </div>
 
     <!-- 4つの力。中央にPALを置き、周囲の4領域が一方向ではなく循環することを示す。 -->
@@ -235,6 +239,25 @@
       </ol>
       <p class="force4__note">※ 4つは、PALが持つ機能を整理したものです。すべての案件が同じ工程をたどるわけではありません。技術と設備は自社開発に加え、外部製品やパートナーとの連携も含みます。</p>
     </div>
+
+    <!-- ===== PALSTR v2：上の「4つの力」を、働く人から見た仕事の面白さに変換する2枠。
+         図解は増やさず、短い2文と職種・インタビューへの導線だけで構成している。
+         担当範囲を保証する表現にならないよう、直後に注記を置いた。 ===== -->
+    <div class="two-view rv">
+      <div class="two-view__i">
+        <p class="two-view__en en">If you come from the field</p>
+        <h3 class="two-view__h">現場運営の経験がある人へ。</h3>
+        <p class="two-view__t">稼働・品質・安全・生産性に向き合う日々の運営に加えて、システムや自動化設備、データを使った現場改善にも接点があります。</p>
+        <p class="two-view__go"><a class="textlink textlink--sm" href="../work/#role-bpo">現場運営の仕事を見る</a><a class="textlink textlink--sm" href="../people/bpo/">現場運営の社員を見る</a></p>
+      </div>
+      <div class="two-view__i">
+        <p class="two-view__en en">If you come from engineering</p>
+        <h3 class="two-view__h">システム・開発の経験がある人へ。</h3>
+        <p class="two-view__t">つくった仕組みは、PALが運営する現場で実際に使われます。業務や運用とのつながりを考えながら、開発と実装に関わります。</p>
+        <p class="two-view__go"><a class="textlink textlink--sm" href="../work/#role-system">開発の仕事を見る</a><a class="textlink textlink--sm" href="../people/system/">開発の社員を見る</a></p>
+      </div>
+    </div>
+    <p class="two-view__note rv">※ 担当する範囲は職種と配属によって異なります。現場運営の全員がシステム開発や自動化設計を担当するわけではありません。開発もすべてを自社だけで行うものではなく、提案したものが必ず実装されるとは限りません。</p>
 
     <!-- ロジテックインテグレーション：設備・製品の仕様には踏み込まず、
          「自分たちの現場で試したことを仕組みづくりへ活かしている」だけを伝える。 -->

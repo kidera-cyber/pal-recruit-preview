@@ -6955,3 +6955,28 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .fdeline__i--key{padding-left:16px;padding-right:16px}
 }
 /* ===== PALSTR v1 END ===== */
+
+/* ============================================================
+   ===== PALSTR v2 START =====
+   ABOUT：4つの力（会社の機能）を、働く人から見た仕事の面白さに変換する2枠。
+   図解は増やさず、見出し＋2文＋導線だけの軽い構成にする。
+   ============================================================ */
+.two-view{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;
+  border-top:2px solid #000}
+.two-view__i{padding:26px 30px 24px 0}
+.two-view__i+.two-view__i{padding-left:30px;border-left:1px solid var(--line)}
+.two-view__en{font-family:Lato,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;
+  color:var(--red)}
+.two-view__h{margin-top:10px;font-size:clamp(18px,1.9vw,22px);line-height:1.5;font-weight:700;
+  color:#000;text-wrap:pretty}
+.two-view__t{margin-top:12px;font-size:14.5px;line-height:1.9;color:var(--sub);text-wrap:pretty}
+.two-view__go{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 20px}
+.two-view__note{margin-top:18px;max-width:52em;font-size:12.5px;line-height:1.85;color:var(--muted)}
+
+@media (max-width:860px){
+  .two-view{grid-template-columns:minmax(0,1fr);margin-top:28px}
+  .two-view__i{padding:22px 0 20px}
+  .two-view__i+.two-view__i{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .two-view__go{gap:8px 16px}
+}
+/* ===== PALSTR v2 END ===== */
