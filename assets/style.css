@@ -7295,3 +7295,76 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .cmrel .btn{width:100%;justify-content:center}
 }
 /* ===== CMJOB v1 END ===== */
+
+/* ============================================================
+   ===== JOBSOPEN v1 START =====
+   JOBS：現在募集中の求人一覧（絞り込み＋職種グループ）と求人詳細ページ用。
+   使用箇所は renewal/jobs/ と renewal/jobs/openings/ のみ。既存ルールの上書きなし。
+   HTMLは tools/build_jobs.py が生成するため、クラス名を変えるときはスクリプトも直す。
+   ============================================================ */
+
+/* ---- 絞り込み（JavaScript有効時だけ表示。無効時は全求人をそのまま出す） ---- */
+.jfil{display:none}
+#joblist.is-js .jfil{display:block;margin-bottom:34px;padding:22px 24px 20px;
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--bg-soft)}
+.jfil__row{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:12px 16px;
+  align-items:baseline}
+.jfil__row+.jfil__row{margin-top:14px}
+.jfil__k{font-size:12.5px;font-weight:700;color:var(--red)}
+.jfil__bs{display:flex;flex-wrap:wrap;gap:8px}
+.jfil__b{padding:8px 15px;border:1px solid var(--line-mid);border-radius:9999px;
+  background:#fff;color:var(--text);font:inherit;font-size:13px;font-weight:700;
+  line-height:1.5;cursor:pointer;transition:background-color .2s,border-color .2s}
+.jfil__b:hover{border-color:#000}
+.jfil__b[aria-pressed="true"]{background:#000;border-color:#000;color:#fff}
+.jfil__n{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:12.5px;line-height:1.7;color:var(--sub)}
+.jfil__n b{font-size:15px;font-weight:700;color:#000}
+
+/* ---- 職種グループ ---- */
+.jgroup+.jgroup{margin-top:46px}
+.jgroup__h{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding-bottom:12px;border-bottom:2px solid #000}
+.jgroup__n{font-size:clamp(18px,2vw,22px);font-weight:700;line-height:1.5;color:#000}
+.jgroup__c{font-family:Lato,sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.12em;color:var(--red);white-space:nowrap}
+.jgroup__lead{margin-top:13px;font-size:13px;line-height:1.85;color:var(--muted)}
+
+/* ---- 求人カード（PC2列／スマホ1列） ---- */
+.jcards{margin-top:18px;list-style:none;display:grid;gap:16px;
+  grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.jcard{display:flex;flex-direction:column;padding:22px 24px 20px;
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff}
+.jcard__cat{font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--red)}
+.jcard__n{margin-top:9px;font-size:18px;line-height:1.5;font-weight:700;color:#000}
+.jcard__lv{display:block;margin-top:5px;font-size:14px;font-weight:700;color:var(--sub)}
+.jcard__dl{margin-top:15px;display:grid;grid-template-columns:5em minmax(0,1fr);
+  gap:8px 14px;align-items:baseline}
+.jcard__dl dt{font-size:12px;font-weight:700;color:var(--muted)}
+.jcard__dl dd{margin:0;font-size:13.5px;line-height:1.7;color:var(--sub)}
+.jcard__dl dd b{font-size:15px;font-weight:700;color:#000}
+.jcard__foot{margin-top:auto;padding-top:18px;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:12px}
+.jchip{padding:4px 12px;border-radius:9999px;background:var(--red);color:#fff;
+  font-size:11.5px;font-weight:700;line-height:1.6}
+.jcard__cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;
+  border-radius:9999px;background:#000;color:#fff;font-size:13.5px;font-weight:700;
+  text-decoration:none}
+.jcard__cta:hover{background:#1c1c1c}
+
+/* ---- 求人詳細の説明文 ---- */
+.jabout{max-width:72ch;font-size:15.5px;line-height:1.95;color:var(--sub);text-wrap:pretty}
+
+@media (max-width:1000px){
+  .jcards{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  #joblist.is-js .jfil{padding:18px 17px 16px}
+  .jfil__row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .jcard{padding:19px 18px 17px}
+  .jcard__dl{grid-template-columns:minmax(0,1fr);gap:3px}
+  .jcard__dl dd{margin-bottom:7px}
+  .jcard__cta{width:100%;justify-content:center}
+  .jabout{font-size:15px}
+}
+/* ===== JOBSOPEN v1 END ===== */

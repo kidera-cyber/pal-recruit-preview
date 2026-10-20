@@ -419,7 +419,8 @@ def level1(preview=True):
     return out
 
 if __name__ == "__main__":
-    print("LEVEL 01 ->", level1(preview=True))
+    # LEVEL 01（JOBS一覧）は JOBSOPEN v1（tools/build_jobs.py）へ移行済みのため生成しない。
+    # renewal/jobs-preview/ は検討の記録として残しているが、条件は古い。
     print("LEVEL 02 ->", level2(preview=True))
     print("LEVEL 03 ->", level3(POS[0], preview=True))
     print("confirmed=%d / tbd=%d / demo=%d"
