@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261021e">
+<link rel="stylesheet" href="../../assets/style.css?v=20261021f">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "募集職種"}]}</script>
@@ -272,7 +272,7 @@
     <p class="note rv">※ 下記の職種は募集条件を確認中、またはクレンリネスのように現在募集していないため、上の「今、募集している仕事」には掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
 <!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
      tools/set_entry_cta.py on で元に戻す。 =====
-    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">カジュアル面談・エントリーについて<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">応募・選考について<span class="btn__ico" aria-hidden="true">▶</span></a></p>
      ===== ENTRY-CTA v1 OFF ここまで ===== -->
   </div>
 </section>
@@ -282,16 +282,18 @@
     <div class="shead rv" style="margin-bottom:30px">
       <p class="slabel">Selection</p>
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,30px)">選考について。</h2>
-      <p class="slead">4職種とも同じ流れです。選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+      <p class="slead">掲載中の求人は同じ流れで選考します。面接の回数は求人によって異なります。</p>
     </div>
+    <!-- ===== ENTRYFLOW v1：承認済み求人票の値（面接2回／FDEは2〜3回／筆記試験なし）に合わせ、
+         5ステップ（会社説明・カジュアル面談・最終面接を含む）を3ステップへ改めた。
+         renewal/entry/ の選考の流れと同じ内容にそろえている。旧記載は git 履歴から。 ===== -->
     <ol class="flowsel rv">
-        <li><span class="en">STEP 01</span><b>エントリー</b><p>本サイトよりマイページ登録。</p></li>
-        <li><span class="en">STEP 02</span><b>会社説明 / カジュアル面談</b><p>まずは相互理解から。</p></li>
-        <li><span class="en">STEP 03</span><b>選考面接</b><p>現場・経営との複数回面接。</p></li>
-        <li><span class="en">STEP 04</span><b>最終面接</b><p>役員面接で相互に見極め。</p></li>
-        <li><span class="en">STEP 05</span><b>内定</b><p>次の未来を、一緒に。</p></li>
+        <li><span class="en">STEP 01</span><b>応募</b><p>募集要項をご確認のうえ、ご応募ください。</p></li>
+        <li><span class="en">STEP 02</span><b>面接</b><p>回数は求人によって異なります。Web面接にも対応しています。</p></li>
+        <li><span class="en">STEP 03</span><b>内定</b><p>条件をご確認のうえ、入社の手続きに進みます。</p></li>
     </ol>
-    <p class="note rv" style="color:#a2a2a2">※ 選考面接は複数回おこないます。Web面接にも対応しています。</p>
+    <p class="note rv" style="color:#a2a2a2">※ 現在掲載している求人では面接は2回（FDEは2〜3回）、筆記試験はありません。回数は各求人の募集要項に掲載しています。</p>
+    <p class="note rv" style="color:#a2a2a2">※ 選考前のカジュアル面談や個別の会社説明会は実施しておりません。</p>
   </div>
 </section>
 
@@ -300,7 +302,7 @@
     <div class="shead rv" style="margin-bottom:26px">
       <p class="slabel">Not sure yet</p>
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,30px)">どの仕事が自分に合うか、迷ったら。</h2>
-      <p class="slead">仕事の中身や働く人からも選べます。選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+      <p class="slead">仕事の中身や働く人からも選べます。募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
     </div>
     <ul class="nextlinks nextlinks--3 rv">
       <li><a href="../work/"><small>WORK</small><b>仕事を知る</b><span>職種どうしのつながりと、仕事の進め方</span></a></li>
@@ -321,7 +323,7 @@
   <div class="entry__inner wrap--narrow">
     <p class="entry__label en">NEXT STEP</p>
     <h2>気になる仕事が<br>見つかったら。</h2>
-    <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+    <p>募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
 <!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
      tools/set_entry_cta.py on で元に戻す。 =====
     <div class="entry__ctas">

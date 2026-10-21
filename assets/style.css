@@ -7678,3 +7678,18 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jdrel .btn{width:100%;justify-content:space-between}
 }
 /* ===== JOBDETAIL v2 END ===== */
+
+/* ============================================================
+   ===== FAQLINK v1 START =====
+   FAQ回答内のリンクが本文と同色・下線なしで、クリックできることが
+   分からない状態だった（--sub #4a4a4a の地の文と同じ見え方）。
+   「詳しくは募集要項をご確認ください」という誘導が機能しないため、
+   回答内のテキストリンクだけを赤・太字・下線にする。
+   .textlink / .btn を付けたリンクは既存の見た目を保つため対象外。
+   アコーディオンの開閉・レイアウト・カテゴリ構成は変更していない。
+   ============================================================ */
+.faq details p a:not(.textlink):not(.btn){
+  color:var(--red);font-weight:700;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.faq details p a:not(.textlink):not(.btn):hover{color:var(--red-dark)}
+/* ===== FAQLINK v1 END ===== */

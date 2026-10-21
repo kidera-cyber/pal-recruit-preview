@@ -9,7 +9,7 @@
   ・フッターナビの「エントリー」
   ・ページ末尾 .entry の応募ボタン（entry/ へ向かうもの）
   ・求人カード／募集要項の「この求人に応募する」「この職種にエントリー」
-  ・JOBS の「カジュアル面談・エントリーについて」
+  ・JOBS の「応募・選考について」
 
 止め方は削除ではなくコメントアウト（マーカー付き）なので、
 正式な応募先が決まったら off → on のコマンド1つで元に戻せる。
@@ -36,8 +36,8 @@ PATTERNS = [
     r'[ \t]*<a class="btn btn--red btn--lg" href="' + ENTRY + r'">[^<]*<span class="btn__ico"[^>]*>▶</span></a>\n',
     r'[ \t]*<a class="btn btn--ghost btn--lg" href="' + ENTRY + r'">エントリーする<span class="btn__ico"[^>]*>▶</span></a>\n',
     r'[ \t]*<a class="btn btn--red" href="' + ENTRY + r'">この職種にエントリー<span class="btn__ico"[^>]*>▶</span></a>　?\n?',
-    r'[ \t]*<a class="btn btn--ghost" href="' + ENTRY + r'">カジュアル面談・エントリーについて<span class="btn__ico"[^>]*>▶</span></a>\n',
-    r'[ \t]*<p class="rv"[^>]*><a class="btn btn--ghost" href="' + ENTRY + r'">カジュアル面談・エントリーについて<span class="btn__ico"[^>]*>▶</span></a></p>\n',
+    r'[ \t]*<a class="btn btn--ghost" href="' + ENTRY + r'">応募・選考について<span class="btn__ico"[^>]*>▶</span></a>\n',
+    r'[ \t]*<p class="rv"[^>]*><a class="btn btn--ghost" href="' + ENTRY + r'">応募・選考について<span class="btn__ico"[^>]*>▶</span></a></p>\n',
     # ページ末尾の副導線（応募する／応募方法・選考の流れ）
     r'[ \t]*<p class="entry__sec"><a href="' + ENTRY + r'">[^<]*</a></p>\n',
     r'　<a class="btn btn--ghost" href="' + ENTRY + r'">応募方法・選考の流れ<span class="btn__ico"[^>]*>▶</span></a>',

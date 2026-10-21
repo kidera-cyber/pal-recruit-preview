@@ -227,7 +227,7 @@ def build_index():
       <li id="job-clean"><b>Cleanliness（クレンリネス）</b><span class="others__none">現在募集していません</span></li>
     </ul>
     <p class="note rv">※ 下記の職種は募集条件を確認中、またはクレンリネスのように現在募集していないため、上の「今、募集している仕事」には掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
-    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">カジュアル面談・エントリーについて<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">応募・選考について<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 
@@ -311,7 +311,7 @@ def detail_body_v2(o, P, intro=""):
     lic = ('<p class="jdsub">資格</p>' + li2([o["license"]])) if o.get("license") else ""
     person = (('<p class="jdsub">求める人物像</p><p class="jdtext">' + e(o["req_person"]) + '</p>')
               if o.get("req_person") else "")
-    flow = ('エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）'
+    flow = ('応募 → 面接 → 内定（Web面接にも対応しています）'
             '<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')
     salary = spec2([(o.get("salary_label", "想定年収"), "<b>%s</b>" % e(o["salary_year"])),
                     ("月給", e(o.get("salary_month", ""))), ("賞与", e(o.get("bonus", "")))])
@@ -405,7 +405,7 @@ def detail_body_v2(o, P, intro=""):
   <div class="entry__inner wrap--narrow">
     <p class="entry__label en">NEXT STEP</p>
     <h2>この求人に<br>応募する。</h2>
-    <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+    <p>募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
@@ -509,7 +509,7 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     <p class="role__h rv" style="margin-top:40px"><span class="en">08</span>選考</p>
     {spec([("採用人数", e(o["hires"])), ("面接回数", e(o["interviews"])),
            ("筆記試験", e(o["written_test"])),
-           ("選考の流れ", 'エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')])}
+           ("選考の流れ", '応募 → 面接 → 内定（Web面接にも対応しています）<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')])}
 
     <p class="role__h rv" style="margin-top:40px"><span class="en">09</span>この仕事をしている社員の話</p>
     <p class="jabout rv">{e(c["people_label"])}を掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
@@ -525,7 +525,7 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
   <div class="entry__inner wrap--narrow">
     <p class="entry__label en">NEXT STEP</p>
     <h2>この求人に<br>応募する。</h2>
-    <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+    <p>募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>

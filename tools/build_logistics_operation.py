@@ -182,7 +182,7 @@ def build():
   <div class="entry__inner wrap--narrow">
     <p class="entry__label en">NEXT STEP</p>
     <h2>働きたい拠点を選んで、<br>募集要項を見る。</h2>
-    <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+    <p>募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="#positions">募集拠点の一覧を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
       <a class="btn btn--ghost btn--lg" href="../../entry/">エントリーする<span class="btn__ico" aria-hidden="true">▶</span></a>
