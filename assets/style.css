@@ -7725,3 +7725,37 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .entry--left .entry__ctas{justify-content:flex-start}
 .entry--left p{margin-inline:0}
 /* ===== RSTAT v1 / ENTRYLEFT v1 END ===== */
+
+/* ============================================================
+   ===== FLOW4 v1 START =====
+   選考フローを4ステップにしたことに伴う調整。
+   ① .flowsel（JOBS #selection・黒地）と .steps-flow（ENTRY・白地）は
+      repeat(5,1fr) 固定で、3項目のときに右側に空列ができていた。
+      grid-auto-flow:column に変えて、項目数に合わせて列が決まるようにする。
+      折り返し後（狭い幅）は従来どおり grid-template-columns で2列・1列にする。
+   ② 各カードに担当者（.sflow__who）と実施方法（.sflow__how）の2行を追加。
+   既存の色（STEP 01〜03 は黒地／最後の1枚は PAL レッド）は変更していない。
+   ============================================================ */
+.flowsel,.steps-flow{grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);
+  grid-template-columns:none}
+.sflow__who,.sflow__how{display:block;line-height:1.6}
+.sflow__who{margin-top:8px;font-size:15px;font-weight:700}
+.sflow__how{margin-top:5px;font-size:13.5px;font-weight:700}
+/* 黒地（JOBS） */
+.flowsel .sflow__who{color:#fff}
+.flowsel .sflow__how{color:var(--red-on-dark)}
+.flowsel li:last-child .sflow__how{color:rgba(255,255,255,.85)}
+/* 白地（ENTRY） */
+.steps-flow .sflow__who{color:var(--navy)}
+.steps-flow .sflow__how{color:var(--red)}
+.flowsel p,.steps-flow p{margin-top:9px}
+
+@media (max-width:1000px){
+  .flowsel,.steps-flow{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flowsel li::after,.steps-flow li::after{display:none}
+}
+@media (max-width:600px){
+  .flowsel,.steps-flow{grid-template-columns:minmax(0,1fr)}
+  .sflow__who{font-size:15px}
+}
+/* ===== FLOW4 v1 END ===== */

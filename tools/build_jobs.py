@@ -39,6 +39,9 @@ for o in OPEN:
 # "v2" は視認性を上げた6セクション構成（ヘッダー＋主要条件サマリー）。
 # 比較プレビューの承認後に LAYOUT = "v2" にすると、全求人詳細が v2 で再生成される。
 # 個別HTMLは手で直さない。求人データ（data/jobs-openings.json）は変更しない。
+# ===== FLOW4 v1：選考の流れ。renewal/jobs/#selection・renewal/entry/・FAQ と同じ内容にそろえている。
+FLOW_TEXT = "応募 → 1次面接（部門責任者・原則WEB面接） → 2次面接（取締役・対面面接が基本） → 内定・オファー面談"
+
 LAYOUT = "v2"   # 2026-10-21 承認：比較プレビューを全求人詳細へ展開
 
 # 出力先の階層ごとの相対パス。
@@ -316,8 +319,9 @@ def detail_body_v2(o, P, intro=""):
     lic = ('<p class="jdsub">資格</p>' + li2([o["license"]])) if o.get("license") else ""
     person = (('<p class="jdsub">求める人物像</p><p class="jdtext">' + e(o["req_person"]) + '</p>')
               if o.get("req_person") else "")
-    flow = ('応募 → 面接 → 内定（Web面接にも対応しています）'
-            '<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')
+    # ===== FLOW4 v1：実際の面接体制（1次＝部門責任者・原則WEB／2次＝取締役・対面が基本）に合わせた。
+    flow = (FLOW_TEXT
+            + '<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')
     salary = spec2([(o.get("salary_label", "想定年収"), "<b>%s</b>" % e(o["salary_year"])),
                     ("月給", e(o.get("salary_month", ""))), ("賞与", e(o.get("bonus", "")))])
     hours = spec2([("雇用形態", e(o["employment"])), ("試用期間", e(o["probation"])),
@@ -517,7 +521,7 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     <p class="role__h rv" style="margin-top:40px"><span class="en">08</span>選考</p>
     {spec([("面接回数", e(o["interviews"])),
            ("筆記試験", e(o["written_test"])),
-           ("選考の流れ", '応募 → 面接 → 内定（Web面接にも対応しています）<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')])}
+           ("選考の流れ", FLOW_TEXT + '<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')])}
 
     <p class="role__h rv" style="margin-top:40px"><span class="en">09</span>この仕事をしている社員の話</p>
     <p class="jabout rv">{e(c["people_label"])}を掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
