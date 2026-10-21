@@ -7909,3 +7909,25 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .faqjobfilter__h{margin-top:18px}
 }
 /* ===== FAQJOBFILTER v1 END ===== */
+
+/* ============================================================
+   ===== MKTWORK v1 START =====
+   Marketing / Content の「関わる相手」と「仕事の進め方」。
+   ・関わる相手は12件あるため、チップを一列に並べず
+     「顧客／社内各部署／外部パートナー」の3グループに分ける（.rpeople__g が小見出し）。
+   ・仕事の進め方は5ステップ。PCは5カラムの横フロー、狭い幅で2列→1列。
+     各カードは「英字ラベル＋動詞」を見出しにして、何をする仕事かが一目で分かるようにする。
+   既存の .rdeep__flow をそのまま使い、.mktflow で列数と見出しだけ上書きしている。
+   ============================================================ */
+.rpeople__g{margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted)}
+.rpeople__g:first-of-type{margin-top:8px}
+.rpeople__g+.role-people{margin-top:5px}
+.mktflow{grid-template-columns:repeat(5,minmax(0,1fr))}
+.mktflow>li{position:relative}
+.mktflow .en{font-size:10.5px;letter-spacing:.1em}
+.mktflow>li>b{margin-top:7px;font-size:16px}
+.mktflow>li>p{margin-top:9px}
+@media (max-width:1100px){ .mktflow{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:820px){ .mktflow{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .mktflow{grid-template-columns:minmax(0,1fr)} }
+/* ===== MKTWORK v1 END ===== */
