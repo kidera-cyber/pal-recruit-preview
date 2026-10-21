@@ -7825,3 +7825,53 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .jdh__st .jchip--soon{font-size:14px;padding:6px 16px}
 .fchip__st--soon b{background:var(--navy);color:#fff;border:1px solid var(--navy)}
 /* ===== HRJOB v1 END ===== */
+
+/* ============================================================
+   ===== SELSTEP v1 START =====
+   選考フローのカードを共通構造にそろえる。
+     STEP番号 → タイトル → 面接担当 → 面接形式バッジ → 補足
+   どのカードも同じ順・同じ位置に要素が並び、STEP 02・03 の「面接担当」と
+   バッジの開始位置がそろう。面接形式は本文中の赤文字をやめ、独立したバッジにした。
+   本文は真っ白ではなく #d9dce3 にして、見出しとの階層をつける（黒地で 11.6:1）。
+   文字サイズは下げていない。
+   PC 4カラム／1024px以下 2カラム／768px以下 1カラム。
+   .selection-steps--light は ENTRY（白地）用の色違い。
+   ============================================================ */
+.selection-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);
+  gap:14px;grid-template-columns:none;list-style:none;margin:0;padding:0}
+.selection-step{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.selection-step__number{font-family:Lato,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.14em;color:var(--red-on-dark)}
+.selection-step__title{margin:0;font-size:18px;font-weight:700;line-height:1.5;color:#fff}
+/* 面接担当が1行の STEP 03 と2行の STEP 02 で、バッジの開始位置をそろえる */
+.selection-step__meta{width:100%}
+.selection-steps .selection-step__meta p{min-height:calc(1.7em * 2)}
+.selection-step__label{display:block;margin-bottom:5px;font-size:12.5px;font-weight:700;
+  letter-spacing:.06em;color:#a8adb8}
+.selection-step__meta p{margin:0;font-size:15.5px;font-weight:700;line-height:1.7;color:#fff}
+.selection-step__badge{display:inline-flex;align-self:flex-start;padding:6px 13px;
+  border:1px solid var(--red-on-dark);border-radius:9999px;background:rgba(246,28,37,.14);
+  color:#fff;font-size:13.5px;font-weight:700;line-height:1.5}
+.selection-steps .selection-step__note{margin:0;font-size:16px;line-height:1.85;color:#d9dce3}
+
+/* 黒地（JOBS）：最後の1枚だけ PAL レッドの面になる */
+.flowsel.selection-steps li:last-child .selection-step__number{color:rgba(255,255,255,.85)}
+.flowsel.selection-steps li:last-child .selection-step__note{color:rgba(255,255,255,.94)}
+
+/* 白地（ENTRY） */
+.selection-steps--light .selection-step__number{color:var(--red)}
+.selection-steps--light .selection-step__title{color:var(--navy)}
+.selection-steps--light .selection-step__label{color:var(--muted)}
+.selection-steps--light .selection-step__meta p{color:var(--navy)}
+.selection-steps--light .selection-step__badge{border-color:var(--red);
+  background:rgba(207,19,27,.08);color:var(--red)}
+.selection-steps.selection-steps--light .selection-step__note{color:var(--sub)}
+
+@media (max-width:1024px){
+  .selection-steps{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .selection-steps li::after{display:none}
+}
+@media (max-width:768px){
+  .selection-steps{grid-template-columns:minmax(0,1fr)}
+}
+/* ===== SELSTEP v1 END ===== */
