@@ -7931,3 +7931,29 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 @media (max-width:820px){ .mktflow{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media (max-width:560px){ .mktflow{grid-template-columns:minmax(0,1fr)} }
 /* ===== MKTWORK v1 END ===== */
+
+/* ============================================================
+   ===== FAQJOBFILTER v2 START =====
+   職種別FAQの上部が詰まって見えていたため、余白と情報順を整理する。
+     大カテゴリタブ →40px→ BY JOB →10px→ 職種別FAQ →20px→ 職種を選ぶ
+     →10px→ 職種一覧 →14px→ 補足説明 →24px→ FAQ本文
+   「職種を選ぶ」と職種一覧と補足説明を .faqjobsel でひとまとまりにし、
+   説明文は見出しの直下ではなく職種一覧の下に置く。
+   選択中の職種は白背景＋PALレッド枠＋濃紺文字＋左の赤アクセントにして、
+   上段カテゴリ（黒背景）と見た目を分ける。
+   ============================================================ */
+#fq-jobs .faqcat{margin-top:40px}
+.faqjobsel{margin-top:20px}
+.faqjobsel .faqjobfilter__h{margin:0 0 10px}
+.faqjobsel .faqjobfilter{margin:0}
+.faqjobfilter__note{margin-top:14px;font-size:13.5px;line-height:1.85;color:var(--sub)}
+#fq-jobs>[role="tabpanel"] .faqjob__h{margin-top:24px}
+/* 選択中：白背景のまま、枠と左のアクセントで示す */
+.faqjobfilter .tab[aria-selected="true"]{background:#fff;border-color:var(--red);
+  color:var(--navy);box-shadow:inset 3px 0 0 var(--red)}
+@media (max-width:620px){
+  #fq-jobs .faqcat{margin-top:30px}
+  .faqjobsel{margin-top:16px}
+  .faqjobfilter__note{font-size:13px}
+}
+/* ===== FAQJOBFILTER v2 END ===== */

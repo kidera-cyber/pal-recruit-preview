@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261021q">
+<link rel="stylesheet" href="../../assets/style.css?v=20261021r">
 <!-- ===== FAQ-GROUPS v1：既存のFAQPage構造化データを、再構成後の表示内容と1対1で一致させた。
      GoogleのFAQリッチリザルトは終了しているため表示効果を目的としたものではなく、
      ページ本文と構造化データの不一致を残さないための同期。 ===== -->
@@ -200,13 +200,15 @@
       <div class="faqcat rv">
         <p class="slabel">By job</p>
         <h2 class="faqcat__h">職種別FAQ</h2>
-        <p class="faqcat__d">職種を選ぶと、その職種の仕事内容・応募条件に関する質問が表示されます。</p>
       </div>
       <!-- ===== FAQJOBFILTER v1：上段のカテゴリタブと見た目が似ていて階層が分かりにくかったため、
            職種の選択UIを「タブ」から「フィルター」のデザインに変えた。
-           role="tablist" と aria-controls はそのままで、切替の動作とキーボード操作は変わらない。 ===== -->
+           role="tablist" と aria-controls はそのままで、切替の動作とキーボード操作は変わらない。
+           ===== FAQJOBFILTER v2：「職種を選ぶ」と職種一覧がひとまとまりに見えるよう
+           .faqjobsel で囲み、説明文を見出しの下から職種一覧の下へ移した。 ===== -->
+      <div class="faqjobsel rv">
       <p class="faqjobfilter__h">職種を選ぶ</p>
-      <div class="faqjobfilter rv" role="tablist" aria-label="職種を選ぶ">
+      <div class="faqjobfilter" role="tablist" aria-label="職種を選ぶ">
         <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-fde" aria-controls="fq-fde" aria-selected="true">FDE</button>
         <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-bpo" aria-controls="fq-bpo" aria-selected="false">BPO / 現場運営</button>
         <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-prod" aria-controls="fq-prod" aria-selected="false">System / Product</button>
@@ -215,6 +217,8 @@
         <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-clean" aria-controls="fq-clean" aria-selected="false">Cleanliness</button>
         <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-mkt" aria-controls="fq-mkt" aria-selected="false">Marketing / Content</button>
         <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-corp" aria-controls="fq-corp" aria-selected="false">Corporate</button>
+      </div>
+      <p class="faqjobfilter__note">職種を選ぶと、その職種の仕事内容・応募条件に関する質問が表示されます。</p>
       </div>
       <div id="fq-fde" role="tabpanel" aria-labelledby="fq-tab-fde">
         <h3 class="faqjob__h rv">FDE</h3>
