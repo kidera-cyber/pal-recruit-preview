@@ -1,0 +1,51 @@
+<!-- ===== SEOFIX v1：SEO監査で判定した「A＝既存情報だけで直せる」項目の
+     最小修正プレビュー。承認後に正式ページへ反映する。
+     本文・デザイン・求人条件・title・meta description・robots は変更していない。 ===== -->
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>働き方を知る｜株式会社PAL 採用サイト</title>
+<!-- ===== SEOFIX v1：canonical を外した。検証用ドメインの絶対URLが固定されていたうえ、
+     noindex と canonical を同時に出すと指示が矛盾する。転送は meta refresh に任せる
+     （jobs/center-manager/・work/fde/ と同じ方針）。 ===== -->
+<meta http-equiv="refresh" content="0;url=../people/">
+<!-- ===== CULTURE-REMOVE v1：CULTUREページ廃止（リダイレクトstub）
+     ■ 廃止理由
+       1. 「部署ごとに異なる、PALの1日。」7タブのうち4タブ（BPO／エンジニア／営業／
+          コーポレート）が本人アンケート未反映の仮データで、社員インタビュー側の
+          本人回答と時刻・内容が矛盾していた。
+       2. 残り3タブ（Cleanliness／DTS／FDE）は社員インタビューと完全重複。
+       3. 「PALが、大切にする3つのこと。」はABOUT側に要約版が併存し二重管理だった。
+     ■ 移設先
+       ・PALが、大切にする3つのこと → /renewal/people/#look（2026-10-16 ABOUTから再移設）
+       ・Our Mission／VALUE 3つ                       → /renewal/#mission
+       ・職種ごとの1日の流れ（A DAY IN THE LIFE）     → /renewal/people/ の各詳細ページ
+       ・PALが求める人                                → /renewal/people/#look
+     ■ 復元手順
+       旧ページ全文は git コミット 7103404 以前の renewal/culture/index.html に残存。
+       `git show 7103404:renewal/culture/index.html > renewal/culture/index.html` で復元可。
+     ■ GitHub Pages は 301 を返せないため、meta refresh + canonical + JS で代替。 ===== -->
+<style>
+  body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;
+       font-family:"Noto Sans JP",system-ui,sans-serif;background:#f2f3f6;color:#262946}
+  .b{max-width:520px;text-align:center}
+  h1{font-size:19px;line-height:1.7;margin:0 0 14px}
+  p{font-size:14.5px;line-height:1.9;color:#6b6d81;margin:0 0 20px}
+  a{display:inline-block;margin:0 6px 10px;padding:11px 20px;border-radius:8px;
+    background:#cf131b;color:#fff;font-size:14px;font-weight:700;text-decoration:none}
+  a.g{background:#fff;color:#262946;border:1px solid #dae1f2}
+</style>
+<script>location.replace("../people/");</script>
+</head>
+<body>
+<div class="b">
+<h1>「働き方を知る」は、<br>ページを移動しました。</h1>
+<p>職種ごとの1日の流れは各社員インタビューの「A DAY IN THE LIFE」へ、PALが大切にしている考え方は「PALを知る」へ集約しました。自動的に移動しない場合は、以下からお進みください。</p>
+<a href="../../people/">人を知る（社員インタビュー・1日の流れ）</a>
+<a class="g" href="../../people/#look">PALが、大切にする3つのこと</a>
+</div>
+</body>
+</html>
