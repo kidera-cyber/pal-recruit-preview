@@ -8104,3 +8104,62 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .xover{padding:28px 20px 30px}
 }
 /* ===== XOVER v1 END ===== */
+
+/* ============================================================
+   ===== JOBSGAP v1 START =====
+   JOBS 冒頭「今、募集している仕事。」の説明文（.plead）と、
+   その下の求人検索フィルター（.jfil）の間の余白を詰める。
+   原因は2つの余白の合算（実測80px／スマホ76px）。
+     .phead の padding-bottom          8px（スマホ 4px）
+     .p-jobs .sec--tight の padding-top 72px  ← #openings の上余白
+   .phead は14ページで共通のため触らず、JOBS の #openings の上余白だけを
+   下げて、説明文の最終行とフィルター上端の間を 20〜24px にする。
+   padding-bottom は変えていないので、求人一覧（.jgroup）との間隔は従来どおり。
+   後勝ちで上書きする既存ルール：.p-jobs .sec--tight{padding-block:72px}
+     → #openings の上側だけ。他セクション（#others／#selection／#help）は対象外。
+   ============================================================ */
+.p-jobs #openings{padding-top:14px}   /* 8px + 14px = 22px */
+@media (max-width:720px){
+  .p-jobs #openings{padding-top:18px} /* 4px + 18px = 22px */
+}
+/* ===== JOBSGAP v1 END ===== */
+
+/* ============================================================
+   ===== GPHASE v2 START =====
+   CAREER「02 GROWTH PROCESS」の3カード（.gphase）で、
+   「経験すること」「できるようになること」「周囲の関わり方の例」の3項目が
+   続けて見えていた問題を、区切り線・余白・文字の強弱で整理する。
+   ・2つ目以降の <dt> の上に横罫線を引き、1項目＝1ブロックとして見せる
+   ・ラベル（dt）を 12.5px/グレー → 13px/--sub（白地 8.86:1）に上げ、
+     字間と下余白を足す。PHASE見出し（18px・黒）より目立たせない
+   ・本文（dd）の行間を 1.85 → 1.95 に広げ、補足文も読める大きさにする
+   後勝ちで上書きする既存ルール（いずれも残置）：
+     .gphase dl / dt / dd / dd b / dd span（L1817-1821）
+     TYPO v2 の .gphase dt（12.5px）と @720px の 12px
+     .jobtile__meta,.gphase dd span（L2618）のうち .gphase dd span 側
+   文言・カード構成・白/黒カードのコントラスト設計は変更していない。
+   .gphase は CAREER ページでのみ使用（他ページへの影響なし）。
+   ============================================================ */
+.gphase dl{margin:0;padding:4px 24px 22px}
+.gphase dt{margin-top:0;padding-top:17px;font-size:13px;font-weight:700;
+  letter-spacing:.05em;line-height:1.6;color:var(--sub)}
+/* 区切り線：2項目め以降の上に引く（1項目めはヘッダーの下線があるので引かない） */
+.gphase dt:not(:first-of-type){margin-top:17px;border-top:1px solid var(--line)}
+.gphase dd{margin:8px 0 0;font-size:14.5px;line-height:1.95;text-wrap:pretty}
+.gphase dd b{display:block;font-size:15.5px;line-height:1.7}
+/* 文字色は既存の .gphase dd b（--navy）と .gphase--3 dd b（#fff）に任せる。
+   ここで color を指定すると同じ詳細度で後勝ちし、黒カードの文字が黒になる。 */
+.gphase dd span{display:block;margin-top:5px;font-size:14px;line-height:1.85;color:var(--sub)}
+/* 2枚目：カードの枠線に合わせて区切り線も一段濃くする */
+.gphase--2 dt:not(:first-of-type){border-top-color:var(--line-mid,#cacaca)}
+/* 3枚目（黒カード）：区切り線と文字を黒地用に */
+.gphase--3 dt{color:#c9c9c9}
+.gphase--3 dt:not(:first-of-type){border-top-color:rgba(255,255,255,.18)}
+.gphase--3 dd span{color:#cdcdcd}
+@media (max-width:720px){
+  /* スマホでも3項目の区切りが分かる大きさを保つ（12pxまで落とさない） */
+  .gphase dt{font-size:13px;padding-top:16px}
+  .gphase dt:not(:first-of-type){margin-top:16px}
+  .gphase dl{padding:4px 22px 20px}
+}
+/* ===== GPHASE v2 END ===== */
