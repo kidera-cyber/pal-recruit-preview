@@ -93,6 +93,10 @@
      ===== ENTRY-CTA v1 OFF ここまで ===== -->
 </div>
 
+<!-- ===== TECHFIX v1：正式求人票の必須条件は「何らかのWeb系システム開発の実務経験」で、
+     特定の言語・フレームワークは指定されていない。React／TypeScript を必須・前提として
+     書いていた箇所を、求人票と矛盾しない表現に直した。
+     PAL側の一次情報で使用が確認できない技術名は追加していない。 ===== -->
 <main id="top">
 <nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../">採用情報</a><span aria-current="page">キャリアを知る</span></div></nav>
 
@@ -300,21 +304,22 @@
             </ol>
         </div>
       </div>
-      <!-- ===== CP-ENG v1：CAREER PATH にエンゲージメントを追加。
-           正式な業務内容・キャリアパスは社内確認中のため、方向性のみの仮表示。
-           確定後は他職種と同じ 01 / 02 / 03 構成のまま差し替えられる。 ===== -->
+      <!-- ===== CP-ENG v3：このパネルは「キャリアステップ」ではなく「仕事の広がり」として
+     見せる。役職区分・昇格ステップは一次情報がないため掲載せず、確認できている
+     仕事の進み方（顧客接点づくり→課題把握→商談・提案→関係継続）だけを載せている。
+     制作管理用の表示（「仮案（社内確認中）」「確認中」）は公開画面から外した。 ===== -->
       <div class="cpanel" id="cp-eng" role="tabpanel" aria-labelledby="cp-tab-eng" hidden>
-        <p class="cpanel__h"><b>エンゲージメント・新規営業キャリア</b><span>仮案（社内確認中）</span></p>
+        <p class="cpanel__h"><b>エンゲージメント・新規営業の仕事の広がり</b></p>
         <p class="cstory__lead"><span class="nw">顧客との接点を重ね、</span><span class="nw">次の提案機会をつくる。</span></p>
         <p class="cstory__sub">既存顧客への定期的なフォローや、新しい顧客との接点づくりを通じて、課題やニーズを捉え、商談や提案の機会につなげていきます。</p>
-        <p class="note">※ この職種のキャリアパスは<b>社内確認中</b>です。以下は方向性の仮案で、正式な内容が確認でき次第差し替えます。募集条件は<a class="textlink textlink--sm" href="../jobs/#job-sales">エンゲージメント・新規営業の募集要項</a>をご覧ください。</p>
+        <p class="note">※ ここでは、エンゲージメント・新規営業の仕事の進み方を紹介しています。募集条件は<a class="textlink textlink--sm" href="../jobs/#job-sales">エンゲージメント・新規営業の募集要項</a>をご覧ください。</p>
         <!-- ===== CP-ENG v2：01〜03がBPO／現場運営に近い内容（現場メンバーとの対話・
              センター長との連携・働きやすさの改善・現場から組織へ）だったため、
              エンゲージメント・新規営業の活動（定期タッチ→新規リード獲得→課題把握→
              商談化→提案→継続フォロー）が伝わる 01〜04 に差し替えた。
              社内連携は「必要に応じて」に留め、全案件で全職種が関わるとは書かない。
              「顧客成功」「アカウントマネジメント」など、正式に使っていない概念は
-             使用しない。役職区分は未確認のため STEP 表記は引き続き載せない。 ===== -->
+             使用しない。役職区分は未確認のため STEP 表記は載せない（キャリアステップとしてではなく仕事の進み方として掲載している）。 ===== -->
         <ol class="cstory cstory--cards cstory--cards4">
           <li class="cstory__blk">
             <p class="cstory__no en">01</p>
@@ -358,7 +363,7 @@
             <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg>新しい課題の把握</li>
             <li><svg aria-hidden="true"><use href="#ic2-improve"></use></svg>次の相談機会づくり</li>
             </ul>
-            <p class="note">※ 具体的な役職区分とステップは<b>確認中</b>のため、他職種のような STEP 表記は掲載していません。</p>
+            
           </li>
         </ol>
       </div>
@@ -515,7 +520,7 @@
           <li class="cstory__blk">
             <p class="cstory__no en">01</p>
             <h4>まずは、現場起点でつくる。</h4>
-            <p class="cstory__t">自社プロダクトの機能を、現場起点で企画・実装します。<br>React／TypeScriptでのWeb開発経験が前提の職種です。</p>
+            <p class="cstory__t">Web系システム開発の実務経験を活かしながら、自社の物流DXプロダクト開発に関わる職種です。<br>自社プロダクトの機能を、現場起点で企画・実装します。</p>
             <ul class="cstory__items">
             <li><svg aria-hidden="true"><use href="#ic2-system"></use></svg>企画・実装</li>
             <li><svg aria-hidden="true"><use href="#ic2-field"></use></svg>現場起点の要件整理</li>
@@ -527,7 +532,7 @@
             <p class="cstory__no en">02</p>
             <h4>つくる力を、設計の力へ。</h4>
             <ul class="cstory__skills">
-            <li><b>React／TypeScriptでの実装</b><p>現場で使われる画面を、自分の手でつくる。</p></li>
+            <li><b>Webシステム・アプリの実装</b><p>現場で使われる画面を、自分の手でつくる。</p></li>
             <li><b>現場起点の要件整理</b><p>要望の裏にある場面まで戻して考える。</p></li>
             <li><b>設計・技術選定</b><p>続けられる形を選び、設計に落とす。</p></li>
             <li><b>現場フィードバックの反映</b><p>使われ方を見て、より良い方法へ更新する。</p></li>
@@ -778,7 +783,7 @@
           <a href="https://www.pal-style.co.jp/service/" target="_blank" rel="noopener">サービス・事業</a>
           <a href="https://www.pal-style.co.jp/case/" target="_blank" rel="noopener">物流DX事例</a>
           <a href="https://www.pal-style.co.jp/company/" target="_blank" rel="noopener">会社概要</a>
-          <a href="https://www.pal-style.co.jp/contact-service/" target="_blank" rel="noopener">お問い合わせ</a>
+          <a href="https://www.pal-style.co.jp/contact-service/" target="_blank" rel="noopener">お問い合わせ（サービスについて）</a>
         </nav>
       </div>
     </div>

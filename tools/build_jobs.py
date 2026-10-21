@@ -193,13 +193,11 @@ def build_index():
     # （HEAD 時点で11個に増えていた）。
     tail = re.sub(r'<!-- ===== JOBSOPEN v2：.*?</script>\n?', '', tail, flags=re.S)
 
-    title = "募集中の求人一覧｜物流センター運営・FDE・システム開発・営業・ドライバー｜株式会社PAL 採用"
+    title = "募集中の求人一覧｜物流センター運営・FDE・システム開発・営業｜株式会社PAL 採用"
     desc = ("株式会社PALが現在募集している求人の一覧です。物流センター運営（千葉・船橋／神奈川・厚木／"
             "広島・東広島／兵庫・須磨）、FDE（大阪本社）、"
             "システム / プロダクト開発（大阪本社）、エンゲージメント・新規営業と法人営業（人材派遣・大阪本社）、"
-            "4tルート配送ドライバーと大型ルート配送ドライバー（千葉・船橋）の求人について、"
-            "勤務地・給与・雇用形態・勤務時間・休日・"
-            "応募条件を掲載しています。")
+            "勤務地・給与・雇用形態・勤務時間・休日・応募条件を掲載しています。")
     head = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(title), head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % html.escape(desc), head, count=1)
     head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % html.escape(title), head, count=1)

@@ -5,14 +5,8 @@ set -e
 cd "$(dirname "$0")/.."
 python3 -I tools/build_logistics_operation.py   # LEVEL 02：物流センター運営の仕事
 python3 -I tools/build_jobs.py                  # LEVEL 01/03：求人一覧・求人詳細
-python3 -I tools/build_faq.py                   # FAQ 比較プレビュー
-python3 -I tools/build_driver_preview.py        # 4tドライバー SEO/AIO 比較プレビュー
-python3 -I tools/build_large_driver.py       # 大型ルート配送ドライバーの募集要項
-python3 -I tools/build_jobs_detail_preview.py   # 求人詳細デザイン改善の比較プレビュー
-python3 -I tools/build_faq_bpo_system_preview.py  # BPO・システムFAQ改訂案の比較プレビュー
-python3 -I tools/build_system_engineer_preview.py # システムエンジニア募集要項改訂案の比較プレビュー
-# 比較プレビューは set_noindex / set_entry_cta より前に作ること。
-# あとから作ると noindex と応募CTA停止が当たらない。
+# FAQ（renewal/faq/）は直接編集して管理する。data/faq.json と tools/build_faq.py は
+# 50問への再設計案の記録として残している（--official を付けない限り公開FAQは上書きしない）。
 # WORK（renewal/work/）は比較プレビューからの移行が完了したため、直接編集して管理する。
 # 文章の記録は tools/build_work_roles.py と tools/build_work_sales.py に残している。
 python3 -I tools/set_noindex.py on
