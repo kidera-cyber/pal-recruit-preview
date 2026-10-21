@@ -150,11 +150,12 @@ def build(official=False):
         {"@type": "Question", "name": f["q"],
          "acceptedAnswer": {"@type": "Answer", "text": plain(f["a"])}} for f in FAQS]}
     head = re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema\.org", "@type": "FAQPage".*?</script>',
-                  '<!-- ===== FAQSEO v1：FAQPage。表示している47問と完全に同じ内容を data/faq.json から生成している。\n'
+                  '<!-- ===== FAQSEO v1：FAQPage。表示している%d問と完全に同じ内容を data/faq.json から生成している。\n'
                   '     削除・統合した質問は残していない。なお一般企業の採用FAQでは、FAQPageを置いても\n'
                   '     Google検索でFAQリッチリザルトが出ることは通常期待できない。本文の品質・検索意図への\n'
                   '     適合・内部リンクを優先し、構造化データはあくまで内容の機械可読化として置いている。 ===== -->\n'
-                  '<script type="application/ld+json">%s</script>' % json.dumps(jsonld, ensure_ascii=False),
+                  '<script type="application/ld+json">%s</script>'
+                  % (len(FAQS), json.dumps(jsonld, ensure_ascii=False)),
                   head, count=1, flags=re.S)
 
     chips = '<button class="fqcat is-active" type="button" data-cat="all" aria-pressed="true">すべて</button>' + \

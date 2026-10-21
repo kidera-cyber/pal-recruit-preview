@@ -79,53 +79,73 @@
      ・求人票にない項目（年間休日の内訳、転勤の有無が未記載のもの等）は補完していない。
      ・求人票がない職種は『募集中』にしていない。
      ・求人票にある『最先端』『市場価値が飛躍的に高まる』などの訴求表現は採用していない。 ===== -->
-<section class="phead">
+
+<!-- ===== JOBDETAIL v2：01 求人ヘッダー（職種名＋主要条件サマリー）
+     サマリーは給与・勤務地・休日・雇用形態の原則4項目。求人票に記載のない項目は
+     作らず、値が空なら項目ごと出さない（jdsum）。 ===== -->
+<section class="jdh">
   <div class="wrap">
     <p class="slabel">Jobs ／ システム / プロダクト開発</p>
-    <h1 class="ptitle">自社開発 Web・アプリエンジニア<br>メンバー・リーダークラス｜大阪</h1>
-    <p class="plead">大阪府大阪市西区・正社員・想定年収 500万円〜800万円</p>
+    <h1 class="jdh__t">自社開発 Web・アプリエンジニア</h1>
+    <p class="jdh__lv">メンバー・リーダークラス｜大阪</p>
+    <dl class="jdsum rv"><div class="jdsum__i"><dt>想定年収</dt><dd class="jdsum__v jdsum__v--big">500万円〜800万円</dd></div><div class="jdsum__i"><dt>勤務地</dt><dd class="jdsum__v">大阪府大阪市西区<span class="jdsum__s">株式会社PAL 大阪本社</span></dd></div><div class="jdsum__i"><dt>休日</dt><dd class="jdsum__v">年間120日／完全週休2日制（土曜・日曜・祝日）</dd></div><div class="jdsum__i"><dt>雇用形態</dt><dd class="jdsum__v">正社員</dd></div></dl>
   </div>
 </section>
 
 <section class="sec sec--tight">
   <div class="wrap">
-    <p class="role__h rv"><span class="en">01</span>勤務地</p>
-    <div class="spec"><dl><dt>事業所</dt><dd>株式会社PAL 大阪本社</dd><dt>所在地</dt><dd>大阪府大阪市西区新町1丁目4番26号 四ツ橋グランドビル2階　株式会社PAL 大阪本社</dd><dt>アクセス</dt><dd>Osaka Metro 四つ橋線 四ツ橋駅 徒歩3分<br>Osaka Metro 御堂筋線 心斎橋駅 徒歩5分</dd></dl></div>
 
-    <p class="role__h rv" style="margin-top:40px"><span class="en">02</span>給与・想定年収</p>
-    <div class="spec"><dl><dt>想定年収</dt><dd><b>500万円〜800万円</b></dd><dt>月給</dt><dd>月給 416,000円〜667,000円（基本給 342,100円〜＋固定残業代 73,900円〜／月を含む）</dd><dt>賞与</dt><dd>あり（業績に応じて支給）</dd></dl></div>
+    <!-- ===== JOBDETAIL v2：02 仕事内容 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">02</span>どんな仕事をするのか</h2>
+      <p class="jdtext rv">自社の物流DXプロダクト（Webシステム・スマホアプリ・倉庫管理システムなど）の開発です。PMの指示のもとで、既存プロダクトの機能改善や新規開発に携わります。倉庫内作業の生産性向上や配送効率化を目的に、管理者向けのWebシステムと作業者向けのスマホアプリが連動する仕組みをつくります。</p>
+      <p class="jdsub">担当する業務</p>
+      <ul class="jdlist"><li>管理者向けWebシステムの開発</li><li>作業者向けスマホアプリの開発</li><li>倉庫管理システムの開発</li><li>既存プロダクトの機能改善と、新規開発</li><li>AGVなどのIoT機器との連携</li><li>データ解析と、導入効果の分析</li></ul>
+      <div class="jdspec"><dl><dt>働き方</dt><dd>残業は月平均0〜10時間。繁忙期は年3〜4ヶ月程度あり、その期間はリモート勤務が週1〜2日、残業は月平均10時間程度。MTG以外は勤務時間帯を個人に委ねています。</dd><dt>配属先</dt><dd>システム担当 10名（20代2名／30代2名／40代5名／50代1名）※組織拡大に向け2〜3名の増員を検討</dd></dl></div>
+      <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="../../../work/#role-system">仕事を知る</a>をご覧ください。</p>
+    </section>
 
-    <p class="role__h rv" style="margin-top:40px"><span class="en">03</span>この仕事について</p>
-    <p class="jabout rv">自社の物流DXプロダクト（Webシステム・スマホアプリ・倉庫管理システムなど）の開発です。PMの指示のもとで、既存プロダクトの機能改善や新規開発に携わります。倉庫内作業の生産性向上や配送効率化を目的に、管理者向けのWebシステムと作業者向けのスマホアプリが連動する仕組みをつくります。</p>
-    <div class="spec"><dl><dt>働き方</dt><dd>残業は月平均0〜10時間。繁忙期は年3〜4ヶ月程度あり、その期間はリモート勤務が週1〜2日、残業は月平均10時間程度。MTG以外は勤務時間帯を個人に委ねています。</dd><dt>配属先</dt><dd>システム担当 10名（20代2名／30代2名／40代5名／50代1名）※組織拡大に向け2〜3名の増員を検討</dd></dl></div>
+    <!-- ===== JOBDETAIL v2：03 応募条件
+         「必須」「いずれか必須」「歓迎」の区別は求人票のままで、まとめていない。 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">03</span>応募条件</h2>
+      <p class="jdtag">必須</p>
+      <ul class="jdlist"><li>何らかのWeb系システム開発の実務経験</li></ul>
+      
+      
+      <p class="jdsub">求める人物像</p><p class="jdtext">自社運営の物流現場があるため、自分が組んだロジックの成果や利用者の声を確かめられます。納品して終わりではない仕事です。将来的には開発リーダー、パートナー企業との共同開発、現場改善スペシャリストなど、志向に合わせた役割の広がりがあります。</p>
+    </section>
 
-    <p class="role__h rv" style="margin-top:40px"><span class="en">04</span>主な仕事内容</p>
-    <ul class="drvlist"><li>管理者向けWebシステムの開発</li><li>作業者向けスマホアプリの開発</li><li>倉庫管理システムの開発</li><li>既存プロダクトの機能改善と、新規開発</li><li>AGVなどのIoT機器との連携</li><li>データ解析と、導入効果の分析</li></ul>
-    <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="../../../work/#role-system">仕事を知る</a>をご覧ください。</p>
+    <!-- ===== JOBDETAIL v2：04 勤務条件（給与／勤務時間・休日／勤務地） ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">04</span>勤務条件</h2>
+      <p class="jdsub jdsub--first">給与</p>
+      <div class="jdspec"><dl><dt>想定年収</dt><dd><b>500万円〜800万円</b></dd><dt>月給</dt><dd>月給 416,000円〜667,000円（基本給 342,100円〜＋固定残業代 73,900円〜／月を含む）</dd><dt>賞与</dt><dd>あり（業績に応じて支給）</dd></dl></div>
+      <p class="jdsub">勤務時間・休日</p>
+      <div class="jdspec"><dl><dt>雇用形態</dt><dd>正社員（期間の定めなし）</dd><dt>試用期間</dt><dd>3ヶ月（試用期間中の勤務条件の変更なし）</dd><dt>勤務時間</dt><dd>所定労働時間 8時間00分・休憩60分</dd><dt>フレックスタイム制</dt><dd>あり（コアタイム 10:00〜15:00）</dd><dt>残業</dt><dd>平均残業時間 10時間。固定残業代制（30.0時間/月相当）で、超過分は別途支給</dd><dt>休日・休暇</dt><dd>年間120日／完全週休2日制（土曜・日曜・祝日）</dd><dt>有給休暇</dt><dd>入社半年経過時点10日・最高付与日数20日</dd><dt>その他の休暇</dt><dd>年末年始、慶弔等</dd></dl></div>
+      <p class="jdsub">勤務地</p>
+      <div class="jdspec"><dl><dt>事業所</dt><dd>株式会社PAL 大阪本社</dd><dt>所在地</dt><dd>大阪府大阪市西区新町1丁目4番26号 四ツ橋グランドビル2階　株式会社PAL 大阪本社</dd><dt>アクセス</dt><dd>Osaka Metro 四つ橋線 四ツ橋駅 徒歩3分<br>Osaka Metro 御堂筋線 心斎橋駅 徒歩5分</dd><dt>転勤</dt><dd>なし（変更の範囲：業務内容＝当社業務全般／勤務地＝当社の拠点）</dd></dl></div>
+    </section>
 
-    <p class="role__h rv" style="margin-top:40px"><span class="en">05</span>応募条件</p>
-    <p class="cmsub">必須</p>
-    <ul class="drvlist"><li>何らかのWeb系システム開発の実務経験</li></ul>
-    
-    
-    <p class="cmsub" style="margin-top:22px">求める人物像</p><p class="jabout">自社運営の物流現場があるため、自分が組んだロジックの成果や利用者の声を確かめられます。納品して終わりではない仕事です。将来的には開発リーダー、パートナー企業との共同開発、現場改善スペシャリストなど、志向に合わせた役割の広がりがあります。</p>
+    <!-- ===== JOBDETAIL v2：05 待遇・福利厚生 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">05</span>待遇・福利厚生</h2>
+      <ul class="jdben"><li>社会保険完備（健康保険・厚生年金・雇用保険・労災保険）</li><li>通勤手当（会社規定に基づき支給）</li><li>在宅勤務・リモートワーク可（全従業員利用可）</li><li>時短制度（一部従業員利用可）</li><li>服装自由（全従業員利用可）</li></ul>
+      <div class="jdspec"><dl><dt>退職金</dt><dd>なし</dd><dt>寮・社宅</dt><dd>なし</dd></dl></div>
+    </section>
 
-    <p class="role__h rv" style="margin-top:40px"><span class="en">06</span>勤務条件</p>
-    <div class="spec"><dl><dt>雇用形態</dt><dd>正社員（期間の定めなし）</dd><dt>試用期間</dt><dd>3ヶ月（試用期間中の勤務条件の変更なし）</dd><dt>勤務時間</dt><dd>所定労働時間 8時間00分・休憩60分</dd><dt>フレックスタイム制</dt><dd>あり（コアタイム 10:00〜15:00）</dd><dt>残業</dt><dd>平均残業時間 10時間。固定残業代制（30.0時間/月相当）で、超過分は別途支給</dd><dt>休日・休暇</dt><dd>年間120日／完全週休2日制（土曜・日曜・祝日）</dd><dt>有給休暇</dt><dd>入社半年経過時点10日・最高付与日数20日</dd><dt>その他の休暇</dt><dd>年末年始、慶弔等</dd><dt>転勤</dt><dd>なし（変更の範囲：業務内容＝当社業務全般／勤務地＝当社の拠点）</dd></dl></div>
+    <!-- ===== JOBDETAIL v2：06 選考・関連導線 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">06</span>選考・関連情報</h2>
+      <div class="jdspec"><dl><dt>採用人数</dt><dd>3名</dd><dt>面接回数</dt><dd>2回</dd><dt>筆記試験</dt><dd>なし</dd><dt>選考の流れ</dt><dd>エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）<br><a class="textlink textlink--sm" href="../../#selection">選考について</a></dd></dl></div>
+      <p class="jdsub">この仕事をしている社員の話</p>
+      <p class="jdtext">システム / プロダクト開発の社員インタビューを掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
+      <p class="jdrel">
+        <a class="btn btn--ghost" href="../../../people/system/">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+        <a class="btn btn--ghost" href="../../">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      </p>
+    </section>
 
-    <p class="role__h rv" style="margin-top:40px"><span class="en">07</span>待遇・福利厚生</p>
-    <ul class="drvlist"><li>社会保険完備（健康保険・厚生年金・雇用保険・労災保険）</li><li>通勤手当（会社規定に基づき支給）</li><li>在宅勤務・リモートワーク可（全従業員利用可）</li><li>時短制度（一部従業員利用可）</li><li>服装自由（全従業員利用可）</li></ul>
-    <div class="spec"><dl><dt>退職金</dt><dd>なし</dd><dt>寮・社宅</dt><dd>なし</dd></dl></div>
-
-    <p class="role__h rv" style="margin-top:40px"><span class="en">08</span>選考</p>
-    <div class="spec"><dl><dt>採用人数</dt><dd>3名</dd><dt>面接回数</dt><dd>2回</dd><dt>筆記試験</dt><dd>なし</dd><dt>選考の流れ</dt><dd>エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）<br><a class="textlink textlink--sm" href="../../#selection">選考について</a></dd></dl></div>
-
-    <p class="role__h rv" style="margin-top:40px"><span class="en">09</span>この仕事をしている社員の話</p>
-    <p class="jabout rv">システム / プロダクト開発の社員インタビューを掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
-    <p class="cmrel rv" style="margin-top:16px">
-      <a class="btn btn--ghost" href="../../../people/system/">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
-      <a class="btn btn--ghost" href="../../">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
-    </p>
   </div>
 </section>
 

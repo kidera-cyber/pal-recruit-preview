@@ -218,7 +218,7 @@ def build_detail():
       <dt>手当</dt><dd><b>大型</b>：残業／深夜／資格／無事故<br><b>4t</b>：残業／深夜／資格／早朝／無事故</dd>
       <dt>賞与・昇給・退職金</dt><dd><b>大型</b>：求人票に記載がありません（確認中）<br><b>4t</b>：賞与 年1回（実績による）／昇給 年1回（4月）／退職金あり（勤務3年以上）</dd>
     </dl></div>
-    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="../dts/">4tルート配送ドライバーの募集要項を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="../dts/">4tルート配送ドライバーの募集要項を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 
@@ -229,7 +229,7 @@ def build_detail():
       <h2 class="stitle" style="font-size:clamp(21px,2.5vw,29px)">実際に働く人の話を見る。</h2>
       <p class="slead">DTS／運送部で働く社員のインタビューを掲載しています。本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
     </div>
-    <p class="rv"><a class="btn btn--ghost" href="../../people/dts/">DTS社員インタビューを見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    <p class="rv"><a class="btn btn--ghost" href="../../people/dts/">DTS社員インタビューを見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 '''

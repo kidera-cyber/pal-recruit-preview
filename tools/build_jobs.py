@@ -39,7 +39,7 @@ for o in OPEN:
 # "v2" は視認性を上げた6セクション構成（ヘッダー＋主要条件サマリー）。
 # 比較プレビューの承認後に LAYOUT = "v2" にすると、全求人詳細が v2 で再生成される。
 # 個別HTMLは手で直さない。求人データ（data/jobs-openings.json）は変更しない。
-LAYOUT = "v1"
+LAYOUT = "v2"   # 2026-10-21 承認：比較プレビューを全求人詳細へ展開
 
 # 出力先の階層ごとの相対パス。
 #   3 = renewal/jobs/openings/<id>/   （正式な求人詳細）
@@ -392,8 +392,8 @@ def detail_body_v2(o, P, intro=""):
       <p class="jdsub">この仕事をしている社員の話</p>
       <p class="jdtext">{e(c["people_label"])}を掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
       <p class="jdrel">
-        <a class="btn btn--ghost" href="{people_url}">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
-        <a class="btn btn--ghost" href="{P["jobs"]}">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+        <a class="btn btn--ghost" href="{people_url}">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+        <a class="btn btn--ghost" href="{P["jobs"]}">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
       </p>
     </section>
 
@@ -407,7 +407,7 @@ def detail_body_v2(o, P, intro=""):
     <h2>この求人に<br>応募する。</h2>
     <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
     <div class="entry__ctas">
-      <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+      <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
     <p class="entry__sec"><a href="{P["jobs"]}">ほかの募集中の求人を見る</a></p>
   </div>
