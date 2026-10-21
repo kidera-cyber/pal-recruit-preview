@@ -40,6 +40,10 @@ for o in OPEN:
 # 比較プレビューの承認後に LAYOUT = "v2" にすると、全求人詳細が v2 で再生成される。
 # 個別HTMLは手で直さない。求人データ（data/jobs-openings.json）は変更しない。
 # ===== FLOW4 v1：選考の流れ。renewal/jobs/#selection・renewal/entry/・FAQ と同じ内容にそろえている。
+# ===== DUTYCARD v1：「担当する業務」を箇条書きのままにする求人ID。
+# ここに入っていない求人はカード型（.jdcards）で出力する。
+DUTIES_LIST_ONLY = {"system-engineer"}
+
 FLOW_TEXT = "応募 → 1次面接（部門責任者・原則WEB面接） → 2次面接（取締役・対面面接が基本） → 内定・オファー面談"
 
 LAYOUT = "v2"   # 2026-10-21 承認：比較プレビューを全求人詳細へ展開
@@ -337,6 +341,10 @@ def detail_body_v2(o, P, intro=""):
     # 再表示するときは下の行に ("採用人数", e(o["hires"])) を戻す。
     selection = spec2([("面接回数", e(o["interviews"])),
                        ("筆記試験", e(o["written_test"])), ("選考の流れ", flow)])
+    # ===== DUTYCARD v1：担当する業務はカード型（.jdcards）。
+    # システムエンジニアだけは従来の箇条書き（.jdlist）のままにする。
+    # 文章・順番・項目数はどちらも求人データのままで、表示方法だけが違う。
+    duties_cls = "jdlist" if o["id"] in DUTIES_LIST_ONLY else "jdcards"
     work_url = e(c["work_anchor"]).replace("../", P["rn"])
     people_url = e(c["people"]).replace("../", P["rn"])
     return f"""<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="{P["rn"]}">採用情報</a><a href="{P["jobs"]}">募集職種</a><span aria-current="page">{e(name)}</span></div></nav>
@@ -363,7 +371,7 @@ def detail_body_v2(o, P, intro=""):
       <h2 class="jdsec__h"><span class="en">02</span>どんな仕事をするのか</h2>
       <p class="jdtext rv">{e(o["about"])}</p>
       <p class="jdsub">担当する業務</p>
-      {li2(o["duties"])}
+      {li2(o["duties"], duties_cls)}
       {spec2(extra)}
       <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="{work_url}">仕事を知る</a>をご覧ください。</p>
     </section>

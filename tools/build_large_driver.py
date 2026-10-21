@@ -137,7 +137,8 @@ def build_detail():
       <h2 class="stitle" style="font-size:clamp(21px,2.5vw,29px)"><span class="nw">大型トラックで、</span><span class="nw">スーパーや外食チェーンへ</span><span class="nw">食品を届ける。</span></h2>
       <p class="slead">大型自動車運転免許をお持ちの方を対象とした、近距離ルート配送ドライバーの募集です。大型トラックを使用し、大手スーパーや外食チェーンの各店舗へ食品を配送するルート配送業務をお願いします。</p>
     </div>
-    <ul class="drvlist rv">
+    <!-- ===== DUTYCARD v1：仕事内容をカード型（.jdcards）に。文章・順番は変更していない。 ===== -->
+    <ul class="jdcards rv">
       <li>大型トラックでの食品配送（固定ルート）</li>
       <li>配送件数は1日3件程度</li>
       <li>配送エリアは千葉県を中心に一都三県（近距離・日帰りのみ）</li>
