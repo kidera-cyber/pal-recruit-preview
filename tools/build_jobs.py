@@ -79,6 +79,9 @@ MARK = ("<!-- ===== JOBSOPEN v1：リクナビHRTechで承認済みの求人票9
         "     ・求人票がない職種は『募集中』にしていない。\n"
         "     ・求人票にある『最先端』『市場価値が飛躍的に高まる』などの訴求表現は採用していない。 ===== -->")
 
+# ===== SEOFIX v1：見出し階層を h1（ページ見出し）→ h2（職種グループ）→ h3（求人カード）に
+# そろえた。従来は h1 → h3 → h4 と1段飛んでいた。CSSは .jgroup__h / .jcard__n の
+# クラス指定のため、見た目は変わらない。
 # ------------------------------------------------------------------ カード
 def card(o):
     c = CATS[o["cat"]]
@@ -87,7 +90,7 @@ def card(o):
     detail = e(o["detail_url"]) if o.get("detail_url") else "openings/%s/" % e(o["id"])
     return f'''      <li class="jcard" data-job-category="{e(o['cat'])}" data-location="{e(pref_slug(o['pref']))}">
         <p class="jcard__cat">{e(c['name'])}</p>
-        <h4 class="jcard__n">{e(o['title'])}<span class="jcard__lv">{e(o['level'])}｜{e(o['place_short'])}</span></h4>
+        <h3 class="jcard__n">{e(o['title'])}<span class="jcard__lv">{e(o['level'])}｜{e(o['place_short'])}</span></h3>
         <dl class="jcard__dl">
           <dt>勤務地</dt><dd>{e(o['pref'])}{e(o['city'])}</dd>
           <dt>{e(o.get('salary_label','想定年収'))}</dt><dd><b>{e(o['salary_year'])}</b></dd>
@@ -103,7 +106,7 @@ def group(key):
     items = [o for o in OPEN if o["cat"] == key]
     cards = "\n".join(card(o) for o in items)
     return f'''    <section class="jgroup" data-group="{e(key)}">
-      <h3 class="jgroup__h"><span class="jgroup__n">{e(c['name'])}</span><span class="jgroup__c en" data-total="{len(items)}">{len(items)} {"POSITION" if len(items)==1 else "POSITIONS"}</span></h3>
+      <h2 class="jgroup__h"><span class="jgroup__n">{e(c['name'])}</span><span class="jgroup__c en" data-total="{len(items)}">{len(items)} {"POSITION" if len(items)==1 else "POSITIONS"}</span></h2>
       <p class="jgroup__lead">{hub}仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="{e(c['work_anchor'])}">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="{e(c['people'])}">{e(c['people_label'])}</a>をご覧ください。</p>
       <ul class="jcards">
 {cards}

@@ -11,7 +11,6 @@ python3 -I tools/build_large_driver.py       # 大型ルート配送ドライバ
 python3 -I tools/build_jobs_detail_preview.py   # 求人詳細デザイン改善の比較プレビュー
 python3 -I tools/build_faq_bpo_system_preview.py  # BPO・システムFAQ改訂案の比較プレビュー
 python3 -I tools/build_system_engineer_preview.py # システムエンジニア募集要項改訂案の比較プレビュー
-python3 -I tools/build_seo_audit_preview.py       # SEO監査の最小修正プレビュー
 # 比較プレビューは set_noindex / set_entry_cta より前に作ること。
 # あとから作ると noindex と応募CTA停止が当たらない。
 # WORK（renewal/work/）は比較プレビューからの移行が完了したため、直接編集して管理する。
