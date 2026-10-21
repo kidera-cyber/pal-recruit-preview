@@ -25,7 +25,9 @@ def e(x): return html.escape(str(x), quote=False)
 
 D    = json.loads(rd("data/jobs-openings.json"))
 CATS = {c["key"]: c for c in D["categories"]}
-OPEN = [o for o in D["openings"] if o["status"] == "open"]
+# ===== HRJOB v1：status は open（募集中）／upcoming（募集予定）／hold（非公開）の3種類。
+# 一覧とフィルターには open と upcoming を出す。JobPosting は open だけに付ける。
+OPEN = [o for o in D["openings"] if o["status"] in ("open", "upcoming")]
 PREF_SLUGS = D.get("pref_slugs", {})
 def pref_slug(name):
     """表示名ではなく内部値で絞り込むためのスラッグ。未登録の都道府県も必ず値を持つ。"""
@@ -88,16 +90,35 @@ def card(o):
     # 既存の正式募集要項がある求人（detail_url）は、そのURLを再利用する。
     # 新しい重複ページは作らない。
     detail = e(o["detail_url"]) if o.get("detail_url") else "openings/%s/" % e(o["id"])
-    return f'''      <li class="jcard" data-job-category="{e(o['cat'])}" data-location="{e(pref_slug(o['pref']))}">
+    # ===== HRJOB v1：募集予定の求人は、正式な条件が無いため勤務地・給与・雇用形態の表を出さず、
+    # 仕事を一言で示すリード文に置き換える。「未定」は並べない。
+    if o.get("upcoming"):
+        work = e(c["work_anchor"])   # 一覧は renewal/jobs/ 配下なので ../ のまま使う
+        body = ('<h3 class="jcard__n">%s</h3>\n        <p class="jcard__lead">%s</p>'
+                % (e(o["title"]), e(o["lead"])))
+        foot = ('<p class="jcard__foot"><span class="jchip jchip--soon">募集予定</span>\n'
+                '          <a class="jcard__cta" href="%s">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>\n'
+                '        <p class="jcard__sub"><a class="textlink textlink--sm" href="%s">仕事内容を見る</a></p>'
+                % (detail, work))
+        loc = ""
+    else:
+        lv = ('<span class="jcard__lv">%s｜%s</span>' % (e(o["level"]), e(o["place_short"]))) if o["level"] else ""
+        body = ('<h3 class="jcard__n">%s%s</h3>\n'
+                '        <dl class="jcard__dl">\n'
+                '          <dt>勤務地</dt><dd>%s%s</dd>\n'
+                '          <dt>%s</dt><dd><b>%s</b></dd>\n'
+                '          <dt>雇用形態</dt><dd>%s</dd>\n'
+                '        </dl>'
+                % (e(o["title"]), lv, e(o["pref"]), e(o["city"]),
+                   e(o.get("salary_label", "想定年収")), e(o["salary_year"]),
+                   e(o["employment"].split("（")[0])))
+        foot = ('<p class="jcard__foot"><span class="jchip">募集中</span>\n'
+                '          <a class="jcard__cta" href="%s">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>' % detail)
+        loc = e(pref_slug(o["pref"]))
+    return f'''      <li class="jcard" data-job-category="{e(o['cat'])}" data-location="{loc}">
         <p class="jcard__cat">{e(c['name'])}</p>
-        <h3 class="jcard__n">{e(o['title'])}<span class="jcard__lv">{e(o['level'])}｜{e(o['place_short'])}</span></h3>
-        <dl class="jcard__dl">
-          <dt>勤務地</dt><dd>{e(o['pref'])}{e(o['city'])}</dd>
-          <dt>{e(o.get('salary_label','想定年収'))}</dt><dd><b>{e(o['salary_year'])}</b></dd>
-          <dt>雇用形態</dt><dd>{e(o['employment'].split('（')[0])}</dd>
-        </dl>
-        <p class="jcard__foot"><span class="jchip">募集中</span>
-          <a class="jcard__cta" href="{detail}">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
+        {body}
+        {foot}
       </li>'''
 
 def group(key):
@@ -435,6 +456,73 @@ def detail_body_v2(o, P, intro=""):
 </section>
 """
 
+# ------------------------------------------------------------------ 募集予定の求人詳細
+def detail_body_upcoming(o, P, intro=""):
+    """===== HRJOB v1：正式求人票が確定していない「募集予定」の求人詳細。
+    募集要項（給与・勤務地・勤務時間・休日・福利厚生・応募資格・選考条件）は
+    値を持たないため、ブロックごと出さずに一文で案内する。「未定」を並べない。
+    JobPosting は出さない（build_detail 側で upcoming のときは出力しない）。
+    求人票が確定したら data/jobs-openings.json の upcoming を false にして
+    各項目を埋めれば、通常の v2 レイアウトに切り替わる。"""
+    c = CATS[o["cat"]]
+    partners = "".join('<li>%s</li>' % e(x) for x in o.get("partners", []))
+    work_url = e(c["work_anchor"]).replace("../", P["rn"])
+    people_url = e(c["people"]).replace("../", P["rn"])
+    return f"""<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="{P["rn"]}">採用情報</a><a href="{P["jobs"]}">募集職種</a><span aria-current="page">{e(o['title'])}</span></div></nav>
+
+{MARK}
+{intro}
+<!-- ===== HRJOB v1：01 求人ヘッダー。正式求人票が未確定のため主要条件サマリーは出さず、
+     「募集予定」であることだけを示す。 ===== -->
+<section class="jdh">
+  <div class="wrap">
+    <p class="slabel">Jobs ／ {e(c['name'])}</p>
+    <h1 class="jdh__t">{e(o['title'])}</h1>
+    <p class="jdh__lv">{e(o['lead'])}</p>
+    <p class="jdh__st"><span class="jchip jchip--soon">募集予定</span></p>
+  </div>
+</section>
+
+<section class="sec sec--tight">
+  <div class="wrap">
+
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">02</span>この仕事について</h2>
+      <p class="jdtext rv">{e(o["about"])}</p>
+    </section>
+
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">03</span>主な仕事内容</h2>
+      {li2(o["duties"], "jdcards")}
+    </section>
+
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">04</span>この仕事の特徴</h2>
+      <p class="jdtext rv">{e(o["feature"])}</p>
+      <p class="jdsub">関わる相手</p>
+      <ul class="jdben">{partners}</ul>
+      <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="{work_url}">仕事を知る</a>をご覧ください。</p>
+    </section>
+
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">05</span>募集要項</h2>
+      <p class="jdtext rv">雇用形態・勤務地・給与・勤務時間・休日・福利厚生・応募資格などの募集要項は、正式な募集開始にあわせて掲載します。</p>
+    </section>
+
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">06</span>選考・関連情報</h2>
+      <p class="jdtext rv">選考は、ほかの職種と同じ流れです。応募いただいたあと、1次面接（部門責任者・原則WEB面接）、2次面接（取締役・対面面接が基本）を経て内定となります。内定後は必要に応じてオファー面談を実施しています。<br><a class="textlink textlink--sm" href="{P["jobs"]}#selection">選考について</a></p>
+      <p class="jdrel">
+        <a class="btn btn--ghost" href="{work_url}">人事を含むコーポレートの仕事内容を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+        <a class="btn btn--ghost" href="{people_url}">コーポレートで働く社員の話を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+        <a class="btn btn--ghost" href="{P["jobs"]}">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      </p>
+    </section>
+
+  </div>
+</section>
+"""
+
 def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     layout = layout or LAYOUT
     P = PATHS[depth]
@@ -445,13 +533,21 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     head, tail = P["shell"](head), P["shell"](tail)
 
     c = CATS[o["cat"]]
-    name = "%s（%s）｜%s" % (o["title"], o["level"], o["place_short"])
-    # レベル名が職種名に含まれるときは重ねない
-    lv = "" if (not o["level"] or o["level"] in o["title"]) else o["level"] + "・"
-    title = "%sの求人｜%s%s%s｜株式会社PAL" % (o["title"], lv, o["pref"], o["city"])
-    desc = ("株式会社PALの%s（%s）の募集要項。勤務地は%s。想定年収%s、%s。%s"
-            % (o["title"], o["level"], o["location"], o["salary_year"],
-               o["employment"].split("（")[0], o["about"][:70]))
+    if o.get("upcoming"):
+        # ===== HRJOB v1：募集予定の求人は、職種名・レベル・勤務地・給与が空のため、
+        # 条件を含まない title / description にする。「｜｜」のような空欄を出さない。
+        name = o["title"]
+        title = "%sの仕事内容｜募集予定｜株式会社PAL 採用" % o["title"]
+        desc = ("株式会社PALの%s（募集予定）の仕事内容。%s募集要項は正式な募集開始にあわせて掲載します。"
+                % (o["title"], o["about"]))
+    else:
+        name = "%s（%s）｜%s" % (o["title"], o["level"], o["place_short"])
+        # レベル名が職種名に含まれるときは重ねない
+        lv = "" if (not o["level"] or o["level"] in o["title"]) else o["level"] + "・"
+        title = "%sの求人｜%s%s%s｜株式会社PAL" % (o["title"], lv, o["pref"], o["city"])
+        desc = ("株式会社PALの%s（%s）の募集要項。勤務地は%s。想定年収%s、%s。%s"
+                % (o["title"], o["level"], o["location"], o["salary_year"],
+                   o["employment"].split("（")[0], o["about"][:70]))
     head = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(title), head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % html.escape(desc), head, count=1)
     head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % html.escape(title), head, count=1)
@@ -468,7 +564,10 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
         {"@type": "ListItem", "position": 2, "name": "募集職種", "item": P["jobs"]},
         {"@type": "ListItem", "position": 3, "name": name}]}
     head = re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema\.org", "@type": "BreadcrumbList".*?</script>',
-                  '<script type="application/ld+json">%s</script>\n%s' % (json.dumps(bc, ensure_ascii=False), jobposting(o)),
+                  '<script type="application/ld+json">%s</script>%s' % (json.dumps(bc, ensure_ascii=False),
+                      # ===== HRJOB v1：募集予定の求人には JobPosting を付けない（給与・勤務条件・
+                      # 掲載日・応募先が未確定のため）。正式募集時に upcoming を外せば出るようになる。
+                      '' if o.get("upcoming") else '\n' + jobposting(o)),
                   head, count=1, flags=re.S)
 
     extra = []
@@ -554,7 +653,9 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
   </div>
 </section>
 '''
-    if layout == "v2":
+    if o.get("upcoming"):
+        body = detail_body_upcoming(o, P, intro)
+    elif layout == "v2":
         body = detail_body_v2(o, P, intro)
     wr(outpath or ("renewal/jobs/openings/%s/index.html" % o["id"]),
        head + '<main id="top">\n' + body + tail)

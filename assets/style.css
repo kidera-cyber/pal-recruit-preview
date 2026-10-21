@@ -7805,3 +7805,23 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .role-chip__cta{padding:0 18px 13px}
 }
 /* ===== ROLESTAT v1 END ===== */
+
+/* ============================================================
+   ===== HRJOB v1 START =====
+   「募集予定」の求人（人事）に伴う追加。
+   ・.jchip--soon：募集中（PALレッド）と見分けられる、濃紺寄りのバッジ。
+     薄くしすぎず白地でコントラストを確保する。
+   ・.jcard__lead／.jcard__sub：正式な条件が無い求人カードで、条件表の代わりに
+     仕事を一言で示すリード文と、仕事内容への導線を置く。
+   ・.jdh__st：求人詳細ヘッダーの募集予定バッジ。
+   ・.fchip__st--soon：HOME職種カードの募集予定ラベル。
+   正式募集に切り替わると .jchip--soon / .jcard__lead / .jcard__sub は使われなくなるが、
+   次の募集予定求人で使えるよう残す。
+   ============================================================ */
+.jchip--soon{background:var(--navy);color:#fff}
+.jcard__lead{margin-top:11px;font-size:15.5px;line-height:1.8;color:var(--sub)}
+.jcard__sub{margin-top:10px}
+.jdh__st{margin-top:18px}
+.jdh__st .jchip--soon{font-size:14px;padding:6px 16px}
+.fchip__st--soon b{background:var(--navy);color:#fff;border:1px solid var(--navy)}
+/* ===== HRJOB v1 END ===== */
