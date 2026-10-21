@@ -7781,3 +7781,27 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .jdcards li{padding:16px 18px 17px}
 }
 /* ===== DUTYCARD v1 END ===== */
+
+/* ============================================================
+   ===== ROLESTAT v1 START =====
+   募集ステータスを「募集中」「募集なし」の2種類にそろえたことに伴う調整。
+   ・HOMEの職種カードに「募集要項を見る」CTAを足す（募集中のときだけ出力される）。
+     カードは <a>（仕事内容を見る）の下に <p class="role-chip__cta"> を置く形で、
+     リンクの入れ子にならないようにしている。
+   ・JOBS「現在の募集状況について」の「募集なし」をグレー寄りにする。
+     読みにくくならないよう、文字色は --sub（白地 8.86:1）のまま。
+   旧 .fchip__st--tbd（確認中）は使わなくなったが、他で使う可能性があるため残置。
+   ============================================================ */
+.role-chips>li{flex-direction:column;gap:0}
+.role-chip__cta{margin:0;padding:0 16px 14px;width:100%}
+.role-chip__cta a{display:inline-flex;align-items:center;gap:7px;
+  font-size:13.5px;font-weight:700;line-height:1.5;color:var(--red)}
+.role-chip__cta a i{font-style:normal;font-size:12px;transition:transform .25s var(--ease)}
+.role-chip__cta a:hover i{transform:translateX(3px)}
+.role-chips>li:has(.role-chip__cta) .role-chip{padding-bottom:9px}
+/* 募集なしのラベル（JOBS側） */
+.rstat__s--off{background:var(--bg-soft);color:var(--sub);border-color:var(--line-mid)}
+@media (max-width:560px){
+  .role-chip__cta{padding:0 18px 13px}
+}
+/* ===== ROLESTAT v1 END ===== */

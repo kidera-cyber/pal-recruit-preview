@@ -13,10 +13,9 @@
   転勤／寮／住宅手当／手当の金額／採用人数／面接回数）は補完していない。
   4t求人にある賞与・昇給・早朝手当・退職金は、この求人票には記載がないため
   持ち込んでいない。
-・車両トン数は求人票のタイトル（8トン）と本文（10トン）で記載が異なるため、
-  職種名・本文・構造化データのいずれでもトン数を断定していない。
-  勤務時間・休日も求人票にある記載をそのまま載せ、推測で一方に寄せていない。
-  社内確認事項は docs/large-driver-open-items.md を参照。
+・車両トン数・休日・勤務時間は 2026-10-21 に正式確定した。
+  車両は10t、休日は週休2日制、勤務時間は8:00〜20:00の時間帯で応相談。
+  休憩時間は確認できていないため記載していない。
 ・求人票の訴求表現（「業界でも注目」「物流と運送のデジタル化を牽引」
   「男女ともに大歓迎」「ガンガン稼ぎたい」「新車に乗れます」「年齢不問」）は
   採用していない。
@@ -34,11 +33,11 @@ def wr(p, s):
 
 JOBPOSTING = True       # 正式掲載（2026-10-21）
 
-TITLE = "大型ルート配送ドライバー求人｜千葉県船橋市｜株式会社PAL"
-DESC  = ("株式会社PAL（DTS／運送部）の大型ルート配送ドライバー求人。千葉県船橋市・afs船橋センター、"
+TITLE = "10tドライバー求人｜千葉県船橋市｜株式会社PAL"
+DESC  = ("株式会社PAL（DTS／運送部）の10tドライバー求人。千葉県船橋市のafs船橋センター勤務、"
          "正社員、月給36万円〜60万円。大手スーパーや外食チェーンへの食品ルート配送で、カゴ車と"
          "パワーゲートを使うため手積み・手降ろしはありません。千葉県を中心に一都三県、1日3件程度。"
-         "大型自動車運転免許が必須の正社員の募集です。")
+         "大型免許必須。休日は週休2日制の正社員募集です。")
 assert len(DESC) == 160, "meta description は160文字ちょうどにする（現在 %d 文字）" % len(DESC)
 
 NOTE = ('<!-- ===== LRGDRV v1：この求人は「下書き」である。\n'
@@ -66,7 +65,7 @@ def build_detail():
     crumb = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../../"},
         {"@type": "ListItem", "position": 2, "name": "募集職種", "item": "../../jobs/"},
-        {"@type": "ListItem", "position": 3, "name": "大型ルート配送ドライバー"}]}
+        {"@type": "ListItem", "position": 3, "name": "10tドライバー"}]}
     head = re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema\.org", "@type": "BreadcrumbList".*?</script>',
                   '<script type="application/ld+json">%s</script>' % json.dumps(crumb, ensure_ascii=False), head, flags=re.S)
     # 4t求人の JobPosting を、この求人の内容に差し替える
@@ -74,8 +73,8 @@ def build_detail():
     j = head.index("</script>", head.index('<script type="application/ld+json">{"@context":"https://schema.org","@type":"JobPosting"', i)) + len("</script>")
     jp = {
         "@context": "https://schema.org", "@type": "JobPosting",
-        "title": "大型ルート配送ドライバー",
-        "description": ("大型トラックを使用し、大手スーパーや外食チェーンの各店舗へ食品を配送する"
+        "title": "10tドライバー",
+        "description": ("10tトラックを使用し、大手スーパーや外食チェーンの各店舗へ食品を配送する"
                         "ルート配送業務です。配送件数は1日3件程度、配送エリアは千葉県を中心に一都三県で、"
                         "近距離・日帰りのみです。全車両にパワーゲートを搭載し、積み降ろしにはカゴ車を"
                         "使用するため、手積み・手降ろしはありません。"),
@@ -90,8 +89,8 @@ def build_detail():
                                  "maxValue": 600000, "unitText": "MONTH"}},
         "qualifications": "大型自動車運転免許",
         "experienceRequirements": "経験不問。配送の実務経験がなくても同乗研修（OJT）で学べます。",
-        "workHours": ("シフト制。日勤 8:00〜20:00／9:00〜21:00、夜勤 21:00〜翌9:00／24:00〜翌12:00／"
-                      "1:00〜13:00（いずれも実働8時間）。平均所定労働時間は1か月あたり168時間。"),
+        "workHours": ("8:00〜20:00の時間帯で応相談。シフト制。平均所定労働時間は1か月あたり168時間。"
+                      "勤務時間は担当ルート・シフト等により調整。"),
         "jobBenefits": ("社会保険完備（健康保険・雇用保険・労災保険・厚生年金）、有給休暇、"
                         "通勤手当あり（月5万円まで）、免許取得支援制度あり、制服貸与、同乗研修（OJT）あり"),
     }
@@ -104,13 +103,13 @@ def build_detail():
                '<script type="application/ld+json">%s</script>' % json.dumps(jp, ensure_ascii=False))
     head = head[:i] + (jp_note if JOBPOSTING else "") + head[j:]
 
-    body = '''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../../">採用情報</a><a href="../../jobs/">募集職種</a><span aria-current="page">大型ルート配送ドライバー</span></div></nav>
+    body = '''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../../">採用情報</a><a href="../../jobs/">募集職種</a><span aria-current="page">10tドライバー</span></div></nav>
 
 ''' + NOTE + '''
 <section class="phead">
   <div class="wrap">
     <p class="slabel">Jobs ／ DTS・運送部</p>
-    <h1 class="ptitle">大型ルート配送ドライバー</h1>
+    <h1 class="ptitle">10tドライバー</h1>
     <p class="plead">千葉県船橋市・正社員・月給36万円〜60万円｜大型免許を活かす近距離・日帰りのルート配送</p>
   </div>
 </section>
@@ -125,7 +124,7 @@ def build_detail():
       <li class="drvpt"><span class="en">01</span><b>手積み・手降ろしなし</b><p>積み降ろしにはカゴ車を使用します。全車両にパワーゲートを搭載しています。</p></li>
       <li class="drvpt"><span class="en">02</span><b>近距離・日帰りのみ</b><p>千葉県を中心とした一都三県への配送です。長距離・泊まりの運行はありません。</p></li>
       <li class="drvpt"><span class="en">03</span><b>配送件数は1日3件程度</b><p>固定ルートで、1日に回る配送件数は3件程度です。</p></li>
-      <li class="drvpt"><span class="en">04</span><b>日勤・夜勤を選べます</b><p>シフト制で、日勤2パターン・夜勤3パターンから選べます。</p></li>
+      <li class="drvpt"><span class="en">04</span><b>勤務時間は応相談</b><p>8:00〜20:00の時間帯で、担当ルート・シフト等に合わせて調整します。</p></li>
     </ul>
   </div>
 </section>
@@ -134,12 +133,12 @@ def build_detail():
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:20px">
       <p class="slabel">Work</p>
-      <h2 class="stitle" style="font-size:clamp(21px,2.5vw,29px)"><span class="nw">大型トラックで、</span><span class="nw">スーパーや外食チェーンへ</span><span class="nw">食品を届ける。</span></h2>
-      <p class="slead">大型自動車運転免許をお持ちの方を対象とした、近距離ルート配送ドライバーの募集です。大型トラックを使用し、大手スーパーや外食チェーンの各店舗へ食品を配送するルート配送業務をお願いします。</p>
+      <h2 class="stitle" style="font-size:clamp(21px,2.5vw,29px)"><span class="nw">10tトラックで、</span><span class="nw">スーパーや外食チェーンへ</span><span class="nw">食品を届ける。</span></h2>
+      <p class="slead">大型自動車運転免許をお持ちの方を対象とした、近距離ルート配送ドライバーの募集です。10tトラックを使用し、大手スーパーや外食チェーンの各店舗へ食品を配送するルート配送業務をお願いします。</p>
     </div>
     <!-- ===== DUTYCARD v1：仕事内容をカード型（.jdcards）に。文章・順番は変更していない。 ===== -->
     <ul class="jdcards rv">
-      <li>大型トラックでの食品配送（固定ルート）</li>
+      <li>10tトラックでの食品配送（固定ルート）</li>
       <li>配送件数は1日3件程度</li>
       <li>配送エリアは千葉県を中心に一都三県（近距離・日帰りのみ）</li>
       <li>全車両にパワーゲートを搭載</li>
@@ -183,9 +182,9 @@ def build_detail():
           <dt>雇用形態</dt><dd>正社員（試用期間なし）</dd>
           <dt>給与</dt><dd>月給36万円〜60万円</dd>
           <dt>手当</dt><dd>残業手当／深夜手当／資格手当／無事故手当</dd>
-          <dt>勤務時間</dt><dd>日勤・夜勤からお選びいただけます。<br><b>日勤</b>　8:00〜20:00／9:00〜21:00<br><b>夜勤</b>　21:00〜翌9:00／24:00〜翌12:00／1:00〜13:00<br>※いずれも実働8時間です。</dd>
+          <dt>勤務時間</dt><dd>8:00〜20:00の時間帯で応相談<br>※勤務時間は担当ルート・シフト等により調整します。</dd>
           <dt>勤務形態</dt><dd>シフト制<br>平均所定労働時間：1か月あたり168時間</dd>
-          <dt>休日・休暇</dt><dd>週休2日（シフト制）<br>※隔週2日休み（月6日〜）<br>希望休はできる限り優先します。</dd>
+          <dt>休日・休暇</dt><dd>週休2日制<br>希望休はできる限り優先します。</dd>
         </dl></div>
       </section>
 
@@ -226,10 +225,10 @@ def build_detail():
       <p class="slead">同じafs船橋センターでの食品ルート配送ですが、必要な免許と車両が異なります。勤務地・給与・勤務時間・休日は求人票上は同じ条件です。</p>
     </div>
     <div class="spec rv"><dl class="drvcmp">
-      <dt>必須免許</dt><dd><b>大型</b>：大型自動車運転免許<br><b>4t</b>：中型自動車運転免許（8t）または2007年6月1日以前取得の普通自動車運転免許</dd>
-      <dt>車両</dt><dd><b>大型</b>：大型トラック<br><b>4t</b>：4tトラック</dd>
-      <dt>手当</dt><dd><b>大型</b>：残業／深夜／資格／無事故<br><b>4t</b>：残業／深夜／資格／早朝／無事故</dd>
-      <dt>賞与・昇給・退職金</dt><dd><b>大型</b>：求人票に記載がありません<br><b>4t</b>：賞与 年1回（実績による）／昇給 年1回（4月）／退職金あり（勤務3年以上）</dd>
+      <dt>必須免許</dt><dd><b>10t</b>：大型自動車運転免許<br><b>4t</b>：中型自動車運転免許（8t）または2007年6月1日以前取得の普通自動車運転免許</dd>
+      <dt>車両</dt><dd><b>10t</b>：10tトラック<br><b>4t</b>：4tトラック</dd>
+      <dt>手当</dt><dd><b>10t</b>：残業／深夜／資格／無事故<br><b>4t</b>：残業／深夜／資格／早朝／無事故</dd>
+      <dt>賞与・昇給・退職金</dt><dd><b>10t</b>：求人票に記載がありません<br><b>4t</b>：賞与 年1回（実績による）／昇給 年1回（4月）／退職金あり（勤務3年以上）</dd>
     </dl></div>
     <p class="rv" style="margin-top:22px"><a class="btn btn--ghost" href="../dts/">4tルート配送ドライバーの募集要項を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>

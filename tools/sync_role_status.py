@@ -1,0 +1,108 @@
+# -*- coding: utf-8 -*-
+"""
+===== ROLESTAT v1 =====
+公開画面の募集ステータスを「募集中」「募集なし」の2種類だけにそろえ、
+HOME の職種カードと JOBS の求人データを同期する。
+
+  renewal/index.html   FIND YOUR FIELD の職種カード9件
+  renewal/jobs/        「現在の募集状況について」の3職種
+
+判定はすべて data/jobs-openings.json。
+  その職種に status="open" の求人が1件でもある → 募集中（募集要項を見るCTAあり）
+  1件もない                                  → 募集なし（募集要項を見るCTAなし）
+
+内部で確認中でも公開画面は「募集なし」。「確認中」「募集確認中」「通年募集」などは使わない。
+求人が追加・終了したら、このスクリプトを流すだけで HOME と JOBS の表示がそろう。
+
+  python3 -I tools/sync_role_status.py
+"""
+import json, os, re
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+def rd(p):
+    with open(os.path.join(ROOT, p), encoding="utf-8") as f: return f.read()
+def wr(p, s):
+    with open(os.path.join(ROOT, p), "w", encoding="utf-8") as f: f.write(s)
+
+# HOME の職種カード（work/#role-xxx）→ その職種に対応する求人ID
+# 求人を増やしたら、ここにも登録する。登録のない職種は常に「募集なし」。
+ROLE_JOBS = {
+    "role-bpo":      ["funabashi-associate", "atsugi-member", "higashihiroshima-member", "suma-manager"],
+    "role-clean":    [],
+    "role-fde":      ["fde-associate", "fde-leader"],
+    "role-system":   ["system-engineer"],
+    "role-dts":      ["dts-route-driver", "large-route-driver"],
+    "role-sales":    ["engagement-member"],
+    "role-mkt":      [],
+    "role-staffing": ["staffing-sales-leader"],
+    "role-corp":     [],
+}
+# 募集中のとき「募集要項を見る」が指す先（JOBS の職種グループ）
+ROLE_ANCHOR = {"role-bpo": "#job-bpo", "role-fde": "#job-fde", "role-system": "#job-system",
+               "role-dts": "#job-driver", "role-sales": "#job-sales", "role-staffing": "#job-sales"}
+
+# JOBS「現在の募集状況について」の3職種 → 求人ID（いずれも求人なし）
+RSTAT_JOBS = {"job-marketing": [], "job-clean": [], "job-corporate": []}
+
+OPEN_LABEL, OFF_LABEL = "募集中", "募集なし"
+
+def open_ids(D):
+    return {o["id"] for o in D["openings"] if o["status"] == "open"}
+
+def sync_home(D):
+    p = "renewal/index.html"
+    s = rd(p); live = open_ids(D); n_open = n_off = 0
+
+    def one(m):
+        nonlocal n_open, n_off
+        li = m.group(0)
+        role = re.search(r'href="work/#(role-[a-z]+)"', li)
+        if not role: return li
+        key = role.group(1)
+        hiring = bool(set(ROLE_JOBS.get(key, [])) & live)
+        label = OPEN_LABEL if hiring else OFF_LABEL
+        cls = "fchip__st" if hiring else "fchip__st fchip__st--off"
+        li = re.sub(r'<span class="fchip__st[^"]*"><b>[^<]*</b></span>',
+                    '<span class="%s"><b>%s</b></span>' % (cls, label), li, count=1)
+        # 募集要項を見るCTA：募集中のときだけ置く。募集要項が無いのにリンクを残さない。
+        li = re.sub(r'\s*<p class="role-chip__cta">.*?</p>', "", li, flags=re.S)
+        if hiring:
+            cta = ('\n          <p class="role-chip__cta"><a href="jobs/%s">募集要項を見る'
+                   '<i aria-hidden="true">&#8594;</i></a></p>' % ROLE_ANCHOR.get(key, ""))
+            # CTAを外したあとの改行・字下げも吸収して、何度流しても同じ形になるようにする
+            li = re.sub(r"</a>\s*</li>\s*$", "</a>" + cta + "\n        </li>", li)
+            n_open += 1
+        else:
+            li = re.sub(r"</a>\s*</li>\s*$", "</a></li>", li)
+            n_off += 1
+        return li
+
+    i = s.index('<ul class="role-chips'); j = s.index("</ul>", i)
+    s = s[:i] + re.sub(r"<li>.*?</li>", one, s[i:j], flags=re.S) + s[j:]
+    wr(p, s)
+    return n_open, n_off
+
+def sync_rstat(D):
+    p = "renewal/jobs/index.html"
+    s = rd(p); live = open_ids(D); n = 0
+    def one(m):
+        nonlocal n
+        li = m.group(0)
+        key = re.search(r'id="(job-[a-z]+)"', li).group(1)
+        if key not in RSTAT_JOBS: return li
+        hiring = bool(set(RSTAT_JOBS[key]) & live)
+        li = re.sub(r'<span class="rstat__s[^"]*">[^<]*</span>',
+                    '<span class="rstat__s%s">%s</span>' % ("" if hiring else " rstat__s--off",
+                                                            OPEN_LABEL if hiring else OFF_LABEL), li, count=1)
+        n += 1
+        return li
+    i = s.index('<ul class="rstat'); j = s.index("</ul>", i)
+    s = s[:i] + re.sub(r"<li id=.*?</li>", one, s[i:j], flags=re.S) + s[j:]
+    wr(p, s)
+    return n
+
+if __name__ == "__main__":
+    D = json.loads(rd("data/jobs-openings.json"))
+    a, b = sync_home(D)
+    c = sync_rstat(D)
+    print("募集ステータスを同期：HOME 募集中 %d件／募集なし %d件 ／ JOBS 募集状況 %d件" % (a, b, c))

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261021i">
+<link rel="stylesheet" href="../../assets/style.css?v=20261021j">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "募集職種"}]}</script>
@@ -109,12 +109,12 @@
 <section class="sec sec--tight" id="openings">
   <div class="wrap" id="joblist">
     <div class="jfil">
-      <div class="jfil__row"><p class="jfil__k">職種</p><div class="jfil__bs"><button class="jfil__b is-active" type="button" data-filter-category="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-filter-category="bpo" aria-pressed="false">物流センター運営</button><button class="jfil__b" type="button" data-filter-category="fde" aria-pressed="false">FDE</button><button class="jfil__b" type="button" data-filter-category="system" aria-pressed="false">システム / プロダクト開発</button><button class="jfil__b" type="button" data-filter-category="sales" aria-pressed="false">営業</button></div></div>
+      <div class="jfil__row"><p class="jfil__k">職種</p><div class="jfil__bs"><button class="jfil__b is-active" type="button" data-filter-category="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-filter-category="bpo" aria-pressed="false">物流センター運営</button><button class="jfil__b" type="button" data-filter-category="fde" aria-pressed="false">FDE</button><button class="jfil__b" type="button" data-filter-category="system" aria-pressed="false">システム / プロダクト開発</button><button class="jfil__b" type="button" data-filter-category="sales" aria-pressed="false">営業</button><button class="jfil__b" type="button" data-filter-category="driver" aria-pressed="false">ドライバー</button></div></div>
       <div class="jfil__row"><p class="jfil__k">勤務地</p><div class="jfil__bs"><button class="jfil__b is-active" type="button" data-filter-location="all" aria-pressed="true">すべて</button><button class="jfil__b" type="button" data-filter-location="chiba" aria-pressed="false">千葉県</button><button class="jfil__b" type="button" data-filter-location="kanagawa" aria-pressed="false">神奈川県</button><button class="jfil__b" type="button" data-filter-location="hiroshima" aria-pressed="false">広島県</button><button class="jfil__b" type="button" data-filter-location="hyogo" aria-pressed="false">兵庫県</button><button class="jfil__b" type="button" data-filter-location="osaka" aria-pressed="false">大阪府</button></div></div>
-      <p class="jfil__n">現在 <b id="jobcount">9</b> 件の求人を掲載しています。</p>
+      <p class="jfil__n">現在 <b id="jobcount">11</b> 件の求人を掲載しています。</p>
     </div>
     <p class="jfil__none" id="jobnone" hidden>現在、この条件で募集中の求人はありません。</p>
-    <section class="jgroup" data-group="bpo">
+    <section class="jgroup" id="job-bpo" data-group="bpo">
       <h2 class="jgroup__h"><span class="jgroup__n">物流センター運営</span><span class="jgroup__c en" data-total="4">4 POSITIONS</span></h2>
       <p class="jgroup__lead"><a class="textlink textlink--sm" href="logistics-operation/">物流センター運営の仕事と募集拠点</a>を見る。仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-bpo">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/bpo/">BPO・現場運営の社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
@@ -164,7 +164,7 @@
       </li>
       </ul>
     </section>
-    <section class="jgroup" data-group="fde">
+    <section class="jgroup" id="job-fde" data-group="fde">
       <h2 class="jgroup__h"><span class="jgroup__n">FDE</span><span class="jgroup__c en" data-total="2">2 POSITIONS</span></h2>
       <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-fde">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/fde/">FDEの社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
@@ -192,7 +192,7 @@
       </li>
       </ul>
     </section>
-    <section class="jgroup" data-group="system">
+    <section class="jgroup" id="job-system" data-group="system">
       <h2 class="jgroup__h"><span class="jgroup__n">システム / プロダクト開発</span><span class="jgroup__c en" data-total="1">1 POSITION</span></h2>
       <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-system">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/system/">システム / プロダクト開発の社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
@@ -209,7 +209,7 @@
       </li>
       </ul>
     </section>
-    <section class="jgroup" data-group="sales">
+    <section class="jgroup" id="job-sales" data-group="sales">
       <h2 class="jgroup__h"><span class="jgroup__n">営業</span><span class="jgroup__c en" data-total="2">2 POSITIONS</span></h2>
       <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-sales">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/sales/">営業の社員インタビュー</a>をご覧ください。</p>
       <ul class="jcards">
@@ -237,7 +237,35 @@
       </li>
       </ul>
     </section>
-    <p class="note" style="margin-top:28px">※ 給与はいずれも固定残業代を含む金額です。内訳は各求人の募集要項に掲載しています。</p>
+    <section class="jgroup" id="job-driver" data-group="driver">
+      <h2 class="jgroup__h"><span class="jgroup__n">ドライバー</span><span class="jgroup__c en" data-total="2">2 POSITIONS</span></h2>
+      <p class="jgroup__lead">仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="../work/#role-dts">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="../people/dts/">DTS・運送の社員インタビュー（営業所長の仕事）</a>をご覧ください。</p>
+      <ul class="jcards">
+      <li class="jcard" data-job-category="driver" data-location="chiba">
+        <p class="jcard__cat">ドライバー</p>
+        <h3 class="jcard__n">4tルート配送ドライバー<span class="jcard__lv">DTS / 運送部｜船橋</span></h3>
+        <dl class="jcard__dl">
+          <dt>勤務地</dt><dd>千葉県船橋市</dd>
+          <dt>給与</dt><dd><b>月給36万円〜60万円</b></dd>
+          <dt>雇用形態</dt><dd>正社員</dd>
+        </dl>
+        <p class="jcard__foot"><span class="jchip">募集中</span>
+          <a class="jcard__cta" href="dts/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
+      </li>
+      <li class="jcard" data-job-category="driver" data-location="chiba">
+        <p class="jcard__cat">ドライバー</p>
+        <h3 class="jcard__n">10tドライバー<span class="jcard__lv">DTS / 運送部｜船橋</span></h3>
+        <dl class="jcard__dl">
+          <dt>勤務地</dt><dd>千葉県船橋市</dd>
+          <dt>給与</dt><dd><b>月給36万円〜60万円</b></dd>
+          <dt>雇用形態</dt><dd>正社員</dd>
+        </dl>
+        <p class="jcard__foot"><span class="jchip">募集中</span>
+          <a class="jcard__cta" href="large-driver/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
+      </li>
+      </ul>
+    </section>
+    <p class="note" style="margin-top:28px">※ 給与に固定残業代を含む求人があります。固定残業代の有無と内訳は、各求人の募集要項に掲載しています。</p>
   </div>
 </section>
 
@@ -252,9 +280,9 @@
          このセクションが募集状況を伝える場所であるため外している（PEOPLE・WORKは変更なし）。
          id は人を知るなどからのアンカーリンクで使われているため変えていない。 ===== -->
     <ul class="rstat rv">
-      <li id="job-marketing"><span class="rstat__n"><b>Marketing / Content</b><span class="rstat__ja">マーケティング・コンテンツ制作</span></span><span class="rstat__s">募集条件を確認中</span></li>
-      <li id="job-clean"><span class="rstat__n"><b>Cleanliness</b><span class="rstat__ja">クレンリネス</span></span><span class="rstat__s">現在募集していません</span></li>
-      <li id="job-corporate"><span class="rstat__n"><b>Corporate</b><span class="rstat__ja">コーポレート</span></span><span class="rstat__s">募集条件を確認中</span></li>
+      <li id="job-marketing"><span class="rstat__n"><b>Marketing / Content</b><span class="rstat__ja">マーケティング・コンテンツ制作</span></span><span class="rstat__s rstat__s--off">募集なし</span></li>
+      <li id="job-clean"><span class="rstat__n"><b>Cleanliness</b><span class="rstat__ja">クレンリネス</span></span><span class="rstat__s rstat__s--off">募集なし</span></li>
+      <li id="job-corporate"><span class="rstat__n"><b>Corporate</b><span class="rstat__ja">コーポレート</span></span><span class="rstat__s rstat__s--off">募集なし</span></li>
     </ul>
     <p class="note rv">※ 募集状況は変更になる場合があります。最新の募集情報は、上部の<a class="textlink textlink--sm" href="#joblist">今、募集している仕事</a>をご確認ください。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
 <!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。

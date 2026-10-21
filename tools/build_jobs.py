@@ -105,7 +105,7 @@ def group(key):
     hub = ('<a class="textlink textlink--sm" href="%s">%s</a>を見る。' % (e(c["hub"]), e(c["hub_label"]))) if c.get("hub") else ""
     items = [o for o in OPEN if o["cat"] == key]
     cards = "\n".join(card(o) for o in items)
-    return f'''    <section class="jgroup" data-group="{e(key)}">
+    return f'''    <section class="jgroup" id="job-{e(key)}" data-group="{e(key)}">
       <h2 class="jgroup__h"><span class="jgroup__n">{e(c['name'])}</span><span class="jgroup__c en" data-total="{len(items)}">{len(items)} {"POSITION" if len(items)==1 else "POSITIONS"}</span></h2>
       <p class="jgroup__lead">{hub}仕事の内容をくわしく知りたい方は<a class="textlink textlink--sm" href="{e(c['work_anchor'])}">仕事内容を見る</a>、働いている人の話は<a class="textlink textlink--sm" href="{e(c['people'])}">{e(c['people_label'])}</a>をご覧ください。</p>
       <ul class="jcards">
