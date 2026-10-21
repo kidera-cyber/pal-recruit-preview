@@ -1,14 +1,14 @@
-# 大型ルート配送ドライバー求人｜確認が必要な項目
+# 大型ルート配送ドライバー求人｜社内確認が必要な項目
 
 - 出典：`Indeed_大型ドライバー②.pdf`（抽出日 2026-10-21）
-- データ：`data/jobs-openings.json` の `large-route-driver`（`status: "draft"`）
-- 下書きページ：`renewal/jobs/large-driver-preview/`
-- 一覧の比較プレビュー：`renewal/jobs-large-driver-preview/`
-- 生成スクリプト：`tools/build_large_driver_preview.py`（LRGDRV v1）
+- データ：`data/jobs-openings.json` の `large-route-driver`（`status: "open"`）
+- 公開ページ：`renewal/jobs/large-driver/`
+- 生成スクリプト：`tools/build_large_driver.py`（LRGDRV v1）
 
-`status` が `draft` のあいだ、この求人は `tools/build_jobs.py` の `OPEN` に入らないため、
-公開中の JOBS 一覧（`renewal/jobs/`）・絞り込み・件数・JobPosting・求人詳細の
-いずれにも出ない。公開中の一覧は10件のまま。
+**2026-10-21 に正式掲載した。** 求人票の記載をそのまま載せており、未解決の不一致は
+画面上で「確認中」とは書かず、求人票にある記載を両方そのまま掲載する形にしている
+（公開中の4t求人 `renewal/jobs/dts/` と同じ扱い）。
+下記は社内で確認し、確定しだい求人データを直すための記録。
 
 ---
 
@@ -20,7 +20,9 @@
 | 求人票タイトル | 【近距離＆日帰りのみ】ルート大型ドライバー**(8トン)**｜カゴ車＆パワーゲート完備！ |
 | 求人票 仕事内容 | **10トン**大型トラックを使用し、大手スーパーや外食チェーンの各店舗へ食品のルート配送 |
 
-- 現在の扱い：職種名・本文からトン数を外し「大型ルート配送ドライバー」「大型トラック」としている。
+- 現在の扱い：職種名・本文・JobPosting のいずれでもトン数を断定せず、「大型ルート配送ドライバー」
+  「大型トラック」としている。応募に必要なのは大型自動車運転免許である点は確定しているため、
+  トン数が未確定でも応募判断には影響しない。
 - 確認したいこと：実際に乗務する車両は8tか10tか。両方あるなら併記する。
 - 影響範囲：職種名／`title`／`meta description`／本文／JobPosting の `title`・`description`。
 
@@ -33,6 +35,7 @@
 
 - 拘束は12時間、実働は8時間と記載されているが、休憩時間の記載がない。
 - 現在の扱い：求人票の記載どおり、時刻と「実働8時間」の両方を併記し、休憩時間は補完していない。
+  同じ記載が公開中の4t求人（`renewal/jobs/dts/`）にもある。
 - 確認したいこと：休憩時間（4時間なのか、拘束時間の記載が概算なのか）。
 
 ### ③ 休日
@@ -83,13 +86,11 @@
 - 「新車に乗れます」「オートマ車も導入予定」（導入予定のため確定情報として扱えない）
 - 「道に迷う心配もなし」「安定した収入を得られる環境が整っています」
 
-## 4. 正式反映の手順（確認が取れたあと）
+## 4. 確認が取れたあとの手順
 
 1. `data/jobs-openings.json` の `large-route-driver` を直す（トン数・勤務時間・休日）。
-2. 同レコードの `status` を `"open"` に変更。`discrepancies` を削除。
-3. `detail_url` を `large-driver-preview/` から正式なディレクトリ名に変更し、
-   `renewal/jobs/large-driver-preview/` をそのディレクトリへ移す
-   （または `generate_detail` を `true` にして `tools/build_jobs.py` に生成させる）。
-4. `tools/build_large_driver_preview.py` の `JOBPOSTING` を `True` にして JobPosting を出す。
-5. `renewal/jobs-large-driver-preview/` と `.drvdraft` / `.jchip--draft`（LRGDRV v1）を外す。
-6. `bash tools/build_all.sh` → 一覧が11件・ドライバー 2 POSITIONS になることを確認。
+2. `tools/build_large_driver.py` の本文を同じ内容に直す。
+3. ③（休日）は公開中の4t求人（`renewal/jobs/dts/`）にも同じ記載があるため、同時に直す。
+4. 本番掲載日が確定したら `date_posted` を設定する（Google しごと検索の必須項目）。
+5. 正式な応募先URLが確定したら `tools/set_entry_cta.py on` で応募CTAを戻す。
+6. `bash tools/build_all.sh` で再生成し、一覧11件・ドライバー 2 POSITIONS を確認する。

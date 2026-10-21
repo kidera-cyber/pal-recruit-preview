@@ -7,7 +7,7 @@ python3 -I tools/build_logistics_operation.py   # LEVEL 02：物流センター�
 python3 -I tools/build_jobs.py                  # LEVEL 01/03：求人一覧・求人詳細
 python3 -I tools/build_faq.py                   # FAQ 比較プレビュー
 python3 -I tools/build_driver_preview.py        # 4tドライバー SEO/AIO 比較プレビュー
-python3 -I tools/build_large_driver_preview.py  # 大型ドライバー（下書き）比較プレビュー
+python3 -I tools/build_large_driver.py       # 大型ルート配送ドライバーの募集要項
 python3 -I tools/build_jobs_detail_preview.py   # 求人詳細デザイン改善の比較プレビュー
 # 比較プレビューは set_noindex / set_entry_cta より前に作ること。
 # あとから作ると noindex と応募CTA停止が当たらない。

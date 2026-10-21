@@ -669,9 +669,8 @@
     {
       "id": "large-route-driver",
       "cat": "driver",
-      "status": "draft",
-      "_draft_reason": "求人票内に未解決の不一致が4点あるため、正式求人一覧には掲載しない。status を open に変えるまで tools/build_jobs.py の対象外（OPEN フィルタ）。",
-      "detail_url": "large-driver-preview/",
+      "status": "open",
+      "detail_url": "large-driver/",
       "generate_detail": false,
       "title": "大型ルート配送ドライバー",
       "_title_note": "求人票タイトルは「ルート大型ドライバー(8トン)」、本文は「10トン大型トラック」。車両トン数が確定していないため、暫定的にトン数を含めない名称にしている。",
@@ -746,7 +745,8 @@
           "b": "本文：Webにてご応募（電話応募不可）",
           "handling": "自社サイトの正式応募URLが未確定のため、応募ボタンは設置していない。"
         }
-      ]
+      ],
+      "_note": "求人票（Indeed_大型ドライバー②.pdf）の記載をそのまま掲載している。車両トン数はタイトル「8トン」と本文「10トン」で記載が異なるため、職種名・本文からトン数を外している。勤務時間・休日も求人票にある記載を両方そのまま載せており、推測で一方に寄せていない。社内確認事項は docs/large-driver-open-items.md を参照。"
     },
     {
       "id": "manager-candidate-hold",

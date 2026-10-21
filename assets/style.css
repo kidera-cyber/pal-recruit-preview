@@ -7574,6 +7574,8 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
    既存ルールの上書きはしていない（すべて新規クラス）。
    正式反映時は .drvdraft と .jchip--draft の2つが不要になる。
    ============================================================ */
+/* ===== LRGDRV v1：.drvdraft / .jchip--draft は 2026-10-21 の正式掲載で未使用になった。
+   下書き求人をふたたび出すときに使えるよう、削除せず残している。 ===== */
 .drvdraft{padding:22px 0 0}
 .drvdraft .wrap{border:2px solid var(--red);border-radius:var(--radius);
   background:#fff7f7;padding:20px 24px}
