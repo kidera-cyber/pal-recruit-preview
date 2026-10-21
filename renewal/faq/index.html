@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261021n">
+<link rel="stylesheet" href="../../assets/style.css?v=20261021p">
 <!-- ===== FAQ-GROUPS v1：既存のFAQPage構造化データを、再構成後の表示内容と1対1で一致させた。
      GoogleのFAQリッチリザルトは終了しているため表示効果を目的としたものではなく、
      ページ本文と構造化データの不一致を残さないための同期。 ===== -->
@@ -202,15 +202,19 @@
         <h2 class="faqcat__h">職種別FAQ</h2>
         <p class="faqcat__d">職種を選ぶと、その職種の仕事内容・応募条件に関する質問が表示されます。</p>
       </div>
-      <div class="tabs faqtabs faqtabs--job rv" role="tablist" aria-label="職種を選ぶ">
-        <button class="tab" role="tab" id="fq-tab-fde" aria-controls="fq-fde" aria-selected="true">FDE</button>
-        <button class="tab" role="tab" id="fq-tab-bpo" aria-controls="fq-bpo" aria-selected="false">BPO・現場運営</button>
-        <button class="tab" role="tab" id="fq-tab-prod" aria-controls="fq-prod" aria-selected="false">プロダクト企画・開発</button>
-        <button class="tab" role="tab" id="fq-tab-dts" aria-controls="fq-dts" aria-selected="false">DTS・配送ドライバー</button>
-        <button class="tab" role="tab" id="fq-tab-sales" aria-controls="fq-sales" aria-selected="false">エンゲージメント・営業</button>
-        <button class="tab" role="tab" id="fq-tab-clean" aria-controls="fq-clean" aria-selected="false">クレンリネス</button>
-        <button class="tab" role="tab" id="fq-tab-mkt" aria-controls="fq-mkt" aria-selected="false">マーケティング</button>
-        <button class="tab" role="tab" id="fq-tab-corp" aria-controls="fq-corp" aria-selected="false">コーポレート</button>
+      <!-- ===== FAQJOBFILTER v1：上段のカテゴリタブと見た目が似ていて階層が分かりにくかったため、
+           職種の選択UIを「タブ」から「フィルター」のデザインに変えた。
+           role="tablist" と aria-controls はそのままで、切替の動作とキーボード操作は変わらない。 ===== -->
+      <p class="faqjobfilter__h">職種を選ぶ</p>
+      <div class="faqjobfilter rv" role="tablist" aria-label="職種を選ぶ">
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-fde" aria-controls="fq-fde" aria-selected="true">FDE</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-bpo" aria-controls="fq-bpo" aria-selected="false">BPO / 現場運営</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-prod" aria-controls="fq-prod" aria-selected="false">System / Product</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-dts" aria-controls="fq-dts" aria-selected="false">DTS / 配送ドライバー</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-sales" aria-controls="fq-sales" aria-selected="false">Engagement / Sales</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-clean" aria-controls="fq-clean" aria-selected="false">Cleanliness</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-mkt" aria-controls="fq-mkt" aria-selected="false">Marketing / Content</button>
+        <button class="tab faqjobfilter__btn" role="tab" id="fq-tab-corp" aria-controls="fq-corp" aria-selected="false">Corporate</button>
       </div>
       <div id="fq-fde" role="tabpanel" aria-labelledby="fq-tab-fde">
         <h3 class="faqjob__h rv">FDE</h3>
@@ -234,7 +238,7 @@
         </div>
       </div>
       <div id="fq-bpo" role="tabpanel" aria-labelledby="fq-tab-bpo">
-        <h3 class="faqjob__h rv">BPO・現場運営</h3>
+        <h3 class="faqjob__h rv">BPO / 現場運営</h3>
         <div class="faq rv">
         <details>
         <summary><i>Q</i>PALの物流センター運営では、具体的にどのような仕事を担当しますか？<em aria-hidden="true">＋</em></summary>
@@ -259,7 +263,7 @@
         </div>
       </div>
       <div id="fq-prod" role="tabpanel" aria-labelledby="fq-tab-prod">
-        <h3 class="faqjob__h rv">プロダクト企画・開発</h3>
+        <h3 class="faqjob__h rv">System / Product</h3>
         <div class="faq rv">
         <details>
         <summary><i>Q</i>PALでは、どのようなシステムやアプリを開発していますか？<em aria-hidden="true">＋</em></summary>
@@ -280,7 +284,7 @@
         </div>
       </div>
       <div id="fq-dts" role="tabpanel" aria-labelledby="fq-tab-dts">
-        <h3 class="faqjob__h rv">DTS・配送ドライバー</h3>
+        <h3 class="faqjob__h rv">DTS / 配送ドライバー</h3>
         <div class="faq rv">
         <details>
           <summary><i>Q</i>PALのDTS配送ドライバーは、どのような仕事ですか？<em aria-hidden="true">＋</em></summary>
@@ -301,7 +305,7 @@
         </div>
       </div>
       <div id="fq-sales" role="tabpanel" aria-labelledby="fq-tab-sales">
-        <h3 class="faqjob__h rv">エンゲージメント・営業</h3>
+        <h3 class="faqjob__h rv">Engagement / Sales</h3>
         <div class="faq rv">
         <details>
           <summary><i>Q</i>エンゲージメント・新規営業は、どのような業務を担当しますか？<em aria-hidden="true">＋</em></summary>
@@ -322,7 +326,7 @@
         </div>
       </div>
       <div id="fq-clean" role="tabpanel" aria-labelledby="fq-tab-clean">
-        <h3 class="faqjob__h rv">クレンリネス</h3>
+        <h3 class="faqjob__h rv">Cleanliness</h3>
         <div class="faq rv">
         <details>
         <summary><i>Q</i>PALのクレンリネスは、一般的な清掃業務と何が違いますか？<em aria-hidden="true">＋</em></summary>
@@ -351,7 +355,7 @@
         </div>
       </div>
       <div id="fq-mkt" role="tabpanel" aria-labelledby="fq-tab-mkt">
-        <h3 class="faqjob__h rv">マーケティング</h3>
+        <h3 class="faqjob__h rv">Marketing / Content</h3>
         <div class="faq rv">
         <details>
         <summary><i>Q</i>PALのマーケティング職では、どのような仕事を担当しますか？<em aria-hidden="true">＋</em></summary>
@@ -376,7 +380,7 @@
         </div>
       </div>
       <div id="fq-corp" role="tabpanel" aria-labelledby="fq-tab-corp">
-        <h3 class="faqjob__h rv">コーポレート</h3>
+        <h3 class="faqjob__h rv">Corporate</h3>
         <div class="faq rv">
         <details>
         <summary><i>Q</i>PALのコーポレート部門には、どのような仕事がありますか？<em aria-hidden="true">＋</em></summary>
