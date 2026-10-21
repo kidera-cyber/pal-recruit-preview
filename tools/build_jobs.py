@@ -34,6 +34,36 @@ PREFS = []
 for o in OPEN:
     if o["pref"] and o["pref"] not in PREFS: PREFS.append(o["pref"])
 
+# ===== JOBDETAIL v2 =====
+# 求人詳細の共通テンプレート。"v1" は 01勤務地〜09社員の話の9セクション構成、
+# "v2" は視認性を上げた6セクション構成（ヘッダー＋主要条件サマリー）。
+# 比較プレビューの承認後に LAYOUT = "v2" にすると、全求人詳細が v2 で再生成される。
+# 個別HTMLは手で直さない。求人データ（data/jobs-openings.json）は変更しない。
+LAYOUT = "v1"
+
+# 出力先の階層ごとの相対パス。
+#   3 = renewal/jobs/openings/<id>/   （正式な求人詳細）
+#   2 = renewal/jobs-detail-redesign-preview/ （比較プレビュー）
+# shell は renewal/jobs/logistics-operation/（階層3）のheadとfooterを流用するための補正。
+PATHS = {
+    3: {"shell": lambda t: re.sub(r'(href|src)="\.\./\.\./', r'\1="../../../', t),
+        "rn": "../../../", "jobs": "../../", "assets": "../../../../"},
+    2: {"shell": lambda t: re.sub(r'(href|src)="\.\./\.\./', r'\1="../', t),
+        "rn": "../", "jobs": "../jobs/", "assets": "../../"},
+}
+
+# ===== JOBSOPEN v1：給与の注記は求人データから組み立てる。
+# 「いずれも固定残業代を含む」は、固定残業代のない求人（DTS／運送部のドライバー）が
+# 一覧に入った時点で事実と合わなくなるため、該当件数で文面を切り替える。
+_FIXOT = [o for o in OPEN
+          if "固定残業" in (o.get("salary_month", "") or "") + (o.get("overtime", "") or "")]
+if not _FIXOT:
+    SALARY_NOTE = "※ 給与の内訳は各求人の募集要項に掲載しています。"
+elif len(_FIXOT) == len(OPEN):
+    SALARY_NOTE = "※ 給与はいずれも固定残業代を含む金額です。内訳は各求人の募集要項に掲載しています。"
+else:
+    SALARY_NOTE = "※ 給与に固定残業代を含む求人があります。固定残業代の有無と内訳は、各求人の募集要項に掲載しています。"
+
 MARK = ("<!-- ===== JOBSOPEN v1：リクナビHRTechで承認済みの求人票9件（2026-10-20 時点）"
         "をもとに、\n     tools/build_jobs.py が data/jobs-openings.json から生成している。"
         "手で編集せず、\n     JSON を直してからビルドし直すこと。\n"
@@ -148,6 +178,10 @@ def build_index():
     S = rd("renewal/jobs/index.html")
     head = S[:S.index('<main id="top">')]
     tail = S[S.index('<section class="sec sec--navy sec--tight" id="selection">'):]
+    # ===== JOBSOPEN v2：このスクリプトは自分の出力を土台にして組み直すため、
+    # 前回追記した絞り込みJSを先に取り除く。取り除かないと実行のたびに積み上がる
+    # （HEAD 時点で11個に増えていた）。
+    tail = re.sub(r'<!-- ===== JOBSOPEN v2：.*?</script>\n?', '', tail, flags=re.S)
 
     title = "募集中の求人一覧｜物流センター運営・FDE・システム開発・営業・ドライバー｜株式会社PAL 採用"
     desc = ("株式会社PALが現在募集している求人の一覧です。物流センター運営（千葉・船橋／神奈川・厚木／"
@@ -177,7 +211,7 @@ def build_index():
   <div class="wrap" id="joblist">
 {filters()}
 {groups_html}
-    <p class="note" style="margin-top:28px">※ 給与はいずれも固定残業代を含む金額です。内訳は各求人の募集要項に掲載しています。</p>
+    <p class="note" style="margin-top:28px">{SALARY_NOTE}</p>
   </div>
 </section>
 
@@ -238,14 +272,156 @@ def jobposting(o):
             '     Google しごと検索へ出す場合は data/jobs-openings.json の date_posted を設定する。 ===== -->\n'
             '<script type="application/ld+json">%s</script>' % json.dumps(jp, ensure_ascii=False))
 
-def build_detail(o):
+# ------------------------------------------------------------------ 求人詳細 v2
+def spec2(rows):
+    """勤務条件などの2カラム定義リスト。値が空の項目は行ごと出さない。"""
+    r = [(k, v) for k, v in rows if v]
+    if not r: return ""
+    return ('<div class="jdspec"><dl>'
+            + "".join('<dt>%s</dt><dd>%s</dd>' % (e(k), v) for k, v in r)
+            + '</dl></div>')
+
+def li2(items, cls="jdlist"):
+    return '<ul class="%s">%s</ul>' % (cls, "".join('<li>%s</li>' % e(x) for x in items))
+
+def jdsum(o):
+    """求人ヘッダーの主要条件サマリー。原則4項目。
+    求人票に記載のない項目（想定年収・年間休日など）は作らず、値が空なら項目ごと出さない。"""
+    items = [
+        (o.get("salary_label", "想定年収"), e(o["salary_year"]), True),
+        ("勤務地", e(o["pref"]) + e(o["city"])
+                 + ('<span class="jdsum__s">%s</span>' % e(o["office"]) if o.get("office") else ""), False),
+        ("休日", e(o["holidays"]), False),
+        ("雇用形態", e(o["employment"].split("（")[0]), False),
+    ]
+    cells = "".join(
+        '<div class="jdsum__i"><dt>%s</dt><dd class="jdsum__v%s">%s</dd></div>'
+        % (e(k), " jdsum__v--big" if big else "", v)
+        for k, v, big in items if v)
+    return '<dl class="jdsum rv">%s</dl>' % cells
+
+def detail_body_v2(o, P, intro=""):
+    c = CATS[o["cat"]]
+    name = "%s（%s）｜%s" % (o["title"], o["level"], o["place_short"])
+    mode = o.get("req_must_mode", "必須")
+    extra = [(k, e(o[f])) for k, f in
+             (("取扱商品", "goods"), ("働き方", "workstyle"), ("配属先", "team")) if o.get(f)]
+    welcome = (('<p class="jdsub">歓迎する経験</p><p class="jdtag jdtag--w">歓迎</p>'
+                + li2(o["req_welcome"])) if o.get("req_welcome") else "")
+    lic = ('<p class="jdsub">資格</p>' + li2([o["license"]])) if o.get("license") else ""
+    person = (('<p class="jdsub">求める人物像</p><p class="jdtext">' + e(o["req_person"]) + '</p>')
+              if o.get("req_person") else "")
+    flow = ('エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）'
+            '<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')
+    salary = spec2([(o.get("salary_label", "想定年収"), "<b>%s</b>" % e(o["salary_year"])),
+                    ("月給", e(o.get("salary_month", ""))), ("賞与", e(o.get("bonus", "")))])
+    hours = spec2([("雇用形態", e(o["employment"])), ("試用期間", e(o["probation"])),
+                   ("勤務シフト", e(o.get("shift", ""))),
+                   ("勤務時間", e(o["work_hours"])), ("フレックスタイム制", e(o["flex"])),
+                   ("残業", e(o["overtime"])), ("休日・休暇", e(o["holidays"])),
+                   ("有給休暇", e(o["paid_leave"])), ("その他の休暇", e(o["holiday_other"]))])
+    place = spec2([("事業所", e(o["office"])), ("所在地", e(o["location"])),
+                   ("アクセス", "<br>".join(e(a) for a in o["access"])),
+                   ("転勤", e(o["relocation"]))])
+    selection = spec2([("採用人数", e(o["hires"])), ("面接回数", e(o["interviews"])),
+                       ("筆記試験", e(o["written_test"])), ("選考の流れ", flow)])
+    work_url = e(c["work_anchor"]).replace("../", P["rn"])
+    people_url = e(c["people"]).replace("../", P["rn"])
+    return f"""<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="{P["rn"]}">採用情報</a><a href="{P["jobs"]}">募集職種</a><span aria-current="page">{e(name)}</span></div></nav>
+
+{MARK}
+{intro}
+<!-- ===== JOBDETAIL v2：01 求人ヘッダー（職種名＋主要条件サマリー）
+     サマリーは給与・勤務地・休日・雇用形態の原則4項目。求人票に記載のない項目は
+     作らず、値が空なら項目ごと出さない（jdsum）。 ===== -->
+<section class="jdh">
+  <div class="wrap">
+    <p class="slabel">Jobs ／ {e(c['name'])}</p>
+    <h1 class="jdh__t">{e(o['title'])}</h1>
+    <p class="jdh__lv">{e(o['level'])}｜{e(o['place_short'])}</p>
+    {jdsum(o)}
+  </div>
+</section>
+
+<section class="sec sec--tight">
+  <div class="wrap">
+
+    <!-- ===== JOBDETAIL v2：02 仕事内容 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">02</span>どんな仕事をするのか</h2>
+      <p class="jdtext rv">{e(o["about"])}</p>
+      <p class="jdsub">担当する業務</p>
+      {li2(o["duties"])}
+      {spec2(extra)}
+      <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="{work_url}">仕事を知る</a>をご覧ください。</p>
+    </section>
+
+    <!-- ===== JOBDETAIL v2：03 応募条件
+         「必須」「いずれか必須」「歓迎」の区別は求人票のままで、まとめていない。 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">03</span>応募条件</h2>
+      <p class="jdtag">{e(mode)}</p>
+      {li2(o["req_must"])}
+      {welcome}
+      {lic}
+      {person}
+    </section>
+
+    <!-- ===== JOBDETAIL v2：04 勤務条件（給与／勤務時間・休日／勤務地） ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">04</span>勤務条件</h2>
+      <p class="jdsub jdsub--first">給与</p>
+      {salary}
+      <p class="jdsub">勤務時間・休日</p>
+      {hours}
+      <p class="jdsub">勤務地</p>
+      {place}
+    </section>
+
+    <!-- ===== JOBDETAIL v2：05 待遇・福利厚生 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">05</span>待遇・福利厚生</h2>
+      {li2(o["benefits"], "jdben")}
+      {spec2([("退職金", e(o["retirement"])), ("寮・社宅", e(o["dormitory"]))])}
+    </section>
+
+    <!-- ===== JOBDETAIL v2：06 選考・関連導線 ===== -->
+    <section class="jdsec">
+      <h2 class="jdsec__h"><span class="en">06</span>選考・関連情報</h2>
+      {selection}
+      <p class="jdsub">この仕事をしている社員の話</p>
+      <p class="jdtext">{e(c["people_label"])}を掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
+      <p class="jdrel">
+        <a class="btn btn--ghost" href="{people_url}">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+        <a class="btn btn--ghost" href="{P["jobs"]}">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+      </p>
+    </section>
+
+  </div>
+</section>
+
+<section class="entry">
+  <div class="entry__media"><img src="{P["assets"]}assets/hero-bg.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"></div>
+  <div class="entry__inner wrap--narrow">
+    <p class="entry__label en">NEXT STEP</p>
+    <h2>この求人に<br>応募する。</h2>
+    <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
+    <div class="entry__ctas">
+      <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">&#9654;</span></a>
+    </div>
+    <p class="entry__sec"><a href="{P["jobs"]}">ほかの募集中の求人を見る</a></p>
+  </div>
+</section>
+"""
+
+def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
+    layout = layout or LAYOUT
+    P = PATHS[depth]
     S = rd("renewal/jobs/logistics-operation/index.html")
     head = S[:S.index('<main id="top">')]
     tail = S[S.index('</main>'):]
-    # renewal/jobs/center-manager/ より1階層深い renewal/jobs/openings/<id>/ に置くため、
-    # 既存シェルの相対パスに ../ を1つ足す。
-    up = lambda t: re.sub(r'(href|src)="\.\./\.\./', r'\1="../../../', t)
-    head, tail = up(head), up(tail)
+    # 既存シェル（renewal/jobs/logistics-operation/）と出力先の階層差を相対パスで補正する。
+    head, tail = P["shell"](head), P["shell"](tail)
 
     c = CATS[o["cat"]]
     name = "%s（%s）｜%s" % (o["title"], o["level"], o["place_short"])
@@ -267,8 +443,8 @@ def build_detail(o):
         head = head.replace('<link rel="canonical" href="./">',
                             '<link rel="canonical" href="./">\n<meta name="robots" content="noindex,follow">', 1)
     bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../../../"},
-        {"@type": "ListItem", "position": 2, "name": "募集職種", "item": "../../"},
+        {"@type": "ListItem", "position": 1, "name": "採用情報", "item": P["rn"]},
+        {"@type": "ListItem", "position": 2, "name": "募集職種", "item": P["jobs"]},
         {"@type": "ListItem", "position": 3, "name": name}]}
     head = re.sub(r'<script type="application/ld\+json">\{"@context": "https://schema\.org", "@type": "BreadcrumbList".*?</script>',
                   '<script type="application/ld+json">%s</script>\n%s' % (json.dumps(bc, ensure_ascii=False), jobposting(o)),
@@ -283,7 +459,7 @@ def build_detail(o):
     mode = o.get("req_must_mode", "必須")
     groups_html = "\n".join(group(c["key"]) for c in D["categories"]
                             if any(o["cat"] == c["key"] for o in OPEN))
-    body = f'''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="../../../">採用情報</a><a href="../../">募集職種</a><span aria-current="page">{e(name)}</span></div></nav>
+    body = f'''<nav class="crumb" aria-label="パンくず"><div class="wrap"><a href="{P["rn"]}">採用情報</a><a href="{P["jobs"]}">募集職種</a><span aria-current="page">{e(name)}</span></div></nav>
 
 {MARK}
 <section class="phead">
@@ -310,7 +486,7 @@ def build_detail(o):
 
     <p class="role__h rv" style="margin-top:40px"><span class="en">04</span>主な仕事内容</p>
     {li(o["duties"])}
-    <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="{e(c["work_anchor"]).replace("../", "../../../")}">仕事を知る</a>をご覧ください。</p>
+    <p class="note">※ 職種としての仕事の全体像は<a class="textlink textlink--sm" href="{e(c["work_anchor"]).replace("../", P["rn"])}">仕事を知る</a>をご覧ください。</p>
 
     <p class="role__h rv" style="margin-top:40px"><span class="en">05</span>応募条件</p>
     <p class="cmsub">{e(mode)}</p>
@@ -333,31 +509,34 @@ def build_detail(o):
     <p class="role__h rv" style="margin-top:40px"><span class="en">08</span>選考</p>
     {spec([("採用人数", e(o["hires"])), ("面接回数", e(o["interviews"])),
            ("筆記試験", e(o["written_test"])),
-           ("選考の流れ", 'エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）<br><a class="textlink textlink--sm" href="../../#selection">選考について</a>')])}
+           ("選考の流れ", 'エントリー→会社説明／カジュアル面談→選考面接→最終面接→内定（Web面接可）<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')])}
 
     <p class="role__h rv" style="margin-top:40px"><span class="en">09</span>この仕事をしている社員の話</p>
     <p class="jabout rv">{e(c["people_label"])}を掲載しています。社員本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
     <p class="cmrel rv" style="margin-top:16px">
-      <a class="btn btn--ghost" href="{e(c["people"]).replace("../", "../../../")}">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
-      <a class="btn btn--ghost" href="../../">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--ghost" href="{e(c["people"]).replace("../", P["rn"])}">この仕事をしている社員の話を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--ghost" href="{P["jobs"]}">ほかの募集中の求人を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </p>
   </div>
 </section>
 
 <section class="entry">
-  <div class="entry__media"><img src="../../../../assets/hero-bg.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"></div>
+  <div class="entry__media"><img src="{P["assets"]}assets/hero-bg.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"></div>
   <div class="entry__inner wrap--narrow">
     <p class="entry__label en">NEXT STEP</p>
     <h2>この求人に<br>応募する。</h2>
     <p>選考の前に、会社説明やカジュアル面談だけの参加も歓迎しています。</p>
     <div class="entry__ctas">
-      <a class="btn btn--red btn--lg" href="../../../entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
-    <p class="entry__sec"><a href="../../">ほかの募集中の求人を見る</a></p>
+    <p class="entry__sec"><a href="{P["jobs"]}">ほかの募集中の求人を見る</a></p>
   </div>
 </section>
 '''
-    wr("renewal/jobs/openings/%s/index.html" % o["id"], head + '<main id="top">\n' + body + tail)
+    if layout == "v2":
+        body = detail_body_v2(o, P, intro)
+    wr(outpath or ("renewal/jobs/openings/%s/index.html" % o["id"]),
+       head + '<main id="top">\n' + body + tail)
 
 if __name__ == "__main__":
     build_index()

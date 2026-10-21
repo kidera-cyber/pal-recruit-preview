@@ -7565,3 +7565,116 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .drvsum__dl dd{font-size:14.5px}
 }
 /* ===== DRVSEO v1 END ===== */
+
+/* ============================================================
+   ===== LRGDRV v1 START =====
+   大型ルート配送ドライバーの「下書き」比較プレビュー用。
+   下書きであることの明示（.drvdraft / .jchip--draft）、求人票内の
+   不一致を画面上で示すマーカー（.rqc）、4t求人との比較表（.drvcmp）。
+   既存ルールの上書きはしていない（すべて新規クラス）。
+   正式反映時は .drvdraft と .jchip--draft の2つが不要になる。
+   ============================================================ */
+.drvdraft{padding:22px 0 0}
+.drvdraft .wrap{border:2px solid var(--red);border-radius:var(--radius);
+  background:#fff7f7;padding:20px 24px}
+.drvdraft__h{margin:0;font-size:16px;font-weight:700;line-height:1.6;color:var(--red)}
+.drvdraft__b{margin:8px 0 0;font-size:14.5px;line-height:1.8;color:var(--sub)}
+.drvdraft__l{margin:12px 0 0;padding:0;list-style:none}
+.drvdraft__l li{position:relative;padding-left:20px;margin-top:7px;
+  font-size:14.5px;line-height:1.8;color:var(--sub)}
+.drvdraft__l li::before{content:"";position:absolute;left:4px;top:.72em;
+  width:6px;height:6px;border-radius:50%;background:var(--red)}
+.drvdraft__l b{color:var(--navy)}
+.jchip--draft{background:#fff;color:var(--red);border:1px solid var(--red)}
+.rqc{display:inline-block;padding:1px 7px;border-radius:4px;
+  background:var(--red);color:#fff;font-size:12px;font-weight:700;
+  line-height:1.6;white-space:nowrap}
+.drvcmp b{display:inline-block;min-width:3.6em;color:var(--red)}
+@media (max-width:640px){
+  .drvdraft .wrap{padding:17px 18px}
+  .drvdraft__h{font-size:15px}
+  .drvcmp b{min-width:0;margin-right:4px}
+}
+/* ===== LRGDRV v1 END ===== */
+
+/* ============================================================
+   ===== JOBDETAIL v2 START =====
+   求人詳細ページの視認性改善。tools/build_jobs.py の detail_body_v2() 専用。
+   既存の .phead / .role__h / .spec / .drvlist / .jabout は v1 レイアウト用に
+   そのまま残しており、このブロックでは上書きしていない（すべて新規クラス）。
+   文字サイズの方針：
+     求人タイトル PC30-36px・SP24-28px ／ セクション見出し22-26px ／
+     給与の数値22-26px ／ 本文16.5px ／ 項目名16px ／ 補足14.5px（.note）
+   11〜12pxは装飾ラベル（.slabel / .jdsec__h .en）だけに使い、本文には使わない。
+   ============================================================ */
+.jdh{padding:54px 0 0}
+.jdh__t{margin-top:13px;font-size:clamp(24px,3.3vw,36px);font-weight:700;
+  line-height:1.4;letter-spacing:.005em;color:#000}
+.jdh__lv{margin-top:11px;font-size:16.5px;font-weight:700;line-height:1.6;color:var(--red)}
+.jdsum{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin:30px 0 0;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--line);overflow:hidden}
+.jdsum__i{padding:19px 22px;background:var(--bg-soft)}
+.jdsum dt{font-size:16px;font-weight:700;line-height:1.6;color:var(--sub)}
+.jdsum__v{margin:7px 0 0;font-size:17px;font-weight:700;line-height:1.65;color:var(--navy)}
+.jdsum__v--big{font-size:clamp(22px,2.3vw,26px);line-height:1.4;letter-spacing:-.01em}
+.jdsum__s{display:block;margin-top:5px;font-size:14.5px;font-weight:400;line-height:1.6;color:var(--sub)}
+
+.jdsec+.jdsec{margin-top:54px}
+.jdsec__h{display:flex;align-items:baseline;gap:13px;padding-bottom:13px;margin:0 0 24px;
+  border-bottom:2px solid var(--navy);font-size:clamp(22px,2.4vw,26px);
+  font-weight:700;line-height:1.45;color:#000}
+.jdsec__h .en{flex:0 0 auto;font-family:Lato,sans-serif;font-size:14px;font-weight:900;
+  letter-spacing:.1em;color:var(--red)}
+.jdtext{max-width:70ch;font-size:16.5px;line-height:1.95;color:var(--text)}
+.jdsub{margin:30px 0 0;font-size:17px;font-weight:700;line-height:1.6;color:var(--navy)}
+.jdsub--first{margin-top:0}
+.jdlist{margin:14px 0 0;padding:0;list-style:none}
+.jdlist li{position:relative;padding-left:25px;margin-top:10px;
+  font-size:16.5px;line-height:1.8;color:var(--text)}
+.jdlist li::before{content:"";position:absolute;left:5px;top:.75em;
+  width:8px;height:8px;border-radius:50%;background:var(--red)}
+
+/* 勤務条件・選考：PCは項目名28%／内容72%の2カラム。値が空の行は出力側で落としている */
+.jdspec{margin-top:15px;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;background:#fff}
+.jdspec dl{display:grid;grid-template-columns:28% minmax(0,72%);margin:0}
+.jdspec dt{padding:19px 24px;background:var(--bg-soft);font-size:16px;font-weight:700;
+  line-height:1.6;color:var(--navy);border-bottom:1px solid var(--line)}
+.jdspec dd{padding:19px 27px;margin:0;background:#fff;font-size:16.5px;line-height:1.75;
+  color:var(--text);border-bottom:1px solid var(--line)}
+.jdspec dt:last-of-type,.jdspec dd:last-of-type{border-bottom:0}
+.jdspec dd b{font-size:19px;font-weight:700}
+
+/* 待遇・福利厚生：PC2列・SP1列 */
+.jdben{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px;
+  margin:15px 0 0;padding:0;list-style:none}
+.jdben li{position:relative;padding:15px 20px 15px 41px;border:1px solid var(--line);
+  border-radius:var(--radius);background:#fff;font-size:16.5px;line-height:1.7;color:var(--text)}
+.jdben li::before{content:"";position:absolute;left:19px;top:1.28em;
+  width:8px;height:8px;border-radius:50%;background:var(--red)}
+
+/* 応募条件の区分バッジ。「必須」「いずれか必須」「歓迎」をまとめず残す */
+.jdtag{display:inline-block;margin:0;padding:6px 16px;border-radius:9999px;
+  background:var(--red);color:#fff;font-size:14.5px;font-weight:700;line-height:1.5}
+.jdtag--w{background:#fff;color:var(--red);border:1px solid var(--red)}
+.jdrel{display:flex;flex-wrap:wrap;gap:12px 14px;margin:22px 0 0}
+
+@media (max-width:1000px){
+  .jdsum{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .jdspec dl{display:block}
+  .jdspec dt{padding:15px 19px 0;background:#fff;border-bottom:0;font-size:15.5px;color:var(--red)}
+  .jdspec dd{padding:6px 19px 16px;border-bottom:1px solid var(--line)}
+  .jdspec dt:last-of-type{border-bottom:0}
+  .jdben{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .jdh{padding:40px 0 0}
+  .jdsum{grid-template-columns:minmax(0,1fr)}
+  .jdsum__i{padding:15px 18px}
+  .jdsec+.jdsec{margin-top:42px}
+  .jdsec__h{gap:10px;font-size:22px}
+  .jdrel .btn{width:100%;justify-content:space-between}
+}
+/* ===== JOBDETAIL v2 END ===== */
