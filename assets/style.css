@@ -7517,3 +7517,26 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 }
 @media (prefers-reduced-motion:reduce){ .fq__q em{transition:none} }
 /* ===== FAQSEO v1 END ===== */
+
+/* ============================================================
+   ===== FIELD9 v2 START =====
+   HOME「FIND YOUR FIELD」の9職種カード。
+   人材派遣営業の説明文が2行になると、その段だけカードが高くなり、
+   アイコン・英字・職種名・バッジ・矢印の位置も段ごとにずれていた。
+   3段すべてを同じ高さにし、カード内部の開始位置を先頭でそろえる。
+   文字サイズ・配色・枠線・角丸などのデザインは変えていない。
+   ============================================================ */
+/* 3段すべて同じ高さにする（内容が増えても切り捨てず、行の高さが伸びる） */
+.role-chips{grid-auto-rows:1fr}
+.role-chips>li{display:flex}
+.role-chip{width:100%;align-items:flex-start}
+/* アイコン・バッジ・矢印を、英字カテゴリの行に合わせて上そろえにする */
+.role-chip__ic{margin-top:2px}
+.role-chip .fchip__st{align-self:flex-start;margin-top:0}
+.role-chip__ar{align-self:flex-start;margin-top:4px}
+/* 画面が狭いと英語カテゴリ（ENGAGEMENT / SALES & BIZDEV など）が2行になり、
+   そのカードだけ職種名の開始位置が下がる。2行分の高さをあらかじめ確保して揃える。 */
+@media (max-width:420px){
+  .role-chip__en{min-height:2.6em;line-height:1.3}
+}
+/* ===== FIELD9 v2 END ===== */
