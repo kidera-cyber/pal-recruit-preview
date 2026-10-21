@@ -15,7 +15,7 @@
             req_person（開発業務の特徴を about へ移し、人物要件とキャリアを整理）
 変えていないもの：title・meta description・canonical・robots・JobPosting・求人ID・
             URL・募集状態・給与・勤務時間・休日・勤務地・応募条件（必須/歓迎）・
-            採用人数・面接回数・デザイン
+            面接回数・デザイン
 
 技術スタック（言語・フレームワーク・DB・クラウド）は、PALでの使用を示す一次資料が
 確認できなかったため掲載していない。
@@ -52,7 +52,7 @@ REQ_PERSON = ("自分が組んだロジックの成果や、使っている人�
 INTRO = '''<section class="drvdraft">
   <div class="wrap">
     <p class="drvdraft__h">これは募集要項の比較プレビューです（承認前）。</p>
-    <p class="drvdraft__b">給与・勤務時間・休日・勤務地・応募条件・採用人数・面接回数は公開中のページと同じです。
+    <p class="drvdraft__b">給与・勤務時間・休日・勤務地・応募条件・面接回数は公開中のページと同じです。
       仕事内容の文章と箇条書き、求める人物像だけを書き直しています。現在公開中のページは
       <a class="textlink textlink--sm" href="../jobs/openings/system-engineer/">こちら</a>です。</p>
     <ul class="drvdraft__l">

@@ -1941,6 +1941,7 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 .role__ctarow{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
 
 /* ---- そのほかの募集職種 ---- */
+/* ===== RSTAT v1：.others は 2026-10-21 に .rstat へ置き換えて未使用になった。残置。 ===== */
 .others{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;list-style:none;
   border-top:1px solid var(--line-mid,#cacaca)}
 .others li{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px;
@@ -7695,3 +7696,32 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .faq details p a:not(.textlink):not(.btn):hover{color:var(--red-dark)}
 /* ===== FAQLINK v1 END ===== */
+
+/* ============================================================
+   ===== RSTAT v1 / ENTRYLEFT v1 START =====
+   RSTAT v1：JOBS下部「現在の募集状況について」の3職種リスト。
+     左に英語職種名＋日本語名、右に募集状況のピル。3行とも同じ高さ・同じ幅。
+     旧 .others（2カラム・職種ごとに表示が違う）は未使用化したが、
+     ほかで使う可能性があるため削除せず残している。
+   ENTRYLEFT v1：JOBSページのNEXT STEPだけ左揃えにする修飾子。
+     .entry 本体（黒背景・背景画像・赤いライン・見出しサイズ）は変更していない。
+   ============================================================ */
+.rstat{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.rstat li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:8px 20px;padding:18px 22px;border:1px solid var(--line);border-radius:var(--radius);
+  background:#fff}
+.rstat__n{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;min-width:0}
+.rstat__n b{font-size:17px;font-weight:700;line-height:1.5;color:var(--navy)}
+.rstat__ja{font-size:15px;line-height:1.6;color:var(--sub)}
+.rstat__s{flex:0 0 auto;padding:6px 16px;border-radius:9999px;background:var(--bg-soft);
+  border:1px solid var(--line-mid);font-size:14px;font-weight:700;line-height:1.5;color:var(--sub)}
+@media (max-width:560px){
+  .rstat li{flex-direction:column;align-items:flex-start;gap:10px;padding:15px 18px}
+  .rstat__n{flex-direction:column;gap:3px}
+  .rstat__n b{font-size:16px}
+}
+
+.entry--left{text-align:left}
+.entry--left .entry__ctas{justify-content:flex-start}
+.entry--left p{margin-inline:0}
+/* ===== RSTAT v1 / ENTRYLEFT v1 END ===== */

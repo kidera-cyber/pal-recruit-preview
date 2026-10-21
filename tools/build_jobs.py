@@ -219,15 +219,19 @@ def build_index():
 <section class="sec sec--soft sec--tight" id="others">
   <div class="wrap">
     <div class="shead rv" style="margin-bottom:22px">
-      <p class="slabel">Other roles</p>
-      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,30px)">そのほかの募集・職種。</h2>
+      <p class="slabel">Recruitment status</p>
+      <h2 class="stitle" style="font-size:clamp(22px,2.6vw,30px)">現在の募集状況について</h2>
+      <p class="slead">以下の職種は、現在募集中の求人一覧には掲載していません。募集状況は職種ごとにご確認ください。</p>
     </div>
-    <ul class="others rv">
-      <li id="job-marketing"><b>Marketing / Content（マーケティング・コンテンツ制作）</b><span class="others__none">募集条件を確認中です</span></li>
-      <li id="job-corporate"><b>Corporate（コーポレート）</b><a class="textlink textlink--sm" href="../people/corporate/">コーポレートの社員インタビュー</a></li>
-      <li id="job-clean"><b>Cleanliness（クレンリネス）</b><span class="others__none">現在募集していません</span></li>
+    <!-- ===== RSTAT v1：3職種の表示をそろえた。コーポレートだけにあった社員インタビュー導線は、
+         このセクションが募集状況を伝える場所であるため外している（PEOPLE・WORKは変更なし）。
+         id は人を知るなどからのアンカーリンクで使われているため変えていない。 ===== -->
+    <ul class="rstat rv">
+      <li id="job-marketing"><span class="rstat__n"><b>Marketing / Content</b><span class="rstat__ja">マーケティング・コンテンツ制作</span></span><span class="rstat__s">募集条件を確認中</span></li>
+      <li id="job-clean"><span class="rstat__n"><b>Cleanliness</b><span class="rstat__ja">クレンリネス</span></span><span class="rstat__s">現在募集していません</span></li>
+      <li id="job-corporate"><span class="rstat__n"><b>Corporate</b><span class="rstat__ja">コーポレート</span></span><span class="rstat__s">募集条件を確認中</span></li>
     </ul>
-    <p class="note rv">※ 下記の職種は募集条件を確認中、またはクレンリネスのように現在募集していないため、上の「今、募集している仕事」には掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
+    <p class="note rv">※ 募集状況は変更になる場合があります。最新の募集情報は、上部の<a class="textlink textlink--sm" href="#joblist">今、募集している仕事</a>をご確認ください。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
     <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">応募・選考について<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
@@ -324,7 +328,10 @@ def detail_body_v2(o, P, intro=""):
     place = spec2([("事業所", e(o["office"])), ("所在地", e(o["location"])),
                    ("アクセス", "<br>".join(e(a) for a in o["access"])),
                    ("転勤", e(o["relocation"]))])
-    selection = spec2([("採用人数", e(o["hires"])), ("面接回数", e(o["interviews"])),
+    # ===== HIRES-OFF v1：採用人数は求職者向けページに表示しない（応募の判断材料として
+    # 誤解を招くため）。データは data/jobs-openings.json の hires に残している。
+    # 再表示するときは下の行に ("採用人数", e(o["hires"])) を戻す。
+    selection = spec2([("面接回数", e(o["interviews"])),
                        ("筆記試験", e(o["written_test"])), ("選考の流れ", flow)])
     work_url = e(c["work_anchor"]).replace("../", P["rn"])
     people_url = e(c["people"]).replace("../", P["rn"])
@@ -508,7 +515,7 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     {spec([("退職金", e(o["retirement"])), ("寮・社宅", e(o["dormitory"]))])}
 
     <p class="role__h rv" style="margin-top:40px"><span class="en">08</span>選考</p>
-    {spec([("採用人数", e(o["hires"])), ("面接回数", e(o["interviews"])),
+    {spec([("面接回数", e(o["interviews"])),
            ("筆記試験", e(o["written_test"])),
            ("選考の流れ", '応募 → 面接 → 内定（Web面接にも対応しています）<br><a class="textlink textlink--sm" href="' + P["jobs"] + '#selection">選考について</a>')])}
 
