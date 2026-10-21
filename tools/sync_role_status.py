@@ -91,7 +91,7 @@ def sync_home(D):
         return li
 
     i = s.index('<ul class="role-chips'); j = s.index("</ul>", i)
-    s = s[:i] + re.sub(r"<li>.*?</li>", one, s[i:j], flags=re.S) + s[j:]
+    s = s[:i] + re.sub(r"<li[^>]*>.*?</li>", one, s[i:j], flags=re.S) + s[j:]
     wr(p, s)
     return n_open, n_soon, n_off
 

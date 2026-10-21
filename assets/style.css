@@ -7957,3 +7957,45 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .faqjobfilter__note{font-size:13px}
 }
 /* ===== FAQJOBFILTER v2 END ===== */
+
+/* ============================================================
+   ===== FIELD9 v3 START =====
+   HOME「FIND YOUR FIELD」9職種カードの高さと「募集要項を見る」の位置をそろえる。
+   旧構造は <li> の中に「枠線付きのカード（a.role-chip）」と「募集要項を見る」が
+   並んでおり、リンクがカードの枠の外に出ていた。さらに <a> が <li> の高さまで
+   伸びないため、枠線付きの箱の高さが段ごとに 93px〜143px とばらついていた（実測）。
+   <li class="role-chip"> 自体をカードの枠にし、上側のリンク領域
+   （.role-chip__main）を flex:1 で伸ばして、「募集要項を見る」を
+   margin-top:auto でカードの下端にそろえる。高さは固定せず内容で伸びる。
+   後勝ちで上書きする既存ルール：
+     WORK-COMPACT v1 の .role-chip（display:flex／align-items／gap／padding）
+     FIELD9 v2 の .role-chip{width:100%;align-items:flex-start}
+     ROLESTAT v1 の .role-chips>li:has(.role-chip__cta) .role-chip
+       （<li> と .role-chip が同一要素になりセレクタが成立しないため未使用化。残置）
+   職種名・説明文・募集状況・リンク先・文字サイズ・配色・枠線・角丸は変えていない。
+   ============================================================ */
+/* カードの枠は <li> 側へ。9枚とも段の高さいっぱいに広げる */
+.role-chip{display:flex;flex-direction:column;align-items:stretch;gap:0;
+  height:100%;padding:0;
+  border:1px solid var(--line);border-radius:var(--radius);background:#fff;
+  text-decoration:none;color:inherit;transition:border-color .25s,background-color .25s}
+/* 上側：職種名・短い仕事内容・募集状況のリンク領域。余りを埋めて下端をそろえる */
+.role-chip__main{flex:1 1 auto;display:flex;align-items:flex-start;gap:13px;
+  padding:15px 16px;text-decoration:none;color:inherit}
+.role-chips>li:has(.role-chip__cta) .role-chip__main{padding-bottom:9px}
+/* 「募集要項を見る」はカードの枠の中。margin-top:auto でカード下端に固定する
+   （募集中・募集予定の職種だけ。募集していない職種にはそもそも置かない） */
+.role-chip__cta{margin:auto 0 0;padding:0 16px 14px;width:100%}
+.role-chip:hover .role-chip__ar{transform:translateX(3px)}
+@media (max-width:620px){
+  /* 1カラムでは同じ行にカードが1枚しかないため、高さをそろえる必要がない。
+     grid-auto-rows:1fr（FIELD9 v2）のままだと全カードが最も高いカードに
+     引き伸ばされ、説明文の短い職種の下に大きな余白が出る。 */
+  .role-chips{grid-auto-rows:auto}
+  .role-chip__main{padding:13px 14px}
+  .role-chips>li:has(.role-chip__cta) .role-chip__main{padding-bottom:8px}
+}
+@media (max-width:560px){
+  .role-chip__cta{padding:0 18px 13px}
+}
+/* ===== FIELD9 v3 END ===== */
