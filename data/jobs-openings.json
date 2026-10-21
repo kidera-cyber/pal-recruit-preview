@@ -48,6 +48,13 @@
       "work_anchor": "../work/#role-sales",
       "people": "../people/sales/",
       "people_label": "営業の社員インタビュー"
+    },
+    {
+      "key": "driver",
+      "name": "ドライバー",
+      "work_anchor": "../work/#role-dts",
+      "people": "../people/dts/",
+      "people_label": "DTS・運送の社員インタビュー（営業所長の仕事）"
     }
   ],
   "openings": [
@@ -605,6 +612,59 @@
       "interviews": "2回",
       "written_test": "なし",
       "source_file": "【法人営業（人材派遣）】＠大阪:リーダー.pdf"
+    },
+    {
+      "id": "dts-route-driver",
+      "cat": "driver",
+      "status": "open",
+      "detail_url": "dts/",
+      "generate_detail": false,
+      "title": "4tルート配送ドライバー",
+      "level": "DTS / 運送部",
+      "place_short": "船橋",
+      "pref": "千葉県",
+      "city": "船橋市",
+      "street": "高瀬町24-6 afs船橋センター内",
+      "office": "afs船橋センター",
+      "location": "千葉県船橋市高瀬町24-6　afs船橋センター内",
+      "access": [
+        "JR京葉線「南船橋駅」より徒歩30分"
+      ],
+      "employment": "正社員（試用期間なし）",
+      "probation": "なし",
+      "salary_label": "給与",
+      "salary_year": "月給36万円〜60万円",
+      "salary_min": 360000,
+      "salary_max": 600000,
+      "salary_unit": "MONTH",
+      "salary_month": "月給 300,000円〜400,000円",
+      "bonus": "あり（業績による）",
+      "about": "",
+      "duties": [],
+      "goods": "食品",
+      "shift": "シフト制（日勤・夜勤）",
+      "req_must": [
+        "中型自動車運転免許（8t）、または2007年（平成19年）6月1日以前に取得した普通自動車運転免許（AT限定可）"
+      ],
+      "req_must_mode": "必須",
+      "req_welcome": [],
+      "req_person": "",
+      "license": "",
+      "work_hours": "",
+      "flex": "なし",
+      "overtime": "",
+      "holidays": "週休2日（シフト制）",
+      "paid_leave": "",
+      "holiday_other": "",
+      "benefits": [],
+      "retirement": "",
+      "dormitory": "",
+      "relocation": "",
+      "hires": "",
+      "interviews": "",
+      "written_test": "",
+      "source_file": "Indeed_ドライバー正社員.pdf",
+      "_note": "既存の募集要項ページ renewal/jobs/dts/ を再利用。JobPosting もそのページ側にある。"
     },
     {
       "id": "manager-candidate-hold",

@@ -45,16 +45,19 @@ MARK = ("<!-- ===== JOBSOPEN v1：リクナビHRTechで承認済みの求人票9
 # ------------------------------------------------------------------ カード
 def card(o):
     c = CATS[o["cat"]]
+    # 既存の正式募集要項がある求人（detail_url）は、そのURLを再利用する。
+    # 新しい重複ページは作らない。
+    detail = e(o["detail_url"]) if o.get("detail_url") else "openings/%s/" % e(o["id"])
     return f'''      <li class="jcard" data-job-category="{e(o['cat'])}" data-location="{e(pref_slug(o['pref']))}">
         <p class="jcard__cat">{e(c['name'])}</p>
         <h4 class="jcard__n">{e(o['title'])}<span class="jcard__lv">{e(o['level'])}｜{e(o['place_short'])}</span></h4>
         <dl class="jcard__dl">
           <dt>勤務地</dt><dd>{e(o['pref'])}{e(o['city'])}</dd>
-          <dt>想定年収</dt><dd><b>{e(o['salary_year'])}</b></dd>
+          <dt>{e(o.get('salary_label','想定年収'))}</dt><dd><b>{e(o['salary_year'])}</b></dd>
           <dt>雇用形態</dt><dd>{e(o['employment'].split('（')[0])}</dd>
         </dl>
         <p class="jcard__foot"><span class="jchip">募集中</span>
-          <a class="jcard__cta" href="openings/{e(o['id'])}/">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
+          <a class="jcard__cta" href="{detail}">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>
       </li>'''
 
 def group(key):
@@ -146,11 +149,12 @@ def build_index():
     head = S[:S.index('<main id="top">')]
     tail = S[S.index('<section class="sec sec--navy sec--tight" id="selection">'):]
 
-    title = "募集中の求人一覧｜物流センター運営・FDE・システム開発・営業｜株式会社PAL 採用"
+    title = "募集中の求人一覧｜物流センター運営・FDE・システム開発・営業・ドライバー｜株式会社PAL 採用"
     desc = ("株式会社PALが現在募集している求人の一覧です。物流センター運営（千葉・船橋／神奈川・厚木／"
             "広島・東広島／兵庫・須磨）、FDE（大阪本社）、"
-            "システム / プロダクト開発（大阪本社）、エンゲージメント・新規営業と法人営業（人材派遣・大阪本社）の"
-            "求人について、勤務地・想定年収・雇用形態・勤務時間・休日・応募条件を掲載しています。")
+            "システム / プロダクト開発（大阪本社）、エンゲージメント・新規営業と法人営業（人材派遣・大阪本社）、"
+            "4tルート配送ドライバー（千葉・船橋）の求人について、勤務地・給与・雇用形態・勤務時間・休日・"
+            "応募条件を掲載しています。")
     head = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(title), head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*">', '<meta name="description" content="%s">' % html.escape(desc), head, count=1)
     head = re.sub(r'<meta property="og:title" content="[^"]*">', '<meta property="og:title" content="%s">' % html.escape(title), head, count=1)
@@ -184,12 +188,11 @@ def build_index():
       <h2 class="stitle" style="font-size:clamp(22px,2.6vw,30px)">そのほかの募集・職種。</h2>
     </div>
     <ul class="others rv">
-      <li id="job-dts"><b>4tルート配送ドライバー（DTS / 運送部）</b><a class="textlink textlink--sm" href="dts/">募集要項を見る</a></li>
       <li id="job-marketing"><b>Marketing / Content（マーケティング・コンテンツ制作）</b><span class="others__none">募集条件を確認中です</span></li>
       <li id="job-corporate"><b>Corporate（コーポレート）</b><a class="textlink textlink--sm" href="../people/corporate/">コーポレートの社員インタビュー</a></li>
       <li id="job-clean"><b>Cleanliness（クレンリネス）</b><span class="others__none">現在募集していません</span></li>
     </ul>
-    <p class="note rv">※ 4tルート配送ドライバーには正式な募集要項があります。ほかの職種は募集条件を確認中のため、「募集中」として掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
+    <p class="note rv">※ 下記の職種は募集条件を確認中、またはクレンリネスのように現在募集していないため、上の「今、募集している仕事」には掲載していません。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
     <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">カジュアル面談・エントリーについて<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
@@ -358,6 +361,10 @@ def build_detail(o):
 
 if __name__ == "__main__":
     build_index()
-    for o in OPEN: build_detail(o)
-    print("一覧 1件 ／ 求人詳細 %d件 を生成（非公開 %d件）"
-          % (len(OPEN), len(D["openings"]) - len(OPEN)))
+    made = 0
+    for o in OPEN:
+        if o.get("generate_detail") is False:
+            continue          # 既存の募集要項ページを再利用する求人（例：renewal/jobs/dts/）
+        build_detail(o); made += 1
+    print("一覧 1件 ／ 求人詳細 %d件 を生成（既存ページを再利用 %d件 ／ 非公開 %d件）"
+          % (made, len(OPEN) - made, len(D["openings"]) - len(OPEN)))

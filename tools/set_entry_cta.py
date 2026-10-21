@@ -54,11 +54,14 @@ def main(mode):
             # 包んだ箇所はいったん退避し、別のパターンが入れ子で包まないようにする
             stash = []
             def wrap(m):
-                stash.append(S + m.group(0).rstrip("\n") + E + "\n")
-                return "\x00%d\x00\n" % (len(stash) - 1)
+                # 元のテキストが改行で終わっていないときは改行を足さない。
+                # off → on → off を繰り返しても空行が増えないようにするため。
+                nl = "\n" if m.group(0).endswith("\n") else ""
+                stash.append(S + m.group(0).rstrip("\n") + E + nl)
+                return "\x00%d\x00" % (len(stash) - 1)
             for pat in PATTERNS:
                 s = re.sub(pat, wrap, s)
-            s = re.sub(r"\x00(\d+)\x00\n", lambda m: stash[int(m.group(1))], s)
+            s = re.sub(r"\x00(\d+)\x00", lambda m: stash[int(m.group(1))], s)
         if s != o:
             open(ap, "w", encoding="utf-8").write(s); n += 1
     print("%s：%d ファイル" % ("応募CTAを止めた" if mode == "off" else "応募CTAを戻した", n))
