@@ -130,6 +130,10 @@ def build(official=False):
     S = rd(src)
     head = S[:S.index('<main id="top">')] if '<main id="top">' in S else S[:S.index('<main')]
     tail = S[S.index('</main>'):]
+    # ===== FAQSEO v1：このスクリプトは renewal/faq/ を土台にして組み直すため、
+    # 前回追記した検索JSを先に取り除く。取り除かないと実行のたびに積み上がる
+    # （プレビュー側で3個に増えていた）。
+    tail = re.sub(r'<!-- ===== FAQSEO v1：カテゴリ絞り込みとページ内検索.*?</script>', '', tail, flags=re.S)
 
     head = re.sub(r'<title>.*?</title>', '<title>%s</title>' % e(TITLE), head, count=1, flags=re.S)
     head = re.sub(r'<meta name="description" content="[^"]*">',
