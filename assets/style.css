@@ -8266,3 +8266,94 @@ a.jcard__apply:hover{background:var(--red-dark);border-color:var(--red-dark)}
   .rvoice__a:hover .rvoice__ph img,.fphoto:hover .fphoto__i img{transform:none}
 }
 /* ===== VOICES v2 END ===== */
+
+/* ============================================================
+   ===== HEROHUMAN v1 START =====
+   ファーストビューに人の存在を出す。映像ファイルは差し替えていない。
+   ・同じ映像の 4.4秒〜（現場でタブレットを操作する社員＋自動設備）から再生する
+   ・ポスターもその区間から切り出した1コマに変更（旧ポスターはファイルを残置）
+   ・覆いの黒を、左全面から「下を濃く・上と右を薄く」に変え、人物が見えるようにする
+     コピーはこれまでどおり下側にあるため、文字の読みやすさは落とさない。
+   後勝ちで上書きする既存ルール：.hero__media::after のグラデーション
+   ブランドコピー・サブコピー・CTA・セクション構成は変更していない。
+   ============================================================ */
+.hero__media::after{
+  background:
+    linear-gradient(to top, rgba(0,0,0,.90) 0%, rgba(0,0,0,.70) 28%,
+                            rgba(0,0,0,.30) 62%, rgba(0,0,0,.20) 100%),
+    linear-gradient(100deg, rgba(0,0,0,.52) 0%, rgba(0,0,0,.20) 56%, rgba(0,0,0,0) 100%);
+}
+/* 人物は画面左寄りに立っている。横長の画面では中央、縦長の画面では左を残す */
+.hero__video,.hero__poster{object-position:50% 46%}
+@media (max-width:860px){
+  /* 縦長の画面では横が大きく切り取られる。人物の頭と手元が入る位置に寄せる */
+  .hero__video,.hero__poster{object-position:27% 50%}
+  .hero__media::after{
+    background:
+      linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.76) 34%,
+                              rgba(0,0,0,.38) 68%, rgba(0,0,0,.26) 100%);
+  }
+}
+/* スマホと「動きを減らす」設定では、映像を止めて人物のコマを静止画として見せる。
+   映像は10秒のループで、人物が映っているのは 4.4〜6.8秒（約4割）のため、
+   狭い画面では人物が出ていない時間のほうが長くなってしまう。
+   あわせて 4.4MB の動画読み込みも省けるので、表示も速くなる。 */
+@media (max-width:860px){
+  .hero__video{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero__video{display:none}
+  .hero__media img{animation:none;transform:none}
+}
+/* ===== HEROHUMAN v1 END ===== */
+
+/* ============================================================
+   ===== AFTER v2 START =====
+   HOME #after（入社後）は 1607px・黒一色・画像0で、HOME で最も長く、
+   文章と見出しが続いて重く見えていた。内容・文言・リンク先・順序は変えず、
+   次の3点だけで密度と緩急を整える（カードや装飾は増やしていない）。
+   ・「1日の流れ」6枚のカードに、そのリンク先の社員アバターを入れる
+     （リンク先が people/<職種>/#a-day ＝ その社員のインタビューなので人物が一致する）
+   ・.ajcard の min-height:168px をやめ、内容に合わせた高さにする
+   ・イントロの見出しサイズと、ブロック間・セクション上下の余白を詰める
+   後勝ちで上書きする既存ルール：
+     .aj{padding-block:100px} ／ .aj__ttl のサイズ ／ .aj__area の余白 ／ .ajcard の min-height
+   ============================================================ */
+.aj{padding-block:84px}
+.aj__ttl{font-size:clamp(26px,3.5vw,44px)}
+.aj__ttl::after{margin-top:16px}
+.aj__lead{margin-top:18px}
+.aj__area{margin-top:46px;padding-top:36px}
+.aj__ah{margin-bottom:22px}
+
+/* 1日の流れカード：人物を小さく添えて、文字だけが続く印象をやわらげる */
+.ajcard{min-height:0;padding:16px 18px 18px}
+.ajcard__top{align-items:center;gap:10px}
+.ajcard__av{flex:0 0 auto;width:46px;aspect-ratio:12/13;overflow:hidden;border-radius:9px;
+  background:#1f1f1f}
+.ajcard__av img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;display:block}
+.ajcard__cat{flex:1 1 auto;min-width:0}
+.ajcard__h{margin-top:11px;font-size:17.5px}
+.ajcard__go{padding-top:12px}
+
+/* キャリアの3列：上下の詰めだけ調整（横並びの構成はそのまま） */
+.ajq__a{padding:21px 52px 19px 0}
+.aj__cta{margin-top:30px}
+
+/* 2カラムになる幅では、カードが3段になるためアバターのぶん背が伸びる。
+   余白と文字を少しずつ詰めて、改修前より長くならないようにする。 */
+@media (max-width:1100px){
+  .ajcards{gap:12px}
+  .ajcard{padding:14px 16px 16px}
+  .ajcard__av{width:40px}
+  .ajcard__h{margin-top:9px;font-size:17px}
+  .ajcard__go{padding-top:9px}
+  .aj__area{margin-top:40px;padding-top:30px}
+}
+@media (max-width:620px){
+  .aj{padding-block:68px}
+  .aj__area{margin-top:34px;padding-top:26px}
+  .ajcard__av{width:38px}
+  .ajq__a{padding:18px 48px 16px 0}
+}
+/* ===== AFTER v2 END ===== */
