@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261022c">
+<link rel="stylesheet" href="../assets/style.css?v=20261022f">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -208,6 +208,24 @@
         </li>
       </ul>
     </nav>
+    <!-- ===== FIELDPHOTO v1 START：職種カードのあとに、人と現場の関係が分かる横長ビジュアルを
+         1か所だけ置く。カード一覧（情報）から社員インタビュー（人）へつなぐための帯で、
+         新しいセクションは作っていない。写真は既存のPAL提供素材のみ。
+         文章は増やさず、帯の下に1行だけ添えている。 ===== -->
+    <div class="fphoto rv">
+      <figure class="fphoto__i">
+        <img src="../assets/person-fde.jpg" alt="物流センターでタブレットの画面を見ながら、現場の状況を確認する社員" width="1600" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <figure class="fphoto__i">
+        <img src="../assets/person-eng.jpg" alt="オフィスでコードと業務データの画面に向かう開発担当の社員" width="896" height="1200" loading="lazy" decoding="async">
+      </figure>
+      <figure class="fphoto__i">
+        <img src="../assets/person-dts.jpg" alt="配送バースでトラックの前に立ち、タブレットで積み込みを確認する社員" width="1600" height="1200" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <p class="fphoto__cap rv">現場・技術・輸送。それぞれの専門性を持つ人が、同じ現場で仕事を進めています。</p>
+    <!-- ===== FIELDPHOTO v1 END ===== -->
+
     <div class="ffield__foot rv">
       <!-- ===== ROLESTAT v1：募集ステータスを「募集中」「募集なし」の2種類にそろえたため、
      「確認中」の意味を説明していた注記を書き直した。 ===== -->
@@ -218,7 +236,8 @@
       </p>
     </div>
 
-    <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="work/">仕事内容を見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+    <!-- ===== FIELDPHOTO v1：直前の「職種ごとの仕事内容を見る」（同じ work/ へのリンク）と
+         重複していたため、ボタンを1本に整理した。導線は失われていない。 ===== -->
   </div>
 </section>
 
@@ -241,6 +260,9 @@
          エディトリアルな一覧（.rvoices／.rvoice）へ差し替え。
          ・社員アバターの <img> と、その専用領域 <span class="vcard__ph"> をHTMLごと削除。
            空の alt や中身のない img タグは残していない。画像ファイルは消していない。
+           ※ 2026-10-22：この「アバターを外す」判断は VOICES v2 で取り消した。
+             HOME 全体で人物が1枚も出ず無機質に見える、という指摘を受けたため、
+             PEOPLE 一覧と同じアバターを先頭に戻している（発言・肩書・リンクは当時のまま）。
          ・7名の職種カテゴリ・インタビュー見出し・所属・リンク先・掲載順は、
            現行HTMLから機械抽出してそのまま流用（打ち直し・要約・加筆なし）。
          ・連番 01-07 を追加（本文ではなく位置を示す装飾テキスト）。
@@ -250,7 +272,8 @@
     <nav aria-label="社員インタビュー">
       <ol class="rvoices rv">
         <li class="rvoice"><a class="rvoice__a" href="people/fde/">
-          <span class="rvoice__no en">01</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-fde.png?v=20261015dts2" alt="FDE社員 H.Y のイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">FDE</span>
             <b class="rvoice__q">現場で使われて、初めて「できた」と言える。</b>
@@ -259,7 +282,8 @@
           <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
         <li class="rvoice"><a class="rvoice__a" href="people/system/">
-          <span class="rvoice__no en">02</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-system.png?v=20261015g" alt="DXプロダクト開発として働く M.M のイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">ENGINEER</span>
             <b class="rvoice__q">つくるのは、現場が明日から使えるもの。</b>
@@ -268,7 +292,8 @@
           <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
         <li class="rvoice"><a class="rvoice__a" href="people/bpo/">
-          <span class="rvoice__no en">03</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-bpo.png?v=20261015dts2" alt="BPO／現場運営として働く I.N のイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">BPO</span>
             <b class="rvoice__q">毎日の運営の中に、次の改善がある。</b>
@@ -277,7 +302,8 @@
           <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
         <li class="rvoice"><a class="rvoice__a" href="people/dts/">
-          <span class="rvoice__no en">04</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-dts.png?v=20261014fit" alt="DTS事業部 運送課 千葉営業所 所長 K.Y のイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">DTS</span>
             <b class="rvoice__q">運ぶだけではない。物流を、止めない仕事。</b>
@@ -286,7 +312,8 @@
           <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
         <li class="rvoice"><a class="rvoice__a" href="people/sales/">
-          <span class="rvoice__no en">05</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-sales.png?v=20261015g" alt="エンゲージメント・新規営業として働く H.S のイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">ENGAGEMENT</span>
             <b class="rvoice__q">売る前に、まず課題を見つける。</b>
@@ -295,7 +322,8 @@
           <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
         <li class="rvoice"><a class="rvoice__a" href="people/cleaning/">
-          <span class="rvoice__no en">06</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-cleaning.png?v=20261015g" alt="BPO／クレンリネス課のメンバーのイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">CLEANLINESS</span>
             <b class="rvoice__q">食品プロセスセンターの清掃を、計画から支える。</b>
@@ -304,7 +332,8 @@
           <i class="rvoice__ar" aria-hidden="true">&#8594;</i>
         </a></li>
         <li class="rvoice"><a class="rvoice__a" href="people/corporate/">
-          <span class="rvoice__no en">07</span>
+          <span class="rvoice__ph"><img src="../assets/avatar-corporate.png?v=20261015g" alt="コーポレート本部 総務課として働く M.K のイラスト（プロフィール画像）"
+               width="900" height="975" loading="lazy" decoding="async"></span>
           <span class="rvoice__b">
             <span class="rvoice__cat en">CORPORATE</span>
             <b class="rvoice__q">みんなが働きやすい環境を、仕組みから整える。</b>
