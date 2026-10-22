@@ -13,7 +13,9 @@ JavaScriptが無効でも全求人を読める。
 
   python3 -I tools/build_jobs.py
 """
-import json, os, re, html
+import json, os, re, sys, html
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import applycta   # ===== APPLY v1：応募ボタンは応募先データから作る（唯一の持ち主）
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p):
@@ -28,6 +30,11 @@ CATS = {c["key"]: c for c in D["categories"]}
 # ===== HRJOB v1：status は open（募集中）／upcoming（募集予定）／hold（非公開）の3種類。
 # 一覧とフィルターには open と upcoming を出す。JobPosting は open だけに付ける。
 OPEN = [o for o in D["openings"] if o["status"] in ("open", "upcoming")]
+# ===== APPLY v1：応募先URLが未設定の求人があるあいだだけ、一覧に注記を出す。
+# 応募先を入れてビルドし直すと、この行は自動的に消える。
+APPLY_NOTE = ('<p class="jfil__apply">※ 応募先URLの設定前のため、応募ボタンは押せない状態で'
+              '表示しています。この採用サイトは公開前の確認用で、応募の受け付けはまだ開始していません。</p>'
+              if applycta.missing() else "")
 PREF_SLUGS = D.get("pref_slugs", {})
 def pref_slug(name):
     """表示名ではなく内部値で絞り込むためのスラッグ。未登録の都道府県も必ず値を持つ。"""
@@ -128,8 +135,11 @@ def card(o):
                 % (e(o["title"]), lv, e(o["pref"]), e(o["city"]),
                    e(o.get("salary_label", "想定年収")), e(o["salary_year"]),
                    e(o["employment"].split("（")[0])))
+        # ===== APPLY v1：募集中の求人にだけ応募ボタンを置く。
+        # 募集予定（upcoming）は上の分岐なので、ここには来ない。
         foot = ('<p class="jcard__foot"><span class="jchip">募集中</span>\n'
-                '          <a class="jcard__cta" href="%s">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>' % detail)
+                '          <a class="jcard__cta" href="%s">募集要項を見る<i aria-hidden="true">&#8594;</i></a></p>\n'
+                % detail) + applycta.card_button(applycta.url_of(D, o))
         loc = e(pref_slug(o["pref"]))
     return f'''      <li class="jcard" data-job-category="{e(o['cat'])}" data-location="{loc}">
         <p class="jcard__cat">{e(c['name'])}</p>
@@ -217,6 +227,7 @@ def filters():
       <div class="jfil__row"><p class="jfil__k">職種</p><div class="jfil__bs">{cat_b}</div></div>
       <div class="jfil__row"><p class="jfil__k">勤務地</p><div class="jfil__bs">{pref_b}</div></div>
       <p class="jfil__n">現在 <b id="jobcount">{len(OPEN)}</b> 件の求人を掲載しています。</p>
+      {APPLY_NOTE}
     </div>
     <p class="jfil__none" id="jobnone" hidden>現在、この条件で募集中の求人はありません。</p>'''
 
@@ -467,9 +478,7 @@ def detail_body_v2(o, P, intro=""):
     <p class="entry__label en">NEXT STEP</p>
     <h2>この求人に<br>応募する。</h2>
     <p>募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
-    <div class="entry__ctas">
-      <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
-    </div>
+{applycta.detail_block(o["id"], applycta.url_of(D, o), "    ")}
     <p class="entry__sec"><a href="{P["jobs"]}">ほかの募集中の求人を見る</a></p>
   </div>
 </section>
@@ -666,9 +675,7 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     <p class="entry__label en">NEXT STEP</p>
     <h2>この求人に<br>応募する。</h2>
     <p>募集中の職種と条件は募集要項に掲載しています。選考時のWeb面接にも対応しています。</p>
-    <div class="entry__ctas">
-      <a class="btn btn--red btn--lg" href="{P["rn"]}entry/">この求人に応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
-    </div>
+{applycta.detail_block(o["id"], applycta.url_of(D, o), "    ")}
     <p class="entry__sec"><a href="{P["jobs"]}">ほかの募集中の求人を見る</a></p>
   </div>
 </section>

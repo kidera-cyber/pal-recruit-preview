@@ -8175,3 +8175,38 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
 p.jcard__lv{margin:5px 0 0}
 .phead .jdh__lv{margin-top:14px}
 /* ===== JOBTITLE v1 END ===== */
+
+/* ============================================================
+   ===== APPLY v1 START =====
+   応募ボタン（「この求人に応募する」「応募する」「ENTRY」）。
+   正式な応募先URLが決まるまでは押せない状態（disabled）で表示し、
+   デザインだけ先に完成させる。配色は PALレッド＋白文字のまま
+   （白／#cf131b ＝ 5.58:1）で、押せないことは cursor と注記で示す。
+   ・.btn--off    ：共通CTA（ヘッダー／ドロワー／ページ末尾）の無効表示
+   ・.applyoff    ：フッターナビなど、ボタンでないリンクの無効表示
+   ・.jcard__apply：JOBS一覧カードの応募ボタン（募集要項を見る＝黒、応募＝赤）
+   ・.applynote   ：応募先が未設定であることの注記
+   応募先が決まると <button disabled> が <a> に変わるだけで、見た目は同じ。
+   ============================================================ */
+.btn--off{cursor:not-allowed;box-shadow:none;font-family:inherit}
+.btn--off:hover{background:var(--red);border-color:var(--red)}
+.applyoff{color:#8f8f8f;cursor:not-allowed}
+.applynote{margin-top:16px;font-size:13.5px;line-height:1.85;color:#cdcdcd}
+
+/* JOBS一覧カード：黒の「募集要項を見る」の下に、赤の応募ボタンを全幅で置く。
+   ボタンが横に並んで窮屈にならないよう段を分けている。 */
+.jcard__applyrow{margin:10px 0 0}
+.jcard__apply{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;padding:11px 18px;border:1px solid var(--red);border-radius:9999px;
+  background:var(--red);color:#fff;font-family:inherit;font-size:14px;font-weight:700;
+  line-height:1.5;text-decoration:none;transition:background-color .25s,border-color .25s}
+a.jcard__apply:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.jcard__apply[disabled]{cursor:not-allowed}
+.jcard__apply i{font-style:normal;font-size:12px}
+@media (max-width:620px){
+  .jcard__apply{padding:12px 18px;font-size:14.5px}
+  .applynote{font-size:13px}
+}
+/* ===== APPLY v1 END ===== */
+/* JOBS一覧：応募先が未設定のあいだだけ出る注記（APPLY v1） */
+.jfil__apply{margin-top:10px;font-size:13px;line-height:1.8;color:var(--sub)}

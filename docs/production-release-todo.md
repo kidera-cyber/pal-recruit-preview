@@ -35,13 +35,26 @@
 
 人事（`/jobs/openings/hr/`）は募集予定のため、そもそも応募CTAを出さない。
 
-**確定後の最小実装**（調査済み・コード変更は不要）
+**確定後の有効化手順**（APPLY v1／ENTRY-CTA v2 で実装済み。コード変更は不要）
 
-1. `tools/set_entry_cta.py` の `ENTRY`（現在は `(?:\.\./)*entry/`）が指す先を正式応募先に差し替える
-2. `renewal/entry/index.html` の「エントリーフォームは準備中です」を正式フォームに置き換える
-3. `python3 -I tools/set_entry_cta.py on` を実行（コメントアウトを外すだけ。11ファイルが戻る）
-4. 求人ごとに応募先が異なる場合は、`data/jobs-openings.json` に `apply_url` を足し、
-   `tools/build_jobs.py` の詳細ページ末尾のボタンから参照する
+応募ボタンのデザイン・配置は実装済みで、いまは押せない状態（STATE 1）で表示している。
+正式な応募先が決まったら次の2つを行うだけで STATE 2（応募受付中）になる。
+
+1. **求人ごとの応募ボタン**（求人詳細11件＋JOBS一覧カード11件）
+   `data/jobs-openings.json` の `apply_urls.default_url` に正式な応募先を入れる。
+   求人ごとに応募先が違う場合は、その求人の `apply_url` に入れる（default より優先）。
+   → `bash tools/build_all.sh` で `<button disabled>` が `<a href="…">` に変わる。
+     一覧と求人詳細は同じ値を見ているのでズレない。未設定の求人だけ押せないまま残る。
+2. **サイト共通のCTA**（ヘッダー ENTRY／ドロワー／フッター／HOMEの「応募する」）
+   `renewal/entry/index.html` の「エントリーフォームは準備中です」を正式フォームに置き換え、
+   `tools/build_all.sh` の最終行を `set_entry_cta.py preview` → `on` に変える。
+   → 押せないボタンと「応募先URLの設定前です」の注記が消え、元のリンクに戻る。
+
+**公開前チェック**
+
+- `python3 -I tools/applycta.py --check` … 応募先が未設定の募集中求人を一覧表示する
+- `python3 -I tools/set_noindex.py off` … 未設定の求人があると**停止する**（B1 の前に必ず通る）
+  どうしても先に公開する場合のみ `--allow-no-apply` を付ける
 
 **使ってはいけない応募先**（調査結果）
 

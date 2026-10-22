@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=20261022a">
+<link rel="stylesheet" href="../assets/style.css?v=20261022b">
 <!-- ===== SEO-ORG v1：ABOUT「数字で見る、いまとこれからのPAL。」と
      募集要項ページの会社概要に掲載済みの事実のみで構成（設立・従業員数・資本金区分・拠点）。
      logo / 採用サイトURL は本番ドメイン確定後に追加する。 ===== -->
@@ -100,10 +100,14 @@
       <a href="jobs/">募集職種<small>JOBS</small></a>
       <a href="faq/">FAQ<small>Q&A</small></a>
     </nav>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
     <a class="btn btn--red hdr__cta" href="entry/">ENTRY<span class="btn__ico" aria-hidden="true">▶</span></a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+    <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+    <button class="btn btn--red hdr__cta btn--off" type="button" disabled>ENTRY</button>
+    <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
     <button class="hdr__toggle" id="navToggle" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く">
       <span></span><span></span><span></span>MENU
     </button>
@@ -117,10 +121,14 @@
   <a href="career/">キャリア<span>CAREER</span></a>
   <a href="jobs/">募集職種<span>JOBS</span></a>
   <a href="faq/">FAQ<span>Q&A</span></a>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
   <a class="btn btn--red" href="entry/">エントリーする<span class="btn__ico" aria-hidden="true">▶</span></a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+  <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+  <button class="btn btn--red btn--off" type="button" disabled>エントリーする</button>
+  <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
 </div>
 
 <main id="top">
@@ -469,8 +477,20 @@
          現場起点から上流の事業・仕組みまで関わる方向性と整合させた。 ===== -->
     <h2><span class="nw">現場から、</span><span class="nw">事業の仕組みまで。</span><br><span class="nw">次の変化を</span><span class="nw">つくる仕事。</span></h2>
     <p>現場・技術・営業・輸送・コーポレート。さまざまな専門性を持つメンバーを募集しています。</p>
+    <!-- ===== APPLY v1：HOMEの応募CTA。HOMEからは求人を1つに決められないため、
+         応募先は ENTRY（応募の案内ページ）経由にする。表示状態は tools/set_entry_cta.py。
+         「募集中の職種を見る」は同じ段に残し、濃い背景用の枠線ボタンにして役割を分けた。 ===== -->
     <div class="entry__ctas">
-      <a class="btn btn--red btn--lg" href="jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+      <a class="btn btn--onnavy btn--lg" href="jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
+      <a class="btn btn--red btn--lg" href="entry/">応募する<span class="btn__ico" aria-hidden="true">▶</span></a>
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+      <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+      <button class="btn btn--red btn--lg btn--off" type="button" disabled>応募する</button>
+      <p class="applynote">※ 応募先URLの設定前です。この採用サイトは公開前の確認用のため、応募の受け付けはまだ開始していません。</p>
+      <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
     </div>
     <p class="entry__sec"><a href="people/">PALで働く人を見る</a></p>
   </div>
@@ -505,10 +525,14 @@
           <a href="people/">社員インタビュー・1日の流れ</a>
           <a href="jobs/">募集要項</a>
           <a href="faq/">よくある質問</a>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
           <a href="entry/">エントリー</a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+          <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+          <span class="applyoff">エントリー</span>
+          <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
         </nav>
       </div>
       <div>

@@ -22,7 +22,9 @@
 
   python3 -I tools/build_large_driver.py
 """
-import json, os, re, html
+import json, os, re, html, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import applycta   # ===== APPLY v1：応募ボタンは応募先データから作る
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def rd(p):
@@ -32,6 +34,10 @@ def wr(p, s):
     with open(os.path.join(ROOT, p), "w", encoding="utf-8") as f: f.write(s)
 
 JOBPOSTING = True       # 正式掲載（2026-10-21）
+
+# ===== APPLY v1：応募先は data/jobs-openings.json が持つ（この求人は large-route-driver）
+D = json.loads(rd("data/jobs-openings.json"))
+O = next(o for o in D["openings"] if o["id"] == "large-route-driver")
 
 TITLE = "10tドライバー求人｜千葉県船橋市｜株式会社PAL"
 DESC  = ("株式会社PAL（DTS／運送部）の10tドライバー求人。千葉県船橋市のafs船橋センター勤務、"
@@ -242,6 +248,17 @@ def build_detail():
       <p class="slead">DTS／運送部で働く社員のインタビューを掲載しています。本人の経験とキャリアを紹介したもので、この求人の募集条件とは別の内容です。</p>
     </div>
     <p class="rv"><a class="btn btn--ghost" href="../../people/dts/">DTS社員インタビューを見る<span class="btn__ico" aria-hidden="true">▶</span></a></p>
+  </div>
+</section>
+
+<section class="entry">
+  <div class="entry__media"><img src="../../../assets/hero-bg.jpg" alt="" width="2752" height="1536" loading="lazy" aria-hidden="true"></div>
+  <div class="entry__inner wrap--narrow">
+    <p class="entry__label en">NEXT STEP</p>
+    <h2>この求人に<br>応募する。</h2>
+    <p>掲載している条件は、この求人の募集内容です。選考時のWeb面接にも対応しています。</p>
+''' + applycta.detail_block(O["id"], applycta.url_of(D, O), "    ") + '''
+    <p class="entry__sec"><a href="../">ほかの募集中の求人を見る</a></p>
   </div>
 </section>
 '''

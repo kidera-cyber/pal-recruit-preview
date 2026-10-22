@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261022a">
+<link rel="stylesheet" href="../../assets/style.css?v=20261022b">
 <!-- ===== FAQ-GROUPS v1：既存のFAQPage構造化データを、再構成後の表示内容と1対1で一致させた。
      GoogleのFAQリッチリザルトは終了しているため表示効果を目的としたものではなく、
      ページ本文と構造化データの不一致を残さないための同期。 ===== -->
@@ -46,10 +46,14 @@
       <a href="../jobs/">募集職種<small>JOBS</small></a>
       <a href="../faq/" aria-current="page" class="is-current">FAQ<small>Q&A</small></a>
     </nav>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
     <a class="btn btn--red hdr__cta" href="../entry/">ENTRY<span class="btn__ico" aria-hidden="true">▶</span></a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+    <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+    <button class="btn btn--red hdr__cta btn--off" type="button" disabled>ENTRY</button>
+    <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
     <button class="hdr__toggle" id="navToggle" aria-expanded="false" aria-controls="drawer" aria-label="メニューを開く">
       <span></span><span></span><span></span>MENU
     </button>
@@ -63,10 +67,14 @@
   <a href="../career/">キャリア<span>CAREER</span></a>
   <a href="../jobs/">募集職種<span>JOBS</span></a>
   <a href="../faq/" aria-current="page" class="is-current">FAQ<span>Q&A</span></a>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
   <a class="btn btn--red" href="../entry/">エントリーする<span class="btn__ico" aria-hidden="true">▶</span></a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+  <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+  <button class="btn btn--red btn--off" type="button" disabled>エントリーする</button>
+  <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
 </div>
 
 <!-- ===== FAQFIX v1：現在の採用方針に合わせて4問の回答を差し替えた。
@@ -450,10 +458,7 @@
     </div>
 
     <p class="note rv" style="margin-top:34px">※ 記載のない条件は<a href="../jobs/">各募集要項</a>をご確認ください。</p>
-    <p class="rv" style="margin-top:30px"><a class="btn btn--ghost" href="../jobs/">募集職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a><!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
-　<a class="btn btn--ghost" href="../entry/">応募方法・選考の流れ<span class="btn__ico" aria-hidden="true">▶</span></a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== --></p>
+    <p class="rv" style="margin-top:30px"><a class="btn btn--ghost" href="../jobs/">募集職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>　<a class="btn btn--ghost" href="../entry/">応募方法・選考の流れ<span class="btn__ico" aria-hidden="true">▶</span></a></p>
   </div>
 </section>
 
@@ -468,10 +473,14 @@
     <div class="entry__ctas">
       <a class="btn btn--red btn--lg" href="../jobs/">募集中の職種を見る<span class="btn__ico" aria-hidden="true">▶</span></a>
     </div>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
     <p class="entry__sec"><a href="../entry/">応募する</a></p>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+    <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+    <p class="entry__sec"><span class="applyoff">応募する</span></p>
+    <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
   </div>
 </section>
 </main>
@@ -500,10 +509,14 @@
           <a href="../people/">社員インタビュー・1日の流れ</a>
           <a href="../jobs/">募集要項</a>
           <a href="../faq/">よくある質問</a>
-<!-- ===== ENTRY-CTA v1 OFF：正式な応募先URLが未確定のため一時的に止めている。
-     tools/set_entry_cta.py on で元に戻す。 =====
+<!-- ===== ENTRY-CTA v2 SRC：応募CTAの元マークアップ。
+     表示状態は tools/set_entry_cta.py（off / preview / on）が切り替える。
+     ここを手で書き換えない。 =====
           <a href="../entry/">エントリー</a>
-     ===== ENTRY-CTA v1 OFF ここまで ===== -->
+     ===== ENTRY-CTA v2 SRC ここまで ===== -->
+          <!-- ===== ENTRY-CTA v2 PREVIEW ここから ===== -->
+          <span class="applyoff">エントリー</span>
+          <!-- ===== ENTRY-CTA v2 PREVIEW ここまで ===== -->
         </nav>
       </div>
       <div>

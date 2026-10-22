@@ -20,7 +20,31 @@ TAG = ('<!-- ===== NOINDEX v1：公開前の確認用サイトのため検索イ
        '<meta name="robots" content="noindex,nofollow">\n')
 RE_TAG = re.compile(r'<!-- ===== NOINDEX v1：.*?===== -->\n<meta name="robots" content="noindex,nofollow">\n', re.S)
 
+def check_apply_urls():
+    """===== APPLY v1：本番公開ゲート =====
+    noindex を外す（＝検索に出す／本番公開する）前に、募集中の求人すべてに
+    応募先URLが入っているか確かめる。応募できない求人を検索結果に出さないため。
+    どうしても先に公開する必要があるときは --allow-no-apply を付ける。"""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import applycta
+    ng = applycta.missing()
+    if not ng:
+        return
+    if "--allow-no-apply" in sys.argv:
+        print("警告：応募先URLが未設定の求人 %d件のまま noindex を外します" % len(ng))
+        return
+    print("noindex を外せません。応募先URLが未設定の求人が %d件あります：" % len(ng))
+    for o in ng:
+        print("  - %-26s %s" % (o["id"], o["title"]))
+    print("data/jobs-openings.json の apply_urls.default_url または各求人の apply_url に")
+    print("正式な応募先を入れてから、もう一度実行してください。")
+    print("（承知のうえで進める場合のみ： python3 -I tools/set_noindex.py off --allow-no-apply）")
+    raise SystemExit(1)
+
+
 def main(mode):
+    if mode == "off":
+        check_apply_urls()
     n = 0
     for ap in glob.glob(os.path.join(ROOT, "renewal/**/*.html"), recursive=True):
         s = open(ap, encoding="utf-8").read(); o = s
