@@ -8163,3 +8163,15 @@ a:hover .arrow{background:var(--red);border-color:var(--red);color:#fff;transfor
   .gphase dl{padding:4px 22px 20px}
 }
 /* ===== GPHASE v2 END ===== */
+
+/* ============================================================
+   ===== JOBTITLE v1 START =====
+   求人名と役職ラベルを別要素にしたことに伴う最小の調整。
+   .jcard__lv は <h3> の中の <span> から <h3> の兄弟の <p> になったため、
+   <p> の既定マージンを打ち消して従来と同じ見え方にする。
+   拠点ハブの <h1> も <br> をやめて .jdh__lv を使うようにしたため、
+   .phead の中での上余白をそろえる。文字サイズ・配色は変えていない。
+   ============================================================ */
+p.jcard__lv{margin:5px 0 0}
+.phead .jdh__lv{margin-top:14px}
+/* ===== JOBTITLE v1 END ===== */

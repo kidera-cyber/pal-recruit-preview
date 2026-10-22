@@ -85,6 +85,21 @@ MARK = ("<!-- ===== JOBSOPEN v1：リクナビHRTechで承認済みの求人票9
 # そろえた。従来は h1 → h3 → h4 と1段飛んでいた。CSSは .jgroup__h / .jcard__n の
 # クラス指定のため、見た目は変わらない。
 # ------------------------------------------------------------------ カード
+# ===== JOBTITLE v1 =====
+# 求人名と役職ラベルを必ず別要素で出す。
+# ・見出し(<h1>/<h3>)には職種名だけを入れる。span を見出しの中に入れると、
+#   表示は改行されていても、テキストとして取り出したときに
+#   「4tルート配送ドライバーDTS / 運送部」のように結合して読まれる。
+# ・level が title に含まれている求人（物流センター責任者候補＋責任者候補）は
+#   役職を繰り返さず、勤務地だけを出す。職種名そのものは変更しない。
+def sublabel(o):
+    """求人名の下に出す「役職｜拠点」。重複する役職は落とす。"""
+    lv, place = o.get("level", ""), o.get("place_short", "")
+    if lv and lv in o["title"]:
+        lv = ""
+    return "｜".join(x for x in (lv, place) if x)
+
+
 def card(o):
     c = CATS[o["cat"]]
     # 既存の正式募集要項がある求人（detail_url）は、そのURLを再利用する。
@@ -102,8 +117,9 @@ def card(o):
                 % (detail, work))
         loc = ""
     else:
-        lv = ('<span class="jcard__lv">%s｜%s</span>' % (e(o["level"]), e(o["place_short"]))) if o["level"] else ""
-        body = ('<h3 class="jcard__n">%s%s</h3>\n'
+        sub = sublabel(o)
+        lv = ('\n        <p class="jcard__lv">%s</p>' % e(sub)) if sub else ""
+        body = ('<h3 class="jcard__n">%s</h3>%s\n'
                 '        <dl class="jcard__dl">\n'
                 '          <dt>勤務地</dt><dd>%s%s</dd>\n'
                 '          <dt>%s</dt><dd><b>%s</b></dd>\n'
@@ -258,7 +274,10 @@ def build_index():
     <ul class="rstat rv">
       <li id="job-marketing"><span class="rstat__n"><b>Marketing / Content</b><span class="rstat__ja">マーケティング・コンテンツ制作</span></span><span class="rstat__s">募集条件を確認中</span></li>
       <li id="job-clean"><span class="rstat__n"><b>Cleanliness</b><span class="rstat__ja">クレンリネス</span></span><span class="rstat__s">現在募集していません</span></li>
-      <li id="job-corporate"><span class="rstat__n"><b>Corporate</b><span class="rstat__ja">コーポレート</span></span><span class="rstat__s">募集条件を確認中</span></li>
+      <!-- ===== JOBANCHOR v1：Corporate（人事）は HRJOB v1 で「今、募集している仕事」の
+           人事 / HR グループへ移ったため、この節から削除。sync_role_status.py も
+           出力から外しているが、公開しない文言をソースに残さないため行ごと削除する。
+           PEOPLE からのリンクは #job-hr に付け替え済み。 ===== -->
     </ul>
     <p class="note rv">※ 募集状況は変更になる場合があります。最新の募集情報は、上部の<a class="textlink textlink--sm" href="#joblist">今、募集している仕事</a>をご確認ください。仕事の内容は<a class="textlink textlink--sm" href="../work/">仕事を知る</a>でご覧いただけます。</p>
     <p class="rv" style="margin-top:24px"><a class="btn btn--ghost" href="../entry/">応募・選考について<span class="btn__ico" aria-hidden="true">▶</span></a></p>
@@ -380,7 +399,7 @@ def detail_body_v2(o, P, intro=""):
   <div class="wrap">
     <p class="slabel">Jobs ／ {e(c['name'])}</p>
     <h1 class="jdh__t">{e(o['title'])}</h1>
-    <p class="jdh__lv">{e(o['level'])}｜{e(o['place_short'])}</p>
+    <p class="jdh__lv">{e(sublabel(o))}</p>
     {jdsum(o)}
   </div>
 </section>
@@ -585,7 +604,8 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
 <section class="phead">
   <div class="wrap">
     <p class="slabel">Jobs ／ {e(c['name'])}</p>
-    <h1 class="ptitle">{e(o['title'])}<br>{e(o['level'])}｜{e(o['place_short'])}</h1>
+    <h1 class="ptitle">{e(o['title'])}</h1>
+    <p class="jdh__lv">{e(sublabel(o))}</p>
     <p class="plead">{e(o['pref'])}{e(o['city'])}・{e(o['employment'].split('（')[0])}・想定年収 {e(o['salary_year'])}</p>
   </div>
 </section>

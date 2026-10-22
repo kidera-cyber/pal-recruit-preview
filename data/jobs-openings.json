@@ -1,6 +1,6 @@
 {
   "_readme": [
-    "現在募集中の求人データ（JOBSOPEN v1）。出典はリクナビHRTechで承認済みの求人票9件。",
+    "現在募集中の求人データ（JOBSOPEN v1）。出典はリクナビHRTechで承認済みの求人票9件。　／　URL命名規則：正式な個別求人詳細は /jobs/openings/<id>/ に置く。detail_url を指定している dts-route-driver（/jobs/dts/）と large-route-driver（/jobs/large-driver/）は、既存URLを維持するための例外。新しい求人では detail_url を使わない。職種紹介ページ（/jobs/fde/ /jobs/logistics-operation/ /jobs/product-engineer/）は求人詳細ではないため JobPosting を入れない。",
     "HTML は tools/build_jobs.py が生成する。求人の追加・条件変更はこのファイルを直してビルドし直す。",
     "status: open（公開・募集中）／hold（公開前確認）／tbd（求人票なし・確認中）。",
     "hold と tbd は一覧の『募集中』には出さない。JobPosting も open にだけ出力する。",

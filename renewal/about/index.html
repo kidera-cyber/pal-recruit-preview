@@ -20,7 +20,7 @@
 <!-- ===== NOINDEX v1：公開前の確認用サイトのため検索インデックスさせない。
      本番公開時に tools/set_noindex.py off で一括削除する。 ===== -->
 <meta name="robots" content="noindex,nofollow">
-<link rel="stylesheet" href="../../assets/style.css?v=20261021v">
+<link rel="stylesheet" href="../../assets/style.css?v=20261022a">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "PALを知る"}]}</script>
@@ -267,11 +267,15 @@
       <div class="two-view__i">
         <p class="two-view__en en">If you come from engineering</p>
         <h3 class="two-view__h">システム・開発の経験がある方へ。</h3>
-        <p class="two-view__t">つくった仕組みは、PALが運営する現場で実際に使われます。業務や運用とのつながりを考えながら、開発と実装に関わります。</p>
+        <p class="two-view__t">つくった仕組みは、PALが運営する現場で実際に使われます。業務や運用とのつながりを考えながら、社内外の関係者と分担して開発と実装に関わります。</p>
         <p class="two-view__go"><a class="textlink textlink--sm" href="../work/#role-system">開発の仕事を見る</a><a class="textlink textlink--sm" href="../people/system/">開発の社員を見る</a></p>
       </div>
     </div>
-    <p class="two-view__note rv">※ 担当する範囲は職種と配属によって異なります。現場運営の全員がシステム開発や自動化設計を担当するわけではありません。開発もすべてを自社だけで行うものではなく、提案したものが必ず実装されるとは限りません。</p>
+    <!-- ===== NOTES v1（B）：打ち消し3文のうち「開発を自社だけで行うものではない」は
+     上の本文（社内外の関係者と分担して）へ統合。「全員が開発を担当するわけではない」は
+     残した1文が同じことを示すため集約。「提案したものが必ず実装されるとは限りません」は
+     本文が実装を約束していないため削除。旧文は git 履歴を参照。 ===== -->
+    <p class="two-view__note rv">※ 担当する範囲は職種と配属によって異なります。</p>
 
     <!-- ロジテックインテグレーション：設備・製品の仕様には踏み込まず、
          「自分たちの現場で試したことを仕組みづくりへ活かしている」だけを伝える。 -->
@@ -289,7 +293,7 @@
       <li><span class="en">02</span><b>既存のシステム・ベンダーを活かす</b><p>すべてを入れ替えるのではなく、<b class="hl">既存資産</b>を活かして最適化します。</p></li>
       <li><span class="en">03</span><b>やる前に、効果を検証する</b><p><b class="hl">PoV（価値検証）</b>で効果を確かめてから進め、投資判断のハードルを下げます。</p></li>
     </ul>
-    <p class="note rv">※ 8つの強みの全文は、コーポレートサイト「PALの強み」で公開しています。</p>
+    <p class="note rv">8つの強みの全文は、コーポレートサイト「PALの強み」で公開しています。</p>
     <!-- ===== HOMESLIM v1：TOPの #message（WHAT WE DO）と #mission（OUR MISSION / VALUES）を
          削除したため、そこへ飛んでいたテキストリンク2本を外した。
          ・「設計・実装・運用・改善の4段階は、TOPで紹介しています」
@@ -529,11 +533,11 @@
          視線の流れをつくる。120→230名 の矢印だけアクセントを強める。 ===== -->
     <div class="nums rv">
       <div class="num"><b>2000<em class="num__u">年</em>12<em class="num__u">月</em></b><span>設立</span></div>
-      <div class="num"><b>120<em class="num__u">名</em></b><span>従業員数（アルバイト・パート含む約1,600名）</span></div>
+      <div class="num"><b>120<em class="num__u">名</em></b><span>従業員数<br>アルバイト・パートを含めると約1,600名</span></div>
       <div class="num"><b>9,000<em class="num__u">万円</em></b><span>資本金</span></div>
       <div class="num"><b>2<em class="num__u">拠点</em></b><span>大阪本社（大阪市西区新町）／東京オフィス（千代田区神田小川町）</span></div>
       <div class="num"><b>4<em class="num__u">領域</em></b><span>コンサルティング／ロジテックインテグレーション／システム開発＆エンジニアリング／ロジテックオペレーション</span></div>
-      <div class="num"><b>120<em class="num__ar" aria-hidden="true">→</em>230<em class="num__u">名</em></b><span>採用計画（FY2029に230名）※現時点の目標値</span></div>
+      <div class="num"><b>120<em class="num__ar" aria-hidden="true">→</em>230<em class="num__u">名</em></b><span>採用計画（FY2029に230名）</span></div>
     </div>
     <p class="note rv">※ 設立・従業員数・資本金・拠点・事業内容は、株式会社PALの会社概要に基づく公表情報です。採用計画は現時点の目標値であり、確定した計画を示すものではありません。</p>
     <p class="rv" style="margin-top:20px"><a class="btn btn--ghost" href="https://www.pal-style.co.jp/company/" target="_blank" rel="noopener">会社概要を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
@@ -571,7 +575,7 @@
           <dt>設立</dt><dd>2000年12月</dd>
           <dt>代表</dt><dd>辻 有吾</dd>
           <dt>資本金</dt><dd>9,000万円</dd>
-          <dt>従業員</dt><dd>120名（アルバイト・パート含む約1,600名）</dd>
+          <dt>従業員</dt><dd>120名<br>アルバイト・パートを含めると約1,600名</dd>
           <dt>拠点</dt><dd>大阪本社 / 東京オフィス</dd>
         </dl>
       </div>
@@ -579,9 +583,7 @@
         <h3>RECRUIT</h3>
         <nav aria-label="採用サイト内ナビゲーション">
           <a href="../about/">PALを知る</a>
-          <a href="../about/">PALを知る（Mission / Position）</a>
           <a href="../work/">仕事を知る</a>
-          <a href="../career/">キャリアの掛け合わせ</a>
           <a href="../career/">キャリアパス</a>
           <a href="../people/">社員インタビュー・1日の流れ</a>
           <a href="../jobs/">募集要項</a>

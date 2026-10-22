@@ -39,9 +39,18 @@ ROLE_JOBS = {
     "role-corp":     ["hr"],
 }
 # 募集中のとき「募集要項を見る」が指す先（JOBS の職種グループ）
+# ===== JOBLINK v1 =====
+# 人材派遣営業は、JOBS では「営業」グループ（#job-sales）の中に
+# エンゲージメント・新規営業と並んで載っている。#job-sales を指すと
+# 一般営業の求人が先に目に入るため、該当する募集要項へ直接送る。
+# 求人が増えたときに黙って古いリンクが残らないよう、
+# 直リンクの職種は「公開中の求人が1件」であることを下で検証している。
 ROLE_ANCHOR = {"role-bpo": "#job-bpo", "role-fde": "#job-fde", "role-system": "#job-system",
-               "role-dts": "#job-driver", "role-sales": "#job-sales", "role-staffing": "#job-sales",
+               "role-dts": "#job-driver", "role-sales": "#job-sales",
+               "role-staffing": "openings/staffing-sales-leader/",
                "role-corp": "#job-hr"}
+# 「グループではなく個別の募集要項」へ送る職種。求人が2件以上になったら止める。
+ROLE_DIRECT = {"role-staffing"}
 # 募集予定のときにカードへ出すCTAの文言（Corporate は人事だけが募集予定のため職種名を添える）
 ROLE_CTA = {"role-corp": "人事の募集要項を見る"}
 
@@ -73,6 +82,10 @@ def sync_home(D):
         elif ids & soon: state, label, cls = "soon", SOON_LABEL, "fchip__st fchip__st--soon"
         else:            state, label, cls = "off",  OFF_LABEL,  "fchip__st fchip__st--off"
         hiring = state in ("open", "soon")
+        if key in ROLE_DIRECT and len(ids & (live | soon)) > 1:
+            raise SystemExit(
+                "%s の求人が %d 件になりました。ROLE_ANCHOR の直リンクをグループの"
+                "アンカーに戻すか、送り先を選び直してください。" % (key, len(ids & (live | soon))))
         li = re.sub(r'<span class="fchip__st[^"]*"><b>[^<]*</b></span>',
                     '<span class="%s"><b>%s</b></span>' % (cls, label), li, count=1)
         # 募集要項を見るCTA：募集中・募集予定のときだけ置く。募集要項のページが無いのにリンクを残さない。

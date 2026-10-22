@@ -12,9 +12,45 @@
 
 | # | 項目 | 必要な情報 |
 |---|---|---|
-| A1 | **正式ENTRY URL** | 応募フォームのURL。確定まで応募CTAは非表示のまま（`tools/set_entry_cta.py off`）。`https://www.pal-style.co.jp/contact-service/` は BtoB サービスの問い合わせ窓口であり、採用応募には使わない |
-| A2 | **ドライバー求人の正式条件** | 休日・休憩時間・車両トン数。`docs/driver-open-items.md` 参照 |
-| A3 | 本番ドメイン | canonical・OGP・sitemap がこれに依存 |
+| A1 | **正式ENTRY URL（P0）** | 応募フォームのURL。確定まで応募CTAは非表示のまま（`tools/set_entry_cta.py off`）。`https://www.pal-style.co.jp/contact-service/` は BtoB サービスの問い合わせ窓口であり、採用応募には使わない。影響する求人は下表「A1 の対象求人」の11件 |
+| A2 | 本番ドメイン | canonical・OGP・sitemap がこれに依存 |
+| A3 | **従業員数の定義** | 「120名（アルバイト・パート含む約1,600名）」の120名が何を指すか（正社員のみか）と集計基準日。コーポレートサイトの会社概要（2026-10-22 確認）にも定義・基準日の記載がないため、採用サイトでも「正社員」と断定していない |
+| A4 | **求人URLの命名統一（承認待ち）** | 正式な個別求人詳細のうち、`/jobs/dts/` と `/jobs/large-driver/` だけが `/jobs/openings/` 配下にない。`/jobs/openings/dts-route-driver/` `/jobs/openings/large-route-driver/` へ寄せる場合は、本番公開時に旧URLから301で転送する。**プレビュー段階では変更しない**（外部リンク・検索評価への影響を避けるため） |
+
+### A1 の対象求人（正式応募先が決まるまで応募ボタンを出せない求人）
+
+| # | 求人 | URL |
+|---|---|---|
+| 1 | 物流センター運営（アソシエイト・船橋） | `/jobs/openings/funabashi-associate/` |
+| 2 | 物流センター運営（メンバー・厚木） | `/jobs/openings/atsugi-member/` |
+| 3 | 物流センター運営（メンバー・東広島） | `/jobs/openings/higashihiroshima-member/` |
+| 4 | 物流センター責任者候補（須磨） | `/jobs/openings/suma-manager/` |
+| 5 | FDE（アソシエイト〜メンバー・大阪） | `/jobs/openings/fde-associate/` |
+| 6 | FDE（メンバー・リーダー候補・大阪） | `/jobs/openings/fde-leader/` |
+| 7 | 自社開発 Web・アプリエンジニア（大阪） | `/jobs/openings/system-engineer/` |
+| 8 | エンゲージメント・新規営業（大阪） | `/jobs/openings/engagement-member/` |
+| 9 | 法人営業（人材派遣）（大阪） | `/jobs/openings/staffing-sales-leader/` |
+| 10 | 4tルート配送ドライバー（船橋） | `/jobs/dts/` |
+| 11 | 10tドライバー（船橋） | `/jobs/large-driver/` |
+
+人事（`/jobs/openings/hr/`）は募集予定のため、そもそも応募CTAを出さない。
+
+**確定後の最小実装**（調査済み・コード変更は不要）
+
+1. `tools/set_entry_cta.py` の `ENTRY`（現在は `(?:\.\./)*entry/`）が指す先を正式応募先に差し替える
+2. `renewal/entry/index.html` の「エントリーフォームは準備中です」を正式フォームに置き換える
+3. `python3 -I tools/set_entry_cta.py on` を実行（コメントアウトを外すだけ。11ファイルが戻る）
+4. 求人ごとに応募先が異なる場合は、`data/jobs-openings.json` に `apply_url` を足し、
+   `tools/build_jobs.py` の詳細ページ末尾のボタンから参照する
+
+**使ってはいけない応募先**（調査結果）
+
+| 候補 | 可否 | 理由 |
+|---|---|---|
+| `https://www.pal-style.co.jp/contact-service/` | ✕ | BtoBサービスの問い合わせ窓口。採用応募の受け口ではない |
+| 求人媒体（Indeed 等）の応募画面 | 判断待ち | 媒体掲載の有無・正式な応募先URLが未確認 |
+| 採用担当のメールアドレス | 判断待ち | 公開してよいアドレスが未確認 |
+| ATS | 判断待ち | 利用中のシステムが未確認 |
 
 ## B｜本番公開時に実施する作業
 
@@ -31,7 +67,8 @@
 | B9 | **robots.txt** | sitemap の場所を記載 |
 | B10 | **JobPosting 最終確認** | 全求人で title・勤務地・給与・雇用形態・勤務時間・休日・必須/歓迎資格・募集状態が本文と一致すること。リッチリザルトテストでエラー0 |
 | B11 | 内部リンクの最終確認 | 相対リンクが本番で解決すること・転送stub4本の遷移先 |
-| B12 | 保留求人の扱い | `manager-candidate-hold`（勤務地不一致）、ドライバー2件を公開するか判断 |
+| B12 | 保留求人の扱い | `manager-candidate-hold`（勤務地不一致）を公開するか判断。ドライバー2件は条件確定済みで公開中 |
+| B13 | **募集終了求人の処理** | 終了した求人は `data/jobs-openings.json` の `status` を `open` 以外にする。ページを残す場合は JobPosting に `validThrough`（過去日）を入れ、一覧・HOMEのステータスは `tools/sync_role_status.py` が自動で追従する |
 
 ## C｜本番公開後に実施する検証
 
