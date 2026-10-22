@@ -13,9 +13,9 @@
 | # | 項目 | 必要な情報 |
 |---|---|---|
 | A1 | **正式ENTRY URL（P0）** | 応募フォームのURL。確定まで応募CTAは非表示のまま（`tools/set_entry_cta.py off`）。`https://www.pal-style.co.jp/contact-service/` は BtoB サービスの問い合わせ窓口であり、採用応募には使わない。影響する求人は下表「A1 の対象求人」の11件 |
-| A2 | 本番ドメイン | canonical・OGP・sitemap がこれに依存 |
+| A2 | **本番ドメイン** | canonical・OGP・sitemap・パンくずの item がこれに依存。**DOMAIN v1 で実装済み**：`data/site.json` の `production_origin` に入れて `bash tools/build_all.sh` を流すだけで全ページが切り替わる（下の「本番ドメインの切り替え」を参照） |
 | A3 | **従業員数の定義** | 「120名（アルバイト・パート含む約1,600名）」の120名が何を指すか（正社員のみか）と集計基準日。コーポレートサイトの会社概要（2026-10-22 確認）にも定義・基準日の記載がないため、採用サイトでも「正社員」と断定していない |
-| A4 | **求人URLの命名統一（承認待ち）** | 正式な個別求人詳細のうち、`/jobs/dts/` と `/jobs/large-driver/` だけが `/jobs/openings/` 配下にない。`/jobs/openings/dts-route-driver/` `/jobs/openings/large-route-driver/` へ寄せる場合は、本番公開時に旧URLから301で転送する。**プレビュー段階では変更しない**（外部リンク・検索評価への影響を避けるため） |
+| A4 | **求人URLの命名統一（判断待ち。現状維持でも問題なし）** | 下の「求人URLの整理案」を参照。**既存URLは変更していない。** 新しい求人で例外が増えないよう、ビルド時チェック（URLNAME v1）は導入済み |
 
 ### A1 の対象求人（正式応募先が決まるまで応募ボタンを出せない求人）
 
@@ -108,3 +108,90 @@
 - 壊れた内部リンク 0件
 - レスポンシブ確認（1440〜320px）
 - 比較プレビューの削除（サイト内に preview / test / demo / 仮案 を残さない）
+
+---
+
+## 本番ドメインの切り替え（DOMAIN v1・実装済み）
+
+ドメインを推測で入れないため、いまは `data/site.json` の `production_origin` を `null` にしている。
+この状態では **GitHub Pages の見え方は変わらない**。
+
+| | `production_origin` が null（いま） | 値を入れたあと |
+|---|---|---|
+| canonical | `./`（相対自己参照） | `https://…/jobs/openings/…/`（絶対） |
+| og:url / og:image | 出さない | 絶対URLで出す |
+| パンくずの `item` | `../../`（相対） | 絶対URL |
+| sitemap.xml | 作らない | 30ページ分を生成（転送stub4本は除外） |
+| robots.txt | `Disallow: /`（全ページ） | `Allow: /` ＋ `Sitemap:` 行 |
+
+**手順**
+
+1. `data/site.json` の `production_origin` に、スキーム付きのオリジンを入れる（末尾スラッシュなし）
+   - オリジン直下でない場所に置く場合は `base_path` も入れる（例 `/recruit`）
+2. `bash tools/build_all.sh`
+3. `python3 -I tools/set_noindex.py off`（応募先URLが未設定だと止まる＝APPLY v1 のゲート）
+
+`python3 -I tools/set_domain.py --status` で現在の状態を確認できる。
+これにより旧 B5・B6・B7・B8・B9 は自動化された（手作業は不要）。
+
+---
+
+## 求人URLの整理案（URLNAME v1）
+
+**現状の分類**
+
+| 分類 | URL | JobPosting |
+|---|---|---|
+| A：正式な個別求人詳細（11） | `/jobs/openings/<id>/`（9） | あり |
+| | `/jobs/dts/` `/jobs/large-driver/`（2・既存URL） | あり |
+| B：職種紹介ページ（3） | `/jobs/fde/` `/jobs/logistics-operation/` `/jobs/product-engineer/` | なし（正しい） |
+| C：転送ページ（2） | `/jobs/center-manager/` `/work/fde/` | なし |
+| D：重複・不要 | なし | — |
+
+**判断：既存URLは変更しない。**
+A の2件だけ `/jobs/openings/` 配下にないが、URLが分かれていること自体は検索上の問題ではなく、
+変更すると外部リンク・媒体掲載・検索評価を壊す可能性がある。
+そのかわり、**新しい求人で例外が増えないようにビルド時チェックを入れた**
+（`tools/build_jobs.py` の `URL_EXCEPTIONS`。`detail_url` を新しく書くとビルドが止まる）。
+
+**それでも統一する場合（本番公開時のみ・承認が必要）**
+
+| 旧URL | 新URL | 転送 |
+|---|---|---|
+| `/jobs/dts/` | `/jobs/openings/dts-route-driver/` | 301 |
+| `/jobs/large-driver/` | `/jobs/openings/large-route-driver/` | 301 |
+
+手順：`data/jobs-openings.json` から該当の `detail_url` を外す → `URL_EXCEPTIONS` から2件を削除
+→ `bash tools/build_all.sh` → 旧URLに301転送を設定（本番サーバ側）→ sitemap を再生成。
+GitHub Pages は301を返せないため、**プレビューでは実施しない。**
+
+---
+
+## 従業員数の表示（EMPNUM v1 / v2）
+
+コーポレートサイトの会社概要（2026-10-22 確認）の表記は
+「従業員数 120名（アルバイト・パート含む約1,600名）」で、**120名の定義も集計基準日も公表されていない**。
+そのため採用サイトでは「正社員」と断定せず、数字の関係だけが分かる形にしている。
+
+```
+120名
+アルバイト・パートを含めると約1,600名
+```
+
+定義（120名の対象範囲）と集計基準日が分かれば、ABOUT の数字セクションに1行足すだけで反映できる。
+
+---
+
+## 「人事」と「労務」の呼称（HRNAME v1）
+
+確認できている事実と、サイト上の表記を次のようにそろえた。
+
+| 場所 | 表記 | 根拠 |
+|---|---|---|
+| FAQ Q1 ／ WORK | コーポレートの4領域＝経理・総務・労務・法務 | 依頼元に確認済み |
+| FAQ Q4 ／ WORK | 採用などの人事業務は**労務が担当** | 依頼元に確認済み |
+| JOBS のグループ名 | 「人事 / HR」→ **「人事・労務」** | 4領域の言葉と求人の言葉を同じ場所に置く |
+| 求人の職種名 | **「人事」のまま** | 求人票の業務が採用〜オンボーディングで、職種名と一致している |
+
+人事の正式な募集要項（雇用形態・勤務地・給与・応募資格）が決まった段階で、
+職種名を「人事」のままにするか、部門名を添える（例「人事（労務課）」）かを確認する。

@@ -1,0 +1,5 @@
+# 公開前の確認用サイト（GitHub Pages）。検索エンジンには見せない。
+# 本番ドメインが決まったら data/site.json の production_origin を入れて
+# tools/build_all.sh を流すと、本番用の robots.txt に置き換わる。
+User-agent: *
+Disallow: /

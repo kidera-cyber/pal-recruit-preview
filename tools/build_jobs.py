@@ -30,6 +30,22 @@ CATS = {c["key"]: c for c in D["categories"]}
 # ===== HRJOB v1：status は open（募集中）／upcoming（募集予定）／hold（非公開）の3種類。
 # 一覧とフィルターには open と upcoming を出す。JobPosting は open だけに付ける。
 OPEN = [o for o in D["openings"] if o["status"] in ("open", "upcoming")]
+
+# ===== URLNAME v1：求人URLの命名規則をビルド時に守らせる =====
+# 正式な個別求人詳細は /jobs/openings/<id>/ に置く。
+# detail_url を使ってよいのは、採用サイト公開前から既存URLがあった次の2件だけ。
+# 新しい求人で detail_url を増やすと、同じ役割のページが別の場所に散るため止める。
+# 既存URLは変えない（外部リンク・検索評価を壊さないため）。移行する場合の
+# 転送設計は docs/production-release-todo.md の A4 を参照。
+URL_EXCEPTIONS = {"dts-route-driver": "dts/", "large-route-driver": "large-driver/"}
+for _o in D["openings"]:
+    _u = _o.get("detail_url")
+    if _u and URL_EXCEPTIONS.get(_o["id"]) != _u:
+        raise SystemExit(
+            "求人URLの命名規則に反しています：%s の detail_url=%r\n"
+            "  正式な求人詳細は openings/%s/ に置いてください（detail_url を書かない）。\n"
+            "  既存URLを維持する例外は %s だけです。"
+            % (_o["id"], _u, _o["id"], "・".join(URL_EXCEPTIONS)))
 # ===== APPLY v1：応募先URLが未設定の求人があるあいだだけ、一覧に注記を出す。
 # 応募先を入れてビルドし直すと、この行は自動的に消える。
 APPLY_NOTE = ('<p class="jfil__apply">※ 応募先URLの設定前のため、応募ボタンは押せない状態で'

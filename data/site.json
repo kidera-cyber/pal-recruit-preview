@@ -1,0 +1,22 @@
+{
+  "_readme": [
+    "サイト全体の設定（DOMAIN v1）。本番ドメインが決まるまでは production_origin を null のままにする。",
+    "null のあいだ：canonical は相対自己参照（./）、og:url / og:image は出さない、sitemap.xml は作らない、",
+    "robots.txt はプレビュー用（全ページ Disallow）。いまの GitHub Pages の見え方は変わらない。",
+    "本番ドメインが決まったら production_origin にスキーム付きのオリジン（末尾スラッシュなし）を入れて",
+    "tools/build_all.sh を流すだけで、canonical・og:url・og:image・パンくずの item が絶対URLに変わり、",
+    "sitemap.xml と本番用 robots.txt が生成される。値を推測で入れないこと。",
+    "base_path は、オリジン直下でない場所に置く場合のパス（例 /recruit）。直下なら空文字。"
+  ],
+  "production_origin": null,
+  "base_path": "",
+  "preview_origin": "https://kidera-cyber.github.io",
+  "preview_base_path": "/pal-recruit-preview",
+  "og_image": "assets/hero-bg.jpg",
+  "sitemap_exclude": [
+    "renewal/culture/index.html",
+    "renewal/after-joining/index.html",
+    "renewal/jobs/center-manager/index.html",
+    "renewal/work/fde/index.html"
+  ]
+}
