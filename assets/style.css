@@ -8463,3 +8463,88 @@ a.jcard__apply:hover{background:var(--red-dark);border-color:var(--red-dark)}
   .wlf__no{font-size:22px}
 }
 /* ===== EDITORIAL v1 END ===== */
+
+/* ============================================================
+   ===== HOMESIMPLE v1 START =====
+   HOME の情報設計を整理した比較版（renewal/home-simple-preview/）専用。
+   すべて .p-home-simple の中だけに効くようにして、正式なHOMEには影響させない。
+   比較版を取り下げるときは、このブロックごと削除すればよい。
+   ============================================================ */
+/* 比較版であることの表示（社内確認用。正式ページには出ない）。
+   固定ヘッダーに隠れず、レイアウトもずらさないよう、画面左下に小さく固定する。
+   右下の固定CTAと重ならない幅にしている。 */
+.p-home-simple .hs-flag{position:fixed;left:16px;bottom:16px;z-index:60;max-width:min(430px,70vw);
+  padding:10px 16px;border-radius:8px;background:rgba(17,17,17,.94);color:#fff;
+  font-size:12.5px;line-height:1.75;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.p-home-simple .hs-flag b{color:#fff}
+.p-home-simple .hs-flag a{color:#ff6b70;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:620px){
+  .p-home-simple .hs-flag{left:10px;right:10px;bottom:76px;max-width:none;font-size:12px}
+}
+
+/* 02 職種：写真帯を3枚→2枚に（職種カードの一覧性を優先し、帯の高さを抑える） */
+.p-home-simple .fphoto--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.p-home-simple .fphoto--2 .fphoto__i{aspect-ratio:16/9}
+@media (max-width:620px){
+  .p-home-simple .fphoto--2{grid-template-columns:minmax(0,1fr)}
+  .p-home-simple .fphoto--2 .fphoto__i{aspect-ratio:16/10}
+}
+
+/* 03 働く人：代表4名。人物を大きく、本人の言葉を主役に */
+.p-home-simple .hsv{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:16px;margin:0;padding:0}
+.p-home-simple .hsv__i{display:flex}
+.p-home-simple .hsv__a{display:flex;flex-direction:column;width:100%;padding:22px 20px 22px;
+  border:1px solid var(--line);border-radius:var(--radius-lg);background:#fff;
+  transition:border-color .25s,background-color .25s}
+.p-home-simple .hsv__a:hover{border-color:var(--red);background:#fcfcfc}
+.p-home-simple .hsv__ph{width:92px;aspect-ratio:12/13;overflow:hidden;border-radius:12px;
+  background:var(--bg-soft)}
+.p-home-simple .hsv__ph img{width:100%;height:100%;object-fit:contain;object-position:50% 100%;
+  display:block;transition:transform .3s var(--ease)}
+.p-home-simple .hsv__a:hover .hsv__ph img{transform:scale(1.05)}
+.p-home-simple .hsv__q{display:block;margin-top:16px;font-size:16.5px;line-height:1.6;
+  font-weight:700;color:#000;text-wrap:pretty}
+.p-home-simple .hsv__cat{display:block;margin-top:auto;padding-top:14px;font-size:12.5px;
+  font-weight:700;color:var(--red)}
+.p-home-simple .hsv__prof{display:block;margin-top:5px;font-size:12.5px;line-height:1.7;
+  color:var(--sub)}
+
+/* 04 入社後：黒背景の長い面をやめ、薄い面に3ステップだけ（カードは増やさない） */
+.p-home-simple .hstep{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:2px solid #000}
+.p-home-simple .hstep li{padding:22px 26px 24px}
+.p-home-simple .hstep li+li{border-left:1px solid var(--line-mid,#cacaca)}
+.p-home-simple .hstep__no{display:block;font-family:Lato,sans-serif;font-size:24px;font-weight:900;
+  line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.p-home-simple .hstep__h{display:block;margin-top:12px;font-size:17.5px;line-height:1.5;
+  font-weight:700;color:#000;text-wrap:pretty}
+.p-home-simple .hstep__t{display:block;margin-top:9px;font-size:14.5px;line-height:1.9;
+  color:var(--sub);text-wrap:pretty}
+
+/* 05 応募導線：FAQは短い紹介＋リンクだけにした */
+.p-home-simple .hs-entry__note{font-size:14px;line-height:1.9;color:#cdcdcd;font-weight:400}
+
+@media (max-width:1100px){
+  .p-home-simple .hsv{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .p-home-simple .hstep{grid-template-columns:minmax(0,1fr)}
+  .p-home-simple .hstep li{padding:18px 0 18px}
+  .p-home-simple .hstep li+li{border-left:0;border-top:1px solid var(--line-mid,#cacaca)}
+}
+@media (max-width:560px){
+  /* スマホは「左に人物・右に言葉と職種」の横組みにする。
+     flex のままだと3つの文字要素まで横に並んでしまうため、グリッドで段を分ける。 */
+  .p-home-simple .hsv{grid-template-columns:minmax(0,1fr);gap:12px}
+  .p-home-simple .hsv__a{display:grid;grid-template-columns:74px minmax(0,1fr);
+    column-gap:16px;align-items:start;padding:18px}
+  .p-home-simple .hsv__ph{grid-row:1/4;width:74px}
+  .p-home-simple .hsv__q{margin-top:0;font-size:16px}
+  .p-home-simple .hsv__cat{margin-top:9px;padding-top:0}
+  .p-home-simple .hsv__prof{margin-top:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  .p-home-simple .hsv__a:hover .hsv__ph img{transform:none}
+}
+/* ===== HOMESIMPLE v1 END ===== */
