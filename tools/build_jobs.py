@@ -384,8 +384,11 @@ def detail_body_v2(o, P, intro=""):
     c = CATS[o["cat"]]
     name = "%s（%s）｜%s" % (o["title"], o["level"], o["place_short"])
     mode = o.get("req_must_mode", "必須")
+    # ===== NOHEADCOUNT v1：「配属先」（配属先人数・年代構成）は出さない。
+    # 人数は変動しやすく、更新漏れや求人票との不整合につながるため、
+    # データ側（team）ごと削除した。再び人数項目を足さない。
     extra = [(k, e(o[f])) for k, f in
-             (("取扱商品", "goods"), ("働き方", "workstyle"), ("配属先", "team")) if o.get(f)]
+             (("取扱商品", "goods"), ("働き方", "workstyle")) if o.get(f)]
     welcome = (('<p class="jdsub">歓迎する経験</p><p class="jdtag jdtag--w">歓迎</p>'
                 + li2(o["req_welcome"])) if o.get("req_welcome") else "")
     lic = ('<p class="jdsub">資格</p>' + li2([o["license"]])) if o.get("license") else ""
@@ -618,7 +621,7 @@ def build_detail(o, layout=None, depth=3, outpath=None, intro=""):
     if o.get("goods"):     extra.append(("取扱商品", e(o["goods"])))
     if o.get("shift"):     extra.append(("勤務シフト", e(o["shift"])))
     if o.get("workstyle"): extra.append(("働き方", e(o["workstyle"])))
-    if o.get("team"):      extra.append(("配属先", e(o["team"])))
+    # ===== NOHEADCOUNT v1：「配属先」（人数）は出さない（上の v2 レイアウトと同じ方針） =====
 
     mode = o.get("req_must_mode", "必須")
     groups_html = "\n".join(group(c["key"]) for c in D["categories"]
