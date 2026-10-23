@@ -8357,3 +8357,109 @@ a.jcard__apply:hover{background:var(--red-dark);border-color:var(--red-dark)}
   .ajq__a{padding:18px 48px 16px 0}
 }
 /* ===== AFTER v2 END ===== */
+
+/* ============================================================
+   ===== EDITORIAL v1 START =====
+   「同じ大きさの白カードを並べる」設計を、必要な場所だけに絞るための調整。
+   カードは比較・選択が必要な情報（職種一覧・求人カード）に限り、
+   会社の数字・価値観・姿勢・キャリアは、数字の大小・写真・罫線・余白で見せる。
+   対象
+     JOBNAME-JA v1  HOME/WORK の職種名を「日本語（主）＋英字（副）」に
+     NUMBERS v2     ABOUT の数字を 主情報3＋副情報3 に分け、数字を大きく赤で見せる
+     LOOK v2        PEOPLE の6つの姿勢をカードから罫線区切りのリストへ／価値観は写真に
+     GROWTH v3      CAREER の3フェーズカードを削除（.gmx/.gphase は未使用化・残置）
+   後勝ちで上書きする既存ルール：.role-chip__en ／ .rpanel__en ／ .num（未使用化・残置）
+   ============================================================ */
+
+/* ---- 職種名：日本語を主、英字を副に ---- */
+.role-chip__ja{display:block;font-size:15.5px;line-height:1.45;font-weight:700;color:var(--navy)}
+.role-chip__b .role-chip__en{display:block;margin-top:4px;font-size:10.5px;line-height:1.5;
+  letter-spacing:.1em;color:var(--muted)}
+.role-chip__one{margin-top:6px}
+@media (max-width:420px){
+  /* 英字が2行になってもカードの高さがそろうよう、上の日本語名側で高さを取る */
+  .role-chip__en{min-height:0;line-height:1.5}
+  .role-chip__ja{min-height:2.9em}
+}
+/* WORK のパネル見出しも同じ順番にする */
+.rpanel__n{margin-top:0}
+.rpanel__top .rpanel__en{display:block;margin-top:5px;font-size:11.5px;letter-spacing:.12em;
+  color:var(--muted)}
+
+/* ---- 数字で見るPAL：主情報3 ---- */
+.nums2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  border-top:2px solid #000;border-bottom:1px solid var(--line)}
+.num2{padding:30px 28px 28px}
+.num2+.num2{border-left:1px solid var(--line)}
+.num2__v{display:block;font-family:Lato,sans-serif;font-size:clamp(38px,5.4vw,66px);
+  font-weight:900;line-height:1.05;letter-spacing:-.01em;color:var(--red);
+  font-variant-numeric:tabular-nums}
+.num2__v em{font-style:normal;font-size:.38em;font-weight:700;margin-left:.12em;color:#000}
+.num2__k{display:block;margin-top:14px;font-size:15px;font-weight:700;color:#000}
+.num2__s{display:block;margin-top:6px;font-size:13px;line-height:1.8;color:var(--sub)}
+
+/* ---- 数字で見るPAL：副情報3 ---- */
+.nums2sub{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.nsub{padding:20px 28px 22px}
+.nsub+.nsub{border-left:1px solid var(--line)}
+.nsub dt{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+.nsub__v{font-family:Lato,sans-serif;font-size:26px;font-weight:900;line-height:1.1;color:#000;
+  font-variant-numeric:tabular-nums}
+.nsub__v em{font-style:normal;font-size:.5em;font-weight:700;margin-left:.15em;color:var(--sub)}
+.nsub__v i{font-style:normal;margin:0 .14em;color:var(--red)}
+.nsub__tag{padding:3px 9px;border-radius:4px;background:var(--red);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.04em}
+.nsub dd{margin:8px 0 0;font-size:13.5px;line-height:1.8;color:var(--sub)}
+.nums2__src{margin-top:18px;font-size:12.5px;color:var(--muted)}
+
+/* ---- PEOPLE：6つの姿勢（カードをやめた編集型レイアウト） ---- */
+.wlf{margin-top:68px;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:0 56px;align-items:start}
+.wlf__head{position:sticky;top:110px}
+.wlf__lead{margin-top:16px;font-size:14.5px;line-height:1.95;color:var(--sub);max-width:22em}
+.wlf__list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.wlf__i{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 20px;
+  padding:18px 0 17px;border-bottom:1px solid var(--line)}
+.wlf__no{grid-row:1/3;font-family:Lato,sans-serif;font-size:26px;font-weight:900;
+  line-height:1;color:var(--red);font-variant-numeric:tabular-nums}
+.wlf__h{font-size:19px;line-height:1.45;font-weight:700;color:var(--navy)}
+.wlf__t{font-size:14.5px;line-height:1.85;color:var(--sub)}
+
+/* ---- PEOPLE：3つの価値観 ---- */
+/* 生成AI風のイラスト3枚（画風がサイト内の他ビジュアルと違った）を、既存のPAL写真に差し替え。
+   あわせて「同じ形のカード3枚」をやめ、01 を横長の大きな組（写真＋文章）、
+   02・03 を2つ並びにしてリズムをつける。文言は変更していない。
+   後勝ちで上書き：CULTURE-ILL v1 の #look .vrows（3カラム固定） */
+#look .vrows{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+#look .vrow{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden}
+#look .vrow .vrow__b{padding:22px 24px 26px}
+#look .c-01{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);
+  align-items:center}
+#look .c-01 .vrow__b{padding:34px 40px 36px}
+.vrow__ill--ph{margin:0;aspect-ratio:16/10;overflow:hidden;background:var(--bg-soft)}
+#look .c-01 .vrow__ill--ph{height:100%;aspect-ratio:auto;min-height:300px}
+.vrow__ill--ph img{width:100%;height:100%;object-fit:cover;display:block}
+#look .vrow__b h3{margin-top:6px}
+@media (max-width:860px){
+  #look .vrows{grid-template-columns:minmax(0,1fr)}
+  #look .c-01{grid-template-columns:minmax(0,1fr)}
+  #look .c-01 .vrow__ill--ph{min-height:0;aspect-ratio:16/10}
+  #look .c-01 .vrow__b{padding:22px 22px 26px}
+}
+
+@media (max-width:980px){
+  .nums2,.nums2sub{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .num2:nth-child(3),.nsub:nth-child(3){grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}
+  .wlf{grid-template-columns:minmax(0,1fr);gap:26px}
+  .wlf__head{position:static}
+}
+@media (max-width:620px){
+  .nums2,.nums2sub{grid-template-columns:minmax(0,1fr)}
+  .num2+.num2,.nsub+.nsub{border-left:0;border-top:1px solid var(--line)}
+  .num2:nth-child(3),.nsub:nth-child(3){grid-column:auto}
+  .num2{padding:22px 0 20px}
+  .nsub{padding:18px 0 18px}
+  .wlf__i{padding:15px 0 14px;gap:3px 15px}
+  .wlf__no{font-size:22px}
+}
+/* ===== EDITORIAL v1 END ===== */

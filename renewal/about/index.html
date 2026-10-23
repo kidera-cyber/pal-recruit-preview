@@ -20,7 +20,7 @@
 <!-- ===== NOINDEX v1：公開前の確認用サイトのため検索インデックスさせない。
      本番公開時に tools/set_noindex.py off で一括削除する。 ===== -->
 <meta name="robots" content="noindex,nofollow">
-<link rel="stylesheet" href="../../assets/style.css?v=20261022l">
+<link rel="stylesheet" href="../../assets/style.css?v=20261023c">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "PALを知る"}]}</script>
@@ -259,7 +259,7 @@
           <p class="force4__k">実装・運用・効果検証・改善</p>
         </li>
       </ol>
-      <p class="force4__note">※ 4つは、PALが持つ機能を整理したものです。すべての案件が同じ工程をたどるわけではありません。技術と設備は自社開発に加え、外部製品やパートナーとの連携も含みます。</p>
+      <p class="force4__note">技術と設備は、自社開発に加えて外部製品やパートナーとの連携も含みます。</p>
     </div>
 
     <!-- ===== PALSTR v2：上の「4つの力」を、働く人から見た仕事の面白さに変換する2枠。
@@ -283,7 +283,7 @@
      上の本文（社内外の関係者と分担して）へ統合。「全員が開発を担当するわけではない」は
      残した1文が同じことを示すため集約。「提案したものが必ず実装されるとは限りません」は
      本文が実装を約束していないため削除。旧文は git 履歴を参照。 ===== -->
-    <p class="two-view__note rv">※ 担当する範囲は職種と配属によって異なります。</p>
+    <p class="two-view__note rv"></p>
 
     <!-- ロジテックインテグレーション：設備・製品の仕様には踏み込まず、
          「自分たちの現場で試したことを仕組みづくりへ活かしている」だけを伝える。 -->
@@ -539,16 +539,41 @@
     </div>
     <!-- ===== NUMBERS v2：数字をPALレッド、単位を濃紺にして「数字→意味→補足」の
          視線の流れをつくる。120→230名 の矢印だけアクセントを強める。 ===== -->
-    <div class="nums rv">
-      <div class="num"><b>2000<em class="num__u">年</em>12<em class="num__u">月</em></b><span>設立</span></div>
-      <div class="num"><b>120<em class="num__u">名</em></b><span>従業員数<br>アルバイト・パートを含めると約1,600名</span></div>
-      <div class="num"><b>9,000<em class="num__u">万円</em></b><span>資本金</span></div>
-      <div class="num"><b>2<em class="num__u">拠点</em></b><span>大阪本社（大阪市西区新町）／東京オフィス（千代田区神田小川町）</span></div>
-      <div class="num"><b>4<em class="num__u">領域</em></b><span>コンサルティング／ロジテックインテグレーション／システム開発＆エンジニアリング／ロジテックオペレーション</span></div>
-      <div class="num"><b>120<em class="num__ar" aria-hidden="true">→</em>230<em class="num__u">名</em></b><span>採用計画（FY2029に230名）</span></div>
+    <!-- ===== NUMBERS v2：同じ大きさのカード6枚をやめ、主情報3つ（設立・従業員数・資本金）を
+         大きく、副情報3つ（拠点・事業領域・採用計画）を小さく分けた。数値と出典は変更していない。
+         採用計画の「確定した計画ではない」という打ち消し文は、カード内の「FY2029目標」表示に
+         置き換えてセクション末尾から外した。 ===== -->
+    <div class="nums2 rv">
+      <div class="num2">
+        <b class="num2__v">2000<em>年</em>12<em>月</em></b>
+        <span class="num2__k">設立</span>
+      </div>
+      <div class="num2">
+        <b class="num2__v">120<em>名</em></b>
+        <span class="num2__k">従業員数</span>
+        <span class="num2__s">アルバイト・パートを含めると約1,600名</span>
+      </div>
+      <div class="num2">
+        <b class="num2__v">9,000<em>万円</em></b>
+        <span class="num2__k">資本金</span>
+      </div>
     </div>
-    <p class="note rv">※ 設立・従業員数・資本金・拠点・事業内容は、株式会社PALの会社概要に基づく公表情報です（2026年10月22日確認）。採用計画は現時点の目標値であり、確定した計画を示すものではありません。</p>
-    <p class="rv" style="margin-top:20px"><a class="btn btn--ghost" href="https://www.pal-style.co.jp/company/" target="_blank" rel="noopener">会社概要を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
+    <dl class="nums2sub rv">
+      <div class="nsub">
+        <dt><span class="nsub__v">2<em>拠点</em></span></dt>
+        <dd>大阪本社（大阪市西区新町）／東京オフィス（千代田区神田小川町）</dd>
+      </div>
+      <div class="nsub">
+        <dt><span class="nsub__v">4<em>領域</em></span></dt>
+        <dd>コンサルティング／ロジテックインテグレーション／システム開発＆エンジニアリング／ロジテックオペレーション</dd>
+      </div>
+      <div class="nsub">
+        <dt><span class="nsub__v">120<i aria-hidden="true">→</i>230<em>名</em></span><span class="nsub__tag">FY2029目標</span></dt>
+        <dd>採用計画</dd>
+      </div>
+    </dl>
+    <p class="note nums2__src rv">出典：株式会社PALの会社概要（2026年10月22日確認）</p>
+<p class="rv" style="margin-top:20px"><a class="btn btn--ghost" href="https://www.pal-style.co.jp/company/" target="_blank" rel="noopener">会社概要を見る<span class="btn__ico" aria-hidden="true">&#9654;</span></a></p>
   </div>
 </section>
 

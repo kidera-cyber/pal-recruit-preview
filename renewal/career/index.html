@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/style.css?v=20261022l">
+<link rel="stylesheet" href="../../assets/style.css?v=20261023c">
 <!-- ===== SEO-BREADCRUMB v1：画面に表示しているパンくずと同じ内容・同じ順序。
      item は相対URLで、本番ドメイン確定後に絶対URLへ置換するのが望ましい。 ===== -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "採用情報", "item": "../"}, {"@type": "ListItem", "position": 2, "name": "キャリアを知る"}]}</script>
@@ -159,47 +159,24 @@
       <li><figure><img src="../../assets/person-dts.jpg?v=20261008i" alt="配送バースで運行状況を確認するメンバー" width="1600" height="1200" loading="lazy"></figure><b>輸送の現場</b><p><!-- ===== DTS-DRIVER v1：募集職種が「運行管理・所長（DTS）」から「配送ドライバー（DTS）」に変わったため、旧職種名を勤務地の説明から外した。配車リーダー・営業所長は本ページのDTSキャリアパスに掲載している役割。配送ドライバーの勤務地は確認中のため記載していない。 ===== -->DTSの仕事の場です。配車リーダー・営業所長は担当事業所での勤務です。</p></li>
       <li><figure><img src="../../assets/person-cleaning.jpg?v=20261008b" alt="食品工場で清掃箇所を確認するメンバー" width="1600" height="1200" loading="lazy"></figure><b>食品工場・物流施設</b><p>衛生清掃の現場は、顧客の施設内です。</p></li>
     </ul>
-    <p class="note rv">※ 働く場所は、職種と配属先によって異なります。勤務地・勤務時間・休日などの条件は<a class="textlink textlink--sm" href="../jobs/">募集要項</a>をご覧ください。</p>
+    <p class="note rv">勤務地・勤務時間・休日などの条件は<a class="textlink textlink--sm" href="../jobs/">募集要項</a>をご覧ください。</p>
     <!-- ===== CAREER-START v1 END ===== -->
   </div>
 </section>
 
+<!-- ===== GROWTH v3：「理解する／実践する／改善する」の3フェーズカード（.gmx／.gphase）を削除。
+     当たり前の行動をキャリアの段階として定義しており一般論に見えること、直後の #career
+     （職種別キャリア）と役割が重複していることが理由。HOME から career/#growth への
+     リンクがあるため、セクションは残して具体的なキャリアへ渡す導入だけにした。
+     削除した3フェーズの文言とCSS（GPHASE v2）は git 履歴 4e53ab8 から復元できる。
+     CSS の .gmx / .gphase は未使用化（残置）。 ===== -->
 <section class="sec sec--tight" id="growth">
   <div class="wrap">
-    <div class="shead rv" style="margin-bottom:34px">
+    <div class="shead rv" style="margin-bottom:0">
       <p class="slabel">02 Growth process</p>
-      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)">理解する。実践する。自分で考えて動く。</h2>
-      <p class="slead">経験を重ねるにつれて、できることと任される範囲が変わります。仕事を通じた成長を、3つの段階で整理しました。</p>
+      <h2 class="stitle" style="font-size:clamp(23px,2.7vw,32px)"><span class="nw">経験を重ねるほど、</span><span class="nw">役割の選択肢は広がる。</span></h2>
+      <p class="slead">PALでは、職種や経験に応じて、一つの専門性を深めたり、担当する領域を広げたりする例があります。職種ごとの実際の道すじは、次の「職種ごとの道すじを見る」でご覧いただけます。</p>
     </div>
-    <!-- ===== CAREER-GROWTH v1 START：3段階×3項目の比較（STARTとは図解の形を変えて重複を避ける） ===== -->
-    <div class="gmx rv">
-      <article class="gphase gphase--1">
-        <p class="gphase__h"><span class="en">PHASE 01</span>理解する</p>
-        <dl>
-          <dt>経験すること</dt><dd>事業・現場・業務の流れを知る</dd>
-          <dt>できるようになること</dt><dd>仕事の全体像を理解し、人に説明できる</dd>
-          <dt>周囲の関わり方の例</dt><dd><b>伴走する</b><span>教える・同行する・内容を一緒に確認する</span></dd>
-        </dl>
-      </article>
-      <article class="gphase gphase--2">
-        <p class="gphase__h"><span class="en">PHASE 02</span>実践する</p>
-        <dl>
-          <dt>経験すること</dt><dd>担当業務を、自分で進める</dd>
-          <dt>できるようになること</dt><dd>進め方に迷わず、自分で業務を完了できる</dd>
-          <dt>周囲の関わり方の例</dt><dd><b>確認する</b><span>方向性だけを確認し、細部は本人に任せる</span></dd>
-        </dl>
-      </article>
-      <article class="gphase gphase--3">
-        <p class="gphase__h"><span class="en">PHASE 03</span>改善する</p>
-        <dl>
-          <dt>経験すること</dt><dd>課題を整理し、改善を提案して実行する</dd>
-          <dt>できるようになること</dt><dd>自分で課題を見つけ、やり方の変更として形にできる</dd>
-          <dt>周囲の関わり方の例</dt><dd><b>任せる</b><span>重要な判断だけを確認する</span></dd>
-        </dl>
-      </article>
-    </div>
-    <p class="note rv">※ ここで紹介しているのは、仕事を通じた成長のイメージです。段階や期間が制度として定められているものではなく、進み方や周囲の関わり方は、職種・配属先・本人の経験によって異なります。</p>
-    <!-- ===== CAREER-GROWTH v1 END ===== -->
   </div>
 </section>
 
@@ -382,7 +359,7 @@
         <p class="cpanel__h"><b>クレンリネスキャリア</b></p>
         <p class="cstory__lead">清掃の現場から、計画・運営へ仕事を広げる。</p>
         <p class="cstory__sub">食品プロセスセンターなどの清掃現場を経験しながら、衛生状態の確認、清掃計画、現場運営へと仕事の幅を広げていきます。</p>
-        <p class="note">※ ここで紹介するのは、実際にクレンリネス課で働く<b>社員のキャリアの一例</b>です。制度として定められたコースではありません。<a class="textlink textlink--sm" href="../people/cleaning/">クレンリネスで働く社員を見る</a></p>
+        <p class="note">ここで紹介するのは、実際にクレンリネス課で働く<b>社員のキャリアの一例</b>です。<a class="textlink textlink--sm" href="../people/cleaning/">クレンリネスで働く社員を見る</a></p>
         <ol class="cstory cstory--cards">
           <li class="cstory__blk">
             <p class="cstory__no en">01</p>
@@ -668,7 +645,7 @@
     </div>
     <!-- ===== CAREER-SALES v1：営業・事業開発の道すじは内容が確定していないため非表示。
          確定後、TRACKS と同じ形式でタブを1つ追加する。管理用の一覧は docs/career-page-open-items.md ===== -->
-    <p class="note rv">※ 掲載している「任される役割の広がり」は<b>キャリアの一例</b>です。進み方は職種・配属先・本人の経験によって異なり、全員が同じ順序で進むわけではありません。昇格や異動が約束されるものではありません。</p>
+    <p class="note rv">掲載しているのは、実際にある<b>役割の広がりの例</b>です。</p>
     <!-- ===== CAREER-PATH v2 END ===== -->
   </div>
 </section>
@@ -717,8 +694,7 @@
         <p>異なる専門性を持つメンバーと協力しながら、自分の仕事に新しい視点を取り入れていきます。</p>
       </li>
     </ol>
-    <p class="note rv" style="margin-top:22px">※ キャリアの広がり方は、職種・経験・適性・配属先によって異なります。特定の昇格や職種変更を保証するものではありません。</p>
-    <!-- 内容を確認・更新したときに、この日付を手で書き換えてください。公開処理日やビルド日を自動で入れないこと。 -->
+        <!-- 内容を確認・更新したときに、この日付を手で書き換えてください。公開処理日やビルド日を自動で入れないこと。 -->
     <p class="updated rv">このページの内容を確認した日：2026年10月9日</p>
   </div>
 </section>
