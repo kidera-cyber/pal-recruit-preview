@@ -8548,3 +8548,54 @@ a.jcard__apply:hover{background:var(--red-dark);border-color:var(--red-dark)}
   .p-home-simple .hsv__a:hover .hsv__ph img{transform:none}
 }
 /* ===== HOMESIMPLE v1 END ===== */
+
+/* ============================================================
+   ===== LOOK v3 START =====
+   PEOPLE #look の仕上げ。文章・写真ファイル・項目数は変更していない。
+   ① 3枚の写真の見え方をそろえる
+      実測の平均輝度は 01=127／02=143／03=44 で、03（開発の写真）だけ大きく暗い。
+      画像は差し替えず、CSS で 03 を持ち上げ、02 をわずかに落とし、
+      全体に同じ彩度の調整をかけて「ひと組」に見えるようにする。
+      写真の高さも3枚そろえる。
+   ② 「3つの力」は3カードのまま残す（比較して読む情報のため）。
+      白い箱を置いただけに見えないよう、上辺の赤い線・アイコン・見出し・説明で
+      情報の段差をつける。
+   ③ PC でセクションが伸びていたので、写真比率と余白で詰める。
+      本文は削っていない。
+   後勝ちで上書きする既存ルール：EDITORIAL v1 の #look まわり
+   ============================================================ */
+/* ① 写真の見え方をそろえる */
+#look .vrow__ill--ph img{filter:saturate(.97)}
+#look .c-02 .vrow__ill--ph img{filter:saturate(.97) brightness(.95)}
+#look .c-03 .vrow__ill--ph img{filter:saturate(1.05) brightness(1.5) contrast(.9);
+  transform:scale(1.08)}
+/* 写真の高さを3枚そろえる（01は横長の組、02・03は2つ並び） */
+#look .c-02 .vrow__ill--ph,#look .c-03 .vrow__ill--ph{aspect-ratio:2/1}
+/* 3枚とも同じ比率にして高さをそろえる */
+#look .c-01 .vrow__ill--ph{min-height:0;height:auto;aspect-ratio:2/1}
+
+/* ② 3つの力：カードは残し、情報の段差をはっきりさせる */
+#look .force3{margin-top:20px}
+#look .force3 li{position:relative;overflow:hidden;padding:20px 20px 22px;
+  background:#fff;border:1px solid var(--line)}
+#look .force3 li::before{content:"";position:absolute;left:0;top:0;width:100%;height:2px;
+  background:var(--red)}
+#look .force3 svg{width:30px;height:30px;opacity:1;color:var(--navy)}
+#look .force3__en{margin-top:14px;font-size:10.5px;letter-spacing:.18em;color:var(--muted)}
+#look .force3 b{margin-top:6px;font-size:clamp(19px,2vw,21px);color:#000}
+#look .force3 p{margin-top:8px;font-size:14.5px;line-height:1.85}
+
+/* ③ 余白と見出しサイズを詰める（本文は削っていない） */
+#look{padding-block:64px 44px}
+#look .look5__head .stitle{font-size:clamp(23px,2.7vw,32px)}
+#look .vrows{gap:14px}
+#look .c-01 .vrow__b{padding:28px 36px 30px}
+.wlf{margin-top:46px}
+#look .look__sub2{margin-top:44px}
+.wlf__i{padding:16px 0 15px}
+
+@media (max-width:860px){
+  #look .c-02 .vrow__ill--ph,#look .c-03 .vrow__ill--ph{aspect-ratio:16/10}
+  #look{padding-block:62px 44px}
+}
+/* ===== LOOK v3 END ===== */
